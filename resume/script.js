@@ -284,3 +284,33 @@ document.addEventListener('click', e => {
         trackEvent('outbound_click', { url: link.href });
     }
 });
+// ═══════════════════════════════════════════════════════════════════════════
+// 8. 3D AVATAR TILT (Ported from Main Site)
+// ═══════════════════════════════════════════════════════════════════════════
+function initProfileTilt() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || 'ontouchstart' in window) return;
+
+    const avatar = $('.hero__photo-wrapper');
+    const container = $('.hero__container'); // Use container for interaction zone
+    if (!avatar || !container) return;
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Vanilla JS Tilt
+        // Reduced rotation slightly for the larger hero section feel
+        avatar.style.transform = `perspective(1000px) rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        avatar.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
+        avatar.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        setTimeout(() => { avatar.style.transition = ''; }, 800);
+    });
+}
+
+// Init Tilt
+initProfileTilt();

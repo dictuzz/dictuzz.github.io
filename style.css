@@ -612,6 +612,20 @@ img {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
+/* Brand: Google Calendar */
+.link-button[data-brand="calendar"]:hover .link-icon {
+  background: rgba(66, 133, 244, 0.15);
+  color: #4285F4;
+  box-shadow: 0 0 20px rgba(66, 133, 244, 0.2);
+}
+
+/* Brand: Blog (Book) */
+.link-button[data-brand="book"]:hover .link-icon {
+  background: rgba(255, 184, 0, 0.15);
+  color: #FFB800;
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.2);
+}
+
 .link-button[data-brand="envelope"]:hover .link-icon {
   background: rgba(234, 67, 53, 0.15);
   color: #EA4335;

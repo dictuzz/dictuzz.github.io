@@ -518,8 +518,11 @@
             const brand = brandMatch ? brandMatch[1] : 'default';
 
             const li = document.createElement('li');
+            const isSecondary = link.style === 'secondary';
+            const secondaryClass = isSecondary ? 'link-button--secondary' : '';
+
             li.innerHTML = `
-              <a href="${link.url}" class="link-button hover-trigger" target="_blank" rel="noopener noreferrer" data-brand="${brand}">
+              <a href="${link.url}" class="link-button ${secondaryClass} hover-trigger" target="_blank" rel="noopener noreferrer" data-brand="${brand}">
                 <i class="${link.icon} link-icon"></i>
                 <span class="link-label">${link.label}</span>
                 <i class="fas fa-arrow-right link-arrow"></i>

@@ -13,16 +13,20 @@ const CONFIG_DATA = {
         name: "dictuzz",
         tagline: "Data Scientist • Content Creator • MC • Vibe Coder",
         // Use <br> for line breaks
-        bio: "Data science student dengan passion untuk memimpin dan menginspirasi.<br>Aktif di GeMa, VRI, \u0026 OMK. MC \u0026 Newscaster enthusiast.<br>Turning data into stories, code into vibes. 🔥"
+        bio: "Data science student dengan passion untuk memimpin dan menginspirasi.<br>Experienced Project & Team Manager. MC & Newscaster enthusiast.<br>Turning data into stories, code into vibes. 🔥"
     },
 
-    // 2. MAIN LINKS
-    // Icons are from FontAwesome 6 (https://fontawesome.com)
     links: [
         {
-            label: "About Me",
-            url: "http://dictuzz.github.io/resume",
-            icon: "fas fa-briefcase",
+            label: "Let's Talk!",
+            url: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ30metKuP1X9heG54IxOgznfw1jGKfjjW5xPtReYATxGnXTZ3vDTi87MmFPgUahljIQgzXndJ9p",
+            icon: "fas fa-calendar-day",
+            style: "primary"
+        },
+        {
+            label: "Read My Blog",
+            url: "https://dictuzz.github.io/blog/",
+            icon: "fas fa-book",
             style: "primary"
         },
         {
@@ -41,21 +45,22 @@ const CONFIG_DATA = {
             label: "Find Me on LinkedIn",
             url: "https://www.linkedin.com/in/dictuzz",
             icon: "fab fa-linkedin",
-            style: "primary"
+            style: "secondary"
         },
         {
             label: "Follow My Insta",
             url: "https://www.instagram.com/dictuzz",
             icon: "fab fa-instagram",
-            style: "primary"
+            style: "secondary"
         },
         {
             label: "Contribute to My Code",
             url: "https://github.com/dictuzz",
             icon: "fab fa-github",
-            style: "primary"
+            style: "secondary"
         }
     ],
+
 
     // 3. FOOTER
     footer: {

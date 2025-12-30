@@ -62,12 +62,6 @@ function parseFrontmatter(content) {
 function markdownToHtml(markdown) {
   let html = markdown;
 
-  // Escape HTML entities first
-  html = html
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-
   // Headers
   html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
   html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
@@ -91,10 +85,10 @@ function markdownToHtml(markdown) {
   html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>');
 
   // Unordered lists
-  const listRegex = /((?:^- .+$\n?)+)/gm;
+  const listRegex = /((?:^[-*] .+(?:\r?\n|$))+)/gm;
   html = html.replace(listRegex, (match) => {
-    const items = match.trim().split('\n')
-      .map(line => `<li>${line.replace(/^- /, '')}</li>`)
+    const items = match.trim().split(/\r?\n/)
+      .map(line => `<li>${line.replace(/^[-*] /, '')}</li>`)
       .join('\n');
     return `<ul>\n${items}\n</ul>\n`;
   });
@@ -116,9 +110,8 @@ function markdownToHtml(markdown) {
     }
 
     // Skip lines that are already HTML
-    if (line.startsWith('<h') || line.startsWith('<ul') || line.startsWith('<li') ||
-      line.startsWith('</ul') || line.startsWith('<blockquote') || line.startsWith('<hr') ||
-      line.startsWith('</li') || line.startsWith('</h') || line.startsWith('</blockquote')) {
+    // Added regex check for more tags
+    if (line.match(/^<\/?(h[1-6]|ul|ol|li|blockquote|hr|p|div|table|tr|td|span|a|img|figure|pre|code)/i)) {
       if (inParagraph) {
         result.push('</p>');
         inParagraph = false;
@@ -196,7 +189,7 @@ function generatePostHtml(post) {
       </button>
       <nav id="nav-main" class="nav-main" role="navigation">
         <ul class="nav-menu">
-          <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html">Beranda</a></li>
           <li><a href="../manifesto.html">Manifesto</a></li>
           <li><a href="../contact.html">Kontak</a></li>
         </ul>
@@ -211,7 +204,7 @@ function generatePostHtml(post) {
   <main id="main-content" role="main">
     <article class="container">
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <ol><li><a href="../index.html">Home</a></li><li><span aria-current="page">${post.title}</span></li></ol>
+        <ol><li><a href="../index.html">Beranda</a></li><li><span aria-current="page">${post.title}</span></li></ol>
       </nav>
       
       <header class="post-header">
