@@ -1,0 +1,196 @@
+{
+    "hero": {
+        "tagline": "Bachelor-Student (Data Science) & Teamplayer",
+        "typing": {
+            "staticText": "Bachelor-Student (Data Science) & ",
+            "dynamicTexts": [
+                "Teamplayer",
+                "Problemlöser",
+                "Datenanalyst",
+                "Innovator",
+                "Dozent",
+                "Kletterlehrer",
+                "Moderator"
+            ]
+        },
+        "downloadCv": "Lebenslauf herunterladen",
+        "email": "Email senden"
+    },
+    "nav": {
+        "home": "Startseite",
+        "about": "Über mich",
+        "experience": "Erfahrung",
+        "education": "Ausbildung",
+        "projects": "Projekte",
+        "skills": "Fähigkeiten",
+        "awards": "Auszeichnungen",
+        "contact": "Kontaktieren Sie mich"
+    },
+    "section": {
+        "summary": "ÜBER MICH",
+        "experience": "ERFAHRUNG",
+        "education": "AUSBILDUNG",
+        "projects": "PROJEKTE",
+        "skills": "FÄHIGKEITEN",
+        "awards": "AUSZEICHNUNGEN",
+        "contact": "KONTAKT"
+    },
+    "summary": {
+        "text": "Bachelor-Student im Bereich Data Science (B.Sc.) mit Interesse an praktischer Problemlösung. Erfahrung in der Unterstützung von Teams durch Datenanalyse und Prozessoptimierung. Motiviert, mich fachlich weiterzuentwickeln und zum Unternehmenserfolg beizutragen."
+    },
+    "exp": [
+        {
+            "date": "Jul 2024 – Sep 2025",
+            "role": "Management Trainee",
+            "company": "Home Digital Indonesia",
+            "details": [
+                "Unterstützung bei der Automatisierung von Berichtsaufgaben mittels Excel-Makros zur Entlastung des Teams.",
+                "Mitarbeit an der Standardisierung von Abläufen in Zusammenarbeit mit Finanzen, Vertrieb und Betrieb.",
+                "Analyse von Mitarbeiterfeedback zur Identifizierung von Verbesserungspotenzialen."
+            ]
+        },
+        {
+            "date": "Nov 2020 – Nov 2021",
+            "role": "Stellvertretender Vorsitzender",
+            "company": "Schülervertretung — Saint Mary 2 High School, Bandung",
+            "details": [
+                "Entwicklung und Umsetzung von Talentförderprogrammen für alle Jahrgangsstufen (gemessen an der Teilnahmequote) durch Koordination von 10 Ratsabteilungen und Durchführung von Klassenaktivitäten während der Pandemiebeschränkungen.",
+                "Wahrung der institutionellen Kontinuität (gemessen an der vollständigen Archivübergabe) durch Sammlung und Organisation früherer Ratsvorschläge und Rechenschaftsberichte von 2018 für die kommende Führung.",
+                "Durchführung von Führungstrainings an 5 Mittelschulen (gemessen an der Veranstaltungsteilnahme und dem Feedback) durch Lehrplanplanung und Koordination der Trainer."
+            ]
+        },
+        {
+            "date": "Nov 2021 – Nov 2022",
+            "role": "Vorsitzender",
+            "company": "Schülervertretung — Saint Mary 2 High School, Bandung",
+            "details": [
+                "Einführung eines gezielten langfristigen Programms zur Verbesserung der Schülerqualität (gemessen an der Programmakzeptanz in den Klassenräumen) durch Definition von KPIs, Zeitplänen und Ausführungsplänen.",
+                "Erreichung einer breiten Öffentlichkeitsarbeit an Zubringerschulen (gemessen an erfolgreichen Promotionen an 12 katholischen Mittelschulen) durch Leitung von Werbekampagnen und Veranstaltungen.",
+                "Leitung von 34 Schülerratsmitgliedern in 10 Abteilungen (gemessen an der Aufrechterhaltung des operativen Dienstplans) durch Delegierung von Verantwortlichkeiten und Einführung wöchentlicher Koordinationsrhythmen.",
+                "Erstellung eines viralen Social-Media-Beitrags zur Schulwerbung (TikTok) (gemessen an FYP-Zugriffen) durch Produktion und Überwachung der kreativen Content-Ausführung."
+            ]
+        },
+        {
+            "date": "Nov 2021 – Nov 2022",
+            "role": "Leiter, Abteilung Geschäft & Partnerschaft",
+            "company": "Forum OSIS Jawa Barat",
+            "details": [
+                "Aufbau einer historischen Partnerschaftsdatenbank (gemessen an kompilierten Markendatensätzen) durch Datenerfassung früherer Kohorten zur Information zukünftiger Kooperationen."
+            ]
+        },
+        {
+            "date": "Jun 2022 – Aug 2022",
+            "role": "Bühnencrew",
+            "company": "Ultimate Event Organizer",
+            "details": [
+                "Gewährleistung eines reibungslosen Ablaufs für Veranstaltungen mit über 1.000 Teilnehmern (gemessen an der Einhaltung von Ablaufplänen) durch Koordination der Backstage-Logistik und technischer Übergänge mit Beleuchtungs-, Ton- und Sicherheitsteams.",
+                "Reduzierung technischer Ausfallzeiten bei Übergängen (gemessen an der durchschnittlichen Übergangszeit) durch Standardisierung von Bühnenverfahren und Anweisung der technischen Crew."
+            ]
+        },
+        {
+            "date": "Aug 2023 – Aug 2024",
+            "role": "Stellvertretender Leiter",
+            "company": "Katholische Jugendorganisation Ujung Berung",
+            "details": [
+                "Planung des jährlichen Programmkalenders (gemessen an der Abschlussquote von Veranstaltungen) durch Koordination teamübergreifender Ergebnisse und Zeitpläne der Freiwilligen.",
+                "Organisation von Großveranstaltungen (gemessen an der Anwesenheit): Abendveranstaltung (100 Teilnehmer) und Jugendgottesdienst (400 Teilnehmer) durch Verwaltung von Logistik und Freiwilligenteams."
+            ]
+        },
+        {
+            "date": "Mär 2020 – Mär 2022",
+            "role": "Stellvertretender Oberministrant",
+            "company": "Zipur Kirche",
+            "details": [
+                "Pflege monatlicher Ministrantenpläne in der Gemeinde (gemessen an pünktlichen Dienstplänen) durch Koordination von Freiwilligen und Organisation gemeindeweiter Zeremonien."
+            ]
+        },
+        {
+            "date": "Jan 2021 – Heute",
+            "role": "Path Climber & Wartung",
+            "company": "Vertical Rescue Indonesia",
+            "details": [
+                "Unterstützung von Rettungstrainingsmaßnahmen (gemessen an Berichten zur Ausrüstungsbereitschaft) durch Wartung und Sicherheitsinspektionen von Kletterausrüstung."
+            ]
+        }
+    ],
+    "edu": {
+        "uni1": {
+            "name": "Universitas Terbuka (Open University Indonesia)",
+            "degree": "B.Sc., Data Science",
+            "date": "Ab Aug 2025",
+            "focus": "Schwerpunkt: Datenanalyse, Statistik, Informationstechnologie"
+        },
+        "school1": {
+            "name": "Saint Mary 2 High School",
+            "degree": "Naturwissenschaftliches Programm (IPA)",
+            "date": "Jul 2020 – Jun 2023"
+        }
+    },
+    "proj": [
+        {
+            "title": "Workflow-Automatisierung & Berichtswesen:",
+            "desc": "Erstellung wiederholbarer Excel/Google Sheets-Prozesse und Dashboards zur Automatisierung regelmäßiger Berichte und KPI-Verfolgung; Dokumentation von Übergaben für die betriebliche Übernahme."
+        },
+        {
+            "title": "Datenanalyse-Studienleistungen:",
+            "desc": "Abschluss von Projekten in Jupyter Notebooks (Datenbereinigung, EDA, grundlegende prädiktive Modellierung mit pandas & scikit-learn) mit Fokus auf reproduzierbare Pipelines und visuelles Storytelling."
+        }
+    ],
+    "skills": {
+        "technical": "Technisch",
+        "technical_list": [
+            "Microsoft Office (inkl. Excel Macro)",
+            "Google Workspace",
+            "Jupyter Notebooks",
+            "Python (Pandas, Scikit-learn)",
+            "SQL",
+            "Datenvisualisierung",
+            "Git",
+            "Obsidian",
+            "Datenbereinigung",
+            "Explorative Datenanalyse (EDA)",
+            "GitHub"
+        ],
+        "business": "Geschäftlich",
+        "soft": "Soft Skills",
+        "languages": "Sprachen",
+        "biz1": "Projektmanagement",
+        "biz2": "Funktionsübergreifende Zusammenarbeit",
+        "biz3": "Prozessverbesserung",
+        "biz4": "KPI-Berichterstattung",
+        "biz5": "Stakeholder-Kommunikation",
+        "soft1": "Führung",
+        "soft2": "Öffentliches Reden",
+        "soft3": "Veranstaltungskoordination",
+        "soft4": "Lehrplan-/Schulungsvermittlung",
+        "lang": {
+            "id": "Indonesisch (Muttersprache)",
+            "en": "Englisch (Obere Mittelstufe, B2)",
+            "de": "Deutsch (Obere Mittelstufe, B2)",
+            "la": "Latein (Anfänger, Selbststudium)"
+        }
+    },
+    "awards": {
+        "1": "1. Platz — Instagram Reels Wettbewerb, Goethe-Institut Bandung (2023) — „Ein Tag in meinem Leben“",
+        "2": "1. Platz — Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) — „Dilema“",
+        "3": "Öffentliche Vorlesungen (2023): Journalismus- & Kommunikationsklassen, Universitas Parahyangan",
+        "4": "Zweitplatzierter Wasserraketen-Wettbewerb (2017) von PLANET SAINS"
+    },
+    "footer": {
+        "rights": "Alle Rechte vorbehalten."
+    },
+    "connect": {
+        "title": "Kontakt",
+        "schedule": "Termin vereinbaren",
+        "whatsapp": "Chat auf WhatsApp",
+        "cv": "Lebenslauf herunterladen",
+        "desc": {
+            "schedule": "Gerne stehe ich für ein Gespräch über eine mögliche Mitarbeit zur Verfügung",
+            "whatsapp": "Direkt auf WhatsApp chatten",
+            "email": "Senden Sie mir eine E-Mail",
+            "linkedin": "Beruflich verbinden",
+            "instagram": "Folgen Sie meinen täglichen Updates",
+            "github": "Schauen Sie sich meinen Code an"
+        }
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Data science student dengan passion untuk memimpin dan menginspirasi. Aktif di GeMa, VRI, & OMK. MC & Newscaster enthusiast. Turning data into stories, code into vibes.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="@dictuzz — Data Scientist • Leader • Creator">
+  <meta property="og:description"
+    content="Data science student dengan passion untuk memimpin dan menginspirasi. Aktif di GeMa, VRI, & OMK. MC & Newscaster enthusiast. Turning data into stories, code into vibes.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="https://dictuzz.github.io/assets/images/og-image.png">
+  <meta property="og:url" content="https://dictuzz.github.io/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@dictuzz — Data Scientist • Leader • Creator">
+  <meta name="twitter:description"
+    content="Data science student dengan passion untuk memimpin dan menginspirasi. MC & Newscaster enthusiast. Turning data into stories, code into vibes.">
+  <meta name="twitter:image" content="https://dictuzz.github.io/assets/images/og-image.png">
+
+  <title>@dictuzz — MC & Data Scientist | Link in Bio</title>
+
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJMTM772L5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PJMTM772L5');
+  </script>
+
+
+</head>
+
+<body>
+  <!-- Ambient Background Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-toggle hover-trigger" aria-label="Switch Theme">
+    <i class="fas fa-sun" id="theme-icon"></i>
+  </button>
+
+
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content" class="container" role="main">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1: Profile Header
+         ═══════════════════════════════════════════ -->
+    <header class="profile-header">
+      <div class="avatar-section">
+        <div class="avatar-wrapper drag-target">
+          <img src="assets/images/dictuzz.webp" alt="@dictuzz profile photo" class="avatar-premium" id="profile-avatar"
+            width="280" height="380" loading="eager">
+          <!-- Verified Badge -->
+          <span class="verified-badge" title="Verified">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#5985E1">
+              <path
+                d="m325-2-86-146-165-37 17-168-111-127L91-607 74-775l165-37 86-146 155 66 155-66 86 146 165 37-17 168 111 127-111 127 17 168-165 37-86 146-155-66-155 66Zm113-317 245-246-75-74-170 170-85-86-76 75 161 161Z" />
+            </svg>
+          </span>
+          <!-- Decorations -->
+          <div class="avatar-ring"></div>
+          <div class="avatar-dots"></div>
+        </div>
+
+        <!-- Status Badge -->
+        <div class="status-badge glass">
+          <span class="status-dot"></span>
+          <span>Available for opportunities</span>
+        </div>
+      </div>
+
+      <div class="identity">
+        <h1 class="name" aria-label="@dictuzz">
+          <span class="typing-text" id="profile-name"></span>
+          <span class="cursor" aria-hidden="true"></span>
+        </h1>
+        <p class="tagline" id="profile-tagline"></p>
+
+        <!-- Data Density: Location & Status -->
+
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2: Bio
+         ═══════════════════════════════════════════ -->
+    <section class="bio-section" aria-label="About">
+      <p class="bio-text" id="profile-bio"></p>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3: All Links (Consolidated)
+         ═══════════════════════════════════════════ -->
+    <nav class="links-section" aria-label="Links">
+      <ul class="link-list" role="list" id="link-list">
+        <!-- Links will be injected here by script.js -->
+      </ul>
+    </nav>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="footer-text" id="footer-text">
+      <!-- Footer injected via JS -->
+    </p>
+  </footer>
+
+
+
+  <!-- Main Script -->
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>

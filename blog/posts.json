@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {
+      "slug": "lorem-ipsum-dolor",
+      "title": "Lorem ipsum dolor sit amet consectetur",
+      "date": "2024-12-28",
+      "dateFormatted": "Desember 28 • 24",
+      "category": "Novel",
+      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, q..."
+    }
+  ]
+}
