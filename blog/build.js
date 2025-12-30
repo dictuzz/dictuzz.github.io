@@ -244,14 +244,14 @@ function generatePostHtml(post) {
 // ═══════════════════════════════════════════════════════════════════════════
 
 function build() {
-  console.log('🔨 Building tuzzblog...\n');
+  console.log('Building tuzzblog...\n');
 
   // Get all markdown files
   const files = fs.readdirSync(CONFIG.postsDir)
     .filter(f => f.endsWith('.md'));
 
   if (files.length === 0) {
-    console.log('⚠️  No markdown files found in /posts folder');
+    console.log('No markdown files found in /posts folder');
     return;
   }
 
@@ -293,7 +293,7 @@ function build() {
     const outputPath = path.join(CONFIG.outputDir, `${slug}.html`);
     fs.writeFileSync(outputPath, htmlContent);
 
-    console.log(`✅ Generated: posts/${slug}.html`);
+    console.log(`Generated: posts/${slug}.html`);
   });
 
   // Sort posts by date (newest first)
@@ -312,9 +312,9 @@ function build() {
   };
 
   fs.writeFileSync(CONFIG.postsJsonPath, JSON.stringify(postsJson, null, 2));
-  console.log(`\n📝 Updated posts.json (${posts.length} posts)`);
+  console.log(`\nUpdated posts.json (${posts.length} posts)`);
 
-  console.log('\n🎉 Build complete!\n');
+  console.log('\nBuild complete!\n');
 }
 
 // Run build

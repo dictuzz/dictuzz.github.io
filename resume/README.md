@@ -6,7 +6,7 @@ A modern, high-performance personal portfolio website designed with a premium **
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 ### 1. Dynamic Core
 *   **JSON-Driven Content**: All text (Experience, Projects, Bio) is separated from code in `locales/en.json` (and `id`, `de`).
@@ -37,7 +37,7 @@ A modern, high-performance personal portfolio website designed with a premium **
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 *   **Core**: HTML5, CSS3, Vanilla JavaScript (ES6+).
 *   **Architecture**: Fetch API-based i18n, Component Rendering, Class-based Typing Animation.
@@ -47,7 +47,7 @@ A modern, high-performance personal portfolio website designed with a premium **
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 You need a local development server because the `fetch()` API requires the `http://` or `https://` protocol.
@@ -75,7 +75,7 @@ You need a local development server because the `fetch()` API requires the `http
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 dictuzz.github.io/resume/
@@ -94,7 +94,7 @@ dictuzz.github.io/resume/
 
 ---
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 | Variable | Color | Usage |
@@ -109,7 +109,7 @@ dictuzz.github.io/resume/
 
 ---
 
-## ⚙️ How to Update Content
+## How to Update Content
 
 ### 1. Adding a Job or Project
 Open `locales/en.json` (and `id.json`/`de.json`) and add a new object to the array.
@@ -146,7 +146,7 @@ Open `style.css` and modify the `:root` variables at the top:
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
 - [ ] **Blog Integration**: Add a Markdown parser to render blog posts from a `posts/` folder.
 - [ ] **Dark/Light Mode Toggle**: Leverage CSS variables for theme switching.
@@ -155,7 +155,7 @@ Open `style.css` and modify the `:root` variables at the top:
 
 ---
 
-## 📋 Version History
+## Version History
 
 ### v2.0 (December 2024)
 *   Complete refactor with modular JSON-driven architecture
@@ -171,5 +171,5 @@ Open `style.css` and modify the `:root` variables at the top:
 
 ---
 
-## 📄 License
+## License
 © 2025 Benedictus Richard Ricardo. All Rights Reserved.
