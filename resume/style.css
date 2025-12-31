@@ -24,8 +24,26 @@
 .about__image {
     max-width: 320px;
     aspect-ratio: 3/4;
-    border-radius: var(--radius-xl);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.05);
+    /* Modern glass frame */
+    animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 }
 
 .about__image img {
@@ -35,8 +53,12 @@
     transition: transform var(--duration-slow) var(--ease-out);
 }
 
+.about__image:hover {
+    box-shadow: 0 0 0 10px rgba(0, 245, 212, 0.1);
+}
+
 .about__image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(2deg);
 }
 
 .about__content {
@@ -94,6 +116,8 @@
     position: relative;
     padding-left: var(--space-12);
     padding-bottom: var(--space-12);
+    padding-right: var(--space-2);
+    /* Add padding right to prevent edge touching */
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -124,6 +148,46 @@
     transition: left 0.8s ease;
 }
 
+[data-theme="light"] .glass--hover:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 200, 170, 0.3);
+}
+
+/* FIX: Prevent text truncation */
+.glass,
+.card,
+.timeline__content,
+.project-card,
+.edu-card,
+.about__text,
+.bento__content {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+    min-width: 0;
+    /* Flexbox overflow fix */
+}
+
+/* FIX: Prevent container collapse */
+.timeline__content,
+.project-card {
+    min-height: auto;
+    height: auto;
+}
+
+/* FIX: Ensure gap between grid/flex items to prevent collision */
+.grid,
+.grid--2,
+.projects__list {
+    display: grid;
+    gap: var(--space-6);
+    width: 100%;
+}
+
+.grid--2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .timeline__item:hover .glass {
     border-color: var(--accent-cyan);
     box-shadow:
@@ -135,6 +199,22 @@
 
 .timeline__item:hover .glass::before {
     left: 100%;
+}
+
+.hero__photo {
+    width: 280px;
+    height: 380px;
+    border-radius: 9999px !important;
+    overflow: hidden;
+    /* Root project style matching */
+    border: 2px solid var(--accent-gold);
+    box-shadow:
+        0 0 0 8px rgba(255, 184, 0, 0.1),
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 100px var(--accent-glow);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s var(--ease-out) 0.3s forwards;
 }
 
 /* Pulsing timeline dot */
@@ -189,6 +269,26 @@
     position: relative;
     display: inline-block;
     padding-bottom: var(--space-1);
+}
+
+/* UTILITIES */
+.container {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+    padding-inline: var(--space-4);
+}
+
+/* FIX: Section spacing to prevent overlap */
+.section {
+    padding-block: var(--space-12);
+    position: relative;
+    z-index: 1;
+}
+
+.section__title {
+    margin-bottom: var(--space-8);
+    position: relative;
+    z-index: 2;
 }
 
 .timeline__date::after {
@@ -299,6 +399,13 @@
     font-size: var(--text-sm);
     color: var(--text-muted);
     margin-bottom: var(--space-2);
+}
+
+/* FIX: Add padding to internal card content to stop clipping */
+.edu-card,
+.project-card,
+.timeline__content {
+    padding: var(--space-6);
 }
 
 .edu-card__focus {
@@ -583,6 +690,7 @@
     justify-content: center;
     background: rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-md);
+    /* Smooth corners for icons */
     font-size: var(--text-2xl);
     color: var(--accent-gold);
     transition: all var(--duration-fast) var(--ease-out);
@@ -711,7 +819,7 @@
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 75%);
     background-size: 200% 100%;
     animation: skeletonShimmer 1.5s infinite;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
 }
 
 .skeleton--text {
@@ -787,6 +895,26 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    18. ACCESSIBILITY
    ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    /* Increased from 16px */
+    --radius-xl: 32px;
+    /* Added for larger containers */
+    --radius-full: 9999px;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+}
+
 :focus-visible {
     outline: 2px solid var(--accent-cyan);
     outline-offset: 3px;
@@ -902,6 +1030,7 @@
         padding: var(--space-6);
         background: rgba(18, 24, 36, 0.98);
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         border: 1px solid var(--border-glass);
         border-radius: var(--radius-lg);
         opacity: 0;
@@ -910,6 +1039,22 @@
         transition: all var(--duration-normal) var(--ease-out);
         max-height: 70vh;
         overflow-y: auto;
+        z-index: 1002;
+        /* Ensure above everything */
+        display: flex;
+        /* Force flex display when in mobile query */
+    }
+
+    .nav__links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .nav__toggle {
+        display: flex;
+        z-index: 1003;
+        /* Above links */
     }
 
     .nav__links.open {
@@ -946,6 +1091,8 @@
     .about__image {
         max-width: 280px;
         margin: 0 auto;
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        /* Organic border-radius */
     }
 
     .about__content {
