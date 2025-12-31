@@ -13,7 +13,7 @@ const CONFIG_DATA = {
         name: "dictuzz",
         tagline: "Data Scientist • Content Creator • MC • Vibe Coder",
         // Use <br> for line breaks
-        bio: "Data science student dengan passion untuk memimpin dan menginspirasi.<br>Experienced Project & Team Manager. MC & Newscaster enthusiast.<br>Turning data into stories, code into vibes."
+        bio: ""
     },
 
     links: [
