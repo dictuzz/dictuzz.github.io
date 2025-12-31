@@ -19,6 +19,31 @@ let currentLang = DEFAULT_LANG;
 let langData = null;
 
 // ═══════════════════════════════════════════════════════════════════════════
+// 0. THEME TOGGLE — Dark/Light Mode
+// ═══════════════════════════════════════════════════════════════════════════
+function initTheme() {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+}
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+}
+
+// Initialize theme immediately to prevent flash
+initTheme();
+
+// Bind theme toggle button
+document.addEventListener('DOMContentLoaded', () => {
+    $('.theme-toggle')?.addEventListener('click', toggleTheme);
+});
+
+// ═══════════════════════════════════════════════════════════════════════════
 // 1. INTERSECTION OBSERVER — Reveal animations
 // ═══════════════════════════════════════════════════════════════════════════
 const revealObserver = new IntersectionObserver((entries) => {
@@ -59,8 +84,11 @@ $$('a[href^="#"]').forEach(a => {
 // 3. MOBILE NAVIGATION
 // ═══════════════════════════════════════════════════════════════════════════
 $('.nav__toggle')?.addEventListener('click', () => {
-    $('.nav__toggle').classList.toggle('active');
-    $('.nav__links').classList.toggle('open');
+    const toggle = $('.nav__toggle');
+    const links = $('.nav__links');
+    const isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isOpen);
 });
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -78,8 +106,10 @@ window.addEventListener('scroll', () => {
 
     navLinks.forEach(link => {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
         }
     });
 }, { passive: true });

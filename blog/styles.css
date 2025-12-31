@@ -7,7 +7,45 @@
 @import url('variables.css');
 
 /* ===== Google Fonts ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+/* Fonts are loaded via HTML link in head for better performance */
+
+/* ===== Link Button (Contact Page) ===== */
+.link-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-alt);
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    width: 100%;
+}
+
+.link-button:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--color-heading);
+}
+
+.link-button .link-icon {
+    font-size: 1.25rem;
+    width: 24px;
+    text-align: center;
+    color: var(--color-link);
+}
+
+.link-button:hover .link-icon {
+    color: var(--color-accent);
+}
+
+.link-button--secondary {
+    background: transparent;
+    border-color: var(--color-border);
+}
 
 /* ===== Reset & Base ===== */
 *,

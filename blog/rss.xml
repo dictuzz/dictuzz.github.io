@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>tuzzblog</title>
+  <link>https://dictuzz.github.io/blog</link>
+  <description>Blog minimal dengan fokus pada tipografi dan keterbacaan.</description>
+  <language>id</language>
+  <lastBuildDate>Wed, 31 Dec 2025 00:48:57 GMT</lastBuildDate>
+  <atom:link href="https://dictuzz.github.io/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heroic Leadership</title>
+      <link>https://dictuzz.github.io/blog/posts/heroic-leadership.html</link>
+      <guid>https://dictuzz.github.io/blog/posts/heroic-leadership.html</guid>
+      <description>Dalam dunia yang dipenuhi perubahan cepat, disrupsi teknologi, dan tekanan kinerja, banyak model kepemimpinan modern berfokus pada alat, strategi, ser...</description>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lorem ipsum dolor sit amet consectetur</title>
+      <link>https://dictuzz.github.io/blog/posts/lorem-ipsum-dolor.html</link>
+      <guid>https://dictuzz.github.io/blog/posts/lorem-ipsum-dolor.html</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, q...</description>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
+    </item>
+</channel>
+</rss>

@@ -23,6 +23,7 @@ const CONFIG = {
   postsDir: path.join(__dirname, 'posts'),
   outputDir: path.join(__dirname, 'posts'),
   postsJsonPath: path.join(__dirname, 'posts.json'),
+  rssPath: path.join(__dirname, 'rss.xml'),
   templatePath: path.join(__dirname, 'post-template.html'),
   indexPath: path.join(__dirname, 'index.html'),
 };
@@ -228,7 +229,7 @@ function generatePostHtml(post) {
         <nav class="footer-nav">
           <a href="../manifesto.html">Manifesto</a>
           <a href="../contact.html">Kontak</a>
-          <a href="#">RSS</a>
+          <a href="../rss.xml">RSS</a>
         </nav>
       </div>
     </div>
@@ -314,7 +315,42 @@ function build() {
   fs.writeFileSync(CONFIG.postsJsonPath, JSON.stringify(postsJson, null, 2));
   console.log(`\nUpdated posts.json (${posts.length} posts)`);
 
+  // Generate RSS Feed
+  const rssXml = generateRssXml(posts);
+  fs.writeFileSync(CONFIG.rssPath, rssXml);
+  console.log('Generated: rss.xml');
+
   console.log('\nBuild complete!\n');
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// RSS GENERATOR
+// ═══════════════════════════════════════════════════════════════════════════
+
+function generateRssXml(posts) {
+  const rssItems = posts.map(post => {
+    const pubDate = new Date(post.date).toUTCString();
+    return `    <item>
+      <title>${post.title}</title>
+      <link>https://dictuzz.github.io/blog/posts/${post.slug}.html</link>
+      <guid>https://dictuzz.github.io/blog/posts/${post.slug}.html</guid>
+      <description>${post.excerpt}</description>
+      <pubDate>${pubDate}</pubDate>
+    </item>`;
+  }).join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>tuzzblog</title>
+  <link>https://dictuzz.github.io/blog</link>
+  <description>Blog minimal dengan fokus pada tipografi dan keterbacaan.</description>
+  <language>id</language>
+  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+  <atom:link href="https://dictuzz.github.io/blog/rss.xml" rel="self" type="application/rss+xml" />
+${rssItems}
+</channel>
+</rss>`;
 }
 
 // Run build

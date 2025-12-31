@@ -2,9 +2,10 @@
 
 # 🔥 dictuzz.github.io
 
-**Personal Portfolio Hub — Link in Bio • Blog • Resume**
+**The Digital Universe of Benedictus Richard Ricardo**
+Link in Bio • Deep Space Portfolio • Minimalist Blog
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-8b5cf6?style=for-the-badge)](https://dictuzz.github.io)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00F5D4?style=for-the-badge&logoColor=black)](https://dictuzz.github.io)
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222?style=for-the-badge&logo=github)](https://pages.github.com)
 
 ![Preview](assets/images/dictuzz.webp)
@@ -13,103 +14,49 @@
 
 ---
 
-## 🌟 Projects Overview
+## 🌌 Project Overview
 
-| Project | Path | Description |
-|---------|------|-------------|
-| **Link in Bio** | `/` | Premium link hub with glassmorphism & aurora effects |
-| **tuzzblog** | `/blog` | Minimalist blog with typography focus |
-| **Resume** | `/resume` | Interactive multilingual CV (JSON-driven) |
+This repository hosts a comprehensive personal brand ecosystem, unified by the **"Deep Space Luxury"** design language.
 
-### ✨ Key Features
-- **Brand Identity**: Unified "Fire" logo & Blue Verified Badge across all sites.
-- **Config-Driven**: Easily manage links & profile via `config.js`.
-- **Performance**: High Lighthouse scores, zero frameworks.
+| Component | Path | Description | Visual Style |
+|-----------|------|-------------|--------------|
+| **Link in Bio** | `/` | Central hub for all social links | **Glassmorphism** cards on Deep Space gradient |
+| **Portfolio** | `/resume` | Professional CV & Projects | **Premium High-Tech** with interactive typing hero |
+| **tuzzblog** | `/blog` | Personal thoughts & essays | **Clean Minimalist** (Deep Space Light/Dark) |
 
 ---
 
-## ⚡ Quick Start
+## ✨ Key Features
+
+### 🎨 Brand Identity: "Deep Space Luxury"
+A cohesive design system applied across all three sub-projects:
+-   **Primary Colors**: Deep Space (`#0A0E17`), Surface (`#121824`)
+-   **Accents**: Cyan (`#00F5D4`), Electric Purple (`#7B61FF`), Luxury Gold (`#FFB800`)
+-   **Typography**: **Space Grotesk** (Headings) & **Inter** (Body)
+-   **Signature**: Golden-bordered Avatar & Cyan Orbit Ring
+
+### ⚡ Technical Highlights
+-   **Zero Frameworks**: Pure HTML5, CSS3, and Vanilla JavaScript for maximum performance (Lighthouse 100).
+-   **Config-Driven**: 
+    -   Root: Edit `config.js` to update links.
+    -   Resume: Edit `locales/*.json` to update CV content.
+    -   Blog: Edit `posts/*.md` to publish articles.
+-   **Performant**: Critical CSS inlining for instant FCP (First Contentful Paint).
+
+---
+
+## 🚀 Quick Start
 
 ```bash
 # Clone repository
 git clone https://github.com/dictuzz/dictuzz.github.io.git
 cd dictuzz.github.io
 
-# Run locally
+# Run locally (requires Node.js)
 npx -y serve -l 8000
 
 # Open http://localhost:8000
 ```
-
----
-
-## 📝 How to Edit Content
-
-### 1. Link in Bio (Root)
-
-Edit **`config.js`**:
-
-```javascript
-const CONFIG_DATA = {
-    profile: {
-        name: "Your Name",
-        tagline: "Your Profession",
-        bio: "Your bio here.<br>Use <br> for line breaks."
-    },
-    links: [
-        { label: "My Website", url: "https://...", icon: "fas fa-globe" },
-        // Add more links here
-    ],
-    footer: { year: "2025", text: "@yourname" }
-};
-```
-
-**Icons:** Use [FontAwesome 6](https://fontawesome.com/icons) class names (e.g., `fab fa-instagram`).
-
----
-
-### 2. Blog (`/blog`)
-
-**Add a new post:**
-
-1. Create `blog/posts/your-article.md`:
-   ```markdown
-   ---
-   title: Your Article Title
-   date: 2025-01-15
-   category: Essay
-   ---
-   
-   Your content here in Markdown format...
-   ```
-
-2. Run build script:
-   ```bash
-   cd blog
-   node build.js
-   ```
-
-3. Posts auto-loaded from `posts.json` — no HTML editing needed!
-
----
-
-### 3. Resume (`/resume`)
-
-Edit **`resume/locales/en.json`** (or `id.json`, `de.json`):
-
-```json
-{
-  "hero": { "typing": { "dynamicTexts": ["Role 1", "Role 2"] } },
-  "exp": [
-    { "date": "2024–Present", "role": "Job Title", "company": "Company" }
-  ],
-  "proj": [
-    { "title": "Project Name", "desc": "Description" }
-  ]
-}
-```
-
-Changes render automatically — no code editing required.
 
 ---
 
@@ -118,44 +65,34 @@ Changes render automatically — no code editing required.
 | Component | Technologies |
 |-----------|--------------|
 | **Core** | HTML5, Vanilla CSS, Vanilla JavaScript |
-| **Styling** | CSS Custom Properties, Glassmorphism, Animations |
+| **Styling** | CSS Custom Properties (Variables), Glassmorphism, CSS Grid/Flexbox |
+| **Fonts** | Space Grotesk, Outfit, Inter (Google Fonts) |
 | **Icons** | FontAwesome 6 |
-| **Fonts** | Inter, Outfit (Google Fonts) |
-| **Analytics** | Google Analytics 4 |
-
-> **Zero frameworks.** Pure vanilla code for maximum performance.
+| **Analytics** | Google Analytics 4 (Lazy-loaded) |
 
 ---
 
-## 📁 Project Structure
+## 📁 Structure
 
 ```
 dictuzz.github.io/
-├── index.html          # Link in Bio page
-├── config.js           # ⭐ Edit links & profile here
-├── style.css           # Main styles
-├── script.js           # Interactions
-├── assets/images/      # Avatar, favicon
+├── index.html          # Link in Bio (Landing Page)
+├── config.js           # ⭐ Edit landing page links here
+├── style.css           # Deep Space Design System
+├── assets/             # Shared assets (images, fonts)
 │
 ├── blog/               # tuzzblog
-│   ├── index.html      # Blog homepage
-│   ├── posts.json      # ⭐ Post database (auto-generated)
-│   ├── posts/*.md      # ⭐ Write posts here
-│   └── build.js        # Markdown → HTML converter
+│   ├── posts/          # ⭐ Markdown articles
+│   ├── variables.css   # Clean/Minimal Theme Tokens
+│   └── build.js        # Static Site Generator script
 │
-├── resume/             # Interactive CV
-│   ├── index.html      # Resume page
-│   └── locales/*.json  # ⭐ Edit content here
+├── resume/             # Professional Portfolio
+│   ├── locales/        # ⭐ JSON Content (En/Id/De)
+│   ├── css/tokens.css  # Core Design Tokens
+│   └── BRAND_GUIDELINE.md # Official Design Documentation
 │
-├── 404.html            # Custom error page
 └── README.md           # This file
 ```
-
----
-
-## 📄 License
-
-Open source. Feel free to fork, modify, and use.
 
 ---
 

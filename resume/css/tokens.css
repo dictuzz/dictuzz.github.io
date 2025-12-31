@@ -1,0 +1,188 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * DESIGN TOKENS — Centralized CSS Custom Properties
+ * Portfolio Design System v2.0
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+:root {
+   /* ═══════════════════════════════════════════════════════════════════════
+       COLORS — Deep Space Theme
+       ═══════════════════════════════════════════════════════════════════════ */
+
+   /* Backgrounds */
+   --bg-deep: #0A0E17;
+   --bg-surface: #121824;
+   --bg-elevated: #1A2332;
+   --bg-glass: rgba(18, 24, 36, 0.7);
+
+   /* Accent — Cyber Gradient */
+   --accent-cyan: #00F5D4;
+   --accent-purple: #7B61FF;
+   --accent-gold: #FFB800;
+   --accent-glow: rgba(0, 245, 212, 0.3);
+   --accent-glow-purple: rgba(123, 97, 255, 0.3);
+
+   /* Text */
+   --text-primary: #FFFFFF;
+   --text-secondary: #94A3B8;
+   --text-muted: #8B9CB3;
+
+   /* Borders & Effects */
+   --border-glass: rgba(255, 255, 255, 0.08);
+   --border-glow: rgba(0, 245, 212, 0.3);
+   --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
+   --shadow-glow: 0 0 40px rgba(0, 245, 212, 0.15);
+   --shadow-glow-lg: 0 0 80px rgba(0, 245, 212, 0.2);
+
+   /* ═══════════════════════════════════════════════════════════════════════
+       TYPOGRAPHY
+       ═══════════════════════════════════════════════════════════════════════ */
+
+   /* Font Families */
+   --font-display: 'Outfit', 'Space Grotesk', system-ui, sans-serif;
+   --font-body: 'Inter', system-ui, sans-serif;
+
+   /* Type Scale */
+   --text-xs: 0.75rem;
+   --text-sm: 0.875rem;
+   --text-base: 1rem;
+   --text-lg: 1.125rem;
+   --text-xl: 1.25rem;
+   --text-2xl: 1.5rem;
+   --text-3xl: 2rem;
+   --text-4xl: 2.5rem;
+   --text-hero: clamp(3rem, 12vw, 9rem);
+
+   /* ═══════════════════════════════════════════════════════════════════════
+       SPACING (8px Grid)
+       ═══════════════════════════════════════════════════════════════════════ */
+   --space-1: 0.25rem;
+   --space-2: 0.5rem;
+   --space-3: 0.75rem;
+   --space-4: 1rem;
+   --space-6: 1.5rem;
+   --space-8: 2rem;
+   --space-12: 3rem;
+   --space-16: 4rem;
+   --space-20: 5rem;
+   --space-24: 6rem;
+
+   /* ═══════════════════════════════════════════════════════════════════════
+       LAYOUT
+       ═══════════════════════════════════════════════════════════════════════ */
+   --radius-sm: 8px;
+   --radius-md: 12px;
+   --radius-lg: 16px;
+   --radius-xl: 24px;
+   --radius-full: 9999px;
+
+   /* ═══════════════════════════════════════════════════════════════════════
+       TRANSITIONS
+       ═══════════════════════════════════════════════════════════════════════ */
+   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+   --duration-fast: 150ms;
+   --duration-normal: 300ms;
+   --duration-slow: 500ms;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIGHT THEME — Clean Professional
+   ═══════════════════════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+   /* Backgrounds */
+   --bg-deep: #F1F5F9;
+   --bg-surface: #FFFFFF;
+   --bg-elevated: #E2E8F0;
+   --bg-glass: rgba(255, 255, 255, 0.9);
+
+   /* Text — Higher contrast */
+   --text-primary: #0F172A;
+   --text-secondary: #334155;
+   --text-muted: #475569;
+
+   /* Borders & Effects */
+   --border-glass: rgba(15, 23, 42, 0.12);
+   --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.12);
+   --shadow-glow: 0 0 40px rgba(0, 245, 212, 0.15);
+   --shadow-glow-lg: 0 0 80px rgba(0, 245, 212, 0.2);
+
+   /* Accent overrides for better light mode visibility */
+   --accent-glow: rgba(0, 200, 170, 0.4);
+   --accent-glow-purple: rgba(100, 80, 200, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIGHT THEME — Component Overrides
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Navigation hover states - Smooth gradients */
+[data-theme="light"] .nav__link:hover {
+   background: linear-gradient(135deg, rgba(0, 200, 170, 0.08), rgba(0, 0, 0, 0.04));
+   color: var(--text-primary);
+}
+
+[data-theme="light"] .nav__link.active {
+   background: linear-gradient(135deg, rgba(0, 200, 170, 0.25), rgba(0, 180, 150, 0.15));
+   color: #0D9488;
+   box-shadow: 0 2px 8px rgba(0, 200, 170, 0.2);
+}
+
+/* Glass components */
+[data-theme="light"] .glass {
+   background: rgba(255, 255, 255, 0.85);
+   border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .glass--hover:hover {
+   background: rgba(255, 255, 255, 0.95);
+   border-color: rgba(0, 200, 170, 0.3);
+}
+
+/* Premium Skill Tags for Light Theme */
+[data-theme="light"] .tag {
+   background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(0, 200, 170, 0.05));
+   border: 1px solid rgba(15, 118, 110, 0.2);
+   color: #115E59;
+}
+
+[data-theme="light"] .tag::before {
+   background: linear-gradient(135deg,
+         rgba(15, 118, 110, 0.4),
+         rgba(0, 150, 136, 0.3),
+         rgba(255, 184, 0, 0.3));
+   opacity: 0.4;
+}
+
+[data-theme="light"] .tag:hover {
+   background: linear-gradient(135deg, rgba(15, 118, 110, 0.2), rgba(0, 200, 170, 0.12));
+   border-color: rgba(15, 118, 110, 0.4);
+   color: #0F766E;
+   box-shadow: 0 6px 16px rgba(15, 118, 110, 0.2);
+}
+
+/* Buttons */
+[data-theme="light"] .btn--secondary {
+   background: rgba(0, 0, 0, 0.05);
+   color: var(--text-primary);
+}
+
+[data-theme="light"] .btn--secondary:hover {
+   background: rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile nav menu light theme */
+[data-theme="light"] .nav__links {
+   background: rgba(255, 255, 255, 0.98);
+}
+
+/* Timeline and card overrides */
+[data-theme="light"] .timeline__item::before {
+   background: #0F766E;
+   border-color: var(--bg-surface);
+}
+
+[data-theme="light"] .stat-number {
+   color: #0F766E;
+}
