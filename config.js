@@ -18,46 +18,60 @@ const CONFIG_DATA = {
 
     links: [
         {
-            label: "Let's Talk!",
-            url: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ30metKuP1X9heG54IxOgznfw1jGKfjjW5xPtReYATxGnXTZ3vDTi87MmFPgUahljIQgzXndJ9p",
-            icon: "fas fa-calendar-day",
-            style: "primary"
-        },
-        {
-            label: "Read My Blog",
-            url: "https://dictuzz.github.io/blog/",
-            icon: "fas fa-book",
-            style: "primary"
-        },
-        {
-            label: "Send Me an E-Mail",
-            url: "mailto:cadrichardricardo@gmail.com",
-            icon: "fas fa-envelope",
-            style: "primary"
+            label: "Get to Know Me",
+            url: "https://dictuzz.github.io/card/",
+            icon: "fas fa-id-card",
+            style: "primary",
+            category: "Contact"
         },
         {
             label: "Send Me WhatsApp Message",
             url: "https://api.whatsapp.com/send?phone=6285186888630",
             icon: "fab fa-whatsapp",
-            style: "primary"
+            style: "primary",
+            category: "Contact"
+        },
+        {
+            label: "Send Me an E-Mail",
+            url: "mailto:cadrichardricardo@gmail.com",
+            icon: "fas fa-envelope",
+            style: "primary",
+            category: "Contact"
+        },
+        {
+            label: "Schedule our Meeting!",
+            url: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ30metKuP1X9heG54IxOgznfw1jGKfjjW5xPtReYATxGnXTZ3vDTi87MmFPgUahljIQgzXndJ9p",
+            icon: "fas fa-calendar-day",
+            style: "secondary",
+            category: "Contact"
+        },
+        {
+            label: "Read My Blog",
+            url: "https://dictuzz.github.io/blog/",
+            icon: "fas fa-book",
+            style: "secondary",
+            category: "Content"
         },
         {
             label: "Find Me on LinkedIn",
             url: "https://www.linkedin.com/in/dictuzz",
             icon: "fab fa-linkedin",
-            style: "secondary"
+            style: "secondary",
+            category: "Socials"
         },
         {
             label: "Follow My Insta",
             url: "https://www.instagram.com/dictuzz",
             icon: "fab fa-instagram",
-            style: "secondary"
+            style: "secondary",
+            category: "Socials"
         },
         {
             label: "Contribute to My Code",
             url: "https://github.com/dictuzz",
             icon: "fab fa-github",
-            style: "secondary"
+            style: "secondary",
+            category: "Socials"
         }
     ],
 

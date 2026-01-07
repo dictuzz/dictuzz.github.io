@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benedictus Richard Ricardo | Digital Business Card</title>
+    <meta name="description"
+        content="Digital Business Card of Benedictus Richard Ricardo (Dictuzz) - Data Scientist & Creator">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Benedictus Richard Ricardo | Digital Business Card">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="../resume/og-image.png">
+    <meta property="og:description"
+        content="Connect with Benedictus Richard Ricardo (Dictuzz). Data Scientist, Leader, Creator.">
+    <meta property="og:url" content="https://dictuzz.github.io/card/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Benedictus Richard Ricardo | Digital Business Card">
+    <meta name="twitter:description"
+        content="Connect with Benedictus Richard Ricardo (Dictuzz). Data Scientist, Leader, Creator.">
+    <meta name="twitter:image" content="https://dictuzz.github.io/resume/og-image.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch Theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <main class="card-scene">
+        <!-- The 3D Card Object -->
+        <div class="business-card" onclick="this.classList.toggle('is-flipped')">
+            <div class="card-inner">
+
+                <!--FRONT FACE (Contact Info) -->
+                <div class="card-face card-front">
+                    <div class="card-header">
+                        <div class="avatar-container">
+                            <img src="../resume/Aku.webp" alt="Profile" class="avatar">
+                        </div>
+                        <div class="brand-logo">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h1 class="name">Benedictus Richard<br>Ricardo</h1>
+                        <p class="tagline">Data Scientist • Leader • Creator</p>
+
+                        <div class="divider"></div>
+
+                        <div class="contact-info">
+                            <a href="mailto:cadrichardricardo@gmail.com" class="contact-item"
+                                onclick="event.stopPropagation()">
+                                <i class="fas fa-envelope"></i>
+                                <span>cadrichardricardo@gmail.com</span>
+                            </a>
+                            <a href="https://dictuzz.github.io/resume/" class="contact-item"
+                                onclick="event.stopPropagation()">
+                                <i class="fas fa-globe"></i>
+                                <span>dictuzz.github.io/resume/</span>
+                            </a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Bandung,+Indonesia" target="_blank"
+                                class="contact-item" onclick="event.stopPropagation()">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bandung, Indonesia</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="social-row">
+                            <!-- prevent flip when clicking links -->
+                            <a href="https://www.linkedin.com/in/dictuzz" target="_blank"
+                                onclick="event.stopPropagation()"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/dictuzz" target="_blank" onclick="event.stopPropagation()"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://www.instagram.com/dictuzz" target="_blank"
+                                onclick="event.stopPropagation()"><i class="fab fa-instagram"></i></a>
+                            <a href="https://api.whatsapp.com/send?phone=6285186888630" target="_blank"
+                                onclick="event.stopPropagation()"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Background Decoration -->
+                    <div class="card-bg-decoration">
+                        <div class="circle c1"></div>
+                        <div class="circle c2"></div>
+                    </div>
+                </div>
+
+                <!-- BACK FACE (Bio / About Me) -->
+                <div class="card-face card-back">
+                    <div class="card-header">
+                        <div class="brand-logo">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h2 class="sub-heading">About Me</h2>
+                        <div class="divider"></div>
+                        <p class="bio-text">
+                            I am a passionate <strong>Data Scientist</strong> and <strong>Content Creator</strong> based
+                            in Bandung.
+                            <br><br>
+                            I specialize in transforming complex data into actionable insights and building digital
+                            experiences that inspire.
+                            When I'm not coding, I'm likely sharing tech tips or exploring new coffee spots.
+                        </p>
+                    </div>
+
+                    <div class="card-footer center-footer">
+                        <button class="action-btn" onclick="event.stopPropagation(); shareCard()">
+                            <i class="fas fa-share-alt"></i> Share Profile
+                        </button>
+                    </div>
+
+                    <!-- Background Decoration -->
+                    <div class="card-bg-decoration">
+                        <div class="circle c3"></div>
+                        <div class="circle c4"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function shareCard() {
+            const shareData = {
+                title: 'Benedictus Richard Ricardo',
+                text: 'Check out the professional portfolio of Benedictus Richard Ricardo (Dictuzz).',
+                url: 'https://dictuzz.github.io/resume/'
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(shareData.url);
+                alert('Resume URL copied to clipboard: ' + shareData.url);
+            }
+        }
+
+        // 1. THEME TOGGLER
+        const themeBtn = document.getElementById('theme-toggle');
+        const icon = themeBtn.querySelector('i');
+        let isDark = true;
+
+        themeBtn.addEventListener('click', () => {
+            isDark = !isDark;
+            document.body.classList.toggle('light-mode');
+            icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // 2. AMBIENT FLOATING ORBS (Simple, Elegant, Artistic)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let orbs = [];
+
+        window.addEventListener('resize', resize);
+
+        // Mouse for gentle parallax only
+        let mouse = { x: 0, y: 0 };
+        window.addEventListener('mousemove', e => {
+            // Normalized -1 to 1
+            mouse.x = (e.clientX / width) * 2 - 1;
+            mouse.y = (e.clientY / height) * 2 - 1;
+            handleTilt(e.clientX, e.clientY);
+        });
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initOrbs();
+        }
+
+        class Orb {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.radius = Math.random() * 200 + 150; // Huge
+                // Very slow movement
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.color = this.getRandomColor();
+                this.angle = Math.random() * Math.PI * 2;
+            }
+
+            getRandomColor() {
+                // Colors: Cyan, Purple, Gold
+                const colors = [
+                    { r: 0, g: 245, b: 212 }, // Cyan
+                    { r: 123, g: 97, b: 255 }, // Purple
+                    { r: 255, g: 184, b: 0 }, // Gold
+                    { r: 50, g: 50, b: 100 }   // Deep Blue
+                ];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            draw() {
+                ctx.beginPath();
+                // Create gradient for soft edge
+                let gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+
+                // Opacity handling for dark/light
+                let alphaCore = isDark ? 0.2 : 0.15;
+                let alphaEdge = 0;
+
+                let c = this.color;
+                gradient.addColorStop(0, `rgba(${c.r}, ${c.g}, ${c.b}, ${alphaCore})`);
+                gradient.addColorStop(1, `rgba(${c.r}, ${c.g}, ${c.b}, ${alphaEdge})`);
+
+                ctx.fillStyle = gradient;
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                // Subtle Parallax with Mouse
+                // Target velocity
+                let tx = this.vx + (mouse.x * -0.5); // Move lightly opposite to mouse
+                let ty = this.vy + (mouse.y * -0.5);
+
+                this.x += tx;
+                this.y += ty;
+
+                // Bounce (Soft)
+                if (this.x < -this.radius) this.x = width + this.radius;
+                if (this.x > width + this.radius) this.x = -this.radius;
+                if (this.y < -this.radius) this.y = height + this.radius;
+                if (this.y > height + this.radius) this.y = -this.radius;
+
+                // Color Morph (Optional/Advanced, keeping simple)
+            }
+        }
+
+        function initOrbs() {
+            orbs = [];
+            // FEW items is key for elegance
+            let count = 6;
+            for (let i = 0; i < count; i++) {
+                orbs.push(new Orb());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Composite mode for blending colors nicely
+            // 'screen' makes them glow when overlapping (Light addition)
+            // 'multiply' would create darkness
+            ctx.globalCompositeOperation = isDark ? 'screen' : 'multiply';
+
+            for (let i = 0; i < orbs.length; i++) {
+                orbs[i].update();
+                orbs[i].draw();
+            }
+
+            // Reset composite
+            ctx.globalCompositeOperation = 'source-over';
+
+            requestAnimationFrame(animate);
+        }
+
+        // TILT
+        const card = document.querySelector('.business-card');
+        function handleTilt(clientX, clientY) {
+            if (window.innerWidth < 768) return;
+            const x = (window.innerWidth / 2 - clientX) / 30;
+            const y = (window.innerHeight / 2 - clientY) / 30;
+            const isFlipped = card.classList.contains('is-flipped');
+            let rotateY = isFlipped ? 180 + x : x;
+            card.style.transform = `rotateY(${rotateY}deg) rotateX(${y}deg)`;
+        }
+
+        document.addEventListener('mouseleave', () => {
+            const isFlipped = card.classList.contains('is-flipped');
+            card.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+            mouse.x = 0;
+            mouse.y = 0;
+        });
+
+        resize();
+        animate();
+
+    </script>
+</body>
+
+</html>

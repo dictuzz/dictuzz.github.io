@@ -509,27 +509,84 @@
         if (bioEl) bioEl.innerHTML = profile.bio;
 
         // 2. Links
+        // 2. Links & Categories
         const linkList = document.getElementById('link-list');
+        const tabsContainer = document.getElementById('tabs-container');
+
         if (linkList) {
-          linkList.innerHTML = '';
-          CONFIG_DATA.links.forEach(link => {
-            // Extract brand from icon (e.g. "fa-whatsapp" -> "whatsapp")
-            const brandMatch = link.icon.match(/fa-([a-z]+)/);
-            const brand = brandMatch ? brandMatch[1] : 'default';
+          // Extract unique categories
+          const categories = [...new Set(CONFIG_DATA.links.map(link => link.category).filter(Boolean))];
 
-            const li = document.createElement('li');
-            const isSecondary = link.style === 'secondary';
-            const secondaryClass = isSecondary ? 'link-button--secondary' : '';
+          // Helper to render links
+          const renderLinks = (filterCategory) => {
+            // Clear current list with animation reset if needed
+            linkList.innerHTML = '';
 
-            li.innerHTML = `
-              <a href="${link.url}" class="link-button ${secondaryClass} hover-trigger" target="_blank" rel="noopener noreferrer" data-brand="${brand}">
-                <i class="${link.icon} link-icon"></i>
-                <span class="link-label">${link.label}</span>
-                <i class="fas fa-arrow-right link-arrow"></i>
-              </a>
-            `;
-            linkList.appendChild(li);
-          });
+            let filteredLinks = CONFIG_DATA.links;
+            if (filterCategory && filterCategory !== 'All') {
+              filteredLinks = CONFIG_DATA.links.filter(link => link.category === filterCategory);
+            }
+
+            // If "Option for categorized or uncategorized" implies a toggle, 
+            // we can support an "All" view. The UI suggests tabs. 
+            // If we are in "All" mode, we just show everything.
+            // If specific category, show only those.
+
+            filteredLinks.forEach((link, index) => {
+              // Extract brand from icon (e.g. "fa-whatsapp" -> "whatsapp")
+              const brandMatch = link.icon.match(/fa-([a-z]+)/);
+              const brand = brandMatch ? brandMatch[1] : 'default';
+
+              const li = document.createElement('li');
+              const isSecondary = link.style === 'secondary';
+              const secondaryClass = isSecondary ? 'link-button--secondary' : '';
+
+              // Animation delay staggering
+              li.style.animationDelay = `${index * 100}ms`;
+              li.classList.add('fade-in-up'); // Ensure we have this class or rely on default
+
+              li.innerHTML = `
+                  <a href="${link.url}" class="link-button ${secondaryClass} hover-trigger" target="_blank" rel="noopener noreferrer" data-brand="${brand}">
+                    <i class="${link.icon} link-icon"></i>
+                    <span class="link-label">${link.label}</span>
+                    <i class="fas fa-arrow-right link-arrow"></i>
+                  </a>
+                `;
+              linkList.appendChild(li);
+            });
+
+            // Re-init magnetic buttons for new elements
+            initMagneticButtons();
+            initSpotlights();
+          };
+
+          // Render Tabs if categories exist
+          if (tabsContainer && categories.length > 0) {
+            // Add "All" category at the beginning
+            const allCategories = ['All', ...categories];
+            let activeCategory = 'All'; // Default
+
+            const renderTabs = () => {
+              tabsContainer.innerHTML = '';
+              allCategories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = `tab-button ${cat === activeCategory ? 'active' : ''}`;
+                btn.textContent = cat;
+                btn.addEventListener('click', () => {
+                  activeCategory = cat;
+                  renderTabs(); // Re-render tabs to update active state
+                  renderLinks(cat);
+                });
+                tabsContainer.appendChild(btn);
+              });
+            };
+
+            renderTabs();
+            renderLinks(activeCategory);
+          } else {
+            // No categories or tabs container missing, just render all
+            renderLinks();
+          }
         }
 
         // 3. Footer
