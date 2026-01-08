@@ -1,16 +1,28 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * LINK IN BIO — ULTRA-LIGHT.JS
+ * LINK IN BIO: ULTRA-LIGHT.JS
  * Powered by Vanilla JS & Canvas API (No GSAP)
+ * 
+ * @fileoverview Main application script for Link in Bio landing page
+ * @author dictuzz
+ * @version 2.0
+ * 
+ * SECTIONS:
+ * 1. Configuration - Canvas and animation settings
+ * 2. Background Engines - DarkAurora (dark mode) & LightNetwork (light mode)
+ * 3. UI Interactions - Magnetic buttons, spotlights, haptics
+ * 4. Theme Switcher - Dark/light mode with system preference support
+ * 5. Content Renderer - Config-driven DOM generation
+ * 6. Initialization - Bootstrap and event binding
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 (function () {
   'use strict';
 
-  // ═══════════════════════════════════════════
-  // CONFIGURATION
-  // ═══════════════════════════════════════════
+  // ╔══════════════════════════════════════════════════════════════════════╗
+  // ║  SECTION 1: CONFIGURATION                                            ║
+  // ╚══════════════════════════════════════════════════════════════════════╝
   const CONFIG = {
     cursorBlinkDuration: 530,
 
@@ -38,9 +50,13 @@
   let canvas, ctx, width, height;
   let mouse = { x: -500, y: -500 };
 
-  // ═══════════════════════════════════════════
-  // 1. BACKGROUND MANAGER (Dual Engine)
-  // ═══════════════════════════════════════════
+  // ╔══════════════════════════════════════════════════════════════════════╗
+  // ║  SECTION 2: BACKGROUND MANAGER & ENGINES                             ║
+  // ╚══════════════════════════════════════════════════════════════════════╝
+
+  /**
+   * @description Manages dual background animation engines (Aurora/Network)
+   */
   const BackgroundManager = {
     activeEngine: null,
     animationId: null,
@@ -243,59 +259,13 @@
     }
   }
 
-  class NetParticle {
-    constructor(x, y, isTemp = false) {
-      this.isTemp = isTemp;
-      this.x = x || Math.random() * width;
-      this.y = y || Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.5;
-      this.vy = (Math.random() - 0.5) * 0.5;
-      this.size = Math.random() * 2 + 1;
-      this.color = CONFIG.network.colors[Math.floor(Math.random() * CONFIG.network.colors.length)];
-      this.life = 1.0;
-    }
+  // ╔══════════════════════════════════════════════════════════════════════╗
+  // ║  SECTION 3: UI INTERACTIONS                                          ║
+  // ╚══════════════════════════════════════════════════════════════════════╝
 
-    update() {
-      const dx = mouse.x - this.x;
-      const dy = mouse.y - this.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-
-      if (dist < CONFIG.network.repoelDist) {
-        const forceDirectionX = dx / dist;
-        const forceDirectionY = dy / dist;
-        const force = (CONFIG.network.repoelDist - dist) / CONFIG.network.repoelDist;
-        const directionX = forceDirectionX * force * 2;
-        const directionY = forceDirectionY * force * 2;
-        this.vx -= directionX;
-        this.vy -= directionY;
-      }
-
-      this.x += this.vx;
-      this.y += this.vy;
-
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
-
-      if (this.isTemp) {
-        this.life -= 0.02;
-        if (this.life <= 0) this.x = -9999;
-      }
-    }
-
-    draw() {
-      if (this.x < -100) return;
-      ctx.beginPath();
-      ctx.fillStyle = this.color;
-      ctx.globalAlpha = this.isTemp ? this.life : 0.6;
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.globalAlpha = 1.0;
-    }
-  }
-
-  // ═══════════════════════════════════════════
-  // 2. MAGNETIC BUTTONS (Vanilla JS)
-  // ═══════════════════════════════════════════
+  /**
+   * @description Initialize magnetic hover effect on link buttons
+   */
   function initMagneticButtons() {
     if (prefersReducedMotion || 'ontouchstart' in window) return;
 
@@ -340,9 +310,13 @@
     });
   }
 
-  // ═══════════════════════════════════════════
-  // 3. THEME SWITCHER
-  // ═══════════════════════════════════════════
+  // ╔══════════════════════════════════════════════════════════════════════╗
+  // ║  SECTION 4: THEME SWITCHER                                           ║
+  // ╚══════════════════════════════════════════════════════════════════════╝
+
+  /**
+   * @description Initialize theme toggle with system preference detection
+   */
   function initThemeSwitcher() {
     const toggleBtn = document.getElementById('theme-toggle');
     const icon = document.getElementById('theme-icon');
@@ -421,9 +395,14 @@
     });
   }
 
-  // ═══════════════════════════════════════════
-  // 4. TYPING CLASS (Unified from Resume)
-  // ═══════════════════════════════════════════
+  // ╔══════════════════════════════════════════════════════════════════════╗
+  // ║  SECTION 5: TYPING ANIMATION                                         ║
+  // ╚══════════════════════════════════════════════════════════════════════╝
+
+  /**
+   * @class Typer
+   * @description Typewriter animation effect for text elements
+   */
   class Typer {
     constructor(el, texts, speed = 50) {
       this.el = el;
@@ -483,9 +462,9 @@
   // INIT
   // ═══════════════════════════════════════════
   document.addEventListener('DOMContentLoaded', () => {
-    // ═══════════════════════════════════════════
-    // 0. CONTENT RENDERER (Config-Driven)
-    // ═══════════════════════════════════════════
+    // ╔════════════════════════════════════════════════════════════════════╗
+    // ║  SECTION 6: CONTENT RENDERER (Config-Driven)                        ║
+    // ╚════════════════════════════════════════════════════════════════════╝
     const ContentRenderer = {
       init() {
         if (typeof CONFIG_DATA === 'undefined') {

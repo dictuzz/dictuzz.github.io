@@ -8,7 +8,7 @@
 
     // Theme Management
     const ThemeManager = {
-        STORAGE_KEY: 'tuzzblog-theme',
+        STORAGE_KEY: 'dictuzz-theme',
 
         init() {
             const savedTheme = localStorage.getItem(this.STORAGE_KEY);

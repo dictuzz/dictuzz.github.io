@@ -1,83 +1,102 @@
 # Benedictus Richard Ricardo - Deep Space Portfolio
 
-A modern, high-performance personal portfolio website designed with a premium **"Deep Space Luxury"** aesthetic. Built to showcase data science projects, leadership experience, and professional skills with a focus on speed, accessibility, and analytics.
+A modern, high-performance personal portfolio website featuring the premium **"Deep Space Luxury"** design system. Built to showcase data science expertise, leadership experience, and professional skills.
+
+> Part of the [dictuzz.github.io](https://dictuzz.github.io) ecosystem
 
 ![Portfolio Preview](og-image.png)
 
 ---
 
-## 🌌 "Deep Space Luxury" Design System
+## 🌌 Design System
 
-The portfolio is built on a custom design language that combines the mystery of deep space with the precision of cyber aesthetics.
+The portfolio implements the "Deep Space Luxury" visual language with these core elements:
 
 ### Color Palette
 
-| Variable | Name | Color | Usage |
-|----------|------|-------|-------|
-| `--color-bg-base` | **Deep Space** | `#0A0E17` | Infinite background void |
-| `--color-bg-surface`| **Surface** | `#121824` | Cards and navigation background |
-| `--accent-cyan` | **Cyber Cyan** | `#00F5D4` | Primary actions, links, orbital rings |
-| `--accent-purple` | **Electric Purple** | `#7B61FF` | Secondary accents, deep gradients |
-| `--accent-gold` | **Luxury Gold** | `#FFB800` | Awards, premium borders, highlights |
+| Token | Name | Value | Usage |
+|-------|------|-------|-------|
+| `--bg-deep` | **Deep Space** | `#0A0E17` | Background (dark) |
+| `--bg-surface` | **Surface** | `#121824` | Cards, nav |
+| `--accent-cyan` | **Cyber Cyan** | `#00F5D4` | Primary accent |
+| `--accent-purple` | **Electric Purple** | `#7B61FF` | Secondary accent |
+| `--accent-gold` | **Luxury Gold** | `#FFB800` | Highlights |
+
+### Light Mode
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--bg-deep` | `#E2E8F0` | Slate background |
+| `--text-primary` | `#0F172A` | Dark text |
 
 ### Typography
 
-*   **Display / Headings**: **Outfit** & **Space Grotesk**
-    *   Used for Names, Numbers, and Section Titles.
-    *   Character: Modern, geometric, authoritative.
-*   **Body Copy**: **Inter**
-    *   Used for paragraphs and long descriptions.
-    *   Character: Neutral, highly legible.
+| Role | Font |
+|------|------|
+| **Headings** | Outfit, Space Grotesk |
+| **Body** | Inter |
 
-### Key Visuals
-*   **Glassmorphism**: Translucent surfaces `rgba(18, 24, 36, 0.7)` with blur.
-*   **Neon Glows**: Colored shadows rather than black shadows for depth.
-*   **Premium Avatar**: Gold-bordered profile with rotating Cyan orbit.
+### Theme Synchronization
+
+The resume uses the unified theme key `dictuzz-theme`:
+
+```javascript
+localStorage.getItem('dictuzz-theme') // 'dark' | 'light'
+```
+
+This ensures theme consistency across the entire ecosystem.
 
 ---
 
 ## ⚡ Key Features
 
-### 1. Dynamic Core
-*   **JSON-Driven Content**: All text (Experience, Projects, Bio) is separated from code in `locales/en.json` (and `id`, `de`).
-*   **Auto-Rendering**: Adding a new project or job experience involves editing a single JSON file; the DOM updates automatically.
-*   **Internationalization (i18n)**: Seamlessly supports English, Indonesian, and German with auto-detection of browser language.
+### Dynamic Content
+- **JSON-Driven**: All text in `locales/*.json`
+- **i18n Support**: English, Indonesian, German
+- **Auto-Detection**: Browser language preference
 
-### 2. High Performance
-*   **Zero Frameworks**: Pure Vanilla JS/CSS ensuring lightning-fast loads.
-*   **Critical CSS**: Above-the-fold styles (Hero, Nav) are inlined for instant rendering.
-*   **Lazy Loading**: Non-critical assets load asynchronously.
+### Performance
+- **Zero Frameworks**: Vanilla JS/CSS
+- **Lighthouse 100**: Optimized for speed
+- **Critical CSS**: Inlined for instant rendering
 
-### 3. Smart Analytics
-*   **Google Analytics 4**: Tracking of Resume Downloads, Language Switches, and Profile interactions.
+### Interactive
+- **Typing Animation**: Rotating tagline effect
+- **Theme Toggle**: Dark/light with persistence
+- **Smooth Scroll**: Anchor navigation
+- **GA4 Analytics**: Track interactions
 
 ---
 
 ## 🛠️ Tech Stack
 
-*   **Core**: HTML5, CSS3, Vanilla JavaScript (ES6+).
-*   **Architecture**: Fetch API-based i18n, Component Rendering.
-*   **Styling**: Vanilla CSS3 (Custom Properties, Glassmorphism, Animations).
-*   **Assets**: FontAwesome 6 (Icons), Google Fonts (Outfit, Space Grotesk, Inter).
+| Category | Technology |
+|----------|------------|
+| **Core** | HTML5, CSS3, JavaScript (ES6+) |
+| **Styling** | CSS Custom Properties, Glassmorphism |
+| **Fonts** | Google Fonts (Outfit, Space Grotesk, Inter) |
+| **Icons** | FontAwesome 6 |
 
 ---
 
 ## 🚀 Getting Started
 
-### Installation
+### Local Development
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/dictuzz/dictuzz.github.io.git
-    cd dictuzz.github.io/resume
-    ```
+```bash
+# From project root
+npx -y serve -l 8000
 
-2.  **Run locally**:
-    ```bash
-    npx -y serve -l 8000
-    ```
+# Open
+http://localhost:8000/resume/
+```
 
-3.  **Open**: `http://localhost:8000/resume/`
+### Language Selection
+
+Use URL parameter or button:
+- `?lang=en` - English
+- `?lang=id` - Indonesian
+- `?lang=de` - German
 
 ---
 
@@ -85,40 +104,97 @@ The portfolio is built on a custom design language that combines the mystery of 
 
 ```
 resume/
-├── index.html          # Main HTML structure
-├── style.css           # Component styles
-├── script.js           # Logic: i18n, Rendering, Animations
+├── index.html              # Main HTML structure
+├── script.js               # i18n, animations, theme
+├── style.css               # Component styles
 ├── css/
-│   ├── tokens.css      # ⭐ DESIGN TOKENS (Edit colors here)
-│   └── animations.css  # Keyframes
-├── locales/            # ⭐ CONTENT DATA
-│   ├── en.json         # English Data
-│   ├── id.json         # Indonesian Data
-│   └── de.json         # German Data
-├── BRAND_GUIDELINE.md  # Detailed Design Documentation
-└── README.md           # This documentation
+│   └── tokens.css          # ⭐ Design tokens (colors, spacing)
+├── locales/                # ⭐ Content data
+│   ├── en.json             # English
+│   ├── id.json             # Indonesian
+│   └── de.json             # German
+├── BRAND_GUIDELINE.md      # Detailed design documentation
+└── README.md               # This file
 ```
 
 ---
 
-## 📝 How to Update Content
+## 📝 Content Management
 
-### Adding a Job or Project
-Open `locales/en.json` (and `id.json`/`de.json`) and add a new object to the array.
+### Editing Content
 
-**Example (Experience):**
+All content is in `locales/*.json`. Edit the appropriate language file:
+
 ```json
-"exp": [
+{
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Benedictus Richard Ricardo",
+    "typing": ["Data Scientist", "Content Creator", "MC"]
+  },
+  "experience": [
     {
-        "date": "Jan 2025 – Present",
-        "role": "Data Scientist",
-        "company": "Deep Space Corp",
-        "details": ["Built AI models", "Improved efficiency by 200%"]
+      "title": "Data Scientist",
+      "company": "Company Name",
+      "date": "2024 - Present",
+      "bullets": ["Achievement 1", "Achievement 2"]
     }
-]
+  ]
+}
+```
+
+### Adding a Language
+
+1. Create `locales/xx.json` (copy from `en.json`)
+2. Add to `SUPPORTED_LANGS` in `script.js`:
+   ```javascript
+   const SUPPORTED_LANGS = ['en', 'id', 'de', 'xx'];
+   ```
+3. Add language button in `index.html`
+
+---
+
+## JavaScript Modules
+
+The `script.js` contains these features:
+
+| Feature | Function |
+|---------|----------|
+| Theme Toggle | `initTheme()`, `toggleTheme()` |
+| i18n System | `loadLanguage(lang)`, `applyTranslations()` |
+| Typing Effect | `Typer` class |
+| Rendering | `renderExperience()`, `renderProjects()`, `renderSkills()` |
+| Analytics | `trackEvent()` integration with GA4 |
+
+---
+
+## Design Tokens
+
+Edit `css/tokens.css` to customize the design:
+
+```css
+:root {
+  /* Colors */
+  --bg-deep: #0A0E17;
+  --accent-cyan: #00F5D4;
+  
+  /* Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Spacing (8px grid) */
+  --space-4: 1rem;
+  --space-8: 2rem;
+  
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
 ```
 
 ---
 
 ## License
-© 2025 Benedictus Richard Ricardo. All Rights Reserved.
+
+© 2026 Benedictus Richard Ricardo. All Rights Reserved.
+
+*Last updated: January 2026*

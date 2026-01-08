@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * BENEDICTUS RICHARD RICARDO — Portfolio v2.0 (Modular)
+ * BENEDICTUS RICHARD RICARDO: Portfolio v2.0 (Modular)
  * Modern Glassmorphism Design System
  * Performance-optimized, Mobile-first, Zero Dependencies
  * ═══════════════════════════════════════════════════════════════════════════
@@ -74,7 +74,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   10. EXPERIENCE TIMELINE — Premium Luxury Edition
+   10. EXPERIENCE TIMELINE: Premium Luxury Edition
    ═══════════════════════════════════════════════════════════════════════════ */
 .timeline {
     position: relative;
@@ -464,7 +464,7 @@
     gap: var(--space-2);
 }
 
-/* Premium Skill Tags — Luxury Glass Edition */
+/* Premium Skill Tags: Luxury Glass Edition */
 .tag {
     padding: 8px 16px;
     background: linear-gradient(135deg,

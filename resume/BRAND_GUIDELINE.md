@@ -1,5 +1,5 @@
 # Brand Guidelines
-**Benedictus Richard Ricardo — Portfolio**
+**Benedictus Richard Ricardo: Portfolio**
 
 > **Vision**: A "Deep Space Luxury" aesthetic that combines professional data science authority with modern, dynamic, and elegant design. The interface feels alive, premium, and technically sophisticated.
 
@@ -90,4 +90,4 @@ All motion should be **smooth, fluid, and purposeful**.
 
 ---
 
-*Document Version 1.0 — Updated Dec 2025*
+*Document Version 1.0, Updated Dec 2025*

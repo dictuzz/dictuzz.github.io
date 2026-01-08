@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * CONFIGURATION — LINK IN BIO
+ * CONFIGURATION: LINK IN BIO
  * Edit this file to change your profile, links, and icons.
  * No HTML knowledge required.
  * ═══════════════════════════════════════════════════════════════════════════

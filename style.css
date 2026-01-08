@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   LINK IN BIO — STYLE.CSS
+   LINK IN BIO: STYLE.CSS
    A premium, accessible design system implementation
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -10,18 +10,18 @@
   /* ═══════════════════════════════════════════
      DEEP SPACE THEME (Unified Brand)
      ═══════════════════════════════════════════ */
-  /* Colors — Background */
+  /* Colors: Background */
   --color-bg-base: #0A0E17;
   --color-bg-surface: #121824;
   --color-bg-elevated: #1A2332;
   --color-bg-glass: rgba(18, 24, 36, 0.7);
 
-  /* Colors — Text */
+  /* Colors: Text */
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #94A3B8;
   --color-text-muted: #8B9CB3;
 
-  /* Colors — Accent (Cyber Palette) */
+  /* Colors: Accent (Cyber Palette) */
   --color-accent: #00F5D4;
   /* Cyber Cyan as primary interaction */
   --accent-cyan: #00F5D4;
@@ -32,7 +32,7 @@
   --color-accent-glow: rgba(0, 245, 212, 0.3);
   --color-accent-glow-purple: rgba(123, 97, 255, 0.3);
 
-  /* Colors — Borders */
+  /* Colors: Borders */
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-hover: rgba(0, 245, 212, 0.3);
   --color-focus-ring: #00F5D4;
@@ -44,11 +44,11 @@
   --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
   --backdrop-blur: 20px;
 
-  /* Typography — Fonts */
+  /* Typography: Fonts */
   --font-display: 'Outfit', 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  /* Typography — Sizes */
+  /* Typography: Sizes */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -58,11 +58,11 @@
   --text-3xl: 2rem;
   --text-4xl: 2.5rem;
 
-  /* Typography — Line Heights */
+  /* Typography: Line Heights */
   --leading-tight: 1.1;
   --leading-normal: 1.6;
 
-  /* Typography — Weights */
+  /* Typography: Weights */
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-semibold: 600;
@@ -111,23 +111,23 @@
    LIGHT MODE (Clean Professional)
    ═══════════════════════════════════════════ */
 [data-theme="light"] {
-  /* Colors — Background */
+  /* Colors: Background */
   --color-bg-base: #F1F5F9;
   --color-bg-surface: #FFFFFF;
   --color-bg-elevated: #E2E8F0;
   --color-bg-glass: rgba(255, 255, 255, 0.9);
 
-  /* Colors — Text */
+  /* Colors: Text */
   --color-text-primary: #0F172A;
   --color-text-secondary: #334155;
   --color-text-muted: #475569;
 
-  /* Colors — Accent */
+  /* Colors: Accent */
   --color-accent: #00F5D4;
   --color-accent-hover: #0F766E;
   --color-accent-glow: rgba(0, 200, 170, 0.4);
 
-  /* Colors — Borders */
+  /* Colors: Borders */
   --color-border: rgba(15, 23, 42, 0.12);
   --color-border-hover: rgba(0, 200, 170, 0.3);
   --color-focus-ring: #00F5D4;
@@ -257,7 +257,7 @@ button {
 
 
 /* ═══════════════════════════════════════════
-   4. LAYOUT — CONTAINER
+   4. LAYOUT: CONTAINER
    ═══════════════════════════════════════════ */
 .container {
   width: 100%;
@@ -660,7 +660,7 @@ img {
   color: var(--color-accent-glow);
 }
 
-/* Secondary links — more subtle */
+/* Secondary links - more subtle */
 .links-section--secondary {
   margin-top: calc(-1 * var(--space-3));
 }
@@ -729,7 +729,8 @@ img {
   font-weight: var(--weight-medium);
   color: var(--color-text-secondary);
   background: transparent;
-  border: 1px solid transparent; /* Prevent layout shift */
+  border: 1px solid transparent;
+  /* Prevent layout shift */
   transition: all 0.3s ease;
   cursor: pointer;
   white-space: nowrap;

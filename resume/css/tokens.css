@@ -1,13 +1,13 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * DESIGN TOKENS — Centralized CSS Custom Properties
+ * DESIGN TOKENS: Centralized CSS Custom Properties
  * Portfolio Design System v2.0
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 :root {
    /* ═══════════════════════════════════════════════════════════════════════
-       COLORS — Deep Space Theme
+       COLORS: Deep Space Theme
        ═══════════════════════════════════════════════════════════════════════ */
 
    /* Backgrounds */
@@ -16,7 +16,7 @@
    --bg-elevated: #1A2332;
    --bg-glass: rgba(18, 24, 36, 0.7);
 
-   /* Accent — Cyber Gradient */
+   /* Accent: Cyber Gradient */
    --accent-cyan: #00F5D4;
    --accent-purple: #7B61FF;
    --accent-gold: #FFB800;
@@ -88,16 +88,16 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   LIGHT THEME — Clean Professional
+   LIGHT THEME: Clean Professional
    ═══════════════════════════════════════════════════════════════════════════ */
 [data-theme="light"] {
    /* Backgrounds */
-   --bg-deep: #F1F5F9;
+   --bg-deep: #E2E8F0;
    --bg-surface: #FFFFFF;
    --bg-elevated: #E2E8F0;
    --bg-glass: rgba(255, 255, 255, 0.9);
 
-   /* Text — Higher contrast */
+   /* Text: Higher contrast */
    --text-primary: #0F172A;
    --text-secondary: #334155;
    --text-muted: #475569;
@@ -114,7 +114,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   LIGHT THEME — Component Overrides
+   LIGHT THEME: Component Overrides
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* Navigation hover states - Smooth gradients */

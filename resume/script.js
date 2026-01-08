@@ -1,6 +1,6 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * BENEDICTUS RICHARD RICARDO — Portfolio v2.0
+ * BENEDICTUS RICHARD RICARDO: Portfolio v2.0
  * Minimalist JavaScript Core (<2KB minified)
  * Performance-optimized, Zero Dependencies
  * ═══════════════════════════════════════════════════════════════════════════
@@ -19,7 +19,7 @@ let currentLang = DEFAULT_LANG;
 let langData = null;
 
 // ═══════════════════════════════════════════════════════════════════════════
-// 0. THEME TOGGLE — Dark/Light Mode
+// 0. THEME TOGGLE: Dark/Light Mode
 // ═══════════════════════════════════════════════════════════════════════════
 function initTheme() {
     const stored = localStorage.getItem('theme');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ═══════════════════════════════════════════════════════════════════════════
-// 1. INTERSECTION OBSERVER — Reveal animations
+// 1. INTERSECTION OBSERVER: Reveal animations
 // ═══════════════════════════════════════════════════════════════════════════
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -92,7 +92,7 @@ $('.nav__toggle')?.addEventListener('click', () => {
 });
 
 // ═══════════════════════════════════════════════════════════════════════════
-// 4. SCROLL SPY — Active nav state
+// 4. SCROLL SPY: Active nav state
 // ═══════════════════════════════════════════════════════════════════════════
 const sections = $$('section[id]');
 const navLinks = $$('.nav__link');

@@ -1,4 +1,4 @@
-{
+﻿{
     "hero": {
         "tagline": "Turning Raw Data into Strategic Decisions",
         "typing": {
@@ -33,7 +33,7 @@
         "contact": "CONTACT"
     },
     "summary": {
-        "text": "I automate what others do manually—saving 12+ hours weekly. I've led 34-member councils, coordinated events for 500+, and now I'm earning my B.Sc. in Data Science to formalize my passion: transforming raw data into strategic decisions."
+        "text": "I automate what others do manually - saving 12+ hours weekly. I've led 34-member councils, coordinated events for 500+, and now I'm earning my B.Sc. in Data Science to formalize my passion: transforming raw data into strategic decisions."
     },
     "exp": [
         {
@@ -49,7 +49,7 @@
         {
             "date": "Nov 2020 – Nov 2021",
             "role": "Vice Chairman",
-            "company": "Student Council — Saint Mary 2 High School, Bandung",
+            "company": "Student Council - Saint Mary 2 High School, Bandung",
             "details": [
                 "Developed and implemented talent-development programs reaching all grades as measured by participation rates, by coordinating 10 council divisions and executing class-level activities during pandemic constraints.",
                 "Preserved institutional continuity as measured by complete archival handover, by collecting and organizing prior council proposals and 2018 accountability reports for incoming leadership.",
@@ -59,7 +59,7 @@
         {
             "date": "Nov 2021 – Nov 2022",
             "role": "Chairman",
-            "company": "Student Council — Saint Mary 2 High School, Bandung",
+            "company": "Student Council - Saint Mary 2 High School, Bandung",
             "details": [
                 "Launched a targeted long-term student quality improvement program as measured by program adoption across homerooms, by defining KPIs, timelines, and execution plans.",
                 "Achieved broad outreach to feeder schools as measured by successful promotions to 12 Catholic junior high schools, by leading promotional campaigns and events.",
@@ -168,8 +168,8 @@
         }
     },
     "awards": {
-        "1": "1st Place — Instagram Reels Competition, Goethe-Institut Bandung (2023) — “Ein Tag in meinem Leben”",
-        "2": "1st Place — Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) — “Dilema”",
+        "1": "1st Place - Instagram Reels Competition, Goethe-Institut Bandung (2023) - “Ein Tag in meinem Leben”",
+        "2": "1st Place - Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) - “Dilema”",
         "3": "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan",
         "4": "Runner-Up Water Rocket Competition (2017) by PLANET SAINS"
     },
