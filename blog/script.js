@@ -1,47 +1,25 @@
 /**
  * tuzzblog Theme - JavaScript
- * Minimal scripts for mobile menu and theme toggle
+ * Refactored: 2026-01-08 to use Shared Libraries
  */
+
+import { ThemeManager } from '../shared/theme.js';
+import { initAnalytics } from '../shared/analytics.js';
+
+// 1. INIT SHARED CORE
+// ══════════════════════════════════════════════
+if (typeof SITE_CONFIG !== 'undefined') {
+    initAnalytics(SITE_CONFIG.analytics);
+}
+
+// Theme
+const themeManager = new ThemeManager({
+    toggleElement: document.querySelector('.theme-toggle'),
+    storageKey: SITE_CONFIG?.theme?.storageKey || 'dictuzz-theme'
+});
 
 (function () {
     'use strict';
-
-    // Theme Management
-    const ThemeManager = {
-        STORAGE_KEY: 'dictuzz-theme',
-
-        init() {
-            const savedTheme = localStorage.getItem(this.STORAGE_KEY);
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-
-            document.documentElement.setAttribute('data-theme', theme);
-            this.bindEvents();
-        },
-
-        bindEvents() {
-            const toggleBtn = document.querySelector('.theme-toggle');
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', () => this.toggle());
-            }
-
-            // Listen for system preference changes
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                if (!localStorage.getItem(this.STORAGE_KEY)) {
-                    document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-                }
-            });
-        },
-
-        toggle() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem(this.STORAGE_KEY, newTheme);
-        }
-    };
 
     // Mobile Menu Management
     const MobileMenu = {
@@ -249,10 +227,10 @@
 
     // Initialize on DOM ready
     document.addEventListener('DOMContentLoaded', () => {
-        ThemeManager.init();
         MobileMenu.init();
         FormValidation.init();
         SmoothScroll.init();
         PostLoader.init();
+        // ThemeManager is init at top level
     });
 })();

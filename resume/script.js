@@ -1,173 +1,40 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
  * BENEDICTUS RICHARD RICARDO: Portfolio v2.0
- * Minimalist JavaScript Core (<2KB minified)
- * Performance-optimized, Zero Dependencies
+ * Refactored: 2026-01-08 to use Shared Libraries
  * ═══════════════════════════════════════════════════════════════════════════
  */
+
+import { ThemeManager } from '../shared/theme.js';
+import { Typer } from '../shared/utils.js';
+import { initAnalytics } from '../shared/analytics.js';
 
 // Shorthand selectors
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 
-// Default language
+// 1. INIT SHARED CORE
+// ══════════════════════════════════════════════
+if (typeof SITE_CONFIG !== 'undefined') {
+    initAnalytics(SITE_CONFIG.analytics);
+}
+
+// Theme
+const themeManager = new ThemeManager({
+    toggleElement: $('.theme-toggle'), // Will bind click automatically
+    storageKey: SITE_CONFIG?.theme?.storageKey || 'dictuzz-theme'
+});
+
+// 2. LANGUAGE SYSTEM
+// ══════════════════════════════════════════════
 const DEFAULT_LANG = 'en';
 const SUPPORTED_LANGS = ['en', 'id', 'de'];
 
 // Current language data
 let currentLang = DEFAULT_LANG;
 let langData = null;
+let typerInstance = null;
 
-// ═══════════════════════════════════════════════════════════════════════════
-// 0. THEME TOGGLE: Dark/Light Mode
-// ═══════════════════════════════════════════════════════════════════════════
-function initTheme() {
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = stored || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-}
-
-function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-}
-
-// Initialize theme immediately to prevent flash
-initTheme();
-
-// Bind theme toggle button
-document.addEventListener('DOMContentLoaded', () => {
-    $('.theme-toggle')?.addEventListener('click', toggleTheme);
-});
-
-// ═══════════════════════════════════════════════════════════════════════════
-// 1. INTERSECTION OBSERVER: Reveal animations
-// ═══════════════════════════════════════════════════════════════════════════
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('active');
-        }
-    });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-$$('.reveal, .stagger').forEach(el => revealObserver.observe(el));
-
-// IMAGE PROTECTION
-document.addEventListener('contextmenu', e => {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-        return false;
-    }
-});
-
-// ═══════════════════════════════════════════════════════════════════════════
-// 2. SMOOTH SCROLL
-// ═══════════════════════════════════════════════════════════════════════════
-$$('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = $(a.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-            // Close mobile nav
-            $('.nav__links')?.classList.remove('open');
-            $('.nav__toggle')?.classList.remove('active');
-        }
-    });
-});
-
-// ═══════════════════════════════════════════════════════════════════════════
-// 3. MOBILE NAVIGATION
-// ═══════════════════════════════════════════════════════════════════════════
-$('.nav__toggle')?.addEventListener('click', () => {
-    const toggle = $('.nav__toggle');
-    const links = $('.nav__links');
-    const isOpen = links.classList.toggle('open');
-    toggle.classList.toggle('active');
-    toggle.setAttribute('aria-expanded', isOpen);
-});
-
-// ═══════════════════════════════════════════════════════════════════════════
-// 4. SCROLL SPY: Active nav state
-// ═══════════════════════════════════════════════════════════════════════════
-const sections = $$('section[id]');
-const navLinks = $$('.nav__link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const top = section.offsetTop - 150;
-        if (scrollY >= top) current = section.id;
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        link.removeAttribute('aria-current');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
-        }
-    });
-}, { passive: true });
-
-// ═══════════════════════════════════════════════════════════════════════════
-// 5. TYPING ANIMATION
-// ═══════════════════════════════════════════════════════════════════════════
-class Typer {
-    constructor(el) {
-        this.el = el;
-        this.texts = [];
-        this.idx = 0;
-        this.char = 0;
-        this.deleting = false;
-        this.timeout = null;
-    }
-
-    setTexts(texts) {
-        this.texts = texts || [];
-        this.idx = 0;
-        this.char = 0;
-        this.deleting = false;
-        if (this.timeout) clearTimeout(this.timeout);
-        if (this.texts.length) this.tick();
-    }
-
-    tick() {
-        const text = this.texts[this.idx];
-
-        if (this.deleting) {
-            this.char--;
-        } else {
-            this.char++;
-        }
-
-        this.el.textContent = text.slice(0, this.char);
-
-        let delay = this.deleting ? 30 : 80;
-
-        if (!this.deleting && this.char === text.length) {
-            delay = 2000;
-            this.deleting = true;
-        } else if (this.deleting && this.char === 0) {
-            this.deleting = false;
-            this.idx = (this.idx + 1) % this.texts.length;
-            delay = 500;
-        }
-
-        this.timeout = setTimeout(() => this.tick(), delay);
-    }
-}
-
-const typingEl = $('#typing-dynamic');
-const typer = typingEl ? new Typer(typingEl) : null;
-
-// ═══════════════════════════════════════════════════════════════════════════
-// 6. LANGUAGE SYSTEM
-// ═══════════════════════════════════════════════════════════════════════════
 function getNestedValue(obj, path) {
     return path.split('.').reduce((o, k) => o?.[k], obj);
 }
@@ -255,9 +122,13 @@ async function loadLanguage(lang) {
         applyTranslations(langData);
 
         // Update typing animation
-        if (typer && langData.hero?.typing) {
+        if (langData.hero?.typing) {
             $('#typing-static').textContent = langData.hero.typing.staticText || '';
-            typer.setTexts(langData.hero.typing.dynamicTexts);
+            const typingEl = $('#typing-dynamic');
+
+            if (typingEl) {
+                new Typer(typingEl, langData.hero.typing.dynamicTexts);
+            }
         }
 
         // Update active lang button
@@ -285,44 +156,81 @@ $$('.lang-btn').forEach(btn => {
     });
 });
 
-// Initial load
-const urlLang = new URLSearchParams(location.search).get('lang');
-const browserLang = navigator.language.split('-')[0];
-const initLang = SUPPORTED_LANGS.includes(urlLang) ? urlLang
-    : SUPPORTED_LANGS.includes(browserLang) ? browserLang
-        : DEFAULT_LANG;
+// 3. INTERSECTION OBSERVER: Reveal animations
+// ══════════════════════════════════════════════
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-loadLanguage(initLang);
+$$('.reveal, .stagger').forEach(el => revealObserver.observe(el));
 
-// ═══════════════════════════════════════════════════════════════════════════
-// 7. ANALYTICS (if gtag exists)
-// ═══════════════════════════════════════════════════════════════════════════
-function trackEvent(name, params = {}) {
-    if (typeof gtag !== 'undefined') gtag('event', name, params);
-}
+// 4. UI INTERACTIONS
+// ══════════════════════════════════════════════
 
-// Track CV downloads
-$$('a[href*="linktr.ee"]').forEach(a => {
-    a.addEventListener('click', () => trackEvent('download_cv', { url: a.href }));
-});
-
-// Track outbound links
-document.addEventListener('click', e => {
-    const link = e.target.closest('a');
-    if (!link?.href?.startsWith('http')) return;
-    if (!link.href.includes(location.hostname)) {
-        trackEvent('outbound_click', { url: link.href });
+// Image Protection
+document.addEventListener('contextmenu', e => {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
     }
 });
-// ═══════════════════════════════════════════════════════════════════════════
-// 8. 3D AVATAR TILT (Ported from Main Site)
-// ═══════════════════════════════════════════════════════════════════════════
+
+// Smooth Scroll
+$$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = $(a.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            $('.nav__links')?.classList.remove('open');
+            $('.nav__toggle')?.classList.remove('active');
+        }
+    });
+});
+
+// Mobile Nav
+$('.nav__toggle')?.addEventListener('click', () => {
+    const toggle = $('.nav__toggle');
+    const links = $('.nav__links');
+    const isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isOpen);
+});
+
+// Scroll Spy
+const sections = $$('section[id]');
+const navLinks = $$('.nav__link');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const top = section.offsetTop - 150;
+        if (scrollY >= top) current = section.id;
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+}, { passive: true });
+
+
+// 5. 3D AVATAR TILT
+// ══════════════════════════════════════════════
 function initProfileTilt() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion || 'ontouchstart' in window) return;
 
     const avatar = $('.hero__photo-wrapper');
-    const container = $('.hero__container'); // Use container for interaction zone
+    const container = $('.hero__container');
     if (!avatar || !container) return;
 
     container.addEventListener('mousemove', (e) => {
@@ -330,8 +238,6 @@ function initProfileTilt() {
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        // Vanilla JS Tilt
-        // Reduced rotation slightly for the larger hero section feel
         avatar.style.transform = `perspective(1000px) rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg)`;
     });
 
@@ -341,6 +247,36 @@ function initProfileTilt() {
         setTimeout(() => { avatar.style.transition = ''; }, 800);
     });
 }
-
-// Init Tilt
 initProfileTilt();
+
+
+// 6. TRACKING HELPERS (Using shared global gtag if avail)
+// ══════════════════════════════════════════════
+function trackEvent(name, params = {}) {
+    if (typeof window.gtag !== 'undefined') window.gtag('event', name, params);
+}
+
+$$('a[href*="linktr.ee"]').forEach(a => {
+    a.addEventListener('click', () => trackEvent('download_cv', { url: a.href }));
+});
+
+document.addEventListener('click', e => {
+    const link = e.target.closest('a');
+    if (!link?.href?.startsWith('http')) return;
+    if (!link.href.includes(location.hostname)) {
+        trackEvent('outbound_click', { url: link.href });
+    }
+});
+
+
+// 7. INITIAL LOAD
+// ══════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+    const urlLang = new URLSearchParams(location.search).get('lang');
+    const browserLang = navigator.language.split('-')[0];
+    const initLang = SUPPORTED_LANGS.includes(urlLang) ? urlLang
+        : SUPPORTED_LANGS.includes(browserLang) ? browserLang
+            : DEFAULT_LANG;
+
+    loadLanguage(initLang);
+});

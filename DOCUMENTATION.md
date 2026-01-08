@@ -1,7 +1,7 @@
 # dictuzz.github.io: Canonical Technical Documentation
 
-> **Document Version**: 2.0.0  
-> **Last Updated**: 2026-01-08  
+> **Document Version**: 2.1.0
+> **Last Updated**: 2026-01-08
 > **Target Audience**: Senior Full-Stack Developers, AI Systems
 
 ---
@@ -75,26 +75,35 @@ A **personal brand ecosystem** consisting of four interconnected web components,
 │               │             │             │                     │
 │        ┌──────▼──────┐ ┌────▼────┐ ┌──────▼──────┐             │
 │        │ shared/     │ │ assets/ │ │ blog/posts/ │             │
-│        │ config.js   │ │ images/ │ │ *.md        │             │
+│        │ libs & cfg  │ │ images/ │ │ *.md        │             │
 │        └─────────────┘ └─────────┘ └─────────────┘             │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+### Shared Core (New in v2.0)
+
+A `shared/` directory now houses common logic to reduce duplication:
+
+- **`shared/theme.js`**: `ThemeManager` class for dark/light toggling and persistence.
+- **`shared/utils.js`**: `Typer` (typewriter effect), `initHaptics`, `initMagneticButtons`.
+- **`shared/analytics.js`**: Centralized GA4 wrapper.
+- **`shared/config.js`**: Ecosystem-wide configuration (Analytics ID, etc.).
+
 ### Component Independence
 
-Each component (`/`, `/card/`, `/resume/`, `/blog/`) is **self-contained**:
-- Own `index.html`, `script.js`, `style.css`
+Each component (`/`, `/card/`, `/resume/`, `/blog/`) is **semi-independent**:
+- Own `index.html`, `style.css`
+- **Imports** shared logic via ES Modules (`<script type="module">`)
 - Can function independently when visited directly
-- Shares only configuration and assets
 
 ### Cross-Component Concerns
 
 | Concern | Implementation |
 |---------|----------------|
-| Theme Persistence | `localStorage` key: `dictuzz-theme` |
-| Analytics | Shared via `shared/config.js` → `SITE_CONFIG.analytics` |
-| Design Tokens | CSS custom properties per component (not shared) |
+| Theme Persistence | `localStorage` key: `dictuzz-theme` (managed by `ThemeManager`) |
+| Analytics | Shared via `shared/analytics.js` + `shared/config.js` |
+| Design Tokens | CSS custom properties per component (mostly independent) |
 
 ---
 
@@ -106,7 +115,7 @@ Each component (`/`, `/card/`, `/resume/`, `/blog/`) is **self-contained**:
 |------------|------|-------------|
 | **HTML5** | Structure | Core |
 | **CSS3** | Styling, animations, themes | Core |
-| **Vanilla JavaScript** | Interactivity | Core |
+| **Vanilla JavaScript (ES6+)** | Interactivity, Modules | Core |
 | **HTML5 Canvas** | Background animations (Aurora, Network) | Core |
 
 ### External Dependencies
@@ -128,7 +137,7 @@ Each component (`/`, `/card/`, `/resume/`, `/blog/`) is **self-contained**:
 
 - **No NPM dependencies**: Intentional for simplicity
 - **No TypeScript**: Plain JavaScript only
-- **No bundler**: Files served as-is
+- **No bundler**: Files served as-is (ES Modules used natively)
 
 ---
 
@@ -138,42 +147,48 @@ Each component (`/`, `/card/`, `/resume/`, `/blog/`) is **self-contained**:
 dictuzz.github.io/
 ├── index.html              # Link in Bio landing page
 ├── config.js               # Link in Bio configuration (links, profile)
-├── script.js               # Main page animations & interactions
+├── script.js               # Main entry point (Module)
 ├── style.css               # Main page styles (35KB)
 ├── sw.js                   # Service Worker (PWA support)
 ├── 404.html                # Custom 404 page
 ├── og-image.png            # OpenGraph image
 │
-├── shared/                 # Cross-component shared resources
-│   └── config.js           # SITE_CONFIG (analytics, theme, metadata)
+├── js/                     # Root-level scripts
+│   └── background-manager.js # Extracted animation engines
+│
+├── shared/                 # SHARED LIBRARY (v2.0)
+│   ├── config.js           # SITE_CONFIG (analytics, theme, metadata)
+│   ├── theme.js            # ThemeManager class
+│   ├── utils.js            # Typer, Haptics, Magnetic
+│   └── analytics.js        # GA4 init
 │
 ├── card/                   # Digital Business Card component
-│   ├── index.html          # Card HTML structure
-│   ├── script.js           # 3D tilt, flip, theme, orb animation
-│   ├── style.css           # Card styles (Deep Space/Platinum themes)
+│   ├── index.html          # HTML (Imports shared libs)
+│   ├── script.js           # Refactored script
+│   ├── style.css           # Card styles
 │   └── og-image.png        # Card-specific OG image
 │
 ├── resume/                 # Portfolio Resume component
-│   ├── index.html          # Resume structure
-│   ├── script.js           # i18n, typing animation, theme
+│   ├── index.html          # HTML (Imports shared libs)
+│   ├── script.js           # Refactored script
 │   ├── style.css           # Portfolio styles
 │   ├── css/
-│   │   └── tokens.css      # Design tokens (colors, spacing, typography)
+│   │   └── tokens.css      # Design tokens
 │   ├── locales/            # Internationalization
-│   │   ├── en.json         # English content
-│   │   ├── id.json         # Indonesian content
-│   │   └── de.json         # German content
+│   │   ├── en.json
+│   │   ├── id.json
+│   │   └── de.json
 │   └── BRAND_GUIDELINE.md  # Design guidelines
 │
 ├── blog/                   # tuzzblog component
-│   ├── index.html          # Blog home page
-│   ├── script.js           # Theme, menu, post loader
+│   ├── index.html          # HTML (Imports shared libs)
+│   ├── script.js           # Refactored script
 │   ├── styles.css          # Blog styles
-│   ├── variables.css       # CSS variables (typography, colors)
+│   ├── variables.css       # CSS variables
 │   ├── build.js            # Static site generator (Node.js)
 │   ├── posts/              # Markdown source files
-│   ├── posts.json          # Post index (auto-generated)
-│   ├── rss.xml             # RSS feed (auto-generated)
+│   ├── posts.json          # Post index
+│   ├── rss.xml             # RSS feed
 │   ├── contact.html        # Contact form page
 │   └── manifesto.html      # Manifesto page
 │
@@ -197,154 +212,38 @@ dictuzz.github.io/
 
 ### 5.1 Link in Bio (`/`)
 
-**Purpose**: Central social media hub with animated backgrounds
+**Purpose**: Central social media hub with animated backgrounds.
 
-**Key Files**:
-- `index.html` - HTML structure with canvas element
-- `config.js` - Profile and links data
-- `script.js` - Animation engines and interactions
-- `style.css` - Glassmorphism styles
-
-**JavaScript Architecture** (`script.js`):
-
-```
-┌─────────────────────────────────────────┐
-│           BackgroundManager             │
-│  ─────────────────────────────────────  │
-│  • Manages dual animation engines       │
-│  • Switches based on theme              │
-│  • Controls animation loop              │
-├─────────────────────────────────────────┤
-│                                         │
-│  ┌─────────────────┐ ┌────────────────┐ │
-│  │ DarkAuroraEngine│ │LightNetworkEng.│ │
-│  │                 │ │                │ │
-│  │ • AuroraParticle│ │ • Particles    │ │
-│  │ • Gradient orbs │ │ • Connections  │ │
-│  │ • Screen blend  │ │ • Burst effect │ │
-│  └─────────────────┘ └────────────────┘ │
-│                                         │
-└─────────────────────────────────────────┘
-```
-
-**Other Features**:
-- `initMagneticButtons()` - Hover magnetic effect on links
-- `initHaptics()` - Vibration feedback on mobile
-- `ThemeManager` - Dark/light mode toggle
-
----
+**JavaScript Architecture**:
+- **`script.js`**: Main entry. Initializes `ThemeManager`, `ContentRenderer`, and imports `BackgroundManager`.
+- **`js/background-manager.js`**: Contains `DarkAuroraEngine` and `LightNetworkEngine`.
+- **`config.js`**: Data source.
 
 ### 5.2 Digital Business Card (`/card/`)
 
-**Purpose**: Interactive 3D virtual business card
+**Purpose**: Interactive 3D virtual business card.
 
-**Key Features**:
-- **3D Tilt**: Mouse/touch responsive perspective transforms
-- **Flip Animation**: Click to reveal back face with "About Me"
-- **Dual Theme**: "Deep Space" (dark) / "Platinum" (light)
-- **Share**: Native share API or clipboard fallback
-
-**JavaScript Architecture** (`script.js`):
-
-```javascript
-// Main modules:
-shareCard()          // Share/copy functionality
-getInitialTheme()    // localStorage → default
-applyTheme(theme)    // Apply to DOM
-Orb class           // Canvas background animation
-handleTilt()        // 3D perspective calculation
-```
-
-**CSS Notable Features**:
-- `[data-theme="light"]` selector for Platinum mode
-- `.is-flipped` class toggles `rotateY(180deg)`
-- SVG noise filter for metallic texture
-
----
+**Refactor Note**:
+- Imports `ThemeManager` from `../shared/theme.js`.
+- Imports `initAnalytics` from `../shared/analytics.js`.
+- Preserves 3D tilt and flip logic in component script but delegates theme handling.
 
 ### 5.3 Portfolio Resume (`/resume/`)
 
-**Purpose**: Multi-language professional CV
+**Purpose**: Multi-language professional CV.
 
-**Key Features**:
-- **i18n System**: English, Indonesian, German
-- **Typing Animation**: Hero text typewriter effect
-- **Theme Toggle**: Dark/light mode
-- **Smooth Scroll**: Anchor navigation
-
-**JavaScript Architecture** (`script.js`):
-
-```javascript
-// Language System
-loadLanguage(lang)       // Fetch JSON, apply translations
-applyTranslations(data)  // Update [data-i18n] elements
-renderExperience(data)   // Generate timeline HTML
-renderProjects(data)     // Generate project cards
-renderSkills(data)       // Generate skill tags
-
-// Typer Class
-Typer.setTexts(texts)    // Set strings to cycle
-Typer.tick()             // Character-by-character animation
-```
-
-**Locale Structure** (`locales/*.json`):
-
-```json
-{
-  "nav": { "about": "About", "experience": "Experience", ... },
-  "hero": { "greeting": "Hello, I'm", "typing": ["Data Scientist", "..."] },
-  "experience": [{ "title": "...", "company": "...", "bullets": [...] }],
-  "projects": [{ "title": "...", "description": "..." }],
-  "skills": { "languages": [...], "frameworks": [...] }
-}
-```
-
----
+**Refactor Note**:
+- Imports `Typer` from `../shared/utils.js`.
+- Imports `ThemeManager` from `../shared/theme.js`.
+- Preserves unique i18n logic (`loadLanguage`).
 
 ### 5.4 tuzzblog (`/blog/`)
 
-**Purpose**: Markdown-to-HTML static blog
+**Purpose**: Markdown-to-HTML static blog.
 
-**Key Features**:
-- **Static Site Generator**: `build.js` compiles markdown to HTML
-- **Post Indexing**: Auto-generates `posts.json`
-- **RSS Feed**: Auto-generates `rss.xml`
-- **Dark/Light Theme**: Synced with ecosystem
-
-**Build System** (`build.js`):
-
-```javascript
-// Workflow:
-1. parseFrontmatter(content)  // Extract title, date, category
-2. markdownToHtml(markdown)   // Convert to HTML
-3. generatePostHtml(post)     // Wrap in template
-4. build()                    // Write files, update index
-5. generateRssXml(posts)      // Create RSS feed
-```
-
-**Post Format** (`posts/*.md`):
-
-```markdown
----
-title: My Post Title
-date: 2026-01-08
-category: tech
----
-
-# Content here
-
-Regular markdown content...
-```
-
-**JavaScript Modules** (`script.js`):
-
-| Module | Purpose |
-|--------|---------|
-| `ThemeManager` | Dark/light toggle with localStorage |
-| `MobileMenu` | Hamburger menu, focus trap |
-| `FormValidation` | Contact form validation |
-| `SmoothScroll` | Anchor link scrolling |
-| `PostLoader` | Fetch and render posts from `posts.json` |
+**Refactor Note**:
+- Imports `ThemeManager`.
+- Builds statically but runs client-side JS for interaction (menus, forms).
 
 ---
 
@@ -352,25 +251,13 @@ Regular markdown content...
 
 ### Theme System
 
-**Storage Key**: `dictuzz-theme` (shared across all components)
+**Storage Key**: `dictuzz-theme` (managed by `ThemeManager`)
 
 **Values**: `"dark"` (default) or `"light"`
 
 **CSS Implementation**:
-
-```css
-/* Dark theme (default) */
-:root {
-  --bg-deep: #0A0E17;
-  --text-primary: #FFFFFF;
-}
-
-/* Light theme */
-[data-theme="light"] {
-  --bg-deep: #E2E8F0;
-  --text-primary: #0F172A;
-}
-```
+- Components listen for `data-theme` attribute on `<html>`.
+- `ThemeManager` updates this attribute and dispatches `theme-changed` event.
 
 ### Color Palette
 
@@ -379,24 +266,7 @@ Regular markdown content...
 | `--bg-deep` | `#0A0E17` | `#E2E8F0` |
 | `--bg-surface` | `#121824` | `#FFFFFF` |
 | `--accent-cyan` | `#00F5D4` | `#00F5D4` |
-| `--accent-purple` | `#7B61FF` | `#7B61FF` |
-| `--accent-gold` | `#FFB800` | `#FFB800` |
 | `--text-primary` | `#FFFFFF` | `#0F172A` |
-
-### Typography
-
-| Role | Font |
-|------|------|
-| Headings | Outfit, Space Grotesk |
-| Body | Inter |
-| Monospace | Space Mono, Fira Code |
-
-### Naming Conventions
-
-- **Card themes**: "Deep Space" (dark), "Platinum" (light)
-- **CSS classes**: BEM-inspired (`.nav__link`, `.card--flipped`)
-- **JS classes**: PascalCase (`DarkAuroraEngine`)
-- **JS functions**: camelCase (`initMagneticButtons`)
 
 ---
 
@@ -404,44 +274,15 @@ Regular markdown content...
 
 ### State Overview
 
-This is a **static website** with minimal state:
-
 | State | Storage | Scope |
 |-------|---------|-------|
 | Theme preference | `localStorage['dictuzz-theme']` | All components |
 | Language preference | URL query param `?lang=` | Resume only |
 | Card flip state | In-memory (CSS class) | Card only |
 
-### Data Sources
+### Synchronization
 
-| Data | Source | Format |
-|------|--------|--------|
-| Profile/Links | `config.js` | JavaScript object |
-| Resume content | `resume/locales/*.json` | JSON |
-| Blog posts | `blog/posts.json` | JSON (auto-generated) |
-| Site config | `shared/config.js` | JavaScript object |
-
-### State Synchronization
-
-```
-┌─────────────────────────────────────────────────────┐
-│                   localStorage                       │
-│                                                     │
-│   Key: 'dictuzz-theme'                              │
-│   Values: 'dark' | 'light'                          │
-│                                                     │
-├─────────────────────────────────────────────────────┤
-│                                                     │
-│  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐           │
-│  │ LiB  │  │ Card │  │Resume│  │ Blog │           │
-│  │      │  │      │  │      │  │      │           │
-│  │ R/W  │  │ R/W  │  │ R/W  │  │ R/W  │           │
-│  └──────┘  └──────┘  └──────┘  └──────┘           │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
-
-All components read/write to the same key, ensuring theme consistency.
+`ThemeManager` ensures that if one tab changes the theme (via `localStorage` event), others update safely.
 
 ---
 
@@ -459,183 +300,42 @@ All components read/write to the same key, ensuring theme consistency.
 
 None. All configuration is in JavaScript files.
 
-### Configuration Schema
-
-**`config.js`**:
-
-```javascript
-const CONFIG_DATA = {
-  profile: {
-    avatar: "path/to/image.webp",
-    name: "Display Name",
-    tagline: "Short description",
-    bio: ""
-  },
-  links: [
-    {
-      label: "Button Label",
-      url: "https://...",
-      icon: "fab fa-icon",
-      style: "primary" | "secondary",
-      category: "Contact" | "Content" | "Socials"
-    }
-  ],
-  footer: {
-    year: "2025",
-    copyright: "© 2025 ..."
-  }
-};
-```
-
-**`shared/config.js`**:
-
-```javascript
-const SITE_CONFIG = {
-  analytics: {
-    id: 'G-XXXXXXXXXX',
-    enabled: true
-  },
-  theme: {
-    storageKey: 'dictuzz-theme',
-    default: 'dark'
-  },
-  site: {
-    name: 'dictuzz',
-    url: 'https://dictuzz.github.io',
-    author: 'Your Name'
-  }
-};
-```
-
-### Local Development
-
-```bash
-# Start local server
-npx -y serve -l 8000
-
-# Build blog posts
-cd blog
-node build.js
-```
-
 ---
 
 ## 9. Extension & Maintenance Guide
 
 ### Adding a New Social Link
-
-1. Open `config.js`
-2. Add entry to `links` array:
-   ```javascript
-   {
-     label: "My New Link",
-     url: "https://example.com",
-     icon: "fab fa-twitter",
-     style: "secondary",
-     category: "Socials"
-   }
-   ```
-3. Refresh page
+1. Edit `config.js`.
 
 ### Adding a New Blog Post
+1. Add `.md` in `blog/posts/`.
+2. Run `node blog/build.js`.
 
-1. Create `blog/posts/my-post.md`:
-   ```markdown
-   ---
-   title: My Post Title
-   date: 2026-01-15
-   category: tech
-   ---
-   
-   Content here...
-   ```
-2. Run: `cd blog && node build.js`
-3. Commit generated HTML and updated `posts.json`
-
-### Adding a New Language (Resume)
-
-1. Create `resume/locales/xx.json` (copy structure from `en.json`)
-2. Add language to `SUPPORTED_LANGS` in `resume/script.js`
-3. Add language button in `resume/index.html`
-
-### Modifying Theme Colors
-
-1. Edit CSS variables in respective files:
-   - Resume: `resume/css/tokens.css`
-   - Blog: `blog/variables.css`
-   - Card: `card/style.css`
-   - Main: `style.css`
-2. Maintain consistency for `--bg-deep` light mode value (`#E2E8F0`)
-
-### Safe Areas for Refactoring
-
-- Animation engine implementations (Aurora, Network)
-- Individual component styles
-- Blog build script internals
-
-### Fragile Areas (Handle with Care)
-
-- Theme storage key (`'dictuzz-theme'`) - used by all components
-- `data-theme` attribute - CSS selectors depend on it
-- Canvas element IDs - referenced by JavaScript
+### Modifying Shared Logic
+1. Edit `shared/utils.js` or `shared/theme.js`.
+2. Since ES Modules are used, no build step is needed. Just refresh.
 
 ---
 
 ## 10. Known Debts & Risks
 
-### Technical Debt
+### Technical Debt (v2.1 Status)
 
-| Issue | Impact | Effort |
+| Issue | Impact | Status |
 |-------|--------|--------|
-| No CSS preprocessing | Duplication across components | Medium |
-| No shared component library | Styles not DRY | Medium |
-| Blog build is manual | Requires `node build.js` | Low |
-| No automated tests | Risk of regressions | Medium |
+| **Code Duplication** | Logic shared across files | **RESOLVED** (Shared Libs) |
+| No CSS preprocessing | Duplication across components | Open (Medium) |
+| Hardcoded Analytics ID | Scattered IDs | **RESOLVED** (`shared/config.js`) |
+| Monolithic `script.js` | Hard to maintain | **RESOLVED** (Modules) |
 
 ### Architectural Smells
 
-- **Style duplication**: Each component has its own complete stylesheet
-- **Design tokens not shared**: `tokens.css` and `variables.css` define similar values
-- **No build system**: Files served as-is without minification
+- **Style duplication**: CSS is still largely component-specific. Consider a `shared/tokens.css` in future phases.
 
 ### Security Considerations
 
-- **No sensitive data**: All content is public
-- **External CDN risk**: Google Fonts, FontAwesome could be unavailable
-- **Analytics**: User tracking (can be disabled via `SITE_CONFIG.analytics.enabled`)
-
-### Browser Compatibility
-
-- **Modern browsers only**: Uses CSS custom properties, Canvas, ES6+
-- **No IE11 support**: Intentional
-- **Reduced motion**: Respects `prefers-reduced-motion` media query
-
----
-
-## Appendix: Quick Reference
-
-### Key Selectors
-
-| Selector | Purpose |
-|----------|---------|
-| `[data-theme="light"]` | Light mode styles |
-| `[data-theme="dark"]` | Dark mode styles (default) |
-| `.is-flipped` | Card flip state |
-| `[data-i18n="key"]` | i18n translation targets |
-
-### Key localStorage Keys
-
-| Key | Values | Components |
-|-----|--------|------------|
-| `dictuzz-theme` | `'dark'` \| `'light'` | All |
-
-### Key JavaScript Globals
-
-| Variable | Location | Purpose |
-|----------|----------|---------|
-| `CONFIG_DATA` | `config.js` | Link in Bio data |
-| `SITE_CONFIG` | `shared/config.js` | Analytics, theme config |
-| `BackgroundManager` | `script.js` | Animation controller |
+- **No sensitive data**: All content is public.
+- **Analytics**: Can be disabled via `SITE_CONFIG.analytics.enabled`.
 
 ---
 
