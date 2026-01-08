@@ -16,14 +16,19 @@
 }
 
 /* Light Mode Overrides */
+/* Light Mode - The Platinum Card */
 body.light-mode {
-    --color-bg: #F0F2F5;
+    --color-bg: #E2E8F0;
+    /* Cool Grey 200 */
     --color-card-bg: rgba(255, 255, 255, 0.85);
     --color-text-main: #1A202C;
+    /* Slate 900 */
     --color-text-sec: #4A5568;
-    --color-accent: #319795;
-    /* Darker Teal */
-    --color-accent-gold: #D69E2E;
+    /* Slate 600 */
+    --color-accent: #2C7A7B;
+    /* Teal 700 */
+    --color-accent-gold: #B45309;
+    /* Dark Amber */
 }
 
 * {
@@ -93,13 +98,19 @@ body {
 
 /* 3D Wrapper */
 .business-card {
-    width: 90%;
-    max-width: 400px;
-    height: 550px;
+    width: 85vw;
+    /* Slightly narrower to feel like a held object */
+    max-width: 340px;
+    /* Mobile: Compact Portrait Card Ratio (approx 1:1.6) */
+    aspect-ratio: 9/15;
+    height: auto;
+    min-height: 480px;
+    /* Ensure space for content but cap it */
     position: relative;
     cursor: pointer;
     transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.1s cubic-bezier(0.23, 1, 0.32, 1);
+    /* Snappy for touch */
 }
 
 .business-card.is-flipped {
@@ -121,21 +132,96 @@ body {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 20px;
+    border-radius: 24px;
+    /* More rounded premium feel */
     overflow: hidden;
-    background: var(--color-card-bg);
-    border: 1px solid rgba(128, 128, 128, 0.1);
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    /* PREMIUM METALLIC GLASS EFFECT */
+    background:
+        /* Noise texture for matte metal feel */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
+        /* Metallic sheen gradient */
+        linear-gradient(135deg,
+            var(--color-card-bg) 0%,
+            rgba(255, 255, 255, 0.05) 40%,
+            rgba(255, 255, 255, 0.2) 50%,
+            /* Shine line */
+            rgba(255, 255, 255, 0.05) 60%,
+            var(--color-card-bg) 100%);
+
+    /* Shiny Border */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        /* Deep shadow */
+        0 2px 10px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        /* Inner Rim */
+        0 0 20px rgba(0, 245, 212, 0.05);
+    /* Subtle glow */
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1.5rem 1.2rem;
     transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Light Mode Card Face Override (Platinum) */
+body.light-mode .card-face {
+    background:
+        /* Stronger Noise for "Brushed Metal" look */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E"),
+        /* Platinum/Silver Gradient */
+        linear-gradient(135deg,
+            #FFFFFF 0%,
+            #F8FAFC 30%,
+            #CBD5E0 50%,
+            /* Silver band */
+            #F8FAFC 70%,
+            #FFFFFF 100%);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 15px 35px rgba(100, 116, 139, 0.25),
+        /* Slate shadow */
+        0 2px 10px rgba(100, 116, 139, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    /* White Rim */
+}
+
+body.light-mode .card-face::after {
+    /* Brighter, sharper shine for metal */
+    background: linear-gradient(120deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.9) 50%,
+            transparent 70%);
+    opacity: 0.7;
+    mix-blend-mode: hard-light;
+    /* Makes it pop on white */
+}
+
+/* Shine Animation on Hover/Active */
+.card-face::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(125deg,
+            transparent 0%,
+            transparent 40%,
+            rgba(255, 255, 255, 0.4) 48%,
+            rgba(255, 255, 255, 0.1) 52%,
+            transparent 60%,
+            transparent 100%);
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-size: 200% 200%;
 }
 
 .card-front {
@@ -286,20 +372,38 @@ body.light-mode .card-bg-decoration {
     left: -30px;
 }
 
-/* Mobile Defaults */
+/* ═══════════════════════════════════════════
+   MOBILE DEFAULTS (Portrait)
+   ═══════════════════════════════════════════ */
 .card-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: auto;
+    flex-direction: column;
+    /* Stack logo and avatar */
+    justify-content: center;
+    align-items: center;
+    /* Center horizontally */
+    margin-bottom: 1.5rem;
     width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.brand-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    opacity: 0.5;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    /* Center text */
     flex: 1;
+    text-align: center;
 }
 
 .card-footer {
@@ -314,48 +418,74 @@ body.light-mode .card-bg-decoration {
     justify-content: center;
 }
 
-/* AVATAR */
+/* ═══════════════════════════════════════════
+   AVATAR (Resume Style)
+   ═══════════════════════════════════════════ */
 .avatar-container {
-    width: 100px;
-    /* Mobile size */
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid var(--color-accent-gold);
-    padding: 4px;
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    width: 120px;
+    height: 160px;
+    /* Pill Shape like Resume */
+    border-radius: 9999px;
+    /* Fully rounded pill */
+    border: 2px solid var(--color-accent-gold);
+    padding: 3px;
+    /* Space between border and image */
+    background: rgba(0, 0, 0, 0.2);
+
+    /* Glow Effect */
+    box-shadow:
+        0 0 0 4px rgba(255, 184, 0, 0.1),
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 184, 0, 0.2);
+    /* Soft Gold Glow */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+/* Floating Animation for Avatar */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.avatar-container {
+    animation: float 4s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
     .avatar-container {
         width: 130px;
-        /* Desktop Size */
-        height: 130px;
+        height: 170px;
     }
 }
 
 .avatar {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 9999px;
     object-fit: cover;
     object-position: center 20%;
-    /* Adjusted for face visibility */
+    display: block;
 }
 
-.brand-logo {
-    font-size: 1.5rem;
-    color: var(--color-text-sec);
-    opacity: 0.5;
-}
+/* ... content styles restored ... */
 
 .name {
     font-family: var(--font-heading);
     font-size: 1.85rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     background: linear-gradient(to right, var(--color-text-main), var(--color-text-sec));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -460,4 +590,45 @@ body.light-mode .card-bg-decoration {
     color: #fff;
     border-color: var(--color-accent);
     opacity: 1;
+}
+
+/* SHIMMER ANIMATION */
+@keyframes shimmer {
+    0% {
+        background-position: 200% center;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        background-position: -200% center;
+        opacity: 0;
+    }
+}
+
+.card-face::after {
+    /* Updated Shine for Animation */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(110deg,
+            transparent 35%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 65%);
+    background-size: 200% 100%;
+    opacity: 0;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    animation: shimmer 5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    /* Continuous movement */
 }

@@ -11,17 +11,17 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Benedictus Richard Ricardo | Digital Business Card">
     <meta property="og:type" content="profile">
-    <meta property="og:image" content="../resume/og-image.png">
+    <meta property="og:image" content="https://dictuzz.github.io/card/og-image.png">
     <meta property="og:description"
-        content="Connect with Benedictus Richard Ricardo (Dictuzz). Data Scientist, Leader, Creator.">
+        content="✨ Kartu nama digital premium Benedictus Richard Ricardo. Klik untuk melihat kartu interaktif 3D dengan efek premium!">
     <meta property="og:url" content="https://dictuzz.github.io/card/">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Benedictus Richard Ricardo | Digital Business Card">
     <meta name="twitter:description"
-        content="Connect with Benedictus Richard Ricardo (Dictuzz). Data Scientist, Leader, Creator.">
-    <meta name="twitter:image" content="https://dictuzz.github.io/resume/og-image.png">
+        content="✨ Kartu nama digital premium Benedictus Richard Ricardo. Klik untuk melihat kartu interaktif 3D dengan efek premium!">
+    <meta name="twitter:image" content="https://dictuzz.github.io/card/og-image.png">
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -180,14 +180,25 @@
 
         window.addEventListener('resize', resize);
 
-        // Mouse for gentle parallax only
+        // Mouse & Touch Interaction
         let mouse = { x: 0, y: 0 };
+
+        function updateMouse(clientX, clientY) {
+            mouse.x = (clientX / width) * 2 - 1;
+            mouse.y = (clientY / height) * 2 - 1;
+            handleTilt(clientX, clientY);
+        }
+
         window.addEventListener('mousemove', e => {
-            // Normalized -1 to 1
-            mouse.x = (e.clientX / width) * 2 - 1;
-            mouse.y = (e.clientY / height) * 2 - 1;
-            handleTilt(e.clientX, e.clientY);
+            updateMouse(e.clientX, e.clientY);
         });
+
+        window.addEventListener('touchmove', e => {
+            if (e.touches[0]) {
+                e.preventDefault(); // Prevent scrolling while interacting with card
+                updateMouse(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: false });
 
         function resize() {
             width = canvas.width = window.innerWidth;
@@ -286,13 +297,21 @@
         // TILT
         const card = document.querySelector('.business-card');
         function handleTilt(clientX, clientY) {
-            if (window.innerWidth < 768) return;
+            // Removed mobile check to enable touch interaction
             const x = (window.innerWidth / 2 - clientX) / 30;
             const y = (window.innerHeight / 2 - clientY) / 30;
             const isFlipped = card.classList.contains('is-flipped');
             let rotateY = isFlipped ? 180 + x : x;
             card.style.transform = `rotateY(${rotateY}deg) rotateX(${y}deg)`;
         }
+
+        document.addEventListener('touchend', () => {
+            // Optional: reset on touch end, or keep it. Let's reset for now like mouseleave
+            const isFlipped = card.classList.contains('is-flipped');
+            card.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+            mouse.x = 0;
+            mouse.y = 0;
+        });
 
         document.addEventListener('mouseleave', () => {
             const isFlipped = card.classList.contains('is-flipped');

@@ -21,7 +21,7 @@ This repository hosts a comprehensive personal brand ecosystem, unified by the *
 | Component | Path | Description | Visual Style |
 |-----------|------|-------------|--------------|
 | **Link in Bio** | `/` | Central hub for all social links with *Categorized Tabs* | **Glassmorphism** cards on Deep Space gradient |
-| **Business Card** | `/card` | **NEW!** Virtual 3D Interactive Name Card | **Ambient Orbs** with 3D Flip & Tilt Effect |
+| **Business Card** | `/card` | **NEW!** Virtual 3D Interactive Name Card | **Platinum & Deep Space** Dual Theme |
 | **Portfolio** | `/resume` | Professional CV & Projects | **Premium High-Tech** with interactive typing hero |
 | **tuzzblog** | `/blog` | Personal thoughts & essays | **Clean Minimalist** (Deep Space Light/Dark) |
 
@@ -29,23 +29,23 @@ This repository hosts a comprehensive personal brand ecosystem, unified by the *
 
 ## ✨ Key Features
 
-### 🎨 Brand Identity: "Deep Space Luxury"
-A cohesive design system applied across all sub-projects:
--   **Primary Colors**: Deep Space (`#0A0E17`), Surface (`#121824`)
--   **Accents**: Cyan (`#00F5D4`), Electric Purple (`#7B61FF`), Luxury Gold (`#FFB800`)
--   **Typography**: **Outfit** & **Space Grotesk** (Headings), **Inter** (Body)
--   **Signature**: Golden-bordered Avatar & Cyan Orbit Ring
+### 🎨 Design System: "Deep Space" & "Platinum"
+A sophisticated dual-theme system applied across the ecosystem:
+-   **Dark Mode ("Deep Space")**: 
+    -   Background: Cosmic Aurora (Cyan/Purple/Gold)
+    -   Card: Glassmorphism with deep blue/black gradients and neon accents.
+-   **Light Mode ("Platinum Card")**: 
+    -   Background: Clean Cool Silver (`#E2E8F0`)
+    -   Card: **Frosted Platinum** finish with matte noise texture, white sheen, and sharp slate typography (`#1A202C`).
 
-### ⚡ Technical Highlights
--   **Zero Frameworks**: Pure HTML5, CSS3, and Vanilla JavaScript for maximum performance (Lighthouse 100).
+### ⚡ Feature Highlights
 -   **Interactive Business Card**: 
-    -   **3D Tilt & Flip**: CSS3D transformations for realistic physics.
-    -   **Ambient Background**: Canvas-based "Aurora" orb animation (no heavy libraries).
-    -   **Theme Support**: Seamless Dark/Light mode toggle.
--   **Smart Link Pages**: 
-    -   **Categorization**: JavaScript automatically groups links into tabs (Socials, Contact, Content).
-    -   **Config-Driven**: Edit `config.js` to manage all links in one place.
--   **Performant**: Critical CSS inlining and optimized assets.
+    -   **Mobile-First 3D Physics**: Fully interactive 3D tilt on **Touch Screens** and Desktop.
+    -   **Responsive Geometry**: Card transforms from a widescreen landscape view on desktop to a compact, portrait "held-in-hand" ratio on mobile (`9/15`).
+    -   **Dynamic Shine**: Periodic metallic shimmer animation that sweeps across the card surface.
+    -   **Resume-Style Avatar**: Pill-shaped avatar with Gold halo and glow effect.
+-   **Zero Frameworks**: Pure HTML5/CSS3/JS for instant performance (Lighthouse 100).
+-   **Config-Driven**: Centralized `config.js` for managing links and profile data.
 
 ---
 
@@ -71,11 +71,10 @@ npx -y serve -l 8000
 | Component | Technologies |
 |-----------|--------------|
 | **Core** | HTML5, Vanilla CSS, Vanilla JavaScript |
-| **Graphics** | HTML5 Canvas (Animations), CSS3D Transforms |
-| **Styling** | CSS Custom Properties (Variables), Glassmorphism, CSS Grid/Flexbox |
-| **Fonts** | Outfit, Space Grotesk, Inter (Google Fonts) |
+| **Graphics** | HTML5 Canvas (Ambient Orbs), CSS3D Transforms, SVG Filters (Noise) |
+| **Styling** | Modern CSS (Variables, Filters, Grid/Flexbox) |
+| **Typeface** | **Outfit** (Headings), **Inter** (Body) |
 | **Icons** | FontAwesome 6 |
-| **Analytics** | Google Analytics 4 (Lazy-loaded) |
 
 ---
 
@@ -85,20 +84,20 @@ npx -y serve -l 8000
 dictuzz.github.io/
 ├── index.html          # Link in Bio (Landing Page)
 ├── config.js           # ⭐ Edit landing page links here
-├── style.css           # Deep Space Design System
+├── style.css           # Core Design System
 ├── assets/             # Shared assets (images, fonts)
 │
 ├── card/               # ⭐ NEW: Digital Business Card
-│   ├── index.html      # 3D Card logic & Canvas
-│   └── style.css       # Card-specific Glassmorphism
+│   ├── index.html      # 3D Logic, Canvas, SEO
+│   └── style.css       # Platinum/Deep Space Styles
 │
 ├── blog/               # tuzzblog
 │   ├── posts/          # Markdown articles
-│   └── build.js        # Static Site Generator script
+│   └── build.js        # Static Site Generator
 │
 ├── resume/             # Professional Portfolio
 │   ├── locales/        # JSON Content (En/Id/De)
-│   └── css/tokens.css  # Core Design Tokens
+│   └── css/tokens.css  # Design Tokens
 │
 └── README.md           # This file
 ```
