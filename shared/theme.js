@@ -53,20 +53,20 @@ export class ThemeManager {
     }
 
     getMode() {
-        return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     }
 
     apply(theme) {
         // Update DOM
-        if (theme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
             if (this.iconElement) {
-                this.iconElement.className = 'fas fa-moon';
+                this.iconElement.className = 'fas fa-sun';
             }
         } else {
             document.documentElement.removeAttribute('data-theme');
             if (this.iconElement) {
-                this.iconElement.className = 'fas fa-sun';
+                this.iconElement.className = 'fas fa-moon';
             }
         }
 
