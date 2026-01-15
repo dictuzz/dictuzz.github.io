@@ -64,7 +64,7 @@ export class ThemeManager {
                 this.iconElement.className = 'fas fa-sun';
             }
         } else {
-            document.documentElement.removeAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', 'light');
             if (this.iconElement) {
                 this.iconElement.className = 'fas fa-moon';
             }
