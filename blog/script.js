@@ -12,11 +12,7 @@ if (typeof SITE_CONFIG !== 'undefined') {
     initAnalytics(SITE_CONFIG.analytics);
 }
 
-// Theme
-const themeManager = new ThemeManager({
-    toggleElement: document.querySelector('.theme-toggle'),
-    storageKey: SITE_CONFIG?.theme?.storageKey || 'dictuzz-theme'
-});
+// Theme Manager moved to DOMContentLoaded
 
 (function () {
     'use strict';
@@ -225,12 +221,31 @@ const themeManager = new ThemeManager({
         }
     };
 
-    // Initialize on DOM ready
-    document.addEventListener('DOMContentLoaded', () => {
+    // Initialize when DOM is ready
+    const init = () => {
+        console.log('Initializing tuzzblog scripts...');
+
+        // Theme
+        const toggleEl = document.querySelector('.theme-toggle');
+        if (toggleEl) {
+            console.log('Theme toggle element found.');
+            const themeManager = new ThemeManager({
+                toggleElement: toggleEl,
+                storageKey: SITE_CONFIG?.theme?.storageKey || 'dictuzz-theme'
+            });
+        } else {
+            console.error('Theme toggle element NOT found.');
+        }
+
         MobileMenu.init();
         FormValidation.init();
         SmoothScroll.init();
         PostLoader.init();
-        // ThemeManager is init at top level
-    });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();

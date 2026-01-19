@@ -171,6 +171,7 @@ function generatePostHtml(post) {
   <title>${post.title} - tuzzblog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
@@ -191,7 +192,6 @@ function generatePostHtml(post) {
       <nav id="nav-main" class="nav-main" role="navigation">
         <ul class="nav-menu">
                     <li><a href="../index.html">Beranda</a></li>
-          <li><a href="../manifesto.html">Manifesto</a></li>
           <li><a href="../contact.html">Kontak</a></li>
         </ul>
         <button class="theme-toggle" aria-label="Toggle tema">
@@ -227,7 +227,6 @@ function generatePostHtml(post) {
       <div class="footer-content">
         <p class="copyright">© 2025 <a href="https://dictuzz.github.io/resume" target="_blank">dictuzz</a>. All rights reserved.</p>
         <nav class="footer-nav">
-          <a href="../manifesto.html">Manifesto</a>
           <a href="../contact.html">Kontak</a>
           <a href="../rss.xml">RSS</a>
         </nav>
@@ -235,7 +234,8 @@ function generatePostHtml(post) {
     </div>
   </footer>
   
-  <script src="../script.js"></script>
+  <script src="../../shared/config.js"></script>
+  <script type="module" src="../script.js"></script>
 </body>
 </html>`;
 }
