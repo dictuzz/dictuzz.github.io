@@ -40,7 +40,8 @@ const CONFIG_DATA = {
     layout: [
         { type: "hero" },
         { type: "bio" },
-        { type: "links" }
+        { type: "links" },
+        { type: "socials" } // Moved to bottom
     ],
     site: {
         name: 'dictuzz',
@@ -67,6 +68,12 @@ const CONFIG_DATA = {
         // Use <br> for line breaks
         bio: ""
     },
+
+    socials: [
+        { icon: "linkedin", url: "https://www.linkedin.com/in/dictuzz" },
+        { icon: "insta", url: "https://www.instagram.com/dictuzz" },
+        { icon: "github", url: "https://github.com/dictuzz" }
+    ],
 
     links: [
         {
@@ -103,27 +110,6 @@ const CONFIG_DATA = {
             icon: "fas fa-book",
             style: "secondary",
             category: "Content"
-        },
-        {
-            label: "Find Me on LinkedIn",
-            url: "https://www.linkedin.com/in/dictuzz",
-            icon: "fab fa-linkedin",
-            style: "secondary",
-            category: "Socials"
-        },
-        {
-            label: "Follow My Insta",
-            url: "https://www.instagram.com/dictuzz",
-            icon: "fab fa-instagram",
-            style: "secondary",
-            category: "Socials"
-        },
-        {
-            label: "Contribute to My Code",
-            url: "https://github.com/dictuzz",
-            icon: "fab fa-github",
-            style: "secondary",
-            category: "Socials"
         }
     ],
 

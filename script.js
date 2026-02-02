@@ -154,6 +154,7 @@ const ContentRenderer = {
         switch (widget.type) {
           case 'hero': this.renderHero(main); break;
           case 'bio': this.renderBio(main); break;
+          case 'socials': this.renderSocials(main); break;
           case 'links': this.renderLinksWidget(main); break;
           case 'html': this.renderHtml(main, widget.content); break;
         }
@@ -163,6 +164,46 @@ const ContentRenderer = {
       // (Legacy support if layout config is missing)
       this.hydrateStatic();
     }
+  },
+
+  renderSocials(container) {
+    if (!CONFIG_DATA.socials || CONFIG_DATA.socials.length === 0) return;
+
+    const section = document.createElement('div');
+    section.className = 'social-section';
+
+    const list = document.createElement('div');
+    list.className = 'social-list';
+
+    CONFIG_DATA.socials.forEach(social => {
+      // Resolve Alias
+      let iconClass = social.icon;
+      if (CONFIG_DATA.socialAliases && CONFIG_DATA.socialAliases[social.icon]) {
+        iconClass = CONFIG_DATA.socialAliases[social.icon];
+      }
+
+      // Extract brand for color mapping
+      const brandMatch = iconClass.match(/fa-([a-z]+)/);
+      const brand = brandMatch ? brandMatch[1] : 'default';
+
+      const a = document.createElement('a');
+      a.href = social.url;
+      a.className = 'social-link hover-trigger';
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.ariaLabel = social.label || social.icon; // Fallback accessibility label
+      a.dataset.brand = brand;
+
+      a.innerHTML = `<i class="${iconClass} social-icon"></i>`;
+
+      list.appendChild(a);
+    });
+
+    section.appendChild(list);
+    container.appendChild(section);
+
+    // Init Magnetic Effect
+    initMagneticButtons('.social-link');
   },
 
   renderHero(container) {
