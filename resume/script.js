@@ -15,14 +15,14 @@ const $$ = s => document.querySelectorAll(s);
 
 // 1. INIT SHARED CORE
 // ══════════════════════════════════════════════
-if (typeof SITE_CONFIG !== 'undefined') {
-    initAnalytics(SITE_CONFIG.analytics);
+if (typeof CONFIG_DATA !== 'undefined') {
+    initAnalytics(CONFIG_DATA.analytics);
 }
 
 // Theme
 const themeManager = new ThemeManager({
     toggleElement: $('.theme-toggle'), // Will bind click automatically
-    storageKey: SITE_CONFIG?.theme?.storageKey || 'dictuzz-theme'
+    storageKey: CONFIG_DATA?.theme?.storageKey || 'dictuzz-theme'
 });
 
 // 2. LANGUAGE SYSTEM
@@ -279,4 +279,12 @@ document.addEventListener('DOMContentLoaded', () => {
             : DEFAULT_LANG;
 
     loadLanguage(initLang);
+
+    // Feature Flags Check
+    if (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.features) {
+        if (CONFIG_DATA.features.blog === false) {
+            const blogLink = document.querySelector('a[href*="blog"]');
+            if (blogLink) blogLink.style.display = 'none';
+        }
+    }
 });

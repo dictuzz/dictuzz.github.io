@@ -7,8 +7,10 @@
 
 export class ThemeManager {
     constructor(options = {}) {
-        this.storageKey = options.storageKey || 'dictuzz-theme';
-        this.defaultTheme = options.defaultTheme || 'dark';
+        const themeConfig = (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.theme) ? CONFIG_DATA.theme : {};
+
+        this.storageKey = options.storageKey || themeConfig.storageKey || 'dictuzz-theme';
+        this.defaultTheme = options.defaultTheme || themeConfig.default || 'dark';
         this.iconElement = options.iconElement || null;
         this.toggleElement = options.toggleElement || null;
 

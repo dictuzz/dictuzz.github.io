@@ -7,6 +7,58 @@
  */
 
 const CONFIG_DATA = {
+    // 0. SITE CONFIG (NEW: Customization Pack 1)
+    siteTitle: "@dictuzz | Data Scientist & Creator",
+    meta: {
+        description: "Personal hub of Benedictus Richard Ricardo (Dictuzz). Data Scientist, Leader, Creator.",
+        keywords: "Data Scientist, Portfolio, Benedictus Richard Ricardo, dictuzz"
+    },
+    // NEW: Features Flags
+    features: {
+        blog: true,
+        resume: true
+    },
+    // NEW: Shared Config Merged
+    analytics: {
+        id: 'G-PJMTM772L5',
+        enabled: true
+    },
+    theme: {
+        storageKey: 'dictuzz-theme',
+        default: 'dark',
+        background: 'aurora', // 'aurora', 'network', 'static'
+        fonts: {
+            display: "Outfit", // Google Font Name
+            body: "Inter"      // Google Font Name
+        },
+        colors: {
+            primary: "#00F5D4", // Cyber Cyan
+            secondary: "#7B61FF" // Electric Purple
+        }
+    },
+    // NEW: Layout Config (Widget System)
+    layout: [
+        { type: "hero" },
+        { type: "bio" },
+        { type: "links" }
+    ],
+    site: {
+        name: 'dictuzz',
+        url: 'https://dictuzz.github.io',
+        author: 'Benedictus Richard Ricardo'
+    },
+    favicon: "assets/images/favicon.svg",
+
+    socialAliases: {
+        "x": "fa-brands fa-x-twitter",
+        "insta": "fab fa-instagram",
+        "linkedin": "fab fa-linkedin",
+        "github": "fab fa-github",
+        "email": "fas fa-envelope",
+        "whatsapp": "fab fa-whatsapp",
+        "calendar": "fas fa-calendar-day"
+    },
+
     // 1. PROFILE INFO
     profile: {
         avatar: "assets/images/dictuzz.webp", // Path to your image

@@ -10,7 +10,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="@dictuzz | Data Scientist • Leader • Creator">
   <meta property="og:type" content="profile">
-  <meta property="og:image" content="./assets/images/og-image.png">
+  <meta property="og:image" content="https://dictuzz.github.io/assets/images/og-image.png">
   <meta property="og:description"
     content="🔗 Link in Bio @dictuzz: Data Scientist, Content Creator & MC. Akses portfolio, blog, dan kartu nama digital!">
   <meta property="og:url" content="https://dictuzz.github.io/">
@@ -39,22 +39,25 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Shared Configuration -->
-  <script src="shared/config.js"></script>
-
   <!-- Google Analytics 4 -->
   <script>
+    // Config is loaded via config.js at the bottom, but GA needs earliest execution
+    // However, since config.js defines CONFIG_DATA (const), we moved config.js to head or handle this safely.
+    // ACTUAL FIX: We will load config.js in HEAD instead of body to ensure it is available early.
+  </script>
+  <script src="config.js"></script>
+  <script>
     // Load GA only if config exists and analytics enabled
-    if (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.analytics.enabled) {
+    if (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.analytics && CONFIG_DATA.analytics.enabled) {
       const script = document.createElement('script');
       script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${SITE_CONFIG.analytics.id}`;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG_DATA.analytics.id}`;
       document.head.appendChild(script);
 
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', SITE_CONFIG.analytics.id);
+      gtag('config', CONFIG_DATA.analytics.id);
     }
   </script>
 
@@ -80,62 +83,11 @@
     <!-- ═══════════════════════════════════════════
          SECTION 1: Profile Header
          ═══════════════════════════════════════════ -->
-    <header class="profile-header">
-      <div class="avatar-section">
-        <div class="avatar-wrapper drag-target">
-          <img src="assets/images/dictuzz.webp" alt="@dictuzz profile photo" class="avatar-premium" id="profile-avatar"
-            width="280" height="380" loading="eager">
-          <!-- Verified Badge -->
-          <span class="verified-badge" title="Verified">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="icon-verified">
-              <path
-                d="m325-2-86-146-165-37 17-168-111-127L91-607 74-775l165-37 86-146 155 66 155-66 86 146 165 37-17 168 111 127-111 127 17 168-165 37-86 146-155-66-155 66Zm113-317 245-246-75-74-170 170-85-86-76 75 161 161Z" />
-            </svg>
-          </span>
-          <!-- Decorations -->
-          <div class="avatar-ring"></div>
-          <div class="avatar-dots"></div>
-        </div>
-
-        <!-- Status Badge -->
-        <div class="status-badge glass">
-          <span class="status-dot"></span>
-          <span>Available for opportunities</span>
-        </div>
-      </div>
-
-      <div class="identity">
-        <h1 class="name" aria-label="@dictuzz">
-          <span class="typing-text" id="profile-name"></span>
-          <span class="cursor" aria-hidden="true"></span>
-        </h1>
-        <p class="tagline" id="profile-tagline"></p>
-
-        <!-- Data Density: Location & Status -->
-
-      </div>
-    </header>
-
-    <!-- ═══════════════════════════════════════════
-         SECTION 2: Bio
-         ═══════════════════════════════════════════ -->
-    <section class="bio-section" aria-label="About">
-      <p class="bio-text" id="profile-bio"></p>
-
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         SECTION 3: All Links (Consolidated)
-         ═══════════════════════════════════════════ -->
-    <nav class="links-section" aria-label="Links">
-      <!-- Tabs for Categories -->
-      <div id="tabs-container" class="tabs-container">
-        <!-- Tabs will be injected here by script.js -->
-      </div>
-      <ul class="link-list" role="list" id="link-list">
-        <!-- Links will be injected here by script.js -->
-      </ul>
-    </nav>
+    <!-- 
+      Dynamic Widget System:
+      Content is now rendered via script.js based on CONFIG_DATA.layout
+      If JS fails, this area will be empty.
+    -->
 
   </main>
 
@@ -151,8 +103,7 @@
 
 
   <!-- Main Script -->
-  <script src="config.js" defer></script>
-  <script type="module" src="script.js" defer></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>

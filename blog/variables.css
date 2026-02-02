@@ -8,6 +8,9 @@
  * - High-contrast (accessibility focused)
  */
 
+/* Import shared tokens FIRST (must be at top level) */
+@import url('../assets/css/tokens.css');
+
 :root {
     /* ===== Typography ===== */
     --font-heading: 'Space Grotesk', 'Outfit', sans-serif;
@@ -41,17 +44,11 @@
 
     /* ===== Colors - Light Theme (Clean Professional) ===== */
     --color-bg: #E2E8F0;
-    /* Slate 100 */
     --color-bg-alt: #FFFFFF;
-    /* White */
     --color-text: #334155;
-    /* Slate 700 */
     --color-text-muted: #64748B;
-    /* Slate 500 */
     --color-heading: #0F172A;
-    /* Slate 900 */
     --color-link: #008080;
-    /* Teal (Dark Cyan) for readable light mode */
     --color-link-hover: #00F5D4;
     --color-link-visited: #5b21b6;
     --color-border: #E2E8F0;

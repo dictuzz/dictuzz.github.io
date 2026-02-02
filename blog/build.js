@@ -60,8 +60,30 @@ function parseFrontmatter(content) {
 // SIMPLE MARKDOWN TO HTML CONVERTER
 // ═══════════════════════════════════════════════════════════════════════════
 
+function processShortcodes(content) {
+  let html = content;
+
+  // YouTube: {{ youtube ID }}
+  html = html.replace(/\{\{\s*youtube\s+([a-zA-Z0-9_-]+)\s*\}\}/g, (match, id) => {
+    return `<div class="video-container"><iframe src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+  });
+
+  // Alert: {{ alert TEXT }}
+  html = html.replace(/\{\{\s*alert\s+(.+?)\s*\}\}/g, (match, text) => {
+    return `<div class="alert-box"><i class="fas fa-info-circle"></i> ${text}</div>`;
+  });
+
+  // Gist: {{ gist ID }}
+  html = html.replace(/\{\{\s*gist\s+([a-zA-Z0-9]+)\s*\}\}/g, (match, id) => {
+    return `<script src="https://gist.github.com/${id}.js"></script>`;
+  });
+
+  return html;
+}
+
 function markdownToHtml(markdown) {
-  let html = markdown;
+  let html = processShortcodes(markdown);
+
 
   // Headers
   html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');

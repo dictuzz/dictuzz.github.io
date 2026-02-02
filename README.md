@@ -3,11 +3,12 @@
 # 🔥 dictuzz.github.io
 
 **The Digital Universe of Benedictus Richard Ricardo**
-Link in Bio • Deep Space Portfolio • Interactive Card • Minimalist Blog
+Link in Bio • Deep Space Portfolio • Minimalist Blog
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-00F5D4?style=for-the-badge&logoColor=black)](https://dictuzz.github.io)
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222?style=for-the-badge&logo=github)](https://pages.github.com)
 [![Documentation](https://img.shields.io/badge/Docs-DOCUMENTATION.md-7B61FF?style=for-the-badge)](./DOCUMENTATION.md)
+[![Config Builder](https://img.shields.io/badge/Tool-Config_Builder-orange?style=for-the-badge)](./tools/config-builder.html)
 
 ![Preview](assets/images/dictuzz.webp)
 
@@ -17,12 +18,11 @@ Link in Bio • Deep Space Portfolio • Interactive Card • Minimalist Blog
 
 ## 🌌 Project Overview
 
-This repository hosts a comprehensive personal brand ecosystem, unified by the **"Deep Space Luxury"** design language.
+This repository hosts a comprehensive personal brand ecosystem, unified by the **"Deep Space Luxury"** design language. It is designed to be a **Single Source of Truth** for your digital presence, fully configurable via a single JSON file.
 
 | Component | Path | Description | Visual Style |
 |-----------|------|-------------|--------------|
-| **Link in Bio** | `/` | Central hub with categorized social links | **Glassmorphism** on Aurora gradient |
-| **Business Card** | `/card/` | Interactive 3D virtual name card | **Platinum & Deep Space** Dual Theme |
+| **Link in Bio** | `/` | Central hub with dynamic widgets and links | **Glassmorphism** on Aurora/Network |
 | **Portfolio** | `/resume/` | Multi-language professional CV | **Premium High-Tech** with typing animation |
 | **tuzzblog** | `/blog/` | Markdown-based personal blog | **Clean Minimalist** with theme sync |
 
@@ -30,49 +30,31 @@ This repository hosts a comprehensive personal brand ecosystem, unified by the *
 
 ---
 
-## ✨ Key Features
+## ✨ features
 
-### 🎨 Unified Design System
-
-A sophisticated dual-theme system synchronized across all components:
-
-| Theme | Name | Background | Style |
-|-------|------|------------|-------|
-| **Dark** | "Deep Space" | Aurora gradient (`#0A0E17`) | Cyan/Purple/Gold neon glows |
-| **Light** | "Platinum" | Cool silver (`#E2E8F0`) | Frosted glass, slate typography |
-
-**Theme Sync**: Toggle once, applied everywhere via shared `localStorage` key.
+### 🎨 Fully Customizable Engine
+Control everything from `config.js`:
+- **Theme System**: Define your own Brand Colors (`primary`, `secondary`) and Fonts.
+- **Background Engine**: Switch visual effects (`aurora`, `network`, `static`) instantly.
+- **Widget Layout**: Reorder your page structure (Hero -> Bio -> Links -> Form) via config array.
 
 ### ⚡ Feature Highlights
-
-- **Interactive Business Card** `/card/`
-  - 3D tilt on mouse/touch
-  - Flip animation (front/back)
-  - Native share API support
-  
-- **Animated Backgrounds** `/`
-  - Dark: Aurora orb particles
-  - Light: Constellation network
-  
-- **Multi-Language Resume** `/resume/`
-  - English, Indonesian, German
-  - JSON-driven content
-  
-- **Static Blog** `/blog/`
-  - Markdown → HTML build
-  - Auto RSS feed generation
-
-### 🏗️ Technical Excellence
-
-- **Zero Frameworks**: Pure HTML5/CSS3/JS
-- **Config-Driven**: Edit `config.js` for links, `shared/config.js` for site settings
-- **Performance**: Lighthouse 100 target
-- **PWA Support**: Service Worker enabled
+- **Unified Configuration**: One file (`config.js`) controls all sub-sites.
+- **Feature Flags**: Toggle sections (Blog/Resume) on or off globally.
+- **Extensible**:
+  - **Plugins**: Inject 3rd party scripts (Analytics, Chat) via config.
+  - **Widgets**: Add Contact Forms (Formspree) or Raw HTML blocks easily.
+- **Multi-Language Resume**: `/resume/?lang=id` or auto-detect.
+- **Static Blog Generator**: Markdown files → HTML with Shortcode support (`{{ youtube }}`, `{{ alert }}`).
 
 ---
 
 ## 🚀 Quick Start
 
+### 1. easy Configuration (No Code)
+Open [`tools/config-builder.html`](./tools/config-builder.html) in your browser to generate your `config.js` visually!
+
+### 2. Manual Setup
 ```bash
 # Clone repository
 git clone https://github.com/dictuzz/dictuzz.github.io.git
@@ -80,33 +62,55 @@ cd dictuzz.github.io
 
 # Run locally (requires Node.js)
 npx -y serve -l 8000
-
-# Open in browser
-# Main:   http://localhost:8000
-# Card:   http://localhost:8000/card/
-# Resume: http://localhost:8000/resume/
-# Blog:   http://localhost:8000/blog/
 ```
 
-### Build Blog Posts
-
+### 3. Build Blog
 ```bash
-cd blog
-node build.js
+# Only needed when adding new .md posts
+node blog/build.js
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Configuration Guide (`config.js`)
 
-| Category | Technologies |
-|----------|--------------|
-| **Core** | HTML5, Vanilla CSS, Vanilla JavaScript (ES6+) |
-| **Graphics** | HTML5 Canvas (Aurora/Network), CSS 3D Transforms, SVG Filters |
-| **Styling** | CSS Custom Properties, Glassmorphism, Grid/Flexbox |
-| **Typography** | Outfit (Headings), Inter (Body), Space Grotesk |
-| **Icons** | FontAwesome 6 |
-| **Analytics** | Google Analytics 4 (optional, configurable) |
+The entire site is driven by `config.js` in the root directory.
+
+### Basic Branding
+```javascript
+const CONFIG_DATA = {
+    siteTitle: "@dictuzz | Portfolio",
+    theme: {
+        colors: { primary: "#00F5D4", secondary: "#7B61FF" },
+        fonts: { display: "Outfit", body: "Inter" },
+        background: "aurora" // or 'network', 'static'
+    },
+    // ...
+};
+```
+
+### Widget Layout System
+Define the order of sections on your landing page:
+```javascript
+layout: [
+    { type: "hero" },
+    { type: "bio" },
+    { type: "links" },
+    { 
+        type: "contact", 
+        config: { url: "https://formspree.io/f/..." } 
+    }
+]
+```
+
+### Feature Flags
+Disable sections you don't need:
+```javascript
+features: {
+    blog: false,   // Hides Blog link from Resume
+    resume: true
+}
+```
 
 ---
 
@@ -114,86 +118,25 @@ node build.js
 
 ```
 dictuzz.github.io/
-├── index.html              # Link in Bio landing page
-├── config.js               # ⭐ Profile & links configuration
-├── script.js               # Main page animations (Aurora/Network)
-├── style.css               # Core design system
-├── sw.js                   # Service Worker (PWA)
-│
-├── shared/                 # Cross-component shared resources
-│   └── config.js           # ⭐ Site-wide settings (analytics, theme)
-│
-├── card/                   # Digital Business Card
-│   ├── index.html          # Card structure
-│   ├── script.js           # 3D tilt, flip, orb animation
-│   └── style.css           # Deep Space/Platinum themes
-│
-├── resume/                 # Professional Portfolio
-│   ├── index.html          # Resume layout
-│   ├── script.js           # i18n, typing animation
-│   ├── style.css           # Portfolio styles
-│   ├── css/tokens.css      # Design tokens
-│   └── locales/            # en.json, id.json, de.json
-│
-├── blog/                   # tuzzblog
-│   ├── index.html          # Blog home
-│   ├── script.js           # Theme, post loader
-│   ├── styles.css          # Blog styling
-│   ├── variables.css       # Theme variables
-│   ├── build.js            # Static site generator
-│   └── posts/              # Markdown articles
-│
-├── assets/images/          # Shared images
-├── DOCUMENTATION.md        # 📚 Full technical documentation
-└── README.md               # This file
+├── config.js               # ⭐ SINGLE SOURCE OF TRUTH (Edit this!)
+├── index.html              # Entry point (Widget Engine)
+├── script.js               # Core Logic & Renderer
+├── tools/
+│   └── config-builder.html # 🛠️ GUI Config Generator
+├── js/
+│   └── background-manager.js # Visual Effect Registry
+├── resume/                 # Professional Portfolio SPA
+├── blog/
+│   ├── build.js            # Generator Script
+│   └── posts/              # Your Markdown Articles
+└── assets/                 # Images & Icons
 ```
-
----
-
-## ⚙️ Configuration
-
-### Adding Social Links
-
-Edit `config.js`:
-
-```javascript
-links: [
-  {
-    label: "My New Link",
-    url: "https://example.com",
-    icon: "fab fa-twitter",
-    style: "secondary",
-    category: "Socials"
-  }
-]
-```
-
-### Site Settings
-
-Edit `shared/config.js`:
-
-```javascript
-const SITE_CONFIG = {
-  analytics: { id: 'G-XXXXXXXXXX', enabled: true },
-  theme: { storageKey: 'dictuzz-theme', default: 'dark' },
-  site: { name: 'dictuzz', url: 'https://dictuzz.github.io' }
-};
-```
-
----
-
-## 📚 Documentation
-
-For comprehensive technical documentation including architecture, component deep-dives, and extension guides, see:
-
-**[📄 DOCUMENTATION.md](./DOCUMENTATION.md)**
 
 ---
 
 <div align="center">
 
 **Made with 🔥 by [@dictuzz](https://github.com/dictuzz)**
-
-*Last updated: January 2026*
+*Last updated: February 2026*
 
 </div>

@@ -8,8 +8,8 @@ import { initAnalytics } from '../shared/analytics.js';
 
 // 1. INIT SHARED CORE
 // ══════════════════════════════════════════════
-if (typeof SITE_CONFIG !== 'undefined') {
-    initAnalytics(SITE_CONFIG.analytics);
+if (typeof CONFIG_DATA !== 'undefined') {
+    initAnalytics(CONFIG_DATA.analytics);
 }
 
 // Theme Manager moved to DOMContentLoaded
@@ -231,7 +231,7 @@ if (typeof SITE_CONFIG !== 'undefined') {
             console.log('Theme toggle element found.');
             const themeManager = new ThemeManager({
                 toggleElement: toggleEl,
-                storageKey: SITE_CONFIG?.theme?.storageKey || 'dictuzz-theme'
+                storageKey: CONFIG_DATA?.theme?.storageKey || 'dictuzz-theme'
             });
         } else {
             console.error('Theme toggle element NOT found.');

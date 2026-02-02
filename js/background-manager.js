@@ -25,6 +25,8 @@ const CONFIG = {
     }
 };
 
+// ENGINES registry is defined at the end of the file after class definitions
+
 export const BackgroundManager = {
     activeEngine: null,
     animationId: null,
@@ -83,11 +85,25 @@ export const BackgroundManager = {
         if (this.activeEngine && this.activeEngine.destroy) this.activeEngine.destroy();
         this.ctx.clearRect(0, 0, this.width, this.height);
 
-        if (mode === 'light') {
-            this.activeEngine = new LightNetworkEngine(this.ctx, this.width, this.height);
-        } else {
-            this.activeEngine = new DarkAuroraEngine(this.ctx, this.width, this.height);
+        // Registry Lookup
+        // 1. Check Config override
+        let engineKey = mode === 'light' ? 'network' : 'aurora';
+
+        if (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.theme && CONFIG_DATA.theme.background) {
+            const bgConfig = CONFIG_DATA.theme.background;
+            // Only override if the config explicitly opts out of the default mode-switching behavior
+            // OR if we want to force a specific engine regardless of mode.
+            // For now, let's allow 'static' to override everything, but otherwise respect mode defaults
+            if (bgConfig === 'static') {
+                engineKey = 'static';
+            } else if (bgConfig !== 'aurora' && bgConfig !== 'network') {
+                // If user put a custom engine name
+                if (ENGINES[bgConfig]) engineKey = bgConfig;
+            }
         }
+
+        const EngineClass = ENGINES[engineKey] || ENGINES['static'];
+        this.activeEngine = new EngineClass(this.ctx, this.width, this.height);
 
         this.loop();
     },
@@ -296,3 +312,21 @@ class NetParticle {
         ctx.globalAlpha = 1;
     }
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+// ENGINES REGISTRY (Must be after class definitions due to JavaScript hoisting)
+// ═══════════════════════════════════════════════════════════════════════════
+const ENGINES = {
+    aurora: DarkAuroraEngine,
+    network: LightNetworkEngine,
+    static: class StaticEngine {
+        constructor(ctx, width, height) {
+            this.ctx = ctx;
+            this.width = width;
+            this.height = height;
+        }
+        resize(w, h) { this.width = w; this.height = h; }
+        update() { /* No-op */ }
+        destroy() { this.ctx.clearRect(0, 0, this.width, this.height); }
+    }
+};

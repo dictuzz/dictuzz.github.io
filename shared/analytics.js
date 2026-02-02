@@ -6,10 +6,16 @@
  */
 
 export function initAnalytics(config) {
-    if (!config || !config.enabled || !config.id) {
+    // 1. Try argument
+    // 2. Try global CONFIG_DATA
+    const cfg = config || (typeof CONFIG_DATA !== 'undefined' ? CONFIG_DATA.analytics : null);
+
+    if (!cfg || !cfg.enabled || !cfg.id) {
         console.warn('Analytics: Disabled or Missing ID');
         return;
     }
+
+    const analyticsId = cfg.id;
 
     // Prevent double injection
     if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${config.id}"]`)) {
