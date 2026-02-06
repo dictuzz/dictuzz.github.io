@@ -64,7 +64,7 @@ const CONFIG_DATA = {
     profile: {
         avatar: "assets/images/dictuzz.webp", // Path to your image
         name: "dictuzz",
-        tagline: "Data Scientist • Content Creator • MC • Vibe Coder",
+        tagline: "Quam Plurimi et Quam Aptissimi",
         // Use <br> for line breaks
         bio: ""
     },

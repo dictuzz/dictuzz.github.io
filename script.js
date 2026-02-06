@@ -218,7 +218,7 @@ const ContentRenderer = {
           <div class="avatar-ring"></div>
           <div class="avatar-dots"></div>
         </div>
-        <div class="status-badge glass"><span class="status-dot"></span><span>Available</span></div>
+        <div class="status-badge glass"><span class="status-dot"></span><span>Available for opportunities</span></div>
       </div>
       <div class="identity">
         <h1 class="name"><span class="typing-text" data-text="${profile.name}"></span><span class="cursor"></span></h1>
