@@ -178,7 +178,7 @@ const ContentRenderer = {
       </div>
       <div class="contact-content">
         <div class="email-options">
-           <a href="mailto:cadrichardricardo@gmail.com" class="option-btn primary hover-trigger">
+           <a href="mailto:contact@dictuzz.me" class="option-btn primary hover-trigger">
              <i class="fas fa-envelope-open-text"></i> Open Email App
            </a>
            <button class="option-btn secondary hover-trigger" id="toggle-email-form">
