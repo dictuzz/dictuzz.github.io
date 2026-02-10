@@ -30,6 +30,7 @@
     gap: var(--space-sm);
     font-style: normal;
     /* override <address> default italic */
+    margin-bottom: var(--space-lg);
 }
 
 .signal-channels a {
@@ -43,4 +44,90 @@
 .signal-channels a:hover,
 .signal-channels a:focus-visible {
     color: var(--c-accent);
+}
+
+/* ═══════════════════════════════════════════
+   MEETING FORM (Added)
+   ═══════════════════════════════════════════ */
+.meeting-details {
+    margin-top: var(--space-md);
+    border-top: 1px solid var(--c-line);
+    padding-top: var(--space-md);
+}
+
+.meeting-details summary {
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: var(--text-xl); /* Increased size for visibility */
+    font-weight: var(--weight-medium);
+    color: var(--c-text-muted);
+    transition: color 0.3s ease;
+    list-style: none; /* Hide default triangle */
+}
+
+.meeting-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.meeting-details summary:hover {
+    color: var(--c-accent);
+}
+
+.meeting-details[open] summary {
+    margin-bottom: var(--space-md);
+    color: var(--c-text);
+}
+
+.signal-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.signal-form label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    color: var(--c-text-muted);
+}
+
+.signal-form input,
+.signal-form textarea {
+    background: transparent;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm);
+    color: var(--c-text);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    transition: border-color 0.3s ease;
+}
+
+.signal-form input:focus,
+.signal-form textarea:focus {
+    outline: none;
+    border-color: var(--c-accent);
+}
+
+.signal-form button {
+    background: var(--c-text);
+    color: var(--c-bg);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-full); /* Pill shape button */
+    font-weight: var(--weight-medium);
+    align-self: flex-start;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    margin-top: var(--space-sm);
+}
+
+.signal-form button:hover {
+    transform: translateY(-2px);
+    background: var(--c-accent);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

@@ -77,22 +77,24 @@ const CONFIG_DATA = {
 
     links: [
         {
-            label: "Enter The Stage (Portfolio)",
+            label: "See my Portfolio",
             url: "./portfolio/",
             icon: "fas fa-layer-group",
             style: "primary",
             category: "Contact"
         },
         {
-            label: "Curriculum Vitae (CV)",
+            label: "Get to Know Me",
             url: "./resume/",
             icon: "fas fa-file-contract",
-            style: "secondary",
+            style: "primary",
             category: "Contact"
         },
         {
-            type: "widget",
-            widget: "email",
+            label: "Send Me an E-Mail",
+            url: "mailto:contact@dictuzz.me",
+            icon: "fas fa-envelope",
+            style: "primary",
             category: "Contact"
         },
         {
@@ -100,11 +102,6 @@ const CONFIG_DATA = {
             url: "https://api.whatsapp.com/send?phone=6285186888630",
             icon: "fab fa-whatsapp",
             style: "primary",
-            category: "Contact"
-        },
-        {
-            type: "widget",
-            widget: "meeting",
             category: "Contact"
         },
         {

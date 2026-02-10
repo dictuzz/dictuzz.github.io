@@ -40,6 +40,34 @@
             <a href="https://www.linkedin.com/in/dictuzz" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://api.whatsapp.com/send?phone=6285186888630" target="_blank" rel="noopener">WhatsApp</a>
         </address>
+
+        <details class="meeting-details">
+            <summary>Schedule our Meeting!</summary>
+            <form action="https://formspree.io/f/xlgwgero" method="POST" class="signal-form">
+                <label>
+                    Full Name
+                    <input type="text" name="name" required placeholder="John Doe">
+                </label>
+                <label>
+                    Email Address
+                    <input type="email" name="email" required placeholder="john@example.com">
+                </label>
+                <label>
+                    Phone Number (International format)
+                    <input type="tel" name="phone" placeholder="+62 812 3456 7890">
+                </label>
+                <label>
+                    When do you want to meet me?
+                    <input type="datetime-local" name="meeting_time" required>
+                </label>
+                <label>
+                    What topic do we will talk about
+                    <textarea name="topic" required placeholder="Project collaboration, consultation, etc."
+                        rows="4"></textarea>
+                </label>
+                <button type="submit">Send Request</button>
+            </form>
+        </details>
     </main>
 
     <script src="js/main.js" defer></script>
