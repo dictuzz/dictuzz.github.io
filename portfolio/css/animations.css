@@ -1,0 +1,100 @@
+/* ═══════════════════════════════════════════
+   MOTION
+   Total budget: 2 animations + hover states.
+   That's it.
+   ═══════════════════════════════════════════ */
+
+/* ── Curtain Page-Load: Name Resolve ─────
+   The name doesn't slide in. It's already in position.
+   It resolves — from blurred/low-contrast to sharp.
+   Like a focus pull in cinematography.
+   ──────────────────────────────────────── */
+
+.curtain-name {
+    animation: resolve var(--duration-considered) var(--easing) both;
+}
+
+.curtain-declaration {
+    opacity: 0;
+    animation: appear var(--duration-considered) var(--easing) 400ms both;
+}
+
+@keyframes resolve {
+    from {
+        filter: blur(8px);
+        opacity: 0.3;
+    }
+
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ── Contextual Motion: Hover/Focus ──────
+   120ms, immediate, small.
+   Confirms input. Doesn't perform.
+   ──────────────────────────────────────── */
+
+/* Nav links — subtle shift on hover */
+.nav-link {
+    transition: color var(--duration-immediate) var(--easing);
+}
+
+/* Signal contact links — shift 2px on hover */
+.signal-channels a {
+    transition: color var(--duration-immediate) var(--easing),
+        transform var(--duration-immediate) var(--easing);
+}
+
+.signal-channels a:hover,
+.signal-channels a:focus-visible {
+    transform: translateX(2px);
+}
+
+/* Work index items — accent on hover */
+.work-index li {
+    transition: border-color var(--duration-immediate) var(--easing);
+}
+
+.work-index-role {
+    transition: color var(--duration-immediate) var(--easing);
+}
+
+.work-index li:hover .work-index-role {
+    color: var(--c-accent);
+}
+
+/* ── Back-Navigation: No Replay ──────────
+   JS adds .revisit to <html> on back_forward nav.
+   The performance has been seen. Don't repeat it.
+   ──────────────────────────────────────── */
+.revisit .curtain-name,
+.revisit .curtain-declaration {
+    animation: none;
+    opacity: 1;
+    filter: none;
+}
+
+/* ── Reduced Motion ──────────────────────
+   Respects user preference. Everything instant.
+   ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+    .curtain-name,
+    .curtain-declaration {
+        animation: none;
+        opacity: 1;
+        filter: none;
+    }
+}

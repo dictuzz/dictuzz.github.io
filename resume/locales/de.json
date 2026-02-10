@@ -24,6 +24,7 @@
         "projects": "Projekte",
         "skills": "Fähigkeiten",
         "awards": "Auszeichnungen",
+        "etc": "Sonstiges",
         "contact": "Kontaktieren Sie mich"
     },
     "section": {
@@ -33,6 +34,7 @@
         "projects": "PROJEKTE",
         "skills": "FÄHIGKEITEN",
         "awards": "AUSZEICHNUNGEN",
+        "etc": "SONSTIGES",
         "contact": "KONTAKT"
     },
     "summary": {
@@ -116,7 +118,7 @@
     "edu": {
         "uni1": {
             "name": "Universitas Terbuka (Open University Indonesia)",
-            "degree": "B.Sc., Data Science",
+            "degree": "B.Sc., Data Science (laufend)",
             "date": "Ab Aug 2025",
             "focus": "Schwerpunkt: Datenanalyse, Statistik, Informationstechnologie"
         },
@@ -130,40 +132,36 @@
         {
             "title": "Workflow-Automatisierung & Berichtswesen:",
             "desc": "Erstellung wiederholbarer Excel/Google Sheets-Prozesse und Dashboards zur Automatisierung regelmäßiger Berichte und KPI-Verfolgung; Dokumentation von Übergaben für die betriebliche Übernahme."
-        },
-        {
-            "title": "Datenanalyse-Studienleistungen:",
-            "desc": "Abschluss von Projekten in Jupyter Notebooks (Datenbereinigung, EDA, grundlegende prädiktive Modellierung mit pandas & scikit-learn) mit Fokus auf reproduzierbare Pipelines und visuelles Storytelling."
         }
     ],
     "skills": {
         "technical": "Technisch",
         "technical_list": [
-            "Microsoft Office (inkl. Excel Macro)",
+            "Microsoft Office Suites",
             "Google Workspace",
-            "Jupyter Notebooks",
-            "Python (Pandas, Scikit-learn)",
-            "SQL",
             "Datenvisualisierung",
-            "Git",
-            "Obsidian",
             "Datenbereinigung",
-            "Explorative Datenanalyse (EDA)",
-            "GitHub"
+            "Obsidian",
+            "Projektmanagement"
         ],
         "business": "Geschäftlich",
         "soft": "Soft Skills",
         "languages": "Sprachen",
-        "biz1": "Projektmanagement",
-        "biz2": "Funktionsübergreifende Zusammenarbeit",
-        "biz3": "Prozessverbesserung",
-        "biz4": "KPI-Berichterstattung",
-        "biz5": "Stakeholder-Kommunikation",
+        "biz1": "Funktionsübergreifende Zusammenarbeit",
+        "biz2": "Prozessverbesserung",
+        "biz3": "KPI-Berichterstattung",
+        "biz4": "Stakeholder-Kommunikation",
         "soft1": "Führung",
-        "soft2": "Öffentliches Reden",
-        "soft3": "Veranstaltungskoordination",
-        "soft4": "Lehrplan-/Schulungsvermittlung",
+        "soft2": "Problemlösung",
+        "soft3": "Öffentliches Reden",
+        "soft4": "Veranstaltungskoordination",
+        "soft5": "Lehrplan-/Schulungsvermittlung",
+        "soft6": "Selbstbewusstsein",
+        "soft7": "Einfallsreichtum",
+        "soft8": "Liebe",
+        "soft9": "Heldentum",
         "lang": {
+            "su": "Sundanesisch (Fließend)",
             "id": "Indonesisch (Muttersprache)",
             "en": "Englisch (Obere Mittelstufe, B2)",
             "de": "Deutsch (Obere Mittelstufe, B2)",
@@ -171,10 +169,10 @@
         }
     },
     "awards": {
-        "1": "1. Platz - Instagram Reels Wettbewerb, Goethe-Institut Bandung (2023) - „Ein Tag in meinem Leben“",
-        "2": "1. Platz - Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) - „Dilema“",
-        "3": "Öffentliche Vorlesungen (2023): Journalismus- & Kommunikationsklassen, Universitas Parahyangan",
-        "4": "Zweitplatzierter Wasserraketen-Wettbewerb (2017) von PLANET SAINS"
+        "1": "1. Platz - Instagram Reels Wettbewerb, Goethe-Institut Bandung (2023) - „Ein Tag in meinem Leben"","2": "1. Platz - Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) - „Dilema"","3": "Zweitplatzierter Wasserraketen-Wettbewerb (2017) von PLANET SAINS"
+    },
+    "etc": {
+        "1": "Öffentliche Vorlesungen (2023): Journalismus- & Kommunikationsklassen, Universitas Parahyangan"
     },
     "footer": {
         "rights": "Alle Rechte vorbehalten."

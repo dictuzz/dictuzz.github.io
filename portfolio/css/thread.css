@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════
+   THREAD — Act III
+   Thesis, clusters, footnote
+   ═══════════════════════════════════════════ */
+
+.thread {
+    padding: var(--space-2xl) var(--page-gutter) var(--space-xl);
+    max-width: 52rem;
+    /* Text column offset right of center — wide left margin like a book gutter */
+    margin-left: auto;
+    margin-right: clamp(var(--page-gutter), 10vw, 15vw);
+}
+
+/* ── Thesis ──────────────────────────────── */
+.thread-thesis {
+    margin-bottom: var(--space-2xl);
+}
+
+.thread-thesis p {
+    font-family: var(--font-display);
+    font-size: var(--text-display-lg);
+    font-weight: var(--weight-regular);
+    line-height: 1.4;
+    color: var(--c-text);
+    max-width: 30ch;
+}
+
+/* ── Clusters ────────────────────────────── */
+.thread-cluster {
+    margin-bottom: var(--space-xl);
+    max-width: var(--content-width);
+}
+
+.thread-cluster:last-of-type {
+    margin-bottom: var(--space-2xl);
+}
+
+.cluster-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-body);
+    font-weight: var(--weight-regular);
+    font-style: italic;
+    color: var(--c-text-faint);
+    margin-bottom: var(--space-md);
+    /* Heading extends into the left margin — feels like a margin note */
+    margin-left: calc(-1 * clamp(0rem, 3vw, 3rem));
+}
+
+.thread-cluster p {
+    margin-bottom: var(--space-sm);
+    color: var(--c-text);
+}
+
+.thread-cluster p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Footnote ────────────────────────────── */
+.thread-footnote {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--c-text-faint);
+    max-width: var(--content-width);
+}
+
+.thread-footnote dl {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.footnote-item {
+    display: flex;
+    gap: var(--space-md);
+    font-size: var(--text-small);
+    align-items: baseline;
+}
+
+.footnote-item dt {
+    color: var(--c-text-faint);
+    font-weight: var(--weight-medium);
+    min-width: 7rem;
+    flex-shrink: 0;
+}
+
+.footnote-item dd {
+    color: var(--c-text-muted);
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 768px) {
+    .thread {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+    }
+
+    .cluster-heading {
+        margin-left: 0;
+    }
+
+    .footnote-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}

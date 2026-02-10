@@ -1,0 +1,46 @@
+/* ═══════════════════════════════════════════
+   SIGNAL — Epilogue
+   One sentence, three links, nothing else.
+   ═══════════════════════════════════════════ */
+
+.signal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: var(--space-xl) var(--page-gutter);
+    /* Content sits left, not centered — like the last page of a letter */
+    max-width: 36rem;
+}
+
+.signal-sentence {
+    font-family: var(--font-display);
+    font-size: var(--text-display-md);
+    font-weight: var(--weight-regular);
+    line-height: 1.4;
+    color: var(--c-text);
+    margin-bottom: var(--space-lg);
+    max-width: 24ch;
+}
+
+.signal-channels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    font-style: normal;
+    /* override <address> default italic */
+}
+
+.signal-channels a {
+    font-size: var(--text-body);
+    font-weight: var(--weight-medium);
+    color: var(--c-text-muted);
+    width: fit-content;
+    /* clickable area matches text, not full width */
+}
+
+.signal-channels a:hover,
+.signal-channels a:focus-visible {
+    color: var(--c-accent);
+}

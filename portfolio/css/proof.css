@@ -1,0 +1,213 @@
+/* ═══════════════════════════════════════════
+   PROOF — Act II
+   Featured experiences + compact work index
+   ═══════════════════════════════════════════ */
+
+.proof {
+    padding: var(--space-2xl) var(--page-gutter) var(--space-xl);
+}
+
+/* ── Featured Work ───────────────────────── */
+.featured-work {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    /* Large scene breaks between experiences */
+}
+
+/* ── Individual Experience ───────────────── */
+.experience {
+    max-width: 60rem;
+}
+
+.experience-entry {
+    margin-bottom: var(--space-lg);
+}
+
+.experience-hook {
+    font-family: var(--font-display);
+    font-size: var(--text-display-md);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-display);
+    color: var(--c-text);
+    max-width: 35ch;
+}
+
+.experience-meta {
+    margin-top: var(--space-sm);
+    font-size: var(--text-meta);
+    color: var(--c-text-faint);
+    letter-spacing: 0.01em;
+}
+
+/* Artifact image — takes significant horizontal space */
+.experience-artifact {
+    margin-bottom: var(--space-md);
+    max-width: 48rem;
+}
+
+.experience-artifact img {
+    width: 100%;
+    background-color: var(--c-surface);
+    /* placeholder tone while image loads */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Hide figure entirely if img has no src */
+.experience-artifact:has(img[src=""]) {
+    display: none;
+}
+
+/* Body prose */
+.experience-body {
+    max-width: var(--content-width);
+    /* Offset from the hook — different left margin creates asymmetry */
+    margin-left: clamp(0rem, 5vw, 6rem);
+}
+
+.experience-body p {
+    margin-bottom: var(--space-sm);
+    color: var(--c-text);
+}
+
+.experience-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Takeaway — not a styled blockquote, just quieter text */
+.experience-takeaway {
+    margin-top: var(--space-md);
+    margin-left: clamp(0rem, 5vw, 6rem);
+    max-width: var(--content-width);
+    padding-left: var(--space-md);
+    border-left: 2px solid var(--c-text-faint);
+}
+
+.experience-takeaway p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-body);
+    color: var(--c-text-muted);
+    line-height: var(--leading-body);
+}
+
+/* Alternate takeaway position for variety (add class to 2nd experience) */
+.experience:nth-child(2) .experience-body,
+.experience:nth-child(2) .experience-takeaway {
+    margin-left: 0;
+    margin-right: clamp(0rem, 5vw, 6rem);
+}
+
+.experience:nth-child(2) .experience-takeaway {
+    border-left: none;
+    border-right: 2px solid var(--c-text-faint);
+    padding-left: 0;
+    padding-right: var(--space-md);
+}
+
+/* ── Additional Work Index ───────────────── */
+.additional-work {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--c-text-faint);
+    max-width: var(--content-width);
+}
+
+.additional-work-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-small);
+    font-weight: var(--weight-regular);
+    font-style: italic;
+    color: var(--c-text-faint);
+    margin-bottom: var(--space-md);
+}
+
+.work-index {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.work-index li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: var(--space-md);
+    row-gap: 0.25rem;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(92, 90, 84, 0.3);
+}
+
+.work-index li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.work-index-role {
+    font-weight: var(--weight-medium);
+    color: var(--c-text);
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.work-index-place {
+    font-size: var(--text-meta);
+    color: var(--c-text-muted);
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.work-index-date {
+    font-size: var(--text-meta);
+    color: var(--c-text-faint);
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+}
+
+.work-index-note {
+    font-size: var(--text-small);
+    color: var(--c-text-muted);
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 0.25rem;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 600px) {
+
+    .experience-body,
+    .experience-takeaway,
+    .experience:nth-child(2) .experience-body,
+    .experience:nth-child(2) .experience-takeaway {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .experience:nth-child(2) .experience-takeaway {
+        border-right: none;
+        border-left: 2px solid var(--c-text-faint);
+        padding-right: 0;
+        padding-left: var(--space-md);
+    }
+
+    .work-index li {
+        grid-template-columns: 1fr;
+    }
+
+    .work-index-date {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: left;
+    }
+
+    .work-index-place {
+        grid-row: 3;
+    }
+
+    .work-index-note {
+        grid-row: 4;
+    }
+}

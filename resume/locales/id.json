@@ -24,6 +24,7 @@
         "projects": "Proyek",
         "skills": "Keahlian",
         "awards": "Penghargaan",
+        "etc": "Lain-lain",
         "contact": "Hubungi Saya"
     },
     "section": {
@@ -33,6 +34,7 @@
         "projects": "PROYEK",
         "skills": "KEAHLIAN",
         "awards": "PENGHARGAAN",
+        "etc": "LAIN-LAIN",
         "contact": "KONTAK"
     },
     "summary": {
@@ -116,7 +118,7 @@
     "edu": {
         "uni1": {
             "name": "Universitas Terbuka",
-            "degree": "S1 Data Science",
+            "degree": "S1 Data Science (sedang berjalan)",
             "date": "Mulai Agu 2025",
             "focus": "Fokus: Analisis Data, Statistik, Teknologi Informasi"
         },
@@ -130,40 +132,36 @@
         {
             "title": "Otomatisasi Alur Kerja & Pelaporan:",
             "desc": "Membangun proses Excel/Google Sheets yang dapat diulang dan dasbor untuk mengotomatiskan pelaporan rutin dan pelacakan KPI; mendokumentasikan serah terima untuk adopsi operasional."
-        },
-        {
-            "title": "Tugas Kuliah Analisis Data:",
-            "desc": "Menyelesaikan proyek di Jupyter Notebooks (pembersihan data, EDA, pemodelan prediktif dasar menggunakan pandas & scikit-learn) yang berfokus pada pipeline yang dapat direproduksi dan penceritaan visual."
         }
     ],
     "skills": {
         "technical": "Teknis",
         "technical_list": [
-            "Microsoft Office (termasuk Excel Macro)",
+            "Microsoft Office Suites",
             "Google Workspace",
-            "Jupyter Notebooks",
-            "Python (Pandas, Scikit-learn)",
-            "SQL",
             "Visualisasi Data",
-            "Git",
-            "Obsidian",
             "Pembersihan Data",
-            "Analisis Data Eksploratif (EDA)",
-            "GitHub"
+            "Obsidian",
+            "Manajemen Proyek"
         ],
         "business": "Bisnis",
         "soft": "Soft Skills",
         "languages": "Bahasa",
-        "biz1": "Manajemen Proyek",
-        "biz2": "Kolaborasi Lintas Fungsi",
-        "biz3": "Peningkatan Proses",
-        "biz4": "Pelaporan KPI",
-        "biz5": "Komunikasi Pemangku Kepentingan",
+        "biz1": "Kolaborasi Lintas Fungsi",
+        "biz2": "Peningkatan Proses",
+        "biz3": "Pelaporan KPI",
+        "biz4": "Komunikasi Pemangku Kepentingan",
         "soft1": "Kepemimpinan",
-        "soft2": "Public Speaking",
-        "soft3": "Koordinasi Acara",
-        "soft4": "Penyampaian Kurikulum/Pelatihan",
+        "soft2": "Pemecahan Masalah",
+        "soft3": "Public Speaking",
+        "soft4": "Koordinasi Acara",
+        "soft5": "Penyampaian Kurikulum/Pelatihan",
+        "soft6": "Kesadaran Diri",
+        "soft7": "Kecerdikan",
+        "soft8": "Kasih",
+        "soft9": "Kepahlawanan",
         "lang": {
+            "su": "Sunda (Fasih)",
             "id": "Indonesia (Penutur Asli)",
             "en": "Inggris (Menengah Atas, B2)",
             "de": "Jerman (Menengah Atas, B2)",
@@ -171,10 +169,12 @@
         }
     },
     "awards": {
-        "1": "Juara 1 - Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) - “Ein Tag in meinem Leben”",
-        "2": "Juara 1 - Kompetisi Film Pendek, Komisi Komsos Keuskupan Bandung (2019) - “Dilema”",
-        "3": "Kuliah Umum (2023): Kelas Jurnalisme & Komunikasi Publik, Universitas Parahyangan",
-        "4": "Runner-Up Kompetisi Roket Air (2017) oleh PLANET SAINS"
+        "1": "Juara 1 - Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) - \"Ein Tag in meinem Leben\"",
+        "2": "Juara 1 - Kompetisi Film Pendek, Komisi Komsos Keuskupan Bandung (2019) - \"Dilema\"",
+        "3": "Runner-Up Kompetisi Roket Air (2017) oleh PLANET SAINS"
+    },
+    "etc": {
+        "1": "Kuliah Umum (2023): Kelas Jurnalisme & Komunikasi Publik, Universitas Parahyangan"
     },
     "footer": {
         "rights": "Hak cipta dilindungi undang-undang."

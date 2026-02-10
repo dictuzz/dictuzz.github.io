@@ -77,10 +77,17 @@ const CONFIG_DATA = {
 
     links: [
         {
-            label: "Get to Know Me",
-            url: "https://dictuzz.github.io/resume/",
-            icon: "fas fa-id-card",
+            label: "Enter The Stage (Portfolio)",
+            url: "./portfolio/",
+            icon: "fas fa-layer-group",
             style: "primary",
+            category: "Contact"
+        },
+        {
+            label: "Curriculum Vitae (CV)",
+            url: "./resume/",
+            icon: "fas fa-file-contract",
+            style: "secondary",
             category: "Contact"
         },
         {

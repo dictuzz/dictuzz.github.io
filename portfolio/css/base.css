@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════════
+   BASE STYLES
+   Reset, typography, navigation, global
+   ═══════════════════════════════════════════ */
+
+/* ── Reset ───────────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-body);
+    color: var(--c-text);
+    background-color: var(--c-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--c-link);
+    text-decoration: none;
+    transition: color var(--duration-immediate) var(--easing);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--c-link-hover);
+}
+
+/* Keyboard focus — visible outline, no color noise */
+:focus-visible {
+    outline: 2px solid var(--c-text-muted);
+    outline-offset: 4px;
+}
+
+a:focus-visible {
+    outline-offset: 2px;
+}
+
+::selection {
+    background-color: var(--c-accent);
+    color: var(--c-bg);
+}
+
+/* ── Navigation ──────────────────────────── */
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--page-gutter);
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: var(--weight-medium);
+    letter-spacing: 0.02em;
+    background-color: var(--c-bg);
+}
+
+.nav-link {
+    color: var(--c-text-muted);
+    padding: var(--space-xs) 0;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    color: var(--c-text);
+}
+
+.nav-link[aria-current="page"] {
+    color: var(--c-text);
+}
+
+.nav-link[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--c-text);
+}
+
+/* ── Reduced Motion ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

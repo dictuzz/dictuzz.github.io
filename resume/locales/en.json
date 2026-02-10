@@ -21,6 +21,7 @@
         "projects": "Projects",
         "skills": "Skills",
         "awards": "Awards",
+        "etc": "Etc",
         "contact": "Contact Me"
     },
     "section": {
@@ -30,6 +31,7 @@
         "projects": "PROJECTS",
         "skills": "SKILLS",
         "awards": "AWARDS",
+        "etc": "ETC",
         "contact": "CONTACT"
     },
     "summary": {
@@ -113,7 +115,7 @@
     "edu": {
         "uni1": {
             "name": "Universitas Terbuka (Open University Indonesia)",
-            "degree": "B.Sc., Data Science",
+            "degree": "B.Sc., Data Science (ongoing)",
             "date": "Starting Aug 2025",
             "focus": "Focus: Data Analysis, Statistics, Information Technology"
         },
@@ -127,40 +129,36 @@
         {
             "title": "Workflow Automation & Reporting:",
             "desc": "Built repeatable Excel/Google Sheets processes and dashboards to automate routine reporting and KPI tracking; documented handoffs for operational adoption."
-        },
-        {
-            "title": "Data Analysis Coursework:",
-            "desc": "Completed projects in Jupyter Notebooks (data cleaning, EDA, basic predictive modeling using pandas & scikit-learn) focused on reproducible pipelines and visual storytelling."
         }
     ],
     "skills": {
         "technical": "Technical",
         "technical_list": [
-            "Microsoft Office (including Excel Macro)",
+            "Microsoft Office Suites",
             "Google Workspace",
-            "Jupyter Notebooks",
-            "Python (Pandas, Scikit-learn)",
-            "SQL",
             "Data Visualization",
-            "Git",
-            "Obsidian",
             "Data Cleaning",
-            "Exploratory Data Analysis (EDA)",
-            "GitHub"
+            "Obsidian",
+            "Project Management"
         ],
         "business": "Business",
         "soft": "Soft Skills",
         "languages": "Languages",
-        "biz1": "Project management",
-        "biz2": "Cross-functional collaboration",
-        "biz3": "Process improvement",
-        "biz4": "KPI reporting",
-        "biz5": "Stakeholder communication",
+        "biz1": "Cross-functional Collaboration",
+        "biz2": "Process Improvement",
+        "biz3": "KPI Reporting",
+        "biz4": "Stakeholder Communication",
         "soft1": "Leadership",
-        "soft2": "Public speaking",
-        "soft3": "Event coordination",
-        "soft4": "Curriculum/training delivery",
+        "soft2": "Problem Solving",
+        "soft3": "Public Speaking",
+        "soft4": "Event Coordination",
+        "soft5": "Curriculum/Training Delivery",
+        "soft6": "Self-Awareness",
+        "soft7": "Ingenuity",
+        "soft8": "Love",
+        "soft9": "Heroism",
         "lang": {
+            "su": "Sundanese (Fluent)",
             "id": "Indonesian (Native)",
             "en": "English (Upper-intermediate, B2)",
             "de": "German (Upper-intermediate, B2)",
@@ -168,10 +166,12 @@
         }
     },
     "awards": {
-        "1": "1st Place - Instagram Reels Competition, Goethe-Institut Bandung (2023) - “Ein Tag in meinem Leben”",
-        "2": "1st Place - Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) - “Dilema”",
-        "3": "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan",
-        "4": "Runner-Up Water Rocket Competition (2017) by PLANET SAINS"
+        "1": "1st Place - Instagram Reels Competition, Goethe-Institut Bandung (2023) - \"Ein Tag in meinem Leben\"",
+        "2": "1st Place - Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) - \"Dilema\"",
+        "3": "Runner-Up Water Rocket Competition (2017) by PLANET SAINS"
+    },
+    "etc": {
+        "1": "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan"
     },
     "footer": {
         "rights": "All rights reserved."
