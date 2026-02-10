@@ -186,7 +186,7 @@ const ContentRenderer = {
            </button>
         </div>
         
-        <form action="https://formspree.io/f/xzdazwwz" method="POST" class="contact-form email-direct-form hidden" id="email-direct-form">
+        <form action="https://formspree.io/f/xlgwgero" method="POST" class="contact-form email-direct-form hidden" id="email-direct-form">
           <div class="form-group">
             <label for="email-sender">Your Email</label>
             <input type="email" id="email-sender" name="email" required placeholder="your@email.com" class="form-input">
@@ -236,7 +236,7 @@ const ContentRenderer = {
         <i class="fas fa-chevron-down toggle-icon"></i>
       </div>
       <div class="contact-content">
-        <form action="https://formspree.io/f/mwvnpzwr" method="POST" class="contact-form">
+        <form action="https://formspree.io/f/xlgwgero" method="POST" class="contact-form">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required placeholder="John Doe" class="form-input">
