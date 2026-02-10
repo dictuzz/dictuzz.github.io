@@ -35,11 +35,6 @@ The repository acts as a monorepo for several distinct but integrated web compon
 │   ├── images/             # Global images (WebP, SVG, PNG)
 │   └── css/
 │       └── tokens.css      # [NEW] Shared CSS Design Tokens (SSOT)
-├── blog/                   # [Sub-site] Static Blog & Generator
-│   ├── posts/              # Markdown content source
-│   ├── build.js            # Node.js SSG with Shortcode support
-│   ├── variables.css       # Blog-specific CSS (imports tokens.css)
-│   └── index.html          # Blog Entry
 ├── js/
 │   └── background-manager.js  # Canvas Background Engine Registry
 ├── resume/                 # [Sub-site] Professional Portfolio
@@ -64,15 +59,14 @@ The repository acts as a monorepo for several distinct but integrated web compon
 
 | File Type | Count | Description |
 |-----------|-------|-------------|
-| **HTML** | 6 | Entry points for each sub-section + 404 |
-| **JavaScript** | 10 | Core logic, build scripts, shared modules |
-| **CSS** | 6 | Component-specific styling and tokens |
-| **JSON** | 4 | Data for blog posts and i18n locales |
-| **Markdown** | 4 | Documentation and Blog Post content |
+| **HTML** | 4 | Entry points for sub-sections + 404 |
+| **JavaScript** | 8 | Core logic, shared modules |
+| **CSS** | 5 | Component-specific styling and tokens |
+| **JSON** | 3 | i18n locales |
+| **Markdown** | 3 | Documentation |
 | **Images** | 8 | Assets (WebP, SVG, PNG) |
 
 ### Notable Artifacts
-- **`blog/build.js`**: A custom build tool to convert Markdown to HTML.
 - **`js/background-manager.js`**: A complex Canvas rendering engine for the visual background effects.
 - **`shared/theme.js`**: The central state manager for the application's theming system.
 
@@ -81,8 +75,8 @@ The repository acts as a monorepo for several distinct but integrated web compon
 ## 3. Quickstart
 
 ### Requirements
-- **Runtime**: Node.js (v14+ recommended) for running the blog builder and local dev server.
 - **Browser**: Modern browser with ES Module support (Chrome, Firefox, Safari, Edge).
+- **Node.js**: Optional, only for running local dev server.
 
 ### Installation
 No `npm install` is strictly required for the runtime as there are no `node_modules`. Dependencies are zero (all vanilla).
@@ -104,17 +98,9 @@ Open [http://localhost:8000](http://localhost:8000)
 ### Run Tests
 *No automated test suite exists in this repository.* Verification is manual.
 
-### Build (Blog)
-The main site needs no build. The blog requires a build step if new Markdown files are added.
-
-```bash
-# Build blog posts from /blog/posts/*.md
-node blog/build.js
-```
-
 ### Deployment
 The project is configured for **GitHub Pages**.
-- **Source**: Root directory (or `docs/` if configured, currently root structure implies direct serving).
+- **Source**: Root directory.
 - **Process**: Push to `main` (or `master`) triggers GitHub Pages deployment.
 
 ---
@@ -130,7 +116,6 @@ graph TD
     subgraph Client Browser
         Entry[index.html (Link in Bio)]
         Resume[resume/index.html (Portfolio)]
-        Blog[blog/index.html (Blog)]
     end
 
     subgraph Shared Layer
@@ -145,11 +130,6 @@ graph TD
         ConfigMain[config.js]
     end
 
-    subgraph "Build Time (Node.js)"
-        Builder[blog/build.js]
-        MD[blog/posts/*.md]
-    end
-
     Entry --> Theme
     Entry --> BG
     Entry --> Utils
@@ -158,32 +138,21 @@ graph TD
     Resume --> Theme
     Resume --> Utils
     Resume --> Analytics
-    
-    Blog --> Theme
-    Blog --> Analytics
-    
-    Builder -- Reads --> MD
-    Builder -- Generates --> Blog
 ```
 
 ### Components & Responsibilities
 
 1.  **Link in Bio (`/`)**
-    *   **Responsibility**: Landing page, traffic router, visual showcase.
+    *   **Responsibility**: Landing page, traffic router, visual showcase, interactive widgets.
     *   **Key Files**: `index.html`, `script.js`, `js/background-manager.js`.
-    *   **Contracts**: Consumes `config.js` for links data.
+    *   **Contracts**: Consumes `config.js` for links data and widgets.
 
 2.  **Portfolio (`/resume/`)**
     *   **Responsibility**: Professional detailed information, multilingual.
     *   **Key Files**: `resume/index.html`, `resume/script.js`, `resume/locales/*.json`.
     *   **Contracts**: URL Query-based language selection (`?lang=id`).
 
-3.  **Blog (`/blog/`)**
-    *   **Responsibility**: Content publishing.
-    *   **Key Files**: `blog/index.html`, `blog/build.js`.
-    *   **Contracts**: Statically generated at build time. No runtime DB.
-
-4.  **Shared Library (`/shared/`)**
+3.  **Shared Library (`/shared/`)**
     *   **Responsibility**: Enforce consistency (Theme, Analytics) and reduce code duplication.
     *   **Key Files**: `theme.js` (State), `analytics.js` (GA4 wrapper).
 
@@ -192,8 +161,9 @@ graph TD
 ## 5. Deep Module Documentation
 
 ### 5.1 Link in Bio (Root `index.html`)
-The main entry point. It features a sophisticated dual-background system managed by `BackgroundManager`.
+The main entry point. It features a sophisticated dual-background system managed by `BackgroundManager` and a Widget Engine.
 - **`script.js`**: Orchestrates `ThemeManager`, `ContentRenderer` (populates DOM from JSON), and `BackgroundManager`.
+- **Widget Engine**: Renders interactive blocks within the link list (e.g., Collapsible Contact Form, Email dual-option widget).
 - **`js/background-manager.js`**:
     - **Mode 1 (Dark)**: `DarkAuroraEngine` - Particle system with screen blend mode (Canvas).
     - **Mode 2 (Light)**: `LightNetworkEngine` - Constellation network effect with mouse interaction (Canvas).
@@ -205,17 +175,7 @@ A Single Page Application (SPA)-like static page that loads content dynamically 
 - **DOM Updates**: Uses `renderExperience`, `renderProjects` helper functions to generate HTML from JSON arrays.
 - **Typer**: Uses `shared/utils.js` `Typer` class for the hero section typing animation.
 
-### 5.3 Blog (`blog/`)
-Minimally styled blog with Markdown support.
-- **Build System (`blog/build.js`)**:
-    - Scans `blog/posts/*.md`.
-    - Parses Frontmatter (using manual regex, no `gray-matter`).
-    - Converts Markdown to HTML (using manual regex replacers, no `marked` lib).
-    - Generates `posts/{slug}.html` from `post-template.html` (defined within the script).
-    - Updates `blog/posts.json` and `blog/rss.xml`.
-- **RSS**: Auto-generates `rss.xml` for feed readers.
-
-### 5.4 Shared Core (`shared/`)
+### 5.3 Shared Core (`shared/`)
 - **`theme.js`**: `ThemeManager` class.
     - Uses `localStorage` key `dictuzz-theme`.
     - Listens to `storage` event to sync theme across tabs instantly.
@@ -226,7 +186,7 @@ Minimally styled blog with Markdown support.
     - `initMagneticButtons`: 3D hover effect logic.
 - **`analytics.js`**: GA4 wrapper that checks `CONFIG_DATA.analytics.enabled` before injecting scripts.
 
-### 5.5 CSS Design Tokens (`assets/css/tokens.css`) [NEW]
+### 5.4 CSS Design Tokens (`assets/css/tokens.css`) [NEW]
 Centralized design system variables consumed by all sub-sites.
 - **Colors**: Background, Text, Accent (Cyber Palette: Cyan, Purple, Gold)
 - **Typography**: Font families, sizes, weights, line heights
@@ -247,7 +207,7 @@ Centralized design system variables consumed by all sub-sites.
 4. `script.js` imports `ThemeManager`.
 5. `ThemeManager` checks `localStorage` -> applies `data-theme` attribute to `<html>`.
 6. `BackgroundManager` initializes Canvas based on the applied theme.
-7. `ContentRenderer` reads `config.js` and injects Profile & Link elements into DOM.
+7. `ContentRenderer` reads `config.js` and injects Profile, Widgets, & Link elements into DOM.
 
 ### 6.2 Theme Synchronization Flow
 1. User clicks Toggle Button on Tab A.
@@ -256,39 +216,13 @@ Centralized design system variables consumed by all sub-sites.
 4. Tab B (if open) receives `window` `storage` event.
 5. Tab B's `ThemeManager` listener fires, updating Tab B's DOM and re-initializing Background Canvas.
 
-### 6.3 Blog Build Flow
-1. Developer adds `new-post.md` to `blog/posts/`.
-2. Developer runs `node blog/build.js`.
-3. Script reads all MD files.
-4. Script regenerates `blog/posts/new-post.html` (physical file).
-5. Script regenerates `blog/posts.json` (index).
-6. Script regenerates `blog/rss.xml`.
-7. Developer commits and pushes all generated files.
-
 ---
 
 ## 7. Data Model
 
 The application uses JSON files as its database.
 
-### 7.1 Blog Post Schema (`blog/posts.json`)
-Used by the blog index page to list articles.
-```json
-{
-  "posts": [
-    {
-      "slug": "string (filename w/o ext)",
-      "title": "string",
-      "date": "YYYY-MM-DD",
-      "dateFormatted": "Month DD • YY",
-      "category": "string",
-      "excerpt": "string (auto-generated first 150 chars)"
-    }
-  ]
-}
-```
-
-### 7.2 Resume Locale Schema (`resume/locales/*.json`)
+### 7.1 Resume Locale Schema (`resume/locales/*.json`)
 Defines the content for the portfolio.
 ```json
 {
@@ -317,19 +251,16 @@ Defines the content for the portfolio.
 ### 8.1 Public Links (`config.js`)
 Located in root. Controls `index.html`.
 - `profile`: Avatar, name, tagline, bio.
-- `links`: Array of link objects.
-  - `label`: Button text.
-  - `url`: Target URL.
-  - `icon`: FontAwesome class (e.g., `fab fa-github`).
-  - `style`: `primary` (solid) or `secondary` (outline).
-  - `category`: Used for tab filtering (e.g. "Socials", "Contact").
+- `links`: Array of objects. Can be standard links or widgets.
+  - **Link**: `{ label, url, icon, style, category }`
+  - **Widget**: `{ type: "widget", widget: "email" | "meeting", category }`
 - `footer`: Copyright text.
 
 ### 8.2 Unified Config (`config.js`) [UPDATED]
 All configuration is now consolidated in the root `config.js` file (no more `shared/config.js`).
 - `analytics`: `{ id: 'G-XXX', enabled: boolean }`
 - `theme`: `{ storageKey, default, colors: { primary, secondary }, fonts: { display, body }, background }`
-- `layout`: Widget array for dynamic page composition `[{ type: 'hero' }, { type: 'links' }]`
+- `layout`: Top-level section array `[{ type: 'hero' }, { type: 'links' }]`. (Note: Widgets are now inside `links`).
 - `plugins`: External script loader `[{ src: 'url', async: true }]`
 
 ---
@@ -342,6 +273,7 @@ All configuration is now consolidated in the root `config.js` file (no more `sha
 | **FontAwesome 6** | CDN (CSS) | Icons for buttons/socials | `index.html` (Link tag) |
 | **Google Fonts** | CDN (CSS) | Typography (Outfit, Inter) | `index.html` (Link tag) |
 | **WhatsApp API** | Link | Direct message link | `config.js` (URL) |
+| **Formspree** | API | Contact Form & Email submissions | `script.js` (Implementation) |
 
 ---
 
@@ -357,7 +289,6 @@ All global static assets are located in the `assets/` directory, while sub-sites
 | `resume/Aku.webp` | Portfolio specific profile picture. |
 | `resume/api.webp` | Portfolio asset (likely project preview). |
 | `resume/og-image.png` | Resume-specific Open Graph image. |
-| `blog/og-image.png` | Blog-specific Open Graph image. |
 
 > [!NOTE]
 > WebP format is used for photos to ensure high performance and low bandwidth usage. Ensure any new images are compressed/converted to WebP.
@@ -371,8 +302,8 @@ Currently, the project relies on **Manual Verification**.
 ### Recommended Test Plan
 1. **Visual Regression**: Check Dark/Light mode on Desktop and Mobile.
 2. **Link Validation**: Click all links in `config.js` to ensure they are valid.
-3. **Responsive Check**: Verify `index.html` and `resume/index.html` on viewports < 400px (iPhone SE).
-4. **Blog Build**: Run `node blog/build.js` and verify no errors in console and that new HTML files are generated.
+3. **Widget Functionality**: Test Form and Email widgets toggle and submission.
+4. **Responsive Check**: Verify `index.html` and `resume/index.html` on viewports < 400px (iPhone SE).
 
 ---
 
@@ -411,10 +342,10 @@ Currently, the project relies on **Manual Verification**.
 - ~~CSS Duplication~~: **RESOLVED** - All CSS now imports shared `assets/css/tokens.css`.
 - ~~Multiple Config Files~~: **RESOLVED** - Unified into single `config.js`.
 - ~~Missing `card` folder~~: References removed from documentation.
+- ~~Legacy Blog System~~: **RESOLVED** - Migrated to Medium, local blog engine removed.
 
 ### Remaining Debt
-1.  **Blog Build System**: The regex-based markdown parser in `blog/build.js` is fragile. Consider `marked` library if complexity increases.
-2.  **Resume Locales**: 3 separate JSON files could be merged into one if HTTP round-trips become a concern.
+1.  **Resume Locales**: 3 separate JSON files could be merged into one if HTTP round-trips become a concern.
 
 ---
 
@@ -423,8 +354,6 @@ Currently, the project relies on **Manual Verification**.
 The following files were identified in the inventory but were not deeply analyzed (content read) during this audit, typically because their purpose was inferred from context or they are binary assets.
 
 - **Assets**: `assets/images/*`, `resume/css/*.css` (Tokens/Animations inferred from usage in HTML).
-- **Blog Content**: `blog/posts/*.html` (Generated files), `blog/posts/*.md` (Content).
-- **Blog Logic**: `blog/script.js` (Inferred as simple UI logic matching `resume/script.js` pattern).
 - **Config**: `resume/locales/{id,de}.json` (Inferred schema from `en.json`).
 
 All core Logic, Architecture, and Entry Points **HAVE** been analyzed.
@@ -434,18 +363,15 @@ All core Logic, Architecture, and Entry Points **HAVE** been analyzed.
 ## 16. Appendix: Coverage Report
 
 ### Summary
-- **Total Files Inventory**: 52
-- **Files Deeply Analyzed**: 19
-- **Files Inferred/Skipped**: 33
-- **Source Code Analysis Coverage**: ~85% (excluding assets/generated files)
+- **Total Files Inventory**: ~40 (Reduced after blog removal)
+- **Source Code Analysis Coverage**: ~90% (excluding assets)
 
 ### Top Critical Files
 1.  `index.html` - Main Entry.
 2.  `script.js` - Main Logic.
 3.  `config.js` - Main Data.
 4.  `shared/theme.js` - Core State Manager.
-5.  `blog/build.js` - Content Pipeline.
-6.  `resume/index.html` - Primary professional display.
+5.  `resume/index.html` - Primary professional display.
 
 ### Final Conclusion
-The repository is a clean, well-structured static site. The primary issue is the missing `card` component. The codebase is highly maintainable due to its "Zero Framework" approach, relying on modern standard Web APIs.
+The repository is a clean, well-structured static site. It now features an enhanced Widget System while simplifying content management by outsourcing the blog. The codebase is highly maintainable due to its "Zero Framework" approach.

@@ -15,7 +15,7 @@ const CONFIG_DATA = {
     },
     // NEW: Features Flags
     features: {
-        blog: true,
+        blog: false, // Migrated to Medium
         resume: true
     },
     // NEW: Shared Config Merged
@@ -84,6 +84,11 @@ const CONFIG_DATA = {
             category: "Contact"
         },
         {
+            type: "widget",
+            widget: "email",
+            category: "Contact"
+        },
+        {
             label: "Send Me WhatsApp Message",
             url: "https://api.whatsapp.com/send?phone=6285186888630",
             icon: "fab fa-whatsapp",
@@ -91,23 +96,14 @@ const CONFIG_DATA = {
             category: "Contact"
         },
         {
-            label: "Send Me an E-Mail",
-            url: "mailto:cadrichardricardo@gmail.com",
-            icon: "fas fa-envelope",
-            style: "primary",
-            category: "Contact"
-        },
-        {
-            label: "Schedule our Meeting!",
-            url: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ30metKuP1X9heG54IxOgznfw1jGKfjjW5xPtReYATxGnXTZ3vDTi87MmFPgUahljIQgzXndJ9p",
-            icon: "fas fa-calendar-day",
-            style: "secondary",
+            type: "widget",
+            widget: "meeting",
             category: "Contact"
         },
         {
             label: "Read My Blog",
-            url: "https://dictuzz.github.io/blog/",
-            icon: "fas fa-book",
+            url: "https://medium.com/@dictuzz",
+            icon: "fab fa-medium",
             style: "secondary",
             category: "Content"
         }

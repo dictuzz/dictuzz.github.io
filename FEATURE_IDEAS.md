@@ -113,27 +113,27 @@ The system is a specific implementation of a "Personal Brand Monorepo" containin
 2.  **Dynamic Theme Engine**: The biggest visual "wow" factor for customization.
 3.  **Feature Flag System**: Makes the repo a multi-purpose template (Bio vs Resume vs Blog).
 4.  **Background Effect Registry**: Visual variety is key for "Personal Branding".
-5.  **Widget / Slot System**: Transforms it from a "Template" to a "Page Builder".
+5.  **Widget / Slot System**: ✅ **COMPLETED** - Implemented via `layout` and `links` widget types.
 6.  **"No-Code" Config Generator**: massively expands the potential user base.
 7.  **Font Loader Config**: typography defines character; making it easy is high value.
 8.  **Plugin Script Loader**: The "Escape Hatch" for features you can't build yourself.
-9.  **Markdown Shortcodes**: Makes the blog engine actually usable for modern creators.
-10. **Formspree Connector**: Adds necessary utility (contact) without backend code.
+9.  ~~**Markdown Shortcodes**~~: (Blog Deprecated/Migrated).
+10. **Formspree Connector**: ✅ **COMPLETED** - Integrated into Email and Meeting widgets.
 
 ---
 
 ## 5. Top 10 Low-Effort Wins
 
-1.  **Consolidate Configs**: Move `shared/config.js` content into `config.js`.
+1.  **Consolidate Configs**: ✅ **COMPLETED** - Unified into `config.js`.
 2.  **Externalize CSS Vars**: Move strict hex codes from `style.css` to a js-injectable root.
-3.  **Toggle-able Blog Link**: Wrap the Blog link generation in an `if (config.blog.enabled)` check.
+3.  **Toggle-able Blog Link**: ✅ **COMPLETED** - `features.blog` flag added.
 4.  **Favicon Config**: Change favicon path via JS (dynamic link tag) instead of hardcoded HTML.
 5.  **Page Title Config**: Set `document.title` from config on boot.
 6.  **Custom Footer Text**: Already exists, but expand to support HTML/Links easily.
 7.  **Social Icon Alias**: Map "x" to "twitter" icon automatically for ease of use.
 8.  **Google Analytics Toggle**: Ensure it strictly respects the `enabled` flag (already done, but verify).
 9.  **Meta Tag Hydration**: generate `og:image` and `description` meta tags from config JS on load (using a Helmet-like utility).
-10. **Build Script "New Post"**: A simple `node blog/new.js "Title"` script to create a file.
+10. ~~**Build Script "New Post"**~~: (Blog Deprecated/Migrated).
 
 ---
 

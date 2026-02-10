@@ -200,6 +200,7 @@
             scroll-behavior: smooth;
             font-size: 16px;
             -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         body {
@@ -218,6 +219,7 @@
             max-width: 100%;
             display: block;
             -webkit-user-drag: none;
+            -webkit-user-select: none;
             user-select: none;
         }
 
@@ -263,8 +265,8 @@
 
         .glass {
             background: var(--bg-glass);
-            backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
             border: 1px solid var(--border-glass);
             border-radius: var(--radius-lg);
         }
@@ -514,6 +516,7 @@
             inset: 0;
             background-image: linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
             background-size: 80px 80px;
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
             mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
         }
 
@@ -1020,8 +1023,8 @@
                 <circle cx="100" cy="100" r="80" stroke="url(#grad1)" stroke-width="1" opacity="0.3" />
                 <defs>
                     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#00F5D4" />
-                        <stop offset="100%" style="stop-color:#7B61FF" />
+                        <stop offset="0%" stop-color="#00F5D4" />
+                        <stop offset="100%" stop-color="#7B61FF" />
                     </linearGradient>
                 </defs>
             </svg>
@@ -1318,9 +1321,9 @@
                 </div>
 
                 <!-- CV Download -->
-                <div class="flex flex--center" style="margin-top: var(--space-12);">
-                    <a href="../404.html" target="_self" class="btn btn--outline btn--glow reveal"
-                        data-i18n="connect.cv">Download CV</a>
+                <div class="flex flex--center mt-12">
+                    <a href="../404.html" target="_blank" id="download-cv-link"
+                        class="btn btn--outline btn--glow reveal" data-i18n="connect.cv">Download CV</a>
                 </div>
             </div>
         </section>

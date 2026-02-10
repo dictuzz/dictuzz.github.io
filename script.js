@@ -156,6 +156,8 @@ const ContentRenderer = {
           case 'bio': this.renderBio(main); break;
           case 'socials': this.renderSocials(main); break;
           case 'links': this.renderLinksWidget(main); break;
+          case 'email_widget': this.renderEmailWidget(main); break;
+          case 'contact_form': this.renderContactForm(main); break;
           case 'html': this.renderHtml(main, widget.content); break;
         }
       });
@@ -164,6 +166,110 @@ const ContentRenderer = {
       // (Legacy support if layout config is missing)
       this.hydrateStatic();
     }
+  },
+
+  renderEmailWidget(container) {
+    const section = document.createElement('section');
+    section.className = 'contact-section glass collapsed email-widget'; // Reuse class, start collapsed
+    section.innerHTML = `
+      <div class="contact-header hover-trigger">
+        <h2 class="section-title">Send Me an E-Mail</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="contact-content">
+        <div class="email-options">
+           <a href="mailto:cadrichardricardo@gmail.com" class="option-btn primary hover-trigger">
+             <i class="fas fa-envelope-open-text"></i> Open Email App
+           </a>
+           <button class="option-btn secondary hover-trigger" id="toggle-email-form">
+             <i class="fas fa-pen-fancy"></i> Write Here
+           </button>
+        </div>
+        
+        <form action="https://formspree.io/f/xzdazwwz" method="POST" class="contact-form email-direct-form hidden" id="email-direct-form">
+          <div class="form-group">
+            <label for="email-sender">Your Email</label>
+            <input type="email" id="email-sender" name="email" required placeholder="your@email.com" class="form-input">
+          </div>
+           <div class="form-group">
+            <label for="fullname-sender">Full Name</label>
+            <input type="text" id="fullname-sender" name="name" required placeholder="Your Name" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Hi dictuzz, I wanted to reach out about..." rows="4" class="form-input"></textarea>
+          </div>
+          <button type="submit" class="submit-btn hover-trigger">Send Email</button>
+        </form>
+      </div>
+    `;
+
+    // Toggle Logic (Collapsible)
+    const header = section.querySelector('.contact-header');
+    header.addEventListener('click', () => {
+      section.classList.toggle('collapsed');
+      section.classList.toggle('expanded');
+    });
+
+    // Toggle Form Logic
+    const toggleFormBtn = section.querySelector('#toggle-email-form');
+    const form = section.querySelector('#email-direct-form');
+
+    toggleFormBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent collapsing
+      form.classList.toggle('hidden');
+      // Update button text/icon based on state if needed, or just leave as is
+      if (!form.classList.contains('hidden')) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+
+    container.appendChild(section);
+  },
+
+  renderContactForm(container) {
+    const section = document.createElement('section');
+    section.className = 'contact-section glass collapsed'; // Start collapsed
+    section.innerHTML = `
+      <div class="contact-header hover-trigger">
+        <h2 class="section-title">Schedule our Meeting!</h2>
+        <i class="fas fa-chevron-down toggle-icon"></i>
+      </div>
+      <div class="contact-content">
+        <form action="https://formspree.io/f/mwvnpzwr" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number (International format)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+62 812 3456 7890" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="meeting-time">When do you want to meet me?</label>
+            <input type="datetime-local" id="meeting-time" name="meeting_time" required class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="topic">What topic do we will talk about</label>
+            <textarea id="topic" name="topic" required placeholder="Project collaboration, consultation, etc." rows="4" class="form-input"></textarea>
+          </div>
+          <button type="submit" class="submit-btn hover-trigger">Send Request</button>
+        </form>
+      </div>
+    `;
+
+    // Toggle Logic
+    const header = section.querySelector('.contact-header');
+    header.addEventListener('click', () => {
+      section.classList.toggle('collapsed');
+      section.classList.toggle('expanded');
+    });
+
+    container.appendChild(section);
   },
 
   renderSocials(container) {
@@ -271,28 +377,39 @@ const ContentRenderer = {
       }
 
       filteredLinks.forEach((link, index) => {
-        // ALIAS RESOLUTION
-        let iconClass = link.icon;
-        if (CONFIG_DATA.socialAliases && CONFIG_DATA.socialAliases[link.icon]) {
-          iconClass = CONFIG_DATA.socialAliases[link.icon];
-        }
-
-        const brandMatch = iconClass.match(/fa-([a-z]+)/);
-        const brand = brandMatch ? brandMatch[1] : 'default';
         const li = document.createElement('li');
-        const isSecondary = link.style === 'secondary';
-        const secondaryClass = isSecondary ? 'link-button--secondary' : '';
-
         li.style.animationDelay = `${index * 100}ms`;
         li.classList.add('fade-in-up');
 
-        li.innerHTML = `
-                      <a href="${link.url}" class="link-button ${secondaryClass} hover-trigger" target="_blank" rel="noopener noreferrer" data-brand="${brand}">
-                        <i class="${iconClass} link-icon"></i>
-                        <span class="link-label">${link.label}</span>
-                        <i class="fas fa-arrow-right link-arrow"></i>
-                      </a>
-                    `;
+        if (link.type === 'widget') {
+          // WIDGET RENDER
+          if (link.widget === 'email') {
+            this.renderEmailWidget(li);
+          } else if (link.widget === 'meeting') {
+            this.renderContactForm(li);
+          }
+        } else {
+          // STANDARD LINK
+          // ALIAS RESOLUTION
+          let iconClass = link.icon;
+          if (CONFIG_DATA.socialAliases && CONFIG_DATA.socialAliases[link.icon]) {
+            iconClass = CONFIG_DATA.socialAliases[link.icon];
+          }
+
+          const brandMatch = iconClass.match(/fa-([a-z]+)/);
+          const brand = brandMatch ? brandMatch[1] : 'default';
+          const isSecondary = link.style === 'secondary';
+          const secondaryClass = isSecondary ? 'link-button--secondary' : '';
+
+
+          li.innerHTML = `
+                        <a href="${link.url}" class="link-button ${secondaryClass} hover-trigger" target="_blank" rel="noopener noreferrer" data-brand="${brand}">
+                            <i class="${iconClass} link-icon"></i>
+                            <span class="link-label">${link.label}</span>
+                            <i class="fas fa-arrow-right link-arrow"></i>
+                        </a>
+                        `;
+        }
         linkList.appendChild(li);
       });
 

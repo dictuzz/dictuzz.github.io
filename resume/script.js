@@ -120,6 +120,7 @@ async function loadLanguage(lang) {
         renderProjects(langData.proj);
         renderSkills(langData.skills);
         applyTranslations(langData);
+        updateDownloadLink(lang);
 
         // Update typing animation
         if (langData.hero?.typing) {
@@ -144,6 +145,19 @@ async function loadLanguage(lang) {
         console.error('Language load error:', err);
         if (lang !== DEFAULT_LANG) loadLanguage(DEFAULT_LANG);
     }
+}
+
+function updateDownloadLink(lang) {
+    const link = $('#download-cv-link');
+    if (!link) return;
+
+    const urls = {
+        'id': 'https://rxresu.me/me.richardricardo/id',
+        'en': 'https://rxresu.me/me.richardricardo/en',
+        'de': 'https://rxresu.me/me.richardricardo/de'
+    };
+
+    link.href = urls[lang] || urls['en'];
 }
 
 // Language button handlers

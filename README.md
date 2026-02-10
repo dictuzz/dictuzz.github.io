@@ -3,7 +3,7 @@
 # 🔥 dictuzz.github.io
 
 **The Digital Universe of Benedictus Richard Ricardo**
-Link in Bio • Deep Space Portfolio • Minimalist Blog
+Link in Bio • Deep Space Portfolio • Blog
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-00F5D4?style=for-the-badge&logoColor=black)](https://dictuzz.github.io)
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222?style=for-the-badge&logo=github)](https://pages.github.com)
@@ -24,9 +24,9 @@ This repository hosts a comprehensive personal brand ecosystem, unified by the *
 |-----------|------|-------------|--------------|
 | **Link in Bio** | `/` | Central hub with dynamic widgets and links | **Glassmorphism** on Aurora/Network |
 | **Portfolio** | `/resume/` | Multi-language professional CV | **Premium High-Tech** with typing animation |
-| **tuzzblog** | `/blog/` | Markdown-based personal blog | **Clean Minimalist** with theme sync |
+| **tuzzblog** | `medium.com` | Personal thoughts and articles | **Medium Platform** |
 
-> 📚 **For detailed technical documentation, see [`DOCUMENTATION.md`](./DOCUMENTATION.md)**
+> 📚 **For detailed technical documentation, see [`PROJECT_DOCUMENTATION.md`](./PROJECT_DOCUMENTATION.md)**
 
 ---
 
@@ -36,16 +36,15 @@ This repository hosts a comprehensive personal brand ecosystem, unified by the *
 Control everything from `config.js`:
 - **Theme System**: Define your own Brand Colors (`primary`, `secondary`) and Fonts.
 - **Background Engine**: Switch visual effects (`aurora`, `network`, `static`) instantly.
-- **Widget Layout**: Reorder your page structure (Hero -> Bio -> Links -> Form) via config array.
+- **Widget Integrated Lists**: Add interactive widgets (Forms, Email) directly into your link list.
 
 ### ⚡ Feature Highlights
 - **Unified Configuration**: One file (`config.js`) controls all sub-sites.
 - **Feature Flags**: Toggle sections (Blog/Resume) on or off globally.
-- **Extensible**:
-  - **Plugins**: Inject 3rd party scripts (Analytics, Chat) via config.
-  - **Widgets**: Add Contact Forms (Formspree) or Raw HTML blocks easily.
+- **Interactive Widgets**:
+  - **Collapsible Contact Forms**: Integrated Formspree forms.
+  - **Dual-Mode Email Widget**: "Open App" or "Write Here" choices.
 - **Multi-Language Resume**: `/resume/?lang=id` or auto-detect.
-- **Static Blog Generator**: Markdown files → HTML with Shortcode support (`{{ youtube }}`, `{{ alert }}`).
 
 ---
 
@@ -62,12 +61,6 @@ cd dictuzz.github.io
 
 # Run locally (requires Node.js)
 npx -y serve -l 8000
-```
-
-### 3. Build Blog
-```bash
-# Only needed when adding new .md posts
-node blog/build.js
 ```
 
 ---
@@ -89,16 +82,24 @@ const CONFIG_DATA = {
 };
 ```
 
-### Widget Layout System
-Define the order of sections on your landing page:
+### Links & Widgets System
+Define your links and interactive widgets in one list:
 ```javascript
-layout: [
-    { type: "hero" },
-    { type: "bio" },
-    { type: "links" },
-    { 
-        type: "contact", 
-        config: { url: "https://formspree.io/f/..." } 
+links: [
+    {
+        label: "My Portfolio",
+        url: "/resume",
+        icon: "fas fa-id-card"
+    },
+    {
+        type: "widget",
+        widget: "email", // Renders collapsible email widget
+        category: "Contact"
+    },
+    {
+        type: "widget",
+        widget: "meeting", // Renders collapsible contact form
+        category: "Contact"
     }
 ]
 ```
@@ -107,7 +108,7 @@ layout: [
 Disable sections you don't need:
 ```javascript
 features: {
-    blog: false,   // Hides Blog link from Resume
+    blog: false,   // Hides Blog link from Resume (Migrated to Medium)
     resume: true
 }
 ```
@@ -126,9 +127,6 @@ dictuzz.github.io/
 ├── js/
 │   └── background-manager.js # Visual Effect Registry
 ├── resume/                 # Professional Portfolio SPA
-├── blog/
-│   ├── build.js            # Generator Script
-│   └── posts/              # Your Markdown Articles
 └── assets/                 # Images & Icons
 ```
 
