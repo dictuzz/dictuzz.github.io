@@ -45,7 +45,7 @@ const CONFIG_DATA = {
     ],
     site: {
         name: 'dictuzz',
-        url: 'https://dictuzz.github.io',
+        url: 'https://dictuzz.me',
         author: 'Benedictus Richard Ricardo'
     },
     favicon: "assets/images/favicon.svg",
@@ -120,6 +120,6 @@ const CONFIG_DATA = {
     // 3. FOOTER
     footer: {
         year: "2025",
-        copyright: "© 2025 <a href='https://dictuzz.github.io/resume' target='_blank'>dictuzz</a>. All rights reserved."
+        copyright: "© 2025 <a href='https://dictuzz.me/resume' target='_blank'>dictuzz</a>. All rights reserved."
     }
 };
