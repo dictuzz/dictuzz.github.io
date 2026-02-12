@@ -21,6 +21,7 @@
         // 1. GLOBAL HYDRATION (Meta, Footer)
         hydrateExamples(DATA.global);
         renderFooter(DATA.global);
+        injectSchema(DATA);
 
         // 2. PAGE SPECIFIC HYDRATION
         if (page === 'index' && DATA.curtain) {
@@ -56,13 +57,28 @@
     }
 
     function renderFooter(data) {
-        // Dynamic Footer Rendering could act here, but current footer is static in HTML. 
-        // We can update the copyright year or tagline if marked.
+        // Tagline & Copyright
         const tagline = document.querySelector('.footer-tagline');
         if (tagline && data.footer.tagline) tagline.textContent = data.footer.tagline;
 
         const copyright = document.querySelector('.footer-bottom p:first-child');
         if (copyright && data.footer.copyright) copyright.innerHTML = data.footer.copyright;
+
+        // Dynamic Navigation
+        const navContainer = document.querySelector('.footer-nav-dynamic');
+        if (navContainer && data.navigation) {
+            navContainer.innerHTML = data.navigation.map(link =>
+                `<a href="${link.url}" class="footer-link">${link.label}</a>`
+            ).join('');
+        }
+
+        // Dynamic Contact/Socials
+        const contactContainer = document.querySelector('.footer-contact-dynamic');
+        if (contactContainer && data.socials) {
+            contactContainer.innerHTML = data.socials.map(link =>
+                `<a href="${link.url}" class="footer-link" target="_blank" rel="noopener">${link.label}</a>`
+            ).join('');
+        }
     }
 
     function hydrateCurtain(data) {
@@ -81,7 +97,7 @@
         const container = document.querySelector('.featured-work');
         if (!container || !data.experiences) return;
 
-        container.innerHTML = data.experiences.map(exp => `
+        container.innerHTML = data.experiences.map((exp, index) => `
             <article class="experience" id="${exp.id}">
                 <header class="experience-entry">
                     <p class="experience-hook">${exp.hook}</p>
@@ -89,7 +105,7 @@
                 </header>
 
                 <figure class="experience-artifact">
-                    <img src="${exp.image}" alt="${exp.alt}" loading="lazy">
+                    <img src="${exp.image}" alt="${exp.alt}" loading="${index === 0 ? 'eager' : 'lazy'}">
                 </figure>
 
                 <div class="experience-body">
@@ -208,6 +224,60 @@
     // UTILS
     function getNestedValue(obj, path) {
         return path.split('.').reduce((o, k) => (o || {})[k], obj);
+    }
+
+    function injectSchema(data) {
+        const schema = {
+            "@context": "https://schema.org",
+            "@graph": []
+        };
+
+        // 1. Person (Global)
+        const socials = data.global.socials.map(s => s.url);
+        // Add Resume link to sameAs
+        // data.global.socials already includes Resume from data.js
+
+        schema["@graph"].push({
+            "@type": "Person",
+            "name": data.global.author,
+            "url": "https://dictuzz.me",
+            "sameAs": socials,
+            "jobTitle": "Creative Technologist",
+            "knowsAbout": ["Data Science", "Process Optimization", "Event Production"]
+        });
+
+        const page = getPageName();
+
+        if (page === 'proof' && data.proof) {
+            const itemList = {
+                "@type": "ItemList",
+                "name": "Portfolio Projects",
+                "itemListElement": data.proof.experiences.map((exp, i) => ({
+                    "@type": "ListItem",
+                    "position": i + 1,
+                    "item": {
+                        "@type": "Project",
+                        "name": `${exp.role} at ${exp.company}`,
+                        "description": exp.hook,
+                        "image": exp.image,
+                        "url": window.location.href + "#" + exp.id
+                    }
+                }))
+            };
+            schema["@graph"].push(itemList);
+        } else if (page === 'thread' && data.thread) {
+            schema["@graph"].push({
+                "@type": "Article",
+                "headline": data.thread.thesis,
+                "author": { "@type": "Person", "name": data.global.author },
+                "articleBody": data.thread.clusters.map(c => c.title + ": " + c.content.replace(/<[^>]+>/g, '')).join(' ')
+            });
+        }
+
+        const script = document.createElement('script');
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(schema);
+        document.head.appendChild(script);
     }
 
 })();
