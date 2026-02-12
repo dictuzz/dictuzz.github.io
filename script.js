@@ -6,8 +6,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { ThemeManager } from './shared/theme.js';
-import { Typer, initHaptics, initMagneticButtons } from './shared/utils.js';
+import { ThemeManager, Typer, initHaptics, initMagneticButtons } from './shared/ui-kit.js';
 import { BackgroundManager } from './js/background-manager.js';
 import { initAnalytics } from './shared/analytics.js';
 
@@ -90,7 +89,7 @@ const ContentRenderer = {
     // Dynamic Favicon
     if (CONFIG_DATA.favicon) {
       const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      link.type = 'image/svg+xml';
+      link.type = 'image/png';
       link.rel = 'icon';
       link.href = CONFIG_DATA.favicon;
       document.head.appendChild(link);

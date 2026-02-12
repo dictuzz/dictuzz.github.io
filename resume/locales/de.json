@@ -42,7 +42,15 @@
     },
     "exp": [
         {
-            "date": "Jul 2024 – Sep 2025",
+            "date": "JUL 2024 – SEP 2025",
+            "role": "Path Climber & Wartung",
+            "company": "Vertical Rescue Indonesia",
+            "details": [
+                "Unterstützung von Rettungstrainingsmaßnahmen (gemessen an Berichten zur Ausrüstungsbereitschaft) durch Wartung und Sicherheitsinspektionen von Kletterausrüstung."
+            ]
+        },
+        {
+            "date": "AUG 2023 – AUG 2024",
             "role": "Management Trainee",
             "company": "Home Digital Indonesia",
             "details": [
@@ -52,17 +60,16 @@
             ]
         },
         {
-            "date": "Nov 2020 – Nov 2021",
-            "role": "Stellvertretender Vorsitzender",
-            "company": "Schülervertretung - Saint Mary 2 High School, Bandung",
+            "date": "NOV 2021 – NOV 2022",
+            "role": "Stellvertretender Leiter",
+            "company": "Katholische Jugendorganisation Ujung Berung",
             "details": [
-                "Entwicklung und Umsetzung von Talentförderprogrammen für alle Jahrgangsstufen (gemessen an der Teilnahmequote) durch Koordination von 10 Ratsabteilungen und Durchführung von Klassenaktivitäten während der Pandemiebeschränkungen.",
-                "Wahrung der institutionellen Kontinuität (gemessen an der vollständigen Archivübergabe) durch Sammlung und Organisation früherer Ratsvorschläge und Rechenschaftsberichte von 2018 für die kommende Führung.",
-                "Durchführung von Führungstrainings an 5 Mittelschulen (gemessen an der Veranstaltungsteilnahme und dem Feedback) durch Lehrplanplanung und Koordination der Trainer."
+                "Planung des jährlichen Programmkalenders (gemessen an der Abschlussquote von Veranstaltungen) durch Koordination teamübergreifender Ergebnisse und Zeitpläne der Freiwilligen.",
+                "Organisation von Großveranstaltungen (gemessen an der Anwesenheit): Abendveranstaltung (100 Teilnehmer) und Jugendgottesdienst (400 Teilnehmer) durch Verwaltung von Logistik und Freiwilligenteams."
             ]
         },
         {
-            "date": "Nov 2021 – Nov 2022",
+            "date": "NOV 2021 – NOV 2022",
             "role": "Vorsitzender",
             "company": "Schülervertretung - Saint Mary 2 High School, Bandung",
             "details": [
@@ -73,7 +80,7 @@
             ]
         },
         {
-            "date": "Nov 2021 – Nov 2022",
+            "date": "JUN 2022 – AUG 2022",
             "role": "Leiter, Abteilung Geschäft & Partnerschaft",
             "company": "Forum OSIS Jawa Barat",
             "details": [
@@ -81,7 +88,7 @@
             ]
         },
         {
-            "date": "Jun 2022 – Aug 2022",
+            "date": "MÄR 2020 – MÄR 2022",
             "role": "Bühnencrew",
             "company": "Ultimate Event Organizer",
             "details": [
@@ -90,16 +97,7 @@
             ]
         },
         {
-            "date": "Aug 2023 – Aug 2024",
-            "role": "Stellvertretender Leiter",
-            "company": "Katholische Jugendorganisation Ujung Berung",
-            "details": [
-                "Planung des jährlichen Programmkalenders (gemessen an der Abschlussquote von Veranstaltungen) durch Koordination teamübergreifender Ergebnisse und Zeitpläne der Freiwilligen.",
-                "Organisation von Großveranstaltungen (gemessen an der Anwesenheit): Abendveranstaltung (100 Teilnehmer) und Jugendgottesdienst (400 Teilnehmer) durch Verwaltung von Logistik und Freiwilligenteams."
-            ]
-        },
-        {
-            "date": "Mär 2020 – Mär 2022",
+            "date": "NOV 2020 – NOV 2021",
             "role": "Stellvertretender Oberministrant",
             "company": "Zipur Kirche",
             "details": [
@@ -107,11 +105,13 @@
             ]
         },
         {
-            "date": "Jan 2021 – Heute",
-            "role": "Path Climber & Wartung",
-            "company": "Vertical Rescue Indonesia",
+            "date": "JAN 2021 – JUN 2021",
+            "role": "Stellvertretender Vorsitzender",
+            "company": "Schülervertretung - Saint Mary 2 High School, Bandung",
             "details": [
-                "Unterstützung von Rettungstrainingsmaßnahmen (gemessen an Berichten zur Ausrüstungsbereitschaft) durch Wartung und Sicherheitsinspektionen von Kletterausrüstung."
+                "Entwicklung und Umsetzung von Talentförderprogrammen für alle Jahrgangsstufen (gemessen an der Teilnahmequote) durch Koordination von 10 Ratsabteilungen und Durchführung von Klassenaktivitäten während der Pandemiebeschränkungen.",
+                "Wahrung der institutionellen Kontinuität (gemessen an der vollständigen Archivübergabe) durch Sammlung und Organisation früherer Ratsvorschläge und Rechenschaftsberichte von 2018 für die kommende Führung.",
+                "Durchführung von Führungstrainings an 5 Mittelschulen (gemessen an der Veranstaltungsteilnahme und dem Feedback) durch Lehrplanplanung und Koordination der Trainer."
             ]
         }
     ],

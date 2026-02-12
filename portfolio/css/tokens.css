@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
    DESIGN TOKENS
-   "The Stage" — Portfolio Redesign
+   "The Stage" — Awwwards-Grade Reinvention
    ═══════════════════════════════════════════ */
 
 :root {
@@ -8,73 +8,97 @@
     --font-display: 'Newsreader', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 
+    --text-display-hero: clamp(4.5rem, 12vw, 10rem);
+    /* Curtain name — the biggest thing on the site */
+    --text-display-xl: clamp(3.5rem, 8vw, 7rem);
+    /* Curtain name fallback */
+    --text-display-lg: clamp(1.5rem, 3vw, 2.25rem);
+    /* Thread thesis */
+    --text-display-md: clamp(1.25rem, 2vw, 1.5rem);
+    /* Experience hooks */
     --text-body: 1.0625rem;
     /* 17px — slightly larger than default for readability */
     --text-small: 0.875rem;
     /* 14px — footnotes, metadata */
     --text-meta: 0.8125rem;
     /* 13px — dates, labels */
-
-    --text-display-xl: clamp(3.5rem, 8vw, 7rem);
-    /* Curtain name */
-    --text-display-lg: clamp(1.5rem, 3vw, 2.25rem);
-    /* Thread thesis */
-    --text-display-md: clamp(1.25rem, 2vw, 1.5rem);
-    /* Experience hooks */
+    --text-micro: 0.75rem;
+    /* 12px — cluster headings, margin notes */
 
     --leading-body: 1.75;
-    /* generous line-height for body text */
-    --leading-display: 1.1;
-    /* tight for display type */
+    --leading-display: 1.05;
     --leading-meta: 1.4;
-    /* compact for small text */
 
     --weight-regular: 400;
     --weight-medium: 500;
     --weight-semibold: 600;
     --weight-bold: 700;
 
+    --tracking-hero: -0.04em;
+    --tracking-display: -0.03em;
+    --tracking-body: 0;
+    --tracking-caps: 0.08em;
+
     /* ── Color ───────────────────────────── */
-    --c-bg: #111110;
-    /* warm near-black, not blue-black */
-    --c-surface: #1a1a18;
+    --c-bg: #0a0a09;
+    /* deeper warm black — more cinematic */
+    --c-surface: #141413;
     /* slightly elevated surface */
-    --c-text: #e8e6e1;
-    /* warm off-white, not pure white */
+    --c-surface-raised: #1c1c1a;
+    /* cards, elevated elements */
+    --c-text: #ede9e3;
+    /* warm parchment white */
     --c-text-muted: #9a9890;
     /* subdued text */
-    --c-text-faint: #5c5a54;
+    --c-text-faint: #4a4843;
     /* very quiet — footnotes, borders */
     --c-accent: #c9a55a;
     /* warm brass — singular accent, earned */
-    --c-link: #e8e6e1;
-    /* links same as text, no visual noise */
+    --c-accent-glow: rgba(201, 165, 90, 0.15);
+    /* subtle brass halo */
+    --c-link: #ede9e3;
     --c-link-hover: #c9a55a;
-    /* accent on intent */
+    --c-line: rgba(74, 72, 67, 0.4);
+    /* borders and dividers */
 
     /* ── Spacing ─────────────────────────── */
     --space-xs: 0.5rem;
-    /* 8px */
     --space-sm: 1rem;
-    /* 16px */
     --space-md: 2rem;
-    /* 32px */
     --space-lg: 4rem;
-    /* 64px */
     --space-xl: 8rem;
-    /* 128px — scene breaks between sections */
     --space-2xl: 12rem;
-    /* 192px — major act transitions */
+    --space-3xl: 20rem;
 
     /* ── Layout ──────────────────────────── */
     --content-width: 42rem;
-    /* ~70 characters per line — optimal reading */
     --page-gutter: clamp(1.5rem, 5vw, 4rem);
-    /* responsive side margins */
+    --page-gutter-wide: clamp(2rem, 8vw, 8rem);
 
-    /* ── Motion (values only, not applied here) ─── */
-    --duration-immediate: 120ms;
-    --duration-considered: 600ms;
-    --easing: cubic-bezier(0.22, 1, 0.36, 1);
-    /* deceleration only */
+    /* ── Motion ──────────────────────────── */
+    --dur-instant: 100ms;
+    --dur-fast: 200ms;
+    --dur-medium: 500ms;
+    --dur-slow: 800ms;
+    --dur-dramatic: 1200ms;
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    /* aggressive deceleration — physical */
+    --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* bounce — hover scale only */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    /* material standard */
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    /* symmetrical — page transitions */
+
+    --stagger: 80ms;
+
+    /* ── Radius ──────────────────────────── */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-full: 100px;
+
+    /* ── Cursor (set by JS) ──────────────── */
+    --cursor-x: 50%;
+    --cursor-y: 50%;
 }

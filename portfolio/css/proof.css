@@ -1,213 +1,426 @@
 /* ═══════════════════════════════════════════
-   PROOF — Act II
-   Featured experiences + compact work index
+   PROOF — Act II: The Investigation Board
+   Infinite Canvas Pan & Zoom
    ═══════════════════════════════════════════ */
 
-.proof {
-    padding: var(--space-2xl) var(--page-gutter) var(--space-xl);
+/* ── The Pinned Container ────────────────── */
+.proof-board {
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    /* CRITICAL: Must be full viewport for pinning */
+    overflow: hidden;
+    position: relative;
+    background-color: #151515;
+    /* Dark corkboard base */
+    cursor: grab;
+    z-index: 5;
 }
 
-/* ── Featured Work ───────────────────────── */
+.proof-board:active {
+    cursor: grabbing;
+}
+
+/* ── The Canvas (Infinite Grid) ──────────── */
 .featured-work {
+    width: 500vw;
+    /* Expanded to 500vw for 7 cards */
+    height: 350vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    /* Scale from top-left, handled by GSAP */
+    will-change: transform;
+
+    /* Grid Pattern Background */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100px 100px;
+}
+
+/* ── Evidence Cards ──────────────────────── */
+.experience {
+    position: absolute;
+    width: 35vw;
+    max-width: 600px;
+    background: var(--c-surface);
+    padding: var(--space-lg);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        /* Deeper shadow */
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    /* Border */
+
     display: flex;
     flex-direction: column;
-    gap: var(--space-2xl);
-    /* Large scene breaks between experiences */
+    gap: var(--space-md);
+
+    /* "Pinned" aesthetic */
+    transform: rotate(var(--rotation, 0deg));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
 }
 
-/* ── Individual Experience ───────────────── */
-.experience {
-    max-width: 60rem;
+.experience:hover {
+    z-index: 100;
+    /* Pop to top */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    transform: scale(1.02) rotate(0deg);
 }
 
+/* Pin Graphic */
+.experience::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--c-accent);
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.3), 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Card Content ────────────────────────── */
 .experience-entry {
-    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--c-line);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-sm);
 }
 
 .experience-hook {
     font-family: var(--font-display);
-    font-size: var(--text-display-md);
-    font-weight: var(--weight-bold);
-    line-height: var(--leading-display);
+    font-size: 2.5rem;
+    line-height: 1.1;
     color: var(--c-text);
-    max-width: 35ch;
 }
 
 .experience-meta {
-    margin-top: var(--space-sm);
-    font-size: var(--text-meta);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--c-text-faint);
-    letter-spacing: 0.01em;
+    margin-top: 0.5rem;
 }
 
-/* Artifact image — takes significant horizontal space */
 .experience-artifact {
-    margin-bottom: var(--space-md);
-    max-width: 48rem;
+    width: 100%;
+    aspect-ratio: 16/9;
+    /* Standard layout inside the card */
+    background: #000;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .experience-artifact img {
     width: 100%;
-    background-color: var(--c-surface);
-    /* placeholder tone while image loads */
-    aspect-ratio: 16 / 9;
+    height: 100%;
     object-fit: cover;
+    filter: user-select-none;
 }
 
-/* Hide figure entirely if img has no src */
-.experience-artifact:has(img[src=""]) {
-    display: none;
-}
-
-/* Body prose */
 .experience-body {
-    max-width: var(--content-width);
-    /* Offset from the hook — different left margin creates asymmetry */
-    margin-left: clamp(0rem, 5vw, 6rem);
+    font-family: 'Inter', sans-serif;
+    /* Clean reading */
+    font-size: 1rem;
+    color: var(--c-text-muted);
+    line-height: 1.6;
 }
 
-.experience-body p {
-    margin-bottom: var(--space-sm);
-    color: var(--c-text);
-}
-
-.experience-body p:last-child {
-    margin-bottom: 0;
-}
-
-/* Takeaway — not a styled blockquote, just quieter text */
 .experience-takeaway {
-    margin-top: var(--space-md);
-    margin-left: clamp(0rem, 5vw, 6rem);
-    max-width: var(--content-width);
-    padding-left: var(--space-md);
-    border-left: 2px solid var(--c-text-faint);
-}
-
-.experience-takeaway p {
-    font-family: var(--font-display);
+    background: rgba(201, 165, 90, 0.1);
+    /* Highlight marker */
+    padding: 1rem;
+    border-left: 2px solid var(--c-accent);
+    font-family: 'Courier New', monospace;
     font-style: italic;
-    font-size: var(--text-body);
-    color: var(--c-text-muted);
-    line-height: var(--leading-body);
+    font-size: 0.9rem;
+    color: var(--c-accent);
 }
 
-/* Alternate takeaway position for variety (add class to 2nd experience) */
-.experience:nth-child(2) .experience-body,
-.experience:nth-child(2) .experience-takeaway {
-    margin-left: 0;
-    margin-right: clamp(0rem, 5vw, 6rem);
+/* ── Coordinates (Desktop) ───────────────── */
+
+.experience:nth-child(1) {
+    top: 15vh;
+    left: 15vw;
+    --rotation: -2deg;
 }
 
-.experience:nth-child(2) .experience-takeaway {
-    border-left: none;
-    border-right: 2px solid var(--c-text-faint);
-    padding-left: 0;
-    padding-right: var(--space-md);
+.experience:nth-child(2) {
+    top: 110vh;
+    /* Down one screen height */
+    left: 120vw;
+    /* Right one screen width */
+    --rotation: 3deg;
 }
 
-/* ── Additional Work Index ───────────────── */
-.additional-work {
-    margin-top: var(--space-2xl);
-    padding-top: var(--space-lg);
-    border-top: 1px solid var(--c-text-faint);
-    max-width: var(--content-width);
+.experience:nth-child(3) {
+    top: 50vh;
+    left: 210vw;
+    /* Far right */
+    --rotation: -1deg;
 }
 
-.additional-work-heading {
-    font-family: var(--font-display);
-    font-size: var(--text-small);
-    font-weight: var(--weight-regular);
-    font-style: italic;
-    color: var(--c-text-faint);
-    margin-bottom: var(--space-md);
+.experience:nth-child(4) {
+    top: 150vh;
+    left: 300vw;
+    --rotation: 2deg;
 }
 
-.work-index {
-    list-style: none;
+.experience:nth-child(5) {
+    top: 240vh;
+    /* Way down */
+    left: 60vw;
+    /* Back towards left side, deep down */
+    --rotation: -3deg;
+}
+
+/* NEW CARDS (Phase 3.6) */
+.experience:nth-child(6) {
+    top: 30vh;
+    left: 400vw;
+    /* Far Right top */
+    --rotation: 1deg;
+}
+
+.experience:nth-child(7) {
+    top: 200vh;
+    left: 350vw;
+    /* Deep Right bottom */
+    --rotation: -2deg;
+}
+
+
+/* ── Responsive Mobile ───────────────────── */
+@media (max-width: 768px) {
+    .featured-work {
+        width: 100%;
+        height: auto;
+        position: relative;
+        /* Normal flow */
+        background-size: 20px 20px;
+        padding: 10vh 5vw;
+        display: flex;
+        flex-direction: column;
+        gap: 10vh;
+    }
+
+    .proof-board {
+        height: auto;
+        /* Let content dictate height */
+        overflow: visible;
+    }
+
+    .experience {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        width: 100%;
+        max-width: none;
+        transform: rotate(0deg);
+        --rotation: 0deg;
+    }
+
+    .experience:hover {
+        transform: none;
+    }
+}
+
+
+/* ═══════════════════════════════════════════
+   PROOF — Interactive Modal (Pop Up)
+   "The Dossier View"
+   ═══════════════════════════════════════════ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
     display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
+    justify-content: center;
+    align-items: center;
+
+    /* Hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.work-index li {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    column-gap: var(--space-md);
-    row-gap: 0.25rem;
-    padding-bottom: var(--space-md);
-    border-bottom: 1px solid rgba(92, 90, 84, 0.3);
+.modal-overlay.is-active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.work-index li:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.9);
+    /* Deeper, richer dark */
+    backdrop-filter: blur(12px);
+    /* Stronger blur for focus */
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
 }
 
-.work-index-role {
-    font-weight: var(--weight-medium);
-    color: var(--c-text);
-    grid-column: 1;
-    grid-row: 1;
+.modal-content {
+    position: relative;
+    width: 85vw;
+    max-width: 800px;
+    /* Wider for elegance */
+    max-height: 85vh;
+    /* Give some breathing room */
+
+    background: var(--c-surface);
+    /* Subtle gold border gradient */
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+
+    padding: 4rem 5rem;
+    /* Spacious Luxury Padding */
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    /* Prevent scrolling parent */
+
+    /* Animation entry */
+    transform: translateY(40px) scale(0.96);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.work-index-place {
-    font-size: var(--text-meta);
-    color: var(--c-text-muted);
-    grid-column: 1;
-    grid-row: 2;
+/* Custom Scrollbar for Luxury Feel */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
 }
 
-.work-index-date {
-    font-size: var(--text-meta);
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--c-accent);
+    border-radius: 3px;
+}
+
+.modal-overlay.is-active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: none;
+    border: none;
     color: var(--c-text-faint);
-    grid-column: 2;
-    grid-row: 1;
-    text-align: right;
+    font-size: 2.5rem;
+    font-family: var(--f-heading);
+    /* Elegant serif X */
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
-.work-index-note {
-    font-size: var(--text-small);
-    color: var(--c-text-muted);
-    grid-column: 1 / -1;
-    grid-row: 3;
-    margin-top: 0.25rem;
+.modal-close:hover {
+    color: var(--c-accent);
+    transform: rotate(90deg);
 }
 
-/* ── Responsive ─────────────────────────── */
-@media (max-width: 600px) {
+/* ── Content Styling inside Modal ── */
 
-    .experience-body,
-    .experience-takeaway,
-    .experience:nth-child(2) .experience-body,
-    .experience:nth-child(2) .experience-takeaway {
-        margin-left: 0;
-        margin-right: 0;
+.modal-body .experience-entry {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+}
+
+/* The Hook / Title */
+.modal-body .experience-hook {
+    font-family: var(--f-heading);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--c-text);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+/* Meta Data */
+.modal-body .experience-meta {
+    font-family: var(--f-body);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--c-accent);
+    opacity: 0.9;
+}
+
+/* Body Text */
+.modal-body .experience-body {
+    font-family: var(--f-body);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    /* Slightly softer white */
+    max-width: 65ch;
+    /* Optimal reading length */
+}
+
+.modal-body .experience-body p {
+    margin-bottom: 1.5rem;
+}
+
+/* Artifact / Image */
+.modal-body .experience-artifact {
+    margin: 3rem 0;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-body .experience-artifact img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 500px;
+    display: block;
+}
+
+/* Blockquote */
+.modal-body .experience-takeaway {
+    margin-top: 3rem;
+    padding-left: 2rem;
+    border-left: 3px solid var(--c-accent);
+    font-family: var(--f-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--c-text);
+    opacity: 0.9;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border: none;
+        padding: 4rem 2rem;
     }
 
-    .experience:nth-child(2) .experience-takeaway {
-        border-right: none;
-        border-left: 2px solid var(--c-text-faint);
-        padding-right: 0;
-        padding-left: var(--space-md);
-    }
-
-    .work-index li {
-        grid-template-columns: 1fr;
-    }
-
-    .work-index-date {
-        grid-column: 1;
-        grid-row: 2;
-        text-align: left;
-    }
-
-    .work-index-place {
-        grid-row: 3;
-    }
-
-    .work-index-note {
-        grid-row: 4;
+    .modal-body .experience-hook {
+        font-size: 2.5rem;
     }
 }

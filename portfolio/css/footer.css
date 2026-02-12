@@ -1,0 +1,106 @@
+/* ═══════════════════════════════════════════
+   FOOTER — Shared across all pages
+   Editorial. Structured. Professional.
+   ═══════════════════════════════════════════ */
+
+.site-footer {
+    padding: var(--space-xl) var(--page-gutter-wide) var(--space-lg);
+    border-top: 1px solid var(--c-line);
+    background-color: var(--c-bg);
+    position: relative;
+}
+
+/* Decorative top line gradient */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: var(--page-gutter);
+    right: var(--page-gutter);
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent,
+            var(--c-accent) 20%,
+            var(--c-accent) 80%,
+            transparent);
+    opacity: 0.4;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: var(--space-lg);
+    max-width: 64rem;
+    margin-bottom: var(--space-xl);
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.footer-heading {
+    font-family: var(--font-body);
+    font-size: var(--text-micro);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caps);
+    color: var(--c-accent);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-link {
+    font-size: var(--text-small);
+    color: var(--c-text-muted);
+    width: fit-content;
+    transition: color var(--dur-fast) var(--ease-out),
+        transform var(--dur-fast) var(--ease-out);
+}
+
+.footer-link:hover {
+    color: var(--c-text);
+    transform: translateX(3px);
+}
+
+.footer-terms {
+    font-size: var(--text-small);
+    color: var(--c-text-faint);
+    line-height: var(--leading-body);
+    max-width: 48ch;
+}
+
+/* ── Footer Bottom Bar ────────────────────── */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--c-line);
+    font-size: var(--text-meta);
+    color: var(--c-text-faint);
+}
+
+.footer-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--c-text-faint);
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 768px) {
+    .site-footer {
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+}

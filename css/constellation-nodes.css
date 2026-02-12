@@ -1,0 +1,282 @@
+/**
+ * CONSTELLATION NODES
+ * Domain nodes, content nodes, cluster styling
+ */
+
+/* ===================================
+   Navigation Container
+   =================================== */
+.constellation-nav {
+  position: relative;
+  z-index: 10;
+}
+
+.domain-list {
+  position: relative;
+}
+
+/* ===================================
+   Domain Nodes (Primary Orbital Points)
+   =================================== */
+.domain-node {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  
+  /* Visual styling */
+  background: rgba(10, 14, 18, 0.8);
+  border: 2px solid currentColor;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* GPU acceleration */
+  will-change: transform;
+  transform: translateZ(0);
+  
+  /* Transitions */
+  transition: 
+    transform var(--duration-normal) var(--ease-spring),
+    box-shadow var(--duration-normal);
+}
+
+/* Color assignment via data attribute */
+.domain-node[data-color="#3B82F6"] { color: var(--accent-blue); }
+.domain-node[data-color="#F59E0B"] { color: var(--accent-amber); }
+.domain-node[data-color="#10B981"] { color: var(--accent-green); }
+
+.domain-node:hover,
+.domain-node:focus-visible {
+  transform: scale(1.15) translateZ(0);
+  box-shadow: 
+    0 0 30px currentColor,
+    0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.domain-node:active {
+  transform: scale(1.05) translateZ(0);
+}
+
+/* Domain Label */
+.domain-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 90%;
+  color: var(--color-fg);
+}
+
+/* Domain Count Badge */
+.domain-count {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: currentColor;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===================================
+   Cluster Content (Expanded Satellite Nodes)
+   =================================== */
+.cluster-content {
+  position: absolute;
+  z-index: 5;
+}
+
+.cluster-content[hidden] {
+  display: none;
+}
+
+.node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ===================================
+   Content Nodes (Satellite Links)
+   =================================== */
+.content-node {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  /* Visual styling */
+  background: rgba(10, 14, 18, 0.9);
+  border: 1.5px solid var(--color-mid);
+  
+  /* GPU acceleration */
+  will-change: transform;
+  transform: translateZ(0);
+  
+  /* Transitions */
+  transition: 
+    transform var(--duration-normal) var(--ease-spring),
+    border-color var(--duration-normal),
+    box-shadow var(--duration-normal);
+  
+  /* Touch target expansion (invisible) */
+  padding: 20px;
+  margin: -20px;
+}
+
+/* Node type styling via data attribute */
+.content-node[data-type="project"] {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.content-node[data-type="article"] {
+  border-radius: 50%;
+}
+
+.content-node[data-type="contact"],
+.content-node[data-type="social"] {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.content-node:hover,
+.content-node:focus-visible {
+  transform: scale(1.3) translateZ(0);
+  border-color: var(--color-fg);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.3),
+    0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.content-node:active {
+  transform: scale(1.2) translateZ(0);
+}
+
+/* Node Title */
+.node-title {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-fg);
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Node Metadata (Hidden until hover - will be in tooltip) */
+.node-metadata {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* ===================================
+   Tooltip (Appears on Node Hover)
+   =================================== */
+.node-tooltip {
+  position: absolute;
+  z-index: 1000;
+  padding: var(--space-2);
+  min-width: 180px;
+  max-width: 240px;
+  
+  background: #0F1419;
+  border: 1px solid rgba(232, 233, 237, 0.15);
+  border-radius: 8px;
+  
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-fg);
+  
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 
+    opacity var(--duration-normal),
+    transform var(--duration-slow) var(--ease-spring);
+}
+
+.node-tooltip.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.node-tooltip h4 {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-fg);
+}
+
+.node-tooltip p {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+/* ===================================
+   Initial Positioning (Will be overridden by JS)
+   =================================== */
+/* Data Science - Upper Right */
+.domain-node[data-domain="data-science"] {
+  top: 30%;
+  right: 25%;
+}
+
+/* Creative - Lower Right */
+.domain-node[data-domain="creative"] {
+  bottom: 30%;
+  right: 25%;
+}
+
+/* Leadership - Left Side */
+.domain-node[data-domain="leadership"] {
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+@media (max-width: 768px) {
+  .domain-node {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .domain-label {
+    font-size: 0.5rem;
+  }
+  
+  .content-node {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .node-title {
+    font-size: 0.5rem;
+  }
+}

@@ -26,27 +26,85 @@
         rel="stylesheet">
 
     <!-- Styles (Phase B) -->
+    <!-- Styles (Phase B) -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Three.js (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+    <!-- Scripts (Deferred for Performance) -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <!-- Three.js Addons (Deferred) -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/FontLoader.js" defer></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/geometries/TextGeometry.js" defer></script>
+
+    <script src="js/core.js" defer></script>
+    <script src="js/curtain.js" defer></script>
+    <script src="js/curtain-loom.js" defer></script>
 </head>
 
 <body>
-
-    <!-- Navigation -->
+    <!-- 3D Particle Loom Layer -->
+    <div id="loom-container"></div>
     <nav class="site-nav" role="navigation">
-        <a href="index.html" class="nav-link" aria-current="page">Curtain</a>
-        <a href="proof.html" class="nav-link">Proof</a>
-        <a href="thread.html" class="nav-link">Thread</a>
-        <a href="signal.html" class="nav-link">Signal</a>
+        <a href="index.html" class="nav-link" aria-current="page">I. Curtain</a>
+        <a href="proof.html" class="nav-link">II. Proof</a>
+        <a href="thread.html" class="nav-link">III. Thread</a>
+        <a href="signal.html" class="nav-link">IV. Signal</a>
     </nav>
 
     <!-- Act I: Curtain -->
     <main class="curtain">
+        <!-- 3D Curtain Canvas inserted via JS into #curtain-3d-container -->
+
+        <!-- Legacy BG (Hidden/Fallback) -->
+        <!-- <div class="curtain-bg">...</div> -->
+
         <h1 class="curtain-name">Benedictus<br>Richard Ricardo</h1>
         <p class="curtain-declaration">I put rooms in order and people in motion.</p>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+            <span class="scroll-text">Scroll</span>
+            <span class="scroll-line"></span>
+        </div>
     </main>
 
-    <!-- Main.js (Phase C) -->
-    <script src="js/main.js" defer></script>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-section">
+                <h3 class="footer-heading">Navigate</h3>
+                <a href="index.html" class="footer-link">Curtain</a>
+                <a href="proof.html" class="footer-link">Proof</a>
+                <a href="thread.html" class="footer-link">Thread</a>
+                <a href="signal.html" class="footer-link">Signal</a>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">Contact</h3>
+                <a href="mailto:contact@dictuzz.me" class="footer-link">contact@dictuzz.me</a>
+                <a href="https://www.linkedin.com/in/dictuzz" target="_blank" rel="noopener"
+                    class="footer-link">LinkedIn</a>
+                <a href="https://api.whatsapp.com/send?phone=6285186888630" target="_blank" rel="noopener"
+                    class="footer-link">WhatsApp</a>
+            </div>
+            <div class="footer-section footer-legal">
+                <h3 class="footer-heading">Terms &amp; Privacy</h3>
+                <p class="footer-terms">By submitting your contact information through this site, you agree that your
+                    details (name, email, phone) will be used solely for the purpose of scheduling meetings and
+                    professional communication. Your data will not be shared with third parties or used for marketing
+                    purposes.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Benedictus Richard Ricardo. All rights reserved.</p>
+            <p class="footer-tagline">Organizing disorder into structure.</p>
+        </div>
+    </footer>
+
+    </footer>
+    <div class="page-transition-curtain"></div>
 </body>
 
 </html>

@@ -42,7 +42,15 @@
     },
     "exp": [
         {
-            "date": "Jul 2024 – Sep 2025",
+            "date": "JUL 2024 – SEP 2025",
+            "role": "Path Climber & Maintenance",
+            "company": "Vertical Rescue Indonesia",
+            "details": [
+                "Mendukung operasi pelatihan penyelamatan (diukur dari laporan kesiapan peralatan), dengan melakukan pemeliharaan dan inspeksi keselamatan pada peralatan panjat."
+            ]
+        },
+        {
+            "date": "AUG 2023 – AUG 2024",
             "role": "Management Trainee",
             "company": "Home Digital Indonesia",
             "details": [
@@ -52,17 +60,16 @@
             ]
         },
         {
-            "date": "Nov 2020 – Nov 2021",
+            "date": "NOV 2021 – NOV 2022",
             "role": "Wakil Ketua",
-            "company": "OSIS - SMA Santa Maria 2, Bandung",
+            "company": "Orang Muda Katolik Ujung Berung",
             "details": [
-                "Mengembangkan dan melaksanakan program pengembangan bakat yang menjangkau semua tingkat kelas (diukur dari tingkat partisipasi), dengan mengoordinasikan 10 divisi OSIS dan melaksanakan kegiatan tingkat kelas selama pembatasan pandemi.",
-                "Menjaga keberlangsungan institusi (diukur dari serah terima arsip yang lengkap), dengan mengumpulkan dan mengatur proposal OSIS sebelumnya dan laporan pertanggungjawaban 2018 untuk kepemimpinan mendatang.",
-                "Memberikan pelatihan kepemimpinan kepada 5 SMP (diukur dari kehadiran acara dan umpan balik), dengan merencanakan kurikulum dan mengoordinasikan pelatih."
+                "Merencanakan kalender program tahunan (diukur dari tingkat penyelesaian acara), dengan mengoordinasikan hasil kerja lintas tim dan jadwal sukarelawan.",
+                "Mengorganisir acara skala besar (diukur dari kehadiran): pertemuan malam (100 peserta) dan ibadah pemuda (400 peserta), dengan mengelola logistik dan tim sukarelawan."
             ]
         },
         {
-            "date": "Nov 2021 – Nov 2022",
+            "date": "NOV 2021 – NOV 2022",
             "role": "Ketua",
             "company": "OSIS - SMA Santa Maria 2, Bandung",
             "details": [
@@ -73,7 +80,7 @@
             ]
         },
         {
-            "date": "Nov 2021 – Nov 2022",
+            "date": "JUN 2022 – AUG 2022",
             "role": "Kepala Divisi Bisnis & Kemitraan",
             "company": "Forum OSIS Jawa Barat",
             "details": [
@@ -81,7 +88,7 @@
             ]
         },
         {
-            "date": "Jun 2022 – Agu 2022",
+            "date": "MAR 2020 – MAR 2022",
             "role": "Kru Panggung",
             "company": "Ultimate Event Organizer",
             "details": [
@@ -90,16 +97,7 @@
             ]
         },
         {
-            "date": "Agu 2023 – Agu 2024",
-            "role": "Wakil Ketua",
-            "company": "Orang Muda Katolik Ujung Berung",
-            "details": [
-                "Merencanakan kalender program tahunan (diukur dari tingkat penyelesaian acara), dengan mengoordinasikan hasil kerja lintas tim dan jadwal sukarelawan.",
-                "Mengorganisir acara skala besar (diukur dari kehadiran): pertemuan malam (100 peserta) dan ibadah pemuda (400 peserta), dengan mengelola logistik dan tim sukarelawan."
-            ]
-        },
-        {
-            "date": "Mar 2020 – Mar 2022",
+            "date": "NOV 2020 – NOV 2021",
             "role": "Wakil Ketua Misdinar",
             "company": "Gereja Zipur",
             "details": [
@@ -107,11 +105,13 @@
             ]
         },
         {
-            "date": "Jan 2021 – Sekarang",
-            "role": "Path Climber & Maintenance",
-            "company": "Vertical Rescue Indonesia",
+            "date": "JAN 2021 – JUN 2021",
+            "role": "Wakil Ketua",
+            "company": "OSIS - SMA Santa Maria 2, Bandung",
             "details": [
-                "Mendukung operasi pelatihan penyelamatan (diukur dari laporan kesiapan peralatan), dengan melakukan pemeliharaan dan inspeksi keselamatan pada peralatan panjat."
+                "Mengembangkan dan melaksanakan program pengembangan bakat yang menjangkau semua tingkat kelas (diukur dari tingkat partisipasi), dengan mengoordinasikan 10 divisi OSIS dan melaksanakan kegiatan tingkat kelas selama pembatasan pandemi.",
+                "Menjaga keberlangsungan institusi (diukur dari serah terima arsip yang lengkap), dengan mengumpulkan dan mengatur proposal OSIS sebelumnya dan laporan pertanggungjawaban 2018 untuk kepemimpinan mendatang.",
+                "Memberikan pelatihan kepemimpinan kepada 5 SMP (diukur dari kehadiran acara dan umpan balik), dengan merencanakan kurikulum dan mengoordinasikan pelatih."
             ]
         }
     ],

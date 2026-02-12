@@ -13,7 +13,7 @@
     <link rel="canonical" href="https://dictuzz.github.io/">
     <meta property="og:title" content="Benedictus Richard Ricardo | Data Scientist Portfolio">
     <meta property="og:type" content="profile">
-    <meta property="og:image" content="https://dictuzz.github.io/resume/og-image.png">
+    <meta property="og:image" content="https://dictuzz.github.io/assets/images/resume-og-image.png">
     <meta property="og:description"
         content="🚀 Portfolio & CV Benedictus Richard Ricardo: Data Scientist yang mengotomatisasi 12+ jam kerja manual per minggu. Python • SQL • Leadership.">
     <meta property="og:url" content="https://dictuzz.github.io/resume/">
@@ -23,849 +23,16 @@
     <meta name="twitter:title" content="Benedictus Richard Ricardo | Data Scientist Portfolio">
     <meta name="twitter:description"
         content="🚀 Portfolio & CV Benedictus Richard Ricardo: Data Scientist yang mengotomatisasi 12+ jam kerja manual per minggu.">
-    <meta name="twitter:image" content="https://dictuzz.github.io/resume/og-image.png">
+    <meta name="twitter:image" content="https://dictuzz.github.io/assets/images/resume-og-image.png">
 
-    <link rel="preload" href="Aku.webp" as="image" type="image/webp">
+    <link rel="preload" href="../assets/images/Aku.webp" as="image" type="image/webp">
     <meta name="theme-color" content="#0A0E17">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Critical CSS (Inline for LCP) -->
-    <style>
-        /* ═══════════════════════════════════════════════════════════════════════════
-           CRITICAL CSS: Tokens, Reset, Nav, Hero
-           ═══════════════════════════════════════════════════════════════════════════ */
-
-        /* TOKENS */
-        :root {
-            --bg-deep: #0A0E17;
-            --bg-surface: #121824;
-            --bg-elevated: #1A2332;
-            --bg-glass: rgba(18, 24, 36, 0.7);
-            --accent-cyan: #00F5D4;
-            --accent-purple: #7B61FF;
-            --accent-gold: #FFB800;
-            --accent-glow: rgba(0, 245, 212, 0.3);
-            --accent-glow-purple: rgba(123, 97, 255, 0.3);
-            --text-primary: #FFFFFF;
-            --text-secondary: #94A3B8;
-            --text-muted: #8B9CB3;
-            --border-glass: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(0, 245, 212, 0.3);
-            --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
-            --font-display: 'Outfit', 'Space Grotesk', system-ui, sans-serif;
-            --font-body: 'Inter', system-ui, sans-serif;
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 2rem;
-            --text-4xl: 2.5rem;
-            --text-hero: clamp(3rem, 12vw, 9rem);
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-6: 1.5rem;
-            --space-8: 2rem;
-            --space-12: 3rem;
-            --space-16: 4rem;
-            --radius-lg: 16px;
-            --radius-full: 9999px;
-            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-            --duration-fast: 150ms;
-            --duration-normal: 300ms;
-            --duration-slow: 500ms;
-        }
-
-        [data-theme="light"] {
-            --bg-deep: #F1F5F9;
-            --bg-surface: #FFFFFF;
-            --bg-elevated: #E2E8F0;
-            --bg-glass: rgba(255, 255, 255, 0.9);
-            --text-primary: #0F172A;
-            --text-secondary: #334155;
-            --text-muted: #475569;
-            --border-glass: rgba(15, 23, 42, 0.12);
-            --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.12);
-            --accent-glow: rgba(0, 200, 170, 0.4);
-        }
-
-        /* CRITICAL ANIMATIONS */
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes nameReveal {
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-30px) rotate(5deg);
-            }
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-
-            50% {
-                transform: translateX(-50%) translateY(8px);
-            }
-        }
-
-        @keyframes spinSlow {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes rotatePulse {
-
-            0%,
-            100% {
-                transform: rotate(0deg) scale(1);
-            }
-
-            50% {
-                transform: rotate(180deg) scale(1.2);
-            }
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5);
-            }
-
-            50% {
-                box-shadow: 0 0 0 8px rgba(0, 255, 136, 0);
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        @keyframes glowPulse {
-
-            0%,
-            100% {
-                opacity: 0.5;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.8;
-                transform: scale(1.02);
-            }
-        }
-
-        /* RESET & BASE */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-deep);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            background-image: radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0, 245, 212, 0.08) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 80% 60%, rgba(123, 97, 255, 0.06) 0%, transparent 50%), radial-gradient(ellipse 50% 80% at 50% 100%, rgba(0, 245, 212, 0.04) 0%, transparent 40%);
-            background-attachment: fixed;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font: inherit;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* TYPOGRAPHY */
-        h1,
-        h2,
-        h3 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            line-height: 1.1;
-            color: var(--text-primary);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* UTILITIES */
-        .container {
-            width: min(90%, 1200px);
-            margin-inline: auto;
-            padding-inline: var(--space-4);
-        }
-
-        .glass {
-            background: var(--bg-glass);
-            -webkit-backdrop-filter: blur(20px);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-lg);
-        }
-
-        .glass--hover {
-            transition: transform 0.3s var(--ease-out), box-shadow 0.4s ease, background 0.3s ease, border-color 0.3s ease;
-        }
-
-        .glass--hover:hover {
-            background: rgba(26, 35, 50, 0.85);
-            border-color: var(--accent-cyan);
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: var(--shadow-soft), 0 0 25px var(--accent-glow);
-        }
-
-        [data-theme="light"] .glass {
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(0, 0, 0, 0.1);
-        }
-
-        [data-theme="light"] .glass--hover:hover {
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(0, 200, 170, 0.3);
-        }
-
-        /* NAV */
-        .nav {
-            position: fixed;
-            top: var(--space-4);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            padding: var(--space-2) var(--space-4);
-        }
-
-        .nav__container {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-
-        .nav__logo {
-            display: none;
-        }
-
-        .nav__links {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        [data-theme="light"] .nav__links {
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .nav__link {
-            padding: var(--space-2) var(--space-4);
-            font-size: var(--text-sm);
-            font-weight: 500;
-            color: var(--text-secondary);
-            border-radius: var(--radius-full);
-            transition: all var(--duration-fast) var(--ease-out);
-            white-space: nowrap;
-        }
-
-        .nav__link:hover,
-        .nav__link.active {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .nav__link.active {
-            background: rgba(0, 245, 212, 0.15);
-            color: var(--accent-cyan);
-        }
-
-        [data-theme="light"] .nav__link:hover {
-            background: linear-gradient(135deg, rgba(0, 200, 170, 0.08), rgba(0, 0, 0, 0.04));
-            color: var(--text-primary);
-        }
-
-        [data-theme="light"] .nav__link.active {
-            background: linear-gradient(135deg, rgba(0, 200, 170, 0.25), rgba(0, 180, 150, 0.15));
-            color: #0D9488;
-            box-shadow: 0 2px 8px rgba(0, 200, 170, 0.2);
-        }
-
-        .nav__lang {
-            display: flex;
-            gap: var(--space-2);
-            padding-left: var(--space-4);
-            margin-left: var(--space-2);
-            border-left: 1px solid var(--border-glass);
-        }
-
-        .lang-btn {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            overflow: hidden;
-            opacity: 0.5;
-            filter: grayscale(1);
-            transition: all var(--duration-fast) var(--ease-out);
-        }
-
-        .lang-btn:hover,
-        .lang-btn.active {
-            opacity: 1;
-            filter: grayscale(0);
-            transform: scale(1.1);
-        }
-
-        .theme-toggle {
-            position: absolute;
-            bottom: 10px;
-            right: -10px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--bg-surface);
-            border: 2px solid var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all var(--duration-normal) var(--ease-out);
-            color: var(--accent-gold);
-            font-size: var(--text-xl);
-            box-shadow: 0 4px 20px rgba(255, 184, 0, 0.3);
-            z-index: 10;
-        }
-
-        .theme-toggle:hover {
-            background: var(--accent-gold);
-            color: var(--bg-deep);
-            transform: scale(1.15) rotate(15deg);
-            box-shadow: 0 0 30px rgba(255, 184, 0, 0.5);
-        }
-
-        [data-theme="light"] .theme-toggle {
-            background: var(--bg-surface);
-            color: var(--accent-gold);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        [data-theme="light"] .theme-toggle:hover {
-            background: var(--accent-gold);
-            color: #FFFFFF;
-        }
-
-        .theme-toggle .fa-sun {
-            display: none;
-        }
-
-        .theme-toggle .fa-moon {
-            display: block;
-        }
-
-        [data-theme="light"] .theme-toggle .fa-moon {
-            display: none;
-        }
-
-        [data-theme="light"] .theme-toggle .fa-sun {
-            display: block;
-        }
-
-        .nav__toggle {
-            display: none;
-            width: 44px;
-            height: 44px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .nav__toggle span {
-            width: 20px;
-            height: 2px;
-            background: var(--text-primary);
-            border-radius: 2px;
-            transition: all var(--duration-fast)
-        }
-
-        .nav__toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav__toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav__toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            padding: 80px 0 100px;
-        }
-
-        .hero__decorations {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .hero__shape {
-            position: absolute;
-            opacity: 0.5;
-        }
-
-        .hero__shape--1 {
-            top: 10%;
-            right: 10%;
-            width: 300px;
-            height: 300px;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .hero__shape--2 {
-            bottom: 20%;
-            left: 5%;
-            width: 150px;
-            height: 150px;
-            animation: float 15s ease-in-out infinite reverse;
-        }
-
-        .hero__shape--3 {
-            top: 40%;
-            left: 15%;
-            width: 80px;
-            height: 80px;
-            animation: float 12s ease-in-out infinite;
-        }
-
-        .hero__grid-lines {
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
-            background-size: 80px 80px;
-            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-        }
-
-        .hero__orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-        }
-
-        .hero__orb--1 {
-            top: 20%;
-            right: 20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 245, 212, 0.15) 0%, transparent 70%);
-        }
-
-        .hero__orb--2 {
-            bottom: 10%;
-            left: 10%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(123, 97, 255, 0.12) 0%, transparent 70%);
-        }
-
-        .hero__container {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: var(--space-16);
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero__photo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-6);
-        }
-
-        .hero__photo-wrapper {
-            position: relative;
-        }
-
-        .hero__photo {
-            width: 280px;
-            height: 380px;
-            border-radius: 9999px;
-            overflow: hidden;
-            border: 2px solid var(--accent-gold);
-            box-shadow: 0 0 0 8px rgba(255, 184, 0, 0.1), 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 100px var(--accent-glow);
-            opacity: 0;
-            transform: translateY(30px);
-            animation: slideUp 1s var(--ease-out) 0.3s forwards;
-        }
-
-        .hero__photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 15%;
-            transition: transform 0.5s var(--ease-out);
-        }
-
-        .hero__photo:hover img {
-            transform: scale(1.08);
-        }
-
-        .hero__photo-ring {
-            position: absolute;
-            inset: -20px;
-            border: 1px dashed var(--accent-cyan);
-            border-radius: 9999px;
-            opacity: 0.3;
-            animation: spinSlow 30s linear infinite;
-        }
-
-        .hero__photo-dots {
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 60px;
-            height: 60px;
-            background-image: radial-gradient(var(--accent-gold) 2px, transparent 2px);
-            background-size: 10px 10px;
-            opacity: 0.5;
-        }
-
-        .hero__status {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: var(--space-2);
-            padding: var(--space-2) var(--space-4);
-            font-size: var(--text-sm);
-        }
-
-        .hero__status-dot {
-            width: 8px;
-            height: 8px;
-            background: #00FF88;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .hero__content {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-6);
-        }
-
-        .hero__tagline {
-            font-size: var(--text-sm);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--accent-gold);
-            opacity: 0;
-            animation: slideUp 1s var(--ease-out) 0.1s forwards;
-        }
-
-        .hero__name {
-            font-size: clamp(3rem, 10vw, 7rem);
-            font-weight: 800;
-            line-height: 0.95;
-            letter-spacing: -0.04em;
-            margin: 0;
-        }
-
-        .hero__name-line {
-            display: block;
-            opacity: 0;
-            transform: translateY(40px);
-            animation: nameReveal 1s var(--ease-out) forwards;
-        }
-
-        .hero__name-line:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .hero__name-line:nth-child(2) {
-            animation-delay: 0.35s;
-        }
-
-        .hero__name-line:nth-child(3) {
-            animation-delay: 0.5s;
-        }
-
-        .hero__name-line--accent {
-            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero__role {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            font-size: var(--text-lg);
-            color: var(--text-secondary);
-            opacity: 0;
-            animation: slideUp 1s var(--ease-out) 0.7s forwards;
-        }
-
-        .hero__role-icon {
-            color: var(--accent-cyan);
-            animation: rotatePulse 3s ease-in-out infinite;
-        }
-
-        .hero__actions {
-            display: flex;
-            gap: var(--space-4);
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: slideUp 1s var(--ease-out) 0.8s forwards;
-        }
-
-        .hero__stats {
-            display: flex;
-            gap: var(--space-4);
-            padding-top: var(--space-8);
-            opacity: 0;
-            animation: slideUp 1s var(--ease-out) 0.9s forwards;
-        }
-
-        .hero__stat {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: var(--space-4) var(--space-6);
-            min-width: 100px;
-            border-radius: var(--radius-lg);
-        }
-
-        .hero__stat-number {
-            font-size: var(--text-2xl);
-            font-weight: 800;
-            font-family: var(--font-display);
-            color: var(--accent-cyan);
-            line-height: 1.2;
-        }
-
-        .hero__stat-label {
-            font-size: var(--text-xs);
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .hero__scroll {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            z-index: 10;
-            opacity: 0;
-            animation: fadeIn 1s ease 1.5s forwards, bounce 2s ease-in-out 2.5s infinite;
-            transition: color 0.3s ease;
-        }
-
-        .hero__scroll:hover {
-            color: var(--accent-cyan);
-        }
-
-        .typing-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1em;
-            background: var(--accent-gold);
-            margin-left: 4px;
-            animation: blink 0.8s step-end infinite;
-        }
-
-        /* BUTTONS */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-3) var(--space-6);
-            font-weight: 600;
-            font-size: var(--text-base);
-            border-radius: var(--radius-full);
-            transition: all var(--duration-normal) var(--ease-out);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.4s ease, height 0.4s ease;
-        }
-
-        .btn:active::after {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn--primary {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
-            color: var(--bg-deep);
-        }
-
-        .btn--primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px var(--accent-glow);
-        }
-
-        .btn--ghost {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-glass);
-        }
-
-        .btn--ghost:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--text-primary);
-        }
-
-        .btn--glow {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn--glow::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(135deg, var(--accent-cyan), transparent, var(--accent-purple));
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .btn--glow:hover::before {
-            opacity: 0.7;
-            animation: glowPulse 1.5s ease-in-out infinite;
-        }
-
-        /* MEDIA QUERIES (Critical Mobile) */
-        @media (max-width: 768px) {
-            .nav__links {
-                display: none;
-            }
-
-            .nav__toggle {
-                display: flex;
-            }
-
-            .hero__container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding-top: 20px;
-            }
-
-            .hero__photo {
-                width: 140px;
-                height: 180px;
-            }
-
-            .hero__name {
-                font-size: clamp(2rem, 14vw, 3.5rem);
-            }
-
-            .hero__stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero__shape {
-                display: none;
-            }
-        }
-    </style>
+    <!-- Critical CSS (Extracted) -->
+    <link rel="stylesheet" href="/resume/css/critical.css">
 
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -899,7 +66,7 @@
     <meta property="og:title" content="Benedictus Richard Ricardo | Data Science & Automation">
     <meta property="og:description"
         content="I automate 12+ hours of work weekly. Data Science student who leads teams and builds systems that scale. Let's connect.">
-    <meta property="og:image" content="https://dictuzz.github.io/og-image.png?v=3">
+    <meta property="og:image" content="https://dictuzz.github.io/assets/images/resume-og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_US">
@@ -911,8 +78,7 @@
     <meta property="twitter:title" content="Benedictus Richard Ricardo | Data Science & Automation">
     <meta property="twitter:description"
         content="I automate 12+ hours of work weekly. Data Science student who leads teams and builds systems that scale.">
-    <meta property="twitter:image" content="https://dictuzz.github.io/og-image.png?v=3">
-    <meta property="twitter:image:alt" content="Benedictus Richard Ricardo - Data Scientist Portfolio">
+
 
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -923,7 +89,7 @@
         "alternateName": "dictuzz",
         "jobTitle": "Data Science Student & Automation Specialist",
         "url": "https://dictuzz.github.io/",
-        "image": "https://dictuzz.github.io/Aku.webp",
+        "image": "https://dictuzz.github.io/assets/images/Aku.webp",
         "email": "contact@dictuzz.me",
         "sameAs": [
             "https://linkedin.com/in/dictuzz",
@@ -961,7 +127,7 @@
     <noscript>
         <link rel="stylesheet" href="style.css">
     </noscript>
-    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 </head>
 
 <body>
@@ -970,7 +136,7 @@
         <div class="nav__container">
             <!-- Logo (mobile) -->
             <a href="https://dictuzz.github.io" class="nav__logo" aria-label="Go to homepage">
-                <img src="../assets/images/favicon.svg" alt="" width="32" height="32">
+                <img src="../assets/images/favicon.png" alt="" width="32" height="32">
             </a>
 
             <!-- Mobile toggle -->
@@ -1048,15 +214,15 @@
             <div class="hero__photo-section">
                 <div class="hero__photo-wrapper">
                     <div class="hero__photo glass">
-                        <img src="Aku.webp" alt="Benedictus Richard Ricardo" loading="eager">
+                        <img src="../assets/images/Aku.webp" alt="Benedictus Richard Ricardo" loading="eager">
                     </div>
                     <!-- Photo decorations -->
                     <div class="hero__photo-ring"></div>
                     <div class="hero__photo-dots"></div>
                     <!-- Theme Toggle -->
-                    <button class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                        <i class="fas fa-sun"></i>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode"
+                        title="Toggle theme">
+                        <i class="fas fa-sun" id="theme-icon"></i>
                     </button>
                 </div>
                 <!-- Status badge -->
@@ -1132,7 +298,7 @@
                 </h2>
                 <div class="about__grid">
                     <div class="about__image glass glass--hover reveal reveal--left">
-                        <img src="api.webp" alt="About Benedictus" loading="lazy">
+                        <img src="../assets/images/api.webp" alt="About Benedictus" loading="lazy">
                     </div>
                     <div class="about__content reveal reveal--right">
                         <p class="about__text" data-i18n="summary.text">
@@ -1337,7 +503,7 @@
 
                 <!-- CV Download -->
                 <div class="flex flex--center mt-12">
-                    <a href="../404.html" target="_blank" id="download-cv-link"
+                    <a href="https://rxresu.me/me.richardricardo/en" target="_blank" rel="noopener" id="download-cv-link"
                         class="btn btn--outline btn--glow reveal" data-i18n="connect.cv">Download CV</a>
                 </div>
             </div>

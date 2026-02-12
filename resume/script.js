@@ -5,8 +5,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { ThemeManager } from '../shared/theme.js';
-import { Typer } from '../shared/utils.js';
+import { ThemeManager, Typer } from '../shared/ui-kit.js?v=2';
 import { initAnalytics } from '../shared/analytics.js';
 
 // Shorthand selectors
@@ -15,15 +14,27 @@ const $$ = s => document.querySelectorAll(s);
 
 // 1. INIT SHARED CORE
 // ══════════════════════════════════════════════
-if (typeof CONFIG_DATA !== 'undefined') {
-    initAnalytics(CONFIG_DATA.analytics);
+let themeManager;
+
+function init() {
+    if (typeof CONFIG_DATA !== 'undefined') {
+        initAnalytics(CONFIG_DATA.analytics);
+    }
+
+    // Theme
+    const toggleEl = document.getElementById('theme-toggle');
+    const iconEl = document.getElementById('theme-icon');
+    const storageKey = (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.theme)
+        ? CONFIG_DATA.theme.storageKey
+        : 'dictuzz-theme';
+
+    themeManager = new ThemeManager({
+        toggleElement: toggleEl,
+        storageKey: storageKey,
+        iconElement: iconEl
+    });
 }
 
-// Theme
-const themeManager = new ThemeManager({
-    toggleElement: $('.theme-toggle'), // Will bind click automatically
-    storageKey: CONFIG_DATA?.theme?.storageKey || 'dictuzz-theme'
-});
 
 // 2. LANGUAGE SYSTEM
 // ══════════════════════════════════════════════
@@ -52,8 +63,14 @@ function renderExperience(data) {
 
     // Sort by date (most recent first)
     const sorted = [...data].sort((a, b) => {
-        const getEnd = d => d.date.includes('Present') || d.date.includes('Sekarang') || d.date.includes('Heute')
-            ? new Date() : new Date(d.date.split('–')[1]?.trim());
+        const getEnd = d => {
+            if (!d.date) return new Date();
+            // Check for current role keywords
+            if (['Present', 'Sekarang', 'Heute'].some(k => d.date.includes(k))) return new Date();
+            // Handle both hyphen (-) and en-dash (–)
+            const parts = d.date.replace(/–/g, '-').split('-');
+            return parts.length > 1 ? new Date(parts[1].trim()) : new Date();
+        };
         return getEnd(b) - getEnd(a);
     });
 
@@ -64,14 +81,18 @@ function renderExperience(data) {
                 <h3>${escapeHtml(job.role)}</h3>
                 <h4>${escapeHtml(job.company)}</h4>
                 <ul class="timeline__details">
-                    ${job.details.map(d => `<li>${escapeHtml(d)}</li>`).join('')}
+                    ${job.details && Array.isArray(job.details)
+            ? job.details.map(d => `<li>${escapeHtml(d)}</li>`).join('')
+            : ''}
                 </ul>
             </div>
         </div>
     `).join('');
 
     // Re-observe new elements
-    container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    if (typeof revealObserver !== 'undefined') {
+        container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    }
 }
 
 function renderProjects(data) {
@@ -109,7 +130,7 @@ function applyTranslations(data) {
 
 async function loadLanguage(lang) {
     try {
-        const res = await fetch(`./locales/${lang}.json`);
+        const res = await fetch(`/resume/locales/${lang}.json`);
         if (!res.ok) throw new Error('Failed to load');
 
         langData = await res.json();
@@ -128,7 +149,16 @@ async function loadLanguage(lang) {
             const typingEl = $('#typing-dynamic');
 
             if (typingEl) {
-                new Typer(typingEl, langData.hero.typing.dynamicTexts);
+                // Stop existing typer if any
+                if (typingEl._typer) {
+                    typingEl._typer.stop();
+                }
+                
+                // Clear element
+                typingEl.textContent = '';
+                
+                // Create new typer with fresh start (speed 80ms per character - readable pace)
+                new Typer(typingEl, langData.hero.typing.dynamicTexts, 80);
             }
         }
 
@@ -286,6 +316,8 @@ document.addEventListener('click', e => {
 // 7. INITIAL LOAD
 // ══════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
+    init();
+
     const urlLang = new URLSearchParams(location.search).get('lang');
     const browserLang = navigator.language.split('-')[0];
     const initLang = SUPPORTED_LANGS.includes(urlLang) ? urlLang

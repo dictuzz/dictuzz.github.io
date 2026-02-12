@@ -1,22 +1,23 @@
 /* ═══════════════════════════════════════════
    SIGNAL — Epilogue
-   One sentence, three links, nothing else.
+   Intimate. Bottom-aligned. Vast negative space.
    ═══════════════════════════════════════════ */
 
 .signal {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+    /* Content sinks to the bottom — tension from emptiness above */
     min-height: 100vh;
     min-height: 100dvh;
-    padding: var(--space-xl) var(--page-gutter);
-    /* Content sits left, not centered — like the last page of a letter */
-    max-width: 36rem;
+    padding: var(--space-xl) var(--page-gutter-wide);
+    padding-bottom: clamp(4rem, 10vh, 8rem);
+    max-width: 40rem;
 }
 
 .signal-sentence {
     font-family: var(--font-display);
-    font-size: var(--text-display-md);
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
     font-weight: var(--weight-regular);
     line-height: 1.4;
     color: var(--c-text);
@@ -29,25 +30,47 @@
     flex-direction: column;
     gap: var(--space-sm);
     font-style: normal;
-    /* override <address> default italic */
     margin-bottom: var(--space-lg);
 }
 
 .signal-channels a {
     font-size: var(--text-body);
-    font-weight: var(--weight-medium);
+    font-weight: var(--weight-semibold);
     color: var(--c-text-muted);
     width: fit-content;
-    /* clickable area matches text, not full width */
+    position: relative;
+    padding-bottom: 2px;
+    transition: color var(--dur-fast) var(--ease-out),
+        transform var(--dur-fast) var(--ease-out);
+}
+
+/* Underline that extends on hover */
+.signal-channels a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--c-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--dur-fast) var(--ease-out);
 }
 
 .signal-channels a:hover,
 .signal-channels a:focus-visible {
     color: var(--c-accent);
+    transform: translateX(4px);
+}
+
+.signal-channels a:hover::after,
+.signal-channels a:focus-visible::after {
+    transform: scaleX(1);
 }
 
 /* ═══════════════════════════════════════════
-   MEETING FORM (Added)
+   MEETING FORM
    ═══════════════════════════════════════════ */
 .meeting-details {
     margin-top: var(--space-md);
@@ -58,15 +81,33 @@
 .meeting-details summary {
     cursor: pointer;
     font-family: var(--font-display);
-    font-size: var(--text-xl); /* Increased size for visibility */
+    font-size: var(--text-display-md);
     font-weight: var(--weight-medium);
     color: var(--c-text-muted);
-    transition: color 0.3s ease;
-    list-style: none; /* Hide default triangle */
+    transition: color var(--dur-fast) var(--ease-out);
+    list-style: none;
+    position: relative;
+    padding-left: var(--space-md);
 }
 
 .meeting-details summary::-webkit-details-marker {
     display: none;
+}
+
+/* Animated indicator */
+.meeting-details summary::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-body);
+    font-size: 1.2em;
+    color: var(--c-accent);
+    transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.meeting-details[open] summary::before {
+    transform: rotate(45deg);
 }
 
 .meeting-details summary:hover {
@@ -82,27 +123,43 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    animation: fadeIn 0.5s ease-out;
+    animation: formReveal 0.5s var(--ease-out);
+}
+
+@keyframes formReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .signal-form label {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
-    font-size: var(--text-sm);
+    font-size: var(--text-small);
     color: var(--c-text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caps);
+    font-weight: var(--weight-medium);
 }
 
 .signal-form input,
 .signal-form textarea {
     background: transparent;
-    border: 1px solid var(--c-line);
-    border-radius: var(--radius-sm);
-    padding: var(--space-sm);
+    border: none;
+    border-bottom: 1px solid var(--c-line);
+    border-radius: 0;
+    padding: var(--space-sm) 0;
     color: var(--c-text);
     font-family: var(--font-body);
     font-size: var(--text-body);
-    transition: border-color 0.3s ease;
+    transition: border-color var(--dur-fast) var(--ease-out);
 }
 
 .signal-form input:focus,
@@ -111,23 +168,41 @@
     border-color: var(--c-accent);
 }
 
+.signal-form input::placeholder,
+.signal-form textarea::placeholder {
+    color: var(--c-text-faint);
+}
+
 .signal-form button {
-    background: var(--c-text);
-    color: var(--c-bg);
+    background: transparent;
+    color: var(--c-text);
+    border: 1px solid var(--c-text);
     padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-full); /* Pill shape button */
-    font-weight: var(--weight-medium);
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caps);
+    cursor: pointer;
     align-self: flex-start;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    transition: background-color var(--dur-fast) var(--ease-out),
+        color var(--dur-fast) var(--ease-out),
+        border-color var(--dur-fast) var(--ease-out),
+        transform var(--dur-fast) var(--ease-out);
     margin-top: var(--space-sm);
 }
 
 .signal-form button:hover {
-    transform: translateY(-2px);
     background: var(--c-accent);
+    color: var(--c-bg);
+    border-color: var(--c-accent);
+    transform: translateY(-2px);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 768px) {
+    .signal {
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+    }
 }

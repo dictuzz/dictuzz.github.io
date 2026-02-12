@@ -1,109 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Personal hub of Benedictus Richard Ricardo (Dictuzz). Data Scientist, Leader, Creator. Access Portfolio, Blog, and Digital Card.">
-
+  <meta name="description" content="Data Scientist, Leader, Creator. Explore my portfolio, projects, and writing.">
+  
   <!-- Open Graph -->
-  <meta property="og:title" content="@dictuzz | Data Scientist • Leader • Creator">
+  <meta property="og:title" content="dictuzz | Data Scientist • Leader • Creator">
   <meta property="og:type" content="profile">
   <meta property="og:image" content="https://dictuzz.me/assets/images/og-image.png">
-  <meta property="og:description"
-    content="🔗 Link in Bio @dictuzz: Data Scientist, Content Creator & MC. Akses portfolio, blog, dan kartu nama digital!">
+  <meta property="og:description" content="Data Scientist, Leader, Creator. Explore my portfolio, projects, and writing.">
   <meta property="og:url" content="https://dictuzz.me/">
-
+  
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="@dictuzz | Data Scientist • Leader • Creator">
-  <meta name="twitter:description"
-    content="🔗 Link in Bio @dictuzz: Data Scientist, Content Creator & MC. Akses portfolio, blog, dan kartu nama digital!">
+  <meta name="twitter:title" content="dictuzz | Data Scientist • Leader • Creator">
+  <meta name="twitter:description" content="Data Scientist, Leader, Creator. Explore my portfolio, projects, and writing.">
   <meta name="twitter:image" content="https://dictuzz.me/assets/images/og-image.png">
-
-  <title>@dictuzz | MC & Data Scientist | Link in Bio</title>
-
-  <!-- Preconnect for Performance -->
-  <link rel="preconnect" href="https://unpkg.com">
+  
+  <title>dictuzz | Data Scientist</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Google Analytics 4 -->
-  <script>
-    // Config is loaded via config.js at the bottom, but GA needs earliest execution
-    // However, since config.js defines CONFIG_DATA (const), we moved config.js to head or handle this safely.
-    // ACTUAL FIX: We will load config.js in HEAD instead of body to ensure it is available early.
-  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg: #FAFAFA;
+      --surface: #FFFFFF;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --accent: #00F5D4;
+      --border: #E2E8F0;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.07);
+      --shadow-lg: 0 10px 15px rgba(15, 23, 42, 0.1);
+    }
+    
+    [data-theme="dark"] {
+      --bg: #0A0E12;
+      --surface: #1A1F2E;
+      --text-primary: #E8E9ED;
+      --text-secondary: #94A3B8;
+      --accent: #00F5D4;
+      --border: #2D3748;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    [data-theme="dark"] .header {
+      background: rgba(26, 31, 46, 0.9);
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      transition: background-color 0.3s ease;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+    
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .logo-text h1 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+    }
+    
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    .theme-toggle:hover .theme-icon {
+      color: var(--accent);
+    }
+    
+    .theme-icon {
+      transition: transform 0.3s ease;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .theme-toggle:active .theme-icon {
+      transform: rotate(180deg);
+    }
+    
+    .header-btn {
+      padding: 0.5rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .header-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .header-btn.primary {
+      background: var(--text-primary);
+      color: var(--bg);
+      border-color: var(--text-primary);
+    }
+    
+    .header-btn.primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0F172A;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    
+    .intro {
+      margin-bottom: 3rem;
+    }
+    
+    .intro h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .intro p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+    }
+    
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    
+    .card-featured {
+      grid-column: span 2;
+      padding: 2.5rem;
+    }
+    
+    .card-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .card-featured h3 {
+      font-size: 2rem;
+    }
+    
+    .card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    .card-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+    
+    .card-arrow::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+    
+    .card:hover .card-arrow::after {
+      transform: translateX(4px);
+    }
+    
+    .primary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    .card-small {
+      padding: 1.5rem;
+    }
+    
+    .card-small h3 {
+      font-size: 1.125rem;
+    }
+    
+    .footer {
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .footer-link:hover {
+      color: var(--accent);
+    }
+    
+    .footer p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+      .card-featured {
+        grid-column: span 1;
+      }
+      
+      .header-actions {
+        gap: 0.5rem;
+      }
+      
+      .header-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8125rem;
+      }
+      
+      .intro h2 {
+        font-size: 1.5rem;
+      }
+      
+      .intro p {
+        font-size: 1rem;
+      }
+      
+      .primary-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+  </style>
+  
+  <!-- Analytics -->
   <script src="config.js"></script>
   <script>
-    // Load GA only if config exists and analytics enabled
     if (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.analytics && CONFIG_DATA.analytics.enabled) {
       const script = document.createElement('script');
       script.async = true;
       script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG_DATA.analytics.id}`;
       document.head.appendChild(script);
-
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', CONFIG_DATA.analytics.id);
     }
   </script>
-
-
 </head>
 
 <body>
-  <!-- Ambient Background Canvas -->
-  <canvas id="ambient-canvas"></canvas>
-
-  <!-- Theme Toggle -->
-  <button id="theme-toggle" class="theme-toggle hover-trigger" aria-label="Switch Theme">
-    <i class="fas fa-sun" id="theme-icon"></i>
-  </button>
-
-
-
-  <!-- Skip Link for Accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <main id="main-content" class="container" role="main">
-
-    <!-- ═══════════════════════════════════════════
-         SECTION 1: Profile Header
-         ═══════════════════════════════════════════ -->
-    <!-- 
-      Dynamic Widget System:
-      Content is now rendered via script.js based on CONFIG_DATA.layout
-      If JS fails, this area will be empty.
-    -->
-
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <img src="assets/images/dictuzz.webp" alt="dictuzz" class="logo-img">
+        <div class="logo-text">
+          <h1>dictuzz</h1>
+          <p>Data Scientist</p>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle theme" id="theme-toggle">
+          <i class="theme-icon fas fa-sun" id="theme-icon"></i>
+        </button>
+        <a href="./resume/" class="header-btn">Resume</a>
+        <a href="mailto:contact@dictuzz.me" class="header-btn primary">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Intro -->
+    <section class="intro">
+      <h2>Building systems that bridge analytical thinking with creative execution.</h2>
+      <p>Explore my work, projects, and insights on data science and leadership.</p>
+    </section>
+    
+    <!-- Featured Work -->
+    <div class="featured-grid">
+      <a href="./portfolio/" class="card card-featured">
+        <span class="card-label">Featured</span>
+        <h3>Portfolio</h3>
+        <p>Data projects and case studies showcasing analytical problem-solving and impact-driven solutions.</p>
+        <span class="card-arrow">View case studies</span>
+      </a>
+      
+      <a href="https://github.com/dictuzz" class="card card-featured" target="_blank" rel="noopener">
+        <span class="card-label">Open Source</span>
+        <h3>Projects & Lab</h3>
+        <p>Experiments, tools, and open source contributions. Exploring new techniques and sharing knowledge.</p>
+        <span class="card-arrow">Explore repositories</span>
+      </a>
+    </div>
+    
+    <!-- Primary Links -->
+    <div class="primary-grid">
+      <a href="https://medium.com/@dictuzz" class="card card-small" target="_blank" rel="noopener">
+        <span class="card-label">Writing</span>
+        <h3>Technical Blog</h3>
+        <p>Insights, tutorials, and thoughts on data science and engineering.</p>
+        <span class="card-arrow">Read articles</span>
+      </a>
+      
+      <a href="./resume/" class="card card-small">
+        <span class="card-label">Background</span>
+        <h3>Resume</h3>
+        <p>Professional experience, skills, and achievements.</p>
+        <span class="card-arrow">View resume</span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/dictuzz" class="card card-small" target="_blank" rel="noopener">
+        <span class="card-label">Network</span>
+        <h3>LinkedIn</h3>
+        <p>Connect and follow my professional journey.</p>
+        <span class="card-arrow">Connect</span>
+      </a>
+      
+      <a href="https://api.whatsapp.com/send?phone=6285186888630" class="card card-small" target="_blank" rel="noopener">
+        <span class="card-label">Direct</span>
+        <h3>WhatsApp</h3>
+        <p>Quick message for urgent inquiries.</p>
+        <span class="card-arrow">Chat now</span>
+      </a>
+    </div>
+    
   </main>
-
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-       ═══════════════════════════════════════════ -->
-  <footer class="site-footer" role="contentinfo">
-    <p class="footer-text" id="footer-text">
-      <!-- Footer injected via JS -->
-    </p>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/dictuzz" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/dictuzz" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/dictuzz" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://medium.com/@dictuzz" class="footer-link" target="_blank" rel="noopener">Medium</a>
+      <a href="mailto:contact@dictuzz.me" class="footer-link">Email</a>
+    </div>
+    <p>© 2025 dictuzz. Data Scientist, Leader, Creator.</p>
   </footer>
+  
+  <!-- Theme Toggle Script -->
+  <script>
+    (function() {
+      const html = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const icon = document.getElementById('theme-icon');
+      
+      // Check for saved theme preference or default to light mode
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', currentTheme);
+      updateIcon(currentTheme);
+      
+      // Toggle theme
+      toggle.addEventListener('click', function() {
+        const theme = html.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcon(newTheme);
+      });
+      
+      function updateIcon(theme) {
+        if (theme === 'light') {
+          icon.className = 'theme-icon fas fa-moon';
+        } else {
+          icon.className = 'theme-icon fas fa-sun';
+        }
+      }
+    })();
+  </script>
 
-
-
-  <!-- Main Script -->
-  <script type="module" src="script.js"></script>
 </body>
-
 </html>

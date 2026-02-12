@@ -1,49 +1,163 @@
 /* ═══════════════════════════════════════════
    CURTAIN — Act I
-   The name, the declaration, nothing else.
-   ═══════════════════════════════════════════ */
+   Cinematic. Golden ratio. Spotlight.
+   Background image with parallax.
+   ═══════════════════════════════════════════*/
+/* 
+   Container for the hero section 
+   The Digital Loom
+*/
+#loom-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    pointer-events: none;
+}
 
 .curtain {
+    width: 100%;
+    /* Increase height to allow for scroll sequence */
+    /* 100vh = Intro/Name */
+    /* +100vh = Exit Animation */
+    /* +100vh = Tagline Reveal */
+    height: 350vh;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* align top to allow uniform scroll */
+    position: relative;
+    z-index: 10;
+    /* overflow: hidden;  <-- removing this might help sticky positioning if needed */
+    padding: 0;
+}
+
+.curtain-content {
+    position: fixed;
+    /* Fix content so it stays on screen while we scroll through the 'time' */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    /* Center the content */
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: var(--space-xl) var(--page-gutter);
-    /* Name sits slightly above true center — like a subject in a photograph */
-    padding-bottom: calc(var(--space-xl) + 6vh);
+    align-items: center;
+    pointer-events: none;
+    /* Passthrough to canvas initially */
+}
+
+/* Restore interaction for text */
+.curtain-name,
+.curtain-declaration,
+.scroll-indicator {
+    pointer-events: auto;
 }
 
 .curtain-name {
-    font-family: var(--font-display);
-    font-size: var(--text-display-xl);
-    font-weight: var(--weight-bold);
-    line-height: var(--leading-display);
-    letter-spacing: -0.03em;
-    color: var(--c-text);
-    max-width: 12ch;
-}
-
-.curtain-declaration {
-    margin-top: var(--space-lg);
-    font-family: var(--font-display);
-    font-size: var(--text-display-md);
+    /* Hidden/handled by Loom mostly, but keep for SEO/Fallback */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    /* Visuals */
+    font-family: 'Newsreader', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
     font-style: italic;
-    font-weight: var(--weight-regular);
-    line-height: var(--leading-body);
-    color: var(--c-text-muted);
-    max-width: 30ch;
-    /* Offset from the name — not centered beneath it */
-    margin-left: clamp(0rem, 3vw, 4rem);
+    letter-spacing: -0.02em;
+    color: var(--c-text-primary);
+    mix-blend-mode: overlay;
+    /* Blend with particles? */
+    opacity: 0;
+    /* Hidden by default if Loom is active */
 }
 
-/* ── Responsive ─────────────────────────── */
-@media (max-width: 600px) {
-    .curtain {
-        padding-bottom: var(--space-xl);
-    }
+/* --- CENTERED TAGLINE FIX --- */
+.curtain-declaration {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 
-    .curtain-declaration {
-        margin-left: 0;
-    }
+    width: 100%;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: 'Newsreader', serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-style: italic;
+    color: var(--c-text-secondary);
+    opacity: 0;
+    /* Hidden initially */
+}
+
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--c-text-tertiary);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--c-text-tertiary), transparent);
+}
+
+
+/* Legacy BG (Hidden/Fallback) */
+.curtain-bg {
+    position: fixed;
+    /* Fixed bg */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.curtain-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.12;
+    filter: grayscale(0.8) contrast(1.1);
+}
+
+/* Grain overlay */
+.curtain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    /* Subtle grain */
+    pointer-events: none;
+    z-index: 500;
 }

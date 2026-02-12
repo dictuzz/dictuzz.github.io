@@ -39,7 +39,15 @@
     },
     "exp": [
         {
-            "date": "Jul 2024 – Sep 2025",
+            "date": "JUL 2024 – SEP 2025",
+            "role": "Path Climber & Maintenance",
+            "company": "Vertical Rescue Indonesia",
+            "details": [
+                "Supported rescue training operations as measured by equipment readiness reports, by performing maintenance and safety inspections on climbing equipment."
+            ]
+        },
+        {
+            "date": "AUG 2023 – AUG 2024",
             "role": "Management Trainee",
             "company": "Home Digital Indonesia",
             "details": [
@@ -49,17 +57,16 @@
             ]
         },
         {
-            "date": "Nov 2020 – Nov 2021",
-            "role": "Vice Chairman",
-            "company": "Student Council - Saint Mary 2 High School, Bandung",
+            "date": "NOV 2021 – NOV 2022",
+            "role": "Vice Chief",
+            "company": "Ujung Berung Catholic Youth Organisation",
             "details": [
-                "Developed and implemented talent-development programs reaching all grades as measured by participation rates, by coordinating 10 council divisions and executing class-level activities during pandemic constraints.",
-                "Preserved institutional continuity as measured by complete archival handover, by collecting and organizing prior council proposals and 2018 accountability reports for incoming leadership.",
-                "Delivered leadership training to 5 junior high schools as measured by event attendance and feedback, by planning curriculum and coordinating trainers."
+                "Planned annual program calendar as measured by event completion rate, by coordinating cross-team deliverables and volunteer schedules.",
+                "Organized large-scale events as measured by attendance: night gathering (100 participants) and youth worship (400 participants), by managing logistics and volunteer teams."
             ]
         },
         {
-            "date": "Nov 2021 – Nov 2022",
+            "date": "NOV 2021 – NOV 2022",
             "role": "Chairman",
             "company": "Student Council - Saint Mary 2 High School, Bandung",
             "details": [
@@ -70,7 +77,7 @@
             ]
         },
         {
-            "date": "Nov 2021 – Nov 2022",
+            "date": "JUN 2022 – AUG 2022",
             "role": "Head, Business & Partnership Division",
             "company": "Forum OSIS Jawa Barat",
             "details": [
@@ -78,7 +85,7 @@
             ]
         },
         {
-            "date": "Jun 2022 – Aug 2022",
+            "date": "MAR 2020 – MAR 2022",
             "role": "Stage Crew",
             "company": "Ultimate Event Organizer",
             "details": [
@@ -87,16 +94,7 @@
             ]
         },
         {
-            "date": "Aug 2023 – Aug 2024",
-            "role": "Vice Chief",
-            "company": "Ujung Berung Catholic Youth Organisation",
-            "details": [
-                "Planned annual program calendar as measured by event completion rate, by coordinating cross-team deliverables and volunteer schedules.",
-                "Organized large-scale events as measured by attendance: night gathering (100 participants) and youth worship (400 participants), by managing logistics and volunteer teams."
-            ]
-        },
-        {
-            "date": "Mar 2020 – Mar 2022",
+            "date": "NOV 2020 – NOV 2021",
             "role": "Vice Chief Acolyte",
             "company": "Zipur Church",
             "details": [
@@ -104,11 +102,13 @@
             ]
         },
         {
-            "date": "Jan 2021 – Present",
-            "role": "Path Climber & Maintenance",
-            "company": "Vertical Rescue Indonesia",
+            "date": "JAN 2021 – JUN 2021",
+            "role": "Vice Chairman",
+            "company": "Student Council - Saint Mary 2 High School, Bandung",
             "details": [
-                "Supported rescue training operations as measured by equipment readiness reports, by performing maintenance and safety inspections on climbing equipment."
+                "Developed and implemented talent-development programs reaching all grades as measured by participation rates, by coordinating 10 council divisions and executing class-level activities during pandemic constraints.",
+                "Preserved institutional continuity as measured by complete archival handover, by collecting and organizing prior council proposals and 2018 accountability reports for incoming leadership.",
+                "Delivered leadership training to 5 junior high schools as measured by event attendance and feedback, by planning curriculum and coordinating trainers."
             ]
         }
     ],

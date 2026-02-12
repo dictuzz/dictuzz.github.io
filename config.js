@@ -48,7 +48,7 @@ const CONFIG_DATA = {
         url: 'https://dictuzz.me',
         author: 'Benedictus Richard Ricardo'
     },
-    favicon: "assets/images/favicon.svg",
+    favicon: "assets/images/favicon.png",
 
     socialAliases: {
         "x": "fa-brands fa-x-twitter",

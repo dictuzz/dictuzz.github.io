@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Lost in the Data Void</title>
+    <meta name="description" content="Page not found. You've ventured into the unknown.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="error-page">
+    <!-- Ambient Background Canvas -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <main class="container error-container">
+        <div class="error-content">
+            <div class="glitch-wrapper">
+                <h1 class="error-code" data-text="404">404</h1>
+            </div>
+            <h2 class="error-title">System Malfunction</h2>
+            <p class="error-message">
+                The signal has been lost. You've drifted too far into the void.
+                Realign your coordinates to return to safety.
+            </p>
+
+            <a href="/" class="link-button error-home-btn">
+                <div class="link-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <span class="link-label">ay ay captain, send me back</span>
+                <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple random glitch trigger for extra interactivity
+        const glitchText = document.querySelector('.error-code');
+
+        if (glitchText) {
+            setInterval(() => {
+                if (Math.random() > 0.9) {
+                    glitchText.style.setProperty('--skew-x', Math.random() * 20 - 10 + 'deg');
+                    setTimeout(() => {
+                        glitchText.style.setProperty('--skew-x', '0deg');
+                    }, 100);
+                }
+            }, 2000);
+
+            glitchText.addEventListener('mouseover', () => {
+                glitchText.classList.add('force-glitch');
+            });
+
+            glitchText.addEventListener('mouseout', () => {
+                glitchText.classList.remove('force-glitch');
+            });
+        }
+    </script>
+</body>
+
+</html>

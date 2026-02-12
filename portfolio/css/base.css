@@ -16,6 +16,9 @@ html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     scroll-behavior: smooth;
+    /* Scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-text-faint) transparent;
 }
 
 body {
@@ -27,6 +30,7 @@ body {
     background-color: var(--c-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 img {
@@ -38,7 +42,7 @@ img {
 a {
     color: var(--c-link);
     text-decoration: none;
-    transition: color var(--duration-immediate) var(--easing);
+    transition: color var(--dur-fast) var(--ease-out);
 }
 
 a:hover,
@@ -61,6 +65,24 @@ a:focus-visible {
     color: var(--c-bg);
 }
 
+/* Webkit scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--c-text-faint);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--c-text-muted);
+}
+
 /* ── Navigation ──────────────────────────── */
 .site-nav {
     position: fixed;
@@ -70,19 +92,30 @@ a:focus-visible {
     z-index: 100;
     display: flex;
     justify-content: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
     padding: var(--space-sm) var(--page-gutter);
     font-family: var(--font-body);
     font-size: var(--text-small);
     font-weight: var(--weight-medium);
-    letter-spacing: 0.02em;
-    background-color: var(--c-bg);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: background-color var(--dur-medium) var(--ease-smooth),
+        backdrop-filter var(--dur-medium) var(--ease-smooth);
+}
+
+/* Scrolled state — added by JS */
+.site-nav.nav-scrolled {
+    background-color: rgba(10, 10, 9, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-link {
-    color: var(--c-text-muted);
+    color: var(--c-text-faint);
     padding: var(--space-xs) 0;
     position: relative;
+    transition: color var(--dur-fast) var(--ease-out);
 }
 
 .nav-link:hover,
@@ -94,23 +127,135 @@ a:focus-visible {
     color: var(--c-text);
 }
 
-.nav-link[aria-current="page"]::after {
+/* Underline — extends from center */
+.nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 1px;
+    background-color: var(--c-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    transform: scaleX(0.6);
+}
+
+.nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
     background-color: var(--c-text);
 }
 
 /* ── Reduced Motion ──────────────────────── */
 @media (prefers-reduced-motion: reduce) {
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-    }
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+}
+}
+
+/* ── Liquid Motion & Lenis ───────────────── */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* ── Dynamic Background ──────────────────── */
+#liquid-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    /* Blend mode for cinematic feel */
+    mix-blend-mode: screen;
+    opacity: 0.6;
+}
+
+/* ── Page Transition Curtain ─────────────── */
+.page-transition-curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--c-surface);
+    z-index: 9999;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    pointer-events: none;
+}
+
+/* ── Liquid Motion & Lenis ───────────────── */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* ── Dynamic Background ──────────────────── */
+#liquid-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.3;
+    /* Subtle texture behind content */
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* ── Page Transition Curtain ─────────────── */
+.page-transition-curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    /* Deep black for the wipe */
+    z-index: 9999;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    pointer-events: none;
 }
