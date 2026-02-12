@@ -187,15 +187,19 @@
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
 
+            // Responsive Font Sizes
+            var isMobile = window.innerWidth < 768;
+            var scaleFactor = isMobile ? 0.4 : 1.0; // Scale down for mobile
+
             // Font 1: BENEDICTUS
-            var fontSize1 = 280; // Increased
+            var fontSize1 = 280 * scaleFactor;
             ctx.font = '800 ' + fontSize1 + 'px "Plus Jakarta Sans", sans-serif';
-            ctx.fillText('BENEDICTUS', width / 2, height / 2 - 160); // Spaced Up
+            ctx.fillText('BENEDICTUS', width / 2, height / 2 - (160 * scaleFactor));
 
             // Font 2: RICHARD RICARDO
-            var fontSize2 = 190; // Increased
+            var fontSize2 = 190 * scaleFactor;
             ctx.font = '700 ' + fontSize2 + 'px "Plus Jakarta Sans", sans-serif';
-            ctx.fillText('RICHARD RICARDO', width / 2, height / 2 + 160); // Spaced Down
+            ctx.fillText('RICHARD RICARDO', width / 2, height / 2 + (160 * scaleFactor));
 
             var imageData = ctx.getImageData(0, 0, width, height);
             var data = imageData.data;
@@ -261,6 +265,15 @@
                 if (scrollTop > endOutput) progress = 1;
 
                 material.uniforms.uScroll.value = progress;
+
+                // Z-Index Hack: When fully scrolled out, push to back so it doesn't block interactions
+                if (progress >= 0.95) {
+                    container.style.zIndex = -10;
+                    container.style.pointerEvents = 'none'; // Ensure no interference
+                } else {
+                    container.style.zIndex = 1; // Bring back when at top
+                    container.style.pointerEvents = 'auto';
+                }
             });
         }
 

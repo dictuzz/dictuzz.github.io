@@ -14,7 +14,10 @@
     background-color: #151515;
     /* Dark corkboard base */
     cursor: grab;
+    cursor: grab;
     z-index: 5;
+    position: relative;
+    /* Ensure z-index works */
 }
 
 .proof-board:active {
@@ -204,16 +207,19 @@
         position: relative;
         /* Normal flow */
         background-size: 20px 20px;
-        padding: 10vh 5vw;
+        padding: var(--space-xl) var(--page-gutter);
+        /* Adjusted padding */
         display: flex;
         flex-direction: column;
-        gap: 10vh;
+        gap: var(--space-xl);
+        /* Increased gap */
     }
 
     .proof-board {
         height: auto;
         /* Let content dictate height */
         overflow: visible;
+        background-color: #151515;
     }
 
     .experience {
@@ -224,10 +230,19 @@
         max-width: none;
         transform: rotate(0deg);
         --rotation: 0deg;
+        /* Lighter shadow for mobile */
+        opacity: 1;
+        /* Force opacity in case JS fails, though GSAP handles it */
+        z-index: 10;
     }
 
     .experience:hover {
         transform: none;
+    }
+
+    .experience-hook {
+        font-size: 2rem;
+        /* Smaller title */
     }
 }
 

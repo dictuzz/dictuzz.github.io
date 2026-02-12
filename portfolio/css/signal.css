@@ -204,5 +204,19 @@
     .signal {
         padding-left: var(--page-gutter);
         padding-right: var(--page-gutter);
+        padding: var(--space-lg) var(--page-gutter);
+        min-height: auto;
+        /* Allow auto height */
+        padding-bottom: var(--space-2xl);
+    }
+
+    .signal-sentence {
+        font-size: 1.5rem;
+    }
+
+    .signal-form button {
+        width: 100%;
+        /* Full width button */
+        text-align: center;
     }
 }

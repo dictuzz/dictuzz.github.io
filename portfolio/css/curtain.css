@@ -102,6 +102,17 @@
     /* Hidden initially */
 }
 
+@media (max-width: 768px) {
+    .curtain-name {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .curtain-declaration {
+        font-size: clamp(1.25rem, 5vw, 2rem);
+        padding: 0 1rem;
+    }
+}
+
 
 .scroll-indicator {
     position: absolute;

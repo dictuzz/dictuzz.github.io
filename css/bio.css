@@ -1,0 +1,632 @@
+/* ═══════════════════════════════════════════
+   BIO.CSS — Link-in-Bio: Cinematic Dark
+   Space Grotesk, Grain, Spatial Zones
+   ═══════════════════════════════════════════ */
+
+/* ── Palette: Light Mode (Curious & Eager) ── */
+:root {
+    --bio-bg: #fcfbf9;
+    /* Warm Off-White */
+    --bio-text: #1c1917;
+    /* High Contrast Text */
+    --bio-text-muted: #57534e;
+    --bio-text-light: #78716c;
+    --bio-accent: #dc2626;
+    /* Vivid Red */
+
+    /* Surfaces */
+    --bio-surface: #ffffff;
+    --bio-surface-hover: #fafaf9;
+    --bio-border: rgba(0, 0, 0, 0.08);
+
+    /* ── Spacing & Layout ────────────────────── */
+    --bio-radius: 24px;
+    --bio-radius-sm: 12px;
+    --bio-gap: 2rem;
+    --bio-max-width: 1000px;
+
+    /* ── Typography ──────────────────────────── */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* ── Shadows & Depth ─────────────────────── */
+    --bio-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --bio-shadow-card: 0 20px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Palette: Dark Mode (Cinematic Portfolio) ── */
+[data-theme="dark"] {
+    --bio-bg: #0a0a09;
+    /* Deep warm black */
+    --bio-text: #ede9e3;
+    /* Warm parchment white */
+    --bio-text-muted: #9a9890;
+    --bio-text-light: #5a5853;
+    --bio-accent: #c9a55a;
+    /* Warm Brass */
+
+    /* Surfaces */
+    --bio-surface: #141413;
+    --bio-surface-hover: #1c1c1a;
+    --bio-border: rgba(255, 255, 255, 0.08);
+
+    --bio-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --bio-shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Reset & Base ────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bio-bg);
+    color: var(--bio-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow-x: hidden;
+    position: relative;
+    /* Removed transition as we are sticking to dark theme */
+}
+
+/* ── Grain Overlay ───────────────────────── */
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+}
+
+/* ── Background Gradients ────────────────── */
+.bio-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bio-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    animation: float 20s infinite ease-in-out;
+}
+
+.bio-orb.primary {
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--bio-accent) 0%, transparent 70%);
+    opacity: 0.1;
+    top: -25%;
+    left: -25%;
+}
+
+.bio-orb.secondary {
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    bottom: -15%;
+    right: -15%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, -30px);
+    }
+}
+
+/* ── Layout Container ────────────────────── */
+.bio-container {
+    width: 100%;
+    max-width: var(--bio-max-width);
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Header: Profile ─────────────────────── */
+.bio-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding-top: 2rem;
+}
+
+/* Asymmetric Frame Design */
+.profile-avatar-wrapper {
+    position: relative;
+    padding: 8px;
+}
+
+.profile-frame {
+    position: relative;
+    width: 140px;
+    /* Increased Size */
+    height: 140px;
+    padding: 3px;
+    border-radius: 44% 56% 50% 50% / 50% 50% 50% 50%;
+    background: linear-gradient(135deg, var(--bio-accent), rgba(255, 255, 255, 0.1));
+    animation:
+        entrance 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+        morph 6s ease-in-out infinite;
+    /* Organic Morphing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes morph {
+
+    0%,
+    100% {
+        border-radius: 44% 56% 50% 50% / 50% 50% 50% 50%;
+    }
+
+    33% {
+        border-radius: 56% 44% 60% 40% / 40% 60% 36% 64%;
+    }
+
+    66% {
+        border-radius: 46% 54% 38% 62% / 60% 40% 60% 40%;
+    }
+}
+
+@keyframes entrance {
+    from {
+        transform: scale(0.8) rotate(-5deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    display: block;
+    background: var(--bio-bg);
+}
+
+.profile-frame:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.15);
+    /* Reddish glow in light mode */
+}
+
+/* Pulsing Status Dot (GREEN & BLINKING) */
+.profile-status-indicator {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-ping {
+    width: 12px;
+    height: 12px;
+    background-color: #22c55e;
+    /* Bright Green */
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 3px var(--bio-bg);
+}
+
+.status-ping::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #22c55e;
+    opacity: 0.5;
+    animation: blink-pulse 1.5s infinite;
+    /* Faster Blink */
+}
+
+@keyframes blink-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.profile-name {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--bio-text);
+}
+
+.profile-role {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    color: var(--bio-text-muted);
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+.profile-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--bio-text-light);
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    /* Green */
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink-dot 2s infinite;
+}
+
+@keyframes blink-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* ── Scroll/Flicker Time Display (Unified Style) ────────── */
+.time-display {
+    /* Removed custom font/color to match meta style */
+    font-variant-numeric: tabular-nums;
+    min-width: 140px;
+}
+
+/* ── Spatial Zones (Cards) ───────────────── */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--bio-gap);
+}
+
+.bio-card {
+    background: var(--bio-surface);
+    /* Subtle texture or noise could go here */
+    border: 1px solid var(--bio-border);
+    border-radius: var(--bio-radius);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+/* Proximity Glow Effect (Desktop) */
+@media (hover: hover) {
+    .bio-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(800px circle at var(--x, 50%) var(--y, 50%),
+                rgba(201, 165, 90, 0.08),
+                transparent 40%);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .bio-card:hover::before {
+        opacity: 1;
+    }
+
+    .bio-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--bio-shadow-card);
+        border-color: rgba(201, 165, 90, 0.2);
+    }
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--bio-text-light);
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* ── Link List ───────────────────────────── */
+.link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.bio-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    group: hover;
+    padding: 0.75rem;
+    margin: -0.75rem;
+    border-radius: var(--bio-radius-sm);
+    transition: background-color 0.2s ease;
+}
+
+.bio-link:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.link-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--bio-text-muted);
+    font-size: 1.125rem;
+    flex-shrink: 0;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.bio-link:hover .link-icon {
+    color: var(--bio-accent);
+    background: rgba(201, 165, 90, 0.1);
+}
+
+.link-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.link-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-arrow {
+    font-size: 0.875rem;
+    opacity: 0;
+    color: var(--bio-accent);
+    transform: translate(-10px, 10px);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bio-link:hover .link-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.link-desc {
+    font-size: 0.9rem;
+    color: var(--bio-text-light);
+    line-height: 1.5;
+}
+
+/* ── Status Card ─────────────────────────── */
+.status-card {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(201, 165, 90, 0.05) 0%, var(--bio-surface) 100%);
+    border-color: rgba(201, 165, 90, 0.15);
+    padding: 2.5rem 3rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(201, 165, 90, 0.1);
+    color: var(--bio-accent);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Theme Toggle (Hidden for this specific requested theme) 
+   User wants portfolio color scheme which is fixed dark mode 
+   Removing display but keeping code just in case */
+/* ── Theme Toggle ────────────────────────── */
+.theme-toggle-fixed {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bio-surface);
+    border: 1px solid var(--bio-border);
+    color: var(--bio-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: var(--bio-shadow);
+}
+
+.theme-toggle-fixed:hover {
+    transform: scale(1.1) rotate(15deg);
+    color: var(--bio-accent);
+    border-color: var(--bio-accent);
+}
+
+/* ── Footer ──────────────────────────────── */
+.bio-footer {
+    text-align: center;
+    border-top: 1px solid var(--bio-border);
+    padding-top: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-link {
+    color: var(--bio-text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: var(--bio-accent);
+}
+
+.footer-credits {
+    font-size: 0.75rem;
+    color: var(--bio-text-light);
+}
+
+/* ── Mobile Responsive ───────────────────── */
+@media (max-width: 768px) {
+    .bio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .status-card {
+        grid-column: span 1;
+    }
+
+    .bio-container {
+        gap: 2.5rem;
+    }
+
+    .profile-name {
+        font-size: 2.25rem;
+    }
+
+    .profile-frame {
+        width: 80px;
+        height: 80px;
+    }
+
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .bio-card:not(.status-card) {
+        padding: 1.75rem;
+    }
+
+    /* Mobile Expand/Collapse Logic Match */
+    .bio-card[data-zone].zone-collapsed .link-list {
+        display: none;
+    }
+
+    .bio-card[data-zone] .card-header {
+        cursor: pointer;
+    }
+
+    .bio-card[data-zone].zone-collapsed .card-title::after {
+        content: '+';
+        float: right;
+        font-weight: 400;
+        color: var(--bio-text-light);
+    }
+}

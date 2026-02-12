@@ -157,6 +157,25 @@ a:focus-visible {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
 }
+
+/* ── Mobile Navigation ───────────────────── */
+@media (max-width: 768px) {
+    .site-nav {
+        gap: var(--space-md);
+        padding: var(--space-sm) var(--space-md);
+        overflow-x: auto;
+        justify-content: flex-start;
+        /* Allow scrolling from start */
+        -webkit-overflow-scrolling: touch;
+        background-color: rgba(10, 10, 9, 0.95);
+        /* Always show bg on mobile */
+        backdrop-filter: blur(12px);
+    }
+
+    .nav-link {
+        white-space: nowrap;
+        font-size: var(--text-micro);
+    }
 }
 
 /* ── Liquid Motion & Lenis ───────────────── */
