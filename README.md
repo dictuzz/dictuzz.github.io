@@ -18,33 +18,30 @@ Link in Bio • Deep Space Portfolio • Blog
 
 ## 🌌 Project Overview
 
-This repository hosts a comprehensive personal brand ecosystem, unified by the **"Deep Space Luxury"** design language. It is designed to be a **Single Source of Truth** for your digital presence, fully configurable via a single JSON file.
+This repository hosts a comprehensive personal brand ecosystem, unified by the **"Deep Space Luxury"** design language. It operates on a **Hybrid Architecture**:
 
-| Component | Path | Description | Visual Style |
-|-----------|------|-------------|--------------|
-| **Link in Bio** | `/` | Central hub with dynamic widgets and links | **Glassmorphism** on Aurora/Network |
-| **Portfolio** | `/resume/` | Multi-language professional CV | **Premium High-Tech** with typing animation |
-| **tuzzblog** | `medium.com` | Personal thoughts and articles | **Medium Platform** |
+| Component | Path | Architecture | Description |
+|-----------|------|--------------|-------------|
+| **Link in Bio** | `/` | **Custom HTML/JS** | Cinematic landing page with `spatial.js` & `custom-animations.css`. |
+| **Portfolio** | `/portfolio/` | **Custom WebGL** | "Liquid Motion" experience with Three.js & GSAP. |
+| **Resume** | `/resume/` | **Config-Driven** | Traditional SPA fully powered by `config.js`. |
 
 > 📚 **For detailed technical documentation, see [`PROJECT_DOCUMENTATION.md`](./PROJECT_DOCUMENTATION.md)**
 
 ---
 
-## ✨ features
+## ✨ Features
 
-### 🎨 Fully Customizable Engine
-Control everything from `config.js`:
-- **Theme System**: Define your own Brand Colors (`primary`, `secondary`) and Fonts.
-- **Background Engine**: Switch visual effects (`aurora`, `network`, `static`) instantly.
-- **Widget Integrated Lists**: Add interactive widgets (Forms, Email) directly into your link list.
+### 🎨 Hybrid Engine
+- **Custom Cinematic Core**: The Root (`/`) and Portfolio (`/portfolio/`) sites are bespoke, high-performance implementations designed for maximum visual impact (particles, 3D text, scroll narratives).
+- **Config-Driven Resume**: The `/resume/` section is a templated app controlled by `config.js`, allowing easy updates to your professional history.
 
 ### ⚡ Feature Highlights
-- **Unified Configuration**: One file (`config.js`) controls all sub-sites.
-- **Feature Flags**: Toggle sections (Blog/Resume) on or off globally.
-- **Interactive Widgets**:
-  - **Collapsible Contact Forms**: Integrated Formspree forms.
-  - **Dual-Mode Email Widget**: "Open App" or "Write Here" choices.
-- **Multi-Language Resume**: `/resume/?lang=id` or auto-detect.
+- **Unified Brand Identity**: Shared design tokens (`assets/css/tokens.css`) ensure visual consistency across the hybrid stack.
+- **Interactive Widgets** (Root):
+  - **Collapsible Contact Forms**: Custom HTML implementation.
+  - **Email & WhatsApp Integration**: Direct links and stylized form handlers.
+- **Multi-Language Resume**: `/resume/?lang=id` available in the Resume app.
 
 ---
 

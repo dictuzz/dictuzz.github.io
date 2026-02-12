@@ -31,7 +31,7 @@ The system is a specific implementation of a "Personal Brand Monorepo" containin
 | Area | Status | Hard-coded / Missing |
 |------|--------|----------------------|
 | **Theme System** | 🟠 Rigid | Only supports "Dark" & "Light". Colors are hardcoded in `style.css` `:root`. No support for user-defined palettes without CSS editing. |
-| **Visual Effects** | 🔴 Locked | `BackgroundManager` engines (Aurora/Network) have hardcoded particle counts, speeds, and colors inside `js/background-manager.js`. |
+| **Visual Effects** | 🟢 Hybrid | Root and Portfolio now use custom `spatial.js` and `custom-animations.css`, while Resume remains on legacy managers. |
 | **Feature Flags** | 🔴 Missing | Impossible to "turn off" the Blog or Resume sections easily. Links are manually managed. |
 | **Layout** | 🔴 Locked | The order of sections (Bio -> Links -> Footer) is fixed in HTML. No "widget" system. |
 | **Integrations** | 🟠 Manual | Adding a newsletter signup or contact form requires coding raw HTML/JS. |
@@ -129,7 +129,7 @@ The system is a specific implementation of a "Personal Brand Monorepo" containin
 3.  **Toggle-able Blog Link**: ✅ **COMPLETED** - `features.blog` flag added.
 4.  **Favicon Config**: Change favicon path via JS (dynamic link tag) instead of hardcoded HTML.
 5.  **Page Title Config**: Set `document.title` from config on boot.
-6.  **Custom Footer Text**: Already exists, but expand to support HTML/Links easily.
+6.  **Custom Footer Text**: ✅ **COMPLETED** - Implemented via custom HTML/CSS in Root.
 7.  **Social Icon Alias**: Map "x" to "twitter" icon automatically for ease of use.
 8.  **Google Analytics Toggle**: Ensure it strictly respects the `enabled` flag (already done, but verify).
 9.  **Meta Tag Hydration**: generate `og:image` and `description` meta tags from config JS on load (using a Helmet-like utility).

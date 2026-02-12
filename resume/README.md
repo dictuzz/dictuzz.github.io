@@ -38,10 +38,11 @@ The portfolio implements the "Deep Space Luxury" visual language with these core
 
 ### Theme Synchronization
 
-The resume uses the unified theme key `dictuzz-theme`:
+The resume inherits the unified theme key `dictuzz-theme` and `config.js` settings:
 
 ```javascript
-localStorage.getItem('dictuzz-theme') // 'dark' | 'light'
+// Inherited from root config.js
+const storageKey = CONFIG_DATA.theme.storageKey || 'dictuzz-theme';
 ```
 
 This ensures theme consistency across the entire ecosystem.
@@ -51,9 +52,10 @@ This ensures theme consistency across the entire ecosystem.
 ## ⚡ Key Features
 
 ### Dynamic Content
-- **JSON-Driven**: All text in `locales/*.json`
-- **i18n Support**: English, Indonesian, German
-- **Auto-Detection**: Browser language preference
+### Dynamic Content
+- **Content Source**: All text is driven by `locales/*.json` (En/Id/De).
+- **System Config**: Global settings (Theme, Analytics, Feature Flags) are inherited from the root `config.js`.
+- **i18n Support**: Auto-detects browser language or uses `?lang=id`.
 
 ### Performance
 - **Zero Frameworks**: Vanilla JS/CSS

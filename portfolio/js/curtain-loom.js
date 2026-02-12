@@ -4,8 +4,9 @@
  * - Initial "Random Scatter" state
  */
 (function () {
+    // Wait for Dependencies AND Data
     var checkDeps = setInterval(function () {
-        if (window.THREE && window.gsap) {
+        if (window.THREE && window.gsap && window.PORTFOLIO_CONTENT) {
             clearInterval(checkDeps);
             initLoom();
         }
@@ -17,14 +18,14 @@
 
         var CONFIG = {
             particleCount: 60000,
-            textScale: 0.85, // Increased from 0.5 for massive text
+            textScale: 0.85,
             color1: new THREE.Color(0xffffff),
             color2: new THREE.Color(0xffd700),
             mouseRadius: 100,
             mouseForce: 50
         };
 
-        // Scene
+        // ... (Scene setup remains the same) ...
         var scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2(0x050505, 0.002);
 
@@ -47,12 +48,11 @@
         var colors = new Float32Array(CONFIG.particleCount * 3);
 
         // Initialize Particles (SCATTER STATE)
-        // Randomly distributed in a large 3D volume
         for (var i = 0; i < CONFIG.particleCount; i++) {
             var range = 4000;
             var x = (Math.random() - 0.5) * range;
             var y = (Math.random() - 0.5) * range;
-            var z = (Math.random() - 0.5) * range; // Deep scatter
+            var z = (Math.random() - 0.5) * range;
 
             positions[i * 3] = x;
             positions[i * 3 + 1] = y;
@@ -65,7 +65,6 @@
             colors[i * 3 + 1] = color.g;
             colors[i * 3 + 2] = color.b;
 
-            // Default target
             targets[i * 3] = 0;
             targets[i * 3 + 1] = 0;
             targets[i * 3 + 2] = 0;
@@ -102,8 +101,7 @@
                 void main() {
                     vColor = color;
                     
-                    // Initial State: SCATTER (Positions from attribute)
-                    // But we want them to float/move?
+                    // Initial State: SCATTER 
                     vec3 pos = position;
                     
                     // Add subtle float movement in Scatter state
@@ -111,10 +109,9 @@
                     pos.y += cos(uTime * 0.3 + aRandom * 10.0) * 100.0 * (1.0 - uMorph);
 
                     // Morphing: Mix from Scatter(pos) to Target(aTarget)
-                    // uMorph goes 0 -> 1
                     vec3 finalPos = mix(pos, aTarget, uMorph);
                     
-                    // Mouse Interaction (Only when formed mostly)
+                    // Mouse Interaction 
                     if (uMorph > 0.8) {
                         float dist = distance(finalPos.xy, uMouse.xy);
                         float radius = 150.0;
@@ -126,8 +123,6 @@
                     }
 
                     // --- SCROLL OUT ANIMATION ---
-                    // Driven by uScroll (0.0 to 1.0)
-                    // Fly UP
                     float scrollY = uScroll * 1500.0;
                     finalPos.y += scrollY; 
                     
@@ -141,7 +136,7 @@
                     gl_PointSize = (1.5 + aRandom) * uPixelRatio * (1200.0 / -mvPosition.z);
                     
                     // Fade out
-                    vAlpha = 1.0 - (uScroll * 2.5); // Fade faster
+                    vAlpha = 1.0 - (uScroll * 2.5); 
                     if (vAlpha < 0.0) vAlpha = 0.0;
                 }
             `,
@@ -170,7 +165,7 @@
         scene.add(points);
 
         // ---------------------------------------------------------
-        // CANVAS TEXT SAMPLING
+        // CANVAS TEXT SAMPLING (DYNAMIC)
         // ---------------------------------------------------------
         function samplePointsFromText() {
             var canvas = document.createElement('canvas');
@@ -187,19 +182,27 @@
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
 
-            // Responsive Font Sizes
             var isMobile = window.innerWidth < 768;
-            var scaleFactor = isMobile ? 0.4 : 1.0; // Scale down for mobile
+            var scaleFactor = isMobile ? 0.4 : 1.0;
 
-            // Font 1: BENEDICTUS
+            // Dynamic Text from Data
+            var textLines = window.PORTFOLIO_CONTENT.curtain.textLines || ["BENEDICTUS", "RICHARD"];
+
+            // Font Config
             var fontSize1 = 280 * scaleFactor;
-            ctx.font = '800 ' + fontSize1 + 'px "Plus Jakarta Sans", sans-serif';
-            ctx.fillText('BENEDICTUS', width / 2, height / 2 - (160 * scaleFactor));
-
-            // Font 2: RICHARD RICARDO
             var fontSize2 = 190 * scaleFactor;
-            ctx.font = '700 ' + fontSize2 + 'px "Plus Jakarta Sans", sans-serif';
-            ctx.fillText('RICHARD RICARDO', width / 2, height / 2 + (160 * scaleFactor));
+
+            // Line 1
+            if (textLines[0]) {
+                ctx.font = '800 ' + fontSize1 + 'px "Plus Jakarta Sans", sans-serif';
+                ctx.fillText(textLines[0], width / 2, height / 2 - (160 * scaleFactor));
+            }
+
+            // Line 2
+            if (textLines[1]) {
+                ctx.font = '700 ' + fontSize2 + 'px "Plus Jakarta Sans", sans-serif';
+                ctx.fillText(textLines[1], width / 2, height / 2 + (160 * scaleFactor));
+            }
 
             var imageData = ctx.getImageData(0, 0, width, height);
             var data = imageData.data;

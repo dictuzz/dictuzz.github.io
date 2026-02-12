@@ -4,6 +4,9 @@
 
 A cinematic, high-performance personal portfolio website designed to win Awwwards. This project emphasizes motion, narrative, and "Liquid" interaction design.
 
+> **Part of the [dictuzz.github.io](https://dictuzz.github.io) Hybrid Ecosystem**
+> This module serves as the **"Cinematic Core"** of the personal brand, operating independently of the root `config.js` to maximize performance and visual fidelity.
+
 ## 🌟 Key Features
 
 ### Act I: The Digital Loom (`index.html`)
@@ -35,6 +38,8 @@ A cinematic, high-performance personal portfolio website designed to win Awwward
 ## 🚀 How to Run
 
 No build step required. This is a static site.
+
+> **Note**: Unlike the Resume app, this Portfolio does **not** use the root `config.js`. Textures, colors, and particles are configured directly in `js/curtain-loom.js` and `css/style.css` for low-level control.
 
 1.  **Clone the repository**:
     ```bash

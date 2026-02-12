@@ -12,14 +12,15 @@
 **Type**: Personal Brand Ecosystem (Static Web Application)
 **Target Audience**: Recruiters, Professional Network, Social Media Followers, Developers
 
-This project is a sophisticated, framework-free static web application that serves as the central digital presence for Benedictus Richard Ricardo. It aggregates multiple functional components into a unified ecosystem:
-1.  **Link in Bio (Root)**: A "Deep Space Luxury" hub for social links and widgets.
-2.  **Liquid Motion Portfolio (`/portfolio`)**: A cinematic, Awwwards-caliber showcase of work using advanced WebG/GSAP animations.
-3.  **Legacy Resume (`/resume`)**: A localized, data-driven CV.
+This project is a sophisticated, framework-free static web application that serves as the central digital presence for Benedictus Richard Ricardo. It aggregates multiple functional components into a unified ecosystem using a **Hybrid Architecture**:
+
+1.  **Link in Bio (Root)**: A custom-built "Deep Space Luxury" hub using `spatial.js` and `custom-animations.css`.
+2.  **Liquid Motion Portfolio (`/portfolio`)**: A cinematic, Awwwards-caliber showcase of work using advanced WebGL/GSAP animations.
+3.  **Legacy Resume (`/resume`)**: A localized, data-driven CV powered by `config.js`.
 
 **Key Capabilities**:
 -   **Cinematic Experience**: The new Portfolio module features "Liquid Motion" design, 3D particle systems (`Three.js`), and scroll-driven narratives (`GSAP ScrollTrigger`).
--   **Static Architecture**: Custom Node.js/JSON-based content management without heavy frameworks.
+-   **Hybrid Static Architecture**: Combines bespoke high-performance landing pages with a config-driven SPA for easier resume management.
 -   **High Performance**: Optimized assets (WebP, lazy loading), deferred scripts, and GPU-accelerated animations.
 
 ---
@@ -89,23 +90,26 @@ The portfolio is split into 4 distinct HTML pages, each representing a narrative
 
 ## 4. Sub-Site: Link in Bio (Root `/`)
 
-The entry point (`index.html`) serves as a traffic router.
+The entry point (`index.html`) serves as a high-impact traffic router and branding statement.
 
--   **Background Engine (`js/background-manager.js`)**:
-    -   **Dark Mode**: "Aurora" particle system.
-    -   **Light Mode**: "Network" constellation effect.
--   **Widget Engine**: Renders interactive blocks (Email, Form) defined in `config.js`.
--   **Config**: Controlled by `config.js` in the root.
+-   **Architecture**: Custom HTML5/CSS3 with Vanilla JS (`spatial.js`).
+-   **Visuals**:
+    -   **Background**: "Deep Space" particle orbs (CSS/SVG).
+    -   **Animations**: Custom `custom-animations.css` for staggered entry, icon layers, and hover effects.
+    -   **Interactivity**: `spatial.js` handles cursor-tracking glow effects and mobile accordions.
+-   **Config**: Hardcoded content for maximum visual control (unlike the Release app).
 
 ---
 
 ## 5. Shared Core & Config
 
 ### 5.1 Configuration (`config.js`)
-Consolidated configuration file for the root site.
--   **Profile**: Name, Bio, Avatar.
--   **Links**: Array of `{ label, url, icon, style }` objects.
--   **Theme**: Default colors and fonts.
+The `config.js` file primarily drives the **Resume (`/resume/`)** application.
+-   **Profile**: Name, Bio, Avatar (used by Resume).
+-   **Links**: Array of social links (used by Resume).
+-   **Theme**: Default colors and fonts (used by Resume).
+
+> **Note**: The Root and Portfolio sites utilize their own internal configs and CSS variables for specific cinematic effects.
 
 ### 5.2 Design Tokens (`assets/css/tokens.css`)
 Centralized CSS variables used mainly by the Root and Resume sites. The Portfolio site uses its own bespoke variable system (`portfolio/css/style.css`) to maintain a distinct "Luxury" visual identity (`#ffd700` Gold, `#ba0000` Red).
@@ -140,6 +144,8 @@ No `npm install` required for runtime. Zero dependencies.
 
 ## 8. Future Roadmap
 
+-   [x] **Custom Footer Text**: Implemented in Root site.
+-   [x] **Icon Animations**: Added "Layer Group" animation in Root.
 -   [ ] **Mobile Optimization (Portfolio)**: Refine the 300vh scroll tracks for touch devices.
 -   [ ] **Merge Systems**: Eventually unify `resume` and `portfolio` data sources.
 -   [ ] **Blog Integration**: Potentially fetch Medium posts dynamically via API.

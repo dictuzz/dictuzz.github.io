@@ -38,46 +38,61 @@
         <a href="index.html" class="nav-link">I. Curtain</a>
         <a href="proof.html" class="nav-link">II. Proof</a>
         <a href="thread.html" class="nav-link">III. Thread</a>
-        <a href="signal.html" class="nav-link" aria-current="page">IV. Signal</a>
     </nav>
 
     <main class="signal">
-        <p class="signal-sentence">If something here resonated — I'd like to hear why.</p>
 
-        <address class="signal-channels">
-            <a href="mailto:contact@dictuzz.me">Email</a>
-            <a href="https://www.linkedin.com/in/dictuzz" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://api.whatsapp.com/send?phone=6285186888630" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="https://instagram.com/dictuzz" target="_blank" rel="noopener">Instagram</a>
-        </address>
+        <!-- ════════════════════════════════════════
+             HERO SENTENCE
+             ════════════════════════════════════════ -->
+        <section class="signal-hero">
+            <h1 class="signal-sentence"><!-- Injected via JS --></h1>
+        </section>
 
-        <details class="meeting-details">
-            <summary>Schedule a Meeting</summary>
-            <form action="https://formspree.io/f/xlgwgero" method="POST" class="signal-form">
-                <label>
-                    Full Name
-                    <input type="text" name="name" required placeholder="John Doe">
-                </label>
-                <label>
-                    Email Address
-                    <input type="email" name="email" required placeholder="john@example.com">
-                </label>
-                <label>
-                    Phone Number
-                    <input type="tel" name="phone" placeholder="+62 812 3456 7890">
-                </label>
-                <label>
-                    Preferred Time
-                    <input type="datetime-local" name="meeting_time" required>
-                </label>
-                <label>
-                    Topic
-                    <textarea name="topic" required placeholder="Project collaboration, consultation, etc."
-                        rows="4"></textarea>
-                </label>
-                <button type="submit">Send Request</button>
+        <!-- ════════════════════════════════════════
+             CHANNELS
+             ════════════════════════════════════════ -->
+        <section class="signal-channels">
+            <!-- Details injected via JS -->
+        </section>
+
+        <!-- ════════════════════════════════════════
+             COMMUNICATION FORM
+             ════════════════════════════════════════ -->
+        <section class="signal-form-wrapper">
+            <form action="#" method="POST" class="signal-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+62 ...">
+                </div>
+                <div class="form-group">
+                    <label for="topic">Topic</label>
+                    <textarea id="topic" name="topic" rows="4" placeholder="How can I help you organize..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="signal-submit">Initialize Connection</button>
             </form>
-        </details>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             MEETING SCHEDULER (Static for now, could be dynamic)
+             ════════════════════════════════════════ -->
+        <section class="signal-meeting">
+            <div class="meeting-details">
+                <p class="meeting-note">Prefer a direct conversation?</p>
+                <a href="https://calendly.com/" target="_blank" rel="noopener" class="meeting-link">Schedule a Briefing
+                    →</a>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -85,25 +100,16 @@
         <div class="footer-inner">
             <div class="footer-section">
                 <h3 class="footer-heading">Navigate</h3>
-                <a href="index.html" class="footer-link">Curtain</a>
-                <a href="proof.html" class="footer-link">Proof</a>
-                <a href="thread.html" class="footer-link">Thread</a>
-                <a href="signal.html" class="footer-link">Signal</a>
+                <nav class="footer-nav-dynamic"></nav>
             </div>
             <div class="footer-section">
                 <h3 class="footer-heading">Contact</h3>
-                <a href="mailto:contact@dictuzz.me" class="footer-link">contact@dictuzz.me</a>
-                <a href="https://www.linkedin.com/in/dictuzz" target="_blank" rel="noopener"
-                    class="footer-link">LinkedIn</a>
-                <a href="https://api.whatsapp.com/send?phone=6285186888630" target="_blank" rel="noopener"
-                    class="footer-link">WhatsApp</a>
-                <a href="../resume/" class="footer-link">Resume</a>
+                <nav class="footer-contact-dynamic"></nav>
             </div>
             <div class="footer-section footer-legal">
                 <h3 class="footer-heading">Terms &amp; Privacy</h3>
                 <a href="../terms.html" class="footer-link">Read Terms</a>
-                <p class="footer-terms">By submitting your contact information through this site, you agree that your
-                    details will be used solely for scheduling and professional communication.</p>
+                <p class="footer-terms">By submitting information, you agree to our terms.</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -111,7 +117,19 @@
             <p class="footer-tagline">Organizing disorder into structure.</p>
         </div>
     </footer>
+
+    <!-- Lenis -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/signal.js" defer></script>
     <div class="page-transition-curtain"></div>
+
+    <!-- Content Loader (New) -->
+    <script src="js/data.js"></script>
+    <script src="js/content-loader.js"></script>
 </body>
 
 </html>
