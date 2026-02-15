@@ -1,10 +1,14 @@
 /* ═══════════════════════════════════════════
-   BIO.CSS — Link-in-Bio: Cinematic Dark
-   Space Grotesk, Grain, Spatial Zones
+   BIO.CSS — Link-in-Bio: Refined Modernism
+   Serif Typography, Glassmorphism, Noise
    ═══════════════════════════════════════════ */
 
-/* ── Palette: Light Mode (Curious & Eager) ── */
+/* ── Palette: Light Mode (Default) ───────── */
 :root {
+    /* Inherit Fonts from tokens.css */
+    /* --font-display: 'Newsreader'; */
+    /* --font-body: 'Plus Jakarta Sans'; */
+
     --bio-bg: #fcfbf9;
     /* Warm Off-White */
     --bio-text: #1c1917;
@@ -15,39 +19,32 @@
     /* Vivid Red */
 
     /* Surfaces */
-    --bio-surface: #ffffff;
-    --bio-surface-hover: #fafaf9;
-    --bio-border: rgba(0, 0, 0, 0.08);
+    --bio-surface: rgba(255, 255, 255, 0.7);
+    --bio-surface-hover: rgba(255, 255, 255, 0.9);
+    --bio-border: rgba(28, 25, 23, 0.08);
 
-    /* ── Spacing & Layout ────────────────────── */
+    /* Spacing & Layout */
     --bio-radius: 24px;
     --bio-radius-sm: 12px;
     --bio-gap: 2rem;
     --bio-max-width: 1000px;
 
-    /* ── Typography ──────────────────────────── */
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
-
-    /* ── Shadows & Depth ─────────────────────── */
+    /* Shadows & Depth */
     --bio-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     --bio-shadow-card: 0 20px 40px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-/* ── Palette: Dark Mode (Cinematic Portfolio) ── */
+/* ── Palette: Dark Mode (Cinematic) ──────── */
 [data-theme="dark"] {
-    --bio-bg: #0a0a09;
-    /* Deep warm black */
-    --bio-text: #ede9e3;
-    /* Warm parchment white */
-    --bio-text-muted: #9a9890;
-    --bio-text-light: #5a5853;
-    --bio-accent: #c9a55a;
-    /* Warm Brass */
+    --bio-bg: var(--c-bg);
+    --bio-text: var(--c-text);
+    --bio-text-muted: var(--c-text-muted);
+    --bio-text-light: var(--c-text-faint);
+    --bio-accent: var(--c-accent);
 
     /* Surfaces */
-    --bio-surface: #141413;
-    --bio-surface-hover: #1c1c1a;
+    --bio-surface: rgba(20, 20, 19, 0.6);
+    --bio-surface-hover: rgba(28, 28, 26, 0.8);
     --bio-border: rgba(255, 255, 255, 0.08);
 
     --bio-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -75,7 +72,7 @@ body {
     padding: 2rem;
     overflow-x: hidden;
     position: relative;
-    /* Removed transition as we are sticking to dark theme */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* ── Grain Overlay ───────────────────────── */
@@ -116,7 +113,7 @@ body {
     width: 60vw;
     height: 60vw;
     background: radial-gradient(circle, var(--bio-accent) 0%, transparent 70%);
-    opacity: 0.1;
+    opacity: 0.15;
     top: -25%;
     left: -25%;
 }
@@ -124,7 +121,8 @@ body {
 .bio-orb.secondary {
     width: 50vw;
     height: 50vw;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--bio-surface) 0%, transparent 70%);
+    /* Subtle fill */
     bottom: -15%;
     right: -15%;
     animation-delay: -5s;
@@ -163,7 +161,7 @@ body {
     padding-top: 2rem;
 }
 
-/* Asymmetric Frame Design */
+/* Avatar Frame */
 .profile-avatar-wrapper {
     position: relative;
     padding: 8px;
@@ -172,15 +170,11 @@ body {
 .profile-frame {
     position: relative;
     width: 140px;
-    /* Increased Size */
     height: 140px;
     padding: 3px;
-    border-radius: 44% 56% 50% 50% / 50% 50% 50% 50%;
-    background: linear-gradient(135deg, var(--bio-accent), rgba(255, 255, 255, 0.1));
-    animation:
-        entrance 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
-        morph 6s ease-in-out infinite;
-    /* Organic Morphing */
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bio-accent), transparent);
+    animation: morph 8s ease-in-out infinite;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -188,27 +182,15 @@ body {
 
     0%,
     100% {
-        border-radius: 44% 56% 50% 50% / 50% 50% 50% 50%;
+        border-radius: 50%;
     }
 
     33% {
-        border-radius: 56% 44% 60% 40% / 40% 60% 36% 64%;
+        border-radius: 44% 56% 50% 50% / 50% 50% 50% 50%;
     }
 
     66% {
         border-radius: 46% 54% 38% 62% / 60% 40% 60% 40%;
-    }
-}
-
-@keyframes entrance {
-    from {
-        transform: scale(0.8) rotate(-5deg);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
     }
 }
 
@@ -221,70 +203,13 @@ body {
     background: var(--bio-bg);
 }
 
-.profile-frame:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 40px rgba(220, 38, 38, 0.15);
-    /* Reddish glow in light mode */
-}
-
-/* Pulsing Status Dot (GREEN & BLINKING) */
-.profile-status-indicator {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.status-ping {
-    width: 12px;
-    height: 12px;
-    background-color: #22c55e;
-    /* Bright Green */
-    border-radius: 50%;
-    position: relative;
-    box-shadow: 0 0 0 3px var(--bio-bg);
-}
-
-.status-ping::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #22c55e;
-    opacity: 0.5;
-    animation: blink-pulse 1.5s infinite;
-    /* Faster Blink */
-}
-
-@keyframes blink-pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
-    }
-
-    50% {
-        transform: translate(-50%, -50%) scale(2.5);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0;
-    }
-}
-
 .profile-name {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    font-weight: 700;
+    font-family: var(--font-display);
+    /* Serif Upgrade */
+    font-size: 3.5rem;
+    font-weight: 400;
+    /* Editorial weight */
+    font-style: italic;
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--bio-text);
@@ -297,7 +222,10 @@ body {
     font-size: 1.125rem;
     color: var(--bio-text-muted);
     font-weight: 500;
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
+    /* Tech Font */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .profile-meta {
@@ -307,44 +235,11 @@ body {
     color: var(--bio-text-light);
     margin-top: 0.25rem;
     font-weight: 500;
+    font-family: var(--font-heading);
+    /* Tech Font */
 }
 
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #22c55e;
-    /* Green */
-    border-radius: 50%;
-    display: inline-block;
-    animation: blink-dot 2s infinite;
-}
-
-@keyframes blink-dot {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.4;
-    }
-}
-
-/* ── Scroll/Flicker Time Display (Unified Style) ────────── */
-.time-display {
-    /* Removed custom font/color to match meta style */
-    font-variant-numeric: tabular-nums;
-    min-width: 140px;
-}
-
-/* ── Spatial Zones (Cards) ───────────────── */
+/* ── Spatial Cards & Glass ───────────────── */
 .bio-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -353,69 +248,94 @@ body {
 
 .bio-card {
     background: var(--bio-surface);
-    /* Subtle texture or noise could go here */
+    backdrop-filter: blur(24px);
+    /* Heavy Blur */
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--bio-border);
     border-radius: var(--bio-radius);
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    box-shadow: var(--bio-shadow);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    /* Performance Optimizations */
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    /* Hardware accelerate */
 }
 
-/* Proximity Glow Effect (Desktop) */
-@media (hover: hover) {
-    .bio-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(800px circle at var(--x, 50%) var(--y, 50%),
-                rgba(201, 165, 90, 0.08),
-                transparent 40%);
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .bio-card:hover::before {
-        opacity: 1;
-    }
-
-    .bio-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--bio-shadow-card);
-        border-color: rgba(201, 165, 90, 0.2);
-    }
+.bio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--bio-shadow-card);
+    border-color: rgba(201, 165, 90, 0.3);
 }
 
+/* ── Collapsible Logic (Desktop & Mobile) ── */
 .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.header-content {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
+.collapse-icon {
+    font-size: 1.25rem;
+    color: var(--bio-text-light);
+    transition: transform 0.3s ease;
+}
+
+.bio-card.zone-collapsed .collapse-icon {
+    transform: rotate(-90deg);
+}
+
+.link-list-wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Fix for cropped icons: Widen the clipping container */
+    margin: 0 -1.5rem;
+    padding: 0 1.5rem;
+    overflow: hidden;
+}
+
+.link-list {
+    min-height: 0;
+    overflow: visible;
+    /* Allow content to bleed into the widened wrapper */
+    /* Ensure padding doesn't break transition if applied to link-list */
+}
+
+.bio-card.zone-collapsed .link-list-wrapper {
+    grid-template-rows: 0fr;
+}
+
 .card-label {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-weight: 700;
-    color: var(--bio-text-light);
+    color: var(--bio-accent);
 }
 
 .card-title {
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    /* Editorial */
     letter-spacing: -0.02em;
 }
 
-/* ── Link List ───────────────────────────── */
+/* ── Link List (Magnetic) ────────────────── */
 .link-list {
     display: flex;
     flex-direction: column;
@@ -428,15 +348,15 @@ body {
     gap: 1rem;
     text-decoration: none;
     color: inherit;
-    group: hover;
-    padding: 0.75rem;
-    margin: -0.75rem;
+    padding: 1rem;
+    margin: -1rem;
     border-radius: var(--bio-radius-sm);
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .bio-link:hover {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Subtle highlight */
 }
 
 .link-icon {
@@ -446,16 +366,29 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(128, 128, 128, 0.1);
     color: var(--bio-text-muted);
     font-size: 1.125rem;
     flex-shrink: 0;
-    transition: color 0.2s, background-color 0.2s;
+    transition: all 0.3s ease;
+    /* Fix for "breaking" icons: ensure no clipping */
+    overflow: visible;
 }
 
 .bio-link:hover .link-icon {
     color: var(--bio-accent);
     background: rgba(201, 165, 90, 0.1);
+    /* Remove scale here to prevent layout shift or clipping artifacts */
+    /* transform: scale(1.1); */
+}
+
+/* Animate the inner icon instead for smoother effect */
+.link-icon i {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bio-link:hover .link-icon i {
+    transform: scale(1.2) rotate(-5deg);
 }
 
 .link-content {
@@ -467,23 +400,24 @@ body {
 
 .link-title {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: var(--font-body);
 }
 
 .link-arrow {
     font-size: 0.875rem;
-    opacity: 0;
-    color: var(--bio-accent);
-    transform: translate(-10px, 10px);
-    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0.3;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .bio-link:hover .link-arrow {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(4px, -4px);
+    /* Up-right diagonal */
+    color: var(--bio-accent);
 }
 
 .link-desc {
@@ -495,32 +429,16 @@ body {
 /* ── Status Card ─────────────────────────── */
 .status-card {
     grid-column: span 2;
-    background: linear-gradient(135deg, rgba(201, 165, 90, 0.05) 0%, var(--bio-surface) 100%);
-    border-color: rgba(201, 165, 90, 0.15);
-    padding: 2.5rem 3rem;
+    background: linear-gradient(135deg, rgba(201, 165, 90, 0.03) 0%, var(--bio-surface) 100%);
+    border-color: rgba(201, 165, 90, 0.1);
 }
 
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(201, 165, 90, 0.1);
-    color: var(--bio-accent);
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-family: var(--font-body);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
+.status-card:hover {
+    border-color: var(--bio-accent);
 }
 
-/* ── Theme Toggle (Hidden for this specific requested theme) 
-   User wants portfolio color scheme which is fixed dark mode 
-   Removing display but keeping code just in case */
-/* ── Theme Toggle ────────────────────────── */
-.theme-toggle-fixed {
+/* ── Theme Toggle (Fixed) ────────────────── */
+.theme-toggle-float {
     position: fixed;
     top: 2rem;
     right: 2rem;
@@ -528,6 +446,7 @@ body {
     height: 48px;
     border-radius: 50%;
     background: var(--bio-surface);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--bio-border);
     color: var(--bio-text);
     display: flex;
@@ -535,51 +454,20 @@ body {
     justify-content: center;
     cursor: pointer;
     z-index: 1000;
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.3s var(--ease-elastic, ease);
     box-shadow: var(--bio-shadow);
 }
 
-.theme-toggle-fixed:hover {
-    transform: scale(1.1) rotate(15deg);
+.theme-toggle-float:hover {
+    transform: rotate(15deg) scale(1.1);
     color: var(--bio-accent);
     border-color: var(--bio-accent);
 }
 
 /* ── Footer ──────────────────────────────── */
 .bio-footer {
-    text-align: center;
-    border-top: 1px solid var(--bio-border);
-    padding-top: 2rem;
-    width: 100%;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-}
-
-.footer-nav {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-link {
-    color: var(--bio-text-muted);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.footer-link:hover {
-    color: var(--bio-accent);
-}
-
-.footer-credits {
-    font-size: 0.75rem;
-    color: var(--bio-text-light);
+    display: none !important;
+    /* Force standard footer usage */
 }
 
 /* ── Mobile Responsive ───────────────────── */
@@ -593,40 +481,14 @@ body {
         grid-column: span 1;
     }
 
-    .bio-container {
-        gap: 2.5rem;
-    }
-
     .profile-name {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
 
-    .profile-frame {
-        width: 80px;
-        height: 80px;
-    }
-
-    body {
-        padding: 1.5rem 1rem;
-    }
-
-    .bio-card:not(.status-card) {
-        padding: 1.75rem;
-    }
-
-    /* Mobile Expand/Collapse Logic Match */
-    .bio-card[data-zone].zone-collapsed .link-list {
-        display: none;
-    }
-
-    .bio-card[data-zone] .card-header {
-        cursor: pointer;
-    }
-
-    .bio-card[data-zone].zone-collapsed .card-title::after {
-        content: '+';
-        float: right;
-        font-weight: 400;
-        color: var(--bio-text-light);
+    .theme-toggle-float {
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
     }
 }

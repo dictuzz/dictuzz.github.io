@@ -5,21 +5,42 @@
 (function () {
     'use strict';
 
-    // ── 1. Active Navigation ─────────────────
-    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    var navLinks = document.querySelectorAll('.nav-link');
+    // ── 1. Active Navigation (Scroll Spy) ─────────────────
+    var navLinks = document.querySelectorAll('.glass-nav-link');
+    var sections = document.querySelectorAll('section[id]');
 
-    navLinks.forEach(function (link) {
-        var href = link.getAttribute('href');
-        if (href === currentPage) {
-            link.setAttribute('aria-current', 'page');
-        } else {
-            link.removeAttribute('aria-current');
-        }
-    });
+    function updateActiveNav() {
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var windowHeight = window.innerHeight;
+
+        sections.forEach(function (section) {
+            var sectionTop = section.offsetTop;
+            var sectionHeight = section.offsetHeight;
+            var sectionId = section.getAttribute('id');
+
+            // Trigger when section center hits viewport center
+            if (scrollY >= (sectionTop - windowHeight * 0.5) &&
+                scrollY < (sectionTop + sectionHeight - windowHeight * 0.5)) {
+
+                navLinks.forEach(function (link) {
+                    link.classList.remove('active');
+                    link.removeAttribute('aria-current');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    // Run once on load
+    updateActiveNav();
 
     // ── 2. Back-Nav Check ────────────────────
     window.isRevisit = false;
+    var currentPage = window.location.pathname.split('/').pop();
     if (currentPage === 'index.html' || currentPage === '') {
         var navEntry = performance.getEntriesByType('navigation')[0];
         if (navEntry && navEntry.type === 'back_forward') {
@@ -82,6 +103,9 @@
 
             callback(); // Run page specific logic
             initGlobalAnimations(); // Run global logic
+
+            // Force refresh after everything is initialized
+            ScrollTrigger.refresh();
         } else {
             setTimeout(function () { waitForGSAP(callback); }, 100);
         }
@@ -93,6 +117,7 @@
         initMagneticHover();
         initNavScroll();
         initPageTransitionLinks();
+        ScrollTrigger.refresh();
     }
 
     function initFooterAnimation() {
@@ -101,27 +126,30 @@
         var footerSections = footer.querySelectorAll('.footer-section');
         var footerBottom = footer.querySelector('.footer-bottom');
 
-        gsap.from(footerSections, {
-            scrollTrigger: {
-                trigger: footer,
-                start: 'top 90%',
-                toggleActions: 'play none none none'
-            },
-            opacity: 0,
-            y: 30,
-            duration: 0.6,
-            stagger: 0.15,
-            ease: 'power2.out'
+        // Set initial state
+        gsap.set(footerSections, { opacity: 0, y: 30 });
+
+        ScrollTrigger.batch(footerSections, {
+            start: "top 95%",
+            onEnter: batch => gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.15,
+                duration: 0.6,
+                ease: 'power2.out',
+                overwrite: true
+            })
         });
 
         if (footerBottom) {
-            gsap.from(footerBottom, {
+            gsap.set(footerBottom, { opacity: 0 });
+            gsap.to(footerBottom, {
                 scrollTrigger: {
                     trigger: footerBottom,
-                    start: 'top 95%',
+                    start: 'top 98%',
                     toggleActions: 'play none none none'
                 },
-                opacity: 0,
+                opacity: 1,
                 duration: 0.5,
                 ease: 'power2.out'
             });
@@ -160,15 +188,16 @@
     }
 
     function initNavScroll() {
-        var nav = document.querySelector('.site-nav');
+        var nav = document.querySelector('.glass-nav');
         if (nav) {
             var scrollThreshold = 50;
             function onScroll() {
                 var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                // Add 'scrolled' class for visual shrinking/darkening
                 if (scrollY > scrollThreshold) {
-                    nav.classList.add('nav-scrolled');
+                    nav.classList.add('scrolled');
                 } else {
-                    nav.classList.remove('nav-scrolled');
+                    nav.classList.remove('scrolled');
                 }
             }
             window.addEventListener('scroll', onScroll, { passive: true });
@@ -177,27 +206,22 @@
     }
 
     function initPageTransitionLinks() {
+        // Intercept anchor clicks for smooth scrolling
         navLinks.forEach(function (link) {
             link.addEventListener('click', function (e) {
                 var href = link.getAttribute('href');
-                if (href === currentPage) {
+                if (href.startsWith('#')) {
                     e.preventDefault();
-                    return;
-                }
-                e.preventDefault();
-                var curtain = document.querySelector('.page-transition-curtain');
-                if (curtain) {
-                    gsap.set(curtain, { transformOrigin: 'bottom' });
-                    gsap.to(curtain, {
-                        scaleY: 1,
-                        duration: 0.6,
-                        ease: 'power3.inOut',
-                        onComplete: function () {
-                            window.location.href = href;
+                    var targetId = href.substring(1);
+                    var targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        if (window.lenis) {
+                            window.lenis.scrollTo(targetSection);
+                        } else {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
                         }
-                    });
-                } else {
-                    window.location.href = href;
+                    }
                 }
             });
         });

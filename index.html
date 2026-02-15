@@ -1,237 +1,219 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benedictus Richard Ricardo | Creative Technologist</title>
-  <meta name="description" content="Organizing disorder into structure. Creative Technologist & Leader.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benedictus Richard Ricardo</title>
+    <meta name="description"
+        content="Benedictus Richard Ricardo — organizing disorder into structure, leading people into motion.">
+    <meta name="author" content="Benedictus Richard Ricardo">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Benedictus Richard Ricardo">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://dictuzz.me/resume/og-image.png">
+    <meta property="og:description" content="Organizing disorder into structure, leading people into motion.">
+    <meta property="og:url" content="https://dictuzz.me/">
+    <link rel="canonical" href="https://dictuzz.me/">
 
-  <!-- Canonical Redirect -->
-  <script src="js/redirect.js"></script>
+    <meta name="theme-color" content="#1a1a1a">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles (Phase B) -->
+    <!-- Styles (Phase B) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Section Specific Styles -->
+    <link rel="stylesheet" href="css/proof.css">
+    <link rel="stylesheet" href="css/thread.css">
+    <link rel="stylesheet" href="css/signal.css">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/bio.css">
-  <link rel="stylesheet" href="css/custom-animations.css">
+    <!-- Three.js (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+    <!-- Scripts (Deferred for Performance) -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <!-- Three.js Addons (Deferred) -->
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/FontLoader.js" defer></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/geometries/TextGeometry.js" defer></script>
+
+    <script src="js/redirect.js"></script>
+    <script src="js/data.js"></script> <!-- Data Source -->
+    <script src="js/core.js" defer></script>
+    <script src="js/curtain.js" defer></script>
+    <script src="js/curtain-loom.js" defer></script>
+    <script src="js/proof.js" defer></script>
+    <script src="js/thread.js" defer></script>
+    <script src="js/signal.js" defer></script>
 </head>
 
 <body>
+    <!-- 3D Particle Loom Layer -->
+    <div id="loom-container"></div>
+    <canvas id="liquid-noise"></canvas> <!-- Shared Background Noise -->
 
-  <!-- Grain Overlay -->
-  <div class="grain-overlay"></div>
+    <!-- Navigation (Glass Dynamic Island) -->
+    <nav class="glass-nav" aria-label="Main Navigation">
+        <ul class="glass-nav-list">
+            <li><a href="#curtain" class="glass-nav-link" aria-current="page">I. Curtain</a></li>
+            <li><a href="#proof" class="glass-nav-link">II. Proof</a></li>
+            <li><a href="#thread" class="glass-nav-link">III. Thread</a></li>
+            <li><a href="#signal" class="glass-nav-link">IV. Signal</a></li>
+        </ul>
+    </nav>
 
-  <!-- Background Orbs -->
-  <div class="bio-background">
-    <div class="bio-orb primary"></div>
-    <div class="bio-orb secondary"></div>
-  </div>
+    <!-- Act I: Curtain -->
+    <section id="curtain" class="curtain">
+        <!-- 3D Curtain Canvas inserted via JS into #curtain-3d-container -->
 
-  <!-- Theme Toggle -->
-  <button class="theme-toggle-fixed" id="theme-toggle" aria-label="Toggle Theme">
-    <i class="fas fa-moon"></i>
-  </button>
+        <!-- Legacy BG (Hidden/Fallback) -->
+        <!-- <div class="curtain-bg">...</div> -->
 
-  <main class="bio-container">
-
-    <!-- Profile Header -->
-    <header class="bio-header">
-      <div class="profile-avatar-wrapper">
-        <div class="profile-frame">
-          <img src="assets/images/dictuzz.webp" alt="Benedictus Richard Ricardo" class="profile-avatar">
+        <h1 class="curtain-name">Benedictus<br>Richard Ricardo</h1>
+        <p class="curtain-declaration">I put rooms in order and people in motion.</p>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+            <span class="scroll-text">Scroll</span>
+            <span class="scroll-line"></span>
         </div>
-        <!-- Pulsing Status Indicator -->
-        <div class="profile-status-indicator" title="Open to Work">
-          <div class="status-ping"></div>
-        </div>
-      </div>
+    </section>
 
-      <h1 class="profile-name">Benedictus Richard Ricardo</h1>
-
-      <div class="profile-role">
-        <i class="fas fa-layer-group animate-icon"></i>
-        <span>Data Scientist</span>
-      </div>
-
-      <div class="profile-meta">
-        <div class="meta-item">
-          <span class="status-dot"></span>
-          <span>Open to collaborations</span>
-          <div class="meta-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Tangerang, Indonesia</span>
-          </div>
-          <div class="meta-item">
-            <!-- Animating Time Display -->
-            <span id="local-time" class="time-display">--:--</span>
-          </div>
-        </div>
-    </header>
-
-    <!-- Main Grid -->
-    <div class="bio-grid">
-
-      <!-- CREATE Column (Zone) -->
-      <section class="bio-card" data-zone="create">
-        <div class="card-header">
-          <span class="card-label">Create</span>
-          <h2 class="card-title">Work that speaks</h2>
+    <!-- Act II: Proof -->
+    <section id="proof">
+        <!-- ════════════════════════════════════════
+             PINNED INVESTIGATION BOARD
+             ════════════════════════════════════════ -->
+        <div class="proof-board">
+            <div class="featured-work">
+                <!-- Content injected via JS from data.js -->
+            </div>
         </div>
 
-        <div class="link-list">
-          <a href="./portfolio/" class="bio-link">
-            <div class="link-icon"><i class="fas fa-briefcase"></i></div>
-            <div class="link-content">
-              <div class="link-title">Portfolio <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Selected projects & case studies</div>
+        <!-- ════════════════════════════════════════
+             MODAL OVERLAY (Quick View)
+             ════════════════════════════════════════ -->
+        <div class="modal-overlay" id="proof-modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Close">×</button>
+                <div class="modal-body">
+                    <!-- Content cloned here via JS -->
+                </div>
             </div>
-          </a>
-
-          <a href="./404.html" class="bio-link">
-            <div class="link-icon"><i class="fas fa-flask"></i></div>
-            <div class="link-content">
-              <div class="link-title">Lab <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Experiments & side projects</div>
-            </div>
-          </a>
-
-          <a href="https://medium.com/@dictuzz" target="_blank" class="bio-link">
-            <div class="link-icon"><i class="fas fa-pen-nib"></i></div>
-            <div class="link-content">
-              <div class="link-title">Writing <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Thoughts on design & culture</div>
-            </div>
-          </a>
         </div>
-      </section>
+    </section>
 
-      <!-- CONNECT Column (Zone) -->
-      <section class="bio-card" data-zone="connect">
-        <div class="card-header">
-          <span class="card-label">Connect</span>
-          <h2 class="card-title">Let's talk</h2>
+    <!-- Act III: Thread -->
+    <section id="thread" class="thread">
+        <!-- ════════════════════════════════════════
+             THESIS STATEMENT
+             ════════════════════════════════════════ -->
+        <div class="thread-thesis">
+            <p><!-- Injected via JS --></p>
         </div>
 
-        <div class="link-list">
-          <a href="mailto:contact@dictuzz.me" class="bio-link">
-            <div class="link-icon"><i class="fas fa-envelope"></i></div>
-            <div class="link-content">
-              <div class="link-title">Email <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">contact@dictuzz.me</div>
-            </div>
-          </a>
+        <!-- Dynamic Clusters injected here -->
 
-          <a href="https://api.whatsapp.com/send?phone=6285186888630" target="_blank" class="bio-link">
-            <div class="link-icon"><i class="fab fa-whatsapp"></i></div>
-            <div class="link-content">
-              <div class="link-title">WhatsApp <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Immediate contact</div>
-            </div>
-          </a>
-
-          <a href="./resume/" class="bio-link">
-            <div class="link-icon"><i class="fas fa-file-alt"></i></div>
-            <div class="link-content">
-              <div class="link-title">Resume <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Standard professional history</div>
-            </div>
-          </a>
+        <!-- ════════════════════════════════════════
+             FOOTNOTES
+             ════════════════════════════════════════ -->
+        <div class="thread-footnote">
+            <dl>
+                <!-- Injected via JS -->
+            </dl>
         </div>
-      </section>
+    </section>
 
-      <!-- SOCIAL Column (Zone) -->
-      <section class="bio-card status-card" data-zone="social">
-        <div class="card-header">
-          <span class="card-label">Social</span>
-          <h2 class="card-title">Network</h2>
+    <!-- Act IV: Signal -->
+    <section id="signal" class="signal">
+        <!-- ════════════════════════════════════════
+             HERO SENTENCE
+             ════════════════════════════════════════ -->
+        <div class="signal-hero">
+            <h1 class="signal-sentence"><!-- Injected via JS --></h1>
         </div>
 
-        <div class="link-list">
-          <a href="https://linkedin.com/in/dictuzz" target="_blank" class="bio-link">
-            <div class="link-icon"><i class="fab fa-linkedin-in"></i></div>
-            <div class="link-content">
-              <div class="link-title">LinkedIn <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Professional network</div>
-            </div>
-          </a>
-
-          <a href="https://github.com/dictuzz" target="_blank" class="bio-link">
-            <div class="link-icon"><i class="fab fa-github"></i></div>
-            <div class="link-content">
-              <div class="link-title">GitHub <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Code repositories</div>
-            </div>
-          </a>
-
-          <a href="https://instagram.com/dictuzz" target="_blank" class="bio-link">
-            <div class="link-icon"><i class="fab fa-instagram"></i></div>
-            <div class="link-content">
-              <div class="link-title">Instagram <i class="fas fa-arrow-up-right-from-square link-arrow"></i></div>
-              <div class="link-desc">Visual journal</div>
-            </div>
-          </a>
+        <!-- ════════════════════════════════════════
+             CHANNELS
+             ════════════════════════════════════════ -->
+        <div class="signal-channels">
+            <!-- Details injected via JS -->
         </div>
-      </section>
 
-    </div>
+        <!-- ════════════════════════════════════════
+             COMMUNICATION FORM
+             ════════════════════════════════════════ -->
+        <div class="signal-form-wrapper">
+            <form action="#" method="POST" class="signal-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+62 ...">
+                </div>
+                <div class="form-group">
+                    <label for="topic">Topic</label>
+                    <textarea id="topic" name="topic" rows="4" placeholder="How can I help you organize..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="signal-submit">Initialize Connection</button>
+            </form>
+        </div>
 
-    <footer class="bio-footer">
-      <nav class="footer-nav">
-        <a href="./portfolio/" class="footer-link">Portfolio</a>
-        <a href="./404.html" class="footer-link">Lab</a>
-        <a href="./resume/" class="footer-link">Resume</a>
-        <a href="terms.html" class="footer-link">Terms</a>
-      </nav>
-      <div class="footer-credits">
-        <p>&copy; 2026 Benedictus Richard. All Rights Reserved.</p>
-        <p class="footer-tagline">Organizing disorder into structure.</p>
-      </div>
+        <!-- ════════════════════════════════════════
+             MEETING SCHEDULER
+             ════════════════════════════════════════ -->
+        <div class="signal-meeting">
+            <div class="meeting-details">
+                <p class="meeting-note">Prefer a direct conversation?</p>
+                <a href="https://calendly.com/" target="_blank" rel="noopener" class="meeting-link">Schedule a Briefing
+                    →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-section">
+                <h3 class="footer-heading">Navigate</h3>
+                <nav class="footer-nav-dynamic"></nav>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">Contact</h3>
+                <nav class="footer-contact-dynamic"></nav>
+            </div>
+            <div class="footer-section footer-legal">
+                <h3 class="footer-heading">Terms &amp; Privacy</h3>
+                <a href="terms.html" class="footer-link">Read Terms</a>
+                <p class="footer-terms">By submitting information, you agree to our terms.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Benedictus Richard. All Rights Reserved.</p>
+            <p class="footer-tagline">Organizing disorder into structure.</p>
+        </div>
     </footer>
-  </main>
 
-  <script src="js/spatial.js"></script>
-  <script>
-    // Theme Toggle Logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    const icon = toggleBtn.querySelector('i');
+    <div class="page-transition-curtain"></div>
 
-    function updateIcon(theme) {
-      if (theme === 'dark') {
-        icon.className = 'fas fa-sun';
-      } else {
-        icon.className = 'fas fa-moon';
-      }
-    }
+    <!-- Content Loader (New) -->
 
-    // Check local storage
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    updateIcon(savedTheme);
-
-    toggleBtn.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateIcon(newTheme);
-    });
-  </script>
-
-
+    <script src="js/content-loader.js"></script>
 </body>
 
 </html>

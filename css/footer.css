@@ -63,6 +63,13 @@
     transform: translateX(3px);
 }
 
+.footer-nav-dynamic,
+.footer-contact-dynamic {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
 .footer-terms {
     font-size: var(--text-small);
     color: var(--c-text-faint);

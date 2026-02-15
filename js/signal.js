@@ -18,6 +18,7 @@
     function initSignalPage() {
         initSignalAnimations();
     }
+    window.initSignalPage = initSignalPage;
 
     function initSignalAnimations() {
         var sentence = document.querySelector('.signal-sentence');
@@ -26,33 +27,39 @@
 
         if (!sentence) return;
 
-        gsap.from(sentence, {
+        // Create a seamless entry timeline
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.signal',
+                start: 'top 60%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        tl.from(sentence, {
             opacity: 0,
             y: 25,
             duration: 1,
-            ease: 'power3.out',
-            delay: 0.4
+            ease: 'power3.out'
         });
 
         if (links.length > 0) {
-            gsap.from(links, {
+            tl.from(links, {
                 opacity: 0,
                 x: -30,
                 duration: 0.7,
                 stagger: 0.15,
-                ease: 'power3.out',
-                delay: 0.8
-            });
+                ease: 'power3.out'
+            }, '-=0.5');
         }
 
         if (meeting) {
-            gsap.from(meeting, {
+            tl.from(meeting, {
                 opacity: 0,
                 y: 15,
                 duration: 0.6,
-                ease: 'power2.out',
-                delay: 1.4
-            });
+                ease: 'power2.out'
+            }, '-=0.3');
         }
     }
 })();

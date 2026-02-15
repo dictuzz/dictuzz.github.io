@@ -1,133 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions | Benedictus Richard</title>
+    <title>Terms & Conditions — Benedictus Richard Ricardo</title>
     <meta name="description" content="Terms of use and privacy policy for dictuzz.me">
+
+    <meta name="theme-color" content="#1a1a1a">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <!-- Styles -->
-    <link rel="stylesheet" href="css/bio.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/text-page.css">
 
-    <style>
-        .terms-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .terms-header {
-            margin-bottom: 4rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--bio-text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--bio-accent);
-        }
-
-        .terms-title {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            color: var(--bio-text);
-        }
-
-        .terms-meta {
-            font-family: var(--font-body);
-            color: var(--bio-text-light);
-            font-size: 0.875rem;
-        }
-
-        .terms-content {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .terms-section h2 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--bio-text);
-        }
-
-        .terms-section p {
-            font-family: var(--font-body);
-            color: var(--bio-text-muted);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .terms-section ul {
-            list-style: none;
-            padding-left: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .terms-section li {
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--bio-text-muted);
-            line-height: 1.6;
-        }
-
-        .terms-section li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--bio-accent);
-        }
-
-        .terms-footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--bio-border);
-            text-align: center;
-            color: var(--bio-text-light);
-            font-size: 0.875rem;
-        }
-    </style>
+    <!-- Scripts (Deferred) -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="js/core.js" defer></script>
 </head>
 
 <body>
+    <canvas id="liquid-noise"></canvas>
 
-    <div class="grain-overlay"></div>
+    <nav class="site-nav" role="navigation">
+        <a href="index.html" class="nav-link">I. Curtain</a>
+        <a href="proof.html" class="nav-link">II. Proof</a>
+        <a href="thread.html" class="nav-link">III. Thread</a>
+        <a href="signal.html" class="nav-link">IV. Signal</a>
+    </nav>
 
-    <div class="terms-container">
-        <header class="terms-header">
-            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
-            <h1 class="terms-title">Terms & Conditions</h1>
-            <div class="terms-meta">Effective Date: February 12, 2026</div>
+    <main class="text-page-container">
+
+        <header class="text-page-header">
+            <h1 class="text-page-title">Terms &amp; Conditions</h1>
+            <div class="text-page-subtitle">Effective Date: February 12, 2026</div>
         </header>
 
-        <div class="terms-content">
+        <div class="text-content">
 
-            <section class="terms-section">
+            <section class="text-section">
                 <h2>1. Introduction</h2>
                 <p>These terms govern your use of <strong>dictuzz.me</strong> (the "Site"). By accessing this Site, you
                     acknowledge that you have read, understood, and agreed to these conditions. The Site is a personal
@@ -135,7 +53,7 @@
                     contract.</p>
             </section>
 
-            <section class="terms-section">
+            <section class="text-section">
                 <h2>2. Data Collection & Privacy</h2>
                 <p>This Site operates on a "Privacy First" principle. Being a static site hosted on GitHub Pages, it
                     does not maintain a backend database to store personal user profiles.</p>
@@ -150,7 +68,7 @@
                 </ul>
             </section>
 
-            <section class="terms-section">
+            <section class="text-section">
                 <h2>3. Intellectual Property</h2>
                 <p>All content, including design, code, copy, and visual assets, is the intellectual property of
                     Benedictus Richard unless otherwise noted. You may not reproduce, redistribute, or claim ownership
@@ -159,52 +77,90 @@
                     repositories is subject to the licenses attached to those specific repositories.</p>
             </section>
 
-            <section class="terms-section">
+            <section class="text-section">
                 <h2>4. Third-Party Links</h2>
                 <p>The Site contains links to external platforms (e.g., LinkedIn, Medium, GitHub). I verify the
                     destination of these links but hold no responsibility for the content, privacy policies, or
                     practices of third-party sites.</p>
             </section>
 
-            <section class="terms-section">
+            <section class="text-section">
                 <h2>5. Disclaimer of Warranties</h2>
                 <p>The Site and its contents are provided "as is" and "as available" without any warranty of any kind,
                     express or implied. While I strive for technical accuracy, I do not guarantee that the Site will be
                     error-free or uninterrupted.</p>
             </section>
 
-            <section class="terms-section">
+            <section class="text-section">
                 <h2>6. Limitation of Liability</h2>
                 <p>In no event shall Benedictus Richard be liable for any direct, indirect, incidental, or consequential
                     damages arising out of or in connection with your use of the Site.</p>
             </section>
 
-            <section class="terms-section">
+            <section class="text-section">
                 <h2>7. Contact & Data Requests</h2>
                 <p>If you have questions regarding these terms or wish to request the removal of any data you believe I
                     may hold, please contact me directly:</p>
-                <p><strong>Email:</strong> <a href="mailto:contact@dictuzz.me"
-                        style="color: var(--bio-accent); text-decoration: none;">contact@dictuzz.me</a></p>
-            </section>
-
-            <section class="terms-section">
-                <h2>8. Changes to Terms</h2>
-                <p>I reserve the right to modify these terms at any time. Significant changes will be reflected by an
-                    updated "Effective Date" at the top of this document.</p>
+                <p><strong>Email:</strong> <a href="mailto:contact@dictuzz.me" class="text-link">contact@dictuzz.me</a>
+                </p>
             </section>
 
         </div>
 
-        <footer class="terms-footer">
-            &copy; 2026 Benedictus Richard.
-        </footer>
-    </div>
+    </main>
 
-    <!-- Script to matching theme -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-section">
+                <h3 class="footer-heading">Navigate</h3>
+                <nav class="footer-nav-dynamic"></nav>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">Contact</h3>
+                <nav class="footer-contact-dynamic"></nav>
+            </div>
+            <div class="footer-section footer-legal">
+                <h3 class="footer-heading">Terms &amp; Privacy</h3>
+                <a href="terms.html" class="footer-link">Read Terms</a>
+                <p class="footer-terms">By submitting information, you agree to our terms.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Benedictus Richard. All Rights Reserved.</p>
+            <p class="footer-tagline">Organizing disorder into structure.</p>
+        </div>
+    </footer>
+
+    <!-- Init Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/content-loader.js"></script>
     <script>
-        // Apply saved theme immediately
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        // Simple Lenis Init since we don't have full main.js logic here or do we? 
+        // We have core.js which might have some shared logic but let's be safe.
+        // Actually main.js is usually for specific pages. core.js is shared.
+        // Let's rely on core.js if it handles lenis, or just init it inline.
+        // core.js in the new structure (from portfolio/js/core.js) might not exist or be different?
+        // Let's check core.js later. For now, inline init is safe.
+
+        if (typeof Lenis !== 'undefined') {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                mouseMultiplier: 1,
+                smoothTouch: false,
+                touchMultiplier: 2,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+        }
     </script>
 </body>
 

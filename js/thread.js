@@ -19,6 +19,7 @@
         initThreadAnimations();
         initKineticType();
     }
+    window.initThreadPage = initThreadPage;
 
     function initThreadAnimations() {
         var thesis = document.querySelector('.thread-thesis');
@@ -49,7 +50,7 @@
         // Sticky Fade Out
         gsap.to(thesis, {
             scrollTrigger: {
-                trigger: document.body,
+                trigger: '.thread',
                 start: 'top top',
                 end: '+=400',
                 scrub: true

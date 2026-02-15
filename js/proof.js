@@ -20,6 +20,7 @@
         initProofInteractions();
         initKineticType();
     }
+    window.initProofPage = initProofPage;
 
     function initProofAnimations() {
         var board = document.querySelector('.featured-work');

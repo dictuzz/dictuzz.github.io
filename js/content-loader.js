@@ -7,40 +7,33 @@
     'use strict';
 
     // Wait for data.js to be loaded
-    const checkData = setInterval(() => {
-        if (window.PORTFOLIO_CONTENT) {
-            clearInterval(checkData);
-            initLoader();
-        }
-    }, 50);
+    // Data is loaded in <head>, so it should be available immediately.
+    if (window.PORTFOLIO_CONTENT) {
+        initLoader();
+    } else {
+        console.error("PORTFOLIO_CONTENT not found. Ensure data.js is loaded before content-loader.js");
+    }
 
     function initLoader() {
         const DATA = window.PORTFOLIO_CONTENT;
-        const page = getPageName();
 
         // 1. GLOBAL HYDRATION (Meta, Footer)
         hydrateExamples(DATA.global);
         renderFooter(DATA.global);
         injectSchema(DATA);
 
-        // 2. PAGE SPECIFIC HYDRATION
-        if (page === 'index' && DATA.curtain) {
-            hydrateCurtain(DATA.curtain);
-        } else if (page === 'proof' && DATA.proof) {
-            renderProof(DATA.proof);
-        } else if (page === 'thread' && DATA.thread) {
-            renderThread(DATA.thread);
-        } else if (page === 'signal' && DATA.signal) {
-            renderSignal(DATA.signal);
-        }
+        // 2. SECTION HYDRATION
+        // Since we are now a single page, we try to hydrate everything.
+        // Each function checks for the existence of its container.
+        if (DATA.curtain) hydrateCurtain(DATA.curtain);
+        if (DATA.proof) renderProof(DATA.proof);
+        if (DATA.thread) renderThread(DATA.thread);
+        if (DATA.signal) renderSignal(DATA.signal);
     }
 
     function getPageName() {
-        const path = window.location.pathname;
-        if (path.includes('proof')) return 'proof';
-        if (path.includes('thread')) return 'thread';
-        if (path.includes('signal')) return 'signal';
-        return 'index'; // Default to curtain
+        // Legacy support or if we ever split pages again
+        return 'index';
     }
 
     // -------------------------------------------------------------
@@ -166,6 +159,9 @@
                 `).join('');
             }
         }
+
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+        if (window.initThreadPage) window.initThreadPage();
     }
 
     function renderSignal(data) {
@@ -216,9 +212,11 @@
                 if (input) input.placeholder = fields.topic.placeholder;
             }
 
-            const btn = form.querySelector('button');
             if (btn && data.form.submit) btn.textContent = data.form.submit;
         }
+
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+        if (window.initSignalPage) window.initSignalPage();
     }
 
     // UTILS
@@ -246,9 +244,8 @@
             "knowsAbout": ["Data Science", "Process Optimization", "Event Production"]
         });
 
-        const page = getPageName();
-
-        if (page === 'proof' && data.proof) {
+        // 2. Dynamic Schema based on available data
+        if (data.proof) {
             const itemList = {
                 "@type": "ItemList",
                 "name": "Portfolio Projects",
@@ -260,12 +257,14 @@
                         "name": `${exp.role} at ${exp.company}`,
                         "description": exp.hook,
                         "image": exp.image,
-                        "url": window.location.href + "#" + exp.id
+                        "url": window.location.href.split('#')[0] + "#" + exp.id
                     }
                 }))
             };
             schema["@graph"].push(itemList);
-        } else if (page === 'thread' && data.thread) {
+        }
+
+        if (data.thread) {
             schema["@graph"].push({
                 "@type": "Article",
                 "headline": data.thread.thesis,

@@ -1,0 +1,162 @@
+/* ═══════════════════════════════════════════
+   TEXT PAGE STYLES
+   Used for: Terms, Privacy, 404, detailed articles.
+   Enforces consistent typography and layout.
+   ═══════════════════════════════════════════ */
+
+.text-page-container {
+    padding: var(--space-2xl) var(--page-gutter) var(--space-xl);
+    max-width: 60rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-page-header {
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--c-line);
+    padding-bottom: var(--space-md);
+}
+
+.text-page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-display);
+    color: var(--c-text);
+    margin-bottom: var(--space-xs);
+}
+
+.text-page-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    color: var(--c-text-muted);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+}
+
+/* ── Content ─────────────────────────────── */
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.text-section {
+    margin-bottom: var(--space-md);
+}
+
+.text-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: var(--space-sm);
+    color: var(--c-text);
+}
+
+.text-section p {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    color: var(--c-text-muted);
+    margin-bottom: var(--space-sm);
+    max-width: 65ch;
+    /* Optimal reading length */
+}
+
+.text-section ul {
+    list-style: none;
+    padding-left: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+}
+
+.text-section li {
+    font-family: var(--font-body);
+    color: var(--c-text-muted);
+    line-height: var(--leading-body);
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.text-section li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--c-accent);
+}
+
+.text-link {
+    color: var(--c-text);
+    border-bottom: 1px solid var(--c-accent);
+    transition: color var(--dur-fast) var(--ease-out);
+}
+
+.text-link:hover {
+    color: var(--c-accent);
+}
+
+/* ── 404 Specific ────────────────────────── */
+.error-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: var(--page-gutter);
+}
+
+.error-code {
+    font-family: var(--font-body);
+    font-size: var(--text-micro);
+    letter-spacing: 0.2em;
+    color: var(--c-accent);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+}
+
+.error-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 15vw, 12rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    margin-bottom: var(--space-md);
+    background: linear-gradient(to bottom, var(--c-text), var(--c-text-faint));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.8;
+}
+
+.error-message {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    color: var(--c-text-muted);
+    margin-bottom: var(--space-lg);
+    max-width: 30rem;
+}
+
+.back-home-btn {
+    font-family: var(--font-body);
+    font-size: var(--text-small);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--c-text);
+    border: 1px solid var(--c-line);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-full);
+    transition: all var(--dur-medium) var(--ease-out);
+}
+
+.back-home-btn:hover {
+    background-color: var(--c-text);
+    color: var(--c-bg);
+    border-color: var(--c-text);
+}

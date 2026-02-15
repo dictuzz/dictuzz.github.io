@@ -18,7 +18,7 @@ window.PORTFOLIO_CONTENT = {
             { label: "LinkedIn", url: "https://www.linkedin.com/in/dictuzz" },
             { label: "WhatsApp", url: "https://api.whatsapp.com/send?phone=6285186888630" },
             { label: "Instagram", url: "https://instagram.com/dictuzz" },
-            { label: "Resume", url: "../resume/" }
+            { label: "Resume", url: "resume/" }
         ],
         footer: {
             tagline: "Organizing disorder into structure.",

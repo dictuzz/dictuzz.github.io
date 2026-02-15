@@ -5,8 +5,8 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { ThemeManager, Typer } from '../shared/ui-kit.js?v=2';
-import { initAnalytics } from '../shared/analytics.js';
+import { ThemeManager, Typer } from './js/ui-kit.js';
+import { initAnalytics } from './js/analytics.js';
 
 // Shorthand selectors
 const $ = s => document.querySelector(s);
@@ -130,7 +130,7 @@ function applyTranslations(data) {
 
 async function loadLanguage(lang) {
     try {
-        const res = await fetch(`/resume/locales/${lang}.json`);
+        const res = await fetch(`./locales/${lang}.json`);
         if (!res.ok) throw new Error('Failed to load');
 
         langData = await res.json();
@@ -153,10 +153,10 @@ async function loadLanguage(lang) {
                 if (typingEl._typer) {
                     typingEl._typer.stop();
                 }
-                
+
                 // Clear element
                 typingEl.textContent = '';
-                
+
                 // Create new typer with fresh start (speed 80ms per character - readable pace)
                 new Typer(typingEl, langData.hero.typing.dynamicTexts, 80);
             }

@@ -1,137 +1,87 @@
-<div align="center">
+# Benedictus Richard Ricardo — Interactive Portfolio
 
-# 🔥 dictuzz.github.io
+> *"I put rooms in order and people in motion."*
 
-**The Digital Universe of Benedictus Richard Ricardo**
-Link in Bio • Deep Space Portfolio • Blog
+A cinematic, high-performance personal portfolio website designed to win Awwwards. This project emphasizes motion, narrative, and "Liquid" interaction design.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-00F5D4?style=for-the-badge&logoColor=black)](https://dictuzz.github.io)
-[![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222?style=for-the-badge&logo=github)](https://pages.github.com)
-[![Documentation](https://img.shields.io/badge/Docs-DOCUMENTATION.md-7B61FF?style=for-the-badge)](./DOCUMENTATION.md)
-[![Config Builder](https://img.shields.io/badge/Tool-Config_Builder-orange?style=for-the-badge)](./tools/config-builder.html)
+> **Part of the [dictuzz.github.io](https://dictuzz.github.io) Hybrid Ecosystem**
+> This module serves as the **"Cinematic Core"** of the personal brand, operating independently of the root `config.js` to maximize performance and visual fidelity.
 
-![Preview](assets/images/dictuzz.webp)
+## 🌟 Key Features
 
-</div>
+### Act I: The Digital Loom (`index.html`)
+- **Particle System**: A custom Three.js simulation of 60,000 particles.
+- **Chaos to Order**: Particles start in a random 3D scatter and morph into the name using Canvas 2D Sampling for precise typography ("Plus Jakarta Sans").
+- **Scroll Narrative**: A strict scroll-driven timeline where the 3D text flies up and fades out, revealing the tagline via a "Matrix Scramble" effect without overlap.
 
----
+### Act II: The Investigation Board (`proof.html`)
+- **Immersive Canvas**: A massive `300vw x 300vh` grid layout.
+- **GSAP Camera**: Scroll-driven camera movements that Pan, Zoom, and Rotate to specific coordinates.
+- **Dossier View**: Interactive cards that open into a focused, luxury-styled modal for reading details.
+- **Lazy Loading**: High-res images load only when approached in the viewport.
 
-## 🌌 Project Overview
+### Act III: The Thread (`thread.html`)
+- **Karaoke Reader**: A focus-mode reading experience where the active line lights up (100% opacity) while surrounding text dims (20% opacity) based on scroll position.
+- **Kinetic Typography**: Large serif headers that react to scroll velocity.
 
-This repository hosts a comprehensive personal brand ecosystem, unified by the **"Deep Space Luxury"** design language. It operates on a **Hybrid Architecture**:
+### Act IV: The Signal (`signal.html`)
+- **Clean CTA**: A minimal contact page with staggered entrance animations.
 
-| Component | Path | Architecture | Description |
-|-----------|------|--------------|-------------|
-| **Link in Bio** | `/` | **Custom HTML/JS** | Cinematic landing page with `spatial.js` & `custom-animations.css`. |
-| **Portfolio** | `/portfolio/` | **Custom WebGL** | "Liquid Motion" experience with Three.js & GSAP. |
-| **Resume** | `/resume/` | **Config-Driven** | Traditional SPA fully powered by `config.js`. |
+## 🛠️ Technology Stack
 
-> 📚 **For detailed technical documentation, see [`PROJECT_DOCUMENTATION.md`](./PROJECT_DOCUMENTATION.md)**
+- **Core**: HTML5, CSS3 (Variables), Native JavaScript (Modules).
+- **3D Engine**: [Three.js](https://threejs.org/) (WebGL).
+- **Animation**: [GSAP (GreenSock)](https://gsap.com/) + ScrollTrigger.
+- **Smooth Scroll**: [Lenis](https://lenis.studio/) for momentum-based scrolling.
+- **Fonts**: Newsreader (Serif) & Plus Jakarta Sans (Sans Serif) via Google Fonts.
 
----
+## 🚀 How to Run
 
-## ✨ Features
+No build step required. This is a static site.
 
-### 🎨 Hybrid Engine
-- **Custom Cinematic Core**: The Root (`/`) and Portfolio (`/portfolio/`) sites are bespoke, high-performance implementations designed for maximum visual impact (particles, 3D text, scroll narratives).
-- **Config-Driven Resume**: The `/resume/` section is a templated app controlled by `config.js`, allowing easy updates to your professional history.
+> **Note**: Unlike the Resume app, this Portfolio does **not** use the root `config.js`. Textures, colors, and particles are configured directly in `js/curtain-loom.js` and `css/style.css` for low-level control.
 
-### ⚡ Feature Highlights
-- **Unified Brand Identity**: Shared design tokens (`assets/css/tokens.css`) ensure visual consistency across the hybrid stack.
-- **Interactive Widgets** (Root):
-  - **Collapsible Contact Forms**: Custom HTML implementation.
-  - **Email & WhatsApp Integration**: Direct links and stylized form handlers.
-- **Multi-Language Resume**: `/resume/?lang=id` available in the Resume app.
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/dictuzz/dictuzz.github.io.git
+    cd dictuzz.github.io/portfolio
+    ```
 
----
+2.  **Serve locally**:
+    You need a local server to handle ES Modules and CORS (for textures/fonts).
+    ```bash
+    npx serve .
+    ```
 
-## 🚀 Quick Start
+3.  **Open**:
+    Visit `http://localhost:3000` in your browser.
 
-### 1. easy Configuration (No Code)
-Open [`tools/config-builder.html`](./tools/config-builder.html) in your browser to generate your `config.js` visually!
-
-### 2. Manual Setup
-```bash
-# Clone repository
-git clone https://github.com/dictuzz/dictuzz.github.io.git
-cd dictuzz.github.io
-
-# Run locally (requires Node.js)
-npx -y serve -l 8000
-```
-
----
-
-## 🛠️ Configuration Guide (`config.js`)
-
-The entire site is driven by `config.js` in the root directory.
-
-### Basic Branding
-```javascript
-const CONFIG_DATA = {
-    siteTitle: "@dictuzz | Portfolio",
-    theme: {
-        colors: { primary: "#00F5D4", secondary: "#7B61FF" },
-        fonts: { display: "Outfit", body: "Inter" },
-        background: "aurora" // or 'network', 'static'
-    },
-    // ...
-};
-```
-
-### Links & Widgets System
-Define your links and interactive widgets in one list:
-```javascript
-links: [
-    {
-        label: "My Portfolio",
-        url: "/resume",
-        icon: "fas fa-id-card"
-    },
-    {
-        type: "widget",
-        widget: "email", // Renders collapsible email widget
-        category: "Contact"
-    },
-    {
-        type: "widget",
-        widget: "meeting", // Renders collapsible contact form
-        category: "Contact"
-    }
-]
-```
-
-### Feature Flags
-Disable sections you don't need:
-```javascript
-features: {
-    blog: false,   // Hides Blog link from Resume (Migrated to Medium)
-    resume: true
-}
-```
-
----
-
-## 📁 Repository Structure
+## 📂 Project Structure
 
 ```
-dictuzz.github.io/
-├── config.js               # ⭐ SINGLE SOURCE OF TRUTH (Edit this!)
-├── index.html              # Entry point (Widget Engine)
-├── script.js               # Core Logic & Renderer
-├── tools/
-│   └── config-builder.html # 🛠️ GUI Config Generator
+portfolio/
+├── css/
+│   ├── style.css         # Global styles & variables
+│   ├── curtain.css       # Specifics for Index/Particle system
+│   ├── proof.css         # The Investigation Board grid
+│   ├── thread.css        # Typography styles
+│   └── signal.css        # Contact page styles
 ├── js/
-│   └── background-manager.js # Visual Effect Registry
-├── resume/                 # Professional Portfolio SPA
-└── assets/                 # Images & Icons
+│   ├── core.js           # Shared logic (Lenis, Loader)
+│   ├── curtain.js        # Index page logic & ScrollTrigger timeline
+│   ├── curtain-loom.js   # Three.js Particle System
+│   ├── proof.js          # Pan/Zoom logic for Board
+│   ├── thread.js         # Karaoke reader logic
+│   └── signal.js         # Contact animations
+├── assets/               # Images and textures
+└── *.html                # Entry points
 ```
 
----
+## 🎨 Design Philosophy
 
-<div align="center">
-
-**Made with 🔥 by [@dictuzz](https://github.com/dictuzz)**
-*Last updated: February 2026*
-
-</div>
+-   **"Liquid Motion"**: Everything should feel fluid. Using `Lenis` for scroll smoothing and `GSAP` for scrub-based animations creates a sense of weight.
+-   **Cinematic Lighting**: Dark mode base with Gold (`#ffd700`) accents and "Imperial Red" (`#ba0000`) highlights.
+-   **Performance First**: 
+    -   Scripts deferred.
+    -   Images lazy-loaded or fetched with high priority.
+    -   Geometry cached to prevent layout thrashing.
