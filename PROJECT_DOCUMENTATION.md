@@ -33,40 +33,41 @@ This project is a sophisticated, framework-free static web application that serv
 /
 ├── assets/                 # Shared Global Assets (Tokens, Images)
 ├── config.js               # Root Configuration (Links, Profile)
-├── index.html              # [Root] Link in Bio Entry
-├── script.js               # [Root] Logic
-├── portfolio/              # [NEW] Flagship Cinematic Portfolio
-│   ├── assets/             # Portfolio-specific textures/images
-│   ├── css/                # Component styles (curtain, proof, thread, signal)
-│   ├── js/                 # Modular logic files
-│   │   ├── curtain-loom.js # Three.js Particle System
-│   │   ├── curtain.js      # Scroll Narrative Logic
-│   │   ├── proof.js        # Investigation Board Logic
-│   │   └── ...
-│   ├── index.html          # Act I: Curtain
-│   ├── proof.html          # Act II: Investigation Board
-│   ├── thread.html         # Act III: Thread (Karaoke Reader)
-│   └── signal.html         # Act IV: Signal (Contact)
-├── resume/                 # [Legacy] Data-driven CV
-└── shared/                 # Shared Utilities (Analytics, Theme)
+├── index.html              # [Root] Main Portfolio SPA
+├── links.html              # Link in Bio
+├── 404.html                # Custom 404 Page (Experiment Lab)
+├── css/                    # Modular styles for Portfolio
+│   ├── base.css            # Reset & Global Styles
+│   ├── curtain.css         # Act I Styles
+│   ├── proof.css           # Act II Styles
+│   ├── thread.css          # Act III Styles
+│   └── signal.css          # Act IV Styles
+├── js/                     # Modular logic files
+│   ├── core.js             # Shared Utilities (Nav, Lenis)
+│   ├── curtain-loom.js     # Three.js Particle System
+│   ├── curtain.js          # Act I Logic
+│   ├── proof.js            # Act II Logic
+│   ├── thread.js           # Act III Logic
+│   └── signal.js           # Act IV Logic
+└── resume/                 # Localized Data-driven CV
 ```
 
 ---
 
-## 3. Sub-Site: Liquid Motion Portfolio (`/portfolio`)
+## 3. Sub-Site: Liquid Motion Portfolio (Root `/`)
 
-**Version 3.0 (2026)** introduces a completely new portfolio engine focused on narrative and motion.
+**Version 3.0 (2026)** introduces a single-page application (SPA) focused on narrative and motion. All acts are contained within `index.html`.
 
 ### 3.1 Architecture: The "Four Acts"
-The portfolio is split into 4 distinct HTML pages, each representing a narrative stage, connected by a "Curtain Wipe" transition system.
+The simple single-page structure uses scroll-driven narrative stages:
 
-1.  **Act I: The Curtain (`index.html`)**
+1.  **Act I: The Curtain**
     -   **Concept**: "The Digital Loom" - 60,000 particles weaving the name.
     -   **Tech**: Three.js (BufferGeometry), Custom Shaders.
     -   **Interaction**: Mouse repulsion, Scroll-to-exit narrative.
     -   **Key Feature**: Particles morph from chaos to text, then fly up and vanish to reveal the tagline.
 
-2.  **Act II: The Proof (`proof.html`)**
+2.  **Act II: The Proof**
     -   **Concept**: "The Investigation Board" - A massive 300vw x 300vh grid.
     -   **Tech**: GSAP Layout, ScrollTrigger.
     -   **Interaction**: Scroll pans/zooms across the board to visit evidence cards.
@@ -88,16 +89,16 @@ The portfolio is split into 4 distinct HTML pages, each representing a narrative
 
 ---
 
-## 4. Sub-Site: Link in Bio (Root `/`)
+## 4. Sub-Site: Link in Bio (`/links.html`)
 
-The entry point (`index.html`) serves as a high-impact traffic router and branding statement.
+The `links.html` page serves as a high-impact traffic router and branding statement.
 
--   **Architecture**: Custom HTML5/CSS3 with Vanilla JS (`spatial.js`).
+-   **Architecture**: Custom HTML5/CSS3.
 -   **Visuals**:
     -   **Background**: "Deep Space" particle orbs (CSS/SVG).
     -   **Animations**: Custom `custom-animations.css` for staggered entry, icon layers, and hover effects.
-    -   **Interactivity**: `spatial.js` handles cursor-tracking glow effects and mobile accordions.
--   **Config**: Hardcoded content for maximum visual control (unlike the Release app).
+    -   **Interactivity**: `bio.js` handles interactions.
+-   **Config**: Driven by `links-data.js`.
 
 ---
 

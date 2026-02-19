@@ -98,7 +98,11 @@
                 </header>
 
                 <figure class="experience-artifact">
-                    <img src="${exp.image}" alt="${exp.alt}" loading="${index === 0 ? 'eager' : 'lazy'}">
+                    <img src="${exp.image}" 
+                         srcset="${generateSrcSet(exp.image)}"
+                         sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px"
+                         width="1200" height="675"
+                         alt="${exp.alt}" loading="lazy">
                 </figure>
 
                 <div class="experience-body">
@@ -212,6 +216,7 @@
                 if (input) input.placeholder = fields.topic.placeholder;
             }
 
+            const btn = form.querySelector('button[type="submit"]');
             if (btn && data.form.submit) btn.textContent = data.form.submit;
         }
 
@@ -277,6 +282,24 @@
         script.type = "application/ld+json";
         script.textContent = JSON.stringify(schema);
         document.head.appendChild(script);
+    }
+
+    function generateSrcSet(url) {
+        if (!url.includes('images.unsplash.com')) return '';
+
+        // Base URL without params might be cleaner, but we assume the input url has params.
+        // We will replace 'w=...' with our target widths.
+        const base = url.split('?')[0];
+        const params = new URLSearchParams(url.split('?')[1]);
+
+        // Helper to build a variant
+        const build = (w) => {
+            params.set('w', w);
+            params.set('h', Math.round(w * 0.5625)); // 16:9 aspect ratio
+            return `${base}?${params.toString()} ${w}w`;
+        };
+
+        return `${build(400)}, ${build(800)}, ${build(1200)}`;
     }
 
 })();

@@ -5,10 +5,14 @@
     'use strict';
 
     // Wait for dependencies (GSAP + ScrollTrigger)
-    var checkDeps = setInterval(function () {
+    let retries = 0;
+    let checkDeps = setInterval(function () {
         if (window.gsap && window.ScrollTrigger) {
             clearInterval(checkDeps);
             initCurtainPage();
+        } else if (retries++ > 50) { // 5s timeout
+            clearInterval(checkDeps);
+            console.warn("GSAP/ScrollTrigger failed to load for Curtain");
         }
     }, 100);
 
@@ -18,8 +22,8 @@
     }
 
     function initCurtainAnimations() {
-        var scrollIndicator = document.querySelector('.scroll-indicator');
-        var declaration = document.querySelector('.curtain-declaration');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const declaration = document.querySelector('.curtain-declaration');
 
         // 1. Initial State: Hidden
         if (declaration) {
@@ -31,10 +35,12 @@
 
         if (scrollIndicator) gsap.set(scrollIndicator, { opacity: 0, y: 20 });
 
-        // HIDE NAME (Fallback) - It interferes with Loom
-        var curtainName = document.querySelector('.curtain-name');
+        // HIDE NAME (Fallback triggers if JS fails, but we hide it accessible-ly here)
+        const curtainName = document.querySelector('.curtain-name');
         if (curtainName) {
-            gsap.set(curtainName, { opacity: 0, display: 'none' });
+            curtainName.classList.add('sr-only');
+            // Remove display:none enforcement if previously set
+            gsap.set(curtainName, { opacity: 1, display: 'block' });
         }
 
         // 2. Reveal Scroll Indicator (After 2s delay)
@@ -55,7 +61,7 @@
         // Tagline should start appearing at 100vh.
 
         if (declaration) {
-            var tl = gsap.timeline({
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".curtain",
                     start: "top top",
@@ -90,11 +96,11 @@
         if (!element || element.dataset.scrambling === "true") return;
 
         element.dataset.scrambling = "true";
-        var originalText = element.dataset.original;
-        var length = originalText.length;
-        var iteration = 0;
+        const originalText = element.dataset.original;
+        const length = originalText.length;
+        let iteration = 0;
 
-        var interval = setInterval(function () {
+        const interval = setInterval(function () {
             element.innerText = originalText
                 .split("")
                 .map(function (letter, index) {
@@ -115,9 +121,9 @@
     }
 
     function getScrambledString(length) {
-        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
-        var result = "";
-        for (var i = 0; i < length; i++) {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+        let result = "";
+        for (let i = 0; i < length; i++) {
             result += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         return result;

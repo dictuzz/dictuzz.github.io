@@ -6,17 +6,17 @@
     'use strict';
 
     // ── 1. Active Navigation (Scroll Spy) ─────────────────
-    var navLinks = document.querySelectorAll('.glass-nav-link');
-    var sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.glass-nav-link');
+    const sections = document.querySelectorAll('section[id]');
 
     function updateActiveNav() {
-        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        var windowHeight = window.innerHeight;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
 
         sections.forEach(function (section) {
-            var sectionTop = section.offsetTop;
-            var sectionHeight = section.offsetHeight;
-            var sectionId = section.getAttribute('id');
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
 
             // Trigger when section center hits viewport center
             if (scrollY >= (sectionTop - windowHeight * 0.5) &&
@@ -40,9 +40,9 @@
 
     // ── 2. Back-Nav Check ────────────────────
     window.isRevisit = false;
-    var currentPage = window.location.pathname.split('/').pop();
+    const currentPage = window.location.pathname.split('/').pop();
     if (currentPage === 'index.html' || currentPage === '') {
-        var navEntry = performance.getEntriesByType('navigation')[0];
+        const navEntry = performance.getEntriesByType('navigation')[0];
         if (navEntry && navEntry.type === 'back_forward') {
             document.documentElement.classList.add('revisit');
             window.isRevisit = true;
@@ -68,7 +68,7 @@
     }
 
     // ── 4. Page Transition Reveal ────────────
-    var curtainTransition = document.querySelector('.page-transition-curtain');
+    const curtainTransition = document.querySelector('.page-transition-curtain');
     if (curtainTransition) {
         if (typeof gsap !== 'undefined') {
             gsap.set(curtainTransition, { scaleY: 1, transformOrigin: 'top' });
@@ -120,11 +120,29 @@
         ScrollTrigger.refresh();
     }
 
+    // ── 7. Shared Utilities ──────────────────
+    window.initKineticType = function (selector) {
+        if (!window.lenis) return;
+        const targets = document.querySelectorAll(selector);
+        if (targets.length === 0) return;
+
+        window.lenis.on('scroll', function (e) {
+            let velocity = e.velocity;
+            if (Math.abs(velocity) > 50) velocity = 50 * Math.sign(velocity);
+            gsap.to(targets, {
+                skewX: velocity * 0.1,
+                duration: 0.1,
+                ease: 'power1.out',
+                overwrite: 'auto'
+            });
+        });
+    };
+
     function initFooterAnimation() {
-        var footer = document.querySelector('.site-footer');
+        const footer = document.querySelector('.site-footer');
         if (!footer) return;
-        var footerSections = footer.querySelectorAll('.footer-section');
-        var footerBottom = footer.querySelector('.footer-bottom');
+        const footerSections = footer.querySelectorAll('.footer-section');
+        const footerBottom = footer.querySelector('.footer-bottom');
 
         // Set initial state
         gsap.set(footerSections, { opacity: 0, y: 30 });
@@ -157,10 +175,10 @@
     }
 
     function initMagneticHover() {
-        var magneticElements = document.querySelectorAll('.signal-channels a, .footer-link');
+        const magneticElements = document.querySelectorAll('.signal-channels a, .footer-link');
         magneticElements.forEach(function (el) {
-            var rect = null;
-            var width, height, left, top;
+            let rect = null;
+            let width, height, left, top;
 
             el.addEventListener('mouseenter', function () {
                 rect = el.getBoundingClientRect();
@@ -173,8 +191,8 @@
 
             el.addEventListener('mousemove', function (e) {
                 if (!rect) return;
-                var x = e.clientX - left - width / 2;
-                var y = e.clientY - top - height / 2;
+                const x = e.clientX - left - width / 2;
+                const y = e.clientY - top - height / 2;
                 el.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px)';
             });
 
@@ -188,11 +206,11 @@
     }
 
     function initNavScroll() {
-        var nav = document.querySelector('.glass-nav');
+        const nav = document.querySelector('.glass-nav');
         if (nav) {
-            var scrollThreshold = 50;
+            const scrollThreshold = 50;
             function onScroll() {
-                var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollY = window.pageYOffset || document.documentElement.scrollTop;
                 // Add 'scrolled' class for visual shrinking/darkening
                 if (scrollY > scrollThreshold) {
                     nav.classList.add('scrolled');
@@ -209,11 +227,11 @@
         // Intercept anchor clicks for smooth scrolling
         navLinks.forEach(function (link) {
             link.addEventListener('click', function (e) {
-                var href = link.getAttribute('href');
+                const href = link.getAttribute('href');
                 if (href.startsWith('#')) {
                     e.preventDefault();
-                    var targetId = href.substring(1);
-                    var targetSection = document.getElementById(targetId);
+                    const targetId = href.substring(1);
+                    const targetSection = document.getElementById(targetId);
 
                     if (targetSection) {
                         if (window.lenis) {

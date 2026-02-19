@@ -5,19 +5,26 @@
  */
 (function () {
     // Wait for Dependencies AND Data
-    var checkDeps = setInterval(function () {
+    let retries = 0;
+    const checkDeps = setInterval(function () {
         if (window.THREE && window.gsap && window.PORTFOLIO_CONTENT) {
             clearInterval(checkDeps);
             initLoom();
+        } else if (retries++ > 50) {
+            clearInterval(checkDeps);
+            console.warn("Dependencies failed to load for Loom");
         }
     }, 100);
 
     function initLoom() {
-        var container = document.getElementById('loom-container');
+        const container = document.getElementById('loom-container');
         if (!container) return;
 
-        var CONFIG = {
-            particleCount: 60000,
+        const isMobile = window.innerWidth <= 768;
+        const PARTICLE_COUNT = isMobile ? 15000 : 60000;
+
+        const CONFIG = {
+            particleCount: PARTICLE_COUNT,
             textScale: 0.85,
             color1: new THREE.Color(0xffffff),
             color2: new THREE.Color(0xffd700),
@@ -25,34 +32,33 @@
             mouseForce: 50
         };
 
-        // ... (Scene setup remains the same) ...
-        var scene = new THREE.Scene();
+        const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2(0x050505, 0.002);
 
-        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
         camera.position.z = 1000;
 
-        var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         container.appendChild(renderer.domElement);
 
         // Interaction
-        var mouse = new THREE.Vector3(9999, 9999, 0);
+        const mouse = new THREE.Vector3(9999, 9999, 0);
 
         // Particles
-        var geometry = new THREE.BufferGeometry();
-        var positions = new Float32Array(CONFIG.particleCount * 3);
-        var targets = new Float32Array(CONFIG.particleCount * 3);
-        var randoms = new Float32Array(CONFIG.particleCount);
-        var colors = new Float32Array(CONFIG.particleCount * 3);
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(CONFIG.particleCount * 3);
+        const targets = new Float32Array(CONFIG.particleCount * 3);
+        const randoms = new Float32Array(CONFIG.particleCount);
+        const colors = new Float32Array(CONFIG.particleCount * 3);
 
         // Initialize Particles (SCATTER STATE)
-        for (var i = 0; i < CONFIG.particleCount; i++) {
-            var range = 4000;
-            var x = (Math.random() - 0.5) * range;
-            var y = (Math.random() - 0.5) * range;
-            var z = (Math.random() - 0.5) * range;
+        for (let i = 0; i < CONFIG.particleCount; i++) {
+            const range = 4000;
+            const x = (Math.random() - 0.5) * range;
+            const y = (Math.random() - 0.5) * range;
+            const z = (Math.random() - 0.5) * range;
 
             positions[i * 3] = x;
             positions[i * 3 + 1] = y;
@@ -60,7 +66,7 @@
 
             randoms[i] = Math.random();
 
-            var color = Math.random() > 0.9 ? CONFIG.color2 : CONFIG.color1;
+            const color = Math.random() > 0.9 ? CONFIG.color2 : CONFIG.color1;
             colors[i * 3] = color.r;
             colors[i * 3 + 1] = color.g;
             colors[i * 3 + 2] = color.b;
@@ -76,7 +82,7 @@
         geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
         // Shader Material
-        var material = new THREE.ShaderMaterial({
+        const material = new THREE.ShaderMaterial({
             uniforms: {
                 uTime: { value: 0 },
                 uMouse: { value: new THREE.Vector3(9999, 9999, 0) },
@@ -161,17 +167,17 @@
             blending: THREE.AdditiveBlending
         });
 
-        var points = new THREE.Points(geometry, material);
+        const points = new THREE.Points(geometry, material);
         scene.add(points);
 
         // ---------------------------------------------------------
         // CANVAS TEXT SAMPLING (DYNAMIC)
         // ---------------------------------------------------------
         function samplePointsFromText() {
-            var canvas = document.createElement('canvas');
-            var ctx = canvas.getContext('2d');
-            var width = 2048;
-            var height = 1024;
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const width = 2048;
+            const height = 1024;
             canvas.width = width;
             canvas.height = height;
 
@@ -182,15 +188,15 @@
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
 
-            var isMobile = window.innerWidth < 768;
-            var scaleFactor = isMobile ? 0.4 : 1.0;
+            const isMobile = window.innerWidth < 768;
+            const scaleFactor = isMobile ? 0.4 : 1.0;
 
             // Dynamic Text from Data
-            var textLines = window.PORTFOLIO_CONTENT.curtain.textLines || ["BENEDICTUS", "RICHARD"];
+            const textLines = window.PORTFOLIO_CONTENT.curtain.textLines || ["BENEDICTUS", "RICHARD"];
 
             // Font Config
-            var fontSize1 = 280 * scaleFactor;
-            var fontSize2 = 190 * scaleFactor;
+            const fontSize1 = 280 * scaleFactor;
+            const fontSize2 = 190 * scaleFactor;
 
             // Line 1
             if (textLines[0]) {
@@ -204,15 +210,15 @@
                 ctx.fillText(textLines[1], width / 2, height / 2 + (160 * scaleFactor));
             }
 
-            var imageData = ctx.getImageData(0, 0, width, height);
-            var data = imageData.data;
-            var validPoints = [];
+            const imageData = ctx.getImageData(0, 0, width, height);
+            const data = imageData.data;
+            const validPoints = [];
 
-            var step = 4;
+            const step = 4;
 
-            for (var y = 0; y < height; y += step) {
-                for (var x = 0; x < width; x += step) {
-                    var i = (y * width + x) * 4;
+            for (let y = 0; y < height; y += step) {
+                for (let x = 0; x < width; x += step) {
+                    const i = (y * width + x) * 4;
                     if (data[i] > 100) {
                         validPoints.push({
                             x: (x - width / 2) * CONFIG.textScale,
@@ -224,8 +230,8 @@
             }
 
             if (validPoints.length > 0) {
-                for (var i = 0; i < CONFIG.particleCount; i++) {
-                    var p = validPoints[Math.floor(Math.random() * validPoints.length)];
+                for (let i = 0; i < CONFIG.particleCount; i++) {
+                    const p = validPoints[Math.floor(Math.random() * validPoints.length)];
                     targets[i * 3] = p.x;
                     targets[i * 3 + 1] = p.y;
                     targets[i * 3 + 2] = (Math.random() - 0.5) * 5;
@@ -251,16 +257,16 @@
 
             // SCROLL LISTENER
             window.addEventListener('scroll', function () {
-                var scrollTop = window.scrollY;
-                var windowHeight = window.innerHeight;
+                const scrollTop = window.scrollY;
+                const windowHeight = window.innerHeight;
 
                 // Mapped to FIRST VIEWPORT only (0 to 100vh)
                 // 3D Text stays for first 20% then flies out by 100%
 
-                var startOutput = windowHeight * 0.2;
-                var endOutput = windowHeight * 0.8;
+                const startOutput = windowHeight * 0.2;
+                const endOutput = windowHeight * 0.8;
 
-                var progress = (scrollTop - startOutput) / (endOutput - startOutput);
+                let progress = (scrollTop - startOutput) / (endOutput - startOutput);
                 if (progress < 0) progress = 0;
                 if (progress > 1) progress = 1;
 
@@ -289,21 +295,30 @@
         }
 
         window.addEventListener('mousemove', function (e) {
-            var vec = new THREE.Vector3(
+            const vec = new THREE.Vector3(
                 (e.clientX / window.innerWidth) * 2 - 1,
                 -(e.clientY / window.innerHeight) * 2 + 1,
                 0.5
             );
             vec.unproject(camera);
-            var dir = vec.sub(camera.position).normalize();
-            var distance = -camera.position.z / dir.z;
-            var pos = camera.position.clone().add(dir.multiplyScalar(distance));
+            const dir = vec.sub(camera.position).normalize();
+            const distance = -camera.position.z / dir.z;
+            const pos = camera.position.clone().add(dir.multiplyScalar(distance));
             material.uniforms.uMouse.value.copy(pos);
         });
 
-        var clock = new THREE.Clock();
+        const clock = new THREE.Clock();
+        let isTabActive = true;
+
+        document.addEventListener('visibilitychange', function () {
+            isTabActive = !document.hidden;
+        });
+
         function animate() {
             requestAnimationFrame(animate);
+            // Skip rendering if scrolled out or tab hidden
+            if (material.uniforms.uScroll.value >= 1.0 || !isTabActive) return;
+
             material.uniforms.uTime.value = clock.getElapsedTime();
             renderer.render(scene, camera);
         }

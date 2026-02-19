@@ -7,34 +7,40 @@
     if (window.waitForGSAP) {
         window.waitForGSAP(initThreadPage);
     } else {
-        var check = setInterval(function () {
+        let retries = 0;
+        let check = setInterval(function () {
             if (window.waitForGSAP) {
                 clearInterval(check);
                 window.waitForGSAP(initThreadPage);
+            } else if (retries++ > 50) {
+                clearInterval(check);
+                console.warn("GSAP failed to load for Thread");
             }
         }, 50);
     }
 
     function initThreadPage() {
         initThreadAnimations();
-        initKineticType();
+        if (window.initKineticType) {
+            window.initKineticType('.thread-thesis p');
+        }
     }
     window.initThreadPage = initThreadPage;
 
     function initThreadAnimations() {
-        var thesis = document.querySelector('.thread-thesis');
-        var clusters = document.querySelectorAll('.thread-cluster');
+        const thesis = document.querySelector('.thread-thesis');
+        const clusters = document.querySelectorAll('.thread-cluster');
         if (!thesis) return;
 
         // Thesis Words
-        var thesisP = thesis.querySelector('p');
+        const thesisP = thesis.querySelector('p');
         if (thesisP) {
-            var words = thesisP.textContent.split(' ');
+            const words = thesisP.textContent.split(' ');
             thesisP.innerHTML = words.map(function (word) {
                 return '<span class="word-wrap"><span class="word">' + word + '</span></span>';
             }).join(' ');
 
-            var wordSpans = thesisP.querySelectorAll('.word');
+            const wordSpans = thesisP.querySelectorAll('.word');
             gsap.from(wordSpans, {
                 opacity: 0,
                 y: 30,
@@ -62,8 +68,8 @@
 
         // Karaoke
         clusters.forEach(function (cluster) {
-            var heading = cluster.querySelector('.cluster-heading');
-            var paragraphs = cluster.querySelectorAll('p');
+            const heading = cluster.querySelector('.cluster-heading');
+            const paragraphs = cluster.querySelectorAll('p');
 
             if (heading) {
                 gsap.from(heading, {
@@ -89,7 +95,7 @@
         });
 
         // Footnotes
-        var footnoteItems = document.querySelectorAll('.footnote-item');
+        const footnoteItems = document.querySelectorAll('.footnote-item');
         if (footnoteItems.length > 0) {
             gsap.from(footnoteItems, {
                 scrollTrigger: {
@@ -121,20 +127,5 @@
                 ease: 'none'
             });
         }
-    }
-
-    function initKineticType() {
-        if (!window.lenis) return;
-        var targets = document.querySelectorAll('.thread-thesis p');
-        window.lenis.on('scroll', function (e) {
-            var velocity = e.velocity;
-            if (Math.abs(velocity) > 50) velocity = 50 * Math.sign(velocity);
-            gsap.to(targets, {
-                skewX: velocity * 0.1,
-                duration: 0.1,
-                ease: 'power1.out',
-                overwrite: 'auto'
-            });
-        });
     }
 })();

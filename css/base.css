@@ -139,3 +139,32 @@ html.lenis body {
     transform-origin: bottom;
     pointer-events: none;
 }
+
+/* ── Accessibility ───────────────────────── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--c-surface, #000);
+    color: var(--c-text-primary, #fff);
+    padding: 1rem;
+    z-index: 10000;
+    transition: top 0.3s;
+    text-decoration: underline;
+}
+
+.skip-link:focus {
+    top: 20px;
+}

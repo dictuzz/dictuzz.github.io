@@ -7,10 +7,14 @@
     if (window.waitForGSAP) {
         window.waitForGSAP(initSignalPage);
     } else {
+        var retries = 0;
         var check = setInterval(function () {
             if (window.waitForGSAP) {
                 clearInterval(check);
                 window.waitForGSAP(initSignalPage);
+            } else if (retries++ > 50) {
+                clearInterval(check);
+                console.warn("GSAP failed to load for Signal");
             }
         }, 50);
     }

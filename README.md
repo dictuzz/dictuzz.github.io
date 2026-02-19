@@ -35,6 +35,19 @@ A cinematic, high-performance personal portfolio website designed to win Awwward
 - **Smooth Scroll**: [Lenis](https://lenis.studio/) for momentum-based scrolling.
 - **Fonts**: Newsreader (Serif) & Plus Jakarta Sans (Sans Serif) via Google Fonts.
 
+## 🧰 Development Tooling
+
+To ensure code consistency, this project uses **ESLint**, **Prettier**, and **EditorConfig**.
+
+1.  **Install tools globally** (or locally if you initialize npm):
+    ```bash
+    npm install -g eslint prettier
+    ```
+
+2.  **Editor Integration**:
+    -   Install **VS Code ESLint** and **Prettier** extensions.
+    -   The `.editorconfig` file helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
+
 ## 🚀 How to Run
 
 No build step required. This is a static site.

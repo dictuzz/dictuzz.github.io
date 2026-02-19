@@ -4,17 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benedictus Richard Ricardo</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Benedictus" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>Benedictus Richard Ricardo | Portfolio</title>
     <meta name="description"
-        content="Benedictus Richard Ricardo — organizing disorder into structure, leading people into motion.">
+        content="Benedictus Richard Ricardo — Organizing disorder into structure. A cinematic portfolio featuring 3D interactive storytelling and data-driven narratives.">
     <meta name="author" content="Benedictus Richard Ricardo">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Benedictus Richard Ricardo">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://dictuzz.me/resume/og-image.png">
-    <meta property="og:description" content="Organizing disorder into structure, leading people into motion.">
     <meta property="og:url" content="https://dictuzz.me/">
+    <meta property="og:title" content="Benedictus Richard Ricardo | Portfolio">
+    <meta property="og:description"
+        content="I put rooms in order and people in motion. Explore a cinematic journey through data science, automation, and leadership.">
+    <meta property="og:image" content="https://dictuzz.me/assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://dictuzz.me/">
+    <meta property="twitter:title" content="Benedictus Richard Ricardo | Portfolio">
+    <meta property="twitter:description"
+        content="Organizing disorder into structure. An interactive 3D portfolio experience.">
+    <meta property="twitter:image" content="https://dictuzz.me/assets/images/og-image.png">
     <link rel="canonical" href="https://dictuzz.me/">
 
     <meta name="theme-color" content="#1a1a1a">
@@ -35,15 +56,21 @@
     <link rel="stylesheet" href="css/signal.css">
 
     <!-- Three.js (Deferred) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer crossorigin="anonymous"
+        onerror="this.onerror=null;this.src='js/vendor/three.min.js'"></script>
 
     <!-- Scripts (Deferred for Performance) -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer
+        crossorigin="anonymous" onerror="this.onerror=null;this.src='js/vendor/lenis.min.js'"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer crossorigin="anonymous"
+        onerror="this.onerror=null;this.src='js/vendor/gsap.min.js'"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer crossorigin="anonymous"
+        onerror="this.onerror=null;this.src='js/vendor/ScrollTrigger.min.js'"></script>
     <!-- Three.js Addons (Deferred) -->
-    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/FontLoader.js" defer></script>
-    <script src="https://unpkg.com/three@0.128.0/examples/js/geometries/TextGeometry.js" defer></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/FontLoader.js" defer crossorigin="anonymous"
+        onerror="this.onerror=null;this.src='js/vendor/FontLoader.js'"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/geometries/TextGeometry.js" defer crossorigin="anonymous"
+        onerror="this.onerror=null;this.src='js/vendor/TextGeometry.js'"></script>
 
     <script src="js/redirect.js"></script>
     <script src="js/data.js"></script> <!-- Data Source -->
@@ -56,6 +83,9 @@
 </head>
 
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#proof" class="skip-link">Skip to content</a>
+
     <!-- 3D Particle Loom Layer -->
     <div id="loom-container"></div>
     <canvas id="liquid-noise"></canvas> <!-- Shared Background Noise -->
@@ -93,7 +123,39 @@
              ════════════════════════════════════════ -->
         <div class="proof-board">
             <div class="featured-work">
-                <!-- Content injected via JS from data.js -->
+                <!-- Static content for SEO (hydrated by JS) -->
+                <article class="experience" id="student-council">
+                    <header class="experience-entry">
+                        <p class="experience-hook">34 people. 10 divisions. One pandemic.</p>
+                        <p class="experience-meta">Chairman, Student Council · Saint Mary 2 High School, Bandung · Nov
+                            2021 – Nov 2022</p>
+                    </header>
+                    <figure class="experience-artifact">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=675&fit=crop&q=80"
+                            srcset="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=225&fit=crop&q=80 400w,
+                                    https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=450&fit=crop&q=80 800w,
+                                    https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=675&fit=crop&q=80 1200w"
+                            sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px" width="1200" height="675"
+                            alt="Student council team collaboration and leadership" loading="lazy">
+                    </figure>
+                    <div class="experience-body">
+                        <p>The council inherited a communication structure built for hallways. Then COVID shut the
+                            school. Ten divisions that used to coordinate face-to-face now ran through group chats and
+                            video calls. Half the members had never met each other in person.</p>
+                        <p>The instinct was to centralize — run everything through the chair, reduce variables. We did
+                            the opposite. Each division head became autonomous over their own work, with one rule: a
+                            written one-paragraph update, weekly, on time. No meetings unless someone asked for one.</p>
+                        <p>Three divisions outperformed the previous year's entire council output. Two stalled — their
+                            leads treated autonomy as permission to disappear. The fix was ugly: reassign members
+                            mid-term, fold one division into another. The promotional campaign to 12 feeder schools —
+                            which produced a viral TikTok — came from the division I almost shut down. It was rescued,
+                            not planned.</p>
+                    </div>
+                    <blockquote class="experience-takeaway">
+                        <p>Trust without structure is abandonment. My job was never to lead 34 people. It was to build
+                            10 leaders and intervene when one of them couldn't lead yet.</p>
+                    </blockquote>
+                </article>
             </div>
         </div>
 
@@ -117,17 +179,37 @@
              THESIS STATEMENT
              ════════════════════════════════════════ -->
         <div class="thread-thesis">
-            <p><!-- Injected via JS --></p>
+            <p>Every role I've held has been the same job: walk into disorder, find the structure it's missing, and
+                leave something that runs without me.</p>
         </div>
 
-        <!-- Dynamic Clusters injected here -->
+        <!-- Static content for SEO (hydrated by JS) -->
+        <section class="thread-cluster">
+            <h2 class="cluster-heading">Structure</h2>
+            <p>The first real system I built was an acolyte schedule for a parish. It was a spreadsheet. Before that,
+                the assignments were made by phone calls the week before each mass, and someone always got missed.</p>
+            <p>At Home Digital Indonesia, the scale changed but the pattern didn't. Three teams — Finance, Sales,
+                Operations — had their own reporting formats, their own processes, their own definitions of what "done"
+                meant. I wrote the SOPs. I built the macros. I ran the feedback surveys. The job title said Management
+                Trainee. The actual job was: make this company's operations legible.</p>
+            <p>I study data science because structure is what I believe in. Data without structure is noise. Teams
+                without structure are crowds. I'm not interested in data for its own sake — I'm interested in what
+                happens when you organize it correctly.</p>
+        </section>
 
         <!-- ════════════════════════════════════════
              FOOTNOTES
              ════════════════════════════════════════ -->
         <div class="thread-footnote">
             <dl>
-                <!-- Injected via JS -->
+                <div class="footnote-item">
+                    <dt>Languages</dt>
+                    <dd>Sundanese (fluent), Indonesian (native), English (B2), German (B2), Latin (self-study)</dd>
+                </div>
+                <div class="footnote-item">
+                    <dt>Education</dt>
+                    <dd>B.Sc. Data Science — ongoing, 2025</dd>
+                </div>
             </dl>
         </div>
     </section>
@@ -138,39 +220,41 @@
              HERO SENTENCE
              ════════════════════════════════════════ -->
         <div class="signal-hero">
-            <h1 class="signal-sentence"><!-- Injected via JS --></h1>
+            <h1 class="signal-sentence">If something here resonated — I'd like to hear why.</h1>
         </div>
 
         <!-- ════════════════════════════════════════
              CHANNELS
              ════════════════════════════════════════ -->
         <div class="signal-channels">
-            <!-- Details injected via JS -->
+            <a href="mailto:contact@dictuzz.me">Email</a>
+            <a href="https://www.linkedin.com/in/dictuzz" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://api.whatsapp.com/send?phone=6285186888630" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://instagram.com/dictuzz" target="_blank" rel="noopener">Instagram</a>
+            <a href="resume/" target="_blank" rel="noopener">Resume</a>
         </div>
 
         <!-- ════════════════════════════════════════
              COMMUNICATION FORM
              ════════════════════════════════════════ -->
         <div class="signal-form-wrapper">
-            <form action="#" method="POST" class="signal-form">
+            <form id="contact-form" action="https://formspree.io/f/xlgwgero" method="POST">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" name="name" id="name" placeholder="Full Name" required autocomplete="name"
+                        aria-label="Full Name">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    <input type="email" name="email" id="email" placeholder="Email Address" required
+                        autocomplete="email" aria-label="Email Address">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+62 ...">
+                    <input type="tel" name="phone" id="phone" placeholder="Phone Number" autocomplete="tel"
+                        aria-label="Phone Number">
                 </div>
                 <div class="form-group">
-                    <label for="topic">Topic</label>
-                    <textarea id="topic" name="topic" rows="4" placeholder="How can I help you organize..."
-                        required></textarea>
+                    <input type="text" name="topic" id="topic" placeholder="Topic" aria-label="Topic">
                 </div>
-                <button type="submit" class="signal-submit">Initialize Connection</button>
+                <button type="submit" class="submit-btn" aria-label="Send Message">Send Request</button>
             </form>
         </div>
 
@@ -214,6 +298,26 @@
     <!-- Content Loader (New) -->
 
     <script src="js/content-loader.js"></script>
+    <script src="js/seo.js"></script> <!-- SEO Structured Data -->
+
+    <!-- Fallback / Graceful Degradation Check -->
+    <script>
+        window.addEventListener('load', function () {
+            // If Three.js failed to load, ensure curtain-name is visible
+            if (typeof THREE === 'undefined') {
+                console.warn('Three.js failed to load. Showing fallback content.');
+                document.documentElement.classList.add('no-js-3d');
+                var curtainName = document.querySelector('.curtain-name');
+                if (curtainName) {
+                    curtainName.style.opacity = '1';
+                    curtainName.style.position = 'relative'; // Ensure it flows
+                    curtainName.classList.remove('sr-only'); // Ensure not hidden
+                }
+                var loom = document.getElementById('loom-container');
+                if (loom) loom.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
