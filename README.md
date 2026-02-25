@@ -1,6 +1,6 @@
 # Benedictus Richard Ricardo — Interactive Portfolio
 
-> *"I put rooms in order and people in motion."*
+> *"I turn operational chaos into automated systems. Data science student. Process builder."*
 
 A cinematic, high-performance personal portfolio website designed to win Awwwards. This project emphasizes motion, narrative, and "Liquid" interaction design.
 
@@ -10,7 +10,7 @@ A cinematic, high-performance personal portfolio website designed to win Awwward
 ## 🌟 Key Features
 
 ### Act I: The Digital Loom (`index.html`)
-- **Particle System**: A custom Three.js simulation of 60,000 particles.
+- **Particle System**: A custom Three.js simulation of 30,000 particles (optimized for GPU performance while maintaining visual density).
 - **Chaos to Order**: Particles start in a random 3D scatter and morph into the name using Canvas 2D Sampling for precise typography ("Plus Jakarta Sans").
 - **Scroll Narrative**: A strict scroll-driven timeline where the 3D text flies up and fades out, revealing the tagline via a "Matrix Scramble" effect without overlap.
 
@@ -94,7 +94,8 @@ portfolio/
 
 -   **"Liquid Motion"**: Everything should feel fluid. Using `Lenis` for scroll smoothing and `GSAP` for scrub-based animations creates a sense of weight.
 -   **Cinematic Lighting**: Dark mode base with Gold (`#ffd700`) accents and "Imperial Red" (`#ba0000`) highlights.
--   **Performance First**: 
-    -   Scripts deferred.
-    -   Images lazy-loaded or fetched with high priority.
-    -   Geometry cached to prevent layout thrashing.
+-   **Performance & Security**: 
+    -   **Strict CSP**: Content-Security-Policy metadata locks down external execution risks.
+    -   **Lightweight Assets**: Self-hosted WebP images and a 2KB vector SVG favicon.
+    -   **Spam Deterrence**: Contact forms integrate invisible honeypots.
+    -   **Optimization**: Scripts deferred, images lazy-loaded, and WebGL geometry cached for peak performance.

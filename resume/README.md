@@ -132,7 +132,7 @@ All content is in `locales/*.json`. Edit the appropriate language file:
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Benedictus Richard Ricardo",
-    "typing": ["Data Scientist", "Content Creator", "MC"]
+    "typing": ["Data Science Student", "Automation Specialist", "Process Builder"]
   },
   "experience": [
     {
@@ -199,4 +199,4 @@ Edit `css/tokens.css` to customize the design:
 
 © 2026 Benedictus Richard Ricardo. All Rights Reserved.
 
-*Last updated: January 2026*
+*Last updated: February 2026*
