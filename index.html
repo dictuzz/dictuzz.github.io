@@ -1,14 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=portofolio/">
-    <title>Redirecting...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sitemap | Benedictus Richard Ricardo</title>
+  <meta name="description"
+    content="I turn operational chaos into automated systems. Data Science Student & Automation Specialist." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Unified Bundle Styles -->
+  <link rel="stylesheet" href="portfolio/css/bundle.css" />
+  <!-- custom-animations.css merged into bio.css (now in bundle) -->
+
+  <style>
+    /* Override bio.css specific footer to use standard one */
+    .bio-footer {
+      display: none !important;
+    }
+
+    /* Ensure footer aligns with bio theme */
+    .site-footer {
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 5rem;
+      background: transparent;
+      border-top: 1px solid var(--bio-border);
+    }
+  </style>
 </head>
 
 <body>
-    <p>If you are not redirected automatically, follow this <a href="portofolio/">link to the portfolio</a>.</p>
+  <!-- Landing Page - No Header -->
+
+  <!-- Theme Toggle (Refined) -->
+  <button class="theme-toggle-float" id="theme-toggle" aria-label="Toggle Theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Background Orbs -->
+  <div class="bio-background">
+    <div class="bio-orb primary"></div>
+    <div class="bio-orb secondary"></div>
+  </div>
+
+  <main class="bio-container">
+    <!-- Profile Header -->
+    <header class="bio-header">
+      <div class="profile-avatar-wrapper">
+        <div class="profile-frame">
+          <img src="assets/images/dictuzz.webp" alt="Benedictus Richard Ricardo" class="profile-avatar" />
+        </div>
+        <!-- Pulsing Status Indicator -->
+        <div class="profile-status-indicator" title="Open to Work">
+          <div class="status-ping"></div>
+        </div>
+      </div>
+
+      <h1 class="profile-name">Benedictus Richard Ricardo</h1>
+
+      <div class="profile-role">
+        <span>Data Science Student & Automation Specialist</span>
+      </div>
+
+      <div class="profile-meta">
+        <div class="meta-item">
+          <span class="status-dot"></span>
+          <span>Open to collaborations</span>
+        </div>
+        <!-- Link to Google Maps -->
+        <a href="https://share.google/7wRzDe5yPlBB393Q0" target="_blank" class="meta-item"
+          style="text-decoration: none; color: inherit">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Tangerang, Indonesia</span>
+        </a>
+        <div class="meta-item">
+          <!-- Animating Time Display -->
+          <span id="local-time" class="time-display">--:--</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="bio-grid" id="links-container">
+      <!-- Content will be injected by scripts -->
+    </div>
+
+    <!-- Standard Footer Integration -->
+    <global-footer></global-footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="portfolio/js/core.js?v=2"></script>
+  <script type="module" src="portfolio/js/content-loader.js?v=2"></script>
+  <script type="module" src="portfolio/js/bio.js?v=2"></script>
 </body>
 
 </html>

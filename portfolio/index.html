@@ -49,13 +49,8 @@
     href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
     rel="stylesheet" />
 
-  <!-- Styles (Phase B) -->
-  <!-- Styles (Phase B) -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Section Specific Styles -->
-  <link rel="stylesheet" href="css/proof.css" />
-  <link rel="stylesheet" href="css/thread.css" />
-  <link rel="stylesheet" href="css/signal.css" />
+  <!-- Styles (Consolidated) -->
+  <link rel="stylesheet" href="css/bundle.css" />
 
   <!-- Three.js (Deferred) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer crossorigin="anonymous" onerror="
@@ -79,15 +74,11 @@
         this.src = 'js/vendor/ScrollTrigger.min.js';
       "></script>
 
-  <script src="js/redirect.js"></script>
+  <!-- Scripts (Type Module) -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <!-- Data Source -->
-  <script src="js/core.js" defer></script>
-  <script src="js/curtain.js" defer></script>
-  <script src="js/curtain-loom.js" defer></script>
-  <script src="js/proof.js" defer></script>
-  <script src="js/thread.js" defer></script>
-  <script src="js/signal.js" defer></script>
+  <script type="module" src="js/core.js"></script>
+  <script type="module" src="js/curtain-loom.js"></script>
 </head>
 
 <body>
@@ -100,7 +91,7 @@
   <!-- Shared Background Noise -->
 
   <!-- Navigation (Glass Dynamic Island) -->
-  <div id="global-nav"></div>
+  <global-nav></global-nav>
 
   <!-- Act I: Curtain -->
   <section id="curtain" class="curtain">
@@ -138,7 +129,7 @@
             </p>
           </header>
           <figure class="experience-artifact">
-            <img src="assets/images/student-council.jpg" width="1200" height="675"
+            <img src="../assets/images/student-council.jpg" width="1200" height="675"
               alt="Student council team collaboration and leadership" loading="lazy" />
           </figure>
           <div class="experience-body">
@@ -311,15 +302,15 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <div id="global-footer"></div>
+  <!-- Global Footer Component -->
+  <global-footer></global-footer>
 
   <div class="page-transition-curtain"></div>
 
   <!-- Content Loader (New) -->
 
-  <script src="js/content-loader.js"></script>
-  <script src="js/seo.js"></script>
+  <script type="module" src="js/content-loader.js?v=2"></script>
+  <script type="module" src="js/seo.js?v=2"></script>
   <!-- SEO Structured Data -->
 
   <!-- Fallback / Graceful Degradation Check -->

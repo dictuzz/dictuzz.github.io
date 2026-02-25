@@ -26,9 +26,9 @@
     <meta name="twitter:title" content="Benedictus Richard Ricardo | Data Scientist Portfolio">
     <meta name="twitter:description"
         content="🚀 Portfolio & CV Benedictus Richard Ricardo: Data Scientist yang mengotomatisasi 12+ jam kerja manual per minggu.">
-    <meta name="twitter:image" content="https://dictuzz.github.io/portofolio/assets/images/resume-og-image.png">
+    <meta name="twitter:image" content="https://dictuzz.me/assets/images/resume-og-image.png">
 
-    <link rel="preload" href="assets/images/Aku.webp" as="image" type="image/webp">
+    <link rel="preload" href="../assets/images/Aku.webp" as="image" type="image/webp">
     <meta name="theme-color" content="#0A0E17">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -90,8 +90,8 @@
         "name": "Benedictus Richard Ricardo",
         "alternateName": "dictuzz",
         "jobTitle": "Data Science Student & Automation Specialist",
-        "url": "https://dictuzz.github.io/",
-        "image": "https://dictuzz.github.io/assets/images/Aku.webp",
+        "url": "https://dictuzz.me/",
+        "image": "https://dictuzz.me/assets/images/Aku.webp",
         "email": "contact@dictuzz.me",
         "sameAs": [
             "https://linkedin.com/in/dictuzz",
@@ -125,11 +125,15 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Main Styles (Deferred) -->
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="css/animations.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/animations.css">
     </noscript>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <!-- Deferred Scripts for later execution -->
+    <script src="js/analytics.js" defer></script>
+    <script src="js/ui-kit.js" defer></script>
 </head>
 
 <body>
@@ -138,7 +142,7 @@
         <div class="nav__container">
             <!-- Logo (mobile) -->
             <a href="/" class="nav__logo" aria-label="Back to Portfolio">
-                <img src="/assets/images/favicon.png" alt="Home" width="32" height="32">
+                <img src="../assets/images/favicon.png" alt="Home" width="32" height="32">
             </a>
 
             <!-- Mobile toggle -->
@@ -219,8 +223,8 @@
             <div class="hero__photo-section">
                 <div class="hero__photo-wrapper">
                     <div class="hero__photo glass">
-                        <img src="assets/images/Aku.webp" alt="Benedictus Richard Ricardo" loading="eager" width="930"
-                            height="1280">
+                        <img src="../assets/images/Aku.webp" alt="Benedictus Richard Ricardo" loading="eager"
+                            width="930" height="1280">
                     </div>
                     <!-- Photo decorations -->
                     <div class="hero__photo-ring"></div>
@@ -304,7 +308,7 @@
                 </h2>
                 <div class="about__grid">
                     <div class="about__image glass glass--hover reveal reveal--left">
-                        <img src="assets/images/api.webp" alt="About Benedictus" loading="lazy" width="2598"
+                        <img src="../assets/images/api.webp" alt="About Benedictus" loading="lazy" width="2598"
                             height="2598">
                     </div>
                     <div class="about__content reveal reveal--right">
@@ -527,10 +531,8 @@
         </div>
     </footer>
 
-    <script src="js/config.js"></script>
-    <script src="../portofolio/js/data.js"></script>
-    <script src="../portofolio/js/seo.js"></script>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="../portfolio/js/seo.js?v=2"></script>
+    <script type="module" src="script.js?v=2"></script>
 </body>
 
 </html>

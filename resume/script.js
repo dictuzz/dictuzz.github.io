@@ -315,7 +315,22 @@ document.addEventListener('click', e => {
 
 // 7. INITIAL LOAD
 // ══════════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
+let CONFIG_DATA = {};
+
+async function fetchConfig() {
+    try {
+        const res = await fetch('/data/global-config.json');
+        if (res.ok) {
+            const data = await res.json();
+            CONFIG_DATA = data.resume || {};
+        }
+    } catch (err) {
+        console.error("Config fetch failed:", err);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await fetchConfig();
     init();
 
     const urlLang = new URLSearchParams(location.search).get('lang');

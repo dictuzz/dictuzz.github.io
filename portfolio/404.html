@@ -42,11 +42,11 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/portofolio/css/style.css" />
+  <link rel="stylesheet" href="/portfolio/css/bundle.css" />
 </head>
 
 <body class="error-page">
-  <div id="global-nav"></div>
+  <global-nav></global-nav>
   <!-- Ambient Background Canvas -->
   <canvas id="ambient-canvas"></canvas>
 
@@ -61,7 +61,7 @@
         Realign your coordinates to return to safety.
       </p>
 
-      <a href="/portofolio/" class="link-button error-home-btn">
+      <a href="/portfolio/" class="link-button error-home-btn">
         <div class="link-icon">
           <i class="fas fa-satellite-dish"></i>
         </div>
@@ -71,11 +71,11 @@
     </div>
   </main>
 
-  <div id="global-footer"></div>
+  <global-footer></global-footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="/portofolio/js/content-loader.js"></script>
-  <script src="/portofolio/js/core.js"></script>
+  <script type="module" src="/portfolio/js/content-loader.js"></script>
+  <script type="module" src="/portfolio/js/core.js"></script>
   <script>
     // Simple random glitch trigger for extra interactivity
     const glitchText = document.querySelector('.error-code');

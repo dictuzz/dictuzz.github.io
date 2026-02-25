@@ -19,20 +19,19 @@
     href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
     rel="stylesheet" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/text-page.css" />
+  <!-- Unified Styles -->
+  <link rel="stylesheet" href="css/bundle.css" />
 
   <!-- Scripts (Deferred) -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="js/core.js" defer></script>
+  <script type="module" src="js/core.js"></script>
 </head>
 
 <body>
   <canvas id="liquid-noise"></canvas>
 
-  <div id="global-nav"></div>
+  <global-nav></global-nav>
 
   <main class="text-page-container">
     <header class="text-page-header">
@@ -137,11 +136,11 @@
     </div>
   </main>
 
-  <div id="global-footer"></div>
+  <global-footer></global-footer>
 
   <!-- Init Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="js/content-loader.js"></script>
+  <script type="module" src="js/content-loader.js"></script>
   <script>
     // Simple Lenis Init since we don't have full main.js logic here or do we?
     // We have core.js which might have some shared logic but let's be safe.

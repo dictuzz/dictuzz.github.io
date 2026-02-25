@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const personSchema = {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": data.global.author,
+        "name": data.portfolio.global.author,
         "url": "https://dictuzz.me",
         "image": "https://dictuzz.me/assets/images/Aku.webp",
         "jobTitle": "Data Science Student & Automation Specialist",
-        "description": data.curtain.tagline,
-        "sameAs": data.global.socials.map(s => s.url)
+        "description": data.portfolio.curtain.tagline,
+        "sameAs": data.portfolio.global.socials.map(s => s.url)
     };
 
     if (isResume) {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const portfolioSchema = {
             "@context": "https://schema.org",
             "@type": "ItemList",
-            "itemListElement": data.proof.experiences.map((exp, index) => ({
+            "itemListElement": data.portfolio.proof.experiences.map((exp, index) => ({
                 "@type": "ListItem",
                 "position": index + 1,
                 "item": {
