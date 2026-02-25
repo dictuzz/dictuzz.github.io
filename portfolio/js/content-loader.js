@@ -6,15 +6,19 @@
 (function () {
   'use strict';
 
-  // Wait for data.js to be loaded
-  // Data is loaded in <head>, so it should be available immediately.
-  if (window.PORTFOLIO_CONTENT) {
-    initLoader();
-  } else {
-    console.error(
-      'PORTFOLIO_CONTENT not found. Ensure data.js is loaded before content-loader.js'
-    );
-  }
+  // Initialize by fetching JSON
+  fetch('data/portfolio.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to load portfolio data');
+      return response.json();
+    })
+    .then(data => {
+      window.PORTFOLIO_CONTENT = data;
+      initLoader();
+    })
+    .catch(err => {
+      console.error('PORTFOLIO_CONTENT fetch error:', err);
+    });
 
   function initLoader() {
     const DATA = window.PORTFOLIO_CONTENT;
@@ -164,7 +168,7 @@
                 </figure>
 
                 <div class="experience-body">
-                    ${exp.body}
+                    ${window.marked ? marked.parse(exp.body) : exp.body}
                 </div>
                 
                 ${exp.links && exp.links.length > 0 ? `
@@ -207,7 +211,7 @@
           (cluster) => `
                 <section class="thread-cluster">
                     <h2 class="cluster-heading">${cluster.title}</h2>
-                    ${cluster.content}
+                    ${window.marked ? marked.parse(cluster.content) : cluster.content}
                 </section>
             `
         )

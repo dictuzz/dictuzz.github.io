@@ -44,18 +44,17 @@
     }
 
     // ── 5. Dynamic Link Rendering ─────────────
-    function renderLinks() {
+    function renderLinks(data) {
         const container = document.getElementById('links-container');
-        if (!container || typeof linkData === 'undefined') return;
+        if (!container) return;
 
-        container.innerHTML = linkData.map(zone => `
+        container.innerHTML = data.map(zone => `
             <section class="bio-card ${zone.className || ''}" data-zone="${zone.id}">
                 <div class="card-header">
                     <div class="header-content">
                         <span class="card-label">${zone.label}</span>
                         <h2 class="card-title">${zone.title}</h2>
                     </div>
-                    <!-- Icon added via Expansion Logic below -->
                 </div>
                 <div class="link-list-wrapper">
                     <div class="link-list">
@@ -77,100 +76,76 @@
         `).join('');
     }
 
-    // Initialize Links first
-    renderLinks();
+    function initBioInteractions() {
+        // ── 2. Expansion Logic (All Devices) ──────
+        const zones = document.querySelectorAll('.bio-card[data-zone]');
 
-    // ── 2. Expansion Logic (All Devices) ──────
-    // Re-query zones after rendering
-    const zones = document.querySelectorAll('.bio-card[data-zone]');
+        zones.forEach(zone => {
+            const header = zone.querySelector('.card-header');
 
-    zones.forEach(zone => {
-        // Find or create header interactive area
-        const header = zone.querySelector('.card-header');
-
-        if (header) {
-            // Add icon if not present
-            if (!header.querySelector('.collapse-icon')) {
-                const title = header.querySelector('.card-title');
-                // We'll append icon to title or header via JS for simplicity if not in HTML
-                const icon = document.createElement('i');
-                icon.className = 'fas fa-chevron-down collapse-icon';
-                header.appendChild(icon);
-            }
-
-            header.addEventListener('click', (e) => {
-                // Prevent triggering if clicking a link inside header (unlikely but safe)
-                if (e.target.tagName === 'A') return;
-
-                const isCollapsed = zone.classList.contains('zone-collapsed');
-
-                if (isCollapsed) {
-                    zone.classList.remove('zone-collapsed');
-                } else {
-                    zone.classList.add('zone-collapsed');
+            if (header) {
+                if (!header.querySelector('.collapse-icon')) {
+                    const icon = document.createElement('i');
+                    icon.className = 'fas fa-chevron-down collapse-icon';
+                    header.appendChild(icon);
                 }
+
+                header.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') return;
+                    const isCollapsed = zone.classList.contains('zone-collapsed');
+                    if (isCollapsed) {
+                        zone.classList.remove('zone-collapsed');
+                    } else {
+                        zone.classList.add('zone-collapsed');
+                    }
+                });
+            }
+        });
+
+        // ── 3. Magnetic Hover Logic ───────────────
+        const magneticItems = document.querySelectorAll('.bio-card, .bio-link');
+
+        magneticItems.forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                item.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`;
             });
-        }
-    });
 
-    // ── 3. Magnetic Hover Logic ───────────────
-    // Applies a subtle magnetic pull to cards and links
-    const magneticItems = document.querySelectorAll('.bio-card, .bio-link');
-
-    magneticItems.forEach(item => {
-        item.addEventListener('mousemove', (e) => {
-            const rect = item.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            // Subtle movement
-            item.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`;
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translate(0, 0)';
+            });
         });
 
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translate(0, 0)';
-        });
-    });
+        // ── 4. Entrance Animations (GSAP) ─────────
+        if (typeof gsap !== 'undefined') {
+            const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    // ── 3. Time Display (Asia/Jakarta) ────────
-    function updateTime() {
-        const timeElement = document.getElementById('local-time');
-        if (timeElement) {
-            const now = new Date();
-            const timeOptions = {
-                timeZone: 'Asia/Jakarta',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false
-            };
+            tl.from(".profile-frame", { scale: 0.8, opacity: 0, duration: 1 })
+                .from(".profile-name", { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
+                .from(".profile-role, .profile-meta", { y: 10, opacity: 0, stagger: 0.1, duration: 0.6 }, "-=0.4");
 
-            const timeStr = now.toLocaleTimeString('en-US', timeOptions);
-            // Blinking colon effect
-            const separator = now.getSeconds() % 2 === 0 ? ':' : ' ';
-            timeElement.innerHTML = `<i class="far fa-clock" style="margin-right:6px"></i> ${timeStr.replace(':', separator)} WIB`;
+            tl.from(".bio-card", {
+                y: 40,
+                opacity: 0,
+                stagger: 0.15,
+                duration: 0.8,
+                clearProps: "all"
+            }, "-=0.2");
         }
     }
 
-    setInterval(updateTime, 1000);
-    updateTime();
-
-    // ── 4. Entrance Animations (GSAP) ─────────
-    if (typeof gsap !== 'undefined') {
-        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-        // Header Elements
-        tl.from(".profile-frame", { scale: 0.8, opacity: 0, duration: 1 })
-            .from(".profile-name", { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
-            .from(".profile-role, .profile-meta", { y: 10, opacity: 0, stagger: 0.1, duration: 0.6 }, "-=0.4");
-
-        // Cards Stagger
-        tl.from(".bio-card", {
-            y: 40,
-            opacity: 0,
-            stagger: 0.15,
-            duration: 0.8,
-            clearProps: "all" // Important for magnetic hover to work after
-        }, "-=0.2");
-    }
+    // ── 6. Async Fetch Initialization ─────────
+    fetch('data/links.json')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to load links data');
+            return response.json();
+        })
+        .then(data => {
+            renderLinks(data.zones);
+            initBioInteractions();
+        })
+        .catch(err => console.error('Bio Link Error:', err));
 
 })();
