@@ -61,7 +61,7 @@
                 trigger: '.proof-board',
                 pin: true,
                 start: 'top top',
-                end: '+=8000',
+                end: '+=4000',
                 scrub: 1,
                 anticipatePin: 1
             }

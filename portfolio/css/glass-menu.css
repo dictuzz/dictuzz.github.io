@@ -45,7 +45,32 @@
 }
 
 .glass-nav-list li {
-    display: block;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.nav-label {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-subtitle {
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: var(--text-muted, rgba(255, 255, 255, 0.5));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.glass-nav-link:hover .nav-subtitle {
+    color: var(--accent-light, rgba(255, 255, 255, 0.9));
 }
 
 .glass-nav-link {

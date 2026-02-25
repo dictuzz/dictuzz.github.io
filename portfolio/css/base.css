@@ -86,8 +86,12 @@ a:focus-visible {
 /* ── Reduced Motion ──────────────────────── */
 @media (prefers-reduced-motion: reduce) {
 
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* ── Liquid Motion & Lenis ───────────────── */
@@ -158,7 +162,7 @@ html.lenis body {
     top: -100px;
     left: 20px;
     background: var(--c-surface, #000);
-    color: var(--c-text-primary, #fff);
+    color: var(--c-text, #fff);
     padding: 1rem;
     z-index: 10000;
     transition: top 0.3s;

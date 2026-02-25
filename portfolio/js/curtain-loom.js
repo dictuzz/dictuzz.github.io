@@ -21,7 +21,7 @@
         if (!container) return;
 
         const isMobile = window.innerWidth <= 768;
-        const PARTICLE_COUNT = isMobile ? 15000 : 60000;
+        const PARTICLE_COUNT = isMobile ? 15000 : 30000;
 
         const CONFIG = {
             particleCount: PARTICLE_COUNT,
@@ -275,13 +275,17 @@
 
                 material.uniforms.uScroll.value = progress;
 
-                // Z-Index Hack: When fully scrolled out, push to back so it doesn't block interactions
+                // Hide completely when scrolled out to prevent particle bleed-through
                 if (progress >= 0.95) {
                     container.style.zIndex = -10;
-                    container.style.pointerEvents = 'none'; // Ensure no interference
+                    container.style.pointerEvents = 'none';
+                    container.style.visibility = 'hidden';
+                    container.style.opacity = '0';
                 } else {
-                    container.style.zIndex = 1; // Bring back when at top
+                    container.style.zIndex = 1;
                     container.style.pointerEvents = 'auto';
+                    container.style.visibility = 'visible';
+                    container.style.opacity = '1';
                 }
             });
         }
