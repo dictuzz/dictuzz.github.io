@@ -1,101 +1,202 @@
-# Benedictus Richard Ricardo — Interactive Portfolio
+# Benedictus Richard Ricardo - Deep Space Portfolio
 
-> *"I turn operational chaos into automated systems. Data science student. Process builder."*
+A modern, high-performance personal portfolio website featuring the premium **"Deep Space Luxury"** design system. Built to showcase data science expertise, leadership experience, and professional skills.
 
-A cinematic, high-performance personal portfolio website designed to win Awwwards. This project emphasizes motion, narrative, and "Liquid" interaction design.
+> Part of the [dictuzz.github.io](https://dictuzz.github.io) ecosystem
 
-> **Part of the [dictuzz.github.io](https://dictuzz.github.io) Hybrid Ecosystem**
-> This module serves as the **"Cinematic Core"** of the personal brand, operating independently of the root `config.js` to maximize performance and visual fidelity.
+![Portfolio Preview](og-image.png)
 
-## 🌟 Key Features
+---
 
-### Act I: The Digital Loom (`index.html`)
-- **Particle System**: A custom Three.js simulation of 30,000 particles (optimized for GPU performance while maintaining visual density).
-- **Chaos to Order**: Particles start in a random 3D scatter and morph into the name using Canvas 2D Sampling for precise typography ("Plus Jakarta Sans").
-- **Scroll Narrative**: A strict scroll-driven timeline where the 3D text flies up and fades out, revealing the tagline via a "Matrix Scramble" effect without overlap.
+## 🌌 Design System
 
-### Act II: The Investigation Board (`proof.html`)
-- **Immersive Canvas**: A massive `300vw x 300vh` grid layout.
-- **GSAP Camera**: Scroll-driven camera movements that Pan, Zoom, and Rotate to specific coordinates.
-- **Dossier View**: Interactive cards that open into a focused, luxury-styled modal for reading details.
-- **Lazy Loading**: High-res images load only when approached in the viewport.
+The portfolio implements the "Deep Space Luxury" visual language with these core elements:
 
-### Act III: The Thread (`thread.html`)
-- **Karaoke Reader**: A focus-mode reading experience where the active line lights up (100% opacity) while surrounding text dims (20% opacity) based on scroll position.
-- **Kinetic Typography**: Large serif headers that react to scroll velocity.
+### Color Palette
 
-### Act IV: The Signal (`signal.html`)
-- **Clean CTA**: A minimal contact page with staggered entrance animations.
+| Token | Name | Value | Usage |
+|-------|------|-------|-------|
+| `--bg-deep` | **Deep Space** | `#0A0E17` | Background (dark) |
+| `--bg-surface` | **Surface** | `#121824` | Cards, nav |
+| `--accent-cyan` | **Cyber Cyan** | `#00F5D4` | Primary accent |
+| `--accent-purple` | **Electric Purple** | `#7B61FF` | Secondary accent |
+| `--accent-gold` | **Luxury Gold** | `#FFB800` | Highlights |
 
-## 🛠️ Technology Stack
+### Light Mode
 
-- **Core**: HTML5, CSS3 (Variables), Native JavaScript (Modules).
-- **3D Engine**: [Three.js](https://threejs.org/) (WebGL).
-- **Animation**: [GSAP (GreenSock)](https://gsap.com/) + ScrollTrigger.
-- **Smooth Scroll**: [Lenis](https://lenis.studio/) for momentum-based scrolling.
-- **Fonts**: Newsreader (Serif) & Plus Jakarta Sans (Sans Serif) via Google Fonts.
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--bg-deep` | `#E2E8F0` | Slate background |
+| `--text-primary` | `#0F172A` | Dark text |
 
-## 🧰 Development Tooling
+### Typography
 
-To ensure code consistency, this project uses **ESLint**, **Prettier**, and **EditorConfig**.
+| Role | Font |
+|------|------|
+| **Headings** | Outfit, Space Grotesk |
+| **Body** | Inter |
 
-1.  **Install tools globally** (or locally if you initialize npm):
-    ```bash
-    npm install -g eslint prettier
-    ```
+### Theme Synchronization
 
-2.  **Editor Integration**:
-    -   Install **VS Code ESLint** and **Prettier** extensions.
-    -   The `.editorconfig` file helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
+The resume inherits the unified theme key `dictuzz-theme` and `config.js` settings:
 
-## 🚀 How to Run
-
-No build step required. This is a static site.
-
-> **Note**: Unlike the Resume app, this Portfolio does **not** use the root `config.js`. Textures, colors, and particles are configured directly in `js/curtain-loom.js` and `css/style.css` for low-level control.
-
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/dictuzz/dictuzz.github.io.git
-    cd dictuzz.github.io/portfolio
-    ```
-
-2.  **Serve locally**:
-    You need a local server to handle ES Modules and CORS (for textures/fonts).
-    ```bash
-    npx serve .
-    ```
-
-3.  **Open**:
-    Visit `http://localhost:3000` in your browser.
-
-## 📂 Project Structure
-
+```javascript
+// Inherited from root config.js
+const storageKey = CONFIG_DATA.theme.storageKey || 'dictuzz-theme';
 ```
-portfolio/
+
+This ensures theme consistency across the entire ecosystem.
+
+---
+
+## ⚡ Key Features
+
+### Dynamic Content
+### Dynamic Content
+- **Content Source**: All text is driven by `locales/*.json` (En/Id/De).
+- **System Config**: Global settings (Theme, Analytics, Feature Flags) are inherited from the root `config.js`.
+- **i18n Support**: Auto-detects browser language or uses `?lang=id`.
+
+### Performance
+- **Zero Frameworks**: Vanilla JS/CSS
+- **Lighthouse 100**: Optimized for speed
+- **Critical CSS**: Inlined for instant rendering
+
+### Interactive
+- **Typing Animation**: Rotating tagline effect
+- **Theme Toggle**: Dark/light with persistence
+- **Smooth Scroll**: Anchor navigation
+- **GA4 Analytics**: Track interactions
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| **Core** | HTML5, CSS3, JavaScript (ES6+) |
+| **Styling** | CSS Custom Properties, Glassmorphism |
+| **Fonts** | Google Fonts (Outfit, Space Grotesk, Inter) |
+| **Icons** | FontAwesome 6 |
+
+---
+
+## 🚀 Getting Started
+
+### Local Development
+
+```bash
+# From project root
+npx -y serve -l 8000
+
+# Open
+http://localhost:8000/
+```
+
+### Language Selection
+
+Use URL parameter or button:
+- `?lang=en` - English
+- `?lang=id` - Indonesian
+- `?lang=de` - German
+
+---
+
+## 📁 Project Structure
+
+```text
+.
+├── index.html              # Main HTML structure
+├── script.js               # i18n, animations, theme
+├── style.css               # Component styles
 ├── css/
-│   ├── style.css         # Global styles & variables
-│   ├── curtain.css       # Specifics for Index/Particle system
-│   ├── proof.css         # The Investigation Board grid
-│   ├── thread.css        # Typography styles
-│   └── signal.css        # Contact page styles
-├── js/
-│   ├── core.js           # Shared logic (Lenis, Loader)
-│   ├── curtain.js        # Index page logic & ScrollTrigger timeline
-│   ├── curtain-loom.js   # Three.js Particle System
-│   ├── proof.js          # Pan/Zoom logic for Board
-│   ├── thread.js         # Karaoke reader logic
-│   └── signal.js         # Contact animations
-├── assets/               # Images and textures
-└── *.html                # Entry points
+│   └── tokens.css          # ⭐ Design tokens (colors, spacing)
+├── locales/                # ⭐ Content data
+│   ├── en.json             # English
+│   ├── id.json             # Indonesian
+│   └── de.json             # German
+├── BRAND_GUIDELINE.md      # Detailed design documentation
+└── README.md               # This file
 ```
 
-## 🎨 Design Philosophy
+---
 
--   **"Liquid Motion"**: Everything should feel fluid. Using `Lenis` for scroll smoothing and `GSAP` for scrub-based animations creates a sense of weight.
--   **Cinematic Lighting**: Dark mode base with Gold (`#ffd700`) accents and "Imperial Red" (`#ba0000`) highlights.
--   **Performance & Security**: 
-    -   **Strict CSP**: Content-Security-Policy metadata locks down external execution risks.
-    -   **Lightweight Assets**: Self-hosted WebP images and a 2KB vector SVG favicon.
-    -   **Spam Deterrence**: Contact forms integrate invisible honeypots.
-    -   **Optimization**: Scripts deferred, images lazy-loaded, and WebGL geometry cached for peak performance.
+## 📝 Content Management
+
+### Editing Content
+
+All content is in `locales/*.json`. Edit the appropriate language file:
+
+```json
+{
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Benedictus Richard Ricardo",
+    "typing": ["Data Science Student", "Automation Specialist", "Process Builder"]
+  },
+  "experience": [
+    {
+      "title": "Data Scientist",
+      "company": "Company Name",
+      "date": "2024 - Present",
+      "bullets": ["Achievement 1", "Achievement 2"]
+    }
+  ]
+}
+```
+
+### Adding a Language
+
+1. Create `locales/xx.json` (copy from `en.json`)
+2. Add to `SUPPORTED_LANGS` in `script.js`:
+   ```javascript
+   const SUPPORTED_LANGS = ['en', 'id', 'de', 'xx'];
+   ```
+3. Add language button in `index.html`
+
+---
+
+## JavaScript Modules
+
+The `script.js` contains these features:
+
+| Feature | Function |
+|---------|----------|
+| Theme Toggle | `initTheme()`, `toggleTheme()` |
+| i18n System | `loadLanguage(lang)`, `applyTranslations()` |
+| Typing Effect | `Typer` class |
+| Rendering | `renderExperience()`, `renderProjects()`, `renderSkills()` |
+| Analytics | `trackEvent()` integration with GA4 |
+
+---
+
+## Design Tokens
+
+Edit `css/tokens.css` to customize the design:
+
+```css
+:root {
+  /* Colors */
+  --bg-deep: #0A0E17;
+  --accent-cyan: #00F5D4;
+  
+  /* Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Spacing (8px grid) */
+  --space-4: 1rem;
+  --space-8: 2rem;
+  
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+```
+
+---
+
+## License
+
+© 2026 Benedictus Richard Ricardo. All Rights Reserved.
+
+*Last updated: February 2026*
