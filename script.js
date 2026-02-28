@@ -40,6 +40,7 @@ function init() {
 // ══════════════════════════════════════════════
 const DEFAULT_LANG = 'en';
 const SUPPORTED_LANGS = ['en', 'id', 'de'];
+const LANG_STORAGE_KEY = 'dictuzz-lang';
 
 // Current language data
 let currentLang = DEFAULT_LANG;
@@ -66,7 +67,7 @@ function renderExperience(data) {
         const getEnd = d => {
             if (!d.date) return new Date();
             // Check for current role keywords
-            if (['Present', 'Sekarang', 'Heute'].some(k => d.date.includes(k))) return new Date();
+            if (/present|sekarang|heute/i.test(d.date)) return new Date();
             // Handle both hyphen (-) and en-dash (–)
             const parts = d.date.replace(/–/g, '-').split('-');
             return parts.length > 1 ? new Date(parts[1].trim()) : new Date();
@@ -95,14 +96,14 @@ function renderExperience(data) {
     }
 }
 
-function renderProjects(data) {
-    const container = $('.projects__list');
+function renderImpact(data) {
+    const container = $('.impact__list');
     if (!container || !Array.isArray(data)) return;
 
-    container.innerHTML = data.map(proj => `
+    container.innerHTML = data.map(item => `
         <div class="project-card glass glass--hover card reveal">
-            <h3 class="project-card__title">${escapeHtml(proj.title)}</h3>
-            <p class="project-card__desc">${escapeHtml(proj.desc)}</p>
+            <h3 class="project-card__title">${escapeHtml(item.title)}</h3>
+            <p class="project-card__desc">${escapeHtml(item.desc)}</p>
         </div>
     `).join('');
 
@@ -110,12 +111,20 @@ function renderProjects(data) {
 }
 
 function renderSkills(data) {
-    const container = $('#skills-technical');
-    if (!container || !data?.technical_list) return;
+    const categories = [
+        { key: 'strategic_list', id: '#skills-strategic' },
+        { key: 'operational_list', id: '#skills-operational' },
+        { key: 'analytical_list', id: '#skills-analytical' },
+        { key: 'leadership_list', id: '#skills-leadership' }
+    ];
 
-    container.innerHTML = data.technical_list.map(skill =>
-        `<span class="tag">${escapeHtml(skill)}</span>`
-    ).join('');
+    categories.forEach(({ key, id }) => {
+        const container = $(id);
+        if (!container || !data?.[key]) return;
+        container.innerHTML = data[key].map(skill =>
+            `<span class="tag">${escapeHtml(skill)}</span>`
+        ).join('');
+    });
 }
 
 function applyTranslations(data) {
@@ -136,9 +145,15 @@ async function loadLanguage(lang) {
         langData = await res.json();
         currentLang = lang;
 
-        // Update content
+        // Save language preference to localStorage
+        localStorage.setItem(LANG_STORAGE_KEY, lang);
+
+        // Update URL with language parameter for sharing
+        const url = new URL(location);
+        url.searchParams.set('lang', lang);
+        window.history.replaceState({}, '', url);
         renderExperience(langData.exp);
-        renderProjects(langData.proj);
+        renderImpact(langData.impact);
         renderSkills(langData.skills);
         applyTranslations(langData);
         updateDownloadLink(lang);
@@ -150,15 +165,15 @@ async function loadLanguage(lang) {
 
             if (typingEl) {
                 // Stop existing typer if any
-                if (typingEl._typer) {
-                    typingEl._typer.stop();
+                if (typerInstance) {
+                    typerInstance.stop();
                 }
 
                 // Clear element
                 typingEl.textContent = '';
 
                 // Create new typer with fresh start (speed 80ms per character - readable pace)
-                new Typer(typingEl, langData.hero.typing.dynamicTexts, 80);
+                typerInstance = new Typer(typingEl, langData.hero.typing.dynamicTexts, 80);
             }
         }
 
@@ -334,10 +349,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     init();
 
     const urlLang = new URLSearchParams(location.search).get('lang');
+    const savedLang = localStorage.getItem(LANG_STORAGE_KEY);
     const browserLang = navigator.language.split('-')[0];
+    
+    // Priority: URL param > Saved preference > Browser lang > Default
     const initLang = SUPPORTED_LANGS.includes(urlLang) ? urlLang
+        : SUPPORTED_LANGS.includes(savedLang) ? savedLang
         : SUPPORTED_LANGS.includes(browserLang) ? browserLang
-            : DEFAULT_LANG;
+        : DEFAULT_LANG;
 
     loadLanguage(initLang);
 

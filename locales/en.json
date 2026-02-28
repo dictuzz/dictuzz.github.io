@@ -1,177 +1,178 @@
-{
+﻿{
     "hero": {
-        "tagline": "Turning Raw Data into Strategic Decisions",
+        "subtitle": "Systems architect. Process optimizer. Team coordinator.",
+        "role": "I Put Rooms in Order and People in Motion",
         "typing": {
-            "staticText": "Data Science • ",
+            "staticText": "",
             "dynamicTexts": [
-                "Automating 12+ hours of work weekly",
-                "Leading teams of 34 to deliver results",
-                "Turning complexity into actionable insights",
-                "Building systems that scale"
+                "Building Operational Systems",
+                "Streamlining Workflows",
+                "Coordinating Across Teams",
+                "Making Data-Backed Decisions",
+                "Leading Structured Execution"
             ]
         },
         "downloadCv": "Download CV",
-        "email": "Let's Talk"
+        "email": "Let's Talk",
+        "status": "Available for opportunities",
+        "cta1": "Let's Talk",
+        "cta2": "Explore",
+        "stat1Label": "Hrs/Week Saved",
+        "stat2Label": "Members Led",
+        "stat3Label": "Event Scale"
     },
     "nav": {
         "home": "Home",
         "about": "About",
         "experience": "Experience",
         "education": "Education",
-        "projects": "Projects",
+        "impact": "Impact",
         "skills": "Skills",
         "awards": "Awards",
         "etc": "Etc",
-        "contact": "Contact Me"
+        "contact": "Contact"
     },
     "section": {
         "summary": "ABOUT",
         "experience": "EXPERIENCE",
         "education": "EDUCATION",
-        "projects": "PROJECTS",
+        "impact": "OPERATIONAL IMPACT HIGHLIGHTS",
         "skills": "SKILLS",
         "awards": "AWARDS",
         "etc": "ETC",
         "contact": "CONTACT"
     },
     "summary": {
-        "text": "I automate what others do manually - saving 12+ hours weekly. I've led 34-member councils, coordinated events for 500+, and now I'm earning my B.Sc. in Data Science to formalize my passion: transforming raw data into strategic decisions."
+        "text": "With a background in Data Science and hands-on experience across cross-functional operations, I focus on building systems that drive consistency and efficiency. I've automated reporting workflows that cut 12+ hours of manual work weekly, led a 34-member organization through KPI-based governance, and coordinated large-scale events for over 1,000 attendees. My approach is structured, data-informed, and results-oriented."
     },
     "exp": [
         {
             "date": "JUL 2024 – SEP 2025",
-            "role": "Path Climber & Maintenance",
-            "company": "Vertical Rescue Indonesia",
-            "details": [
-                "Supported rescue training operations as measured by equipment readiness reports, by performing maintenance and safety inspections on climbing equipment."
-            ]
-        },
-        {
-            "date": "AUG 2023 – AUG 2024",
             "role": "Management Trainee",
             "company": "Home Digital Indonesia",
             "details": [
-                "Supported the team by automating manual reporting tasks using Excel macros, helping to save approximately 12 hours of weekly effort.",
-                "Collaborated with Finance, Sales, and Ops to help standardize SOPs, contributing to smoother process delivery.",
-                "Assisted in analyzing employee feedback to identify opportunities for improving the workplace experience."
+                "Designed and implemented automated reporting systems using Excel, reducing manual reporting workload by ~12 hours per week.",
+                "Standardized cross-functional SOPs across Finance, Sales, and Operations to improve operational consistency.",
+                "Analyzed internal feedback data to generate structured improvement recommendations for management review."
+            ]
+        },
+        {
+            "date": "JAN 2021 – PRESENT",
+            "role": "Assistant Instructor",
+            "company": "Vertical Rescue Indonesia",
+            "details": [
+                "Ensured operational readiness of safety equipment through structured inspection and maintenance systems.",
+                "Supported technical training sessions as lead climber and belayer for rescue operations.",
+                "Assisted instruction delivery and skill assessment for new trainees."
             ]
         },
         {
             "date": "NOV 2021 – NOV 2022",
-            "role": "Vice Chief",
-            "company": "Ujung Berung Catholic Youth Organisation",
+            "role": "President",
+            "company": "OSIS SMA Santa Maria 2, Bandung",
             "details": [
-                "Planned annual program calendar as measured by event completion rate, by coordinating cross-team deliverables and volunteer schedules.",
-                "Organized large-scale events as measured by attendance: night gathering (100 participants) and youth worship (400 participants), by managing logistics and volunteer teams."
-            ]
-        },
-        {
-            "date": "NOV 2021 – NOV 2022",
-            "role": "Chairman",
-            "company": "Student Council - Saint Mary 2 High School, Bandung",
-            "details": [
-                "Launched a targeted long-term student quality improvement program as measured by program adoption across homerooms, by defining KPIs, timelines, and execution plans.",
-                "Achieved broad outreach to feeder schools as measured by successful promotions to 12 Catholic junior high schools, by leading promotional campaigns and events.",
-                "Managed 34 student council members across 10 divisions as measured by maintained operational roster, by delegating responsibilities and instituting weekly coordination cadences.",
-                "Created a viral school-promotion social media piece (TikTok) as measured by FYP traction, by producing and overseeing creative content execution."
+                "Led 34-member organization across 10 divisions using structured KPI-based governance.",
+                "Designed and executed long-term institutional programs adopted school-wide.",
+                "Directed strategic outreach campaigns to 12 feeder schools.",
+                "Implemented weekly operational coordination rhythm to maintain cross-divisional alignment."
             ]
         },
         {
             "date": "JUN 2022 – AUG 2022",
-            "role": "Head, Business & Partnership Division",
-            "company": "Forum OSIS Jawa Barat",
-            "details": [
-                "Built a historical partnership database as measured by compiled brand records, by collecting collaboration data from previous cohorts to inform future outreach."
-            ]
-        },
-        {
-            "date": "MAR 2020 – MAR 2022",
-            "role": "Stage Crew",
+            "role": "Stage Operations Crew",
             "company": "Ultimate Event Organizer",
             "details": [
-                "Ensured seamless execution for events with 1,000+ attendees as measured by adherence to run-sheets, by coordinating backstage logistics and technical transitions with lighting, sound and security teams.",
-                "Reduced technical downtime during transitions as measured by average transition time, by standardizing stage procedures and directing the technical crew."
-            ]
-        },
-        {
-            "date": "NOV 2020 – NOV 2021",
-            "role": "Vice Chief Acolyte",
-            "company": "Zipur Church",
-            "details": [
-                "Maintained monthly acolyte schedules across parish as measured by on-time rosters, by coordinating volunteers and organizing parish-wide ceremonies."
+                "Coordinated backstage technical execution for events with 1,000+ attendees.",
+                "Reduced transition downtime by enforcing structured stage workflows across lighting, sound, and security teams."
             ]
         },
         {
             "date": "JAN 2021 – JUN 2021",
-            "role": "Vice Chairman",
-            "company": "Student Council - Saint Mary 2 High School, Bandung",
+            "role": "Vice President",
+            "company": "OSIS SMA Santa Maria 2, Bandung",
             "details": [
-                "Developed and implemented talent-development programs reaching all grades as measured by participation rates, by coordinating 10 council divisions and executing class-level activities during pandemic constraints.",
-                "Preserved institutional continuity as measured by complete archival handover, by collecting and organizing prior council proposals and 2018 accountability reports for incoming leadership.",
-                "Delivered leadership training to 5 junior high schools as measured by event attendance and feedback, by planning curriculum and coordinating trainers."
+                "Preserved institutional continuity by systemizing archival documentation and accountability reports.",
+                "Delivered leadership training programs to 5 junior high schools."
             ]
         }
     ],
     "edu": {
         "uni1": {
-            "name": "Universitas Terbuka (Open University Indonesia)",
-            "degree": "B.Sc., Data Science (ongoing)",
-            "date": "Starting Aug 2025",
-            "focus": "Focus: Data Analysis, Statistics, Information Technology"
+            "name": "Universitas Terbuka",
+            "degree": "S1 Data Science (Ongoing)",
+            "date": "Started Aug 2025",
+            "focus": "Focus: Data Analysis, Statistics, Information Systems"
         },
         "school1": {
-            "name": "Saint Mary 2 High School",
-            "degree": "Science Program (IPA)",
-            "date": "Jul 2020 – Jun 2023"
+            "name": "SMA Santa Maria 2",
+            "degree": "Science Program",
+            "date": "2020 – 2023"
         }
     },
-    "proj": [
+    "impact": [
         {
-            "title": "Workflow Automation & Reporting:",
-            "desc": "Built repeatable Excel/Google Sheets processes and dashboards to automate routine reporting and KPI tracking; documented handoffs for operational adoption."
+            "title": "Reporting Automation System",
+            "desc": "Designed and implemented automated reporting systems at Home Digital Indonesia using Excel, eliminating repetitive data entry and formatting. Reduced manual reporting workload by approximately 12 hours per week, freeing capacity for higher-value operational priorities."
+        },
+        {
+            "title": "KPI-Based Governance Leadership",
+            "desc": "Led a 34-member student council across 10 divisions at SMA Santa Maria 2 through KPI-based governance and weekly coordination rhythms. Designed institutional programs adopted school-wide and directed strategic outreach to 12 feeder schools."
+        },
+        {
+            "title": "Large-Scale Event Execution",
+            "desc": "Managed program flow as MC at Youth Mass 2025 (GEMA Bandung) for 500+ participants, coordinating speakers, committees, and technical teams. Previously handled backstage operations for 1,000+ attendee events, reducing transition downtime through structured stage workflows."
         }
     ],
     "skills": {
-        "technical": "Technical",
-        "technical_list": [
-            "Microsoft Office Suites",
+        "strategic": "Strategic & Systems",
+        "strategic_list": [
+            "Systems Thinking",
+            "Workflow Design",
+            "Process Standardization",
+            "KPI Framework Design",
+            "Operational Planning"
+        ],
+        "operational": "Operational Execution",
+        "operational_list": [
+            "SOP Development",
+            "Cross-Functional Coordination",
+            "Event Operations Management",
+            "Reporting Automation",
+            "Structured Delegation"
+        ],
+        "analytical": "Analytical & Tools",
+        "analytical_list": [
+            "Microsoft Excel (Advanced)",
             "Google Workspace",
             "Data Visualization",
-            "Data Cleaning",
+            "Data Analysis",
             "Obsidian",
-            "Project Management"
+            "Project Management Tools"
         ],
-        "business": "Business",
-        "soft": "Soft Skills",
+        "leadership": "Leadership & Communication",
+        "leadership_list": [
+            "Team Governance",
+            "Stakeholder Communication",
+            "Public Speaking",
+            "Training Delivery",
+            "Strategic Outreach"
+        ],
         "languages": "Languages",
-        "biz1": "Cross-functional Collaboration",
-        "biz2": "Process Improvement",
-        "biz3": "KPI Reporting",
-        "biz4": "Stakeholder Communication",
-        "soft1": "Leadership",
-        "soft2": "Problem Solving",
-        "soft3": "Public Speaking",
-        "soft4": "Event Coordination",
-        "soft5": "Curriculum/Training Delivery",
-        "soft6": "Self-Awareness",
-        "soft7": "Ingenuity",
-        "soft8": "Love",
-        "soft9": "Heroism",
         "lang": {
-            "su": "Sundanese (Fluent)",
             "id": "Indonesian (Native)",
-            "en": "English (Upper-intermediate, B2)",
-            "de": "German (Upper-intermediate, B2)",
-            "la": "Latin (Beginner, self-study)"
+            "su": "Sundanese (Fluent)",
+            "en": "English (Professional Working Proficiency)",
+            "de": "German (B1 Certified – Goethe-Zertifikat B1)"
         }
     },
     "awards": {
-        "1": "1st Place - Instagram Reels Competition, Goethe-Institut Bandung (2023) - \"Ein Tag in meinem Leben\"",
-        "2": "1st Place - Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) - \"Dilema\"",
+        "1": "1st Place – Instagram Reels Competition, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
+        "2": "1st Place – Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
         "3": "Runner-Up Water Rocket Competition (2017) by PLANET SAINS"
     },
     "etc": {
-        "1": "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan"
+        "1": "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ participants",
+        "2": "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan"
     },
     "footer": {
         "rights": "All rights reserved."
@@ -180,13 +181,14 @@
         "title": "Let's Build Something Great",
         "schedule": "Book a Call",
         "whatsapp": "Message Me",
+        "email": "Let's Talk",
         "cv": "Download CV",
         "desc": {
             "schedule": "15-min call • No commitment",
             "whatsapp": "Quick response guaranteed",
             "email": "For partnerships & proposals",
             "linkedin": "Connect professionally",
-            "instagram": "The journey behind the data",
+            "instagram": "The journey behind the work",
             "github": "Code speaks louder"
         }
     }

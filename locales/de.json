@@ -1,196 +1,195 @@
-{
+﻿{
     "hero": {
-        "tagline": "Bachelor-Student (Data Science) & Teamplayer",
+        "subtitle": "Systemarchitekt. Prozessoptimierer. Teamkoordinator.",
+        "role": "I Put Rooms in Order and People in Motion",
         "typing": {
-            "staticText": "Bachelor-Student (Data Science) & ",
+            "staticText": "",
             "dynamicTexts": [
-                "Teamplayer",
-                "Problemlöser",
-                "Datenanalyst",
-                "Innovator",
-                "Dozent",
-                "Kletterlehrer",
-                "Moderator"
+                "Operative Systeme aufbauen",
+                "Arbeitsabläufe optimieren",
+                "Teams übergreifend koordinieren",
+                "Datenbasiert entscheiden",
+                "Strukturiert umsetzen"
             ]
         },
         "downloadCv": "Lebenslauf herunterladen",
-        "email": "Email senden"
+        "email": "Kontakt aufnehmen",
+        "status": "Offen für Möglichkeiten",
+        "cta1": "Kontakt aufnehmen",
+        "cta2": "Entdecken",
+        "stat1Label": "Std./Woche gespart",
+        "stat2Label": "Mitglieder geleitet",
+        "stat3Label": "Veranstaltungsskala"
     },
     "nav": {
         "home": "Startseite",
         "about": "Über mich",
         "experience": "Erfahrung",
         "education": "Ausbildung",
-        "projects": "Projekte",
+        "impact": "Wirkung",
         "skills": "Fähigkeiten",
         "awards": "Auszeichnungen",
         "etc": "Sonstiges",
-        "contact": "Kontaktieren Sie mich"
+        "contact": "Kontakt"
     },
     "section": {
         "summary": "ÜBER MICH",
         "experience": "ERFAHRUNG",
         "education": "AUSBILDUNG",
-        "projects": "PROJEKTE",
+        "impact": "OPERATIVE WIRKUNGSHÖHEPUNKTE",
         "skills": "FÄHIGKEITEN",
         "awards": "AUSZEICHNUNGEN",
         "etc": "SONSTIGES",
         "contact": "KONTAKT"
     },
     "summary": {
-        "text": "Bachelor-Student im Bereich Data Science (B.Sc.) mit Interesse an praktischer Problemlösung. Erfahrung in der Unterstützung von Teams durch Datenanalyse und Prozessoptimierung. Motiviert, mich fachlich weiterzuentwickeln und zum Unternehmenserfolg beizutragen."
+        "text": "Mit einem Data-Science-Hintergrund und praktischer Erfahrung in funktionsübergreifenden Abläufen konzentriere ich mich auf den Aufbau von Systemen, die Konsistenz und Effizienz fördern. Ich habe Berichtsworkflows automatisiert und damit über 12 Stunden manueller Arbeit pro Woche eingespart, eine 34-köpfige Organisation mit KPI-basierter Governance geleitet und Großveranstaltungen für über 1.000 Teilnehmer koordiniert. Mein Ansatz ist strukturiert, datengestützt und ergebnisorientiert."
     },
     "exp": [
         {
             "date": "JUL 2024 – SEP 2025",
-            "role": "Path Climber & Wartung",
-            "company": "Vertical Rescue Indonesia",
-            "details": [
-                "Unterstützung von Rettungstrainingsmaßnahmen (gemessen an Berichten zur Ausrüstungsbereitschaft) durch Wartung und Sicherheitsinspektionen von Kletterausrüstung."
-            ]
-        },
-        {
-            "date": "AUG 2023 – AUG 2024",
             "role": "Management Trainee",
             "company": "Home Digital Indonesia",
             "details": [
-                "Unterstützung bei der Automatisierung von Berichtsaufgaben mittels Excel-Makros zur Entlastung des Teams.",
-                "Mitarbeit an der Standardisierung von Abläufen in Zusammenarbeit mit Finanzen, Vertrieb und Betrieb.",
-                "Analyse von Mitarbeiterfeedback zur Identifizierung von Verbesserungspotenzialen."
+                "Automatisierte Berichtssysteme mit Excel konzipiert und implementiert, wodurch der manuelle Berichtsaufwand um ~12 Stunden pro Woche reduziert wurde.",
+                "Funktionsübergreifende SOPs in Finanzen, Vertrieb und Betrieb standardisiert zur Verbesserung der operativen Konsistenz.",
+                "Internes Feedback analysiert, um strukturierte Verbesserungsempfehlungen für die Geschäftsführung zu erstellen."
             ]
         },
         {
-            "date": "NOV 2021 – NOV 2022",
-            "role": "Stellvertretender Leiter",
-            "company": "Katholische Jugendorganisation Ujung Berung",
+            "date": "JAN 2021 – HEUTE",
+            "role": "Assistenzausbilder",
+            "company": "Vertical Rescue Indonesia",
             "details": [
-                "Planung des jährlichen Programmkalenders (gemessen an der Abschlussquote von Veranstaltungen) durch Koordination teamübergreifender Ergebnisse und Zeitpläne der Freiwilligen.",
-                "Organisation von Großveranstaltungen (gemessen an der Anwesenheit): Abendveranstaltung (100 Teilnehmer) und Jugendgottesdienst (400 Teilnehmer) durch Verwaltung von Logistik und Freiwilligenteams."
+                "Betriebsbereitschaft der Sicherheitsausrüstung durch strukturierte Inspektions- und Wartungssysteme sichergestellt.",
+                "Technische Trainingseinheiten als Leitkletternder und Sicherer für Rettungseinsätze unterstützt.",
+                "Instruktionsvermittlung und Kompetenzbeurteilung für neue Auszubildende unterstützt."
             ]
         },
         {
             "date": "NOV 2021 – NOV 2022",
             "role": "Vorsitzender",
-            "company": "Schülervertretung - Saint Mary 2 High School, Bandung",
+            "company": "OSIS SMA Santa Maria 2, Bandung",
             "details": [
-                "Einführung eines gezielten langfristigen Programms zur Verbesserung der Schülerqualität (gemessen an der Programmakzeptanz in den Klassenräumen) durch Definition von KPIs, Zeitplänen und Ausführungsplänen.",
-                "Erreichung einer breiten Öffentlichkeitsarbeit an Zubringerschulen (gemessen an erfolgreichen Promotionen an 12 katholischen Mittelschulen) durch Leitung von Werbekampagnen und Veranstaltungen.",
-                "Leitung von 34 Schülerratsmitgliedern in 10 Abteilungen (gemessen an der Aufrechterhaltung des operativen Dienstplans) durch Delegierung von Verantwortlichkeiten und Einführung wöchentlicher Koordinationsrhythmen.",
-                "Erstellung eines viralen Social-Media-Beitrags zur Schulwerbung (TikTok) (gemessen an FYP-Zugriffen) durch Produktion und Überwachung der kreativen Content-Ausführung."
+                "34-köpfige Organisation über 10 Abteilungen mit strukturierter KPI-basierter Governance geleitet.",
+                "Langfristige institutionelle Programme entworfen und umgesetzt, die schulweit übernommen wurden.",
+                "Strategische Outreach-Kampagnen an 12 Zubringerschulen geleitet.",
+                "Wöchentlichen operativen Koordinationsrhythmus zur Aufrechterhaltung abteilungsübergreifender Ausrichtung eingeführt."
             ]
         },
         {
             "date": "JUN 2022 – AUG 2022",
-            "role": "Leiter, Abteilung Geschäft & Partnerschaft",
-            "company": "Forum OSIS Jawa Barat",
-            "details": [
-                "Aufbau einer historischen Partnerschaftsdatenbank (gemessen an kompilierten Markendatensätzen) durch Datenerfassung früherer Kohorten zur Information zukünftiger Kooperationen."
-            ]
-        },
-        {
-            "date": "MÄR 2020 – MÄR 2022",
-            "role": "Bühnencrew",
+            "role": "Bühnenbetriebscrew",
             "company": "Ultimate Event Organizer",
             "details": [
-                "Gewährleistung eines reibungslosen Ablaufs für Veranstaltungen mit über 1.000 Teilnehmern (gemessen an der Einhaltung von Ablaufplänen) durch Koordination der Backstage-Logistik und technischer Übergänge mit Beleuchtungs-, Ton- und Sicherheitsteams.",
-                "Reduzierung technischer Ausfallzeiten bei Übergängen (gemessen an der durchschnittlichen Übergangszeit) durch Standardisierung von Bühnenverfahren und Anweisung der technischen Crew."
-            ]
-        },
-        {
-            "date": "NOV 2020 – NOV 2021",
-            "role": "Stellvertretender Oberministrant",
-            "company": "Zipur Kirche",
-            "details": [
-                "Pflege monatlicher Ministrantenpläne in der Gemeinde (gemessen an pünktlichen Dienstplänen) durch Koordination von Freiwilligen und Organisation gemeindeweiter Zeremonien."
+                "Technische Backstage-Ausführung für Veranstaltungen mit 1.000+ Teilnehmern koordiniert.",
+                "Übergangsausfallzeiten durch Durchsetzung strukturierter Bühnenarbeitsabläufe in Beleuchtungs-, Ton- und Sicherheitsteams reduziert."
             ]
         },
         {
             "date": "JAN 2021 – JUN 2021",
             "role": "Stellvertretender Vorsitzender",
-            "company": "Schülervertretung - Saint Mary 2 High School, Bandung",
+            "company": "OSIS SMA Santa Maria 2, Bandung",
             "details": [
-                "Entwicklung und Umsetzung von Talentförderprogrammen für alle Jahrgangsstufen (gemessen an der Teilnahmequote) durch Koordination von 10 Ratsabteilungen und Durchführung von Klassenaktivitäten während der Pandemiebeschränkungen.",
-                "Wahrung der institutionellen Kontinuität (gemessen an der vollständigen Archivübergabe) durch Sammlung und Organisation früherer Ratsvorschläge und Rechenschaftsberichte von 2018 für die kommende Führung.",
-                "Durchführung von Führungstrainings an 5 Mittelschulen (gemessen an der Veranstaltungsteilnahme und dem Feedback) durch Lehrplanplanung und Koordination der Trainer."
+                "Institutionelle Kontinuität durch Systematisierung der Archivdokumentation und Rechenschaftsberichte bewahrt.",
+                "Führungstrainingsprogramme an 5 Mittelschulen durchgeführt."
             ]
         }
     ],
     "edu": {
         "uni1": {
-            "name": "Universitas Terbuka (Open University Indonesia)",
-            "degree": "B.Sc., Data Science (laufend)",
-            "date": "Ab Aug 2025",
-            "focus": "Schwerpunkt: Datenanalyse, Statistik, Informationstechnologie"
+            "name": "Universitas Terbuka",
+            "degree": "S1 Data Science (Laufend)",
+            "date": "Beginn Aug 2025",
+            "focus": "Schwerpunkt: Datenanalyse, Statistik, Informationssysteme"
         },
         "school1": {
-            "name": "Saint Mary 2 High School",
-            "degree": "Naturwissenschaftliches Programm (IPA)",
-            "date": "Jul 2020 – Jun 2023"
+            "name": "SMA Santa Maria 2",
+            "degree": "Naturwissenschaftliches Programm",
+            "date": "2020 – 2023"
         }
     },
-    "proj": [
+    "impact": [
         {
-            "title": "Workflow-Automatisierung & Berichtswesen:",
-            "desc": "Erstellung wiederholbarer Excel/Google Sheets-Prozesse und Dashboards zur Automatisierung regelmäßiger Berichte und KPI-Verfolgung; Dokumentation von Übergaben für die betriebliche Übernahme."
+            "title": "Berichtsautomatisierungssystem",
+            "desc": "Automatisierte Berichtssysteme bei Home Digital Indonesia mit Excel konzipiert und implementiert, wodurch sich wiederholende Dateneingabe und Formatierung eliminiert wurden. Manueller Berichtsaufwand um etwa 12 Stunden pro Woche reduziert, sodass Teamkapazitäten für höherwertige operative Prioritäten frei wurden."
+        },
+        {
+            "title": "KPI-basierte Governance-Führung",
+            "desc": "34-köpfigen Schülerrat über 10 Abteilungen an der SMA Santa Maria 2 mit KPI-basierter Governance und wöchentlichen Koordinationsrhythmen geleitet. Institutionelle Programme entworfen, die schulweit übernommen wurden, und strategische Outreach-Kampagnen an 12 Zubringerschulen geleitet."
+        },
+        {
+            "title": "Großveranstaltungsausführung",
+            "desc": "Programmablauf als Moderator beim Jugendgottesdienst 2025 (GEMA Bandung) für 500+ Teilnehmer geleitet und Sprecher, Komitees und technische Teams koordiniert. Zuvor Backstage-Operationen für Veranstaltungen mit 1.000+ Teilnehmern geleitet und Übergangsausfallzeiten durch strukturierte Bühnenworkflows reduziert."
         }
     ],
     "skills": {
-        "technical": "Technisch",
-        "technical_list": [
-            "Microsoft Office Suites",
+        "strategic": "Strategisch & Systeme",
+        "strategic_list": [
+            "Systemdenken",
+            "Arbeitsablaufgestaltung",
+            "Prozessstandardisierung",
+            "KPI-Rahmengestaltung",
+            "Operative Planung"
+        ],
+        "operational": "Operative Ausführung",
+        "operational_list": [
+            "SOP-Entwicklung",
+            "Funktionsübergreifende Koordination",
+            "Veranstaltungsbetriebsmanagement",
+            "Berichtsautomatisierung",
+            "Strukturierte Delegation"
+        ],
+        "analytical": "Analytisch & Werkzeuge",
+        "analytical_list": [
+            "Microsoft Excel (Fortgeschritten)",
             "Google Workspace",
             "Datenvisualisierung",
-            "Datenbereinigung",
+            "Datenanalyse",
             "Obsidian",
-            "Projektmanagement"
+            "Projektmanagement-Tools"
         ],
-        "business": "Geschäftlich",
-        "soft": "Soft Skills",
+        "leadership": "Führung & Kommunikation",
+        "leadership_list": [
+            "Team-Governance",
+            "Stakeholder-Kommunikation",
+            "Öffentliches Reden",
+            "Schulungsvermittlung",
+            "Strategische Öffentlichkeitsarbeit"
+        ],
         "languages": "Sprachen",
-        "biz1": "Funktionsübergreifende Zusammenarbeit",
-        "biz2": "Prozessverbesserung",
-        "biz3": "KPI-Berichterstattung",
-        "biz4": "Stakeholder-Kommunikation",
-        "soft1": "Führung",
-        "soft2": "Problemlösung",
-        "soft3": "Öffentliches Reden",
-        "soft4": "Veranstaltungskoordination",
-        "soft5": "Lehrplan-/Schulungsvermittlung",
-        "soft6": "Selbstbewusstsein",
-        "soft7": "Einfallsreichtum",
-        "soft8": "Liebe",
-        "soft9": "Heldentum",
         "lang": {
-            "su": "Sundanesisch (Fließend)",
             "id": "Indonesisch (Muttersprache)",
-            "en": "Englisch (Obere Mittelstufe, B2)",
-            "de": "Deutsch (Obere Mittelstufe, B2)",
-            "la": "Latein (Anfänger, Selbststudium)"
+            "su": "Sundanesisch (Fließend)",
+            "en": "Englisch (Berufliche Arbeitskompetenz)",
+            "de": "Deutsch (B1 Zertifiziert – Goethe-Zertifikat B1)"
         }
     },
     "awards": {
-        "1": "1. Platz - Instagram Reels Wettbewerb, Goethe-Institut Bandung (2023) - \u201eEin Tag in meinem Leben\u201c",
-        "2": "1. Platz - Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) - \u201eDilema\u201c",
+        "1": "1. Platz – Instagram Reels Wettbewerb, Goethe-Institut Bandung (2023) – „Ein Tag in meinem Leben"",
+        "2": "1. Platz – Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) – „Dilema"",
         "3": "Zweitplatzierter Wasserraketen-Wettbewerb (2017) von PLANET SAINS"
     },
     "etc": {
-        "1": "Öffentliche Vorlesungen (2023): Journalismus- & Kommunikationsklassen, Universitas Parahyangan"
+        "1": "Moderator – Jugendgottesdienst 2025 (GEMA Bandung), 500+ Teilnehmer",
+        "2": "Öffentliche Vorlesungen (2023): Journalismus- & Kommunikationsklassen, Universitas Parahyangan"
     },
     "footer": {
         "rights": "Alle Rechte vorbehalten."
     },
     "connect": {
-        "title": "Kontakt",
+        "title": "Kontakt aufnehmen",
         "schedule": "Termin vereinbaren",
-        "whatsapp": "Chat auf WhatsApp",
+        "whatsapp": "Nachricht senden",
+        "email": "Kontakt aufnehmen",
         "cv": "Lebenslauf herunterladen",
         "desc": {
-            "schedule": "Gerne stehe ich für ein Gespräch über eine mögliche Mitarbeit zur Verfügung",
-            "whatsapp": "Direkt auf WhatsApp chatten",
-            "email": "Senden Sie mir eine E-Mail",
-            "linkedin": "Beruflich verbinden",
-            "instagram": "Folgen Sie meinen täglichen Updates",
-            "github": "Schauen Sie sich meinen Code an"
+            "schedule": "15 Min. • Unverbindlich",
+            "whatsapp": "Schnelle Antwort garantiert",
+            "email": "Für Partnerschaften & Vorschläge",
+            "linkedin": "Beruflich vernetzen",
+            "instagram": "Die Reise hinter der Arbeit",
+            "github": "Code spricht lauter"
         }
     }
 }

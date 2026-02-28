@@ -1,196 +1,195 @@
-{
+﻿{
     "hero": {
-        "tagline": "Mahasiswa Data Science & Rekan Kerja yang Kolaboratif",
+        "subtitle": "Arsitek Sistem. Pengoptimal Proses. Koordinator Tim.",
+        "role": "I Put Rooms in Order and People in Motion",
         "typing": {
-            "staticText": "Mahasiswa Data Science & ",
+            "staticText": "",
             "dynamicTexts": [
-                "Rekan Kerja Kolaboratif",
-                "Pemecah Masalah",
-                "Analis Data",
-                "Inovator",
-                "Pendidik",
-                "Instruktur Panjat Tebing",
-                "MC"
+                "Membangun Sistem Operasional",
+                "Menyederhanakan Alur Kerja",
+                "Koordinasi Lintas Tim",
+                "Keputusan Berbasis Data",
+                "Memimpin Eksekusi Terstruktur"
             ]
         },
         "downloadCv": "Unduh CV",
-        "email": "Kirim Email"
+        "email": "Hubungi Saya",
+        "status": "Terbuka untuk peluang",
+        "cta1": "Hubungi Saya",
+        "cta2": "Jelajahi",
+        "stat1Label": "Jam/Minggu Dihemat",
+        "stat2Label": "Anggota Dipimpin",
+        "stat3Label": "Skala Acara"
     },
     "nav": {
         "home": "Beranda",
         "about": "Tentang",
         "experience": "Pengalaman",
         "education": "Pendidikan",
-        "projects": "Proyek",
+        "impact": "Dampak",
         "skills": "Keahlian",
         "awards": "Penghargaan",
         "etc": "Lain-lain",
-        "contact": "Hubungi Saya"
+        "contact": "Kontak"
     },
     "section": {
         "summary": "TENTANG",
         "experience": "PENGALAMAN",
         "education": "PENDIDIKAN",
-        "projects": "PROYEK",
+        "impact": "SOROTAN DAMPAK OPERASIONAL",
         "skills": "KEAHLIAN",
         "awards": "PENGHARGAAN",
         "etc": "LAIN-LAIN",
         "contact": "KONTAK"
     },
     "summary": {
-        "text": "Mahasiswa S1 Data Science yang bersemangat untuk menerapkan kemampuan analisis dalam menyelesaikan tantangan nyata. Berpengalaman dalam mendukung tim lintas divisi melalui analisis data dan perbaikan proses. Berkomitmen untuk terus belajar dan memberikan kontribusi terbaik bagi kemajuan organisasi."
+        "text": "Dengan latar belakang Data Science dan pengalaman langsung di operasional lintas fungsi, saya berfokus pada pembangunan sistem yang mendorong konsistensi dan efisiensi. Saya telah mengotomatisasi alur kerja pelaporan yang memangkas 12+ jam kerja manual per minggu, memimpin organisasi beranggotakan 34 orang melalui tata kelola berbasis KPI, dan mengoordinasikan acara berskala besar untuk lebih dari 1.000 peserta. Pendekatan saya terstruktur, berbasis data, dan berorientasi pada hasil."
     },
     "exp": [
         {
             "date": "JUL 2024 – SEP 2025",
-            "role": "Path Climber & Maintenance",
-            "company": "Vertical Rescue Indonesia",
-            "details": [
-                "Mendukung operasi pelatihan penyelamatan (diukur dari laporan kesiapan peralatan), dengan melakukan pemeliharaan dan inspeksi keselamatan pada peralatan panjat."
-            ]
-        },
-        {
-            "date": "AUG 2023 – AUG 2024",
             "role": "Management Trainee",
             "company": "Home Digital Indonesia",
             "details": [
-                "Membantu efisiensi tim dengan merancang otomatisasi laporan menggunakan Excel, yang berkontribusi dalam menghemat waktu kerja manual.",
-                "Bekerja sama dengan tim Finance, Sales, dan Ops dalam penyelarasan SOP untuk mendukung kelancaran operasional.",
-                "Mendukung evaluasi pengalaman karyawan melalui analisis survei untuk memberikan masukan yang konstruktif."
+                "Merancang dan mengimplementasikan sistem pelaporan otomatis menggunakan Excel, mengurangi beban kerja pelaporan manual sebesar ~12 jam per minggu.",
+                "Menstandarisasi SOP lintas fungsi di divisi Keuangan, Penjualan, dan Operasional untuk meningkatkan konsistensi operasional.",
+                "Menganalisis data umpan balik internal untuk menghasilkan rekomendasi perbaikan terstruktur bagi tinjauan manajemen."
             ]
         },
         {
-            "date": "NOV 2021 – NOV 2022",
-            "role": "Wakil Ketua",
-            "company": "Orang Muda Katolik Ujung Berung",
+            "date": "JAN 2021 – SEKARANG",
+            "role": "Asisten Instruktur",
+            "company": "Vertical Rescue Indonesia",
             "details": [
-                "Merencanakan kalender program tahunan (diukur dari tingkat penyelesaian acara), dengan mengoordinasikan hasil kerja lintas tim dan jadwal sukarelawan.",
-                "Mengorganisir acara skala besar (diukur dari kehadiran): pertemuan malam (100 peserta) dan ibadah pemuda (400 peserta), dengan mengelola logistik dan tim sukarelawan."
+                "Memastikan kesiapan operasional peralatan keselamatan melalui sistem inspeksi dan pemeliharaan terstruktur.",
+                "Mendukung sesi pelatihan teknis sebagai pemanjat utama dan belayer untuk operasi penyelamatan.",
+                "Membantu penyampaian instruksi dan penilaian keterampilan untuk peserta pelatihan baru."
             ]
         },
         {
             "date": "NOV 2021 – NOV 2022",
             "role": "Ketua",
-            "company": "OSIS - SMA Santa Maria 2, Bandung",
+            "company": "OSIS SMA Santa Maria 2, Bandung",
             "details": [
-                "Meluncurkan program peningkatan kualitas siswa jangka panjang yang ditargetkan (diukur dari adopsi program di seluruh kelas), dengan menetapkan KPI, linimasa, dan rencana eksekusi.",
-                "Mencapai jangkauan luas ke sekolah-sekolah pengumpan (diukur dari promosi yang sukses ke 12 SMP Katolik), dengan memimpin kampanye promosi dan acara.",
-                "Mengelola 34 anggota OSIS di 10 divisi (diukur dari daftar operasional yang terjaga), dengan mendelegasikan tanggung jawab dan menetapkan irama koordinasi mingguan.",
-                "Membuat konten promosi sekolah yang viral di media sosial (TikTok) yang diukur dari traksi FYP, dengan memproduksi dan mengawasi eksekusi konten kreatif."
+                "Memimpin organisasi beranggotakan 34 orang di 10 divisi menggunakan tata kelola terstruktur berbasis KPI.",
+                "Merancang dan melaksanakan program institusional jangka panjang yang diadopsi seluruh sekolah.",
+                "Mengarahkan kampanye penjangkauan strategis ke 12 sekolah pengumpan.",
+                "Menerapkan ritme koordinasi operasional mingguan untuk menjaga keselarasan lintas divisi."
             ]
         },
         {
-            "date": "JUN 2022 – AUG 2022",
-            "role": "Kepala Divisi Bisnis & Kemitraan",
-            "company": "Forum OSIS Jawa Barat",
-            "details": [
-                "Membangun database kemitraan historis (diukur dari catatan merek yang dikompilasi), dengan mengumpulkan data kolaborasi dari kohort sebelumnya untuk menginformasikan penjangkauan masa depan."
-            ]
-        },
-        {
-            "date": "MAR 2020 – MAR 2022",
-            "role": "Kru Panggung",
+            "date": "JUN 2022 – AGS 2022",
+            "role": "Kru Operasi Panggung",
             "company": "Ultimate Event Organizer",
             "details": [
-                "Memastikan pelaksanaan acara yang lancar untuk acara dengan 1.000+ peserta (diukur dari kepatuhan terhadap run-sheet), dengan mengoordinasikan logistik di belakang panggung dan transisi teknis dengan tim pencahayaan, suara, dan keamanan.",
-                "Mengurangi waktu henti teknis selama transisi (diukur dari rata-rata waktu transisi), dengan menstandarisasi prosedur panggung dan mengarahkan kru teknis."
-            ]
-        },
-        {
-            "date": "NOV 2020 – NOV 2021",
-            "role": "Wakil Ketua Misdinar",
-            "company": "Gereja Zipur",
-            "details": [
-                "Menjaga jadwal misdinar bulanan di seluruh paroki (diukur dari daftar hadir tepat waktu), dengan mengoordinasikan sukarelawan dan mengorganisir upacara skala paroki."
+                "Mengoordinasikan eksekusi teknis di belakang panggung untuk acara dengan 1.000+ peserta.",
+                "Mengurangi waktu henti transisi dengan menerapkan alur kerja panggung terstruktur di tim pencahayaan, suara, dan keamanan."
             ]
         },
         {
             "date": "JAN 2021 – JUN 2021",
             "role": "Wakil Ketua",
-            "company": "OSIS - SMA Santa Maria 2, Bandung",
+            "company": "OSIS SMA Santa Maria 2, Bandung",
             "details": [
-                "Mengembangkan dan melaksanakan program pengembangan bakat yang menjangkau semua tingkat kelas (diukur dari tingkat partisipasi), dengan mengoordinasikan 10 divisi OSIS dan melaksanakan kegiatan tingkat kelas selama pembatasan pandemi.",
-                "Menjaga keberlangsungan institusi (diukur dari serah terima arsip yang lengkap), dengan mengumpulkan dan mengatur proposal OSIS sebelumnya dan laporan pertanggungjawaban 2018 untuk kepemimpinan mendatang.",
-                "Memberikan pelatihan kepemimpinan kepada 5 SMP (diukur dari kehadiran acara dan umpan balik), dengan merencanakan kurikulum dan mengoordinasikan pelatih."
+                "Menjaga keberlangsungan institusional dengan mensistematisasi dokumentasi arsip dan laporan pertanggungjawaban.",
+                "Menyelenggarakan program pelatihan kepemimpinan ke 5 SMP."
             ]
         }
     ],
     "edu": {
         "uni1": {
             "name": "Universitas Terbuka",
-            "degree": "S1 Data Science (sedang berjalan)",
+            "degree": "S1 Data Science (Sedang Berjalan)",
             "date": "Mulai Agu 2025",
-            "focus": "Fokus: Analisis Data, Statistik, Teknologi Informasi"
+            "focus": "Fokus: Analisis Data, Statistik, Sistem Informasi"
         },
         "school1": {
             "name": "SMA Santa Maria 2",
-            "degree": "Jurusan IPA",
-            "date": "Jul 2020 – Jun 2023"
+            "degree": "Program IPA",
+            "date": "2020 – 2023"
         }
     },
-    "proj": [
+    "impact": [
         {
-            "title": "Otomatisasi Alur Kerja & Pelaporan:",
-            "desc": "Membangun proses Excel/Google Sheets yang dapat diulang dan dasbor untuk mengotomatiskan pelaporan rutin dan pelacakan KPI; mendokumentasikan serah terima untuk adopsi operasional."
+            "title": "Sistem Otomatisasi Pelaporan",
+            "desc": "Merancang dan mengimplementasikan sistem pelaporan otomatis di Home Digital Indonesia menggunakan Excel, menghilangkan entri data dan pemformatan berulang. Mengurangi beban kerja pelaporan manual sekitar 12 jam per minggu, membebaskan kapasitas tim untuk prioritas operasional yang lebih bernilai."
+        },
+        {
+            "title": "Kepemimpinan Tata Kelola Berbasis KPI",
+            "desc": "Memimpin OSIS beranggotakan 34 orang di 10 divisi di SMA Santa Maria 2 melalui tata kelola berbasis KPI dan ritme koordinasi mingguan. Merancang program institusional yang diadopsi seluruh sekolah dan mengarahkan penjangkauan strategis ke 12 sekolah pengumpan."
+        },
+        {
+            "title": "Eksekusi Acara Berskala Besar",
+            "desc": "Mengelola alur program sebagai MC di Youth Mass 2025 (GEMA Bandung) untuk 500+ peserta, mengoordinasikan pembicara, panitia, dan tim teknis. Sebelumnya menangani operasi backstage untuk acara 1.000+ peserta, mengurangi waktu henti transisi melalui alur kerja panggung terstruktur."
         }
     ],
     "skills": {
-        "technical": "Teknis",
-        "technical_list": [
-            "Microsoft Office Suites",
+        "strategic": "Strategis & Sistem",
+        "strategic_list": [
+            "Pemikiran Sistem",
+            "Perancangan Alur Kerja",
+            "Standarisasi Proses",
+            "Perancangan Kerangka KPI",
+            "Perencanaan Operasional"
+        ],
+        "operational": "Eksekusi Operasional",
+        "operational_list": [
+            "Pengembangan SOP",
+            "Koordinasi Lintas Fungsi",
+            "Manajemen Operasi Acara",
+            "Otomatisasi Pelaporan",
+            "Delegasi Terstruktur"
+        ],
+        "analytical": "Analitis & Alat",
+        "analytical_list": [
+            "Microsoft Excel (Lanjutan)",
             "Google Workspace",
             "Visualisasi Data",
-            "Pembersihan Data",
+            "Analisis Data",
             "Obsidian",
-            "Manajemen Proyek"
+            "Alat Manajemen Proyek"
         ],
-        "business": "Bisnis",
-        "soft": "Soft Skills",
+        "leadership": "Kepemimpinan & Komunikasi",
+        "leadership_list": [
+            "Tata Kelola Tim",
+            "Komunikasi Pemangku Kepentingan",
+            "Public Speaking",
+            "Penyampaian Pelatihan",
+            "Penjangkauan Strategis"
+        ],
         "languages": "Bahasa",
-        "biz1": "Kolaborasi Lintas Fungsi",
-        "biz2": "Peningkatan Proses",
-        "biz3": "Pelaporan KPI",
-        "biz4": "Komunikasi Pemangku Kepentingan",
-        "soft1": "Kepemimpinan",
-        "soft2": "Pemecahan Masalah",
-        "soft3": "Public Speaking",
-        "soft4": "Koordinasi Acara",
-        "soft5": "Penyampaian Kurikulum/Pelatihan",
-        "soft6": "Kesadaran Diri",
-        "soft7": "Kecerdikan",
-        "soft8": "Kasih",
-        "soft9": "Kepahlawanan",
         "lang": {
-            "su": "Sunda (Fasih)",
             "id": "Indonesia (Penutur Asli)",
-            "en": "Inggris (Menengah Atas, B2)",
-            "de": "Jerman (Menengah Atas, B2)",
-            "la": "Latin (Pemula, Belajar Mandiri)"
+            "su": "Sunda (Fasih)",
+            "en": "Inggris (Kemahiran Kerja Profesional)",
+            "de": "Jerman (B1 Bersertifikat – Goethe-Zertifikat B1)"
         }
     },
     "awards": {
-        "1": "Juara 1 - Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) - \"Ein Tag in meinem Leben\"",
-        "2": "Juara 1 - Kompetisi Film Pendek, Komisi Komsos Keuskupan Bandung (2019) - \"Dilema\"",
+        "1": "Juara 1 – Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
+        "2": "Juara 1 – Kompetisi Film Pendek, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
         "3": "Runner-Up Kompetisi Roket Air (2017) oleh PLANET SAINS"
     },
     "etc": {
-        "1": "Kuliah Umum (2023): Kelas Jurnalisme & Komunikasi Publik, Universitas Parahyangan"
+        "1": "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ peserta",
+        "2": "Kuliah Umum (2023): Kelas Jurnalisme & Komunikasi Publik, Universitas Parahyangan"
     },
     "footer": {
         "rights": "Hak cipta dilindungi undang-undang."
     },
     "connect": {
         "title": "Mari Berkolaborasi",
-        "schedule": "Ngobrol Santai",
-        "whatsapp": "Chat di WhatsApp",
+        "schedule": "Jadwalkan Panggilan",
+        "whatsapp": "Kirim Pesan",
+        "email": "Hubungi Saya",
         "cv": "Unduh CV",
         "desc": {
-            "schedule": "Siap berdiskusi mengenai peluang kontribusi saya",
-            "whatsapp": "Chat langsung di WhatsApp",
-            "email": "Kirim email ke saya",
+            "schedule": "15 menit • Tanpa komitmen",
+            "whatsapp": "Respons cepat dijamin",
+            "email": "Untuk kemitraan & proposal",
             "linkedin": "Terhubung secara profesional",
-            "instagram": "Ikuti update harian saya",
-            "github": "Lihat kode saya"
+            "instagram": "Perjalanan di balik pekerjaan",
+            "github": "Kode berbicara lebih keras"
         }
     }
 }
