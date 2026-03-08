@@ -1,7 +1,7 @@
 ﻿{
     "hero": {
-        "subtitle": "Systems architect. Process optimizer. Team coordinator.",
-        "role": "I Put Rooms in Order and People in Motion",
+        "subtitle": "Systems architect. Process designer. Cross-functional operator.",
+        "role": "Turning complexity into clear systems and dependable execution",
         "typing": {
             "staticText": "",
             "dynamicTexts": [
@@ -19,7 +19,7 @@
         "cta2": "Explore",
         "stat1Label": "Hrs/Week Saved",
         "stat2Label": "Members Led",
-        "stat3Label": "Event Scale"
+        "stat3Label": "Audience Scale"
     },
     "nav": {
         "home": "Home",
@@ -43,7 +43,7 @@
         "contact": "CONTACT"
     },
     "summary": {
-        "text": "With a background in Data Science and hands-on experience across cross-functional operations, I focus on building systems that drive consistency and efficiency. I've automated reporting workflows that cut 12+ hours of manual work weekly, led a 34-member organization through KPI-based governance, and coordinated large-scale events for over 1,000 attendees. My approach is structured, data-informed, and results-oriented."
+        "text": "With a background in Data Science and hands-on experience in cross-functional operations, I build systems that create clarity, consistency, and forward momentum. My work includes automating reporting workflows that saved 12+ hours of manual work per week, leading a 34-member organization through KPI-based governance, and coordinating large-scale events for more than 1,000 attendees. I bring a structured, data-informed approach to execution, improvement, and team alignment."
     },
     "exp": [
         {
@@ -168,7 +168,7 @@
     "awards": {
         "1": "1st Place – Instagram Reels Competition, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
         "2": "1st Place – Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
-        "3": "Runner-Up Water Rocket Competition (2017) by PLANET SAINS"
+        "3": "Runner-Up, Water Rocket Competition (2017) by PLANET SAINS"
     },
     "etc": {
         "1": "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ participants",
@@ -178,18 +178,18 @@
         "rights": "All rights reserved."
     },
     "connect": {
-        "title": "Let's Build Something Great",
+        "title": "Let's Build Something Meaningful",
         "schedule": "Book a Call",
         "whatsapp": "Message Me",
         "email": "Let's Talk",
         "cv": "Download CV",
         "desc": {
-            "schedule": "15-min call • No commitment",
-            "whatsapp": "Quick response guaranteed",
-            "email": "For partnerships & proposals",
-            "linkedin": "Connect professionally",
-            "instagram": "The journey behind the work",
-            "github": "Code speaks louder"
+            "schedule": "15-min call • No obligation",
+            "whatsapp": "Fast and practical communication",
+            "email": "For partnerships, proposals, and opportunities",
+            "linkedin": "Professional profile and network",
+            "instagram": "The story behind the work",
+            "github": "Selected code and technical work"
         }
     }
 }

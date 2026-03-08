@@ -1,14 +1,14 @@
 ﻿{
     "hero": {
-        "subtitle": "Arsitek Sistem. Pengoptimal Proses. Koordinator Tim.",
-        "role": "I Put Rooms in Order and People in Motion",
+        "subtitle": "Arsitek sistem. Perancang proses. Penggerak eksekusi lintas fungsi.",
+        "role": "Mengubah kompleksitas menjadi sistem yang jelas dan eksekusi yang andal",
         "typing": {
             "staticText": "",
             "dynamicTexts": [
                 "Membangun Sistem Operasional",
                 "Menyederhanakan Alur Kerja",
-                "Koordinasi Lintas Tim",
-                "Keputusan Berbasis Data",
+                "Mengoordinasikan Tim Lintas Fungsi",
+                "Mengambil Keputusan Berbasis Data",
                 "Memimpin Eksekusi Terstruktur"
             ]
         },
@@ -28,8 +28,8 @@
         "education": "Pendidikan",
         "impact": "Dampak",
         "skills": "Keahlian",
-        "awards": "Penghargaan",
-        "etc": "Lain-lain",
+        "awards": "Pencapaian",
+        "etc": "Lainnya",
         "contact": "Kontak"
     },
     "section": {
@@ -38,12 +38,12 @@
         "education": "PENDIDIKAN",
         "impact": "SOROTAN DAMPAK OPERASIONAL",
         "skills": "KEAHLIAN",
-        "awards": "PENGHARGAAN",
-        "etc": "LAIN-LAIN",
+        "awards": "PENCAPAIAN",
+        "etc": "LAINNYA",
         "contact": "KONTAK"
     },
     "summary": {
-        "text": "Dengan latar belakang Data Science dan pengalaman langsung di operasional lintas fungsi, saya berfokus pada pembangunan sistem yang mendorong konsistensi dan efisiensi. Saya telah mengotomatisasi alur kerja pelaporan yang memangkas 12+ jam kerja manual per minggu, memimpin organisasi beranggotakan 34 orang melalui tata kelola berbasis KPI, dan mengoordinasikan acara berskala besar untuk lebih dari 1.000 peserta. Pendekatan saya terstruktur, berbasis data, dan berorientasi pada hasil."
+        "text": "Dengan latar belakang Data Science dan pengalaman langsung dalam operasional lintas fungsi, saya membangun sistem yang menghadirkan kejelasan, konsistensi, dan kemajuan nyata. Pekerjaan saya mencakup otomatisasi alur pelaporan yang menghemat 12+ jam kerja manual per minggu, memimpin organisasi beranggotakan 34 orang melalui tata kelola berbasis KPI, serta mengoordinasikan acara berskala besar dengan lebih dari 1.000 peserta. Saya bekerja dengan pendekatan yang terstruktur, berbasis data, dan berorientasi pada kualitas eksekusi."
     },
     "exp": [
         {
@@ -52,7 +52,7 @@
             "company": "Home Digital Indonesia",
             "details": [
                 "Merancang dan mengimplementasikan sistem pelaporan otomatis menggunakan Excel, mengurangi beban kerja pelaporan manual sebesar ~12 jam per minggu.",
-                "Menstandarisasi SOP lintas fungsi di divisi Keuangan, Penjualan, dan Operasional untuk meningkatkan konsistensi operasional.",
+                "Menstandardisasi SOP lintas fungsi di divisi Keuangan, Penjualan, dan Operasional untuk meningkatkan konsistensi operasional.",
                 "Menganalisis data umpan balik internal untuk menghasilkan rekomendasi perbaikan terstruktur bagi tinjauan manajemen."
             ]
         },
@@ -91,8 +91,8 @@
             "role": "Wakil Ketua",
             "company": "OSIS SMA Santa Maria 2, Bandung",
             "details": [
-                "Menjaga keberlangsungan institusional dengan mensistematisasi dokumentasi arsip dan laporan pertanggungjawaban.",
-                "Menyelenggarakan program pelatihan kepemimpinan ke 5 SMP."
+                "Menjaga keberlanjutan institusional dengan menata dokumentasi arsip dan laporan pertanggungjawaban secara sistematis.",
+                "Menyelenggarakan program pelatihan kepemimpinan di 5 SMP."
             ]
         }
     ],
@@ -128,7 +128,7 @@
         "strategic_list": [
             "Pemikiran Sistem",
             "Perancangan Alur Kerja",
-            "Standarisasi Proses",
+            "Standardisasi Proses",
             "Perancangan Kerangka KPI",
             "Perencanaan Operasional"
         ],
@@ -153,7 +153,7 @@
         "leadership_list": [
             "Tata Kelola Tim",
             "Komunikasi Pemangku Kepentingan",
-            "Public Speaking",
+            "Berbicara di Depan Umum",
             "Penyampaian Pelatihan",
             "Penjangkauan Strategis"
         ],
@@ -168,7 +168,7 @@
     "awards": {
         "1": "Juara 1 – Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
         "2": "Juara 1 – Kompetisi Film Pendek, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
-        "3": "Runner-Up Kompetisi Roket Air (2017) oleh PLANET SAINS"
+        "3": "Runner-up – Kompetisi Roket Air (2017) oleh PLANET SAINS"
     },
     "etc": {
         "1": "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ peserta",
@@ -178,18 +178,18 @@
         "rights": "Hak cipta dilindungi undang-undang."
     },
     "connect": {
-        "title": "Mari Berkolaborasi",
+        "title": "Mari Bangun Sesuatu yang Bermakna",
         "schedule": "Jadwalkan Panggilan",
         "whatsapp": "Kirim Pesan",
         "email": "Hubungi Saya",
         "cv": "Unduh CV",
         "desc": {
-            "schedule": "15 menit • Tanpa komitmen",
-            "whatsapp": "Respons cepat dijamin",
-            "email": "Untuk kemitraan & proposal",
-            "linkedin": "Terhubung secara profesional",
-            "instagram": "Perjalanan di balik pekerjaan",
-            "github": "Kode berbicara lebih keras"
+            "schedule": "15 menit • Tanpa kewajiban",
+            "whatsapp": "Komunikasi cepat dan praktis",
+            "email": "Untuk kemitraan, proposal, dan peluang",
+            "linkedin": "Profil dan jaringan profesional",
+            "instagram": "Cerita di balik perjalanan kerja",
+            "github": "Kumpulan karya teknis dan kode"
         }
     }
 }

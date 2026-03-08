@@ -1,13 +1,13 @@
 ﻿{
     "hero": {
-        "subtitle": "Systemarchitekt. Prozessoptimierer. Teamkoordinator.",
-        "role": "I Put Rooms in Order and People in Motion",
+        "subtitle": "Systemarchitekt. Prozessgestalter. Treiber bereichsübergreifender Umsetzung.",
+        "role": "Ich verwandle Komplexität in klare Systeme und verlässliche Umsetzung",
         "typing": {
             "staticText": "",
             "dynamicTexts": [
                 "Operative Systeme aufbauen",
                 "Arbeitsabläufe optimieren",
-                "Teams übergreifend koordinieren",
+                "Teams bereichsübergreifend koordinieren",
                 "Datenbasiert entscheiden",
                 "Strukturiert umsetzen"
             ]
@@ -25,7 +25,7 @@
         "home": "Startseite",
         "about": "Über mich",
         "experience": "Erfahrung",
-        "education": "Ausbildung",
+        "education": "Bildung",
         "impact": "Wirkung",
         "skills": "Fähigkeiten",
         "awards": "Auszeichnungen",
@@ -35,15 +35,15 @@
     "section": {
         "summary": "ÜBER MICH",
         "experience": "ERFAHRUNG",
-        "education": "AUSBILDUNG",
-        "impact": "OPERATIVE WIRKUNGSHÖHEPUNKTE",
+        "education": "BILDUNG",
+        "impact": "HIGHLIGHTS OPERATIVER WIRKUNG",
         "skills": "FÄHIGKEITEN",
         "awards": "AUSZEICHNUNGEN",
         "etc": "SONSTIGES",
         "contact": "KONTAKT"
     },
     "summary": {
-        "text": "Mit einem Data-Science-Hintergrund und praktischer Erfahrung in funktionsübergreifenden Abläufen konzentriere ich mich auf den Aufbau von Systemen, die Konsistenz und Effizienz fördern. Ich habe Berichtsworkflows automatisiert und damit über 12 Stunden manueller Arbeit pro Woche eingespart, eine 34-köpfige Organisation mit KPI-basierter Governance geleitet und Großveranstaltungen für über 1.000 Teilnehmer koordiniert. Mein Ansatz ist strukturiert, datengestützt und ergebnisorientiert."
+        "text": "Mit einem Hintergrund in Data Science und praktischer Erfahrung in funktionsübergreifenden Abläufen entwickle ich Systeme, die Klarheit, Konsistenz und messbaren Fortschritt schaffen. Zu meiner Arbeit gehören die Automatisierung von Reporting-Workflows mit einer Einsparung von über 12 Stunden manueller Arbeit pro Woche, die Leitung einer 34-köpfigen Organisation mit KPI-basierter Governance sowie die Koordination von Großveranstaltungen mit mehr als 1.000 Teilnehmenden. Ich arbeite strukturiert, datenbasiert und mit klarem Fokus auf verlässliche Umsetzung."
     },
     "exp": [
         {
@@ -58,12 +58,12 @@
         },
         {
             "date": "JAN 2021 – HEUTE",
-            "role": "Assistenzausbilder",
+            "role": "Assistenztrainer",
             "company": "Vertical Rescue Indonesia",
             "details": [
                 "Betriebsbereitschaft der Sicherheitsausrüstung durch strukturierte Inspektions- und Wartungssysteme sichergestellt.",
-                "Technische Trainingseinheiten als Leitkletternder und Sicherer für Rettungseinsätze unterstützt.",
-                "Instruktionsvermittlung und Kompetenzbeurteilung für neue Auszubildende unterstützt."
+                "Technische Trainingseinheiten als Leitkletterer und Sicherer für Rettungseinsätze unterstützt.",
+                "Die Durchführung von Schulungen und die Beurteilung neuer Teilnehmender unterstützt."
             ]
         },
         {
@@ -79,11 +79,11 @@
         },
         {
             "date": "JUN 2022 – AUG 2022",
-            "role": "Bühnenbetriebscrew",
+            "role": "Crew für Bühnenbetrieb",
             "company": "Ultimate Event Organizer",
             "details": [
-                "Technische Backstage-Ausführung für Veranstaltungen mit 1.000+ Teilnehmern koordiniert.",
-                "Übergangsausfallzeiten durch Durchsetzung strukturierter Bühnenarbeitsabläufe in Beleuchtungs-, Ton- und Sicherheitsteams reduziert."
+                "Technische Backstage-Abläufe für Veranstaltungen mit 1.000+ Teilnehmenden koordiniert.",
+                "Übergangszeiten reduziert, indem strukturierte Bühnenabläufe in Licht-, Ton- und Sicherheitsteams durchgesetzt wurden."
             ]
         },
         {
@@ -111,15 +111,15 @@
     },
     "impact": [
         {
-            "title": "Berichtsautomatisierungssystem",
+            "title": "System zur Berichtsautomatisierung",
             "desc": "Automatisierte Berichtssysteme bei Home Digital Indonesia mit Excel konzipiert und implementiert, wodurch sich wiederholende Dateneingabe und Formatierung eliminiert wurden. Manueller Berichtsaufwand um etwa 12 Stunden pro Woche reduziert, sodass Teamkapazitäten für höherwertige operative Prioritäten frei wurden."
         },
         {
-            "title": "KPI-basierte Governance-Führung",
+            "title": "Führung mit KPI-basierter Governance",
             "desc": "34-köpfigen Schülerrat über 10 Abteilungen an der SMA Santa Maria 2 mit KPI-basierter Governance und wöchentlichen Koordinationsrhythmen geleitet. Institutionelle Programme entworfen, die schulweit übernommen wurden, und strategische Outreach-Kampagnen an 12 Zubringerschulen geleitet."
         },
         {
-            "title": "Großveranstaltungsausführung",
+            "title": "Umsetzung von Großveranstaltungen",
             "desc": "Programmablauf als Moderator beim Jugendgottesdienst 2025 (GEMA Bandung) für 500+ Teilnehmer geleitet und Sprecher, Komitees und technische Teams koordiniert. Zuvor Backstage-Operationen für Veranstaltungen mit 1.000+ Teilnehmern geleitet und Übergangsausfallzeiten durch strukturierte Bühnenworkflows reduziert."
         }
     ],
@@ -162,13 +162,13 @@
             "id": "Indonesisch (Muttersprache)",
             "su": "Sundanesisch (Fließend)",
             "en": "Englisch (Berufliche Arbeitskompetenz)",
-            "de": "Deutsch (B1 Zertifiziert – Goethe-Zertifikat B1)"
+            "de": "Deutsch (B1-zertifiziert – Goethe-Zertifikat B1)"
         }
     },
     "awards": {
-        "1": "1. Platz – Instagram Reels Wettbewerb, Goethe-Institut Bandung (2023) – „Ein Tag in meinem Leben"",
-        "2": "1. Platz – Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) – „Dilema"",
-        "3": "Zweitplatzierter Wasserraketen-Wettbewerb (2017) von PLANET SAINS"
+        "1": "1. Platz – Instagram Reels Wettbewerb, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
+        "2": "1. Platz – Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
+        "3": "2. Platz – Wasserraketen-Wettbewerb (2017) von PLANET SAINS"
     },
     "etc": {
         "1": "Moderator – Jugendgottesdienst 2025 (GEMA Bandung), 500+ Teilnehmer",
@@ -178,18 +178,18 @@
         "rights": "Alle Rechte vorbehalten."
     },
     "connect": {
-        "title": "Kontakt aufnehmen",
+        "title": "Lassen Sie uns etwas Sinnvolles aufbauen",
         "schedule": "Termin vereinbaren",
         "whatsapp": "Nachricht senden",
         "email": "Kontakt aufnehmen",
         "cv": "Lebenslauf herunterladen",
         "desc": {
             "schedule": "15 Min. • Unverbindlich",
-            "whatsapp": "Schnelle Antwort garantiert",
-            "email": "Für Partnerschaften & Vorschläge",
-            "linkedin": "Beruflich vernetzen",
-            "instagram": "Die Reise hinter der Arbeit",
-            "github": "Code spricht lauter"
+            "whatsapp": "Schnelle und direkte Kommunikation",
+            "email": "Für Partnerschaften, Vorschläge und Chancen",
+            "linkedin": "Berufliches Profil und Netzwerk",
+            "instagram": "Die Geschichte hinter der Arbeit",
+            "github": "Ausgewählte technische Arbeiten und Code"
         }
     }
 }

@@ -142,7 +142,8 @@ async function loadLanguage(lang) {
         const res = await fetch(`/locales/${lang}.json`);
         if (!res.ok) throw new Error('Failed to load');
 
-        langData = await res.json();
+        const rawText = await res.text();
+        langData = JSON.parse(rawText.replace(/^\uFEFF/, ''));
         currentLang = lang;
 
         // Save language preference to localStorage
