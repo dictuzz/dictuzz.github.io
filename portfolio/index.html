@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dictuzz | Portfolio</title>
+    <meta name="description"
+        content="A curated portfolio of systems, operations, and experience design work by Benedictus Richard Ricardo.">
+    <link rel="canonical" href="https://dictuzz.me/portfolio/">
+    <meta name="theme-color" content="#f5efe4">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dictuzz.me/portfolio/">
+    <meta property="og:title" content="dictuzz | Portfolio">
+    <meta property="og:description"
+        content="Selected case studies across operations, systems thinking, governance, and experience design.">
+    <meta property="og:image" content="https://dictuzz.me/assets/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="dictuzz | Portfolio">
+    <meta name="twitter:description"
+        content="Selected case studies across operations, systems thinking, governance, and experience design.">
+    <meta name="twitter:image" content="https://dictuzz.me/assets/images/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/portfolio.css">
+</head>
+
+<body class="portfolio-page">
+    <header class="page-header portfolio-header">
+        <div class="brand-lockup">
+            <div class="brand-mark">
+                <img src="/assets/images/favicon.png" alt="dictuzz logo" width="96" height="96">
+            </div>
+            <div class="brand-lockup__text">
+                <span class="brand-kicker">Quam Plurimi et Quam Aptissimi</span>
+                <span class="brand-name">Portfolio</span>
+            </div>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+    </header>
+
+    <main class="page-shell portfolio-main">
+        <section class="section portfolio-hero">
+            <div class="portfolio-hero__grid">
+                <div class="portfolio-hero__lead reveal">
+                    <p class="eyebrow">Selected Case Studies</p>
+                    <h1>Work shaped for clarity, endurance, and trust.</h1>
+                    <p>
+                        This gallery highlights a cross-section of systems thinking, operational design, governance,
+                        and experience-led execution. For now, the projects use high-fidelity fictional case data so the
+                        final portfolio direction is already visible before real case studies are swapped in.
+                    </p>
+                </div>
+                <aside class="portfolio-feature card reveal reveal-delay-1">
+                    <div class="portfolio-feature__meta">
+                        <span class="portfolio-feature__pill">4 Case Studies</span>
+                        <span class="portfolio-feature__pill">Systems + Ops</span>
+                        <span class="portfolio-feature__pill">Editorial Showcase</span>
+                    </div>
+                    <h2>A brand of structured confidence.</h2>
+                    <p>
+                        Every case is framed as evidence: what needed to change, how the system was designed, and what
+                        became more dependable afterwards.
+                    </p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header reveal">
+                <p class="eyebrow">Browse</p>
+                <h2>Project gallery</h2>
+                <p>Filter by the working mode you care about most.</p>
+            </div>
+
+            <div class="portfolio-filterbar reveal reveal-delay-1" aria-label="Project categories">
+                <button class="portfolio-filter is-active" type="button" data-filter="all">All</button>
+                <button class="portfolio-filter" type="button" data-filter="systems">Systems</button>
+                <button class="portfolio-filter" type="button" data-filter="operations">Operations</button>
+                <button class="portfolio-filter" type="button" data-filter="governance">Governance</button>
+                <button class="portfolio-filter" type="button" data-filter="experience">Experience</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <a class="case-card card card--interactive reveal" data-category="systems"
+                    href="/portfolio/reporting-command-center/">
+                    <div class="case-card__media">
+                        <img src="/assets/images/hdi.jpg" alt="Reporting Command Center" width="1200" height="900">
+                    </div>
+                    <div class="case-card__body">
+                        <div class="case-card__meta">
+                            <span>Systems</span>
+                            <span>2026</span>
+                        </div>
+                        <h3>Reporting Command Center</h3>
+                        <p>A unified reporting environment that turned fragmented weekly updates into one dependable
+                            executive-ready source of truth.</p>
+                        <div class="case-card__footer">
+                            <div class="case-card__tags">
+                                <span class="case-card__tag">Automation</span>
+                                <span class="case-card__tag">Reporting</span>
+                            </div>
+                            <span class="case-card__arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="case-card card card--interactive reveal reveal-delay-1" data-category="governance"
+                    href="/portfolio/governance-playbook/">
+                    <div class="case-card__media">
+                        <img src="/assets/images/forum-osis.jpg" alt="Governance Playbook" width="1200" height="900">
+                    </div>
+                    <div class="case-card__body">
+                        <div class="case-card__meta">
+                            <span>Governance</span>
+                            <span>2026</span>
+                        </div>
+                        <h3>Governance Playbook</h3>
+                        <p>A decision framework and ritual system that made delegation, accountability, and follow-up
+                            feel clear instead of political.</p>
+                        <div class="case-card__footer">
+                            <div class="case-card__tags">
+                                <span class="case-card__tag">KPI</span>
+                                <span class="case-card__tag">Leadership</span>
+                            </div>
+                            <span class="case-card__arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="case-card card card--interactive reveal" data-category="operations"
+                    href="/portfolio/stage-operations-atlas/">
+                    <div class="case-card__media">
+                        <img src="/assets/images/stage-crew.jpg" alt="Stage Operations Atlas" width="1200" height="900">
+                    </div>
+                    <div class="case-card__body">
+                        <div class="case-card__meta">
+                            <span>Operations</span>
+                            <span>2026</span>
+                        </div>
+                        <h3>Stage Operations Atlas</h3>
+                        <p>An event command architecture designed to keep large-scale live programs calm, coordinated,
+                            and resilient under pressure.</p>
+                        <div class="case-card__footer">
+                            <div class="case-card__tags">
+                                <span class="case-card__tag">Live Ops</span>
+                                <span class="case-card__tag">Coordination</span>
+                            </div>
+                            <span class="case-card__arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="case-card card card--interactive reveal reveal-delay-1" data-category="experience"
+                    href="/portfolio/community-outreach-system/">
+                    <div class="case-card__media">
+                        <img src="/assets/images/catholic-youth.jpg" alt="Community Outreach System" width="1200"
+                            height="900">
+                    </div>
+                    <div class="case-card__body">
+                        <div class="case-card__meta">
+                            <span>Experience</span>
+                            <span>2026</span>
+                        </div>
+                        <h3>Community Outreach System</h3>
+                        <p>A member journey redesign that aligned communication, event rhythm, and onboarding into one
+                            coherent community experience.</p>
+                        <div class="case-card__footer">
+                            <div class="case-card__tags">
+                                <span class="case-card__tag">Journey Design</span>
+                                <span class="case-card__tag">Community</span>
+                            </div>
+                            <span class="case-card__arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="portfolio-cta card reveal">
+                <div>
+                    <p class="eyebrow">Next Step</p>
+                    <h2>Need the fuller professional context?</h2>
+                    <p>
+                        The portfolio shows how the work feels in practice. The resume shows the wider operating range
+                        behind it.
+                    </p>
+                </div>
+                <div class="cluster">
+                    <a class="button" href="/resume/">View resume</a>
+                    <a class="button button--ghost" href="mailto:contact@dictuzz.me">Contact me</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/js/portfolio.js"></script>
+</body>
+
+</html>
