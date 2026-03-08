@@ -2,14 +2,25 @@ import { ThemeManager } from './ui-kit.js';
 
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
 const detailRoot = document.getElementById('portfolio-detail-root');
 const slug = document.body.dataset.portfolioSlug;
 
-new ThemeManager({
+const themeManager = new ThemeManager({
     toggleElement: themeToggle,
     iconElement: themeIcon,
-    defaultTheme: 'dark',
+    defaultTheme: 'light',
     storageKey: 'dictuzz-theme'
+});
+
+function updateThemeColor(theme) {
+    if (!themeMeta) return;
+    themeMeta.setAttribute('content', theme === 'dark' ? '#121820' : '#f5efe4');
+}
+
+updateThemeColor(themeManager.getMode());
+window.addEventListener('theme-changed', (event) => {
+    updateThemeColor(event.detail?.theme || 'light');
 });
 
 function escapeHtml(value = '') {
