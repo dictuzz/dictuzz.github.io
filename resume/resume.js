@@ -31,8 +31,11 @@ function init() {
     themeManager = new ThemeManager({
         toggleElement: toggleEl,
         storageKey: storageKey,
-        iconElement: iconEl
+        iconElement: iconEl,
+        defaultTheme: 'light'
     });
+
+    updateThemeColor(themeManager.getMode());
 }
 
 
@@ -206,6 +209,13 @@ function updateDownloadLink(lang) {
     link.href = urls[lang] || urls['en'];
 }
 
+function updateThemeColor(theme) {
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (!themeMeta) return;
+
+    themeMeta.setAttribute('content', theme === 'dark' ? '#121820' : '#f5efe4');
+}
+
 // Language button handlers
 $$('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -282,6 +292,10 @@ window.addEventListener('scroll', () => {
     });
 }, { passive: true });
 
+window.addEventListener('theme-changed', (event) => {
+    updateThemeColor(event.detail?.theme || 'light');
+});
+
 
 // 5. 3D AVATAR TILT
 // ══════════════════════════════════════════════
@@ -298,7 +312,7 @@ function initProfileTilt() {
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        avatar.style.transform = `perspective(1000px) rotateY(${x * 0.05}deg) rotateX(${-y * 0.05}deg)`;
+        avatar.style.transform = `perspective(1000px) rotateY(${x * 0.025}deg) rotateX(${-y * 0.025}deg)`;
     });
 
     container.addEventListener('mouseleave', () => {
