@@ -1,11 +1,11 @@
 {
     "meta": {
         "heroKicker": "Quam Plurimi et Quam Aptissimi",
-        "heroTitle": "Selected case studies in systems, service design, and execution.",
-        "heroIntro": "A curated portfolio of fictional but fully formed case studies, designed to preview how real work, walkthroughs, and project narratives will feel once your final material is ready.",
-        "heroNote": "Every project below is written and staged as if it were already a finished case study: clear context, polished storytelling, and space for visuals, walkthroughs, and outcomes.",
-        "closingTitle": "If this is the standard, the real archive will be even stronger.",
-        "closingCopy": "This portfolio is structured to make future project updates feel like content publishing, not redesign work.",
+        "heroTitle": "A curated archive of systems, governance, and execution work.",
+        "heroIntro": "Projects are arranged to surface context, role, and outcome quickly, then hold up under deeper review.",
+        "heroNote": "Built for hiring teams, collaborators, and decision-makers who want signal early and supporting detail close behind.",
+        "closingTitle": "If a conversation needs more context, the resume completes the picture.",
+        "closingCopy": "The archive is designed to read quickly, build trust steadily, and stay useful as the body of work grows.",
         "closingPrimary": {
             "label": "Email Me",
             "url": "mailto:contact@dictuzz.me"
@@ -24,12 +24,13 @@
             "strapline": "Turning weekly reporting into a leadership instrument instead of an administrative burden.",
             "category": "Systems Strategy",
             "year": "2025",
-            "status": "Fictional Case Study",
+            "status": "Selected Work",
             "client": "Northstar Retail Group",
             "location": "Jakarta, Indonesia",
             "summary": "A redesign of fragmented weekly reporting into an operations intelligence layer that helped leaders read risk, capacity, and momentum in one rhythm.",
             "overview": "Northstar had data, but not clarity. Teams were reporting constantly, yet management still lacked a useful operating picture. The engagement focused on designing a reporting cadence that was lighter for contributors and sharper for decision-makers.",
             "role": "Lead consultant for operating rhythm, reporting architecture, and executive review design.",
+            "cardRole": "Operating rhythm and reporting design",
             "timeframe": "10-week engagement",
             "scope": [
                 "Reporting system audit",
@@ -99,7 +100,7 @@
                 "meridian-knowledge-studio",
                 "atlas-governance-framework"
             ],
-            "seoDescription": "Fictional case study about redesigning fragmented reporting into an executive operations intelligence system."
+            "seoDescription": "Case study on redesigning fragmented reporting into an executive operations intelligence system."
         },
         {
             "slug": "atlas-governance-framework",
@@ -109,12 +110,13 @@
             "strapline": "A leadership operating model for a multi-division team that had ambition, but not enough structure.",
             "category": "Leadership Architecture",
             "year": "2024",
-            "status": "Fictional Case Study",
+            "status": "Selected Work",
             "client": "Atlas Youth Council",
             "location": "Bandung, Indonesia",
             "summary": "A governance redesign that gave a 30-plus member organization stronger coordination, clearer ownership, and a sustainable operating cadence.",
             "overview": "Atlas was rich in energy and ideas, but the organization had outgrown its coordination habits. Programs moved forward unevenly, responsibilities blurred, and strategic continuity depended too heavily on individual initiative. The goal was to create a leadership framework that made execution steadier without losing culture.",
             "role": "Lead architect for governance structure, KPI design, and leadership cadence.",
+            "cardRole": "Governance design and KPI architecture",
             "timeframe": "One operating term",
             "scope": [
                 "Organization mapping",
@@ -184,7 +186,7 @@
                 "civic-service-blueprint",
                 "northstar-ops-intelligence"
             ],
-            "seoDescription": "Fictional case study about designing governance, KPIs, and leadership cadence for a multi-division organization."
+            "seoDescription": "Case study on designing governance, KPIs, and leadership cadence for a multi-division organization."
         },
         {
             "slug": "signal-room-live-experience",
@@ -194,12 +196,13 @@
             "strapline": "Designing backstage clarity so the audience only experiences flow.",
             "category": "Live Experience",
             "year": "2025",
-            "status": "Fictional Case Study",
+            "status": "Selected Work",
             "client": "Signal Room Summit",
             "location": "Bandung, Indonesia",
             "summary": "A backstage systems redesign for a flagship live event series, focused on transition discipline, communication reliability, and audience continuity.",
             "overview": "Live events rarely fail because of one dramatic mistake. They break through drift: unclear calls, loose transitions, uncertain ownership, and timing that slips under pressure. This project focused on designing execution clarity before the show ever began.",
             "role": "Operations lead for backstage flow, transition choreography, and communication checkpoints.",
+            "cardRole": "Backstage operations and transition design",
             "timeframe": "Three-event season",
             "scope": [
                 "Run-of-show redesign",
@@ -269,7 +272,7 @@
                 "terrain-readiness-lab",
                 "northstar-ops-intelligence"
             ],
-            "seoDescription": "Fictional case study about redesigning backstage systems for a large live event experience."
+            "seoDescription": "Case study on redesigning backstage systems for a large live event experience."
         },
         {
             "slug": "terrain-readiness-lab",
@@ -279,12 +282,13 @@
             "strapline": "Operational discipline for training environments where consistency and safety cannot be optional.",
             "category": "Training Systems",
             "year": "2025",
-            "status": "Fictional Case Study",
+            "status": "Selected Work",
             "client": "Altitude Rescue Lab",
             "location": "West Java, Indonesia",
             "summary": "A training operations system designed to improve readiness, equipment confidence, and session reliability in technical rescue instruction.",
             "overview": "In technical training environments, quality is set before the session starts. Readiness, equipment checks, sequence clarity, and role discipline all determine whether instruction feels safe, coherent, and repeatable. This project focused on making that preparation visible and dependable.",
             "role": "Operations and readiness designer for equipment flow, training staging, and pre-session checks.",
+            "cardRole": "Readiness design and safety operations",
             "timeframe": "12-week implementation",
             "scope": [
                 "Inspection workflow design",
@@ -354,7 +358,7 @@
                 "signal-room-live-experience",
                 "civic-service-blueprint"
             ],
-            "seoDescription": "Fictional case study about operational readiness and safety structure for technical rescue training."
+            "seoDescription": "Case study on operational readiness and safety structure for technical rescue training."
         },
         {
             "slug": "civic-service-blueprint",
@@ -364,12 +368,13 @@
             "strapline": "A program architecture for volunteer work that needed stronger continuity between intent and delivery.",
             "category": "Community Programs",
             "year": "2024",
-            "status": "Fictional Case Study",
+            "status": "Selected Work",
             "client": "Civic Service Collective",
             "location": "Bandung, Indonesia",
             "summary": "A blueprint for planning, coordinating, and reviewing volunteer-led initiatives so community programs could scale without losing care or clarity.",
             "overview": "Volunteer organizations often operate on goodwill and urgency. That creates energy, but not always repeatability. This project explored what it would look like if a service-driven community program had the same operational clarity as a well-run studio.",
             "role": "Program strategist for service flow, volunteer coordination, and initiative review design.",
+            "cardRole": "Volunteer systems and program design",
             "timeframe": "Six-month program cycle",
             "scope": [
                 "Program mapping",
@@ -439,7 +444,7 @@
                 "atlas-governance-framework",
                 "meridian-knowledge-studio"
             ],
-            "seoDescription": "Fictional case study about structuring volunteer programs into a stronger service and review system."
+            "seoDescription": "Case study on structuring volunteer programs into a stronger service and review system."
         },
         {
             "slug": "meridian-knowledge-studio",
@@ -449,12 +454,13 @@
             "strapline": "A publishing and knowledge workflow designed for teams that think faster than they document.",
             "category": "Knowledge Operations",
             "year": "2025",
-            "status": "Fictional Case Study",
+            "status": "Selected Work",
             "client": "Meridian Advisory Studio",
             "location": "Remote / Southeast Asia",
             "summary": "A content and knowledge operations system that helped a strategy-led team turn scattered ideas into a usable publishing engine.",
             "overview": "Meridian had strong thinking and strong client work, but too many ideas lived in calls, personal notes, and unfinished drafts. The challenge was to create a studio-quality publishing rhythm that preserved sharp thinking without requiring a large editorial team.",
             "role": "Knowledge operations designer for editorial workflow, source capture, and publishing cadence.",
+            "cardRole": "Knowledge operations and editorial workflow",
             "timeframe": "Eight-week buildout",
             "scope": [
                 "Content pipeline design",
@@ -524,7 +530,7 @@
                 "northstar-ops-intelligence",
                 "civic-service-blueprint"
             ],
-            "seoDescription": "Fictional case study about designing a publishing and knowledge workflow for a strategy-led team."
+            "seoDescription": "Case study on designing a publishing and knowledge workflow for a strategy-led team."
         }
     ]
 }

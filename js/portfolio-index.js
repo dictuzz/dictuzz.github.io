@@ -9,18 +9,26 @@ const heroTitleEl = document.getElementById('portfolio-hero-title');
 const heroIntroEl = document.getElementById('portfolio-hero-intro');
 const heroNoteEl = document.getElementById('portfolio-hero-note');
 const statsEl = document.getElementById('portfolio-stats');
-const featuredGridEl = document.getElementById('portfolio-featured-grid');
+const tabsEl = document.getElementById('portfolio-tabs');
 const filtersEl = document.getElementById('portfolio-filters');
-const gridEl = document.getElementById('portfolio-grid');
+const listEl = document.getElementById('portfolio-case-list');
 const galleryCaptionEl = document.getElementById('portfolio-gallery-caption');
 const closingTitleEl = document.getElementById('portfolio-closing-title');
 const closingCopyEl = document.getElementById('portfolio-closing-copy');
 const closingActionsEl = document.getElementById('portfolio-closing-actions');
 
+const primaryTabs = [
+    { id: 'archive', label: 'All Cases' },
+    { id: 'lead', label: 'Lead Dossiers' },
+    { id: 'recent', label: 'Recent Years' }
+];
+
 const state = {
     meta: null,
     projects: [],
     categories: [],
+    years: [],
+    activeTab: 'archive',
     activeFilter: 'All'
 };
 
@@ -50,18 +58,46 @@ function escapeHtml(value = '') {
         .replace(/'/g, '&#39;');
 }
 
-function getFilteredProjects() {
-    if (state.activeFilter === 'All') {
-        return state.projects;
+function getProjectsForTab() {
+    if (state.activeTab === 'lead') {
+        return state.projects.filter((project) => project.featured);
     }
 
-    return state.projects.filter((project) => project.category === state.activeFilter);
+    if (state.activeTab === 'recent') {
+        return [...state.projects].sort((a, b) => {
+            const yearA = Number(a.year) || 0;
+            const yearB = Number(b.year) || 0;
+            return yearB - yearA || (a.order || 0) - (b.order || 0);
+        });
+    }
+
+    return [...state.projects].sort((a, b) => Number(b.featured) - Number(a.featured) || (a.order || 0) - (b.order || 0));
+}
+
+function getSecondaryFilters() {
+    if (state.activeTab === 'recent') {
+        return ['All', ...state.years];
+    }
+
+    return ['All', ...state.categories];
+}
+
+function getFilteredProjects() {
+    const tabbed = getProjectsForTab();
+
+    if (state.activeFilter === 'All') {
+        return tabbed;
+    }
+
+    if (state.activeTab === 'recent') {
+        return tabbed.filter((project) => project.year === state.activeFilter);
+    }
+
+    return tabbed.filter((project) => project.category === state.activeFilter);
 }
 
 function renderHero() {
-    if (!state.meta) {
-        return;
-    }
+    if (!state.meta) return;
 
     heroKickerEl.textContent = state.meta.heroKicker || '';
     heroTitleEl.textContent = state.meta.heroTitle || '';
@@ -76,43 +112,35 @@ function renderStats() {
 
     statsEl.innerHTML = `
         <article class="portfolio-stat">
-            <strong>${projectCount}<small>case studies</small></strong>
+            <span class="portfolio-stat__value">${projectCount}</span>
+            <span class="portfolio-stat__label">curated cases</span>
         </article>
         <article class="portfolio-stat">
-            <strong>${categoryCount}<small>practice areas</small></strong>
+            <span class="portfolio-stat__value">${categoryCount}</span>
+            <span class="portfolio-stat__label">practice tracks</span>
         </article>
         <article class="portfolio-stat">
-            <strong>${featuredCount}<small>featured projects</small></strong>
+            <span class="portfolio-stat__value">${featuredCount}</span>
+            <span class="portfolio-stat__label">lead dossiers</span>
         </article>
     `;
 }
 
-function renderFeatured() {
-    const featured = state.projects.filter((project) => project.featured).slice(0, 2);
-
-    featuredGridEl.innerHTML = featured.map((project) => `
-        <a class="portfolio-feature-card" href="/portfolio/${escapeHtml(project.slug)}/">
-            <div class="portfolio-feature-card__media">
-                <img src="${escapeHtml(project.heroImage || project.cardImage)}" alt="${escapeHtml(project.title)} featured image" loading="lazy">
-            </div>
-            <div class="portfolio-feature-card__body">
-                <div class="portfolio-feature-card__eyebrow">
-                    <span>${escapeHtml(project.category)}</span>
-                    <span>${escapeHtml(project.year)}</span>
-                </div>
-                <h3 class="portfolio-feature-card__title">${escapeHtml(project.title)}</h3>
-                <p class="portfolio-feature-card__summary">${escapeHtml(project.strapline)}</p>
-                <div class="portfolio-feature-card__footer">
-                    <span>${escapeHtml(project.client)}</span>
-                    <span class="portfolio-feature-card__cta">Open Case Study <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                </div>
-            </div>
-        </a>
+function renderTabs() {
+    tabsEl.innerHTML = primaryTabs.map((tab) => `
+        <button
+            class="portfolio-tab${tab.id === state.activeTab ? ' is-active' : ''}"
+            type="button"
+            data-tab="${tab.id}"
+            aria-pressed="${tab.id === state.activeTab ? 'true' : 'false'}"
+        >
+            ${escapeHtml(tab.label)}
+        </button>
     `).join('');
 }
 
 function renderFilters() {
-    const filters = ['All', ...state.categories];
+    const filters = getSecondaryFilters();
 
     filtersEl.innerHTML = filters.map((filter) => `
         <button
@@ -126,45 +154,86 @@ function renderFilters() {
     `).join('');
 }
 
-function renderGrid() {
+function applyRowReveal() {
+    const rows = listEl.querySelectorAll('.portfolio-case');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduce || !('IntersectionObserver' in window)) {
+        rows.forEach((row) => row.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            instance.unobserve(entry.target);
+        });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+    rows.forEach((row, index) => {
+        row.style.setProperty('--row-delay', `${Math.min(index * 35, 240)}ms`);
+        observer.observe(row);
+    });
+}
+
+function renderList() {
     const filtered = getFilteredProjects();
-    const countLabel = filtered.length === 1 ? 'project' : 'projects';
-    galleryCaptionEl.textContent = `${filtered.length} ${countLabel} in view`;
+    const countLabel = filtered.length === 1 ? 'case' : 'cases';
+    const activeTabLabel = primaryTabs.find((tab) => tab.id === state.activeTab)?.label || 'All Cases';
+    galleryCaptionEl.textContent = `${filtered.length} ${countLabel} in ${activeTabLabel}`;
 
     if (!filtered.length) {
-        gridEl.innerHTML = `
+        listEl.innerHTML = `
             <article class="portfolio-empty">
-                No projects match this category yet.
+                No dossiers match this archive selection right now.
             </article>
         `;
         return;
     }
 
-    gridEl.innerHTML = filtered.map((project) => `
-        <a class="portfolio-tile" href="/portfolio/${escapeHtml(project.slug)}/">
-            <div class="portfolio-tile__media">
-                <img src="${escapeHtml(project.cardImage || project.heroImage)}" alt="${escapeHtml(project.title)} cover image" loading="lazy">
-            </div>
-            <div class="portfolio-tile__body">
-                <div class="portfolio-tile__eyebrow">
-                    <span>${escapeHtml(project.category)}</span>
-                    <span>${escapeHtml(project.year)}</span>
+    listEl.innerHTML = filtered.map((project, index) => {
+        const isLead = project.featured && state.activeFilter === 'All' && index < 2;
+        const caseNumber = `Case ${String(project.order || index + 1).padStart(2, '0')}`;
+        const summary = project.summary || '';
+        const oneLineSummary = summary.includes('. ')
+            ? `${summary.split('. ')[0].trim().replace(/\.$/, '')}.`
+            : summary;
+        const trustSignals = [project.cardRole || project.role, project.client, project.timeframe].filter(Boolean);
+        const footerMeta = [project.location, project.status].filter(Boolean).join(' / ');
+
+        return `
+            <article class="portfolio-case${isLead ? ' portfolio-case--lead' : ''}">
+                <a class="portfolio-case__media" href="/portfolio/${escapeHtml(project.slug)}/" aria-label="Open ${escapeHtml(project.title)} dossier">
+                    <img src="${escapeHtml(project.cardImage || project.heroImage)}" alt="${escapeHtml(project.title)} cover image" loading="lazy">
+                </a>
+                <div class="portfolio-case__body">
+                    <div class="portfolio-case__eyebrow">
+                        <span class="portfolio-case__case">${escapeHtml(caseNumber)}</span>
+                        <span>${escapeHtml(project.category || '')}</span>
+                        <span>${escapeHtml(project.year || '')}</span>
+                    </div>
+                    <h3 class="portfolio-case__title">${escapeHtml(project.title || '')}</h3>
+                    <p class="portfolio-case__summary">${escapeHtml(isLead ? (project.strapline || oneLineSummary) : oneLineSummary)}</p>
+                    <p class="portfolio-case__role">${escapeHtml(project.cardRole || project.role || '')}</p>
+                    <p class="portfolio-case__signals">${trustSignals.map((signal) => `<span>${escapeHtml(signal)}</span>`).join('')}</p>
+                    <div class="portfolio-case__footer">
+                        <p class="portfolio-case__note">${escapeHtml(footerMeta || 'Structured dossier available')}</p>
+                        <a class="portfolio-case__cta" href="/portfolio/${escapeHtml(project.slug)}/">
+                            <span>Open dossier</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-                <h3 class="portfolio-tile__title">${escapeHtml(project.title)}</h3>
-                <p class="portfolio-tile__summary">${escapeHtml(project.summary)}</p>
-                <div class="portfolio-tile__footer">
-                    <span>${escapeHtml(project.status)}</span>
-                    <span class="portfolio-tile__cta">Open <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                </div>
-            </div>
-        </a>
-    `).join('');
+            </article>
+        `;
+    }).join('');
+
+    applyRowReveal();
 }
 
 function renderClosing() {
-    if (!state.meta) {
-        return;
-    }
+    if (!state.meta) return;
 
     closingTitleEl.textContent = state.meta.closingTitle || '';
     closingCopyEl.textContent = state.meta.closingCopy || '';
@@ -183,10 +252,33 @@ function renderClosing() {
 function renderAll() {
     renderHero();
     renderStats();
-    renderFeatured();
+    renderTabs();
     renderFilters();
-    renderGrid();
+    renderList();
     renderClosing();
+}
+
+function setupReveal() {
+    const items = document.querySelectorAll('.portfolio-reveal');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach((item) => item.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            instance.unobserve(entry.target);
+        });
+    }, { threshold: 0.16, rootMargin: '0px 0px -10% 0px' });
+
+    items.forEach((item, index) => {
+        item.style.setProperty('--reveal-delay', `${index * 60}ms`);
+        observer.observe(item);
+    });
 }
 
 async function loadPortfolio() {
@@ -200,23 +292,34 @@ async function loadPortfolio() {
         state.meta = payload.meta || {};
         state.projects = [...(payload.projects || [])].sort((a, b) => (a.order || 0) - (b.order || 0));
         state.categories = [...new Set(state.projects.map((project) => project.category).filter(Boolean))];
+        state.years = [...new Set(state.projects.map((project) => project.year).filter(Boolean))]
+            .sort((a, b) => Number(b) - Number(a));
         renderAll();
+        setupReveal();
     } catch (error) {
         console.error(error);
-        featuredGridEl.innerHTML = '<article class="portfolio-empty">The portfolio preview could not be loaded right now.</article>';
-        gridEl.innerHTML = '<article class="portfolio-empty">Please try again shortly.</article>';
+        listEl.innerHTML = '<article class="portfolio-empty">The portfolio could not be loaded right now.</article>';
     }
 }
 
+tabsEl?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-tab]');
+    if (!button) return;
+
+    state.activeTab = button.dataset.tab;
+    state.activeFilter = 'All';
+    renderTabs();
+    renderFilters();
+    renderList();
+});
+
 filtersEl?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-filter]');
-    if (!button) {
-        return;
-    }
+    if (!button) return;
 
     state.activeFilter = button.dataset.filter;
     renderFilters();
-    renderGrid();
+    renderList();
 });
 
 loadPortfolio();

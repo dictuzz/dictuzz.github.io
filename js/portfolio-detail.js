@@ -50,7 +50,7 @@ function updateDocumentMeta(project) {
 }
 
 function renderVideo(project) {
-    const video = project.video || { type: 'placeholder' };
+    const video = project.video || { type: 'standby' };
 
     if (video.type === 'embed' && video.url) {
         return `
@@ -72,12 +72,34 @@ function renderVideo(project) {
     }
 
     return `
-        <div class="portfolio-detail-video__placeholder">
+        <div class="portfolio-detail-video__standby">
             <span class="portfolio-detail-video__badge">
                 <i class="fas fa-clapperboard" aria-hidden="true"></i>
-                <span>${escapeHtml(video.label || 'Walkthrough slot ready')}</span>
+                <span>${escapeHtml(video.label || 'Walkthrough sequence queued')}</span>
             </span>
-            <p class="portfolio-detail-video__note">${escapeHtml(video.note || 'A walkthrough can be added here when media is ready.')}</p>
+            <p class="portfolio-detail-video__note">${escapeHtml(video.note || 'A narrated walkthrough can be slotted in here once media is finalized.')}</p>
+        </div>
+    `;
+}
+
+function renderFactItem(label, value) {
+    return `
+        <dl class="portfolio-detail-fact">
+            <dt>${escapeHtml(label)}</dt>
+            <dd>${escapeHtml(value || 'N/A')}</dd>
+        </dl>
+    `;
+}
+
+function renderListBlock(title, items = []) {
+    if (!items.length) return '';
+
+    return `
+        <div class="portfolio-detail-list">
+            <h3>${escapeHtml(title)}</h3>
+            <ul>
+                ${items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+            </ul>
         </div>
     `;
 }
@@ -92,9 +114,9 @@ function renderRelated(project, projects) {
     }
 
     return `
-        <section class="portfolio-detail-related">
-            <p class="portfolio-detail-kicker">Related Case Studies</p>
-            <h2>Where this project connects next.</h2>
+        <section class="portfolio-detail-related portfolio-reveal">
+            <p class="portfolio-detail-kicker">Related Cases</p>
+            <h2>Adjacent dossiers worth reviewing next.</h2>
             <div class="portfolio-detail-related__grid">
                 ${relatedProjects.map((related) => `
                     <a class="portfolio-related-card" href="/portfolio/${escapeHtml(related.slug)}/">
@@ -113,27 +135,71 @@ function renderRelated(project, projects) {
     `;
 }
 
+function applyReveal() {
+    const blocks = detailRoot.querySelectorAll('.portfolio-reveal');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduce || !('IntersectionObserver' in window)) {
+        blocks.forEach((block) => block.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            instance.unobserve(entry.target);
+        });
+    }, { threshold: 0.18, rootMargin: '0px 0px -10% 0px' });
+
+    blocks.forEach((block, index) => {
+        block.style.setProperty('--reveal-delay', `${Math.min(index * 55, 220)}ms`);
+        observer.observe(block);
+    });
+}
+
 function renderDetail(project, projects) {
     updateDocumentMeta(project);
+    const caseNumber = `Case ${String(project.order || 0).padStart(2, '0')}`;
+    const topLine = [project.category, project.year].filter(Boolean).join(' / ');
 
     detailRoot.innerHTML = `
-        <a class="portfolio-detail-back" href="/portfolio/">
+        <a class="portfolio-detail-back portfolio-reveal" href="/portfolio/">
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
-            <span>Back to gallery</span>
+            <span>Back to portfolio</span>
         </a>
 
-        <section class="portfolio-detail-hero">
-            <div class="portfolio-detail-hero__copy">
-                <p class="portfolio-detail-kicker">${escapeHtml(project.category)} / ${escapeHtml(project.year)}</p>
-                <h1 class="portfolio-detail-title">${escapeHtml(project.title)}</h1>
-                <p class="portfolio-detail-strapline">${escapeHtml(project.strapline)}</p>
-            </div>
+        <section class="portfolio-detail-hero portfolio-reveal">
             <figure class="portfolio-detail-hero__media">
                 <img src="${escapeHtml(project.heroImage || project.cardImage)}" alt="${escapeHtml(project.title)} hero image" loading="eager">
             </figure>
+            <div class="portfolio-detail-hero__copy">
+                <p class="portfolio-detail-kicker">${escapeHtml(caseNumber)} / ${escapeHtml(topLine)}</p>
+                <h1 class="portfolio-detail-title">${escapeHtml(project.title)}</h1>
+                <p class="portfolio-detail-strapline">${escapeHtml(project.strapline || '')}</p>
+                <p class="portfolio-detail-summaryline">${escapeHtml(project.summary || '')}</p>
+                <dl class="portfolio-detail-identity">
+                    <div class="portfolio-detail-identity__item">
+                        <dt>Role</dt>
+                        <dd>${escapeHtml(project.role)}</dd>
+                    </div>
+                    <div class="portfolio-detail-identity__item">
+                        <dt>Client or Context</dt>
+                        <dd>${escapeHtml(project.client)}</dd>
+                    </div>
+                    <div class="portfolio-detail-identity__item">
+                        <dt>Timeframe</dt>
+                        <dd>${escapeHtml(project.timeframe)}</dd>
+                    </div>
+                    <div class="portfolio-detail-identity__item">
+                        <dt>Location</dt>
+                        <dd>${escapeHtml(project.location)}</dd>
+                    </div>
+                </dl>
+            </div>
         </section>
 
-        <section class="portfolio-detail-metrics" aria-label="Project metrics">
+        <section class="portfolio-detail-evidence portfolio-reveal" aria-label="Project evidence">
             ${(project.metrics || []).map((metric) => `
                 <article class="portfolio-detail-metric">
                     <strong>${escapeHtml(metric.value)}</strong>
@@ -142,76 +208,71 @@ function renderDetail(project, projects) {
             `).join('')}
         </section>
 
-        <section class="portfolio-detail-summary">
-            <p class="portfolio-detail-kicker">Overview</p>
-            <h2>${escapeHtml(project.summary)}</h2>
-            <p>${escapeHtml(project.overview)}</p>
-        </section>
-
-        <section class="portfolio-detail-facts">
-            <p class="portfolio-detail-kicker">Role and Scope</p>
-            <div class="portfolio-detail-facts__grid">
-                <dl class="portfolio-detail-fact">
-                    <dt>Client</dt>
-                    <dd>${escapeHtml(project.client)}</dd>
-                </dl>
-                <dl class="portfolio-detail-fact">
-                    <dt>Location</dt>
-                    <dd>${escapeHtml(project.location)}</dd>
-                </dl>
-                <dl class="portfolio-detail-fact">
-                    <dt>Role</dt>
-                    <dd>${escapeHtml(project.role)}</dd>
-                </dl>
-                <dl class="portfolio-detail-fact">
-                    <dt>Timeframe</dt>
-                    <dd>${escapeHtml(project.timeframe)}</dd>
-                </dl>
-            </div>
-            <div class="portfolio-detail-chip-group">
-                ${(project.scope || []).map((item) => `<span class="portfolio-detail-chip">${escapeHtml(item)}</span>`).join('')}
-            </div>
-            <div class="portfolio-detail-chip-group">
-                ${(project.tools || []).map((item) => `<span class="portfolio-detail-chip">${escapeHtml(item)}</span>`).join('')}
-            </div>
-        </section>
-
-        <section class="portfolio-detail-section portfolio-detail-section--split">
-            <div>
+        <section class="portfolio-detail-dossier portfolio-reveal">
+            <article class="portfolio-detail-block portfolio-detail-block--wide">
+                <p class="portfolio-detail-kicker">Overview</p>
+                <h2>What this engagement was built to change.</h2>
+                <p>${escapeHtml(project.overview)}</p>
+            </article>
+            <article class="portfolio-detail-block">
                 <p class="portfolio-detail-kicker">Challenge</p>
-                <h2>The tension that needed to be resolved.</h2>
+                <h2>The operating pressure at the start.</h2>
                 <p>${escapeHtml(project.challenge)}</p>
-            </div>
-            <div>
+            </article>
+            <article class="portfolio-detail-block">
                 <p class="portfolio-detail-kicker">Approach</p>
-                <h2>The design logic behind the solution.</h2>
+                <h2>How the work was sequenced and led.</h2>
                 <p>${escapeHtml(project.approach)}</p>
+            </article>
+            <article class="portfolio-detail-block portfolio-detail-block--wide">
+                <p class="portfolio-detail-kicker">Solution</p>
+                <h2>What the final operating design delivered.</h2>
+                <p>${escapeHtml(project.solution)}</p>
+            </article>
+        </section>
+
+        <section class="portfolio-detail-ledger portfolio-reveal">
+            <div class="portfolio-detail-ledger__intro">
+                <p class="portfolio-detail-kicker">Identity Facts</p>
+                <h2>Compact dossier metadata for faster evaluation.</h2>
             </div>
-        </section>
-
-        <section class="portfolio-detail-section">
-            <p class="portfolio-detail-kicker">Solution</p>
-            <h2>What the final system was built to do.</h2>
-            <p>${escapeHtml(project.solution)}</p>
-        </section>
-
-        <section class="portfolio-detail-section portfolio-detail-section--split">
-            <div>
-                <p class="portfolio-detail-kicker">Services</p>
-                <div class="portfolio-detail-chip-group">
-                    ${(project.services || []).map((item) => `<span class="portfolio-detail-chip">${escapeHtml(item)}</span>`).join('')}
+            <div class="portfolio-detail-ledger__grid">
+                <div class="portfolio-detail-facts">
+                    ${renderFactItem('Project type', project.category)}
+                    ${renderFactItem('Status', project.status)}
+                    ${renderFactItem('Primary role', project.role)}
+                    ${renderFactItem('Delivery window', project.timeframe)}
+                    ${renderFactItem('Location', project.location)}
+                </div>
+                <div class="portfolio-detail-lists">
+                    ${renderListBlock('Scope', project.scope)}
+                    ${renderListBlock('Services', project.services)}
+                    ${renderListBlock('Tools', project.tools)}
                 </div>
             </div>
+        </section>
+
+        <section class="portfolio-detail-outcomes portfolio-reveal">
             <div>
                 <p class="portfolio-detail-kicker">Outcomes</p>
-                <div class="portfolio-detail-chip-group">
-                    ${(project.outcomes || []).map((item) => `<span class="portfolio-detail-chip">${escapeHtml(item)}</span>`).join('')}
-                </div>
+                <h2>Evidence of what improved after implementation.</h2>
+            </div>
+            <div class="portfolio-detail-outcomes__grid">
+                <ul>
+                    ${(project.outcomes || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+                </ul>
+                ${project.quote ? `
+                    <figure class="portfolio-detail-quote">
+                        <blockquote>${escapeHtml(project.quote.text)}</blockquote>
+                        <figcaption class="portfolio-detail-quote-source">${escapeHtml(project.quote.author)} / ${escapeHtml(project.quote.role)}</figcaption>
+                    </figure>
+                ` : ''}
             </div>
         </section>
 
-        <section class="portfolio-detail-gallery">
-            <p class="portfolio-detail-kicker">Visual Gallery</p>
+        <section class="portfolio-detail-gallery portfolio-reveal">
+            <p class="portfolio-detail-kicker">Media Gallery</p>
+            <h2>Supporting visuals from the engagement.</h2>
             <div class="portfolio-detail-gallery__grid">
                 ${(project.gallery || []).map((image) => `
                     <figure class="portfolio-detail-gallery__item">
@@ -222,19 +283,16 @@ function renderDetail(project, projects) {
             </div>
         </section>
 
-        <section class="portfolio-detail-video">
+        <section class="portfolio-detail-video portfolio-reveal">
             <p class="portfolio-detail-kicker">Walkthrough</p>
+            <h2>Narrated sequence and implementation walkthrough.</h2>
             ${renderVideo(project)}
-        </section>
-
-        <section class="portfolio-detail-quote">
-            <p class="portfolio-detail-kicker">Client Perspective</p>
-            <blockquote>${escapeHtml(project.quote?.text || '')}</blockquote>
-            <cite>${escapeHtml(project.quote?.author || '')} / ${escapeHtml(project.quote?.role || '')}</cite>
         </section>
 
         ${renderRelated(project, projects)}
     `;
+
+    applyReveal();
 }
 
 async function loadPortfolioDetail() {
