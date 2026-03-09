@@ -8,6 +8,14 @@ A modern, high-performance personal portfolio website featuring the premium **"D
 
 ---
 
+## 📂 Portfolio Structure
+
+The live portfolio is served from the **`/portfolio/`** directory and is accessible at **https://dictuzz.me/portfolio/**.
+
+> **Note:** Legacy/duplicate portfolio directories (`portofolio/` and `portfolio-app/`) have been removed. `portfolio/` is the sole deployed portfolio — do not delete it.
+
+---
+
 ## 🌌 Design System
 
 The portfolio implements the "Deep Space Luxury" visual language with these core elements:
