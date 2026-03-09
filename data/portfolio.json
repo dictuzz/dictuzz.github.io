@@ -1,0 +1,536 @@
+{
+    "meta": {
+        "heroKicker": "Quam Plurimi et Quam Aptissimi",
+        "heroTitle": "A curated archive of systems, governance, and execution work.",
+        "heroIntro": "Projects are arranged to surface context, role, and outcome quickly, then hold up under deeper review.",
+        "heroNote": "Built for hiring teams, collaborators, and decision-makers who want signal early and supporting detail close behind.",
+        "closingTitle": "If a conversation needs more context, the resume completes the picture.",
+        "closingCopy": "The archive is designed to read quickly, build trust steadily, and stay useful as the body of work grows.",
+        "closingPrimary": {
+            "label": "Email Me",
+            "url": "mailto:contact@dictuzz.me"
+        },
+        "closingSecondary": {
+            "label": "View Resume",
+            "url": "/resume/"
+        }
+    },
+    "projects": [
+        {
+            "slug": "northstar-ops-intelligence",
+            "order": 1,
+            "featured": true,
+            "title": "Northstar Operations Intelligence",
+            "strapline": "Turning weekly reporting into a leadership instrument instead of an administrative burden.",
+            "category": "Systems Strategy",
+            "year": "2025",
+            "status": "Selected Work",
+            "client": "Northstar Retail Group",
+            "location": "Jakarta, Indonesia",
+            "summary": "A redesign of fragmented weekly reporting into an operations intelligence layer that helped leaders read risk, capacity, and momentum in one rhythm.",
+            "overview": "Northstar had data, but not clarity. Teams were reporting constantly, yet management still lacked a useful operating picture. The engagement focused on designing a reporting cadence that was lighter for contributors and sharper for decision-makers.",
+            "role": "Lead consultant for operating rhythm, reporting architecture, and executive review design.",
+            "cardRole": "Operating rhythm and reporting design",
+            "timeframe": "10-week engagement",
+            "scope": [
+                "Reporting system audit",
+                "Leadership information design",
+                "Weekly operating rhythm",
+                "Decision-ready dashboard framing"
+            ],
+            "services": [
+                "Systems diagnosis",
+                "Workflow design",
+                "Leadership reporting",
+                "Implementation guidance"
+            ],
+            "tools": [
+                "Excel",
+                "Notion",
+                "Structured reporting templates",
+                "Review playbooks"
+            ],
+            "heroImage": "/assets/images/api.webp",
+            "cardImage": "/assets/images/hdi.jpg",
+            "gallery": [
+                {
+                    "src": "/assets/images/api.webp",
+                    "alt": "Operational dashboard concept for Northstar Operations Intelligence",
+                    "caption": "A cleaner reporting surface built to show signal, not noise."
+                },
+                {
+                    "src": "/assets/images/hdi.jpg",
+                    "alt": "Planning and systems workshop environment",
+                    "caption": "The engagement centered on cadence, ownership, and sharper review rituals."
+                }
+            ],
+            "video": {
+                "type": "placeholder",
+                "label": "Executive walkthrough storyboard ready",
+                "note": "The final walkthrough slot is designed for a narrated review of dashboard logic, contributor inputs, and the weekly decision ritual."
+            },
+            "challenge": "Reporting practices had grown organically across teams, which meant the leadership layer received inconsistent formats, repetitive detail, and almost no reliable signal about risk or momentum.",
+            "approach": "The work began with a map of information flow: who reports, to whom, how often, and why. From there, the system was redesigned around three questions leadership actually needed answered every week: what is moving, what is blocked, and what requires intervention now.",
+            "solution": "The final system reduced reporting sprawl into a single operational intelligence cadence with role-based inputs, standardized summaries, and a review structure designed for executive speed.",
+            "outcomes": [
+                "Reduced manual reporting effort by an estimated 62 percent",
+                "Cut weekly review preparation time from half a day to under ninety minutes",
+                "Created a shared language for progress, blockers, and escalation"
+            ],
+            "metrics": [
+                {
+                    "value": "62%",
+                    "label": "less manual reporting"
+                },
+                {
+                    "value": "90 min",
+                    "label": "weekly review prep"
+                },
+                {
+                    "value": "4 teams",
+                    "label": "aligned in one cadence"
+                }
+            ],
+            "quote": {
+                "text": "For the first time, our report review felt like leadership work instead of document management.",
+                "author": "Maya Surya",
+                "role": "Director of Operations, Northstar Retail Group"
+            },
+            "related": [
+                "meridian-knowledge-studio",
+                "atlas-governance-framework"
+            ],
+            "seoDescription": "Case study on redesigning fragmented reporting into an executive operations intelligence system."
+        },
+        {
+            "slug": "atlas-governance-framework",
+            "order": 2,
+            "featured": true,
+            "title": "Atlas Governance Framework",
+            "strapline": "A leadership operating model for a multi-division team that had ambition, but not enough structure.",
+            "category": "Leadership Architecture",
+            "year": "2024",
+            "status": "Selected Work",
+            "client": "Atlas Youth Council",
+            "location": "Bandung, Indonesia",
+            "summary": "A governance redesign that gave a 30-plus member organization stronger coordination, clearer ownership, and a sustainable operating cadence.",
+            "overview": "Atlas was rich in energy and ideas, but the organization had outgrown its coordination habits. Programs moved forward unevenly, responsibilities blurred, and strategic continuity depended too heavily on individual initiative. The goal was to create a leadership framework that made execution steadier without losing culture.",
+            "role": "Lead architect for governance structure, KPI design, and leadership cadence.",
+            "cardRole": "Governance design and KPI architecture",
+            "timeframe": "One operating term",
+            "scope": [
+                "Organization mapping",
+                "KPI framework",
+                "Division coordination rhythm",
+                "Leadership review structure"
+            ],
+            "services": [
+                "Leadership systems",
+                "Governance design",
+                "Program alignment",
+                "Operating ritual design"
+            ],
+            "tools": [
+                "KPI maps",
+                "Planning matrices",
+                "Review templates",
+                "Coordination trackers"
+            ],
+            "heroImage": "/assets/images/forum-osis.jpg",
+            "cardImage": "/assets/images/student-council.jpg",
+            "gallery": [
+                {
+                    "src": "/assets/images/forum-osis.jpg",
+                    "alt": "Forum setting used for governance and coordination sessions",
+                    "caption": "Governance became clearer once every division worked from the same rhythm and standards."
+                },
+                {
+                    "src": "/assets/images/student-council.jpg",
+                    "alt": "Student leadership portrait for Atlas Governance Framework",
+                    "caption": "The system was built to support continuity, not just one energetic season."
+                }
+            ],
+            "video": {
+                "type": "placeholder",
+                "label": "Governance walkthrough outline prepared",
+                "note": "A future walkthrough can explain KPI logic, division scorecards, and how weekly leadership reviews were simplified."
+            },
+            "challenge": "The organization had strong commitment but weak coordination infrastructure. Teams worked hard, yet leadership visibility was partial and accountability relied too much on informal follow-up.",
+            "approach": "The solution started by defining what healthy governance should feel like: fewer surprises, stronger foresight, and more confident delegation. The system was then designed to support planning, accountability, and cross-division continuity.",
+            "solution": "A lightweight governance model was introduced with role clarity, KPI signals, standard planning rhythms, and recurring leadership reviews that kept execution visible without becoming bureaucratic.",
+            "outcomes": [
+                "Created a reliable weekly leadership cadence across ten divisions",
+                "Improved planning visibility before major programs and handoffs",
+                "Raised accountability without increasing administrative burden"
+            ],
+            "metrics": [
+                {
+                    "value": "34",
+                    "label": "members coordinated"
+                },
+                {
+                    "value": "10",
+                    "label": "divisions aligned"
+                },
+                {
+                    "value": "1 rhythm",
+                    "label": "shared planning cadence"
+                }
+            ],
+            "quote": {
+                "text": "The framework gave us more than discipline. It gave us confidence in how to lead together.",
+                "author": "Livia Prameswari",
+                "role": "Chairperson, Atlas Youth Council"
+            },
+            "related": [
+                "civic-service-blueprint",
+                "northstar-ops-intelligence"
+            ],
+            "seoDescription": "Case study on designing governance, KPIs, and leadership cadence for a multi-division organization."
+        },
+        {
+            "slug": "signal-room-live-experience",
+            "order": 3,
+            "featured": true,
+            "title": "Signal Room Live Experience",
+            "strapline": "Designing backstage clarity so the audience only experiences flow.",
+            "category": "Live Experience",
+            "year": "2025",
+            "status": "Selected Work",
+            "client": "Signal Room Summit",
+            "location": "Bandung, Indonesia",
+            "summary": "A backstage systems redesign for a flagship live event series, focused on transition discipline, communication reliability, and audience continuity.",
+            "overview": "Live events rarely fail because of one dramatic mistake. They break through drift: unclear calls, loose transitions, uncertain ownership, and timing that slips under pressure. This project focused on designing execution clarity before the show ever began.",
+            "role": "Operations lead for backstage flow, transition choreography, and communication checkpoints.",
+            "cardRole": "Backstage operations and transition design",
+            "timeframe": "Three-event season",
+            "scope": [
+                "Run-of-show redesign",
+                "Backstage command structure",
+                "Cueing protocol",
+                "Live transition rehearsal"
+            ],
+            "services": [
+                "Experience operations",
+                "Live execution systems",
+                "Cue architecture",
+                "Cross-team coordination"
+            ],
+            "tools": [
+                "Run sheets",
+                "Cue matrices",
+                "Backstage briefs",
+                "Technical checkpoints"
+            ],
+            "heroImage": "/assets/images/stage-crew.jpg",
+            "cardImage": "/assets/images/catholic-youth.jpg",
+            "gallery": [
+                {
+                    "src": "/assets/images/stage-crew.jpg",
+                    "alt": "Backstage live event execution environment",
+                    "caption": "The real design work happened behind the curtain, where timing and communication determine everything."
+                },
+                {
+                    "src": "/assets/images/catholic-youth.jpg",
+                    "alt": "Live audience experience from a large community event",
+                    "caption": "A smoother audience experience began with tighter backstage choreography."
+                }
+            ],
+            "video": {
+                "type": "placeholder",
+                "label": "Run-of-show walkthrough drafted",
+                "note": "This walkthrough area is reserved for a sequence-based explanation of cueing, transitions, and backstage command flow."
+            },
+            "challenge": "The event series was growing in scale, but backstage communication still relied on heroic improvisation. That made consistency fragile and transitions vulnerable to pressure.",
+            "approach": "The engagement focused on tightening the invisible layers of the experience: call timing, stage readiness, transition cues, fallback decisions, and communication structure between stage, technical, and program teams.",
+            "solution": "A more legible execution model was introduced, with clarified roles, tighter cue logic, pre-transition checkpoints, and a run-of-show system that made issues easier to detect before they reached the audience.",
+            "outcomes": [
+                "Improved transition consistency across a multi-session event format",
+                "Reduced backstage uncertainty during speaker and segment changes",
+                "Strengthened communication between technical and program leads"
+            ],
+            "metrics": [
+                {
+                    "value": "1,200+",
+                    "label": "peak audience served"
+                },
+                {
+                    "value": "18",
+                    "label": "major transitions managed"
+                },
+                {
+                    "value": "0 visible",
+                    "label": "transition failures on flagship night"
+                }
+            ],
+            "quote": {
+                "text": "It felt less like surviving an event and more like conducting one.",
+                "author": "Darren Kusuma",
+                "role": "Executive Producer, Signal Room Summit"
+            },
+            "related": [
+                "terrain-readiness-lab",
+                "northstar-ops-intelligence"
+            ],
+            "seoDescription": "Case study on redesigning backstage systems for a large live event experience."
+        },
+        {
+            "slug": "terrain-readiness-lab",
+            "order": 4,
+            "featured": false,
+            "title": "Terrain Readiness Lab",
+            "strapline": "Operational discipline for training environments where consistency and safety cannot be optional.",
+            "category": "Training Systems",
+            "year": "2025",
+            "status": "Selected Work",
+            "client": "Altitude Rescue Lab",
+            "location": "West Java, Indonesia",
+            "summary": "A training operations system designed to improve readiness, equipment confidence, and session reliability in technical rescue instruction.",
+            "overview": "In technical training environments, quality is set before the session starts. Readiness, equipment checks, sequence clarity, and role discipline all determine whether instruction feels safe, coherent, and repeatable. This project focused on making that preparation visible and dependable.",
+            "role": "Operations and readiness designer for equipment flow, training staging, and pre-session checks.",
+            "cardRole": "Readiness design and safety operations",
+            "timeframe": "12-week implementation",
+            "scope": [
+                "Inspection workflow design",
+                "Session readiness staging",
+                "Training support structure",
+                "Safety pre-brief system"
+            ],
+            "services": [
+                "Operational readiness",
+                "Training systems",
+                "Safety design support",
+                "Execution choreography"
+            ],
+            "tools": [
+                "Inspection sheets",
+                "Readiness boards",
+                "Equipment tags",
+                "Session checklists"
+            ],
+            "heroImage": "/assets/images/vertical-rescue.jpg",
+            "cardImage": "/assets/images/acolyte.jpg",
+            "gallery": [
+                {
+                    "src": "/assets/images/vertical-rescue.jpg",
+                    "alt": "Technical rescue training setting for Terrain Readiness Lab",
+                    "caption": "Readiness systems are only convincing if they stay reliable under real pressure."
+                },
+                {
+                    "src": "/assets/images/acolyte.jpg",
+                    "alt": "Supporting environment used to visualize ritual and procedural discipline",
+                    "caption": "The project borrowed from ritual logic: sequence matters, preparation matters, consistency matters."
+                }
+            ],
+            "video": {
+                "type": "placeholder",
+                "label": "Readiness walkthrough prepared",
+                "note": "A future walkthrough can show inspection routines, setup flow, and the structure behind safer, more reliable training delivery."
+            },
+            "challenge": "The organization had technical strength, but readiness routines were still too dependent on who happened to be leading that day. That variability created unnecessary stress and uneven instructional quality.",
+            "approach": "The system was designed around a simple principle: when readiness becomes visible, reliability becomes teachable. Every element, from inspection flow to staging sequence, was made easier to repeat and review.",
+            "solution": "A practical readiness framework was created with clear inspection checkpoints, equipment states, pre-session roles, and lightweight operational rituals that stabilized delivery without slowing it down.",
+            "outcomes": [
+                "Raised pre-session consistency across multiple training formats",
+                "Improved equipment readiness confidence before technical drills",
+                "Made safety discipline more legible to both instructors and participants"
+            ],
+            "metrics": [
+                {
+                    "value": "3x",
+                    "label": "clearer readiness checkpoints"
+                },
+                {
+                    "value": "100%",
+                    "label": "equipment trace visibility"
+                },
+                {
+                    "value": "1 flow",
+                    "label": "shared pre-session ritual"
+                }
+            ],
+            "quote": {
+                "text": "The system gave the team something rare: calm before complexity.",
+                "author": "Rafi Nugraha",
+                "role": "Lead Instructor, Altitude Rescue Lab"
+            },
+            "related": [
+                "signal-room-live-experience",
+                "civic-service-blueprint"
+            ],
+            "seoDescription": "Case study on operational readiness and safety structure for technical rescue training."
+        },
+        {
+            "slug": "civic-service-blueprint",
+            "order": 5,
+            "featured": false,
+            "title": "Civic Service Blueprint",
+            "strapline": "A program architecture for volunteer work that needed stronger continuity between intent and delivery.",
+            "category": "Community Programs",
+            "year": "2024",
+            "status": "Selected Work",
+            "client": "Civic Service Collective",
+            "location": "Bandung, Indonesia",
+            "summary": "A blueprint for planning, coordinating, and reviewing volunteer-led initiatives so community programs could scale without losing care or clarity.",
+            "overview": "Volunteer organizations often operate on goodwill and urgency. That creates energy, but not always repeatability. This project explored what it would look like if a service-driven community program had the same operational clarity as a well-run studio.",
+            "role": "Program strategist for service flow, volunteer coordination, and initiative review design.",
+            "cardRole": "Volunteer systems and program design",
+            "timeframe": "Six-month program cycle",
+            "scope": [
+                "Program mapping",
+                "Volunteer role design",
+                "Delivery checklist system",
+                "Review and learning loop"
+            ],
+            "services": [
+                "Program design",
+                "Volunteer operations",
+                "Community workflow",
+                "Review systems"
+            ],
+            "tools": [
+                "Program maps",
+                "Checklists",
+                "Volunteer briefs",
+                "Retrospective templates"
+            ],
+            "heroImage": "/assets/images/catholic-youth.jpg",
+            "cardImage": "/assets/images/forum-osis.jpg",
+            "gallery": [
+                {
+                    "src": "/assets/images/catholic-youth.jpg",
+                    "alt": "Community gathering used for Civic Service Blueprint",
+                    "caption": "The strongest volunteer systems protect both momentum and care."
+                },
+                {
+                    "src": "/assets/images/forum-osis.jpg",
+                    "alt": "Program planning forum for Civic Service Blueprint",
+                    "caption": "Review loops were introduced so every initiative could leave behind usable learning."
+                }
+            ],
+            "video": {
+                "type": "placeholder",
+                "label": "Program walkthrough in storyboard form",
+                "note": "The final walkthrough will explain planning flow, volunteer handoff, and how service reviews turn into better future programs."
+            },
+            "challenge": "Volunteer-led initiatives were meaningful, but too dependent on informal coordination and individual memory. That made quality inconsistent and learning hard to preserve.",
+            "approach": "Instead of over-formalizing the culture, the design focused on a softer operational layer: clear roles, simpler preparation, better handoffs, and a more reliable way to capture what each program taught the team.",
+            "solution": "The resulting blueprint made programs easier to prepare, easier to run, and easier to improve by connecting service design with repeatable coordination routines.",
+            "outcomes": [
+                "Improved volunteer clarity before and during program delivery",
+                "Created a reusable review ritual after every major initiative",
+                "Made community programming feel more intentional without feeling corporate"
+            ],
+            "metrics": [
+                {
+                    "value": "6",
+                    "label": "initiatives standardized"
+                },
+                {
+                    "value": "2x",
+                    "label": "faster volunteer onboarding"
+                },
+                {
+                    "value": "1 loop",
+                    "label": "shared review ritual"
+                }
+            ],
+            "quote": {
+                "text": "We kept the warmth, but finally gained structure.",
+                "author": "Anindya Wibowo",
+                "role": "Program Lead, Civic Service Collective"
+            },
+            "related": [
+                "atlas-governance-framework",
+                "meridian-knowledge-studio"
+            ],
+            "seoDescription": "Case study on structuring volunteer programs into a stronger service and review system."
+        },
+        {
+            "slug": "meridian-knowledge-studio",
+            "order": 6,
+            "featured": false,
+            "title": "Meridian Knowledge Studio",
+            "strapline": "A publishing and knowledge workflow designed for teams that think faster than they document.",
+            "category": "Knowledge Operations",
+            "year": "2025",
+            "status": "Selected Work",
+            "client": "Meridian Advisory Studio",
+            "location": "Remote / Southeast Asia",
+            "summary": "A content and knowledge operations system that helped a strategy-led team turn scattered ideas into a usable publishing engine.",
+            "overview": "Meridian had strong thinking and strong client work, but too many ideas lived in calls, personal notes, and unfinished drafts. The challenge was to create a studio-quality publishing rhythm that preserved sharp thinking without requiring a large editorial team.",
+            "role": "Knowledge operations designer for editorial workflow, source capture, and publishing cadence.",
+            "cardRole": "Knowledge operations and editorial workflow",
+            "timeframe": "Eight-week buildout",
+            "scope": [
+                "Content pipeline design",
+                "Knowledge capture model",
+                "Editorial workflow",
+                "Review and release cadence"
+            ],
+            "services": [
+                "Knowledge systems",
+                "Editorial operations",
+                "Workflow design",
+                "Publishing structure"
+            ],
+            "tools": [
+                "Notion",
+                "Editorial calendars",
+                "Source libraries",
+                "Review status boards"
+            ],
+            "heroImage": "/assets/images/hdi.jpg",
+            "cardImage": "/assets/images/api.webp",
+            "gallery": [
+                {
+                    "src": "/assets/images/hdi.jpg",
+                    "alt": "Team setting for Meridian Knowledge Studio",
+                    "caption": "The system helped raw insight move from conversation to publishable structure."
+                },
+                {
+                    "src": "/assets/images/api.webp",
+                    "alt": "Abstract systems surface for Meridian Knowledge Studio",
+                    "caption": "The publishing engine was designed to respect the team's actual working habits, not an idealized one."
+                }
+            ],
+            "video": {
+                "type": "placeholder",
+                "label": "Workflow walkthrough planned",
+                "note": "This slot is reserved for a future walkthrough of capture, drafting, review, and publishing states."
+            },
+            "challenge": "The team produced valuable thinking, but lacked a workflow that could reliably transform client insight and internal strategy into publishable assets without friction.",
+            "approach": "The solution focused on flow. Instead of building a complex content machine, the system clarified stages, captured raw material earlier, and made editorial handoffs more legible.",
+            "solution": "A compact knowledge studio was designed with clear content states, reusable source structures, and a weekly publishing rhythm that turned scattered thinking into a real editorial asset.",
+            "outcomes": [
+                "Created a repeatable end-to-end publishing flow",
+                "Reduced idea loss between meetings, notes, and drafts",
+                "Made content production more strategic and less reactive"
+            ],
+            "metrics": [
+                {
+                    "value": "4x",
+                    "label": "more draft-ready ideas"
+                },
+                {
+                    "value": "1 week",
+                    "label": "publishing cadence"
+                },
+                {
+                    "value": "0 chaos",
+                    "label": "in content handoff"
+                }
+            ],
+            "quote": {
+                "text": "The team stopped asking where ideas went. They could finally see them moving.",
+                "author": "Claire Handoko",
+                "role": "Editorial Director, Meridian Advisory Studio"
+            },
+            "related": [
+                "northstar-ops-intelligence",
+                "civic-service-blueprint"
+            ],
+            "seoDescription": "Case study on designing a publishing and knowledge workflow for a strategy-led team."
+        }
+    ]
+}
