@@ -11,6 +11,6 @@ Thumbs.db
 *.swo
 
 # Next.js Build Output
-portfolio/
+/portfolio/
 portfolio-app/out/
 portfolio-app/.next/
