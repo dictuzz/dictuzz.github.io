@@ -1,0 +1,33 @@
+
+> dictuzz-portfolio-app@0.1.0 build
+> npm run protect && next build
+
+
+> dictuzz-portfolio-app@0.1.0 protect
+> node scripts/generate-protected-content.mjs
+
+Skipping protected payload generation because PORTFOLIO_ACCESS_CODE is not set.
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./app/globals.css:1:2
+Module not found: Can't resolve '../../assets/css/tokens.css'
+> 1 | @import '../../assets/css/tokens.css';
+    |  ^
+  2 | @import '../styles/globals.css';
+
+
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./app/globals.css:1:2)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

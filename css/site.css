@@ -1,4 +1,6 @@
 /* dictuzz: Shared Brand System */
+@import '../assets/css/tokens.css';
+@import '../assets/css/core.css';
 
 :root {
     --site-bg: #f5efe4;
@@ -269,69 +271,9 @@ select {
     grid-template-columns: 1fr;
 }
 
-.card {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--site-border);
-    border-radius: var(--site-radius);
-    background: var(--site-bg-elevated);
-    box-shadow: var(--site-shadow);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-}
 
-.card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 44%);
-    pointer-events: none;
-}
 
-.card--interactive {
-    transition:
-        transform 240ms var(--ease-out),
-        box-shadow 240ms var(--ease-out),
-        border-color 240ms var(--ease-out),
-        background-color 240ms ease;
-}
 
-.card--interactive:hover,
-.card--interactive:focus-visible {
-    transform: translateY(-4px);
-    border-color: var(--site-border-strong);
-    box-shadow: var(--site-shadow-hover);
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 50px;
-    padding: 0 22px;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    background: var(--site-text);
-    color: var(--site-surface);
-    font-weight: 700;
-    transition:
-        transform 200ms ease,
-        background-color 200ms ease,
-        border-color 200ms ease,
-        color 200ms ease;
-}
-
-.button:hover,
-.button:focus-visible {
-    transform: translateY(-2px);
-}
-
-.button--ghost {
-    background: transparent;
-    color: var(--site-text);
-    border-color: var(--site-border-strong);
-}
 
 .pill-row {
     display: flex;
@@ -376,24 +318,6 @@ select {
     font-size: 0.95rem;
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out);
-}
-
-.reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-delay-1 {
-    transition-delay: 70ms;
-}
-
-.reveal-delay-2 {
-    transition-delay: 140ms;
-}
 
 @media (min-width: 768px) {
     .section {

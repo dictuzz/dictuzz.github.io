@@ -1,74 +1,80 @@
-# 🛠️ REFACTOR & SIMPLIFICATION PLAN
+# REFACTOR & SIMPLIFICATION PLAN
 
-Dokumen ini menguraikan langkah-langkah restrukturisasi kode dan abstraksi logika agar `dictuzz.github.io` lebih *maintainable*, *modular*, dan mendukung penyesuaian (kustomisasi) berjangka panjang.
+## 1. Executive Summary
 
-## 1️⃣ Executive Summary
-Repositori secara struktural sudah cukup dalam kondisi yang baik (terutama di bagian aplikasi React Next.js via `portfolio-app`), namun *vanilla website* di luar Next.js masih banyak mengandalkan *hardcoded DOM manipulation* dan duplikasi markup. Fokus penyederhanaan adalah memindahkan beban konfigurasi situs dari *Hardcoded HTML* ke struktur pendorong berbasis *Data/Config*.
+Dokumen ini merangkum area kompleksitas tertinggi dan duplikasi kode di dalam repositori. Fokus utamanya adalah menyatukan styling, memastikan modul-modul dapat dikelola dari satu sumber kebenaran (Single Source of Truth), dan memisahkan data keras (hardcoded data) menjadi arsitektur berbasis konfigurasi.
 
-## 2️⃣ Complexity Hotspots (Titik Kompleksitas)
+## 2. Complexity Hotspots (Titik Berat Kompleksitas)
 
-1. **Hardcoded HTML Links & Data (`index.html` dan `resume/index.html`)**
-   - Semua folder link (Portofolio, Email, WhatsApp, Socials, dsb) diurutkan secara hardcode. 
-   - *Masalah:* Menambah 1 link baru atau mengubah URL menuntut pencarian ke dalam ~300 baris HTML rawan *typo*.
-   - *Solusi:* Implementasi **Config-Driven Pattern** untuk render komponen.
+1. **Sinkronisasi Desain (Styling) Frontend**
+   - Terdapat variabel CSS global (`:root`) yang di-hardcode ganda di file `css/site.css` dan `css/critical.css`. Perubahan satu warna tema (misal `--site-bg`) membutuhkan pengubahan di dua hingga tiga file berbeda.
+   
+2. **Duplikasi Komponen UI Dasar**
+   - Kelas utilitas seperti `.card`, `.glass`, dan `.btn` ditulis ulang secara terpisah di `css/site.css` dan `resume/resume.css`.
 
-2. **Pengulangan Bahasa/Lokalisasi (i18n)**
-   - Saat ini terjemahan difetch dan diparsing di `locales/*.json`, yang diproses melalui fungsi buatan sendiri di dalam modul lokal. Pengecekan *state* masih tergantung pada DOM (`data-i18n` attributes). 
-   - Walau fungsional, rentan terhadap kehilangan konteks saat HTML berubah.
+3. **Data Konten Hardcoded di HTML**
+   - File `resume/index.html` berisi lebih dari 500 baris kode yang memuat komponen secara statis (seperti bagian 'Experience', 'Education', dan 'Skills'). Meskipun halaman beranda (`index.html`) sudah menggunakan pola yang baik melalui `data/links.json`, halaman resume belum menerapkannya.
 
----
+4. **Sistem Terjemahan (i18n)**
+   - Saat ini terjemahan menggunakan fetch dari `/locales/*.json`. Walaupun sudah dimodularisasi dengan elegan di `js/ui-kit.js`, strukturnya dapat lebih dipermudah penyebutannya jika ditransfer ke kerangka framework ketika Next.js (`portfolio-app`) diintegrasikan penuh.
 
-## 3️⃣ Duplication Map (Peta Duplikasi)
+5. **Manajemen Animasi**
+   - Animasi kompleks yang membaur dengan struktur utama menyebabkan file HTML membengkak dengan definisi SVG sebaris (inline SVG) dan fungsional animasi yang redundan.
 
-1. Root UI Kit vs Resume Kit
-   - Interaksi UI dasar (animasi *ThemeManager* dan *Typer*) sudah diekstraksi ke `js/ui-kit.js`, yang merupakan langkah bagus. Namun, inisiasi dan event-listener masih diduplikasi masing-masing di `js/home.js` dan `resume/resume.js`.
+## 3. Duplication Map
 
----
+- **Tokens:**
+  - `assets/css/tokens.css` (Global root) vs `portfolio-app/styles/tokens.css` (Next.js app). Ini membingungkan karena terdapat dua referensi token desain.
+- **CSS Utility Classes:**
+  - `css/site.css` vs `css/critical.css` vs `resume/resume.css`. Ketiganya memiliki deklarasi ulang untuk komponen `.btn`, `.reveal`, dan utilitas `.glass`.
 
-## 4️⃣ Simplification Proposals (Proposal Penyederhanaan Modul)
+## 4. Simplification Proposals (by module)
 
-### A. Ekstraksi Konfigurasi Navigasi & Sosial (Config-Driven Pattern)
-**Module:** `index.html` (Home Links Folder)
-- **Problem:** Terdapat lebih dari 15 tag `<a>` dengan konfigurasi identik namun data berbeda (Icon, Text, URL) diletakkan *hardcoded* HTML.
-- **Proposal:** 
-  Buat file `data/links.json` atau konstanta `CONFIG.links` di JavaScript.
-  Render HTML secara dinamis melaui Vanilla JS (menggunakan `document.createElement` / `template literals`).
-- **Benefit:** Mempermudah update bagi non-developer, HTML jauh lebih kecil, mendukung penambahan struktur tanpa edit `index.html`.
+### A. Modul CSS / Styling
+- **Langkah:** Ekstrak seluruh variabel root, definisi grid, dan utilitas dasar (.glass, .btn, .card) menjadi satu file `core-ui.css`.
+- **Rasional:** Satu perubahan warna / padding akan langsung teraplikasi secara persisten pada halaman `/`, `/resume`, dan desain sistem.
 
-### B. Simplify CSS Layout Variables
-**Module:** `assets/css/tokens.css`
-- **Problem:** Terdapat deklarasi multi-layer color (`--accent-blue`, `--accent-gold`) tetapi ada elemen di CSS (mis. class `.tag` / efak latar) yang masih memakai *inline rgba* atau *hardcoded gradient* (misal: `linear-gradient(90deg, var(--accent-gold), var(--accent-cyan))`).
-- **Proposal:** Ekstraksi pola ini spesifik ke `mixins` atau *Semantic CSS Variables* agar semua shadow dan efek glow merujuk langsung ke *theme manager*, mempermudah penerapan *Full Dark Mode* tanpa ada artefak warna bocor.
+### B. Modul Konten Resume (HTML -> JSON)
+- **Langkah:** Ekstraksi "Education", "Experience", "Skills" dan "Awards" dari `resume/index.html` ke dalam `data/resume.json`.
+- **Rasional:** Ketika pengguna ingin menambah pengalaman baru, mereka tidak perlu mencari elemen spesifik di barisan DOM berukuran 500+ baris; cukup mengubah JSON ringkas.
 
----
+## 5. Customization Strategy (Config-driven)
 
-## 5️⃣ Customization Strategy (Strategi Kustomisasi Tingkat Lanjut)
+Demi memastikan kapabilitas *"plug-and-play"*, arsitektur berbasis konfigurasi (config-driven) akan direplikasi di seluruh aplikasi Vanilla JS.
+- **`data/links.json`** -> Telah diterapkan di beranda (berhasil dengan baik).
+- **`data/resume.json`** -> (Usulan baru) untuk menyimpan rekam jejak.
+- **`data/portfolio.json`** -> Untuk portofolio jika di-ekstrak keluar dari kerangka SSG Next.js di masa mendatang.
 
-Untuk memastikan situs gampang dimodifikasi di kemudian hari (misal, ingin berganti tema atau struktur link), lakukan implementasi **Plugin-style Registry (Lightweight)**:
+## 6. Proposed Code Patterns
 
-1. **Global `app.config.js`**
-   - Buat satu file konfigurasi universal di root (di-load paling awal oleh browser).
-   - Isi file mengontrol: Link sosmed, fitur on/off (contoh: aktif/matikan lokalisasi), dan flag *Open to Work/Hiring*.
-   - Dengan ini, perubahan utama pada profil pengguna dapat diselesaikan dalam hitungan detik.
+*Do:*
+```css
+/* Menggunakan referensi satu token variabel global */
+.card {
+    background: var(--surface-primary);
+    border-radius: var(--radius-lg);
+}
+```
 
-2. **Aplikasi Next.js (`portfolio-app`)**
-   - Aplikasi portofolio saat ini sudah mengikuti arsitektur TS yang baik di `portfolio-app/content/` (menggunakan `types.ts` dan array constants). **Pertahankan** pola ini, karena sangat modular dan sesuai dengan target *SSG (Static Site Generation)*.
+*Don't:*
+```css
+/* Mengulang pewarnaan statis dan radius */
+.edu-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.72), ...);
+    border-radius: 28px;
+}
+```
 
----
+## 7. Step-by-step Refactor Roadmap
 
-## 6️⃣ Step-by-Step Refactor Roadmap
+### Phase 1: Safe & High ROI Refactors (Minggu 1)
+- Konsolidasi file CSS Tokens (`assets/css/tokens.css` vs `portfolio-app/styles/tokens.css`).
+- Pembersihan file zombie yang dicantumkan pada *Slimming Plan*.
 
-### Phase 1: Safe Deletion & Code Trimming (Safe / Prioritas Utama)
-- Terapkan temuan pada `SLIMMING_PLAN.md`.
-- Hapus >1.500 baris kode mati (dead code) dari `style.css`, `script.js`, dan sisa-sisa folder portfolio lama (`js/portfolio.js`, dll.).
-- Hapus folder gambar mockup eksperimental / *build artifacts* dari direktori `output/`.
+### Phase 2: Medium Effort, High Impact (Minggu 2)
+- Ekstraksi `site.css` dan `resume.css` ke dalam lapisan `base.css` + `components.css` (terutama untuk utilitas *glassmorphism* dan kancing aksi). 
+- Modifikasi HTML untuk mengambil komponen utama dari stylesheet gabungan.
 
-### Phase 2: Structural Simplification (Medium Risk)
-- Buat file `data/links.json` (atau konstanta spesifik global).
-- Refactor `js/home.js` agar me-*render* blok `<section class="folder card">` berdasarkan JSON tersebut, menggantikan statis HTML `index.html`.
-- Migrasi *hardcoded inline gradient styling* di CSS menjadi *CSS Variables* murni di `tokens.css`.
-
-### Phase 3: Deployment Overhaul (Risky / Optional)
-- Implementasikan GitHub Actions `.github/workflows/deploy.yml` untuk portofolio.
-- Hapus direktori hasil compile `portfolio/` dari *source control* (`.gitignore`).
-- Otomatisasi deploy aplikasi Next.js langsung ke cabang `gh-pages` agar repositori *master/main* murni hanya kode sumber, tidak ada artefak kompilasi minified yang berantakan.
+### Phase 3: Risky / Optional (Minggu 3-4)
+- Ekstrasi hardcoded DOM resume ke dalam `data/resume.json`.
+- Penggantian `resume.js` untuk membuat modul rendering asinkron dari DOM berbasis fragmen.

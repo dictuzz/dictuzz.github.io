@@ -130,6 +130,42 @@ function renderSkills(data) {
     });
 }
 
+function renderEducation(data) {
+    const container = $('#education-list');
+    if (!container || !data) return;
+
+    container.innerHTML = Object.values(data).map(edu => `
+        <div class="edu-card glass glass--hover card reveal">
+            <h3>${escapeHtml(edu.name)}</h3>
+            <p class="edu-card__degree">${escapeHtml(edu.degree)}</p>
+            <p class="edu-card__date">${escapeHtml(edu.date)}</p>
+            ${edu.focus ? `<p class="edu-card__focus">${escapeHtml(edu.focus)}</p>` : ''}
+        </div>
+    `).join('');
+
+    if (typeof revealObserver !== 'undefined') {
+        container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    }
+}
+
+function renderAwards(data) {
+    const container = $('#awards-list');
+    if (!container || !data) return;
+
+    container.innerHTML = Object.values(data).map(award => `
+        <li>${escapeHtml(award)}</li>
+    `).join('');
+}
+
+function renderEtc(data) {
+    const container = $('#etc-list');
+    if (!container || !data) return;
+
+    container.innerHTML = Object.values(data).map(item => `
+        <li>${escapeHtml(item)}</li>
+    `).join('');
+}
+
 function applyTranslations(data) {
     $$('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
@@ -157,8 +193,11 @@ async function loadLanguage(lang) {
         url.searchParams.set('lang', lang);
         window.history.replaceState({}, '', url);
         renderExperience(langData.exp);
+        renderEducation(langData.edu);
         renderImpact(langData.impact);
         renderSkills(langData.skills);
+        renderAwards(langData.awards);
+        renderEtc(langData.etc);
         applyTranslations(langData);
         updateDownloadLink(lang);
 

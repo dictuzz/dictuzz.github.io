@@ -1,73 +1,99 @@
-# 📉 SLIMMING PLAN (Rencana Perampingan Repositori)
+# SLIMMING & SIMPLIFICATION PLAN
 
-Dokumen ini berisi hasil audit menyeluruh terhadap repositori `dictuzz.github.io` untuk mengidentifikasi file dan modul yang sudah tidak digunakan (dead code), artefak sisa, dan peluang perampingan struktur.
+## 1. Executive Summary
 
-## 1️⃣ Executive Summary
-Repositori saat ini memiliki transisi dari arsitektur *Vanilla HTML/JS/CSS* ke *Next.js (untuk portfolio)*. Dalam proses transisi ini, banyak aset lama (CSS, JS, JSON) yang tertinggal di root folder namun sudah tidak digunakan oleh sistem *runtime* manapun. Selain itu, terdapat folder gambar hasil desain (`/output`) yang memakan ruang hingga ~12MB dan tidak diperlukan untuk *deployment*.
+Berdasarkan hasil audit menyeluruh pada repository `dictuzz.github.io`, ditemukan beberapa area redundansi, file mati (dead code), dan inkonsistensi desain sistem secara global yang berpotensi menghambat pemeliharaan (*maintainability*) ke depan. Rencana perampingan ini akan mengurangi ukuran file statis, menyingkirkan inkonsistensi yang tidak perlu, dan menyederhanakan arsitektur proyek.
 
-## 2️⃣ Entrypoints & Critical Paths
-File-file berikut adalah **Critical Runtime** dan **TIDAK BOLEH** dihapus:
-- **Root Entrypoint:** `index.html`, `js/home.js`, `css/home.css`, `css/site.css` (termasuk `css/animations.css` dan `assets/css/tokens.css`).
-- **Pages:** `404.html`.
-- **Resume System:** `resume/index.html`, `resume/resume.css`, `resume/resume.js`.
-- **Shared Logic:** `js/ui-kit.js`, `js/analytics.js` (dipanggil oleh *home* dan *resume*).
-- **Portfolio App:** `portfolio-app/` (source code Next.js) dan `portfolio/` (hasil *static export* Next.js yang dibutuhkan GitHub Pages).
-- **Konfigurasi System:** `CNAME`, `robots.txt`, `sitemap.xml`, `.gitignore`, `package.json`, dan file konfigurasi *tooling* (Prettier/ESLint).
+## 2. Entrypoints & Critical Paths
 
----
+- **Root Web Entrypoint:** `index.html` → Memanggil `css/site.css` & `js/home.js`.
+- **Resume Entrypoint:** `resume/index.html` → Memanggil `css/critical.css`, `resume/resume.css`, dan `resume/resume.js`.
+- **Portfolio App (Next.js):** Konfigurasi via `portfolio-app/package.json` yang saat di-build mengekspor hasil statis ke folder `portfolio/` (melalui script `scripts/publish.mjs`).
 
-## 3️⃣ Delete Candidates (Kandidat Hapus)
+## 3. Delete Candidates
 
-Berikut adalah file-file yang *100% aman* untuk dihapus berdasarkan analisa dependency tree dan *reachability map*.
+Rekomendasi file/folder yang siap dan aman untuk dihapus demi perampingan:
 
-### 🔴 High Confidence (Aman Dihapus)
+### High Confidence (Tingkat Keamanan Tinggi)
+1. **`css/animations.css`**
+   - **Tipe:** File Unused.
+   - **Bukti Alasan:** Tidak dihubungkan pada link tag di satupun entri utama (`index.html` maupun `resume/index.html`), dan tidak pula dipanggil menggunakan `@import` dalam CSS layer manapun.
+   - **Langkah Verifikasi:** `grep -r "animations.css" .` kembali kosong atau hanya di Markdown teks.
 
-#### A. Sisa Arsitektur Vanilla Portfolio (Legacy)
-File ini adalah sisa dari sistem portofolio lama sebelum berpindah menggunakan aplikasi Next.js (`portfolio-app`). HTML tidak lagi memanggil file-file ini.
-- `css/portfolio.css`
-- `css/portfolio-detail.css`
-- `js/portfolio.js`
-- `js/portfolio-index.js`
-- `js/portfolio-detail.js`
-- `data/portfolio.json` *(Data sudah dipindah ke `portfolio-app/content/`)*
-**Risk:** Low. **Verification:** Jalankan grep pada seluruh folder root, tidak ada file HTML yang meload resource ini.
+2. **Dokumen Markdown Perencanaan Lama** (`FIXES_AND_ANALYSIS.md`)
+   - **Tipe:** Stale documentation.
+   - **Bukti Alasan:** Peninggalan sesi pengembangan sebelumnya. Informasi kunci mengenai bug telah diterapkan. Dapat dihapus setelah referensi terangkum penuh di dokumen standar ini.
 
-#### B. Skrip dan Gaya Root yang Terbengkalai
-- `script.js` (di root)
-- `style.css` (di root)
-**Risk:** Low. **Verification:** `index.html` menggunakan `js/home.js` dan `css/home.css` & `css/site.css`. File root `script.js` dan `style.css` sama sekali tidak terhubung ke *entrypoint* manapun dan merupakan *dead code* dengan lebih dari 1.500 baris total.
+### Medium Confidence
+1. **`portfolio/` (Direktori Build Hasil Akhir di Repo)**
+   - **Tipe:** Build artifacts committed to repo.
+   - **Bukti Alasan:** Direktori ini selalu dibuat ulang secara *force* oleh fungsi build `publish.mjs` di dalam workspace Next.js. Hal ini menandakan folder ini adalah hasil luaran (dist file); *best practice*-nya folder ini dimasukkan ke `.gitignore` lalu biarkan GitHub Actions mempublikasikan build akhirnya ke GitHub Pages.
+   - **Risiko:** Apabila didelete tanpa mengatur siklus CI/CD (GitHub Actions), laman fitur `/portfolio` akan 404 pada production.
+   - **Mitigasi:** Atur aksi otomatis deploy GitHub (GitHub Pages action), dan hapus komitan build statis lokal.
 
-#### C. Artefak Desain / Screenshot
-- `output/` (seluruh folder beserta isinya)
-**Risk:** Low. **Verification:** Berisi 16 file PNG screenshot resolusi tinggi dari antarmuka web (seperti `portfolio-home-cleaner-final.png`). File ini tidak dipanggil oleh frontend dan hanya menghabiskan kuota repositori sebesar ~12MB. 
+## 4. Merge Candidates
 
----
+1. **Tokens CSS (`assets/css/tokens.css` dan `portfolio-app/styles/tokens.css`)**
+   - **Status:** Terdapat duplikasi *design token*.
+   - **Rencana Penggabungan (Merge):** Modul dari `portfolio-app/styles/tokens.css` digabungkan menggunakan Single Source of Truth ke direktori level root `assets/css/tokens.css`, lalu diimpor oleh Next.js untuk mencegah inkonsistensi pemodifikasian styling.
+   - **Risiko:** Medium. Dapat memutus styling build portfolio. Perlu mengatur sinkronisasinya di `next.config.ts`.
 
-## 4️⃣ Merge Candidates (Kandidat Gabung) / Restrukturisasi
+2. **Penggabungan `css/site.css` dan `resume/resume.css`**
+   - **Review Singkat:** Terdapat terlalu banyak duplikasi modul `.glass`, `.card`, dan `.btn`. File-file tersebut layak dikecilkan menjadi satu `shared-utilities.css`.
+   - Konsep lengkap terbahas dalam Rencana Refaktor Penyederhanaan (`REFACTOR_SIMPLIFICATION_PLAN.md`).
 
-1. **Penggabungan `css/home.css` dan `css/site.css`**
-   - **Rationale:** Walaupun fungsinya sedikit berbeda (struktur vs halaman utama), ukuran mereka relatif kecil (dibawah 11KB). Menggabungkannya dapat mengurangi satu HTTP request di halaman utama.
-   - **Target:** Gabungkan isi `home.css` ke dalam `site.css` dan hapus pemanggilan `<link>` `home.css` di `index.html`.
-   - **Risk:** Low. **Verification:** Pastikan tidak ada konflik *CSS specificity* setelah penggabungan.
+## 5. Dependency Cleanup
 
----
+- File dan direktori Next.js dalam `portfolio-app` terpelihara dengan baik; namun `node_modules` wajib tidak di-*commit* (saat ini aman melalui `.gitignore`).
+- Semua asset gambar di direktori induk dipakai dan saling memanggil di struktur DOM. Resolusi dan gambar cukup rapi.
 
-## 5️⃣ Dependency Cleanup & Artefak Build
+## 6. Suggested Folder Restructure (Before / After)
 
-### Rekomendasi Migrasi Deployment Portfolio (GitHub Actions)
-Saat ini folder `portfolio/` (yang berisi file .html, .txt struktur Next.js, dan folder `_next`) di-*commit* secara literal ke repositori. 
-- **Saran:** Atur **GitHub Actions** untuk melakukan `npm run build:portfolio` yang otomatis menghasilkan folder root portofolio dan merilisnya ke *gh-pages* branch.
-- **Benefit:** Menghilangkan keharusan tracking ratusan file statis (seperti `__next._index.txt`) ke dalam repositori utama, membuat PR/commit jauh lebih rapi.
+### Before:
+```text
+/
+├── assets/
+│   ├── css/tokens.css
+├── css/
+│   ├── animations.css (unused)
+│   ├── critical.css
+│   ├── site.css
+├── portfolio/ (build output)
+├── portfolio-app/
+│   ├── styles/tokens.css (duplikat)
+│   └── scripts/publish.mjs
+├── resume/
+│   ├── resume.css
+│   └── resume.js
+└── index.html
+```
 
----
+### Proposed After:
+```text
+/
+├── assets/
+│   ├── styles/
+│   │   ├── core.css (gabungan critical, shared utils)
+│   │   ├── tokens.css (SSOT)
+├── js/
+│   ├── core.js (modul global)
+├── portfolio-app/
+│   └── (merujuk ke tokens.css root)
+├── resume/
+│   └── (Hanya berisi html unik)
+└── index.html
+```
 
-## 6️⃣ Verification Checklist (Opsi Eksekusi)
-Jika rekomendasi ini dijalankan, lakukan *smoke testing* berikut:
-1. `npm run dev` -- Buka `http://localhost:8000/`.
-2. Verifikasi homepage berjalan sempurna tanpa `script.js` dan `style.css`.
-3. Verifikasi `/resume/` berjalan sempurna.
-4. Verifikasi `/portfolio/` berjalan sempurna tanpa error *missing file* JSON di console.
+## 7. Verification Checklist
 
-## 7️⃣ Risks & Rollback Plan
-- **Risiko:** Hampir tidak ada, karena file yang dihapus tidak pernah dimuat di DOM maupun proses build.
-- **Rollback:** Cukup gunakan git: `git revert HEAD` jika terjadi kesalahan tak terduga setelah penghapusan.
+- [ ] Lakukan penghapusan file `animations.css` secara manual.
+- [ ] Verifikasi halaman beranda beroperasi secara mulus (Visual Test).
+- [ ] Pastikan script build portfolio dapat mengambil token desain CSS yang absolut tanpa kesalahan (Build verifikasi).
+- [ ] Tahan modifikasi terhadap `portfolio/` statis hingga workflow CI/CD GitHub terpasang pada repository.
+
+## 8. Risks & Rollback Plan
+
+- **Risiko Utama:** Build Next.js (`portfolio-app`) pecah jika root referensi CSS dipindahkan.
+- **Rollback Plan:**
+   1. Buat branch git temporer. Segala percobaan delete/merge dijalankan pada branch itu.
+   2. Apabila UI situs hancur saat dites lokal, batalkan branch dan kembali ke root repositori aslinya tanpa kerusakan.

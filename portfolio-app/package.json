@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "scripts": {
     "protect": "node scripts/generate-protected-content.mjs",
-    "dev": "next dev",
-    "build": "npm run protect && next build",
+    "copy-tokens": "node -e \"require('fs').copyFileSync('../assets/css/tokens.css', 'styles/tokens.css')\"",
+    "dev": "npm run copy-tokens && next dev",
+    "build": "npm run copy-tokens && npm run protect && next build",
     "typecheck": "tsc --noEmit",
     "publish": "node scripts/publish.mjs",
-    "build:publish": "npm run protect && next build && node scripts/publish.mjs"
+    "build:publish": "npm run build && npm run publish"
   },
   "dependencies": {
     "next": "16.1.6",

@@ -335,17 +335,15 @@
         <section id="education" class="section" aria-labelledby="education-title">
             <div class="container">
                 <h2 id="education-title" class="section__title reveal" data-i18n="section.education">EDUCATION</h2>
-                <div class="grid grid--2">
-                    <div class="edu-card glass glass--hover card reveal">
-                        <h3 data-i18n="edu.uni1.name">Universitas Terbuka</h3>
-                        <p class="edu-card__degree" data-i18n="edu.uni1.degree">B.Sc., Data Science</p>
-                        <p class="edu-card__date" data-i18n="edu.uni1.date">Starting Aug 2025</p>
-                        <p class="edu-card__focus" data-i18n="edu.uni1.focus">Focus: Data Analysis, Statistics</p>
+                <div class="grid grid--2" id="education-list" aria-live="polite">
+                    <!-- Skeleton loader (replaced by JS) -->
+                    <div class="glass card">
+                        <div class="skeleton skeleton--title"></div>
+                        <div class="skeleton skeleton--text"></div>
                     </div>
-                    <div class="edu-card glass glass--hover card reveal">
-                        <h3 data-i18n="edu.school1.name">Saint Mary 2 High School</h3>
-                        <p class="edu-card__degree" data-i18n="edu.school1.degree">Science Program (IPA)</p>
-                        <p class="edu-card__date" data-i18n="edu.school1.date">Jul 2020 – Jun 2023</p>
+                    <div class="glass card">
+                        <div class="skeleton skeleton--title"></div>
+                        <div class="skeleton skeleton--text"></div>
                     </div>
                 </div>
             </div>
@@ -431,11 +429,9 @@
         <section id="awards" class="section" aria-labelledby="awards-title">
             <div class="container">
                 <h2 id="awards-title" class="section__title reveal" data-i18n="section.awards">AWARDS</h2>
-                <ul class="awards__list glass card reveal">
-                    <li data-i18n="awards.1">1st Place - Instagram Reels Competition, Goethe-Institut Bandung (2023)
-                    </li>
-                    <li data-i18n="awards.2">1st Place - Short Film Competition, Komisi Komsos (2019)</li>
-                    <li data-i18n="awards.3">Runner-Up Water Rocket Competition (2017)</li>
+                <ul class="awards__list glass card reveal" id="awards-list" aria-live="polite">
+                    <!-- Skeleton loader -->
+                    <li><div class="skeleton skeleton--text"></div></li>
                 </ul>
             </div>
         </section>
@@ -444,10 +440,9 @@
         <section id="etc" class="section" aria-labelledby="etc-title">
             <div class="container">
                 <h2 id="etc-title" class="section__title reveal" data-i18n="section.etc">ETC</h2>
-                <ul class="awards__list glass card reveal">
-                    <li data-i18n="etc.1">Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ participants</li>
-                    <li data-i18n="etc.2">Public lectures (2023): Journalism & Public Communication classes, Universitas
-                        Parahyangan</li>
+                <ul class="awards__list glass card reveal" id="etc-list" aria-live="polite">
+                    <!-- Skeleton loader -->
+                    <li><div class="skeleton skeleton--text"></div></li>
                 </ul>
             </div>
         </section>
