@@ -1,0 +1,42 @@
+name: Deploy Portfolio
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'portfolio-app/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: 'portfolio-app/package-lock.json'
+
+      - name: Install Dependencies
+        working-directory: portfolio-app
+        run: npm ci
+
+      - name: Build Next.js App
+        working-directory: portfolio-app
+        run: npm run build
+
+      - name: Export to Portfolio Directory
+        working-directory: portfolio-app
+        run: npm run publish
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add portfolio/
+          git commit -m "chore: auto-build portfolio via github actions" || echo "No changes to commit"
+          git push origin main
