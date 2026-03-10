@@ -191,5 +191,18 @@
             "instagram": "The story behind the work",
             "github": "Selected code and technical work"
         }
+    },
+    "home": {
+        "status": "Available",
+        "links": "Links",
+        "contact": "Contact Me",
+        "socials": "Socials",
+        "resume": "Resume",
+        "portfolio": "Portfolio",
+        "githubProjects": "GitHub Projects",
+        "email": "Email",
+        "bookCall": "Book a Call",
+        "footer1": "dictuzz 2026 all rights reserved",
+        "footer2": "Let's build something together"
     }
 }

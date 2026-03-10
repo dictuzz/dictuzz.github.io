@@ -1,0 +1,28 @@
+{
+  "contact": {
+    "email": "contact@dictuzz.me",
+    "whatsapp": "6285186888630",
+    "calendar": "https://calendar.app.google/39u2qGH6ybaFenhdA"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/dictuzz",
+    "github": "https://github.com/dictuzz",
+    "instagram": "https://instagram.com/dictuzz",
+    "facebook": "https://www.facebook.com/share/1BBT96Ypdf/",
+    "threads": "https://www.threads.net/@dictuzz",
+    "steam": "https://steamcommunity.com/profiles/76561199806080510",
+    "discord": "https://discord.gg/DVCySSUM"
+  },
+  "analytics": {
+    "enabled": true,
+    "id": "G-PJMTM772L5"
+  },
+  "cv": {
+    "en": "https://rxresu.me/me.richardricardo/en",
+    "id": "https://rxresu.me/me.richardricardo/id",
+    "de": "https://rxresu.me/me.richardricardo/de"
+  },
+  "theme": {
+    "storageKey": "dictuzz-theme"
+  }
+}

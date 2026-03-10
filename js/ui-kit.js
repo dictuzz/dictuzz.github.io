@@ -10,10 +10,8 @@
 // ══════════════════════════════════════════════
 export class ThemeManager {
     constructor(options = {}) {
-        const themeConfig = (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.theme) ? CONFIG_DATA.theme : {};
-
-        this.storageKey = options.storageKey || themeConfig.storageKey || 'dictuzz-theme';
-        this.defaultTheme = options.defaultTheme || themeConfig.default || 'dark';
+        this.storageKey = options.storageKey || 'dictuzz-theme';
+        this.defaultTheme = options.defaultTheme || 'dark';
         this.iconElement = options.iconElement || null;
         this.toggleElement = options.toggleElement || null;
 
@@ -103,12 +101,12 @@ export class ThemeManager {
 export class Typer {
     constructor(el, texts, speed = 50) {
         if (!el) return;
-        
+
         // Stop any existing Typer on this element
         if (el._typer) {
             el._typer.stop();
         }
-        
+
         this.el = el;
         this.texts = texts;
         this.speed = speed;
@@ -165,14 +163,14 @@ export class Typer {
 
     async type(text) {
         if (!this.isRunning) return;
-        
+
         let currentText = '';
         for (let i = 0; i < text.length; i++) {
             if (!this.isRunning) {
                 this.el.textContent = '';
                 return;
             }
-            
+
             currentText += text[i];
             this.el.textContent = currentText;
             const randomSpeed = this.speed + (Math.random() * 20 - 10);
@@ -182,17 +180,17 @@ export class Typer {
 
     async delete() {
         if (!this.isRunning) return;
-        
+
         // Get current text length
         const fullText = this.el.textContent || '';
         let textLength = fullText.length;
-        
+
         for (let i = textLength; i > 0; i--) {
             if (!this.isRunning) {
                 this.el.textContent = '';
                 return;
             }
-            
+
             // Build text from scratch based on what we're deleting
             this.el.textContent = fullText.substring(0, i - 1);
             await new Promise(r => setTimeout(r, 30));

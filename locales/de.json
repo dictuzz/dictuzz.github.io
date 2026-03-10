@@ -191,5 +191,18 @@
             "instagram": "Die Geschichte hinter der Arbeit",
             "github": "Ausgewählte technische Arbeiten und Code"
         }
+    },
+    "home": {
+        "status": "Verfügbar",
+        "links": "Links",
+        "contact": "Kontakt",
+        "socials": "Soziale Medien",
+        "resume": "Lebenslauf",
+        "portfolio": "Portfolio",
+        "githubProjects": "GitHub-Projekte",
+        "email": "E-Mail",
+        "bookCall": "Termin vereinbaren",
+        "footer1": "dictuzz 2026 alle Rechte vorbehalten",
+        "footer2": "Lass uns etwas zusammen aufbauen"
     }
 }

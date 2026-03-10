@@ -15,22 +15,29 @@ const $$ = s => document.querySelectorAll(s);
 // 1. INIT SHARED CORE
 // ══════════════════════════════════════════════
 let themeManager;
+let siteConfig = {};
+
+async function fetchSiteConfig() {
+    try {
+        const res = await fetch('/data/site-config.json');
+        if (res.ok) siteConfig = await res.json();
+    } catch (err) {
+        console.warn('Site config not found, using defaults');
+    }
+}
 
 function init() {
-    if (typeof CONFIG_DATA !== 'undefined') {
-        initAnalytics(CONFIG_DATA.analytics);
+    if (siteConfig.analytics) {
+        initAnalytics(siteConfig.analytics);
     }
 
     // Theme
     const toggleEl = document.getElementById('theme-toggle');
     const iconEl = document.getElementById('theme-icon');
-    const storageKey = (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.theme)
-        ? CONFIG_DATA.theme.storageKey
-        : 'dictuzz-theme';
 
     themeManager = new ThemeManager({
         toggleElement: toggleEl,
-        storageKey: storageKey,
+        storageKey: siteConfig.theme?.storageKey || 'dictuzz-theme',
         iconElement: iconEl
     });
 }
@@ -197,9 +204,9 @@ function updateDownloadLink(lang) {
     const link = $('#download-cv-link');
     if (!link) return;
 
-    const urls = {
-        'id': 'https://rxresu.me/me.richardricardo/id',
+    const urls = siteConfig.cv || {
         'en': 'https://rxresu.me/me.richardricardo/en',
+        'id': 'https://rxresu.me/me.richardricardo/id',
         'de': 'https://rxresu.me/me.richardricardo/de'
     };
 
@@ -331,41 +338,19 @@ document.addEventListener('click', e => {
 
 // 7. INITIAL LOAD
 // ══════════════════════════════════════════════
-let CONFIG_DATA = {};
-
-async function fetchConfig() {
-    try {
-        const res = await fetch('/data/global-config.json');
-        if (res.ok) {
-            const data = await res.json();
-            CONFIG_DATA = data.resume || {};
-        }
-    } catch (err) {
-        console.error("Config fetch failed:", err);
-    }
-}
-
 document.addEventListener('DOMContentLoaded', async () => {
-    await fetchConfig();
+    await fetchSiteConfig();
     init();
 
     const urlLang = new URLSearchParams(location.search).get('lang');
     const savedLang = localStorage.getItem(LANG_STORAGE_KEY);
     const browserLang = navigator.language.split('-')[0];
-    
+
     // Priority: URL param > Saved preference > Browser lang > Default
     const initLang = SUPPORTED_LANGS.includes(urlLang) ? urlLang
         : SUPPORTED_LANGS.includes(savedLang) ? savedLang
-        : SUPPORTED_LANGS.includes(browserLang) ? browserLang
-        : DEFAULT_LANG;
+            : SUPPORTED_LANGS.includes(browserLang) ? browserLang
+                : DEFAULT_LANG;
 
     loadLanguage(initLang);
-
-    // Feature Flags Check
-    if (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.features) {
-        if (CONFIG_DATA.features.blog === false) {
-            const blogLink = document.querySelector('a[href*="blog"]');
-            if (blogLink) blogLink.style.display = 'none';
-        }
-    }
 });

@@ -60,7 +60,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/home.css">
 </head>
 
@@ -83,10 +82,15 @@
                 <div class="bio-meta" aria-label="Availability and local time">
                     <span class="bio-status">
                         <span class="bio-status__dot" aria-hidden="true"></span>
-                        <span>Available</span>
+                        <span data-i18n="home.status">Available</span>
                     </span>
                     <span class="bio-meta__item" id="local-date">Loading date</span>
                     <span class="bio-meta__item" id="local-time">Loading time</span>
+                    <span class="bio-meta__item bio-lang">
+                        <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                        <button class="lang-btn" data-lang="id" aria-label="Indonesian">ID</button>
+                        <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
+                    </span>
                 </div>
             </div>
 
@@ -97,7 +101,7 @@
                             id="trigger-links">
                             <span class="folder__label">
                                 <span class="folder__icon"><i class="fas fa-folder-open"></i></span>
-                                <span class="folder__title">Links</span>
+                                <span class="folder__title" data-i18n="home.links">Links</span>
                             </span>
                             <span class="folder__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
                         </button>
@@ -106,22 +110,25 @@
                         <div class="folder__items">
                             <a class="folder-link" href="/resume/">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
-                                    <span>Resume</span>
+                                    <span class="folder-link__icon"><i class="fas fa-file-lines"
+                                            aria-hidden="true"></i></span>
+                                    <span data-i18n="home.resume">Resume</span>
                                 </span>
                                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                             <a class="folder-link" href="/portfolio/">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fas fa-briefcase" aria-hidden="true"></i></span>
-                                    <span>Portfolio</span>
+                                    <span class="folder-link__icon"><i class="fas fa-briefcase"
+                                            aria-hidden="true"></i></span>
+                                    <span data-i18n="home.portfolio">Portfolio</span>
                                 </span>
                                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                             <a class="folder-link" href="https://github.com/dictuzz" target="_blank" rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-github" aria-hidden="true"></i></span>
-                                    <span>GitHub Projects</span>
+                                    <span class="folder-link__icon"><i class="fab fa-github"
+                                            aria-hidden="true"></i></span>
+                                    <span data-i18n="home.githubProjects">GitHub Projects</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
@@ -131,35 +138,39 @@
 
                 <section class="folder card" data-folder>
                     <h2 class="folder__heading">
-                        <button class="folder__trigger" type="button" aria-expanded="false" aria-controls="panel-contact"
-                            id="trigger-contact">
+                        <button class="folder__trigger" type="button" aria-expanded="false"
+                            aria-controls="panel-contact" id="trigger-contact">
                             <span class="folder__label">
                                 <span class="folder__icon"><i class="fas fa-paper-plane"></i></span>
-                                <span class="folder__title">Contact Me</span>
+                                <span class="folder__title" data-i18n="home.contact">Contact Me</span>
                             </span>
                             <span class="folder__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
                         </button>
                     </h2>
-                    <div class="folder__panel" id="panel-contact" role="region" aria-labelledby="trigger-contact" hidden>
+                    <div class="folder__panel" id="panel-contact" role="region" aria-labelledby="trigger-contact"
+                        hidden>
                         <div class="folder__items">
                             <a class="folder-link" href="mailto:contact@dictuzz.me">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                    <span>Email</span>
+                                    <span class="folder-link__icon"><i class="fas fa-envelope"
+                                            aria-hidden="true"></i></span>
+                                    <span data-i18n="home.email">Email</span>
                                 </span>
                                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                             <a class="folder-link" href="https://calendar.app.google/39u2qGH6ybaFenhdA" target="_blank"
                                 rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></span>
-                                    <span>Book a Call</span>
+                                    <span class="folder-link__icon"><i class="fas fa-calendar-check"
+                                            aria-hidden="true"></i></span>
+                                    <span data-i18n="home.bookCall">Book a Call</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
                             <a class="folder-link" href="https://wa.me/6285186888630" target="_blank" rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>
+                                    <span class="folder-link__icon"><i class="fab fa-whatsapp"
+                                            aria-hidden="true"></i></span>
                                     <span>WhatsApp</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -170,27 +181,31 @@
 
                 <section class="folder card" data-folder>
                     <h2 class="folder__heading">
-                        <button class="folder__trigger" type="button" aria-expanded="false" aria-controls="panel-socials"
-                            id="trigger-socials">
+                        <button class="folder__trigger" type="button" aria-expanded="false"
+                            aria-controls="panel-socials" id="trigger-socials">
                             <span class="folder__label">
                                 <span class="folder__icon"><i class="fas fa-share-nodes"></i></span>
-                                <span class="folder__title">Socials</span>
+                                <span class="folder__title" data-i18n="home.socials">Socials</span>
                             </span>
                             <span class="folder__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
                         </button>
                     </h2>
-                    <div class="folder__panel" id="panel-socials" role="region" aria-labelledby="trigger-socials" hidden>
+                    <div class="folder__panel" id="panel-socials" role="region" aria-labelledby="trigger-socials"
+                        hidden>
                         <div class="folder__items">
-                            <a class="folder-link" href="https://linkedin.com/in/dictuzz" target="_blank" rel="noopener">
+                            <a class="folder-link" href="https://linkedin.com/in/dictuzz" target="_blank"
+                                rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
+                                    <span class="folder-link__icon"><i class="fab fa-linkedin-in"
+                                            aria-hidden="true"></i></span>
                                     <span>LinkedIn</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
                             <a class="folder-link" href="https://instagram.com/dictuzz" target="_blank" rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+                                    <span class="folder-link__icon"><i class="fab fa-instagram"
+                                            aria-hidden="true"></i></span>
                                     <span>Instagram</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -198,7 +213,8 @@
                             <a class="folder-link" href="https://www.facebook.com/share/1BBT96Ypdf/" target="_blank"
                                 rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
+                                    <span class="folder-link__icon"><i class="fab fa-facebook-f"
+                                            aria-hidden="true"></i></span>
                                     <span>Facebook</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -213,22 +229,25 @@
                             </a>
                             <a class="folder-link" href="https://github.com/dictuzz" target="_blank" rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                                    <span class="folder-link__icon"><i class="fab fa-github"
+                                            aria-hidden="true"></i></span>
                                     <span>GitHub</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
-                            <a class="folder-link" href="https://steamcommunity.com/profiles/76561199806080510" target="_blank"
-                                rel="noopener">
+                            <a class="folder-link" href="https://steamcommunity.com/profiles/76561199806080510"
+                                target="_blank" rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-steam-symbol" aria-hidden="true"></i></span>
+                                    <span class="folder-link__icon"><i class="fab fa-steam-symbol"
+                                            aria-hidden="true"></i></span>
                                     <span>Steam</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
                             <a class="folder-link" href="https://discord.gg/DVCySSUM" target="_blank" rel="noopener">
                                 <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="fab fa-discord" aria-hidden="true"></i></span>
+                                    <span class="folder-link__icon"><i class="fab fa-discord"
+                                            aria-hidden="true"></i></span>
                                     <span>Discord</span>
                                 </span>
                                 <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -239,8 +258,8 @@
             </div>
 
             <footer class="bio-footer">
-                <p>dictuzz 2026 all rights reserved</p>
-                <p>Let&apos;s build something together</p>
+                <p data-i18n="home.footer1">dictuzz 2026 all rights reserved</p>
+                <p data-i18n="home.footer2">Let&apos;s build something together</p>
             </footer>
         </section>
     </main>

@@ -88,3 +88,71 @@ if (defaultFolder) {
 
 updateLocalTime();
 window.setInterval(updateLocalTime, 60000);
+
+// ═══════════════════════════════════════════════════
+// LANGUAGE SYSTEM
+// ═══════════════════════════════════════════════════
+const SUPPORTED_LANGS = ['en', 'id', 'de'];
+const DEFAULT_LANG = 'en';
+const LANG_STORAGE_KEY = 'dictuzz-lang';
+
+function getNestedValue(obj, path) {
+    return path.split('.').reduce((o, k) => o?.[k], obj);
+}
+
+async function loadLanguage(lang) {
+    try {
+        const res = await fetch(`/locales/${lang}.json`);
+        if (!res.ok) throw new Error('Failed to load');
+        const data = await res.json();
+
+        // Apply translations
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const value = getNestedValue(data, el.dataset.i18n);
+            if (value && typeof value === 'string') {
+                el.textContent = value;
+            }
+        });
+
+        // Save preference
+        localStorage.setItem(LANG_STORAGE_KEY, lang);
+        document.documentElement.lang = lang;
+
+        // Update active button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+    } catch (err) {
+        console.warn('Language load error:', err);
+        if (lang !== DEFAULT_LANG) loadLanguage(DEFAULT_LANG);
+    }
+}
+
+// Language button handlers
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        if (lang && SUPPORTED_LANGS.includes(lang)) {
+            loadLanguage(lang);
+        }
+    });
+});
+
+// Determine initial language
+const urlLang = new URLSearchParams(location.search).get('lang');
+const savedLang = localStorage.getItem(LANG_STORAGE_KEY);
+const browserLang = navigator.language.split('-')[0];
+
+const initLang = SUPPORTED_LANGS.includes(urlLang) ? urlLang
+    : SUPPORTED_LANGS.includes(savedLang) ? savedLang
+        : SUPPORTED_LANGS.includes(browserLang) ? browserLang
+            : DEFAULT_LANG;
+
+if (initLang !== DEFAULT_LANG) {
+    loadLanguage(initLang);
+} else {
+    // Mark EN as active (default)
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === 'en');
+    });
+}

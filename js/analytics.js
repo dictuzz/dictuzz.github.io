@@ -6,35 +6,29 @@
  */
 
 export function initAnalytics(config) {
-    // 1. Try argument
-    // 2. Try global CONFIG_DATA
-    const cfg = config || (typeof CONFIG_DATA !== 'undefined' ? CONFIG_DATA.analytics : null);
-
-    if (!cfg || !cfg.enabled || !cfg.id) {
-        console.warn('Analytics: Disabled or Missing ID');
+    if (!config || !config.enabled || !config.id) {
         return;
     }
 
-    const analyticsId = cfg.id;
+    const analyticsId = config.id;
 
     // Prevent double injection
-    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${config.id}"]`)) {
+    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${analyticsId}"]`)) {
         return;
     }
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${config.id}`;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
 
-    // Make gtag available globally for manual event tracking if needed
+    // Make gtag available globally for manual event tracking
     window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', config.id);
-
-    console.log(`Analytics: Initialized ${config.id}`);
+    gtag('config', analyticsId);
 }
+

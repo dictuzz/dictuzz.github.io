@@ -3,14 +3,11 @@
  * BENEDICTUS RICHARD RICARDO: Portfolio v2.0 (Modular)
  * Modern Glassmorphism Design System
  * Performance-optimized, Mobile-first, Zero Dependencies
+ *
+ * NOTE: Tokens, reset, nav, hero, and buttons are in critical.css
+ *       This file contains section-specific styles loaded deferred.
  * ═══════════════════════════════════════════════════════════════════════════
  */
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   MODULAR IMPORTS
-   ═══════════════════════════════════════════════════════════════════════════ */
-@import url('../assets/css/tokens.css');
-@import url('../css/animations.css');
 
 /* ═══════════════════════════════════════════════════════════════════════════
    9. ABOUT SECTION
@@ -149,10 +146,6 @@
     transition: left 0.8s ease;
 }
 
-[data-theme="light"] .glass--hover:hover {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(0, 200, 170, 0.3);
-}
 
 /* FIX: Prevent text truncation */
 .glass,
@@ -202,21 +195,6 @@
     left: 100%;
 }
 
-.hero__photo {
-    width: 280px;
-    height: 380px;
-    border-radius: 9999px !important;
-    overflow: hidden;
-    /* Root project style matching */
-    border: 2px solid var(--accent-gold);
-    box-shadow:
-        0 0 0 8px rgba(255, 184, 0, 0.1),
-        0 25px 50px rgba(0, 0, 0, 0.5),
-        0 0 100px var(--accent-glow);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: slideUp 1s var(--ease-out) 0.3s forwards;
-}
 
 /* Pulsing timeline dot */
 .timeline__item::before {
@@ -272,19 +250,6 @@
     padding-bottom: var(--space-1);
 }
 
-/* UTILITIES */
-.container {
-    width: min(90%, 1200px);
-    margin-inline: auto;
-    padding-inline: var(--space-4);
-}
-
-/* FIX: Section spacing to prevent overlap */
-.section {
-    padding-block: var(--space-12);
-    position: relative;
-    z-index: 1;
-}
 
 .section__title {
     margin-bottom: var(--space-8);
@@ -896,25 +861,6 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    18. ACCESSIBILITY
    ═══════════════════════════════════════════════════════════════════════════ */
-:root {
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --radius-md: 12px;
-    --radius-lg: 24px;
-    /* Increased from 16px */
-    --radius-xl: 32px;
-    /* Added for larger containers */
-    --radius-full: 9999px;
-    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass {
-    background: var(--bg-glass);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border-glass);
-    border-radius: var(--radius-lg);
-}
 
 :focus-visible {
     outline: 2px solid var(--accent-cyan);

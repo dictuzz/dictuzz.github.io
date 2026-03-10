@@ -191,5 +191,18 @@
             "instagram": "Cerita di balik perjalanan kerja",
             "github": "Kumpulan karya teknis dan kode"
         }
+    },
+    "home": {
+        "status": "Tersedia",
+        "links": "Tautan",
+        "contact": "Hubungi Saya",
+        "socials": "Media Sosial",
+        "resume": "Resume",
+        "portfolio": "Portofolio",
+        "githubProjects": "Proyek GitHub",
+        "email": "Email",
+        "bookCall": "Jadwalkan Panggilan",
+        "footer1": "dictuzz 2026 hak cipta dilindungi",
+        "footer2": "Mari membangun sesuatu bersama"
     }
 }
