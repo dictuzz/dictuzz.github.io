@@ -9,3 +9,8 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Next.js Build Output
+portfolio/
+portfolio-app/out/
+portfolio-app/.next/

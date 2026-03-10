@@ -61,6 +61,7 @@ function closeFolder(folder) {
 
     folder.classList.remove('is-open');
     trigger.setAttribute('aria-expanded', 'false');
+    panel.hidden = true;
 }
 
 function openFolder(folder) {
@@ -70,32 +71,78 @@ function openFolder(folder) {
 
     folder.classList.add('is-open');
     trigger.setAttribute('aria-expanded', 'true');
+    panel.hidden = false;
 }
 
-folders.forEach((folder) => {
-    const panel = folder.querySelector('.folder__panel');
-    if (panel) panel.hidden = false;
+async function initFolders() {
+    const accordionContainer = document.querySelector('.accordion');
+    if (!accordionContainer) return;
 
-    closeFolder(folder);
+    try {
+        // Fetch config
+        const response = await fetch('/data/links.json');
+        if (!response.ok) throw new Error('Failed to load links config');
+        const configFolders = await response.json();
 
-    const trigger = folder.querySelector('.folder__trigger');
-    if (!trigger) return;
+        // Render HTML
+        accordionContainer.innerHTML = configFolders.map(folder => `
+            <section class="folder card" data-folder>
+                <h2 class="folder__heading">
+                    <button class="folder__trigger" type="button" aria-expanded="${folder.defaultOpen ? 'true' : 'false'}" aria-controls="panel-${folder.id}" id="trigger-${folder.id}">
+                        <span class="folder__label">
+                            <span class="folder__icon"><i class="${folder.icon}"></i></span>
+                            <span class="folder__title">${folder.title}</span>
+                        </span>
+                        <span class="folder__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                </h2>
+                <div class="folder__panel" id="panel-${folder.id}" role="region" aria-labelledby="trigger-${folder.id}" ${folder.defaultOpen ? '' : 'hidden'}>
+                    <div class="folder__items">
+                        ${folder.items.map(item => `
+                            <a class="folder-link" href="${item.href}" ${item.external ? 'target="_blank" rel="noopener"' : ''}>
+                                <span class="folder-link__main">
+                                    <span class="folder-link__icon"><i class="${item.icon}" aria-hidden="true"></i></span>
+                                    <span>${item.label}</span>
+                                </span>
+                                <i class="${item.external ? 'fas fa-arrow-up-right-from-square' : 'fas fa-arrow-right'}" aria-hidden="true"></i>
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>
+        `).join('');
 
-    trigger.addEventListener('click', () => {
-        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        // Bind interactive events
+        const folders = [...document.querySelectorAll('[data-folder]')];
+        folders.forEach((folder) => {
+            const trigger = folder.querySelector('.folder__trigger');
+            if (!trigger) return;
 
-        folders.forEach((item) => closeFolder(item));
+            // Initialize states
+            if (folder.querySelector('.folder__trigger').getAttribute('aria-expanded') === 'true') {
+                folder.classList.add('is-open');
+            } else {
+                closeFolder(folder);
+            }
 
-        if (!isExpanded) {
-            openFolder(folder);
-        }
-    });
-});
+            trigger.addEventListener('click', () => {
+                const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
 
-const defaultFolder = document.querySelector('#trigger-links')?.closest('[data-folder]');
-if (defaultFolder) {
-    openFolder(defaultFolder);
+                // Close all others
+                folders.forEach((item) => closeFolder(item));
+
+                if (!isExpanded) {
+                    openFolder(folder);
+                }
+            });
+        });
+
+    } catch (error) {
+        console.error('Error rendering folders:', error);
+    }
 }
+
+initFolders();
 
 updateLocalTime();
 window.setInterval(updateLocalTime, 60000);
