@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Fraunces, Instrument_Sans } from 'next/font/google';
 import './globals.css';
 import { absoluteUrl } from '@/lib/seo';
+import { GlobalFooter } from '@/components/portfolio/GlobalFooter';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -56,6 +57,7 @@ export default function PortfolioAppLayout({
           <div className="ambient ambient--one" aria-hidden="true" />
           <div className="ambient ambient--two" aria-hidden="true" />
           {children}
+          <GlobalFooter />
         </div>
       </body>
     </html>

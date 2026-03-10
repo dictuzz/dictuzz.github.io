@@ -50,6 +50,7 @@ function updateLocalTime() {
         timeZone,
         hour: '2-digit',
         minute: '2-digit',
+        second: '2-digit',
         hour12: false
     }).format(now);
 }
@@ -145,4 +146,23 @@ async function initFolders() {
 initFolders();
 
 updateLocalTime();
-window.setInterval(updateLocalTime, 60000);
+window.setInterval(updateLocalTime, 1000);
+
+// Typing Animation for "dictuzz"
+const bioTitle = document.querySelector('.bio-title');
+if (bioTitle && bioTitle.textContent.trim() === 'dictuzz') {
+    bioTitle.textContent = '';
+    const textToType = 'dictuzz';
+    let charIndex = 0;
+
+    function typeChar() {
+        if (charIndex < textToType.length) {
+            bioTitle.textContent += textToType.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeChar, 120); // typing speed
+        }
+    }
+
+    // slight delay before starting
+    setTimeout(typeChar, 300);
+}

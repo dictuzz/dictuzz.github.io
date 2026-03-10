@@ -149,8 +149,8 @@
                         data-i18n="nav.experience">Experience</a></li>
                 <li role="none"><a href="#education" class="nav__link" role="menuitem"
                         data-i18n="nav.education">Education</a></li>
-                <li role="none"><a href="#impact" class="nav__link" role="menuitem"
-                        data-i18n="nav.impact">Impact</a></li>
+                <li role="none"><a href="#impact" class="nav__link" role="menuitem" data-i18n="nav.impact">Impact</a>
+                </li>
                 <li role="none"><a href="#skills" class="nav__link" role="menuitem" data-i18n="nav.skills">Skills</a>
                 </li>
                 <li role="none"><a href="#awards" class="nav__link" role="menuitem" data-i18n="nav.awards">Awards</a>
@@ -254,7 +254,8 @@
                 </p>
 
                 <!-- Subtitle -->
-                <p class="hero__subtitle" data-i18n="hero.subtitle">Data-driven mindset. Cross-functional experience. Execution-first approach.</p>
+                <p class="hero__subtitle" data-i18n="hero.subtitle">Data-driven mindset. Cross-functional experience.
+                    Execution-first approach.</p>
 
                 <!-- CTA Buttons -->
                 <div class="hero__actions">
@@ -305,7 +306,8 @@
                     </div>
                     <div class="about__content reveal reveal--right">
                         <p class="about__text" data-i18n="summary.text">
-                            Management Trainee with a Data Science background, focused on operational efficiency and cross-functional coordination.
+                            Management Trainee with a Data Science background, focused on operational efficiency and
+                            cross-functional coordination.
                         </p>
                         <a href="mailto:contact@dictuzz.me" class="btn btn--primary btn--glow">
                             <i class="fas fa-envelope"></i>
@@ -352,7 +354,8 @@
         <!-- Operational Impact Highlights Section -->
         <section id="impact" class="section" aria-labelledby="impact-title">
             <div class="container">
-                <h2 id="impact-title" class="section__title reveal" data-i18n="section.impact">OPERATIONAL IMPACT HIGHLIGHTS</h2>
+                <h2 id="impact-title" class="section__title reveal" data-i18n="section.impact">OPERATIONAL IMPACT
+                    HIGHLIGHTS</h2>
                 <div class="impact__list grid grid--2" aria-live="polite">
                     <!-- Skeleton loader (replaced by JS) -->
                     <div class="glass card">
@@ -431,7 +434,9 @@
                 <h2 id="awards-title" class="section__title reveal" data-i18n="section.awards">AWARDS</h2>
                 <ul class="awards__list glass card reveal" id="awards-list" aria-live="polite">
                     <!-- Skeleton loader -->
-                    <li><div class="skeleton skeleton--text"></div></li>
+                    <li>
+                        <div class="skeleton skeleton--text"></div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -442,7 +447,9 @@
                 <h2 id="etc-title" class="section__title reveal" data-i18n="section.etc">ETC</h2>
                 <ul class="awards__list glass card reveal" id="etc-list" aria-live="polite">
                     <!-- Skeleton loader -->
-                    <li><div class="skeleton skeleton--text"></div></li>
+                    <li>
+                        <div class="skeleton skeleton--text"></div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -520,12 +527,27 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer__text">
-                &copy; 2026 Benedictus Richard Ricardo. <span data-i18n="footer.rights">All rights reserved.</span>
-            </p>
+    <footer class="global-footer">
+        <nav class="global-footer__nav" aria-label="Global navigation">
+            <a href="/" class="global-footer__link">Links</a>
+            <a href="/resume/" class="global-footer__link" aria-current="page">Resume</a>
+            <a href="/portfolio/" class="global-footer__link">Portfolio</a>
+        </nav>
+
+        <div class="global-footer__contacts">
+            <a href="mailto:contact@dictuzz.me" class="global-footer__contact-link" aria-label="Email Me"><i
+                    class="fas fa-envelope"></i> contact@dictuzz.me</a>
+            <span class="global-footer__divider">&bull;</span>
+            <a href="https://linkedin.com/in/dictuzz" class="global-footer__contact-link" target="_blank" rel="noopener"
+                aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <span class="global-footer__divider">&bull;</span>
+            <a href="/terms/" class="global-footer__contact-link"><i class="fas fa-file-contract"></i> Terms</a>
         </div>
+
+        <p class="global-footer__copy">
+            &copy; 2026 Benedictus Richard Ricardo. All rights reserved.
+            <span>Quam Plurimi et Quam Aptissimi.</span>
+        </p>
     </footer>
 
     <script type="module" src="/resume/resume.js?v=3"></script>

@@ -1,6 +1,10 @@
 
 > dictuzz-portfolio-app@0.1.0 build
-> npm run protect && next build
+> npm run copy-tokens && npm run protect && next build
+
+
+> dictuzz-portfolio-app@0.1.0 copy-tokens
+> node -e "require('fs').copyFileSync('../assets/css/tokens.css', 'styles/tokens.css')"
 
 
 > dictuzz-portfolio-app@0.1.0 protect
@@ -13,21 +17,25 @@ Skipping protected payload generation because PORTFOLIO_ACCESS_CODE is not set.
 
 > Build error occurred
 Error: Turbopack build failed with 1 errors:
-./app/globals.css:1:2
-Module not found: Can't resolve '../../assets/css/tokens.css'
-> 1 | @import '../../assets/css/tokens.css';
-    |  ^
-  2 | @import '../styles/globals.css';
+./components/portfolio/GlobalFooter.tsx:2:10
+Ecmascript file had an error
+  1 | import Link from 'next/link';
+> 2 | import { usePathname } from 'next/navigation';
+    |          ^^^^^^^^^^^
+  3 |
+  4 | export function GlobalFooter() {
+  5 |   const pathname = usePathname();
+
+You're importing a component that needs `usePathname`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
 
 
 
 Import trace:
-  Client Component Browser:
-    ./app/globals.css [Client Component Browser]
-    ./app/layout.tsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
+  Server Component:
+    ./components/portfolio/GlobalFooter.tsx
+    ./app/layout.tsx
 
 
-    at <unknown> (./app/globals.css:1:2)
-    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./components/portfolio/GlobalFooter.tsx:2:10)

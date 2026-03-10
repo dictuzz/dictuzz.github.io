@@ -236,6 +236,16 @@ function AccessLockedScreen({
           <button className="button button--primary access-lock__submit" disabled={isLoading} type="submit">
             {isLoading ? 'Unlocking...' : 'Unlock Portfolio'}
           </button>
+
+          <div className="flex flex--center mt-12">
+            <a
+              href="mailto:contact@dictuzz.me?subject=Portfolio%20Access%20Request"
+              className="text-sm text-muted hover-text-primary underline-offset"
+              style={{ fontSize: '0.9rem', color: 'var(--color-text-soft)', textDecoration: 'underline', marginTop: '16px', display: 'inline-block' }}
+            >
+              Need access? Request a code
+            </a>
+          </div>
         </form>
       </section>
     </main>

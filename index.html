@@ -97,9 +97,27 @@
                 <!-- Dynamically populated via js/home.js and data/links.json -->
             </div>
 
-            <footer class="bio-footer">
-                <p>dictuzz 2026 all rights reserved</p>
-                <p>Let&apos;s build something together</p>
+            <footer class="global-footer">
+                <nav class="global-footer__nav" aria-label="Global navigation">
+                    <a href="/" class="global-footer__link" aria-current="page">Links</a>
+                    <a href="/resume/" class="global-footer__link">Resume</a>
+                    <a href="/portfolio/" class="global-footer__link">Portfolio</a>
+                </nav>
+
+                <div class="global-footer__contacts">
+                    <a href="mailto:contact@dictuzz.me" class="global-footer__contact-link" aria-label="Email Me"><i
+                            class="fas fa-envelope"></i> contact@dictuzz.me</a>
+                    <span class="global-footer__divider">&bull;</span>
+                    <a href="https://linkedin.com/in/dictuzz" class="global-footer__contact-link" target="_blank"
+                        rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <span class="global-footer__divider">&bull;</span>
+                    <a href="/terms/" class="global-footer__contact-link"><i class="fas fa-file-contract"></i> Terms</a>
+                </div>
+
+                <p class="global-footer__copy">
+                    &copy; 2026 Benedictus Richard Ricardo. All rights reserved.
+                    <span>Quam Plurimi et Quam Aptissimi.</span>
+                </p>
             </footer>
         </section>
     </main>
