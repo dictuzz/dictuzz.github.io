@@ -7,6 +7,7 @@
     "copy-tokens": "node -e \"require('fs').copyFileSync('../assets/css/tokens.css', 'styles/tokens.css')\"",
     "dev": "npm run copy-tokens && next dev",
     "build": "npm run copy-tokens && npm run protect && next build",
+    "test": "node --experimental-strip-types --import ./tests/register.mjs --test",
     "typecheck": "tsc --noEmit",
     "publish": "node scripts/publish.mjs",
     "build:publish": "npm run build && npm run publish"
