@@ -5,7 +5,6 @@ export type ProtectedRouteDescriptor =
   | { kind: 'legacy'; legacySlug: string };
 
 export const protectedAssetBasePath = '/portfolio/protected';
-export const accessCodeStorageKey = 'dictuzz-portfolio-access-code';
 
 export function getProtectedAssetPath(route: ProtectedRouteDescriptor) {
   switch (route.kind) {

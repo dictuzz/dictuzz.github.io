@@ -11,7 +11,6 @@ import type {
   ProtectedWorkPayload
 } from '@/content/types';
 import {
-  accessCodeStorageKey,
   getProtectedAssetPath,
   getProtectedRoutePath,
   type ProtectedRouteDescriptor,
@@ -63,6 +62,7 @@ const authMarker = 'dictuzz-portfolio-private-v1';
 const textDecoder = new TextDecoder();
 const textEncoder = new TextEncoder();
 
+let inMemoryAccessCode = '';
 let cachedCode = '';
 let cachedSalt = '';
 let cachedIterations = 0;
@@ -262,8 +262,8 @@ export function ProtectedPortfolioRoute({ route }: { route: ProtectedRouteDescri
   useEffect(() => {
     let isActive = true;
 
-    async function tryUnlockFromSession() {
-      const storedCode = window.sessionStorage.getItem(accessCodeStorageKey) ?? '';
+    async function tryUnlockFromMemory() {
+      const storedCode = inMemoryAccessCode;
 
       if (!storedCode) {
         if (isActive) {
@@ -288,7 +288,7 @@ export function ProtectedPortfolioRoute({ route }: { route: ProtectedRouteDescri
         setPayload(nextPayload);
         setError('');
       } catch {
-        window.sessionStorage.removeItem(accessCodeStorageKey);
+        inMemoryAccessCode = '';
 
         if (isActive) {
           setPayload(null);
@@ -302,7 +302,7 @@ export function ProtectedPortfolioRoute({ route }: { route: ProtectedRouteDescri
     }
 
     setPayload(null);
-    tryUnlockFromSession();
+    tryUnlockFromMemory();
 
     return () => {
       isActive = false;
@@ -316,11 +316,11 @@ export function ProtectedPortfolioRoute({ route }: { route: ProtectedRouteDescri
     try {
       await verifyAccessCode(nextCode);
       const nextPayload = await loadRoutePayload(route, nextCode);
-      window.sessionStorage.setItem(accessCodeStorageKey, nextCode);
+      inMemoryAccessCode = nextCode;
       setPayload(nextPayload);
       setCode(nextCode);
     } catch {
-      window.sessionStorage.removeItem(accessCodeStorageKey);
+      inMemoryAccessCode = '';
       setPayload(null);
       setError('The access code is incorrect.');
     } finally {
