@@ -221,6 +221,13 @@ export function initMagneticButtons(selector = '.link-button') {
     const buttons = document.querySelectorAll(selector);
 
     buttons.forEach(btn => {
+        let magnetChildren = null;
+
+        btn.addEventListener('mouseenter', () => {
+            // Cache magnetic children on enter to avoid DOM checks on every mousemove
+            magnetChildren = Array.prototype.filter.call(btn.children, c => !c.classList.contains('no-magnet'));
+        });
+
         btn.addEventListener('mousemove', (e) => {
             const rect = btn.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
@@ -229,20 +236,34 @@ export function initMagneticButtons(selector = '.link-button') {
             btn.style.transform = `translate(${x * 0.2}px, ${y * 0.3}px) rotateX(${-y * 0.1}deg) rotateY(${x * 0.1}deg)`;
 
             // Optional: Move children slightly for depth
-            const children = btn.children;
-            for (let i = 0; i < children.length; i++) {
-                if (children[i].classList.contains('no-magnet')) continue;
-                children[i].style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-                children[i].style.transition = 'none';
+            if (!magnetChildren) {
+                // Fallback in case mousemove happens without mouseenter
+                magnetChildren = Array.prototype.filter.call(btn.children, c => !c.classList.contains('no-magnet'));
+            }
+
+            for (let i = 0; i < magnetChildren.length; i++) {
+                magnetChildren[i].style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                magnetChildren[i].style.transition = 'none';
             }
         });
 
         btn.addEventListener('mouseleave', () => {
             btn.style.transform = '';
-            const children = btn.children;
-            for (let i = 0; i < children.length; i++) {
-                children[i].style.transform = '';
-                children[i].style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+
+            if (magnetChildren) {
+                for (let i = 0; i < magnetChildren.length; i++) {
+                    magnetChildren[i].style.transform = '';
+                    magnetChildren[i].style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+                }
+                // Clear cache
+                magnetChildren = null;
+            } else {
+                // Fallback
+                const children = btn.children;
+                for (let i = 0; i < children.length; i++) {
+                    children[i].style.transform = '';
+                    children[i].style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+                }
             }
         });
     });
