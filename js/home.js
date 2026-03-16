@@ -33,6 +33,11 @@ function getLocalTimeZone() {
     }
 }
 
+// Export for testing
+if (typeof window !== 'undefined') {
+    window.__getLocalTimeZone = getLocalTimeZone;
+}
+
 function updateLocalTime() {
     if (!dateEl || !timeEl) return;
 

@@ -10,5 +10,8 @@
         "publish:portfolio": "cd portfolio-app && node scripts/publish.mjs"
     },
     "author": "Benedictus Richard Ricardo",
-    "license": "UNLICENSED"
+    "license": "UNLICENSED",
+    "devDependencies": {
+        "jsdom": "^29.0.0"
+    }
 }
