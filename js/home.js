@@ -166,3 +166,87 @@ if (bioTitle && bioTitle.textContent.trim() === 'dictuzz') {
     // slight delay before starting
     setTimeout(typeChar, 300);
 }
+
+// Problem Solver Demo
+function initProblemSolver() {
+    const select = document.getElementById('problem-select');
+    const container = document.getElementById('solution-container');
+    if (!select || !container) return;
+
+    const solutions = {
+        reporting: `
+            <div class="solution-framework">
+                <div class="solution-step">
+                    <h4>1. Audit & Standardize</h4>
+                    <p>Map out all existing data sources and unify metrics into a single dictionary so everyone speaks the same language.</p>
+                </div>
+                <div class="solution-step">
+                    <h4>2. Automate the Pipeline</h4>
+                    <p>Build zero-touch data pipelines using query automation to eliminate manual copy-pasting and human error.</p>
+                </div>
+                <div class="solution-step">
+                    <h4>3. Design the Command Center</h4>
+                    <p>Create a centralized, role-based dashboard where stakeholders can make decisions instantly.</p>
+                </div>
+                <div class="solution-impact">
+                    <i class="fas fa-bolt"></i> Impact: Turns 12 hours of weekly grunt work into a 5-minute automated refresh.
+                </div>
+            </div>
+        `,
+        events: `
+            <div class="solution-framework">
+                <div class="solution-step">
+                    <h4>1. Centralize the Source of Truth</h4>
+                    <p>Move all planning from scattered chats into a single master document with clear owners, deadlines, and dependencies.</p>
+                </div>
+                <div class="solution-step">
+                    <h4>2. Implement Triage Protocols</h4>
+                    <p>Establish clear escalation paths so 90% of issues are resolved by area leads without reaching the director.</p>
+                </div>
+                <div class="solution-step">
+                    <h4>3. Conduct Dry-Runs</h4>
+                    <p>Simulate worst-case scenarios with the core team to build muscle memory before the actual event.</p>
+                </div>
+                <div class="solution-impact">
+                    <i class="fas fa-bolt"></i> Impact: Coordinated 34+ members for a 1000-guest event with zero missed deadlines.
+                </div>
+            </div>
+        `,
+        onboarding: `
+            <div class="solution-framework">
+                <div class="solution-step">
+                    <h4>1. Process Documentation (SOPs)</h4>
+                    <p>Translate tribal knowledge into step-by-step Standard Operating Procedures that anyone can follow.</p>
+                </div>
+                <div class="solution-step">
+                    <h4>2. Build a Knowledge Base</h4>
+                    <p>Organize SOPs, access guides, and FAQs into a searchable repository.</p>
+                </div>
+                <div class="solution-step">
+                    <h4>3. Implement Feedback Loops</h4>
+                    <p>Require new hires to flag confusing steps in the SOPs, turning onboarding into a self-improving system.</p>
+                </div>
+                <div class="solution-impact">
+                    <i class="fas fa-bolt"></i> Impact: Reduces ramp-up time by 40% and frees up senior team members.
+                </div>
+            </div>
+        `
+    };
+
+    select.addEventListener('change', (e) => {
+        const val = e.target.value;
+        if (solutions[val]) {
+            // Reset animation constraint for replay
+            container.style.animation = 'none';
+            void container.offsetHeight; // trigger reflow
+            container.style.animation = null;
+            
+            container.innerHTML = solutions[val];
+            container.hidden = false;
+        } else {
+            container.hidden = true;
+        }
+    });
+}
+
+initProblemSolver();

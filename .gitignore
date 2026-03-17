@@ -14,3 +14,5 @@ Thumbs.db
 /portfolio/
 portfolio-app/out/
 portfolio-app/.next/
+portfolio-app/build_log.txt
+portfolio-app/tsconfig.tsbuildinfo

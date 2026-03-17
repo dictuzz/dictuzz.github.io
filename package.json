@@ -2,16 +2,15 @@
     "name": "dictuzz.github.io",
     "version": "2.0.0",
     "private": true,
-    "description": "Personal portfolio & resume — dictuzz.me",
+    "description": "Personal portfolio & resume \u2014 dictuzz.me",
+    "type": "module",
     "scripts": {
         "dev": "npx -y serve . -l 8000 --no-clipboard",
         "dev:portfolio": "cd portfolio-app && npm run dev",
         "build:portfolio": "cd portfolio-app && npm run build",
-        "publish:portfolio": "cd portfolio-app && node scripts/publish.mjs"
+        "publish:portfolio": "cd portfolio-app && node scripts/publish.mjs",
+        "test": "node --test tests/*.test.js"
     },
     "author": "Benedictus Richard Ricardo",
-    "license": "UNLICENSED",
-    "dependencies": {
-        "jsdom": "^29.0.0"
-    }
+    "license": "UNLICENSED"
 }
