@@ -33,15 +33,23 @@ function setupEnvironment() {
   window.matchMedia = matchMediaStub;
   global.matchMedia = matchMediaStub;
 
-  const originalSetInterval = window.setInterval;
+  const originalWindowSetInterval = window.setInterval;
+  const originalGlobalSetInterval = global.setInterval;
+
   window.setInterval = () => {};
   global.setInterval = () => {};
 
-  return { document, window };
+  const restoreTimers = () => {
+    window.setInterval = originalWindowSetInterval;
+    global.setInterval = originalGlobalSetInterval;
+  };
+
+  return { document, window, restoreTimers };
 }
 
-test('initFolders error path - fetch non-OK', async () => {
-  setupEnvironment();
+test('initFolders error path - fetch non-OK', async (t) => {
+  const { restoreTimers } = setupEnvironment();
+  t.after(restoreTimers);
 
   const originalConsoleError = console.error;
   let consoleErrorCalledWith = [];
