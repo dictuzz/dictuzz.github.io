@@ -131,7 +131,7 @@
         <div class="nav__container">
             <!-- Logo (mobile) -->
             <a href="/" class="nav__logo" aria-label="Back to home">
-                <img src="/assets/images/favicon.png" alt="Home" width="32" height="32">
+                <img src="/favicon-96x96.png" alt="Home" width="32" height="32">
             </a>
 
             <!-- Mobile toggle -->
@@ -263,6 +263,10 @@
                         <span data-i18n="hero.cta1">Let's Talk</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
+                    <button class="btn btn--ghost" id="print-briefing-btn" title="Download one-page executive summary">
+                        <i class="fas fa-file-pdf"></i>
+                        <span data-i18n="hero.ctaBriefing">Briefing PDF</span>
+                    </button>
                     <a href="#about" class="btn btn--ghost">
                         <span data-i18n="hero.cta2">Explore</span>
                     </a>
@@ -290,6 +294,13 @@
         <a href="#about" class="hero__scroll" aria-label="Scroll down">
             <i class="fas fa-chevron-down"></i>
         </a>
+    </section>
+
+    <!-- Endorsement Ticker -->
+    <section class="endorsement-ticker" aria-label="Professional endorsements">
+        <div class="endorsement-ticker__track" id="endorsement-track">
+            <!-- Populated by JS from data/endorsements.json -->
+        </div>
     </section>
 
     <!-- Main Content -->
@@ -361,6 +372,48 @@
                     <div class="glass card">
                         <div class="skeleton skeleton--title"></div>
                         <div class="skeleton skeleton--text"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Calculator -->
+        <section id="calculator" class="section" aria-labelledby="calc-title">
+            <div class="container">
+                <h2 id="calc-title" class="section__title reveal" data-i18n="section.calculator">IMPACT CALCULATOR</h2>
+                <div class="impact-calculator glass card reveal">
+                    <div class="impact-calculator__content">
+                        <h3 data-i18n="calc.title">Calculate Your Time Savings</h3>
+                        <p data-i18n="calc.desc">Based on past automation projects, see how much time your team could save by streamlining manual reporting.</p>
+                        
+                        <div class="impact-calculator__controls mt-6">
+                            <div class="impact-calculator__group">
+                                <label for="team-size" data-i18n="calc.teamSize">Team Size (Members)</label>
+                                <div class="slider-wrapper">
+                                    <input type="range" id="team-size" min="1" max="50" value="5" class="slider" aria-label="Team size">
+                                    <output for="team-size" class="value-display" id="team-size-val">5</output>
+                                </div>
+                            </div>
+                            
+                            <div class="impact-calculator__group mt-4">
+                                <label for="manual-hours" data-i18n="calc.manualHours">Manual Reporting (Hours/Week per person)</label>
+                                <div class="slider-wrapper">
+                                    <input type="range" id="manual-hours" min="1" max="20" value="4" class="slider" aria-label="Manual reporting hours">
+                                    <output for="manual-hours" class="value-display" id="manual-hours-val">4</output>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-calculator__result">
+                        <div class="result-box">
+                            <span class="result-label" data-i18n="calc.potentialSavings">Potential Savings</span>
+                            <div class="result-number">
+                                <span class="result-value" id="savings-val">0</span>
+                                <span class="result-unit" data-i18n="calc.hoursMonth">hours / month</span>
+                            </div>
+                        </div>
+                        <p class="result-context mt-4" data-i18n="calc.context">That's enough time to launch a new feature or optimize core operations.</p>
                     </div>
                 </div>
             </div>
@@ -543,12 +596,66 @@
             <span class="global-footer__divider">&bull;</span>
             <a href="/terms/" class="global-footer__contact-link"><i class="fas fa-file-contract"></i> Terms</a>
         </div>
-
+        <!-- Copyright -->
         <p class="global-footer__copy">
-            &copy; 2026 Benedictus Richard Ricardo. All rights reserved.
-            <span>Quam Plurimi et Quam Aptissimi.</span>
+            &copy; 2026 BENEDICTUS RICHARD RICARDO.<br>
+            <span data-i18n="footer.rights">All Rights Reserved.</span>
         </p>
     </footer>
+
+    <!-- Briefing Packet (Print Only) -->
+    <div class="briefing-packet" aria-hidden="true" style="display: none;">
+        <div class="bp-header">
+            <img class="bp-photo" src="/assets/images/Aku.webp" alt="Benedictus Richard Ricardo">
+            <div class="bp-title">
+                <h1>BENEDICTUS RICHARD RICARDO</h1>
+                <p class="bp-role">Management Trainee | Ops & Data</p>
+                <p class="bp-subtitle">Data-driven mindset. Cross-functional experience. Execution-first approach.</p>
+            </div>
+        </div>
+        
+        <div class="bp-stats">
+            <div class="bp-stat">
+                <strong>12+</strong>
+                <span>Hrs/Week Saved</span>
+            </div>
+            <div class="bp-stat">
+                <strong>34</strong>
+                <span>Members Led</span>
+            </div>
+            <div class="bp-stat">
+                <strong>1000+</strong>
+                <span>Event Scale</span>
+            </div>
+        </div>
+        
+        <div class="bp-content">
+            <div class="bp-column">
+                <h2>Top Skills</h2>
+                <ul>
+                    <li>Systems Thinking & Workflow Design</li>
+                    <li>Reporting Automation (KPI Governance)</li>
+                    <li>Cross-Functional Coordination</li>
+                    <li>SOP Development & Standardization</li>
+                    <li>Data Analysis</li>
+                </ul>
+            </div>
+            <div class="bp-column">
+                <h2>Contact & Links</h2>
+                <ul>
+                    <li><strong>Email:</strong> contact@dictuzz.me</li>
+                    <li><strong>Phone/WA:</strong> +62 851-8688-8630</li>
+                    <li><strong>LinkedIn:</strong> linkedin.com/in/dictuzz</li>
+                    <li><strong>Portfolio:</strong> dictuzz.me/portfolio</li>
+                </ul>
+                <div class="bp-qr">
+                    <!-- Dynamic QR from an open API. Could use local image if needed -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://dictuzz.me" alt="QR Code" crossorigin="anonymous">
+                    <span>Scan for full interactive site</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="/resume/resume.js?v=3"></script>
 </body>
