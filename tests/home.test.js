@@ -64,7 +64,7 @@ test('initFolders error path - fetch non-OK', async (t) => {
 
   await import('../js/home.js?cachebust=' + Date.now());
 
-  await new Promise(r => setTimeout(r, 10));
+  await new Promise(r => setImmediate(r));
 
   assert.strictEqual(consoleErrorCalledWith.length, 1);
   assert.strictEqual(consoleErrorCalledWith[0][0], 'Error rendering folders:');
@@ -90,7 +90,7 @@ test('initFolders error path - fetch throws', async () => {
 
   await import('../js/home.js?cachebust=' + Date.now());
 
-  await new Promise(r => setTimeout(r, 10));
+  await new Promise(r => setImmediate(r));
 
   assert.strictEqual(consoleErrorCalledWith.length, 1);
   assert.strictEqual(consoleErrorCalledWith[0][0], 'Error rendering folders:');
@@ -119,7 +119,7 @@ test('initFolders error path - malformed JSON', async () => {
 
   await import('../js/home.js?cachebust=' + Date.now());
 
-  await new Promise(r => setTimeout(r, 10));
+  await new Promise(r => setImmediate(r));
 
   assert.strictEqual(consoleErrorCalledWith.length, 1);
   assert.strictEqual(consoleErrorCalledWith[0][0], 'Error rendering folders:');
