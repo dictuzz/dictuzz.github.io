@@ -18,13 +18,13 @@ export function initAnalytics(config) {
     const analyticsId = cfg.id;
 
     // Prevent double injection
-    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${config.id}"]`)) {
+    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${analyticsId}"]`)) {
         return;
     }
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${config.id}`;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
@@ -34,7 +34,7 @@ export function initAnalytics(config) {
     window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', config.id);
+    gtag('config', analyticsId);
 
-    console.log(`Analytics: Initialized ${config.id}`);
+    console.log(`Analytics: Initialized ${analyticsId}`);
 }
