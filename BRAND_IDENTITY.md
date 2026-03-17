@@ -125,7 +125,11 @@ Animation should support polish and pacing, never spectacle.
 - Avoid oversized decorative logo usage
 
 ## Implementation Notes
-- Shared brand base lives in `/css/site.css`
-- Resume-specific trust-dossier styling lives in `/css/critical.css` and `/resume/resume.css`
-- Portfolio-specific styling lives in `/css/portfolio.css` and `/css/portfolio-detail.css`
+- Design tokens (Single Source of Truth): `assets/css/tokens.css`
+- Shared UI components & utilities: `assets/css/core.css`
+- Homepage styling: `css/site.css` (minified: `css/site.min.css`)
+- Resume base (nav, hero, responsive): `css/critical.css`
+- Resume page-specific styling: `resume/resume.css`
+- Theme & interaction logic: `js/ui-kit.js`
+- Portfolio styling managed by Next.js in `portfolio-app/`
 - The brand should stay consistent across homepage, portfolio, and resume before new pages are added

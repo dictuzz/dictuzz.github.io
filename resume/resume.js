@@ -166,6 +166,32 @@ function renderEtc(data) {
     `).join('');
 }
 
+// ENDORSEMENT TICKER
+async function renderEndorsements() {
+    const track = document.getElementById('endorsement-track');
+    if (!track) return;
+
+    try {
+        const res = await fetch('/data/endorsements.json');
+        if (!res.ok) return;
+        const endorsements = await res.json();
+
+        const buildCards = (items) => items.map(e => `
+            <div class="endorsement-ticker__card">
+                <p class="endorsement-ticker__quote">${escapeHtml(e.quote)}</p>
+                <div class="endorsement-ticker__author">
+                    ${escapeHtml(e.name)} <span class="endorsement-ticker__role">· ${escapeHtml(e.title)}</span>
+                </div>
+            </div>
+        `).join('');
+
+        // Duplicate for seamless infinite scroll
+        track.innerHTML = buildCards(endorsements) + buildCards(endorsements);
+    } catch (err) {
+        console.error('Endorsements load error:', err);
+    }
+}
+
 function applyTranslations(data) {
     $$('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
@@ -382,7 +408,93 @@ document.addEventListener('click', e => {
 });
 
 
-// 7. INITIAL LOAD
+// 7. IMPACT CALCULATOR
+// ══════════════════════════════════════════════
+function initImpactCalculator() {
+    const teamSizeSlider = document.getElementById('team-size');
+    const manualHoursSlider = document.getElementById('manual-hours');
+    if (!teamSizeSlider || !manualHoursSlider) return;
+
+    const teamSizeVal = document.getElementById('team-size-val');
+    const manualHoursVal = document.getElementById('manual-hours-val');
+    const savingsVal = document.getElementById('savings-val');
+    let animationTimer = null;
+
+    function calculateImpact() {
+        const teamSize = parseInt(teamSizeSlider.value);
+        const manualHours = parseInt(manualHoursSlider.value);
+        
+        teamSizeVal.textContent = teamSize;
+        manualHoursVal.textContent = manualHours;
+
+        // Formula: team size * hours per week * 4.33 weeks * 80% automation savings
+        const monthlySavings = Math.round(teamSize * manualHours * 4.33 * 0.8);
+        
+        // Animate the number
+        const startVal = parseInt(savingsVal.textContent.replace(/,/g, '')) || 0;
+        if (startVal !== monthlySavings) {
+            animateValue(savingsVal, startVal, monthlySavings, 600);
+        }
+    }
+
+    function animateValue(obj, start, end, duration) {
+        clearInterval(animationTimer);
+        const range = end - start;
+        const steps = 30; // Number of animation steps
+        const stepValue = range / steps;
+        const intervalTime = duration / steps;
+        
+        let stepCount = 0;
+        
+        animationTimer = setInterval(() => {
+            stepCount++;
+            let current = start + (stepValue * stepCount);
+            if (stepCount >= steps) {
+                current = end;
+                clearInterval(animationTimer);
+            }
+            obj.textContent = Math.round(current).toLocaleString();
+        }, intervalTime);
+    }
+
+    teamSizeSlider.addEventListener('input', calculateImpact);
+    manualHoursSlider.addEventListener('input', calculateImpact);
+
+    // Run initial calculation once parsed UI is visible
+    setTimeout(calculateImpact, 100);
+}
+
+
+
+// 8. BRIEFING PACKET (PDF Download)
+// ══════════════════════════════════════════════
+function initBriefingPacket() {
+    const printBtn = document.getElementById('print-briefing-btn');
+    if (!printBtn) return;
+
+    printBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Add class to format for Briefing Packet printing
+        document.body.classList.add('print-briefing');
+        
+        // Track the download if analytics are initialized
+        trackEvent('download_briefing_packet');
+        
+        // Use setTimeout to ensure reflow has happened before printing
+        setTimeout(() => {
+            window.print();
+        }, 150);
+    });
+
+    // Remove class after print dialog is closed
+    window.addEventListener('afterprint', () => {
+        document.body.classList.remove('print-briefing');
+    });
+}
+
+
+// 9. INITIAL LOAD
 // ══════════════════════════════════════════════
 let CONFIG_DATA = {};
 
@@ -401,6 +513,8 @@ async function fetchConfig() {
 document.addEventListener('DOMContentLoaded', async () => {
     await fetchConfig();
     init();
+    initImpactCalculator();
+    initBriefingPacket();
 
     const urlLang = new URLSearchParams(location.search).get('lang');
     const savedLang = localStorage.getItem(LANG_STORAGE_KEY);
@@ -413,6 +527,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         : DEFAULT_LANG;
 
     loadLanguage(initLang);
+    renderEndorsements();
 
     // Feature Flags Check
     if (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.features) {
