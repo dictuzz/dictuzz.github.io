@@ -29,7 +29,9 @@ function setupEnvironment() {
       getItem: () => null,
       setItem: () => {}
   };
-  global.matchMedia = () => ({ matches: false });
+  const matchMediaStub = () => ({ matches: false });
+  window.matchMedia = matchMediaStub;
+  global.matchMedia = matchMediaStub;
 
   const originalSetInterval = window.setInterval;
   window.setInterval = () => {};
