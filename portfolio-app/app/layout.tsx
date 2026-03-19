@@ -1,64 +1,63 @@
 import type { Metadata } from 'next';
-import { Fraunces, Instrument_Sans } from 'next/font/google';
+import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import { absoluteUrl } from '@/lib/seo';
-import { GlobalFooter } from '@/components/portfolio/GlobalFooter';
 
-const fraunces = Fraunces({
+const instrumentSerif = Instrument_Serif({
+  weight: '400',
   subsets: ['latin'],
   variable: '--font-display',
-  display: 'swap'
+  display: 'swap',
 });
 
-const instrumentSans = Instrument_Sans({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
-  display: 'swap'
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dictuzz.me'),
   title: {
-    default: 'Private Portfolio',
-    template: '%s'
+    default: 'Benedictus Richard Ricardo — Systems Architect',
+    template: '%s | dictuzz',
   },
-  description: 'Access code required to view this private portfolio.',
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true
-  },
-  alternates: {
-    canonical: absoluteUrl('/portfolio/')
-  },
+  description:
+    'Systems architect and workflow automation specialist. Turning complexity into clear systems and dependable execution.',
+  robots: { index: true, follow: true },
   openGraph: {
-    title: 'Private Portfolio',
-    description: 'Access code required to view this private portfolio.',
-    url: absoluteUrl('/portfolio/'),
-    siteName: 'Private Portfolio',
-    type: 'website'
+    title: 'Benedictus Richard Ricardo — Systems Architect',
+    description:
+      'Systems architect and workflow automation specialist. Turning complexity into clear systems and dependable execution.',
+    url: 'https://dictuzz.me/portfolio/',
+    siteName: 'dictuzz',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Private Portfolio',
-    description: 'Access code required to view this private portfolio.'
-  }
+    title: 'Benedictus Richard Ricardo',
+    description: 'Systems Architect & Workflow Automation Specialist',
+  },
 };
 
-export default function PortfolioAppLayout({
-  children
+export default function RootLayout({
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${fraunces.variable} ${instrumentSans.variable}`}>
-        <div className="site-shell">
-          <div className="ambient ambient--one" aria-hidden="true" />
-          <div className="ambient ambient--two" aria-hidden="true" />
-          {children}
-          <GlobalFooter />
-        </div>
+    <html
+      lang="en"
+      className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
+      <body>
+        {children}
+        <div className="film-grain" aria-hidden="true" />
       </body>
     </html>
   );

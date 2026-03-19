@@ -1,12 +1,34 @@
-import { ProtectedPortfolioRoute } from '@/components/protected/ProtectedPortfolioRoute';
-import { buildMetadata } from '@/lib/seo';
+'use client';
 
-export const metadata = buildMetadata({
-  title: 'Private Portfolio',
-  description: 'Access code required to view this private portfolio.',
-  path: '/portfolio/'
-});
+import { EtherealShadow } from '@/components/ui/EtherealShadow';
+import { MagneticCursor } from '@/components/animations/MagneticCursor';
+import { ScrollProgress } from '@/components/layout/ScrollProgress';
+import { HeroSection } from '@/components/sections/HeroSection';
+import { AboutSection } from '@/components/sections/AboutSection';
+import { ProjectsSection } from '@/components/sections/ProjectsSection';
 
-export default function Page() {
-  return <ProtectedPortfolioRoute route={{ kind: 'home' }} />;
+import { SkillsSection } from '@/components/sections/SkillsSection';
+
+import { ContactSection } from '@/components/sections/ContactSection';
+
+export default function PortfolioPage() {
+  return (
+    <>
+      {/* Global background layer */}
+      <EtherealShadow />
+
+      {/* Global UI overlays */}
+      <MagneticCursor />
+      <ScrollProgress />
+
+      {/* Page content */}
+      <main className="relative z-10">
+        <HeroSection />
+        <AboutSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <ContactSection />
+      </main>
+    </>
+  );
 }
