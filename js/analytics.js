@@ -11,20 +11,19 @@ export function initAnalytics(config) {
     const cfg = config || (typeof CONFIG_DATA !== 'undefined' ? CONFIG_DATA.analytics : null);
 
     if (!cfg || !cfg.enabled || !cfg.id) {
-        console.warn('Analytics: Disabled or Missing ID');
         return;
     }
 
     const analyticsId = cfg.id;
 
     // Prevent double injection
-    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${config.id}"]`)) {
+    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${analyticsId}"]`)) {
         return;
     }
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${config.id}`;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
@@ -34,7 +33,5 @@ export function initAnalytics(config) {
     window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', config.id);
-
-    console.log(`Analytics: Initialized ${config.id}`);
+    gtag('config', analyticsId);
 }

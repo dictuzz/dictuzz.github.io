@@ -1,12 +1,11 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * BENEDICTUS RICHARD RICARDO: Portfolio v2.0
+ * BENEDICTUS RICHARD RICARDO: Resume v2.0
  * Refactored: 2026-01-08 to use Shared Libraries
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import { ThemeManager, Typer } from '../js/ui-kit.js';
-import { initAnalytics } from '../js/analytics.js';
 
 // Shorthand selectors
 const $ = s => document.querySelector(s);
@@ -17,20 +16,12 @@ const $$ = s => document.querySelectorAll(s);
 let themeManager;
 
 function init() {
-    if (typeof CONFIG_DATA !== 'undefined') {
-        initAnalytics(CONFIG_DATA.analytics);
-    }
-
-    // Theme
     const toggleEl = document.getElementById('theme-toggle');
     const iconEl = document.getElementById('theme-icon');
-    const storageKey = (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.theme)
-        ? CONFIG_DATA.theme.storageKey
-        : 'dictuzz-theme';
 
     themeManager = new ThemeManager({
         toggleElement: toggleEl,
-        storageKey: storageKey,
+        storageKey: 'dictuzz-theme',
         iconElement: iconEl,
         defaultTheme: 'light'
     });
@@ -166,31 +157,6 @@ function renderEtc(data) {
     `).join('');
 }
 
-// ENDORSEMENT TICKER
-async function renderEndorsements() {
-    const track = document.getElementById('endorsement-track');
-    if (!track) return;
-
-    try {
-        const res = await fetch('/data/endorsements.json');
-        if (!res.ok) return;
-        const endorsements = await res.json();
-
-        const buildCards = (items) => items.map(e => `
-            <div class="endorsement-ticker__card">
-                <p class="endorsement-ticker__quote">${escapeHtml(e.quote)}</p>
-                <div class="endorsement-ticker__author">
-                    ${escapeHtml(e.name)} <span class="endorsement-ticker__role">· ${escapeHtml(e.title)}</span>
-                </div>
-            </div>
-        `).join('');
-
-        // Duplicate for seamless infinite scroll
-        track.innerHTML = buildCards(endorsements) + buildCards(endorsements);
-    } catch (err) {
-        console.error('Endorsements load error:', err);
-    }
-}
 
 function applyTranslations(data) {
     $$('[data-i18n]').forEach(el => {
@@ -395,10 +361,6 @@ function trackEvent(name, params = {}) {
     if (typeof window.gtag !== 'undefined') window.gtag('event', name, params);
 }
 
-$$('a[href*="linktr.ee"]').forEach(a => {
-    a.addEventListener('click', () => trackEvent('download_cv', { url: a.href }));
-});
-
 document.addEventListener('click', e => {
     const link = e.target.closest('a');
     if (!link?.href?.startsWith('http')) return;
@@ -408,118 +370,16 @@ document.addEventListener('click', e => {
 });
 
 
-// 7. IMPACT CALCULATOR
-// ══════════════════════════════════════════════
-function initImpactCalculator() {
-    const teamSizeSlider = document.getElementById('team-size');
-    const manualHoursSlider = document.getElementById('manual-hours');
-    if (!teamSizeSlider || !manualHoursSlider) return;
-
-    const teamSizeVal = document.getElementById('team-size-val');
-    const manualHoursVal = document.getElementById('manual-hours-val');
-    const savingsVal = document.getElementById('savings-val');
-    let animationTimer = null;
-
-    function calculateImpact() {
-        const teamSize = parseInt(teamSizeSlider.value);
-        const manualHours = parseInt(manualHoursSlider.value);
-        
-        teamSizeVal.textContent = teamSize;
-        manualHoursVal.textContent = manualHours;
-
-        // Formula: team size * hours per week * 4.33 weeks * 80% automation savings
-        const monthlySavings = Math.round(teamSize * manualHours * 4.33 * 0.8);
-        
-        // Animate the number
-        const startVal = parseInt(savingsVal.textContent.replace(/,/g, '')) || 0;
-        if (startVal !== monthlySavings) {
-            animateValue(savingsVal, startVal, monthlySavings, 600);
-        }
-    }
-
-    function animateValue(obj, start, end, duration) {
-        clearInterval(animationTimer);
-        const range = end - start;
-        const steps = 30; // Number of animation steps
-        const stepValue = range / steps;
-        const intervalTime = duration / steps;
-        
-        let stepCount = 0;
-        
-        animationTimer = setInterval(() => {
-            stepCount++;
-            let current = start + (stepValue * stepCount);
-            if (stepCount >= steps) {
-                current = end;
-                clearInterval(animationTimer);
-            }
-            obj.textContent = Math.round(current).toLocaleString();
-        }, intervalTime);
-    }
-
-    teamSizeSlider.addEventListener('input', calculateImpact);
-    manualHoursSlider.addEventListener('input', calculateImpact);
-
-    // Run initial calculation once parsed UI is visible
-    setTimeout(calculateImpact, 100);
-}
-
-
-
-// 8. BRIEFING PACKET (PDF Download)
-// ══════════════════════════════════════════════
-function initBriefingPacket() {
-    const printBtn = document.getElementById('print-briefing-btn');
-    if (!printBtn) return;
-
-    printBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        // Add class to format for Briefing Packet printing
-        document.body.classList.add('print-briefing');
-        
-        // Track the download if analytics are initialized
-        trackEvent('download_briefing_packet');
-        
-        // Use setTimeout to ensure reflow has happened before printing
-        setTimeout(() => {
-            window.print();
-        }, 150);
-    });
-
-    // Remove class after print dialog is closed
-    window.addEventListener('afterprint', () => {
-        document.body.classList.remove('print-briefing');
-    });
-}
-
 
 // 9. INITIAL LOAD
 // ══════════════════════════════════════════════
-let CONFIG_DATA = {};
-
-async function fetchConfig() {
-    try {
-        const res = await fetch('/data/global-config.json');
-        if (res.ok) {
-            const data = await res.json();
-            CONFIG_DATA = data.resume || {};
-        }
-    } catch (err) {
-        console.error("Config fetch failed:", err);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
-    await fetchConfig();
+document.addEventListener('DOMContentLoaded', () => {
     init();
-    initImpactCalculator();
-    initBriefingPacket();
 
     const urlLang = new URLSearchParams(location.search).get('lang');
     const savedLang = localStorage.getItem(LANG_STORAGE_KEY);
     const browserLang = navigator.language.split('-')[0];
-    
+
     // Priority: URL param > Saved preference > Browser lang > Default
     const initLang = SUPPORTED_LANGS.includes(urlLang) ? urlLang
         : SUPPORTED_LANGS.includes(savedLang) ? savedLang
@@ -527,13 +387,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         : DEFAULT_LANG;
 
     loadLanguage(initLang);
-    renderEndorsements();
-
-    // Feature Flags Check
-    if (typeof CONFIG_DATA !== 'undefined' && CONFIG_DATA.features) {
-        if (CONFIG_DATA.features.blog === false) {
-            const blogLink = document.querySelector('a[href*="blog"]');
-            if (blogLink) blogLink.style.display = 'none';
-        }
-    }
 });

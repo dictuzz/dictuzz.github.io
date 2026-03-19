@@ -109,24 +109,6 @@
                 </div>
             </div>
 
-            <!-- Problem Solver Demo -->
-            <div class="problem-solver mt-6 reveal">
-                <h2 class="problem-solver__title"><i class="fas fa-lightbulb"></i> How I'd Solve Your Problem</h2>
-                <div class="problem-solver__select-wrapper mt-4">
-                    <label for="problem-select" class="sr-only">Select your biggest operational challenge</label>
-                    <select id="problem-select" class="problem-solver__select glass glass--hover">
-                        <option value="" disabled selected>Tell me your biggest operational challenge...</option>
-                        <option value="reporting">Manual reporting takes too long</option>
-                        <option value="events">Event coordination is chaotic</option>
-                        <option value="onboarding">Team onboarding & knowledge transfer is slow</option>
-                    </select>
-                    <i class="fas fa-chevron-down select-icon"></i>
-                </div>
-                
-                <div id="solution-container" class="problem-solver__solution mt-4" aria-live="polite" hidden>
-                    <!-- Populated by JS -->
-                </div>
-            </div>
 
             <div class="accordion mt-6" aria-label="Link folders">
                 <!-- Dynamically populated via js/home.js and data/links.json -->
@@ -157,7 +139,7 @@
         </section>
     </main>
 
-    <script type="module" src="/js/home.min.js" defer></script>
+    <script type="module" src="/js/home.min.js"></script>
 </body>
 
 </html>

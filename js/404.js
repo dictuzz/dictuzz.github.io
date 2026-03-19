@@ -94,67 +94,34 @@
             STATE.audioContext = new (window.AudioContext || window.webkitAudioContext)();
         }
 
-        function playGlitchSound() {
+        function playTone(type, freq, freqEnd, gain, duration) {
             if (!STATE.soundEnabled || !STATE.audioContext) return;
-            
-            const oscillator = STATE.audioContext.createOscillator();
-            const gainNode = STATE.audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(STATE.audioContext.destination);
-            
-            oscillator.type = 'sawtooth';
-            oscillator.frequency.setValueAtTime(100, STATE.audioContext.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(50, STATE.audioContext.currentTime + 0.1);
-            
-            gainNode.gain.setValueAtTime(0.1, STATE.audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, STATE.audioContext.currentTime + 0.1);
-            
-            oscillator.start(STATE.audioContext.currentTime);
-            oscillator.stop(STATE.audioContext.currentTime + 0.1);
+            const t = STATE.audioContext.currentTime;
+            const osc = STATE.audioContext.createOscillator();
+            const vol = STATE.audioContext.createGain();
+            osc.connect(vol);
+            vol.connect(STATE.audioContext.destination);
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, t);
+            if (freqEnd) osc.frequency.exponentialRampToValueAtTime(freqEnd, t + duration);
+            vol.gain.setValueAtTime(gain, t);
+            vol.gain.exponentialRampToValueAtTime(0.01, t + duration);
+            osc.start(t);
+            osc.stop(t + duration);
+        }
+
+        function playGlitchSound() {
+            playTone('sawtooth', 100, 50, 0.1, 0.1);
         }
 
         function playCollectSound() {
-            if (!STATE.soundEnabled || !STATE.audioContext) return;
-            
-            const oscillator = STATE.audioContext.createOscillator();
-            const gainNode = STATE.audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(STATE.audioContext.destination);
-            
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(880, STATE.audioContext.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(1760, STATE.audioContext.currentTime + 0.1);
-            
-            gainNode.gain.setValueAtTime(0.2, STATE.audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, STATE.audioContext.currentTime + 0.2);
-            
-            oscillator.start(STATE.audioContext.currentTime);
-            oscillator.stop(STATE.audioContext.currentTime + 0.2);
+            playTone('sine', 880, 1760, 0.2, 0.2);
         }
 
         function playSuccessSound() {
             if (!STATE.soundEnabled || !STATE.audioContext) return;
-            
-            const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
-            notes.forEach((freq, i) => {
-                setTimeout(() => {
-                    const oscillator = STATE.audioContext.createOscillator();
-                    const gainNode = STATE.audioContext.createGain();
-                    
-                    oscillator.connect(gainNode);
-                    gainNode.connect(STATE.audioContext.destination);
-                    
-                    oscillator.type = 'sine';
-                    oscillator.frequency.setValueAtTime(freq, STATE.audioContext.currentTime);
-                    
-                    gainNode.gain.setValueAtTime(0.2, STATE.audioContext.currentTime);
-                    gainNode.gain.exponentialRampToValueAtTime(0.01, STATE.audioContext.currentTime + 0.3);
-                    
-                    oscillator.start(STATE.audioContext.currentTime);
-                    oscillator.stop(STATE.audioContext.currentTime + 0.3);
-                }, i * 100);
+            [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
+                setTimeout(() => playTone('sine', freq, null, 0.2, 0.3), i * 100);
             });
         }
 
@@ -580,14 +547,16 @@
         // ============================================
         // PARALLAX EFFECT
         // ============================================
+        const gridFloor = document.querySelector('.grid-floor');
+        const contentEl = document.querySelector('.content');
         document.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth - 0.5) * 20;
             const y = (e.clientY / window.innerHeight - 0.5) * 20;
             
-            document.querySelector('.grid-floor').style.transform = 
+            if (gridFloor) gridFloor.style.transform = 
                 `rotateX(70deg) translateX(${x}px)`;
             
-            document.querySelector('.content').style.transform = 
+            if (contentEl) contentEl.style.transform = 
                 `translateX(${x * 0.5}px) translateY(${y * 0.5}px)`;
         });
 
