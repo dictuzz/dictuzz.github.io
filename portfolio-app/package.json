@@ -18,8 +18,12 @@
     "next": "16.1.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+<<<<<<< HEAD
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1"
+=======
+    "tsx": "^4.21.0"
+>>>>>>> 5106ee0de7206866a17697d4a88ce6840725387a
   },
   "devDependencies": {
     "@types/node": "^25.3.5",

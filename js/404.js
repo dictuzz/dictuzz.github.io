@@ -216,8 +216,11 @@
             });
 
             // Draw connections between nearby particles
-            STATE.particles.forEach((p1, i) => {
-                STATE.particles.slice(i + 1).forEach(p2 => {
+            const len = STATE.particles.length;
+            for (let i = 0; i < len; i++) {
+                const p1 = STATE.particles[i];
+                for (let j = i + 1; j < len; j++) {
+                    const p2 = STATE.particles[j];
                     const dx = p1.x - p2.x;
                     const dy = p1.y - p2.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -231,8 +234,8 @@
                         particleCtx.stroke();
                         particleCtx.globalAlpha = 1;
                     }
-                });
-            });
+                }
+            }
 
             requestAnimationFrame(animateParticles);
         }

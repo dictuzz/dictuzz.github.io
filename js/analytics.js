@@ -34,4 +34,9 @@ export function initAnalytics(config) {
 
     gtag('js', new Date());
     gtag('config', analyticsId);
+<<<<<<< HEAD
+=======
+
+    console.log(`Analytics: Initialized ${analyticsId}`);
+>>>>>>> 5106ee0de7206866a17697d4a88ce6840725387a
 }

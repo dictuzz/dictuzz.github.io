@@ -98,12 +98,12 @@ export class ThemeManager {
 export class Typer {
     constructor(el, texts, speed = 50) {
         if (!el) return;
-        
+
         // Stop any existing Typer on this element
         if (el._typer) {
             el._typer.stop();
         }
-        
+
         this.el = el;
         this.texts = texts;
         this.speed = speed;
@@ -160,14 +160,14 @@ export class Typer {
 
     async type(text) {
         if (!this.isRunning) return;
-        
+
         let currentText = '';
         for (let i = 0; i < text.length; i++) {
             if (!this.isRunning) {
                 this.el.textContent = '';
                 return;
             }
-            
+
             currentText += text[i];
             this.el.textContent = currentText;
             const randomSpeed = this.speed + (Math.random() * 20 - 10);
@@ -177,20 +177,91 @@ export class Typer {
 
     async delete() {
         if (!this.isRunning) return;
-        
+
         // Get current text length
         const fullText = this.el.textContent || '';
         let textLength = fullText.length;
-        
+
         for (let i = textLength; i > 0; i--) {
             if (!this.isRunning) {
                 this.el.textContent = '';
                 return;
             }
-            
+
             // Build text from scratch based on what we're deleting
             this.el.textContent = fullText.substring(0, i - 1);
             await new Promise(r => setTimeout(r, 30));
         }
     }
+}
+
+// 3. HAPTICS
+// ══════════════════════════════════════════════
+export function initHaptics() {
+    if (!('vibrate' in navigator)) return;
+
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.link-button, .social-link, #theme-toggle, button, a')) {
+            navigator.vibrate(5);
+        }
+    });
+}
+
+// 4. MAGNETIC BUTTONS (3D Hover)
+// ══════════════════════════════════════════════
+export function initMagneticButtons(selector = '.link-button') {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || 'ontouchstart' in window) return;
+
+    const buttons = document.querySelectorAll(selector);
+
+    buttons.forEach(btn => {
+        let magneticChildren = [];
+        let isCached = false;
+
+        btn.addEventListener('mouseenter', () => {
+            const children = btn.children;
+            magneticChildren = [];
+            for (let i = 0; i < children.length; i++) {
+                if (!children[i].classList.contains('no-magnet')) {
+                    magneticChildren.push(children[i]);
+                }
+            }
+            isCached = true;
+        });
+
+        btn.addEventListener('mousemove', (e) => {
+            if (!isCached) {
+                const children = btn.children;
+                magneticChildren = [];
+                for (let i = 0; i < children.length; i++) {
+                    if (!children[i].classList.contains('no-magnet')) {
+                        magneticChildren.push(children[i]);
+                    }
+                }
+                isCached = true;
+            }
+
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.3}px) rotateX(${-y * 0.1}deg) rotateY(${x * 0.1}deg)`;
+
+            // Optional: Move children slightly for depth
+            for (let i = 0; i < magneticChildren.length; i++) {
+                magneticChildren[i].style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                magneticChildren[i].style.transition = 'none';
+            }
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+            for (let i = 0; i < magneticChildren.length; i++) {
+                magneticChildren[i].style.transform = '';
+                magneticChildren[i].style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+            }
+            isCached = false;
+        });
+    });
 }
