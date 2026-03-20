@@ -1,4 +1,4 @@
-name: Deploy Portfolio
+name: Validate Portfolio
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  build_and_deploy:
+  build_and_validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -30,20 +30,10 @@ jobs:
         working-directory: portfolio-app
         run: npm ci
 
+      - name: Typecheck Next.js App
+        working-directory: portfolio-app
+        run: npm run typecheck
+
       - name: Build Next.js App
         working-directory: portfolio-app
         run: npm run build
-
-      - name: Export to Portfolio Directory
-        working-directory: portfolio-app
-        run: npm run publish
-
-      - name: Commit and Push Changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f portfolio/
-          git commit -m "chore: auto-build portfolio via github actions" || echo "No changes to commit"
-          git push origin HEAD:main

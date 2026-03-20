@@ -31,24 +31,31 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://dictuzz.me'),
   title: {
-    default: 'Benedictus Richard Ricardo — Detective Case Board',
-    template: '%s | dictuzz',
+    default: 'dictuzz · Systems Architect & Automation Specialist',
+    template: '%s · Systems Architect & Automation Specialist | dictuzz',
   },
   description:
-    'A cinematic detective case board portfolio documenting workflow automation, governance, live operations, and technical readiness.',
+    'Building systems that scale operations and eliminate friction.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png'
+  },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Benedictus Richard Ricardo — Detective Case Board',
-    description:
-      'An atmospheric newspaper-and-evidence-wall portfolio focused on systems, automation, governance, and dependable execution.',
+    title: 'dictuzz · Systems Architect & Automation Specialist',
+    description: 'Building systems that scale operations and eliminate friction.',
     url: 'https://dictuzz.me/portfolio/',
     siteName: 'dictuzz',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Benedictus Richard Ricardo',
-    description: 'Detective case board portfolio for systems, automation, governance, and field-ready execution.',
+    title: 'dictuzz · Systems Architect & Automation Specialist',
+    description: 'Building systems that scale operations and eliminate friction.',
   },
 };
 

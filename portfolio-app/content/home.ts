@@ -8,8 +8,8 @@ export const homeContent: PortfolioHomeData = {
   },
   hero: {
     name: 'Benedictus Richard Ricardo',
-    designation: 'Systems Architect & Workflow Automation Specialist',
-    lead: 'I build operating systems for real work: reporting, governance, live execution, and technical readiness.',
+    designation: 'Systems Architect & Automation Specialist',
+    lead: 'Building systems that scale operations and eliminate friction.',
     body:
       'This portfolio is arranged like an evidence wall because the work itself is investigative. Find the friction. Trace the pattern. Build the structure. Measure the effect.',
     primaryCta: 'Open Primary Case',
@@ -17,7 +17,7 @@ export const homeContent: PortfolioHomeData = {
     quickFacts: [
       {
         label: 'Base',
-        value: 'Jakarta / Bangkok friendly'
+        value: 'Bandung, Indonesia · UTC+7'
       },
       {
         label: 'Focus',

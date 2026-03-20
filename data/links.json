@@ -2,6 +2,7 @@
     {
         "id": "links",
         "title": "Links",
+        "summary": "Primary routes to portfolio, resume, and public work.",
         "icon": "fas fa-folder-open",
         "defaultOpen": true,
         "items": [
@@ -9,25 +10,29 @@
                 "label": "Portfolio",
                 "icon": "fas fa-table-cells-large",
                 "href": "/portfolio/",
-                "external": false
+                "external": false,
+                "priority": true
             },
             {
                 "label": "Resume",
                 "icon": "fas fa-file-lines",
                 "href": "/resume/",
-                "external": false
+                "external": false,
+                "priority": true
             },
             {
                 "label": "GitHub Projects",
                 "icon": "fab fa-github",
                 "href": "https://github.com/dictuzz",
-                "external": true
+                "external": true,
+                "priority": true
             }
         ]
     },
     {
         "id": "contact",
         "title": "Contact Me",
+        "summary": "Direct channels for introductions, proposals, and calls.",
         "icon": "fas fa-paper-plane",
         "defaultOpen": false,
         "items": [
@@ -35,7 +40,8 @@
                 "label": "Email",
                 "icon": "fas fa-envelope",
                 "href": "mailto:contact@dictuzz.me",
-                "external": false
+                "external": false,
+                "priority": true
             },
             {
                 "label": "Book a Call",
@@ -54,6 +60,7 @@
     {
         "id": "socials",
         "title": "Socials",
+        "summary": "Extended social presence and community profiles.",
         "icon": "fas fa-share-nodes",
         "defaultOpen": false,
         "items": [
@@ -61,7 +68,8 @@
                 "label": "LinkedIn",
                 "icon": "fab fa-linkedin-in",
                 "href": "https://linkedin.com/in/dictuzz",
-                "external": true
+                "external": true,
+                "priority": true
             },
             {
                 "label": "Instagram",

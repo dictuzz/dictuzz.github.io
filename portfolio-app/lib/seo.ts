@@ -19,9 +19,10 @@ export function buildMetadata({
   noIndex?: boolean;
 }): Metadata {
   const url = absoluteUrl(path);
+  const titled = `${title} · Systems Architect & Automation Specialist`;
 
   return {
-    title,
+    title: titled,
     description,
     robots: noIndex
       ? {
@@ -37,7 +38,7 @@ export function buildMetadata({
       canonical: url
     },
     openGraph: {
-      title,
+      title: titled,
       description,
       url,
       siteName: 'dictuzz',
@@ -45,7 +46,7 @@ export function buildMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: titled,
       description
     }
   };

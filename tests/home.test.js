@@ -74,16 +74,17 @@ test('initFolders error path - fetch non-OK', async (t) => {
 
   await new Promise(r => setImmediate(r));
 
-  assert.strictEqual(calledWith.length, 1);
-  assert.strictEqual(calledWith[0][0], 'Error rendering folders:');
-  assert.ok(calledWith[0][1] instanceof Error);
-  assert.strictEqual(calledWith[0][1].message, 'Failed to load links config');
+  const accordion = document.querySelector('.accordion');
+  assert.strictEqual(calledWith.length, 0);
+  assert.match(accordion.textContent, /Directory unavailable/i);
+  assert.match(accordion.textContent, /Resume/i);
+  assert.match(accordion.textContent, /Email/i);
 
   restoreConsole();
 });
 
 test('initFolders error path - fetch throws', async () => {
-  setupEnvironment();
+  const { document } = setupEnvironment();
 
   const { calledWith, restoreConsole } = setupConsoleMock();
 
@@ -95,23 +96,19 @@ test('initFolders error path - fetch throws', async () => {
 
   await new Promise(r => setImmediate(r));
 
-  assert.strictEqual(calledWith.length, 1);
-  assert.strictEqual(calledWith[0][0], 'Error rendering folders:');
-  assert.ok(calledWith[0][1] instanceof Error);
-  assert.strictEqual(calledWith[0][1].message, 'Network error');
+  const accordion = document.querySelector('.accordion');
+  assert.strictEqual(calledWith.length, 0);
+  assert.match(accordion.textContent, /Directory unavailable/i);
+  assert.match(accordion.textContent, /Resume/i);
+  assert.match(accordion.textContent, /Email/i);
 
   restoreConsole();
 });
 
 test('initFolders error path - malformed JSON', async () => {
-  setupEnvironment();
+  const { document } = setupEnvironment();
 
-  const originalConsoleError = console.error;
-  let consoleErrorCalledWith = [];
-  console.error = (...args) => {
-    if (typeof args[0] === 'string' && args[0].includes('MODULE_TYPELESS_PACKAGE_JSON')) return;
-    consoleErrorCalledWith.push(args);
-  };
+  const { calledWith, restoreConsole } = setupConsoleMock();
 
   global.fetch = mock.fn(async () => {
     return {
@@ -124,10 +121,11 @@ test('initFolders error path - malformed JSON', async () => {
 
   await new Promise(r => setImmediate(r));
 
-  assert.strictEqual(consoleErrorCalledWith.length, 1);
-  assert.strictEqual(consoleErrorCalledWith[0][0], 'Error rendering folders:');
-  assert.ok(consoleErrorCalledWith[0][1] instanceof Error);
-  assert.strictEqual(consoleErrorCalledWith[0][1].message, 'Invalid JSON');
+  const accordion = document.querySelector('.accordion');
+  assert.strictEqual(calledWith.length, 0);
+  assert.match(accordion.textContent, /Directory unavailable/i);
+  assert.match(accordion.textContent, /Resume/i);
+  assert.match(accordion.textContent, /Email/i);
 
-  console.error = originalConsoleError;
+  restoreConsole();
 });

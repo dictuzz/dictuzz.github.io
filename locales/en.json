@@ -1,7 +1,7 @@
 {
     "hero": {
-        "subtitle": "Systems architect. Process designer. Cross-functional operator.",
-        "role": "Turning complexity into clear systems and dependable execution",
+        "subtitle": "Building systems that scale operations and eliminate friction.",
+        "role": "Systems Architect & Automation Specialist",
         "typing": {
             "staticText": "",
             "dynamicTexts": [
@@ -12,7 +12,7 @@
                 "Leading Structured Execution"
             ]
         },
-        "downloadCv": "Download CV",
+        "downloadCv": "View Full Resume →",
         "status": "Available for opportunities",
         "cta1": "Let's Talk",
         "cta2": "Explore",
@@ -32,14 +32,28 @@
         "contact": "Contact"
     },
     "section": {
-        "summary": "ABOUT",
-        "experience": "EXPERIENCE",
+        "summary": "PROFESSIONAL SUMMARY",
+        "experience": "WORK EXPERIENCE",
         "education": "EDUCATION",
-        "impact": "OPERATIONAL IMPACT HIGHLIGHTS",
-        "skills": "SKILLS",
-        "awards": "AWARDS",
-        "etc": "ETC",
-        "contact": "CONTACT"
+        "impact": "SELECTED OPERATIONAL IMPACT",
+        "certifications": "CERTIFICATIONS & TRAINING",
+        "skills": "CORE SKILLS & TOOLS",
+        "awards": "AWARDS & RECOGNITION",
+        "testimonials": "TESTIMONIALS & SOCIAL PROOF",
+        "etc": "ADDITIONAL ACTIVITIES",
+        "contact": "CONTACT & AVAILABILITY"
+    },
+    "sectionLede": {
+        "summary": "Systems architecture, workflow automation, and cross-functional execution profile.",
+        "experience": "Roles focused on workflow automation, operational leadership, training readiness, and event execution.",
+        "education": "Academic background supporting data analysis, systems thinking, and process improvement.",
+        "certifications": "Verified training and language credentials relevant to structured work and international collaboration.",
+        "impact": "Selected examples of measurable results in reporting automation, governance, and operations.",
+        "skills": "Core capabilities across systems design, automation, analytics, operations, and leadership.",
+        "awards": "Selected awards and recognition tied to communication, creativity, and performance.",
+        "etc": "Additional public-speaking, community, and supporting activities that reinforce execution range.",
+        "testimonials": "Placeholder social proof area for recommendations from managers, collaborators, and clients.",
+        "contact": "Primary contact routes for interviews, partnerships, freelance work, and professional conversations."
     },
     "summary": {
         "text": "With a background in Data Science and hands-on experience in cross-functional operations, I build systems that create clarity, consistency, and forward momentum. My work includes automating reporting workflows that saved 12+ hours of manual work per week, leading a 34-member organization through KPI-based governance, and coordinating large-scale events for more than 1,000 attendees. I bring a structured, data-informed approach to execution, improvement, and team alignment."
@@ -122,39 +136,47 @@
             "desc": "Managed program flow as MC at Youth Mass 2025 (GEMA Bandung) for 500+ participants, coordinating speakers, committees, and technical teams. Previously handled backstage operations for 1,000+ attendee events, reducing transition downtime through structured stage workflows."
         }
     ],
+    "certifications": [
+        {
+            "name": "German Language B1",
+            "issuer": "[TODO: add issuer]",
+            "year": "[TODO: add year]",
+            "url": null
+        }
+    ],
     "skills": {
         "strategic": "Strategic & Systems",
         "strategic_list": [
-            "Systems Thinking",
-            "Workflow Design",
-            "Process Standardization",
-            "KPI Framework Design",
-            "Operational Planning"
+            { "name": "Systems Thinking", "level": "expert" },
+            { "name": "Workflow Design", "level": "expert" },
+            { "name": "Process Standardization", "level": "expert" },
+            { "name": "KPI Framework Design", "level": "proficient" },
+            { "name": "Operational Planning", "level": "expert" }
         ],
         "operational": "Operational Execution",
         "operational_list": [
-            "SOP Development",
-            "Cross-Functional Coordination",
-            "Event Operations Management",
-            "Reporting Automation",
-            "Structured Delegation"
+            { "name": "SOP Development", "level": "expert" },
+            { "name": "Cross-Functional Coordination", "level": "expert" },
+            { "name": "Event Operations Management", "level": "proficient" },
+            { "name": "Reporting Automation", "level": "expert" },
+            { "name": "Structured Delegation", "level": "proficient" }
         ],
         "analytical": "Analytical & Tools",
         "analytical_list": [
-            "Microsoft Excel (Advanced)",
-            "Google Workspace",
-            "Data Visualization",
-            "Data Analysis",
-            "Obsidian",
-            "Project Management Tools"
+            { "name": "Microsoft Excel (Advanced)", "level": "expert" },
+            { "name": "Google Workspace", "level": "expert" },
+            { "name": "Data Visualization", "level": "proficient" },
+            { "name": "Data Analysis", "level": "proficient" },
+            { "name": "Obsidian", "level": "proficient" },
+            { "name": "Project Management Tools", "level": "proficient" }
         ],
         "leadership": "Leadership & Communication",
         "leadership_list": [
-            "Team Governance",
-            "Stakeholder Communication",
-            "Public Speaking",
-            "Training Delivery",
-            "Strategic Outreach"
+            { "name": "Team Governance", "level": "expert" },
+            { "name": "Stakeholder Communication", "level": "expert" },
+            { "name": "Public Speaking", "level": "proficient" },
+            { "name": "Training Delivery", "level": "proficient" },
+            { "name": "Strategic Outreach", "level": "proficient" }
         ],
         "languages": "Languages",
         "lang": {
@@ -173,6 +195,20 @@
         "1": "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ participants",
         "2": "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan"
     },
+    "testimonials": [
+        {
+            "quote": "[TODO: Add testimonial quote from a manager, client, or collaborator that speaks to systems thinking and execution reliability.]",
+            "author": "[TODO: Add name]",
+            "role": "[TODO: Add title · company]",
+            "linkedin": null
+        },
+        {
+            "quote": "[TODO: Add testimonial quote about communication clarity, ownership, and cross-functional coordination.]",
+            "author": "[TODO: Add name]",
+            "role": "[TODO: Add title · company]",
+            "linkedin": null
+        }
+    ],
     "footer": {
         "rights": "All rights reserved."
     },
@@ -181,7 +217,7 @@
         "schedule": "Book a Call",
         "whatsapp": "Message Me",
         "email": "Let's Talk",
-        "cv": "Download CV",
+        "cv": "View Full Resume →",
         "desc": {
             "schedule": "15-min call • No obligation",
             "whatsapp": "Fast and practical communication",

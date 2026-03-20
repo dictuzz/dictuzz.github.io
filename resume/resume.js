@@ -56,6 +56,213 @@ function reobserveAll(container) {
     }
 }
 
+function toAbsoluteUrl(path) {
+    return new URL(path, window.location.origin).toString();
+}
+
+function normalizeEntries(data) {
+    if (!data) return [];
+    return Array.isArray(data) ? data : Object.values(data);
+}
+
+function getSectionSnapshot() {
+    return Array.from(document.querySelectorAll('main > section[id]')).map((section, index) => ({
+        '@type': 'WebPageElement',
+        '@id': `${toAbsoluteUrl('/resume/')}#${section.id}`,
+        name: section.querySelector('.section__title')?.textContent?.trim() || section.id,
+        description: section.querySelector('.section__lede')?.textContent?.trim() || undefined,
+        position: index + 1
+    }));
+}
+
+function updateResumeStructuredData(data, lang) {
+    const script = document.getElementById('resume-structured-data');
+    if (!script || !data) return;
+
+    const resumeUrl = toAbsoluteUrl('/resume/');
+    const personId = `${window.location.origin}/#person`;
+    const experience = normalizeEntries(data.exp);
+    const education = normalizeEntries(data.edu);
+    const certifications = normalizeEntries(data.certifications);
+    const impact = normalizeEntries(data.impact);
+    const strategic = normalizeEntries(data.skills?.strategic_list);
+    const operational = normalizeEntries(data.skills?.operational_list);
+    const analytical = normalizeEntries(data.skills?.analytical_list);
+    const leadership = normalizeEntries(data.skills?.leadership_list);
+    const languages = Object.values(data.skills?.lang || {});
+    const sections = getSectionSnapshot();
+
+    const graph = [
+        {
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            '@id': personId,
+            name: 'Benedictus Richard Ricardo',
+            alternateName: ['dictuzz', 'Benedictus Richard Ricardo dictuzz'],
+            jobTitle: data.hero?.role || 'Systems Architect & Automation Specialist',
+            url: resumeUrl,
+            image: toAbsoluteUrl('/assets/images/Aku.webp'),
+            email: 'contact@dictuzz.me',
+            address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Bandung',
+                addressCountry: 'ID'
+            },
+            sameAs: [
+                'https://linkedin.com/in/dictuzz',
+                'https://github.com/dictuzz',
+                'https://instagram.com/dictuzz',
+                'https://wa.me/6285186888630'
+            ],
+            knowsAbout: [
+                ...(strategic.map(skill => typeof skill === 'string' ? skill : skill.name)),
+                ...(operational.map(skill => typeof skill === 'string' ? skill : skill.name)),
+                ...(analytical.map(skill => typeof skill === 'string' ? skill : skill.name)),
+                ...(leadership.map(skill => typeof skill === 'string' ? skill : skill.name)),
+                ...languages
+            ],
+            alumniOf: {
+                '@type': 'CollegeOrUniversity',
+                name: 'Universitas Terbuka',
+                url: 'https://www.ut.ac.id/'
+            },
+            description: data.summary?.text || 'Systems Architect & Automation Specialist with experience in workflow automation, KPI governance, reporting systems, and operational leadership.'
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'ProfilePage',
+            '@id': `${resumeUrl}#profile`,
+            url: resumeUrl,
+            name: `Benedictus Richard Ricardo Resume (${lang.toUpperCase()})`,
+            inLanguage: lang,
+            description: data.summary?.text || 'Resume and professional profile for Benedictus Richard Ricardo.',
+            mainEntity: { '@id': personId },
+            hasPart: sections
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${resumeUrl}#webpage`,
+            url: resumeUrl,
+            name: document.title,
+            inLanguage: lang,
+            description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+            about: { '@id': personId },
+            mainEntity: { '@id': personId },
+            breadcrumb: { '@id': `${resumeUrl}#breadcrumb` },
+            hasPart: sections
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            '@id': `${resumeUrl}#breadcrumb`,
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'Home',
+                    item: toAbsoluteUrl('/')
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: 'Resume',
+                    item: resumeUrl
+                }
+            ]
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            '@id': `${resumeUrl}#experience-list`,
+            name: 'Work Experience',
+            numberOfItems: experience.length,
+            itemListElement: experience.map((item, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                item: {
+                    '@type': 'Role',
+                    roleName: item.role,
+                    description: Array.isArray(item.details) ? item.details.join(' ') : '',
+                    memberOf: {
+                        '@type': 'Organization',
+                        name: item.company
+                    }
+                }
+            }))
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            '@id': `${resumeUrl}#education-list-schema`,
+            name: 'Education',
+            numberOfItems: education.length,
+            itemListElement: education.map((item, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                item: {
+                    '@type': 'EducationalOccupationalCredential',
+                    name: item.degree ? `${item.name} - ${item.degree}` : item.name,
+                    description: [item.date, item.focus].filter(Boolean).join(' · ')
+                }
+            }))
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            '@id': `${resumeUrl}#certifications-list-schema`,
+            name: 'Certifications and Training',
+            numberOfItems: certifications.length,
+            itemListElement: certifications.map((item, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                item: {
+                    '@type': 'EducationalOccupationalCredential',
+                    name: item.name,
+                    credentialCategory: item.issuer || 'Certification',
+                    recognizedBy: item.issuer && !item.issuer.startsWith('[') ? {
+                        '@type': 'Organization',
+                        name: item.issuer
+                    } : undefined
+                }
+            }))
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            '@id': `${resumeUrl}#impact-list-schema`,
+            name: 'Selected Operational Impact',
+            numberOfItems: impact.length,
+            itemListElement: impact.map((item, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                item: {
+                    '@type': 'CreativeWork',
+                    name: item.title,
+                    description: item.desc
+                }
+            }))
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'DefinedTermSet',
+            '@id': `${resumeUrl}#skills`,
+            name: 'Core Skills and Tools',
+            hasDefinedTerm: [
+                ...strategic,
+                ...operational,
+                ...analytical,
+                ...leadership
+            ].map(skill => ({
+                '@type': 'DefinedTerm',
+                name: typeof skill === 'string' ? skill : skill.name
+            }))
+        }
+    ];
+
+    script.textContent = JSON.stringify(graph, null, 2);
+}
+
 function renderSection(selector, data, templateFn) {
     const container = $(selector);
     if (!container || !data) return;
@@ -113,8 +320,30 @@ function renderSkills(data) {
 
     categories.forEach(({ key, id }) => {
         if (!data?.[key]) return;
-        renderSection(id, data[key], skill => `<span class="tag">${escapeHtml(skill)}</span>`);
+        renderSection(id, data[key], skill => `<span class="tag">${escapeHtml(typeof skill === 'string' ? skill : skill.name)}</span>`);
     });
+}
+
+function renderCertifications(data) {
+    renderSection('#certifications-list', data, item => `
+        <div class="edu-card glass glass--hover card reveal">
+            <h3>${escapeHtml(item.name)}</h3>
+            <p class="edu-card__degree">${escapeHtml(item.issuer)}</p>
+            <p class="edu-card__date">${escapeHtml(item.year)}</p>
+            ${item.url ? `<p class="edu-card__focus"><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">Verify credential</a></p>` : ''}
+        </div>
+    `);
+}
+
+function renderTestimonials(data) {
+    renderSection('#testimonials-list', data, item => `
+        <article class="testimonial-card glass card reveal">
+            <p class="testimonial-card__mark" aria-hidden="true">“</p>
+            <blockquote class="testimonial-card__quote">${escapeHtml(item.quote)}</blockquote>
+            <p class="testimonial-card__meta">${escapeHtml(item.author)} · ${escapeHtml(item.role)}</p>
+            ${item.linkedin ? `<p class="testimonial-card__link"><a href="${escapeHtml(item.linkedin)}" target="_blank" rel="noopener">LinkedIn profile</a></p>` : ''}
+        </article>
+    `);
 }
 
 function renderEducation(data) {
@@ -165,12 +394,15 @@ async function loadLanguage(lang) {
         window.history.replaceState({}, '', url);
         renderExperience(langData.exp);
         renderEducation(langData.edu);
+        renderCertifications(langData.certifications);
         renderImpact(langData.impact);
         renderSkills(langData.skills);
         renderAwards(langData.awards);
         renderEtc(langData.etc);
+        renderTestimonials(langData.testimonials);
         applyTranslations(langData);
         updateDownloadLink(lang);
+        updateResumeStructuredData(langData, lang);
 
         // Update typing animation
         if (langData.hero?.typing) {
@@ -217,6 +449,8 @@ function updateDownloadLink(lang) {
     };
 
     link.href = urls[lang] || urls['en'];
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener');
 }
 
 

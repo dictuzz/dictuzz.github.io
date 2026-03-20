@@ -33,6 +33,14 @@
     font-size: clamp(2.4rem, 5vw, 3.75rem);
 }
 
+.section__lede {
+    max-width: 72ch;
+    margin: -0.55rem 0 clamp(1.5rem, 2vw, 2rem);
+    color: var(--text-secondary);
+    font-size: clamp(0.98rem, 0.95rem + 0.18vw, 1.08rem);
+    line-height: 1.8;
+}
+
 .impact__list {
     display: grid;
     gap: clamp(1rem, 2vw, 1.5rem);
@@ -323,6 +331,7 @@
 .tag {
     display: inline-flex;
     align-items: center;
+    gap: 0.55rem;
     min-height: 38px;
     padding: 0.52rem 0.92rem;
     border-radius: 999px;
@@ -529,6 +538,45 @@
 
 .mt-12 {
     margin-top: 3rem;
+}
+
+.testimonials {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    position: relative;
+    display: grid;
+    gap: 0.9rem;
+    min-height: 100%;
+}
+
+.testimonial-card__mark {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--accent-gold);
+}
+
+.testimonial-card__quote {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.testimonial-card__meta,
+.testimonial-card__link a {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.testimonial-card__link a:hover,
+.testimonial-card__link a:focus-visible,
+.edu-card__focus a:hover,
+.edu-card__focus a:focus-visible {
+    color: var(--text-primary);
 }
 
 .footer {

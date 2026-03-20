@@ -12,53 +12,98 @@
     <meta name="apple-mobile-web-app-title" content="Benedictus">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Benedictus Richard Ricardo | Links</title>
+    <title>Benedictus Richard Ricardo (dictuzz) — Systems Architect &amp; Automation Specialist</title>
     <meta name="description"
-        content="A premium link hub for Benedictus Richard Ricardo with direct access to resume, portfolio, GitHub projects, social media, and contact channels.">
+        content="Benedictus Richard Ricardo, known as dictuzz, is a Systems Architect &amp; Automation Specialist in Bandung, Indonesia. Explore the homepage, resume, portfolio access, GitHub, and direct WhatsApp contact.">
+    <meta name="keywords"
+        content="Benedictus Richard Ricardo, dictuzz, Systems Architect, Automation Specialist, workflow automation, operations systems, process improvement, resume, portfolio, GitHub, WhatsApp, Bandung Indonesia">
     <meta name="author" content="Benedictus Richard Ricardo">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://dictuzz.me/">
     <meta name="theme-color" content="#f5efe4">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dictuzz.me/">
-    <meta property="og:title" content="Benedictus Richard Ricardo | Links">
+    <meta property="og:title" content="Benedictus Richard Ricardo (dictuzz) — Systems Architect &amp; Automation Specialist">
     <meta property="og:description"
-        content="Resume, portfolio, GitHub projects, social links, and direct contact in one place.">
+        content="Explore the homepage, resume, portfolio access, GitHub, and direct WhatsApp contact for Benedictus Richard Ricardo, Systems Architect &amp; Automation Specialist.">
     <meta property="og:image" content="https://dictuzz.me/og-image.png">
+    <meta property="og:image:alt" content="Portrait of Benedictus Richard Ricardo with dictuzz branding">
+    <meta property="og:site_name" content="dictuzz">
+    <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://dictuzz.me/">
-    <meta name="twitter:title" content="Benedictus Richard Ricardo | Links">
+    <meta name="twitter:title" content="Benedictus Richard Ricardo (dictuzz) — Systems Architect &amp; Automation Specialist">
     <meta name="twitter:description"
-        content="Resume, portfolio, GitHub projects, social links, and direct contact in one place.">
+        content="Explore the homepage, resume, portfolio access, GitHub, and direct WhatsApp contact for Benedictus Richard Ricardo, Systems Architect &amp; Automation Specialist.">
     <meta name="twitter:image" content="https://dictuzz.me/og-image.png">
+    <meta name="twitter:image:alt" content="Portrait of Benedictus Richard Ricardo with dictuzz branding">
+    <meta name="twitter:creator" content="@dictuzz">
 
     <script type="application/ld+json">
     [{
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://dictuzz.me/#person",
         "name": "Benedictus Richard Ricardo",
-        "alternateName": "dictuzz",
+        "alternateName": ["dictuzz", "Benedictus Richard Ricardo dictuzz"],
+        "jobTitle": "Systems Architect & Automation Specialist",
+        "description": "Systems Architect & Automation Specialist building systems that reduce friction, improve workflow clarity, and scale operations.",
         "url": "https://dictuzz.me/",
         "image": "https://dictuzz.me/assets/images/Aku.webp",
         "email": "contact@dictuzz.me",
+        "nationality": "Indonesian",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bandung",
+            "addressCountry": "ID"
+        },
         "sameAs": [
             "https://linkedin.com/in/dictuzz",
             "https://github.com/dictuzz",
             "https://instagram.com/dictuzz",
             "https://wa.me/6285186888630"
+        ],
+        "knowsAbout": [
+            "Systems architecture",
+            "Workflow automation",
+            "Operational systems",
+            "Process improvement",
+            "Governance design",
+            "Reporting automation"
         ]
     },
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Benedictus Richard Ricardo",
-        "alternateName": "dictuzz",
-        "url": "https://dictuzz.me/"
+        "@id": "https://dictuzz.me/#website",
+        "name": "dictuzz",
+        "alternateName": "Benedictus Richard Ricardo",
+        "url": "https://dictuzz.me/",
+        "publisher": {
+            "@id": "https://dictuzz.me/#person"
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://dictuzz.me/#profile",
+        "url": "https://dictuzz.me/",
+        "name": "Benedictus Richard Ricardo (dictuzz)",
+        "description": "Homepage and professional directory for Benedictus Richard Ricardo, Systems Architect & Automation Specialist.",
+        "mainEntity": {
+            "@id": "https://dictuzz.me/#person"
+        },
+        "isPartOf": {
+            "@id": "https://dictuzz.me/#website"
+        }
     }]
     </script>
 
-    <link rel="preload" href="/css/site.min.css" as="style">
+    <link rel="preload" href="/css/site.css" as="style">
+    <link rel="preload" href="/assets/images/Aku.webp" as="image" type="image/webp">
     <link rel="preload" href="/js/home.js" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,19 +121,21 @@
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
-    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="stylesheet" href="/css/site.css">
 </head>
 
 <body class="home-page">
     <main class="bio-shell">
         <section class="bio-card card reveal">
             <div class="bio-card__header">
-                <button class="theme-toggle theme-toggle--light" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="theme-icon"></i>
-                </button>
+                <div class="bio-toolbar">
+                    <div class="bio-mark" aria-hidden="true">
+                        <img src="/assets/images/favicon.png" alt="" width="96" height="96">
+                    </div>
 
-                <div class="bio-mark" aria-hidden="true">
-                    <img src="/assets/images/favicon.png" alt="" width="96" height="96">
+                    <button class="theme-toggle theme-toggle--light" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
                 </div>
 
                 <div class="bio-avatar">
@@ -97,8 +144,9 @@
                     </div>
                 </div>
 
+                <p class="bio-nameplate">Benedictus Richard Ricardo</p>
                 <h1 class="bio-title">dictuzz</h1>
-                <p class="bio-text">Quam Plurimi et Quam Aptissimi</p>
+                <p class="bio-text">Systems Architect &amp; Automation Specialist</p>
                 <div class="bio-meta" aria-label="Availability and local time">
                     <span class="bio-status">
                         <span class="bio-status__dot" aria-hidden="true"></span>
@@ -108,7 +156,6 @@
                     <span class="bio-meta__item" id="local-time">Loading time</span>
                 </div>
             </div>
-
 
             <div class="accordion mt-6" aria-label="Link folders">
                 <!-- Dynamically populated via js/home.js and data/links.json -->
@@ -125,8 +172,8 @@
                     <a href="mailto:contact@dictuzz.me" class="global-footer__contact-link" aria-label="Email Me"><i
                             class="fas fa-envelope"></i> contact@dictuzz.me</a>
                     <span class="global-footer__divider">&bull;</span>
-                    <a href="https://linkedin.com/in/dictuzz" class="global-footer__contact-link" target="_blank"
-                        rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://wa.me/6285186888630" class="global-footer__contact-link" target="_blank"
+                        rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     <span class="global-footer__divider">&bull;</span>
                     <a href="/terms/" class="global-footer__contact-link"><i class="fas fa-file-contract"></i> Terms</a>
                 </div>

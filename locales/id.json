@@ -1,7 +1,7 @@
 {
     "hero": {
-        "subtitle": "Arsitek sistem. Perancang proses. Penggerak eksekusi lintas fungsi.",
-        "role": "Mengubah kompleksitas menjadi sistem yang jelas dan eksekusi yang andal",
+        "subtitle": "Building systems that scale operations and eliminate friction.",
+        "role": "Systems Architect & Automation Specialist",
         "typing": {
             "staticText": "",
             "dynamicTexts": [
@@ -12,7 +12,7 @@
                 "Memimpin Eksekusi Terstruktur"
             ]
         },
-        "downloadCv": "Unduh CV",
+        "downloadCv": "Lihat Resume Lengkap →",
         "status": "Terbuka untuk peluang",
         "cta1": "Hubungi Saya",
         "cta2": "Jelajahi",
@@ -32,14 +32,28 @@
         "contact": "Kontak"
     },
     "section": {
-        "summary": "TENTANG",
-        "experience": "PENGALAMAN",
+        "summary": "RINGKASAN PROFESIONAL",
+        "experience": "PENGALAMAN KERJA",
         "education": "PENDIDIKAN",
-        "impact": "SOROTAN DAMPAK OPERASIONAL",
-        "skills": "KEAHLIAN",
-        "awards": "PENCAPAIAN",
-        "etc": "LAINNYA",
-        "contact": "KONTAK"
+        "impact": "DAMPAK OPERASIONAL TERPILIH",
+        "certifications": "SERTIFIKASI & PELATIHAN",
+        "skills": "KEAHLIAN & ALAT UTAMA",
+        "awards": "PENGHARGAAN & PENGAKUAN",
+        "testimonials": "TESTIMONI & BUKTI SOSIAL",
+        "etc": "AKTIVITAS TAMBAHAN",
+        "contact": "KONTAK & KETERSEDIAAN"
+    },
+    "sectionLede": {
+        "summary": "Profil sistem, otomatisasi alur kerja, dan eksekusi lintas fungsi.",
+        "experience": "Peran yang berfokus pada otomatisasi workflow, kepemimpinan operasional, kesiapan pelatihan, dan eksekusi acara.",
+        "education": "Latar akademik yang mendukung analisis data, pemikiran sistem, dan perbaikan proses.",
+        "certifications": "Pelatihan dan kredensial bahasa yang relevan untuk kerja terstruktur dan kolaborasi internasional.",
+        "impact": "Contoh hasil terukur dalam otomatisasi pelaporan, tata kelola, dan operasional.",
+        "skills": "Kapabilitas utama di bidang desain sistem, otomatisasi, analitik, operasional, dan kepemimpinan.",
+        "awards": "Penghargaan dan pengakuan yang terkait dengan komunikasi, kreativitas, dan performa.",
+        "etc": "Aktivitas tambahan di bidang public speaking, komunitas, dan pendukung lain yang memperlihatkan jangkauan eksekusi.",
+        "testimonials": "Area bukti sosial sementara untuk rekomendasi dari atasan, kolaborator, dan klien.",
+        "contact": "Jalur kontak utama untuk wawancara, kemitraan, pekerjaan freelance, dan percakapan profesional."
     },
     "summary": {
         "text": "Dengan latar belakang Data Science dan pengalaman langsung dalam operasional lintas fungsi, saya membangun sistem yang menghadirkan kejelasan, konsistensi, dan kemajuan nyata. Pekerjaan saya mencakup otomatisasi alur pelaporan yang menghemat 12+ jam kerja manual per minggu, memimpin organisasi beranggotakan 34 orang melalui tata kelola berbasis KPI, serta mengoordinasikan acara berskala besar dengan lebih dari 1.000 peserta. Saya bekerja dengan pendekatan yang terstruktur, berbasis data, dan berorientasi pada kualitas eksekusi."
@@ -122,39 +136,47 @@
             "desc": "Mengelola alur program sebagai MC di Youth Mass 2025 (GEMA Bandung) untuk 500+ peserta, mengoordinasikan pembicara, panitia, dan tim teknis. Sebelumnya menangani operasi backstage untuk acara 1.000+ peserta, mengurangi waktu henti transisi melalui alur kerja panggung terstruktur."
         }
     ],
+    "certifications": [
+        {
+            "name": "Bahasa Jerman B1",
+            "issuer": "[TODO: tambahkan penerbit]",
+            "year": "[TODO: tambahkan tahun]",
+            "url": null
+        }
+    ],
     "skills": {
         "strategic": "Strategis & Sistem",
         "strategic_list": [
-            "Pemikiran Sistem",
-            "Perancangan Alur Kerja",
-            "Standardisasi Proses",
-            "Perancangan Kerangka KPI",
-            "Perencanaan Operasional"
+            { "name": "Pemikiran Sistem", "level": "expert" },
+            { "name": "Perancangan Alur Kerja", "level": "expert" },
+            { "name": "Standardisasi Proses", "level": "expert" },
+            { "name": "Perancangan Kerangka KPI", "level": "proficient" },
+            { "name": "Perencanaan Operasional", "level": "expert" }
         ],
         "operational": "Eksekusi Operasional",
         "operational_list": [
-            "Pengembangan SOP",
-            "Koordinasi Lintas Fungsi",
-            "Manajemen Operasi Acara",
-            "Otomatisasi Pelaporan",
-            "Delegasi Terstruktur"
+            { "name": "Pengembangan SOP", "level": "expert" },
+            { "name": "Koordinasi Lintas Fungsi", "level": "expert" },
+            { "name": "Manajemen Operasi Acara", "level": "proficient" },
+            { "name": "Otomatisasi Pelaporan", "level": "expert" },
+            { "name": "Delegasi Terstruktur", "level": "proficient" }
         ],
         "analytical": "Analitis & Alat",
         "analytical_list": [
-            "Microsoft Excel (Lanjutan)",
-            "Google Workspace",
-            "Visualisasi Data",
-            "Analisis Data",
-            "Obsidian",
-            "Alat Manajemen Proyek"
+            { "name": "Microsoft Excel (Lanjutan)", "level": "expert" },
+            { "name": "Google Workspace", "level": "expert" },
+            { "name": "Visualisasi Data", "level": "proficient" },
+            { "name": "Analisis Data", "level": "proficient" },
+            { "name": "Obsidian", "level": "proficient" },
+            { "name": "Alat Manajemen Proyek", "level": "proficient" }
         ],
         "leadership": "Kepemimpinan & Komunikasi",
         "leadership_list": [
-            "Tata Kelola Tim",
-            "Komunikasi Pemangku Kepentingan",
-            "Berbicara di Depan Umum",
-            "Penyampaian Pelatihan",
-            "Penjangkauan Strategis"
+            { "name": "Tata Kelola Tim", "level": "expert" },
+            { "name": "Komunikasi Pemangku Kepentingan", "level": "expert" },
+            { "name": "Berbicara di Depan Umum", "level": "proficient" },
+            { "name": "Penyampaian Pelatihan", "level": "proficient" },
+            { "name": "Penjangkauan Strategis", "level": "proficient" }
         ],
         "languages": "Bahasa",
         "lang": {
@@ -173,6 +195,20 @@
         "1": "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ peserta",
         "2": "Kuliah Umum (2023): Kelas Jurnalisme & Komunikasi Publik, Universitas Parahyangan"
     },
+    "testimonials": [
+        {
+            "quote": "[TODO: Tambahkan testimoni dari atasan, klien, atau rekan kerja tentang kemampuan membangun sistem dan menjaga eksekusi tetap rapi.]",
+            "author": "[TODO: Tambahkan nama]",
+            "role": "[TODO: Tambahkan jabatan · perusahaan]",
+            "linkedin": null
+        },
+        {
+            "quote": "[TODO: Tambahkan testimoni tentang komunikasi, kepemilikan, dan koordinasi lintas fungsi.]",
+            "author": "[TODO: Tambahkan nama]",
+            "role": "[TODO: Tambahkan jabatan · perusahaan]",
+            "linkedin": null
+        }
+    ],
     "footer": {
         "rights": "Hak cipta dilindungi undang-undang."
     },
@@ -181,7 +217,7 @@
         "schedule": "Jadwalkan Panggilan",
         "whatsapp": "Kirim Pesan",
         "email": "Hubungi Saya",
-        "cv": "Unduh CV",
+        "cv": "Lihat Resume Lengkap →",
         "desc": {
             "schedule": "15 menit • Tanpa kewajiban",
             "whatsapp": "Komunikasi cepat dan praktis",

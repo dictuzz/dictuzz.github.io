@@ -1,12 +1,1 @@
-{
-  "v": 1,
-  "alg": "A256GCM",
-  "kdf": {
-    "name": "PBKDF2",
-    "hash": "SHA-512",
-    "iterations": 350000,
-    "salt": "1ZhRAB3VXglD5b4q5Pydgw=="
-  },
-  "iv": "cjqFp629Gz0iTVHu",
-  "ciphertext": "g5zkZmmf/0FTPLZHQD1LTBFKagjiBVEiRamfXTAadXKe1LkaRouMQthGtVmxmK4LY1JnEt+pI2nrhZu0Zf1dkM3nI14kMe5iY7Az3Qjl6LwqcSmcdfAeFEOWhpyzkY/wV/GO8gEIAf1QdFj20t0+OTpie7m2+ajeQfb+xjCDb6gMz28TT4rY0sRdeVuA03B7u8Bl9J4p0vfSkqzfkXIC5JhLte1HIwaGjrui5Ay60qvnB5HTzhAs167+EyVRwYdE38fJuPKP"
-}
+{"error":"restricted"}

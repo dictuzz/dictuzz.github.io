@@ -1,82 +1,201 @@
-# Benedictus Richard Ricardo - Personal Ecosystem
+# dictuzz.me
 
-A modern, high-performance personal ecosystem featuring a premium **"Deep Space Luxury"** design language. Built to showcase data science expertise, leadership experience, and professional case studies.
+Personal website for **Benedictus Richard Ricardo** (`dictuzz`), positioned as a **Systems Architect & Automation Specialist**.
 
-🌐 **Live at:** [dictuzz.me](https://dictuzz.me)
+The repository currently contains three public-facing surfaces and one protected portfolio source app:
 
----
+- Root homepage: link hub with categorized folder-style navigation
+- Resume: long-form professional profile with i18n data
+- Terms page: shared legal page
+- Portfolio source app: Next.js app with cookie-based access control
 
-## 🏛️ Architecture Overview
+## Current Architecture
 
-The repository utilizes a dual-architecture approach optimized for maximum performance on simple pages, and rich interactivity for case studies:
+### 1. Root static site
 
-### 1. Root Hub & Resume (Vanilla JS/CSS)
-- **Framework-free:** Built entirely with Semantic HTML, lightweight Vanilla CSS (`/css`), and modular JavaScript (`/js`).
-- **Locales & i18n:** Driven by `/locales/*.json` (En/Id/De) with a custom lightning-fast parser in `js/ui-kit.js`.
-- **Target:** The root Link Hub (`/index.html`) and Resume dossier (`/resume/`).
-- **Key Modules:** `ThemeManager` and `Typer` classes for deep ecosystem integration.
+The root of the repository is a lightweight static site built with semantic HTML, shared CSS, and vanilla JavaScript.
 
-### 2. Private Portfolio (Next.js Application)
-- **Framework:** Next.js App Router (React + TypeScript).
-- **Source:** `/portfolio-app/` directory.
-- **Output:** Statically exported (SSG) to the root `/portfolio/` directory.
-- **Content:** Fully configuration-driven via `/portfolio-app/content/*.ts` (no CMS overhead).
+Relevant paths:
 
-> **Note:** Do NOT manually edit files inside the `/portfolio/` directory. It is an auto-generated static export from `/portfolio-app`. To make changes to the portfolio, edit the source in `/portfolio-app` and run the build script.
+- [`/index.html`](./index.html): main homepage / link hub
+- [`/resume/index.html`](./resume/index.html): resume page shell
+- [`/terms/index.html`](./terms/index.html): terms page
+- [`/404.html`](./404.html): custom 404 page
+- [`/css/site.css`](./css/site.css): root homepage and shared footer styling
+- [`/resume/resume.css`](./resume/resume.css): resume styling
+- [`/js/home.js`](./js/home.js): homepage interactions
+- [`/resume/resume.js`](./resume/resume.js): resume rendering and locale switching
+- [`/assets/css/tokens.css`](./assets/css/tokens.css): shared token foundation
+- [`/assets/css/core.css`](./assets/css/core.css): shared utilities
 
----
+### 2. Resume data layer
 
-## 🌌 Design System: Deep Space Luxury
+Resume content is driven by locale JSON files and rendered client-side.
 
-The design system is managed globally via `/assets/css/tokens.css` to ensure seamless thematic synchronization between the Vanilla stack and the Next.js portfolio.
+Relevant paths:
 
-### Core Tokens
-| Token | Name | Value | Usage |
-|-------|------|-------|-------|
-| `--bg-deep` | **Deep Space** | `#0A0E17` | Background (dark) |
-| `--bg-surface` | **Surface** | `#121824` | Cards, navigation |
-| `--accent-cyan` | **Cyber Cyan** | `#00F5D4` | Primary brand accent |
-| `--accent-gold` | **Luxury Gold** | `#FFB800` | Secondary & highlights |
+- [`/locales/en.json`](./locales/en.json)
+- [`/locales/id.json`](./locales/id.json)
+- [`/locales/de.json`](./locales/de.json)
 
-*Full branding guidelines can be found in `BRAND_IDENTITY.md`.*
+### 3. Portfolio source app
 
----
+The editable portfolio lives in [`/portfolio-app`](./portfolio-app) and is built with:
 
-## 🛠️ Local Development
+- Next.js `16.1.6`
+- React `19.2.4`
+- TypeScript `5.9.3`
+- Framer Motion
 
-### 1. Running the Root Hub & Resume
+Important notes:
+
+- The portfolio app uses `basePath: '/portfolio'`
+- The app now depends on **runtime middleware/cookie auth**
+- Static export publishing is intentionally disabled
+
+Relevant paths:
+
+- [`/portfolio-app/app`](./portfolio-app/app): routes and layout
+- [`/portfolio-app/content`](./portfolio-app/content): portfolio content
+- [`/portfolio-app/data`](./portfolio-app/data): board mapping
+- [`/portfolio-app/lib/auth.ts`](./portfolio-app/lib/auth.ts): auth helpers
+- [`/portfolio-app/proxy.ts`](./portfolio-app/proxy.ts): request protection
+- [`/portfolio-app/app/api/portfolio-auth/route.ts`](./portfolio-app/app/api/portfolio-auth/route.ts): login handler
+- [`/portfolio-app/app/login/page.tsx`](./portfolio-app/app/login/page.tsx): portfolio login page
+- [`/portfolio-app/scripts/publish.mjs`](./portfolio-app/scripts/publish.mjs): intentionally throws because static publishing is disabled
+
+### 4. Public `/portfolio` mirror
+
+The root [`/portfolio`](./portfolio) folder is no longer the editable portfolio source.
+
+Current status:
+
+- It acts as a **locked public placeholder**
+- Old public payloads were neutralized to avoid leaking protected content
+- Do not use `/portfolio` as the source of truth for portfolio development
+
+## Positioning and Brand
+
+Canonical positioning used across the site:
+
+- Name: Benedictus Richard Ricardo
+- Handle: dictuzz
+- Title: Systems Architect & Automation Specialist
+
+Brand direction:
+
+- Homepage and resume use the shared editorial serif/sans system
+- Portfolio uses its own detective-board treatment
+- 404 uses the same detective-family mood instead of the removed cyberpunk identity
+
+## Development
+
+### Root site
+
+Serve the root static site locally:
+
 ```bash
-# Serve the static files from the root directory
-npx serve . -l 8000
+npm run dev
 ```
-Then visit `http://localhost:8000/` or `http://localhost:8000/resume/`.
 
-### 2. Developing the Next.js Portfolio
+Default local URL:
+
+```text
+http://localhost:8000
+```
+
+### Portfolio app
+
+Run the protected Next.js app locally:
+
 ```bash
-# Navigate to the Next.js source app
 cd portfolio-app
 npm install
 npm run dev
 ```
-Then visit `http://localhost:3000/portfolio/`.
 
-### 3. Publishing Portfolio Updates
-```bash
-# Compile and export Next.js app to the /portfolio/ root folder
-npm run build:portfolio
-npm run publish:portfolio
+Default local URL:
+
+```text
+http://localhost:3000/portfolio/
 ```
 
----
+To use portfolio auth locally, set:
 
-## � Codebase Audit & Refactoring Plans
+```bash
+PORTFOLIO_ACCESS_KEY=your-secret-passphrase
+```
 
-We routinely audit this repository for architectural simplifications and dead-code removal. Please refer to the latest architectural plans:
-- [SLIMMING_PLAN.md](./SLIMMING_PLAN.md): Identifies legacy code, unused build artifacts, and safe-deletion targets (e.g., legacy root vanilla portfolio scripts).
-- [REFACTOR_SIMPLIFICATION_PLAN.md](./REFACTOR_SIMPLIFICATION_PLAN.md): Strategic roadmap for transitioning hardcoded HTML into a config-driven format and setting up CI/CD GitHub Actions.
+On PowerShell:
 
----
+```powershell
+$env:PORTFOLIO_ACCESS_KEY="your-secret-passphrase"
+npm run dev
+```
 
-## 📝 License
+## Scripts
 
-© 2026 Benedictus Richard Ricardo. All Rights Reserved.
+### Root scripts
+
+Defined in [`/package.json`](./package.json):
+
+- `npm run dev`: serve the root static site
+- `npm run dev:portfolio`: start the portfolio app
+- `npm run build:portfolio`: build the portfolio app
+- `npm run publish:portfolio`: calls the disabled publish script
+- `npm test`: run root tests
+
+### Portfolio app scripts
+
+Defined in [`/portfolio-app/package.json`](./portfolio-app/package.json):
+
+- `npm run dev`: copy shared tokens and run Next dev server
+- `npm run build`: copy tokens, generate protected content, build app
+- `npm run test`: run portfolio unit tests
+- `npm run typecheck`: run TypeScript checks
+- `npm run publish`: disabled static publish step
+
+## Testing
+
+Root tests:
+
+```bash
+npm test
+```
+
+Portfolio app tests:
+
+```bash
+cd portfolio-app
+npm test
+npm run typecheck
+```
+
+## Deployment Status
+
+The current GitHub Action in [`/.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) only validates the portfolio app by installing dependencies, typechecking, and building.
+
+It does **not** deploy a protected runtime host.
+
+That means:
+
+- The root static site can be served as-is
+- The real protected portfolio must be deployed separately to a runtime-capable host
+- The root `/portfolio` directory should be treated as a locked placeholder, not a live protected app
+
+## SEO and Crawl Notes
+
+- Homepage, resume, and terms are included in [`/sitemap.xml`](./sitemap.xml)
+- [`/robots.txt`](./robots.txt) currently disallows `/portfolio/`
+- Homepage metadata includes `Person`, `WebSite`, and `ProfilePage` schema
+
+## Repository Guidance
+
+- Prefer editing source files, not generated or placeholder output
+- For homepage/footer changes, start with [`/index.html`](./index.html) and [`/css/site.css`](./css/site.css)
+- For resume content changes, update locale JSON and [`/resume/resume.js`](./resume/resume.js)
+- For portfolio changes, work inside [`/portfolio-app`](./portfolio-app)
+
+## License
+
+Copyright © 2026 Benedictus Richard Ricardo. All rights reserved.

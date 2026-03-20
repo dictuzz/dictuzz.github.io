@@ -3,112 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - dictuzz | System Path Not Found</title>
-    <meta name="description" content="The page you are looking for could not be found. Navigate back to dictuzz.me to explore the resume, portfolio, and links.">
+    <title>Case Not Found | dictuzz — Systems Architect &amp; Automation Specialist</title>
+    <meta name="description" content="The requested page is missing from the evidence board. Return to base or open the case board for Benedictus Richard Ricardo, Systems Architect &amp; Automation Specialist.">
     <meta name="robots" content="noindex, nofollow">
-    
-    <!-- Google Fonts - Cyberpunk Style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/404.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
+    <main class="case-not-found">
+        <div class="board-note board-note--top-left" aria-hidden="true">NO. 404</div>
+        <div class="board-note board-note--left" aria-hidden="true">No witness statement filed.</div>
+        <div class="board-note board-note--right" aria-hidden="true">No route pinned to the board.</div>
+        <div class="red-string red-string--trail" aria-hidden="true"></div>
 
-    <!-- Matrix Rain Background -->
-    <canvas id="matrixCanvas"></canvas>
+        <article class="clipping" data-entrance>
+            <span class="thumbtack" aria-hidden="true"></span>
+            <span class="status-stamp" data-stamp>UNRESOLVED</span>
 
-    <!-- Animated Grid Background -->
-    <div class="grid-container">
-        <div class="grid-floor"></div>
-        <div class="grid-glow"></div>
-    </div>
+            <header class="clipping__header">
+                <span>THE PORTFOLIO CHRONICLE</span>
+                <span>CASE NOT FOUND</span>
+            </header>
 
-    <!-- Particle Canvas -->
-    <canvas id="particleCanvas"></canvas>
+            <div class="clipping__body">
+                <h1>PAGE MISSING FROM THE EVIDENCE BOARD</h1>
+                <p class="clipping__subhead">
+                    Our investigators have searched every corner of the board. The case file you are looking for does not exist here.
+                </p>
+                <p>
+                    The URL you entered may be incorrect, or this page has been moved or removed. Please check the address and try again.
+                </p>
 
-    <!-- Scanlines Overlay -->
-    <div class="scanlines"></div>
-
-    <!-- Glitch Overlay -->
-    <div class="glitch-overlay" id="glitchOverlay"></div>
-
-    <!-- System Logs -->
-    <div class="system-logs" id="systemLogs"></div>
-
-    <!-- Shards Counter -->
-    <div class="shards-counter">
-        DATA SHARDS: <span id="shardCount">0</span>/5
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="content">
-            <!-- Brand Logo -->
-            <div class="brand">dictuzz</div>
-
-            <!-- Error Code -->
-            <div class="error-code">404</div>
-
-            <!-- Subtitle -->
-            <div class="subtitle">System Path Not Found</div>
-
-            <!-- Terminal -->
-            <div class="terminal">
-                <div class="terminal-header">
-                    <div class="terminal-dot red"></div>
-                    <div class="terminal-dot yellow"></div>
-                    <div class="terminal-dot green"></div>
-                    <span class="terminal-title">neural_recovery.exe</span>
+                <div class="clipping__actions">
+                    <a class="paper-link paper-link--primary" href="/">← Return to Base</a>
+                    <a class="paper-link paper-link--secondary" href="/portfolio/">View Case Board</a>
                 </div>
-                <div class="terminal-content">
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">></span> ERROR: Workflow path not found
+
+                <section class="snake-panel" aria-labelledby="snake-heading">
+                    <div class="snake-panel__header">
+                        <div>
+                            <p class="snake-panel__eyebrow">Case diversion</p>
+                            <h2 id="snake-heading">Evidence Trail</h2>
+                        </div>
+                        <div class="snake-panel__score">
+                            <span>Score</span>
+                            <strong id="snake-score">0</strong>
+                        </div>
                     </div>
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">></span> WARNING: Process optimization required
+
+                    <canvas
+                        id="snake-board"
+                        class="snake-panel__board"
+                        width="320"
+                        height="320"
+                        aria-label="Snake game board"
+                    ></canvas>
+
+                    <p class="snake-panel__hint">
+                        Desktop: use arrow keys or WASD. Mobile: use the direction buttons below.
+                    </p>
+
+                    <div class="snake-controls" aria-label="Snake controls">
+                        <button type="button" class="snake-control snake-control--up" data-direction="up">↑</button>
+                        <button type="button" class="snake-control snake-control--left" data-direction="left">←</button>
+                        <button type="button" class="snake-control snake-control--down" data-direction="down">↓</button>
+                        <button type="button" class="snake-control snake-control--right" data-direction="right">→</button>
                     </div>
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">></span> Initializing system recovery...
-                    </div>
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">></span> Type 'help' for available commands
-                    </div>
-                    <div class="terminal-input-container">
-                        <span class="terminal-prompt">></span>
-                        <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false">
-                    </div>
-                </div>
+                </section>
             </div>
-        </div>
-    </div>
 
-    <!-- Idle Message -->
-    <div class="idle-message" id="idleMessage">
-        System unstable. Manual override required.
-    </div>
-
-    <!-- Success Overlay -->
-    <div class="success-overlay" id="successOverlay">
-        <div class="success-text">SYSTEM RESTORED</div>
-        <div class="success-subtext">Redirecting to homepage...</div>
-    </div>
-
-    <!-- Sound Toggle -->
-    <div class="sound-toggle" id="soundToggle" title="Toggle Sound">
-        <svg viewBox="0 0 24 24" id="soundIcon">
-            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-        </svg>
-    </div>
-
-    <!-- Easter Egg Hidden Message -->
-    <div class="easter-egg">Systems architect at work. Process optimization in progress.</div>
-
-    <!-- Data Shards Container -->
-    <div id="shardsContainer"></div>
+            <span class="case-stamp" data-stamp>CASE 404</span>
+        </article>
+    </main>
 
     <script src="/js/404.js"></script>
 </body>
