@@ -10,22 +10,29 @@ export function absoluteUrl(path = '') {
 export function buildMetadata({
   title,
   description,
-  path
+  path,
+  noIndex = false
 }: {
   title: string;
   description: string;
   path: string;
+  noIndex?: boolean;
 }): Metadata {
   const url = absoluteUrl(path);
 
   return {
     title,
     description,
-    robots: {
-      index: false,
-      follow: false,
-      nocache: true
-    },
+    robots: noIndex
+      ? {
+          index: false,
+          follow: false,
+          nocache: true
+        }
+      : {
+          index: true,
+          follow: true
+        },
     alternates: {
       canonical: url
     },
@@ -33,7 +40,7 @@ export function buildMetadata({
       title,
       description,
       url,
-      siteName: 'Private Portfolio',
+      siteName: 'dictuzz',
       type: 'website'
     },
     twitter: {

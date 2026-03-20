@@ -1,0 +1,320 @@
+import type { CaseStudy } from './types';
+
+export const caseStudies: CaseStudy[] = [
+  {
+    slug: 'automation-mandate',
+    aliases: ['automation-directive', 'home-digital-automation'],
+    title: 'The Automation Mandate',
+    headline: 'Built reporting and SOP systems that removed 12+ hours of weekly manual work.',
+    category: 'Workflow Automation',
+    organization: 'Home Digital Indonesia',
+    role: 'Management Trainee',
+    timeline: 'Jul 2024 – Sep 2025',
+    location: 'Jakarta, Indonesia',
+    summary:
+      'A cross-functional reporting cycle was spending too much time on repeated manual work. The fix was a structured reporting pipeline supported by clearer operating rules.',
+    problem:
+      'Finance, sales, and operations were handling recurring reporting work through manual collection, repeat formatting, and fragile handoffs. The process worked, but it consumed too much time and depended too heavily on individual memory.',
+    intervention:
+      'I mapped the reporting path, rebuilt the recurring workbook logic in Excel, and documented the supporting SOPs so the workflow could run the same way every cycle instead of being rediscovered each week.',
+    outcome:
+      'The team removed roughly 12 hours of manual work from the weekly rhythm, reduced process ambiguity, and created a reporting structure that was easier to maintain across functions.',
+    evidenceBullets: [
+      'Built automated reporting systems in Excel that removed roughly 12 hours of manual weekly work.',
+      'Standardized SOPs across finance, sales, and operations to reduce friction during recurring reporting cycles.',
+      'Shifted the work from person-dependent repetition toward a shared operating routine.'
+    ],
+    narrative: [
+      {
+        title: 'Case Context',
+        body:
+          'The core issue was not a lack of effort. It was a lack of repeatable structure. Reporting relied on people remembering the right sequence and touching the same information too many times.'
+      },
+      {
+        title: 'What I Built',
+        body:
+          'I treated the workflow like an operational system, not just a spreadsheet. The solution combined workbook automation, clearer rules for ownership, and documented steps that made the reporting cycle easier to execute and easier to hand off.'
+      },
+      {
+        title: 'Why It Mattered',
+        body:
+          'The gain was not only time saved. The bigger shift was confidence. Teams had a cleaner rhythm, fewer avoidable delays, and a process that could be run more consistently week after week.'
+      }
+    ],
+    impact: [
+      {
+        value: '12+',
+        label: 'hours saved weekly',
+        note: 'Manual reporting effort removed from the recurring cycle.'
+      },
+      {
+        value: '3',
+        label: 'functions aligned',
+        note: 'Finance, sales, and operations worked from one clearer structure.'
+      },
+      {
+        value: '1',
+        label: 'shared operating rhythm',
+        note: 'Automation and SOPs combined into a repeatable weekly flow.'
+      }
+    ],
+    scope: ['Reporting workflow design', 'Excel automation', 'SOP standardization'],
+    tools: ['Excel', 'Operational reporting', 'SOP design'],
+    board: {
+      recordCode: 'VOL. I / NO. 1',
+      status: 'CLASSIFIED',
+      preview:
+        'A reporting cycle with too many manual steps was rebuilt into a repeatable system with automation and clearer operating rules.',
+      coverImage: '/portfolio/press-auto.png',
+      cardStyle: 'newsprint',
+      rotation: -1.4,
+      quickFacts: [
+        { label: 'Impact', value: '12+ hrs/week' },
+        { label: 'Functions', value: 'Finance / Sales / Ops' },
+        { label: 'Mode', value: 'Automation + SOP' }
+      ]
+    },
+    image: {
+      src: '/portfolio/press-auto.png',
+      alt: 'Operational reporting and automation evidence board graphic',
+      caption: 'Reporting and automation case record used as the primary evidence image for the file.'
+    }
+  },
+  {
+    slug: 'kpi-governance-record',
+    aliases: ['kpi-governance', 'student-council-governance'],
+    title: 'KPI-Based Governance',
+    headline: 'Led a 34-member organization through KPI governance, structured programs, and cleaner execution.',
+    category: 'Governance & Leadership',
+    organization: 'SMA Santa Maria 2',
+    role: 'President',
+    timeline: 'Nov 2021 – Nov 2022',
+    location: 'Jakarta, Indonesia',
+    summary:
+      'A large student organization needed stronger rhythm, accountability, and program structure. I introduced a KPI-based governance approach to help leadership and execution operate with more clarity.',
+    problem:
+      'A 34-member council spread across 10 divisions needed better visibility, more consistent follow-through, and a clearer way to evaluate how programs were progressing.',
+    intervention:
+      'I led the organization with a KPI-based governance model, weekly operating rhythms, clearer division expectations, and a stronger institutional planning approach for larger school programs.',
+    outcome:
+      'The council gained clearer accountability, more stable program execution, and better coordination across both internal leadership work and outward-facing initiatives.',
+    evidenceBullets: [
+      'Led 34 members across 10 divisions through a more structured KPI-based governance rhythm.',
+      'Designed long-term institutional programs that were adopted at the school level.',
+      'Directed outreach and campaign activity that engaged 12 feeder schools.'
+    ],
+    narrative: [
+      {
+        title: 'Case Context',
+        body:
+          'The challenge was scale. Once a team becomes multi-division, informal leadership stops being enough. Without structure, momentum becomes uneven and accountability starts to blur.'
+      },
+      {
+        title: 'What I Changed',
+        body:
+          'I introduced a more explicit governance model with measurable expectations, recurring checkpoints, and better alignment between division work and institution-wide objectives.'
+      },
+      {
+        title: 'Why It Mattered',
+        body:
+          'The result was a council that could operate with more maturity. It became easier to see what was moving, what was blocked, and where leadership energy needed to be applied.'
+      }
+    ],
+    impact: [
+      {
+        value: '34',
+        label: 'members led',
+        note: 'Leadership scope across the full organization.'
+      },
+      {
+        value: '10',
+        label: 'divisions coordinated',
+        note: 'Governance structure applied across the council.'
+      },
+      {
+        value: '12',
+        label: 'feeder schools reached',
+        note: 'Scale of one major outward-facing campaign effort.'
+      }
+    ],
+    scope: ['Leadership system design', 'KPI governance', 'Program planning'],
+    tools: ['Governance frameworks', 'Team management', 'Strategic outreach'],
+    board: {
+      recordCode: 'VOL. I / NO. 2',
+      status: 'DECLASSIFIED',
+      preview:
+        'A growing council needed clearer accountability. KPI governance and stronger operational rhythm made execution easier to steer.',
+      coverImage: '/portfolio/press-gov.png',
+      cardStyle: 'dossier',
+      rotation: 1.2,
+      quickFacts: [
+        { label: 'Team', value: '34 members' },
+        { label: 'Structure', value: '10 divisions' },
+        { label: 'Reach', value: '12 feeder schools' }
+      ]
+    },
+    image: {
+      src: '/portfolio/press-gov.png',
+      alt: 'Governance case record graphic showing an organized institutional file',
+      caption: 'Governance and leadership case record used as the evidence image for the file.'
+    }
+  },
+  {
+    slug: 'large-scale-event-ops',
+    aliases: ['event-ops-record', 'stage-operations'],
+    title: 'Large-Scale Event Ops',
+    headline: 'Kept live event execution stable across 1,000+ attendee environments and high-pressure transitions.',
+    category: 'Live Operations',
+    organization: 'Ultimate Event Organizer',
+    role: 'Stage Coordinator & MC',
+    timeline: '2022 – 2025',
+    location: 'Jakarta, Indonesia',
+    summary:
+      'Large public events compress time, pressure, and risk into a single live window. My work focused on keeping execution stable when the room could not afford confusion.',
+    problem:
+      'Live programs with large audiences depend on precise transitions, shared timing, and clean backstage coordination. Small breakdowns become visible immediately when the environment is live.',
+    intervention:
+      'I coordinated stage and backstage execution, supported transition planning, and helped maintain the pacing needed for technical teams, speakers, performers, and audiences to stay in sync.',
+    outcome:
+      'Events ran with less transition downtime, clearer stage flow, and more dependable control during moments where timing and execution had to hold under pressure.',
+    evidenceBullets: [
+      'Coordinated technical execution for events with 1,000+ attendees.',
+      'MC-led Youth Mass 2025 for 500+ participants while maintaining pacing and clarity on stage.',
+      'Reduced visible transition friction through more structured stage workflows.'
+    ],
+    narrative: [
+      {
+        title: 'Case Context',
+        body:
+          'Live operations are unforgiving. There is no quiet draft. A transition that is even slightly unclear becomes a visible failure the moment the room is watching.'
+      },
+      {
+        title: 'How I Operated',
+        body:
+          'My role sat close to the line between planning and execution. I helped translate the show flow into something technical teams and on-stage participants could actually run without hesitation.'
+      },
+      {
+        title: 'Why It Mattered',
+        body:
+          'The work mattered because consistency is what protects the audience experience. When pacing holds, the event feels intentional. When it breaks, everyone notices.'
+      }
+    ],
+    impact: [
+      {
+        value: '1,000+',
+        label: 'audience scale handled',
+        note: 'Large live-event environments with visible execution pressure.'
+      },
+      {
+        value: '500+',
+        label: 'participants led as MC',
+        note: 'Youth Mass 2025 served as a clear proof point for live communication under pressure.'
+      },
+      {
+        value: '2022–2025',
+        label: 'active event period',
+        note: 'Sustained involvement across multiple execution environments.'
+      }
+    ],
+    scope: ['Backstage coordination', 'Stage flow management', 'Live communication'],
+    tools: ['Run-of-show planning', 'Stage operations', 'MC facilitation'],
+    board: {
+      recordCode: 'VOL. I / NO. 3',
+      status: 'ACTIVE',
+      preview:
+        'Large audiences leave little room for operational confusion. This file covers the backstage systems and stage pacing used to keep events moving cleanly.',
+      coverImage: '/portfolio/press-events.png',
+      cardStyle: 'bulletin',
+      rotation: -0.8,
+      quickFacts: [
+        { label: 'Scale', value: '1,000+ attendees' },
+        { label: 'Live lead', value: '500+ as MC' },
+        { label: 'Focus', value: 'Transition control' }
+      ]
+    },
+    image: {
+      src: '/portfolio/press-events.png',
+      alt: 'Large-scale event operations case image showing a live audience and stage environment',
+      caption: 'Live-operations case record used as the principal evidence image for the file.'
+    }
+  },
+  {
+    slug: 'vertical-rescue-ops',
+    aliases: ['vertical-rescue-record', 'field-readiness'],
+    title: 'Vertical Rescue Ops',
+    headline: 'Supported equipment readiness, technical training, and operational discipline over 4+ active years.',
+    category: 'Training & Readiness',
+    organization: 'Vertical Rescue Indonesia',
+    role: 'Assistant Instructor',
+    timeline: 'Jan 2021 – Present',
+    location: 'Indonesia',
+    summary:
+      'Readiness work is quieter than live delivery, but the standard is higher: equipment, people, and process all have to be dependable before the field ever becomes demanding.',
+    problem:
+      'Technical rescue environments depend on disciplined preparation. Equipment checks, training cadence, and role clarity cannot be improvised once conditions become serious.',
+    intervention:
+      'I supported equipment maintenance, assisted technical climbing sessions, and helped uphold the training discipline needed for safe and repeatable readiness work.',
+    outcome:
+      'The result was steadier operational readiness, more structured preparation, and stronger support for the people entering technical rescue training environments.',
+    evidenceBullets: [
+      'Maintained equipment through structured inspection and readiness routines.',
+      'Supported technical training sessions as a lead climber and belayer.',
+      'Contributed to a culture where safety and preparation remained visible parts of the work.'
+    ],
+    narrative: [
+      {
+        title: 'Case Context',
+        body:
+          'Readiness work is built on discipline. The challenge is not producing dramatic moments. It is making sure the fundamentals are correct long before those moments arrive.'
+      },
+      {
+        title: 'What the Work Required',
+        body:
+          'My contribution centered on equipment care, training support, and technical reliability. That meant paying attention to repeatable standards and supporting sessions in ways that made the environment safer and more useful.'
+      },
+      {
+        title: 'Why It Mattered',
+        body:
+          'In technical environments, confidence comes from preparation. Strong readiness work reduces uncertainty, strengthens training quality, and keeps high-risk tasks grounded in discipline rather than improvisation.'
+      }
+    ],
+    impact: [
+      {
+        value: '4+',
+        label: 'years active',
+        note: 'Sustained involvement in readiness and training work.'
+      },
+      {
+        value: 'Routine',
+        label: 'equipment discipline',
+        note: 'Inspection and maintenance practices remained part of the operating standard.'
+      },
+      {
+        value: 'Field',
+        label: 'training support role',
+        note: 'Hands-on contribution in practical climbing and belay environments.'
+      }
+    ],
+    scope: ['Equipment readiness', 'Training support', 'Safety discipline'],
+    tools: ['Inspection routines', 'Technical climbing', 'Belay support'],
+    board: {
+      recordCode: 'VOL. I / NO. 4',
+      status: 'ONGOING',
+      preview:
+        'This file covers the less visible work behind readiness: inspection routines, training support, and the discipline needed to keep technical environments dependable.',
+      coverImage: '/portfolio/press-rescue.png',
+      cardStyle: 'field',
+      rotation: 1.5,
+      quickFacts: [
+        { label: 'Active', value: '4+ years' },
+        { label: 'Mode', value: 'Readiness + training' },
+        { label: 'Role', value: 'Assistant instructor' }
+      ]
+    },
+    image: {
+      src: '/portfolio/press-rescue.png',
+      alt: 'Vertical rescue and training readiness case image',
+      caption: 'Training and readiness case record used as the evidence image for the file.'
+    }
+  }
+];

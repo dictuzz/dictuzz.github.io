@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import * as assert from 'node:assert';
-import { absoluteUrl, siteUrl } from './seo.ts';
+import { absoluteUrl, siteUrl } from './seo';
 
 describe('absoluteUrl', () => {
   test('returns the base URL when no path is provided', () => {

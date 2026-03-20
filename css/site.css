@@ -598,11 +598,16 @@ select {
 }
 
 .accordion {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 9px;
+    width: 100%;
 }
 
 .folder {
+    width: 100%;
+    max-width: 360px;
     overflow: hidden;
     border-radius: 22px;
     border: 1px solid var(--site-border);
@@ -703,15 +708,7 @@ select {
     overflow: hidden;
     display: grid;
     gap: 7px;
-    padding: 7px;
-    border: 1px solid rgba(29, 36, 48, 0.06);
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.52);
-}
-
-[data-theme="dark"] .folder__items {
-    border-color: rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.025);
+    padding: 4px;
 }
 
 .folder-link {

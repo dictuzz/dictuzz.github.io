@@ -5,7 +5,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { ThemeManager, Typer } from '../js/ui-kit.js';
+import { ThemeManager, Typer, updateThemeColor } from '../js/ui-kit.js';
 
 // Shorthand selectors
 const $ = s => document.querySelector(s);
@@ -47,29 +47,38 @@ function getNestedValue(obj, path) {
 
 function escapeHtml(text) {
     if (typeof text !== 'string') return text;
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+    return text.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
+}
+
+function reobserveAll(container) {
+    if (typeof revealObserver !== 'undefined') {
+        container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    }
+}
+
+function renderSection(selector, data, templateFn) {
+    const container = $(selector);
+    if (!container || !data) return;
+    if (Array.isArray(data) && data.length === 0) return;
+    
+    const items = Array.isArray(data) ? data : Object.values(data);
+    container.innerHTML = items.map(templateFn).join('');
+    reobserveAll(container);
 }
 
 function renderExperience(data) {
-    const container = $('.timeline');
-    if (!container || !Array.isArray(data)) return;
-
-    // Sort by date (most recent first)
+    if (!Array.isArray(data)) return;
     const sorted = [...data].sort((a, b) => {
         const getEnd = d => {
             if (!d.date) return new Date();
-            // Check for current role keywords
             if (/present|sekarang|heute/i.test(d.date)) return new Date();
-            // Handle both hyphen (-) and en-dash (–)
             const parts = d.date.replace(/–/g, '-').split('-');
             return parts.length > 1 ? new Date(parts[1].trim()) : new Date();
         };
         return getEnd(b) - getEnd(a);
     });
 
-    container.innerHTML = sorted.map(job => `
+    renderSection('.timeline', sorted, job => `
         <div class="timeline__item reveal">
             <div class="timeline__date">${escapeHtml(job.date)}</div>
             <div class="timeline__content glass card">
@@ -82,26 +91,16 @@ function renderExperience(data) {
                 </ul>
             </div>
         </div>
-    `).join('');
-
-    // Re-observe new elements
-    if (typeof revealObserver !== 'undefined') {
-        container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-    }
+    `);
 }
 
 function renderImpact(data) {
-    const container = $('.impact__list');
-    if (!container || !Array.isArray(data)) return;
-
-    container.innerHTML = data.map(item => `
+    renderSection('.impact__list', data, item => `
         <div class="project-card glass glass--hover card reveal">
             <h3 class="project-card__title">${escapeHtml(item.title)}</h3>
             <p class="project-card__desc">${escapeHtml(item.desc)}</p>
         </div>
-    `).join('');
-
-    container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    `);
 }
 
 function renderSkills(data) {
@@ -113,48 +112,28 @@ function renderSkills(data) {
     ];
 
     categories.forEach(({ key, id }) => {
-        const container = $(id);
-        if (!container || !data?.[key]) return;
-        container.innerHTML = data[key].map(skill =>
-            `<span class="tag">${escapeHtml(skill)}</span>`
-        ).join('');
+        if (!data?.[key]) return;
+        renderSection(id, data[key], skill => `<span class="tag">${escapeHtml(skill)}</span>`);
     });
 }
 
 function renderEducation(data) {
-    const container = $('#education-list');
-    if (!container || !data) return;
-
-    container.innerHTML = Object.values(data).map(edu => `
+    renderSection('#education-list', data, edu => `
         <div class="edu-card glass glass--hover card reveal">
             <h3>${escapeHtml(edu.name)}</h3>
             <p class="edu-card__degree">${escapeHtml(edu.degree)}</p>
             <p class="edu-card__date">${escapeHtml(edu.date)}</p>
             ${edu.focus ? `<p class="edu-card__focus">${escapeHtml(edu.focus)}</p>` : ''}
         </div>
-    `).join('');
-
-    if (typeof revealObserver !== 'undefined') {
-        container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-    }
+    `);
 }
 
 function renderAwards(data) {
-    const container = $('#awards-list');
-    if (!container || !data) return;
-
-    container.innerHTML = Object.values(data).map(award => `
-        <li>${escapeHtml(award)}</li>
-    `).join('');
+    renderSection('#awards-list', data, award => `<li>${escapeHtml(award)}</li>`);
 }
 
 function renderEtc(data) {
-    const container = $('#etc-list');
-    if (!container || !data) return;
-
-    container.innerHTML = Object.values(data).map(item => `
-        <li>${escapeHtml(item)}</li>
-    `).join('');
+    renderSection('#etc-list', data, item => `<li>${escapeHtml(item)}</li>`);
 }
 
 
@@ -240,12 +219,7 @@ function updateDownloadLink(lang) {
     link.href = urls[lang] || urls['en'];
 }
 
-function updateThemeColor(theme) {
-    const themeMeta = document.querySelector('meta[name="theme-color"]');
-    if (!themeMeta) return;
 
-    themeMeta.setAttribute('content', theme === 'dark' ? '#121820' : '#f5efe4');
-}
 
 // Language button handlers
 $$('.lang-btn').forEach(btn => {
@@ -371,7 +345,7 @@ document.addEventListener('click', e => {
 
 
 
-// 9. INITIAL LOAD
+// 7. INITIAL LOAD
 // ══════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
     init();

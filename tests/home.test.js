@@ -47,16 +47,24 @@ function setupEnvironment() {
   return { document, window, restoreTimers };
 }
 
+function setupConsoleMock() {
+  const originalConsoleError = console.error;
+  let calledWith = [];
+  console.error = (...args) => {
+    if (typeof args[0] === 'string' && args[0].includes('MODULE_TYPELESS_PACKAGE_JSON')) return;
+    calledWith.push(args);
+  };
+  return { 
+    calledWith, 
+    restoreConsole: () => { console.error = originalConsoleError; } 
+  };
+}
+
 test('initFolders error path - fetch non-OK', async (t) => {
   const { restoreTimers } = setupEnvironment();
   t.after(restoreTimers);
 
-  const originalConsoleError = console.error;
-  let consoleErrorCalledWith = [];
-  console.error = (...args) => {
-    if (typeof args[0] === 'string' && args[0].includes('MODULE_TYPELESS_PACKAGE_JSON')) return;
-    consoleErrorCalledWith.push(args);
-  };
+  const { calledWith, restoreConsole } = setupConsoleMock();
 
   global.fetch = mock.fn(async () => {
     return { ok: false };
@@ -66,23 +74,18 @@ test('initFolders error path - fetch non-OK', async (t) => {
 
   await new Promise(r => setImmediate(r));
 
-  assert.strictEqual(consoleErrorCalledWith.length, 1);
-  assert.strictEqual(consoleErrorCalledWith[0][0], 'Error rendering folders:');
-  assert.ok(consoleErrorCalledWith[0][1] instanceof Error);
-  assert.strictEqual(consoleErrorCalledWith[0][1].message, 'Failed to load links config');
+  assert.strictEqual(calledWith.length, 1);
+  assert.strictEqual(calledWith[0][0], 'Error rendering folders:');
+  assert.ok(calledWith[0][1] instanceof Error);
+  assert.strictEqual(calledWith[0][1].message, 'Failed to load links config');
 
-  console.error = originalConsoleError;
+  restoreConsole();
 });
 
 test('initFolders error path - fetch throws', async () => {
   setupEnvironment();
 
-  const originalConsoleError = console.error;
-  let consoleErrorCalledWith = [];
-  console.error = (...args) => {
-    if (typeof args[0] === 'string' && args[0].includes('MODULE_TYPELESS_PACKAGE_JSON')) return;
-    consoleErrorCalledWith.push(args);
-  };
+  const { calledWith, restoreConsole } = setupConsoleMock();
 
   global.fetch = mock.fn(async () => {
     throw new Error('Network error');
@@ -92,12 +95,12 @@ test('initFolders error path - fetch throws', async () => {
 
   await new Promise(r => setImmediate(r));
 
-  assert.strictEqual(consoleErrorCalledWith.length, 1);
-  assert.strictEqual(consoleErrorCalledWith[0][0], 'Error rendering folders:');
-  assert.ok(consoleErrorCalledWith[0][1] instanceof Error);
-  assert.strictEqual(consoleErrorCalledWith[0][1].message, 'Network error');
+  assert.strictEqual(calledWith.length, 1);
+  assert.strictEqual(calledWith[0][0], 'Error rendering folders:');
+  assert.ok(calledWith[0][1] instanceof Error);
+  assert.strictEqual(calledWith[0][1].message, 'Network error');
 
-  console.error = originalConsoleError;
+  restoreConsole();
 });
 
 test('initFolders error path - malformed JSON', async () => {

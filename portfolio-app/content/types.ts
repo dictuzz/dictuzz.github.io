@@ -1,19 +1,12 @@
-export type HeroVisualKey = 'dashboard' | 'pricing' | 'workflow' | 'analytics';
-
 export type ImpactMetric = {
   value: string;
   label: string;
+  note?: string;
 };
 
-export type Decision = {
-  title: string;
-  rationale: string;
-};
-
-export type InterfaceSolution = {
-  title: string;
-  body: string;
-  visualKey: HeroVisualKey;
+export type EvidenceFact = {
+  label: string;
+  value: string;
 };
 
 export type Testimonial = {
@@ -22,37 +15,54 @@ export type Testimonial = {
   role: string;
 };
 
-export type TrustMetric = ImpactMetric & {
-  note: string;
+export type NarrativeSection = {
+  title: string;
+  body: string;
 };
 
-export type ProcessStep = {
-  step: string;
-  title: string;
-  summary: string;
+export type EvidenceImage = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+export type CaseBoardStyle = 'newsprint' | 'dossier' | 'bulletin' | 'field';
+
+export type BoardPresentation = {
+  recordCode: string;
+  status: string;
+  preview: string;
+  coverImage: string;
+  cardStyle: CaseBoardStyle;
+  rotation: number;
+  quickFacts: EvidenceFact[];
 };
 
 export type CaseStudy = {
   slug: string;
   aliases?: string[];
   title: string;
+  headline: string;
   category: string;
-  summary: string;
-  problem: string;
-  context: string;
-  research: string[];
-  uxInsight: string;
-  designDecisions: Decision[];
-  interfaceSolution: InterfaceSolution[];
-  impact: ImpactMetric[];
-  testimonial?: Testimonial;
-  heroVisual: HeroVisualKey;
+  organization: string;
   role: string;
   timeline: string;
-  scope: string[];
-  sector: string;
+  location: string;
+  summary: string;
+  problem: string;
+  intervention: string;
   outcome: string;
-  headline: string;
+  evidenceBullets: string[];
+  narrative: NarrativeSection[];
+  impact: ImpactMetric[];
+  scope: string[];
+  tools: string[];
+  board: BoardPresentation;
+  image: EvidenceImage;
+  dateline?: string;
+  projectUrl?: string;
+  githubUrl?: string;
+  testimonial?: Testimonial;
 };
 
 export type InsightSection = {
@@ -69,28 +79,40 @@ export type Insight = {
   sections: InsightSection[];
 };
 
+export type CapabilityCluster = {
+  id: string;
+  title: string;
+  summary: string;
+  skills: string[];
+};
+
 export type PortfolioHomeData = {
+  masthead: {
+    archiveLabel: string;
+    archiveTitle: string;
+    guidance: string;
+  };
   hero: {
     name: string;
-    role: string;
-    positioning: string;
-    proofSignal: string;
+    designation: string;
+    lead: string;
+    body: string;
     primaryCta: string;
     secondaryCta: string;
+    quickFacts: EvidenceFact[];
   };
-  proofMetrics: TrustMetric[];
-  clientPills: string[];
-  testimonial: Testimonial;
-  process: ProcessStep[];
-  about: {
-    story: string;
+  profile: {
+    title: string;
+    summary: string;
     philosophy: string;
-    industries: string[];
-    approach: string[];
+    note: string;
+    facts: EvidenceFact[];
   };
+  capabilityClusters: CapabilityCluster[];
   contact: {
     title: string;
     body: string;
+    availability: string;
     email: string;
     linkedin: string;
     calendar: string;

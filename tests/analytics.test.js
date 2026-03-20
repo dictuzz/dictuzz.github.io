@@ -34,13 +34,12 @@ describe('initAnalytics', () => {
         mock.restoreAll();
     });
 
-    test('should warn and return early if config is missing enabled or id', () => {
+    test('should return early silently if config is missing enabled or id', () => {
         initAnalytics({ enabled: true }); // Missing id
-        assert.strictEqual(consoleWarnMock.mock.callCount(), 1);
-        assert.strictEqual(consoleWarnMock.mock.calls[0].arguments[0], 'Analytics: Disabled or Missing ID');
+        assert.strictEqual(consoleWarnMock.mock.callCount(), 0);
 
         initAnalytics({ id: 'G-123' }); // Missing enabled
-        assert.strictEqual(consoleWarnMock.mock.callCount(), 2);
+        assert.strictEqual(consoleWarnMock.mock.callCount(), 0);
     });
 
     test('should use global CONFIG_DATA if config argument is missing', () => {
@@ -48,8 +47,6 @@ describe('initAnalytics', () => {
         // We pass undefined, which is technically falsy, so it will fall back to CONFIG_DATA.
         initAnalytics(undefined);
 
-        assert.strictEqual(consoleLogMock.mock.callCount(), 1);
-        assert.strictEqual(consoleLogMock.mock.calls[0].arguments[0], 'Analytics: Initialized G-GLOBAL');
         assert.ok(global.window.dataLayer);
         assert.strictEqual(global.window.dataLayer[1][1], 'G-GLOBAL');
     });
@@ -93,8 +90,5 @@ describe('initAnalytics', () => {
         // Second push is config
         assert.strictEqual(global.window.dataLayer[1][0], 'config');
         assert.strictEqual(global.window.dataLayer[1][1], 'G-123');
-
-        assert.strictEqual(consoleLogMock.mock.callCount(), 1);
-        assert.strictEqual(consoleLogMock.mock.calls[0].arguments[0], 'Analytics: Initialized G-123');
     });
 });

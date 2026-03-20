@@ -93,6 +93,11 @@ export class ThemeManager {
     }
 }
 
+export function updateThemeColor(theme, themeMeta = document.querySelector('meta[name="theme-color"]')) {
+    if (!themeMeta) return;
+    themeMeta.setAttribute('content', theme === 'dark' ? '#121820' : '#f5efe4');
+}
+
 // 2. TYPING ANIMATION (Typewriter)
 // ══════════════════════════════════════════════
 export class Typer {
@@ -195,19 +200,7 @@ export class Typer {
     }
 }
 
-// 3. HAPTICS
-// ══════════════════════════════════════════════
-export function initHaptics() {
-    if (!('vibrate' in navigator)) return;
 
-    document.addEventListener('click', (e) => {
-        if (e.target.closest('.link-button, .social-link, #theme-toggle, button, a')) {
-            navigator.vibrate(5);
-        }
-    });
-}
-
-// 4. MAGNETIC BUTTONS (3D Hover)
 // ══════════════════════════════════════════════
 export function initMagneticButtons(selector = '.link-button') {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

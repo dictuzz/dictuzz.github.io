@@ -2,7 +2,7 @@
     "name": "dictuzz.github.io",
     "version": "2.0.0",
     "private": true,
-    "description": "Personal portfolio & resume \u2014 dictuzz.me",
+    "description": "Personal portfolio & resume — dictuzz.me",
     "type": "module",
     "scripts": {
         "dev": "npx -y serve . -l 8000 --no-clipboard",
@@ -12,5 +12,8 @@
         "test": "node --test tests/*.test.js"
     },
     "author": "Benedictus Richard Ricardo",
-    "license": "UNLICENSED"
+    "license": "UNLICENSED",
+    "dependencies": {
+        "happy-dom": "^20.8.4"
+    }
 }

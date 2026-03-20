@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { ProtectedPortfolioRoute } from '@/components/protected/ProtectedPortfolioRoute';
-import { getAliasTarget, getCaseStudy, getLegacyAliases } from '@/lib/content';
+import { notFound, redirect } from 'next/navigation';
+import { getAliasTarget, getLegacyAliases } from '@/lib/content';
 import { buildMetadata } from '@/lib/seo';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return getLegacyAliases().map((entry) => ({ legacySlug: entry.alias }));
+  const aliases = getLegacyAliases().map((entry) => ({ legacySlug: entry.alias }));
+  return aliases.length > 0 ? aliases : [{ legacySlug: 'dummy-route-ignore' }];
 }
 
 export async function generateMetadata({
@@ -18,16 +20,18 @@ export async function generateMetadata({
 
   if (!alias) {
     return buildMetadata({
-      title: 'Private Portfolio',
-      description: 'Access code required to view this private portfolio.',
-      path: `/portfolio/${legacySlug}/`
+      title: 'Record Not Found',
+      description: 'The requested archive alias does not map to a public case file.',
+      path: `/portfolio/${legacySlug}/`,
+      noIndex: true
     });
   }
 
   return buildMetadata({
-    title: 'Private Portfolio',
-    description: 'Access code required to view this private portfolio.',
-    path: `/portfolio/${legacySlug}/`
+    title: `${alias.title} Redirect`,
+    description: 'Redirecting to the canonical public case file.',
+    path: `/portfolio/work/${alias.target}/`,
+    noIndex: true
   });
 }
 
@@ -43,11 +47,5 @@ export default async function LegacyAliasPage({
     notFound();
   }
 
-  const target = getCaseStudy(alias.target);
-
-  if (!target) {
-    notFound();
-  }
-
-  return <ProtectedPortfolioRoute route={{ kind: 'legacy', legacySlug }} />;
+  redirect(`/work/${alias.target}/`);
 }

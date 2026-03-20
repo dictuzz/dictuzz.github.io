@@ -1,4 +1,4 @@
-import { ThemeManager } from './ui-kit.js';
+import { ThemeManager, updateThemeColor, Typer } from './ui-kit.js';
 
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
@@ -11,14 +11,9 @@ const themeManager = new ThemeManager({
     storageKey: 'dictuzz-theme'
 });
 
-function updateThemeColor(theme) {
-    if (!themeMeta) return;
-    themeMeta.setAttribute('content', theme === 'dark' ? '#121820' : '#f5efe4');
-}
-
-updateThemeColor(themeManager.getMode());
+updateThemeColor(themeManager.getMode(), themeMeta);
 window.addEventListener('theme-changed', (event) => {
-    updateThemeColor(event.detail?.theme || 'light');
+    updateThemeColor(event.detail?.theme || 'light', themeMeta);
 });
 
 
@@ -120,7 +115,7 @@ async function initFolders() {
             if (!trigger) return;
 
             // Initialize states
-            if (folder.querySelector('.folder__trigger').getAttribute('aria-expanded') === 'true') {
+            if (trigger.getAttribute('aria-expanded') === 'true') {
                 folder.classList.add('is-open');
             } else {
                 closeFolder(folder);
@@ -151,19 +146,6 @@ window.setInterval(updateLocalTime, 1000);
 // Typing Animation for "dictuzz"
 const bioTitle = document.querySelector('.bio-title');
 if (bioTitle && bioTitle.textContent.trim() === 'dictuzz') {
-    bioTitle.textContent = '';
-    const textToType = 'dictuzz';
-    let charIndex = 0;
-
-    function typeChar() {
-        if (charIndex < textToType.length) {
-            bioTitle.textContent += textToType.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeChar, 120); // typing speed
-        }
-    }
-
-    // slight delay before starting
-    setTimeout(typeChar, 300);
+    new Typer(bioTitle, 'dictuzz', 120);
 }
 

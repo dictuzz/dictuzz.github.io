@@ -1,0 +1,17 @@
+▶ initAnalytics
+  [32m✔ should return early silently if config is missing enabled or id [90m(2.9327ms)[39m[39m
+  [32m✔ should use global CONFIG_DATA if config argument is missing [90m(2.6663ms)[39m[39m
+  [32m✔ should return early if script is already injected [90m(1.2168ms)[39m[39m
+  [32m✔ should inject script and initialize dataLayer and gtag [90m(1.232ms)[39m[39m
+[32m✔ initAnalytics [90m(10.1292ms)[39m[39m
+[32m✔ initFolders error path - fetch non-OK [90m(28.9318ms)[39m[39m
+[32m✔ initFolders error path - fetch throws [90m(12.3435ms)[39m[39m
+[32m✔ initFolders error path - malformed JSON [90m(7.1009ms)[39m[39m
+[34mℹ tests 7[39m
+[34mℹ suites 1[39m
+[34mℹ pass 7[39m
+[34mℹ fail 0[39m
+[34mℹ cancelled 0[39m
+[34mℹ skipped 0[39m
+[34mℹ todo 0[39m
+[34mℹ duration_ms 1009.4752[39m
