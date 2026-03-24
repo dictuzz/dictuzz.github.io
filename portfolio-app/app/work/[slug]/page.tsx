@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CaseFilePage } from '@/components/portfolio/CaseFilePage';
-import { getCaseStudies, getCaseStudy, getRelatedCaseStudies } from '@/lib/content';
+import { getPortfolioCaseStudies, getPortfolioCaseStudy, getRelatedCaseStudies } from '@/lib/content';
 import { buildMetadata } from '@/lib/seo';
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return getCaseStudies().map((caseStudy) => ({
+  return getPortfolioCaseStudies().map((caseStudy) => ({
     slug: caseStudy.slug
   }));
 }
@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const caseStudy = getCaseStudy(slug);
+  const caseStudy = getPortfolioCaseStudy(slug);
 
   if (!caseStudy) {
     return buildMetadata({
@@ -42,7 +42,7 @@ export default async function WorkCasePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const caseStudy = getCaseStudy(slug);
+  const caseStudy = getPortfolioCaseStudy(slug);
 
   if (!caseStudy) {
     notFound();

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import { getSharedSiteConfig } from './content';
 
-export const siteUrl = 'https://dictuzz.me';
+const siteConfig = getSharedSiteConfig();
+export const siteUrl = siteConfig.site.siteUrl;
 export const portfolioBasePath = '/portfolio';
 
 export function absoluteUrl(path = '') {
@@ -19,7 +21,8 @@ export function buildMetadata({
   noIndex?: boolean;
 }): Metadata {
   const url = absoluteUrl(path);
-  const titled = `${title} · Systems Architect & Automation Specialist`;
+  const titled = `${title} · ${siteConfig.profile.title}`;
+  const imageUrl = absoluteUrl(siteConfig.profile.image.og);
 
   return {
     title: titled,
@@ -41,13 +44,21 @@ export function buildMetadata({
       title: titled,
       description,
       url,
-      siteName: 'dictuzz',
+      siteName: siteConfig.site.name,
+      images: [
+        {
+          url: imageUrl,
+          alt: siteConfig.profile.image.alt
+        }
+      ],
       type: 'website'
     },
     twitter: {
       card: 'summary_large_image',
       title: titled,
-      description
+      description,
+      creator: siteConfig.seo.twitterCreator,
+      images: [imageUrl]
     }
   };
 }

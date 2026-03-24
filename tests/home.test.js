@@ -1,6 +1,9 @@
 import { test, mock } from 'node:test';
 import assert from 'node:assert';
 import { Window } from 'happy-dom';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { clearContentCache } from '../js/site-content.js';
 
 function setupEnvironment() {
   const window = new Window();
@@ -9,7 +12,20 @@ function setupEnvironment() {
   global.window = window;
   global.CustomEvent = window.CustomEvent;
 
-  document.body.innerHTML = '<div class="accordion"></div>';
+  document.head.innerHTML = '<meta name="theme-color" content="#f5efe4">';
+  document.body.innerHTML = `
+    <button id="theme-toggle"></button>
+    <i id="theme-icon"></i>
+    <div class="bio-nameplate"></div>
+    <div class="bio-title"></div>
+    <div class="bio-text"></div>
+    <div class="bio-status"><span class="dot"></span><span></span></div>
+    <div id="local-date"></div>
+    <div id="local-time"></div>
+    <div class="accordion"></div>
+    <footer class="global-footer"></footer>
+    <script id="home-structured-data" type="application/ld+json"></script>
+  `;
 
   if (!global.navigator) {
       global.navigator = { vibrate: () => {} };
@@ -70,6 +86,7 @@ test('initFolders error path - fetch non-OK', async (t) => {
     return { ok: false };
   });
 
+  clearContentCache();
   await import('../js/home.js?cachebust=' + Date.now());
 
   await new Promise(r => setImmediate(r));
@@ -83,6 +100,36 @@ test('initFolders error path - fetch non-OK', async (t) => {
   restoreConsole();
 });
 
+test('initFolders renders centralized content on success', async () => {
+  const { document } = setupEnvironment();
+
+  const siteConfig = JSON.parse(await readFile(path.resolve('content/site.json'), 'utf8'));
+  const homeContent = JSON.parse(await readFile(path.resolve('content/home.json'), 'utf8'));
+
+  global.fetch = mock.fn(async (url) => {
+    if (url.includes('/content/site.json')) {
+      return {
+        ok: true,
+        text: async () => JSON.stringify(siteConfig)
+      };
+    }
+
+    return {
+      ok: true,
+      text: async () => JSON.stringify(homeContent)
+    };
+  });
+
+  clearContentCache();
+  await import('../js/home.js?cachebust=' + Date.now());
+  await new Promise(r => setImmediate(r));
+
+  assert.match(document.querySelector('.bio-nameplate').textContent, /Benedictus Richard Ricardo/);
+  assert.match(document.querySelector('.bio-title').textContent, /dictuzz/);
+  assert.match(document.querySelector('.accordion').textContent, /Portfolio/);
+  assert.match(document.querySelector('.global-footer').textContent, /contact@dictuzz.me/);
+});
+
 test('initFolders error path - fetch throws', async () => {
   const { document } = setupEnvironment();
 
@@ -92,6 +139,7 @@ test('initFolders error path - fetch throws', async () => {
     throw new Error('Network error');
   });
 
+  clearContentCache();
   await import('../js/home.js?cachebust=' + Date.now());
 
   await new Promise(r => setImmediate(r));
@@ -113,10 +161,11 @@ test('initFolders error path - malformed JSON', async () => {
   global.fetch = mock.fn(async () => {
     return {
         ok: true,
-        json: async () => { throw new Error('Invalid JSON'); }
+        text: async () => '{not valid json'
     };
   });
 
+  clearContentCache();
   await import('../js/home.js?cachebust=' + Date.now());
 
   await new Promise(r => setImmediate(r));

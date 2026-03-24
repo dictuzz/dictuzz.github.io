@@ -4,6 +4,86 @@ export type ImpactMetric = {
   note?: string;
 };
 
+export type SharedSiteConfig = {
+  site: {
+    name: string;
+    domain: string;
+    siteUrl: string;
+    defaultLocale: string;
+    themeColorLight: string;
+    themeColorDark: string;
+  };
+  profile: {
+    name: string;
+    handle: string;
+    title: string;
+    description: string;
+    longDescription: string;
+    motto: string;
+    image: {
+      portrait: string;
+      og: string;
+      resumeOg: string;
+      alt: string;
+    };
+    location: {
+      city: string;
+      countryCode: string;
+      countryName: string;
+      timeZone: string;
+    };
+    alumniOf: {
+      name: string;
+      url: string;
+    };
+    knowsAbout: string[];
+  };
+  contact: {
+    email: string;
+    whatsappLabel: string;
+    whatsappUrl: string;
+    calendarUrl: string;
+  };
+  socials: Array<{
+    id: string;
+    label: string;
+    url: string;
+    icon: string;
+  }>;
+  navigation: {
+    footer: Array<{
+      label: string;
+      href: string;
+    }>;
+  };
+  seo: {
+    twitterCreator: string;
+    keywords: Record<string, string>;
+    pages: Record<
+      string,
+      {
+        path: string;
+        title: string;
+        description: string;
+        ogType:
+          | 'website'
+          | 'profile'
+          | 'article'
+          | 'book'
+          | 'music.song'
+          | 'music.album'
+          | 'music.playlist'
+          | 'music.radio_station'
+          | 'video.movie'
+          | 'video.episode'
+          | 'video.tv_show'
+          | 'video.other';
+        titleTemplate?: string;
+      }
+    >;
+  };
+};
+
 export type EvidenceFact = {
   label: string;
   value: string;

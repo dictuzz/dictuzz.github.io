@@ -1,6 +1,6 @@
 import { PortfolioBoard } from '@/components/portfolio/PortfolioBoard';
-import { getCaseStudies, getHomeContent } from '@/lib/content';
+import { getPortfolioCaseStudies, getPortfolioHomeContent } from '@/lib/content';
 
 export default function PortfolioPage() {
-  return <PortfolioBoard cases={getCaseStudies()} home={getHomeContent()} />;
+  return <PortfolioBoard cases={getPortfolioCaseStudies()} home={getPortfolioHomeContent()} />;
 }

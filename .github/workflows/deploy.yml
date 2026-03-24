@@ -4,7 +4,13 @@ on:
     branches:
       - main
     paths:
+      - 'content/**'
+      - 'js/**'
+      - 'resume/**'
       - 'portfolio-app/**'
+      - 'index.html'
+      - 'terms/**'
+      - 'package.json'
       - '.github/workflows/deploy.yml'
 
 permissions:
@@ -29,6 +35,10 @@ jobs:
       - name: Install Dependencies
         working-directory: portfolio-app
         run: npm ci
+
+      - name: Validate Shared Content
+        working-directory: .
+        run: npm run validate:content
 
       - name: Typecheck Next.js App
         working-directory: portfolio-app

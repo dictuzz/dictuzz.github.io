@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
+import { getSharedSiteConfig } from '@/lib/content';
+
+const siteConfig = getSharedSiteConfig();
+const loginSeo = siteConfig.seo.pages.portfolioLogin;
 
 export const metadata: Metadata = {
-  title: 'Portfolio Access',
-  description: 'Secure portfolio login for dictuzz.'
+  title: loginSeo.title,
+  description: loginSeo.description
 };
 
 export default async function LoginPage({
@@ -80,7 +84,7 @@ export default async function LoginPage({
                   Return to Base
                 </a>
                 <a className="paper-link paper-link--secondary" href="/resume/#connect">
-                  Contact Benedictus
+                  Contact {siteConfig.profile.name.split(' ')[0]}
                 </a>
               </div>
             </form>

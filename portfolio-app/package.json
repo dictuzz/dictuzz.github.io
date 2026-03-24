@@ -5,10 +5,11 @@
   "scripts": {
     "protect": "node scripts/generate-protected-content.mjs",
     "copy-tokens": "node -e \"require('fs').copyFileSync('../assets/css/tokens.css', 'styles/tokens.css')\"",
-    "dev": "npm run copy-tokens && next dev",
-    "build": "npm run copy-tokens && npm run protect && next build",
-    "test": "tsx --test lib/*.test.ts data/*.test.ts",
-    "typecheck": "tsc --noEmit",
+    "sync-content": "node scripts/sync-content.mjs",
+    "dev": "npm run sync-content && npm run copy-tokens && next dev",
+    "build": "npm run sync-content && npm run copy-tokens && npm run protect && next build",
+    "test": "npm run sync-content && tsx --test lib/*.test.ts data/*.test.ts",
+    "typecheck": "npm run sync-content && tsc --noEmit",
     "publish": "node scripts/publish.mjs",
     "build:publish": "npm run build && npm run publish"
   },

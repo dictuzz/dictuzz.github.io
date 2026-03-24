@@ -1,4 +1,14 @@
 import { ThemeManager, updateThemeColor } from './ui-kit.js';
+import {
+    applyGlobalFooter,
+    applyManagedPageMetadata,
+    applyStructuredData,
+    buildHomeStructuredData,
+    loadHomeContent,
+    loadSiteConfig,
+    renderDirectoryUnavailableMarkup,
+    renderFoldersMarkup
+} from './site-content.js';
 
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
@@ -15,7 +25,6 @@ updateThemeColor(themeManager.getMode(), themeMeta);
 window.addEventListener('theme-changed', (event) => {
     updateThemeColor(event.detail?.theme || 'light', themeMeta);
 });
-
 
 const dateEl = document.getElementById('local-date');
 const timeEl = document.getElementById('local-time');
@@ -70,111 +79,67 @@ function openFolder(folder) {
     panel.hidden = false;
 }
 
+function bindFolderAccordion() {
+    const folders = [...document.querySelectorAll('[data-folder]')];
+    folders.forEach((folder) => {
+        const trigger = folder.querySelector('.folder__trigger');
+        if (!trigger) return;
+
+        if (trigger.getAttribute('aria-expanded') === 'true') {
+            folder.classList.add('is-open');
+        } else {
+            closeFolder(folder);
+        }
+
+        trigger.addEventListener('click', () => {
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            if (isExpanded) {
+                closeFolder(folder);
+                return;
+            }
+
+            openFolder(folder);
+        });
+    });
+}
+
+function applyHomepageIdentity(siteConfig, homeContent) {
+    const nameplate = document.querySelector('.bio-nameplate');
+    const title = document.querySelector('.bio-title');
+    const subtitle = document.querySelector('.bio-text');
+    const statusLabel = document.querySelector('.bio-status span:last-child');
+    const avatar = document.querySelector('.bio-avatar img');
+
+    if (nameplate) nameplate.textContent = siteConfig.profile.name;
+    if (title) title.textContent = siteConfig.profile.handle;
+    if (subtitle) subtitle.textContent = siteConfig.profile.title;
+    if (statusLabel) statusLabel.textContent = homeContent.hero.status;
+    if (avatar) avatar.setAttribute('alt', siteConfig.profile.name);
+
+    applyManagedPageMetadata(siteConfig, 'home');
+    applyStructuredData('home-structured-data', buildHomeStructuredData(siteConfig));
+    applyGlobalFooter(siteConfig);
+}
+
 async function initFolders() {
     const accordionContainer = document.querySelector('.accordion');
     if (!accordionContainer) return;
 
     try {
-        const response = await fetch('/data/links.json');
-        if (!response.ok) throw new Error('Failed to load links config');
-        const configFolders = await response.json();
+        const [siteConfig, homeContent] = await Promise.all([
+            loadSiteConfig(),
+            loadHomeContent()
+        ]);
 
-        accordionContainer.innerHTML = configFolders.map(folder => `
-            <section class="folder card" data-folder>
-                <h2 class="folder__heading">
-                    <button class="folder__trigger" type="button" aria-expanded="${folder.defaultOpen ? 'true' : 'false'}" aria-controls="panel-${folder.id}" id="trigger-${folder.id}">
-                        <span class="folder__label">
-                            <span class="folder__icon"><i class="${folder.icon}"></i></span>
-                            <span class="folder__title-group">
-                                <span class="folder__title-row">
-                                    <span class="folder__title">${folder.title}</span>
-                                    <span class="folder__count">${folder.items.length}</span>
-                                </span>
-                                <span class="folder__summary">${folder.summary || ''}</span>
-                            </span>
-                        </span>
-                        <span class="folder__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
-                    </button>
-                </h2>
-                <div class="folder__panel" id="panel-${folder.id}" role="region" aria-labelledby="trigger-${folder.id}" ${folder.defaultOpen ? '' : 'hidden'}>
-                    <div class="folder__items">
-                        ${folder.items.map(item => `
-                            <a class="folder-link" href="${item.href}" ${item.external ? 'target="_blank" rel="noopener"' : ''}>
-                                <span class="folder-link__main">
-                                    <span class="folder-link__icon"><i class="${item.icon}" aria-hidden="true"></i></span>
-                                    <span>${item.label}</span>
-                                </span>
-                                <i class="${item.external ? 'fas fa-arrow-up-right-from-square' : 'fas fa-arrow-right'}" aria-hidden="true"></i>
-                            </a>
-                        `).join('')}
-                    </div>
-                </div>
-            </section>
-        `).join('');
-
-        const folders = [...document.querySelectorAll('[data-folder]')];
-        folders.forEach((folder) => {
-            const trigger = folder.querySelector('.folder__trigger');
-            if (!trigger) return;
-
-            if (trigger.getAttribute('aria-expanded') === 'true') {
-                folder.classList.add('is-open');
-            } else {
-                closeFolder(folder);
-            }
-
-            trigger.addEventListener('click', () => {
-                const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-                if (isExpanded) {
-                    closeFolder(folder);
-                    return;
-                }
-
-                openFolder(folder);
-            });
-        });
-
-    } catch (error) {
-        accordionContainer.innerHTML = `
-            <section class="folder card is-open" data-folder>
-                <h2 class="folder__heading">
-                    <button class="folder__trigger" type="button" aria-expanded="true">
-                        <span class="folder__label">
-                            <span class="folder__icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
-                            <span class="folder__title-group">
-                                <span class="folder__title-row">
-                                    <span class="folder__title">Directory unavailable</span>
-                                </span>
-                                <span class="folder__summary">Core routes are still available below.</span>
-                            </span>
-                        </span>
-                    </button>
-                </h2>
-                <div class="folder__panel" role="region">
-                    <div class="folder__items">
-                        <a class="folder-link" href="/resume/">
-                            <span class="folder-link__main">
-                                <span class="folder-link__icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
-                                <span>Resume</span>
-                            </span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <a class="folder-link" href="mailto:contact@dictuzz.me">
-                            <span class="folder-link__main">
-                                <span class="folder-link__icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
-                                <span>Email</span>
-                            </span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        `;
+        applyHomepageIdentity(siteConfig, homeContent);
+        accordionContainer.innerHTML = renderFoldersMarkup(homeContent.folders);
+        bindFolderAccordion();
+    } catch {
+        accordionContainer.innerHTML = renderDirectoryUnavailableMarkup();
+        bindFolderAccordion();
     }
 }
 
 initFolders();
-
 updateLocalTime();
 window.setInterval(updateLocalTime, 1000);
-

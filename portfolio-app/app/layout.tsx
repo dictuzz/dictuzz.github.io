@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import { IM_Fell_English, Inter, Playfair_Display, Special_Elite } from 'next/font/google';
+import { getSharedSiteConfig } from '@/lib/content';
 import './globals.css';
+
+const siteConfig = getSharedSiteConfig();
+const portfolioSeo = siteConfig.seo.pages.portfolio;
+const absoluteOg = new URL(siteConfig.profile.image.og, siteConfig.site.siteUrl).toString();
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -29,13 +34,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dictuzz.me'),
+  metadataBase: new URL(siteConfig.site.siteUrl),
   title: {
-    default: 'dictuzz · Systems Architect & Automation Specialist',
-    template: '%s · Systems Architect & Automation Specialist | dictuzz',
+    default: portfolioSeo.title,
+    template: portfolioSeo.titleTemplate || '%s',
   },
-  description:
-    'Building systems that scale operations and eliminate friction.',
+  description: portfolioSeo.description,
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -46,16 +50,24 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'dictuzz · Systems Architect & Automation Specialist',
-    description: 'Building systems that scale operations and eliminate friction.',
-    url: 'https://dictuzz.me/portfolio/',
-    siteName: 'dictuzz',
-    type: 'website',
+    title: portfolioSeo.title,
+    description: portfolioSeo.description,
+    url: new URL(portfolioSeo.path, siteConfig.site.siteUrl).toString(),
+    siteName: siteConfig.site.name,
+    type: portfolioSeo.ogType,
+    images: [
+      {
+        url: absoluteOg,
+        alt: siteConfig.profile.image.alt
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'dictuzz · Systems Architect & Automation Specialist',
-    description: 'Building systems that scale operations and eliminate friction.',
+    title: portfolioSeo.title,
+    description: portfolioSeo.description,
+    creator: siteConfig.seo.twitterCreator,
+    images: [absoluteOg]
   },
 };
 

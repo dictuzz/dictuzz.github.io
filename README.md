@@ -28,15 +28,19 @@ Relevant paths:
 - [`/assets/css/tokens.css`](./assets/css/tokens.css): shared token foundation
 - [`/assets/css/core.css`](./assets/css/core.css): shared utilities
 
-### 2. Resume data layer
+### 2. Shared content layer
 
-Resume content is driven by locale JSON files and rendered client-side.
+The repo is now content-driven from a centralized `/content` tree.
 
 Relevant paths:
 
-- [`/locales/en.json`](./locales/en.json)
-- [`/locales/id.json`](./locales/id.json)
-- [`/locales/de.json`](./locales/de.json)
+- [`/content/site.json`](./content/site.json): shared identity, contact, footer, and SEO defaults
+- [`/content/home.json`](./content/home.json): homepage folders and link groups
+- [`/content/resume/en.json`](./content/resume/en.json): resume content in English
+- [`/content/resume/id.json`](./content/resume/id.json): resume content in Indonesian
+- [`/content/resume/de.json`](./content/resume/de.json): resume content in German
+- [`/content/portfolio/home.json`](./content/portfolio/home.json): portfolio board intro/contact content
+- [`/content/portfolio/case-studies.json`](./content/portfolio/case-studies.json): portfolio case-study source
 
 ### 3. Portfolio source app
 
@@ -56,8 +60,9 @@ Important notes:
 Relevant paths:
 
 - [`/portfolio-app/app`](./portfolio-app/app): routes and layout
-- [`/portfolio-app/content`](./portfolio-app/content): portfolio content
-- [`/portfolio-app/data`](./portfolio-app/data): board mapping
+- [`/portfolio-app/content`](./portfolio-app/content): typed content adapters
+- [`/portfolio-app/data`](./portfolio-app/data): board presentation adapter
+- [`/portfolio-app/lib/content.ts`](./portfolio-app/lib/content.ts): validated portfolio content repository
 - [`/portfolio-app/lib/auth.ts`](./portfolio-app/lib/auth.ts): auth helpers
 - [`/portfolio-app/proxy.ts`](./portfolio-app/proxy.ts): request protection
 - [`/portfolio-app/app/api/portfolio-auth/route.ts`](./portfolio-app/app/api/portfolio-auth/route.ts): login handler
@@ -143,6 +148,7 @@ Defined in [`/package.json`](./package.json):
 - `npm run dev:portfolio`: start the portfolio app
 - `npm run build:portfolio`: build the portfolio app
 - `npm run publish:portfolio`: calls the disabled publish script
+- `npm run validate:content`: validate all shared content contracts
 - `npm test`: run root tests
 
 ### Portfolio app scripts
@@ -160,6 +166,7 @@ Defined in [`/portfolio-app/package.json`](./portfolio-app/package.json):
 Root tests:
 
 ```bash
+npm run validate:content
 npm test
 ```
 
@@ -192,9 +199,11 @@ That means:
 ## Repository Guidance
 
 - Prefer editing source files, not generated or placeholder output
-- For homepage/footer changes, start with [`/index.html`](./index.html) and [`/css/site.css`](./css/site.css)
-- For resume content changes, update locale JSON and [`/resume/resume.js`](./resume/resume.js)
-- For portfolio changes, work inside [`/portfolio-app`](./portfolio-app)
+- For content changes, start with [`/content`](./content)
+- For homepage rendering logic, use [`/js/home.js`](./js/home.js) and [`/js/site-content.js`](./js/site-content.js)
+- For resume rendering logic, use [`/resume`](./resume)
+- For portfolio behavior, work inside [`/portfolio-app`](./portfolio-app)
+- For editor-facing guidance, see [`/docs/content-editing-guide.md`](./docs/content-editing-guide.md)
 
 ## License
 

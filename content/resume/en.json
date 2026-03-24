@@ -1,0 +1,212 @@
+{
+  "locale": "en",
+  "strings": {
+    "hero": {
+      "subtitle": "Building systems that scale operations and eliminate friction.",
+      "role": "Systems Architect & Automation Specialist",
+      "typing": {
+        "staticText": "",
+        "dynamicTexts": [
+          "Building Operational Systems",
+          "Streamlining Workflows",
+          "Coordinating Across Teams",
+          "Making Data-Backed Decisions",
+          "Leading Structured Execution"
+        ]
+      },
+      "status": "Available for opportunities",
+      "cta1": "Let's Talk",
+      "cta2": "Explore",
+      "stat1Label": "Hrs/Week Saved",
+      "stat2Label": "Members Led",
+      "stat3Label": "Audience Scale"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "experience": "Experience",
+      "education": "Education",
+      "impact": "Impact",
+      "skills": "Skills",
+      "awards": "Awards",
+      "etc": "Etc",
+      "contact": "Contact"
+    },
+    "section": {
+      "summary": "PROFESSIONAL SUMMARY",
+      "experience": "WORK EXPERIENCE",
+      "education": "EDUCATION",
+      "impact": "SELECTED OPERATIONAL IMPACT",
+      "certifications": "CERTIFICATIONS & TRAINING",
+      "skills": "CORE SKILLS & TOOLS",
+      "awards": "AWARDS & RECOGNITION",
+      "testimonials": "TESTIMONIALS & SOCIAL PROOF",
+      "etc": "ADDITIONAL ACTIVITIES",
+      "contact": "CONTACT & AVAILABILITY"
+    },
+    "sectionLede": {
+      "summary": "Systems architecture, workflow automation, and cross-functional execution profile.",
+      "experience": "Roles focused on workflow automation, operational leadership, training readiness, and event execution.",
+      "education": "Academic background supporting data analysis, systems thinking, and process improvement.",
+      "certifications": "Verified training and language credentials relevant to structured work and international collaboration.",
+      "impact": "Selected examples of measurable results in reporting automation, governance, and operations.",
+      "skills": "Core capabilities across systems design, automation, analytics, operations, and leadership.",
+      "awards": "Selected awards and recognition tied to communication, creativity, and performance.",
+      "etc": "Additional public-speaking, community, and supporting activities that reinforce execution range.",
+      "testimonials": "References and recommendations from managers, collaborators, and clients.",
+      "contact": "Primary contact routes for interviews, partnerships, freelance work, and professional conversations."
+    },
+    "skills": {
+      "strategic": "Strategic & Systems",
+      "operational": "Operational Execution",
+      "analytical": "Analytical & Tools",
+      "leadership": "Leadership & Communication",
+      "languages": "Languages"
+    },
+    "connect": {
+      "title": "Let's Build Something Meaningful",
+      "schedule": "Book a Call",
+      "whatsapp": "Message Me",
+      "email": "Let's Talk",
+      "cv": "View Full Resume →",
+      "desc": {
+        "schedule": "15-min call • No obligation",
+        "whatsapp": "Fast and practical communication",
+        "email": "For partnerships, proposals, and opportunities",
+        "linkedin": "Professional profile and network",
+        "instagram": "The story behind the work",
+        "github": "Selected code and technical work"
+      }
+    }
+  },
+  "sections": {
+    "summary": {
+      "text": "With a background in Data Science and hands-on experience in cross-functional operations, I build systems that create clarity, consistency, and forward momentum. My work includes automating reporting workflows that saved 12+ hours of manual work per week, leading a 34-member organization through KPI-based governance, and coordinating large-scale events for more than 1,000 attendees. I bring a structured, data-informed approach to execution, improvement, and team alignment."
+    },
+    "experience": [
+      {
+        "date": "JUL 2024 – SEP 2025",
+        "role": "Management Trainee",
+        "company": "Home Digital Indonesia",
+        "details": [
+          "Designed and implemented automated reporting systems using Excel, reducing manual reporting workload by ~12 hours per week.",
+          "Standardized cross-functional SOPs across Finance, Sales, and Operations to improve operational consistency.",
+          "Analyzed internal feedback data to generate structured improvement recommendations for management review."
+        ]
+      },
+      {
+        "date": "JAN 2021 – PRESENT",
+        "role": "Assistant Instructor",
+        "company": "Vertical Rescue Indonesia",
+        "details": [
+          "Ensured operational readiness of safety equipment through structured inspection and maintenance systems.",
+          "Supported technical training sessions as lead climber and belayer for rescue operations.",
+          "Assisted instruction delivery and skill assessment for new trainees."
+        ]
+      },
+      {
+        "date": "NOV 2021 – NOV 2022",
+        "role": "President",
+        "company": "OSIS SMA Santa Maria 2, Bandung",
+        "details": [
+          "Led 34-member organization across 10 divisions using structured KPI-based governance.",
+          "Designed and executed long-term institutional programs adopted school-wide.",
+          "Directed strategic outreach campaigns to 12 feeder schools.",
+          "Implemented weekly operational coordination rhythm to maintain cross-divisional alignment."
+        ]
+      },
+      {
+        "date": "JUN 2022 – AUG 2022",
+        "role": "Stage Operations Crew",
+        "company": "Ultimate Event Organizer",
+        "details": [
+          "Coordinated backstage technical execution for events with 1,000+ attendees.",
+          "Reduced transition downtime by enforcing structured stage workflows across lighting, sound, and security teams."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "name": "Universitas Terbuka",
+        "degree": "S1 Data Science (Ongoing)",
+        "date": "Started Aug 2025",
+        "focus": "Focus: Data Analysis, Statistics, Information Systems"
+      },
+      {
+        "name": "SMA Santa Maria 2",
+        "degree": "Science Program",
+        "date": "2020 – 2023"
+      }
+    ],
+    "impact": [
+      {
+        "title": "Reporting Automation System",
+        "desc": "Designed and implemented automated reporting systems at Home Digital Indonesia using Excel, eliminating repetitive data entry and formatting. Reduced manual reporting workload by approximately 12 hours per week, freeing capacity for higher-value operational priorities."
+      },
+      {
+        "title": "KPI-Based Governance Leadership",
+        "desc": "Led a 34-member student council across 10 divisions at SMA Santa Maria 2 through KPI-based governance and weekly coordination rhythms. Designed institutional programs adopted school-wide and directed strategic outreach to 12 feeder schools."
+      },
+      {
+        "title": "Large-Scale Event Execution",
+        "desc": "Managed program flow as MC at Youth Mass 2025 (GEMA Bandung) for 500+ participants, coordinating speakers, committees, and technical teams. Previously handled backstage operations for 1,000+ attendee events, reducing transition downtime through structured stage workflows."
+      }
+    ],
+    "certifications": [],
+    "testimonials": [],
+    "awards": [
+      "1st Place – Instagram Reels Competition, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
+      "1st Place – Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
+      "Runner-Up, Water Rocket Competition (2017) by PLANET SAINS"
+    ],
+    "etc": [
+      "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ participants",
+      "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan"
+    ]
+  },
+  "collections": {
+    "skills": {
+      "strategic": [
+        { "name": "Systems Thinking", "level": "expert" },
+        { "name": "Workflow Design", "level": "expert" },
+        { "name": "Process Standardization", "level": "expert" },
+        { "name": "KPI Framework Design", "level": "proficient" },
+        { "name": "Operational Planning", "level": "expert" }
+      ],
+      "operational": [
+        { "name": "SOP Development", "level": "expert" },
+        { "name": "Cross-Functional Coordination", "level": "expert" },
+        { "name": "Event Operations Management", "level": "proficient" },
+        { "name": "Reporting Automation", "level": "expert" },
+        { "name": "Structured Delegation", "level": "proficient" }
+      ],
+      "analytical": [
+        { "name": "Microsoft Excel (Advanced)", "level": "expert" },
+        { "name": "Google Workspace", "level": "expert" },
+        { "name": "Data Visualization", "level": "proficient" },
+        { "name": "Data Analysis", "level": "proficient" },
+        { "name": "Obsidian", "level": "proficient" },
+        { "name": "Project Management Tools", "level": "proficient" }
+      ],
+      "leadership": [
+        { "name": "Team Governance", "level": "expert" },
+        { "name": "Stakeholder Communication", "level": "expert" },
+        { "name": "Public Speaking", "level": "proficient" },
+        { "name": "Training Delivery", "level": "proficient" },
+        { "name": "Strategic Outreach", "level": "proficient" }
+      ]
+    },
+    "languages": [
+      { "id": "id", "label": "Indonesian (Native)" },
+      { "id": "su", "label": "Sundanese (Fluent)" },
+      { "id": "en", "label": "English (Professional Working Proficiency)" },
+      { "id": "de", "label": "German (B1 Certified – Goethe-Zertifikat B1)" }
+    ]
+  },
+  "seo": {
+    "description": "Resume of Benedictus Richard Ricardo, Systems Architect & Automation Specialist. Explore experience, workflow automation, operational leadership, certifications, skills, and direct contact options."
+  },
+  "downloads": {
+    "resumeUrl": "https://rxresu.me/me.richardricardo/en"
+  }
+}

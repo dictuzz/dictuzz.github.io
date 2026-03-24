@@ -9,6 +9,7 @@
         "dev:portfolio": "cd portfolio-app && npm run dev",
         "build:portfolio": "cd portfolio-app && npm run build",
         "publish:portfolio": "cd portfolio-app && node scripts/publish.mjs",
+        "validate:content": "node scripts/validate-content.mjs",
         "test": "node --test tests/*.test.js"
     },
     "author": "Benedictus Richard Ricardo",

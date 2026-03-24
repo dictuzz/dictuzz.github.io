@@ -1,5 +1,5 @@
-import { caseStudies } from '@/content/case-studies';
 import type { CaseStudy } from '@/content/types';
+import { getPortfolioCaseStudies } from '@/lib/content';
 
 export interface Case {
   id: string;
@@ -53,7 +53,7 @@ function toReporterNote(caseStudy: CaseStudy) {
   return `IN A METHODICAL MOVE that prioritized structure over spectacle, ${caseStudy.organization} saw ${result} after ${caseStudy.title.toLowerCase()} introduced a cleaner operating rhythm. The case now stands as documentary proof that disciplined systems work can change how teams move.`;
 }
 
-export function toCase(caseStudy: CaseStudy, index: number): Case {
+export function toPortfolioBoardCard(caseStudy: CaseStudy, index: number): Case {
   const boardPlacement = BOARD_POSITIONS[index] ?? {
     boardX: 220 + index * 680,
     boardY: 320 + ((index % 3) - 1) * 240,
@@ -82,7 +82,7 @@ export function toCase(caseStudy: CaseStudy, index: number): Case {
 }
 
 export function getCases(): Case[] {
-  return caseStudies.map(toCase);
+  return getPortfolioCaseStudies().map(toPortfolioBoardCard);
 }
 
 export const cases = getCases();
