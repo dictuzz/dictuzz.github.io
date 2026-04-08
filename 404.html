@@ -2,80 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Not Found | dictuzz — Systems Architect &amp; Automation Specialist</title>
-    <meta name="description" content="The requested page is missing from the evidence board. Return to base or open the case board for Benedictus Richard Ricardo, Systems Architect &amp; Automation Specialist.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>404 — You Broke It. Play Snake. | dictuzz</title>
+    <meta name="description" content="This page doesn't exist, but this snake game does. Dodge the 404 obstacles and collect points while you figure out where you actually wanted to go.">
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/404.css">
 </head>
 <body>
-    <main class="case-not-found">
-        <div class="board-note board-note--top-left" aria-hidden="true">NO. 404</div>
-        <div class="board-note board-note--left" aria-hidden="true">No witness statement filed.</div>
-        <div class="board-note board-note--right" aria-hidden="true">No route pinned to the board.</div>
-        <div class="red-string red-string--trail" aria-hidden="true"></div>
+    <!-- Ambient background particles -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
 
-        <article class="clipping" data-entrance>
-            <span class="thumbtack" aria-hidden="true"></span>
-            <span class="status-stamp" data-stamp>UNRESOLVED</span>
-
-            <header class="clipping__header">
-                <span>THE PORTFOLIO CHRONICLE</span>
-                <span>CASE NOT FOUND</span>
-            </header>
-
-            <div class="clipping__body">
-                <h1>PAGE MISSING FROM THE EVIDENCE BOARD</h1>
-                <p class="clipping__subhead">
-                    Our investigators have searched every corner of the board. The case file you are looking for does not exist here.
-                </p>
-                <p>
-                    The URL you entered may be incorrect, or this page has been moved or removed. Please check the address and try again.
-                </p>
-
-                <div class="clipping__actions">
-                    <a class="paper-link paper-link--primary" href="/">← Return to Base</a>
-                    <a class="paper-link paper-link--secondary" href="/portfolio/">View Case Board</a>
+    <main class="game-shell" id="game-shell">
+        <!-- Top bar -->
+        <header class="top-bar">
+            <a href="/" class="top-bar__home" aria-label="Return home">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Go Home</span>
+            </a>
+            <div class="top-bar__stats">
+                <div class="stat-chip">
+                    <span class="stat-chip__label">Score</span>
+                    <span class="stat-chip__value" id="score-display">0</span>
                 </div>
-
-                <section class="snake-panel" aria-labelledby="snake-heading">
-                    <div class="snake-panel__header">
-                        <div>
-                            <p class="snake-panel__eyebrow">Case diversion</p>
-                            <h2 id="snake-heading">Evidence Trail</h2>
-                        </div>
-                        <div class="snake-panel__score">
-                            <span>Score</span>
-                            <strong id="snake-score">0</strong>
-                        </div>
-                    </div>
-
-                    <canvas
-                        id="snake-board"
-                        class="snake-panel__board"
-                        width="320"
-                        height="320"
-                        aria-label="Snake game board"
-                    ></canvas>
-
-                    <p class="snake-panel__hint">
-                        Desktop: use arrow keys or WASD. Mobile: use the direction buttons below.
-                    </p>
-
-                    <div class="snake-controls" aria-label="Snake controls">
-                        <button type="button" class="snake-control snake-control--up" data-direction="up">↑</button>
-                        <button type="button" class="snake-control snake-control--left" data-direction="left">←</button>
-                        <button type="button" class="snake-control snake-control--down" data-direction="down">↓</button>
-                        <button type="button" class="snake-control snake-control--right" data-direction="right">→</button>
-                    </div>
-                </section>
+                <div class="stat-chip stat-chip--best">
+                    <span class="stat-chip__label">Best</span>
+                    <span class="stat-chip__value" id="best-display">0</span>
+                </div>
             </div>
+        </header>
 
-            <span class="case-stamp" data-stamp>CASE 404</span>
-        </article>
+        <!-- Hero / Start screen overlay -->
+        <div class="overlay" id="start-overlay">
+            <div class="overlay__content">
+                <div class="glitch-404" aria-hidden="true">
+                    <span class="glitch-404__text" data-text="404">404</span>
+                </div>
+                <h1 class="overlay__title">Page Not Found</h1>
+                <p class="overlay__subtitle">
+                    But hey, since you're stuck here…<br>
+                    <strong>play some snake.</strong> The 404s are obstacles now. They deserve it.
+                </p>
+                <button class="btn-play" id="btn-start" type="button">
+                    <span class="btn-play__icon">▶</span>
+                    <span>Start Game</span>
+                </button>
+                <p class="overlay__hint">
+                    <kbd>Arrow keys</kbd> / <kbd>WASD</kbd> or swipe on mobile
+                </p>
+            </div>
+        </div>
+
+        <!-- Game Over overlay -->
+        <div class="overlay overlay--gameover hidden" id="gameover-overlay">
+            <div class="overlay__content">
+                <p class="overlay__emoji" id="gameover-emoji">💀</p>
+                <h2 class="overlay__title overlay__title--gameover" id="gameover-title">Wasted.</h2>
+                <p class="overlay__quip" id="gameover-quip">You hit a 404. The irony writes itself.</p>
+                <div class="overlay__score-summary">
+                    <div class="score-block">
+                        <span class="score-block__label">Score</span>
+                        <span class="score-block__value" id="final-score">0</span>
+                    </div>
+                    <div class="score-block score-block--best">
+                        <span class="score-block__label">Best</span>
+                        <span class="score-block__value" id="final-best">0</span>
+                    </div>
+                </div>
+                <button class="btn-play" id="btn-restart" type="button">
+                    <span class="btn-play__icon">↻</span>
+                    <span>Try Again</span>
+                </button>
+                <a href="/" class="link-home">or just go home, quitter</a>
+            </div>
+        </div>
+
+        <!-- Canvas -->
+        <canvas id="game-canvas" aria-label="Snake game — dodge the 404 obstacles"></canvas>
+
+        <!-- Mobile D-Pad -->
+        <div class="dpad" id="dpad" aria-label="Direction controls">
+            <button class="dpad__btn dpad__btn--up" data-dir="up" type="button" aria-label="Move up">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <button class="dpad__btn dpad__btn--left" data-dir="left" type="button" aria-label="Move left">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="dpad__btn dpad__btn--down" data-dir="down" type="button" aria-label="Move down">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <button class="dpad__btn dpad__btn--right" data-dir="right" type="button" aria-label="Move right">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
     </main>
 
     <script src="/js/404.js"></script>

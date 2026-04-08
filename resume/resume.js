@@ -1,4 +1,4 @@
-import { applyGlobalFooter } from '../js/site-content.js';
+import { applyGlobalFooter } from '../js/site-renderers.js';
 import { loadResumePageContent, getInitialLanguage } from './resume-content-loader.js';
 import { initInteractions, initProfileTilt, initRevealObserver, initTheme, updateTyping } from './resume-interactions.js';
 import {

@@ -1,14 +1,18 @@
 import { ThemeManager, updateThemeColor } from './ui-kit.js';
 import {
-    applyGlobalFooter,
+    loadHomeContent,
+    loadSiteConfig
+} from './site-content.js';
+import {
     applyManagedPageMetadata,
     applyStructuredData,
-    buildHomeStructuredData,
-    loadHomeContent,
-    loadSiteConfig,
+    buildHomeStructuredData
+} from './site-seo.js';
+import {
+    applyGlobalFooter,
     renderDirectoryUnavailableMarkup,
     renderFoldersMarkup
-} from './site-content.js';
+} from './site-renderers.js';
 
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');

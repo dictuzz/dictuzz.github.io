@@ -7,5 +7,6 @@ export const resumeState = {
     langContent: null,
     siteConfig: null,
     typerInstance: null,
-    themeManager: null
+    themeManager: null,
+    revealObserver: null
 };

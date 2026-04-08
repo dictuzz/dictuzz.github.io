@@ -46,7 +46,7 @@ export function initRevealObserver() {
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    window.__resumeRevealObserver = observer;
+    resumeState.revealObserver = observer;
     $$('.reveal, .stagger').forEach((element) => observer.observe(element));
 }
 

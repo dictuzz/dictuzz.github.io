@@ -158,46 +158,121 @@
   "collections": {
     "skills": {
       "strategic": [
-        { "name": "Systems Thinking", "level": "expert" },
-        { "name": "Workflow Design", "level": "expert" },
-        { "name": "Process Standardization", "level": "expert" },
-        { "name": "KPI Framework Design", "level": "proficient" },
-        { "name": "Operational Planning", "level": "expert" }
+        {
+          "name": "Systems Thinking",
+          "level": "expert"
+        },
+        {
+          "name": "Workflow Design",
+          "level": "expert"
+        },
+        {
+          "name": "Process Standardization",
+          "level": "expert"
+        },
+        {
+          "name": "KPI Framework Design",
+          "level": "proficient"
+        },
+        {
+          "name": "Operational Planning",
+          "level": "expert"
+        }
       ],
       "operational": [
-        { "name": "SOP Development", "level": "expert" },
-        { "name": "Cross-Functional Coordination", "level": "expert" },
-        { "name": "Event Operations Management", "level": "proficient" },
-        { "name": "Reporting Automation", "level": "expert" },
-        { "name": "Structured Delegation", "level": "proficient" }
+        {
+          "name": "SOP Development",
+          "level": "expert"
+        },
+        {
+          "name": "Cross-Functional Coordination",
+          "level": "expert"
+        },
+        {
+          "name": "Event Operations Management",
+          "level": "proficient"
+        },
+        {
+          "name": "Reporting Automation",
+          "level": "expert"
+        },
+        {
+          "name": "Structured Delegation",
+          "level": "proficient"
+        }
       ],
       "analytical": [
-        { "name": "Microsoft Excel (Advanced)", "level": "expert" },
-        { "name": "Google Workspace", "level": "expert" },
-        { "name": "Data Visualization", "level": "proficient" },
-        { "name": "Data Analysis", "level": "proficient" },
-        { "name": "Obsidian", "level": "proficient" },
-        { "name": "Project Management Tools", "level": "proficient" }
+        {
+          "name": "Microsoft Excel (Advanced)",
+          "level": "expert"
+        },
+        {
+          "name": "Google Workspace",
+          "level": "expert"
+        },
+        {
+          "name": "Data Visualization",
+          "level": "proficient"
+        },
+        {
+          "name": "Data Analysis",
+          "level": "proficient"
+        },
+        {
+          "name": "Obsidian",
+          "level": "proficient"
+        },
+        {
+          "name": "Project Management Tools",
+          "level": "proficient"
+        }
       ],
       "leadership": [
-        { "name": "Team Governance", "level": "expert" },
-        { "name": "Stakeholder Communication", "level": "expert" },
-        { "name": "Public Speaking", "level": "proficient" },
-        { "name": "Training Delivery", "level": "proficient" },
-        { "name": "Strategic Outreach", "level": "proficient" }
+        {
+          "name": "Team Governance",
+          "level": "expert"
+        },
+        {
+          "name": "Stakeholder Communication",
+          "level": "expert"
+        },
+        {
+          "name": "Public Speaking",
+          "level": "proficient"
+        },
+        {
+          "name": "Training Delivery",
+          "level": "proficient"
+        },
+        {
+          "name": "Strategic Outreach",
+          "level": "proficient"
+        }
       ]
     },
     "languages": [
-      { "id": "id", "label": "Bahasa Indonesia (Penutur asli)" },
-      { "id": "su", "label": "Bahasa Sunda (Lancar)" },
-      { "id": "en", "label": "Bahasa Inggris (Professional Working Proficiency)" },
-      { "id": "de", "label": "Bahasa Jerman (B1 Certified – Goethe-Zertifikat B1)" }
+      {
+        "id": "id",
+        "label": "Bahasa Indonesia (Penutur asli)"
+      },
+      {
+        "id": "su",
+        "label": "Bahasa Sunda (Lancar)"
+      },
+      {
+        "id": "en",
+        "label": "Bahasa Inggris (Professional Working Proficiency)"
+      },
+      {
+        "id": "de",
+        "label": "Bahasa Jerman (B1 Certified – Goethe-Zertifikat B1)"
+      }
     ]
   },
   "seo": {
     "description": "Resume Benedictus Richard Ricardo, Systems Architect & Automation Specialist. Jelajahi pengalaman, otomatisasi workflow, kepemimpinan operasional, dan keahlian inti."
   },
   "downloads": {
-    "resumeUrl": "https://rxresu.me/me.richardricardo/id"
+    "resumeUrl": "https://bukaaaadonggg.my.canva.site/benedictus-richard-ricardo-resume-id"
   }
 }

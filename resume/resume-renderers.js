@@ -1,3 +1,5 @@
+import { resumeState } from './resume-state.js';
+
 function $(selector) {
     return document.querySelector(selector);
 }
@@ -12,8 +14,8 @@ function escapeHtml(text) {
 }
 
 function reobserveAll(container) {
-    if (typeof window.__resumeRevealObserver !== 'undefined') {
-        container.querySelectorAll('.reveal').forEach((element) => window.__resumeRevealObserver.observe(element));
+    if (resumeState.revealObserver) {
+        container.querySelectorAll('.reveal, .stagger').forEach((element) => resumeState.revealObserver.observe(element));
     }
 }
 
@@ -106,31 +108,41 @@ export function renderList(selector, items) {
 }
 
 export function renderSkills(collections, translations) {
-    const categories = [
-        { key: 'strategic', id: '#skills-strategic' },
-        { key: 'operational', id: '#skills-operational' },
-        { key: 'analytical', id: '#skills-analytical' },
-        { key: 'leadership', id: '#skills-leadership' }
-    ];
+    const container = document.getElementById('skills-dynamic-container');
+    if (!container) return;
+    
+    // Clear in case of re-renders
+    container.innerHTML = '';
 
-    categories.forEach(({ key, id }) => {
-        renderSection(id, collections.skills[key], (skill) => `<span class="tag">${escapeHtml(skill.name)}</span>`);
+    // Iterate over all skills dynamically without hardcoded keys
+    Object.entries(collections.skills).forEach(([key, items]) => {
+        const title = translations.skills[key] || key;
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'skills__category reveal';
+        categoryDiv.innerHTML = `
+            <h3 data-skill-heading="${escapeHtml(key)}">${escapeHtml(title)}</h3>
+            <div class="tags stagger" id="skills-${escapeHtml(key)}"></div>
+        `;
+        container.appendChild(categoryDiv);
+
+        renderSection(`#skills-${escapeHtml(key)}`, items, (skill) => `<span class="tag">${escapeHtml(skill.name)}</span>`);
     });
 
-    renderSection('#skills-languages', collections.languages, (item) => `<span class="tag">${escapeHtml(item.label)}</span>`);
+    // Special category for languages
+    if (collections.languages) {
+        const langTitle = translations.skills.languages || 'Languages';
+        const langDiv = document.createElement('div');
+        langDiv.className = 'skills__category reveal';
+        langDiv.innerHTML = `
+            <h3 data-skill-heading="languages">${escapeHtml(langTitle)}</h3>
+            <div class="tags stagger" id="skills-languages"></div>
+        `;
+        container.appendChild(langDiv);
 
-    const labels = {
-        strategic: translations.skills.strategic,
-        operational: translations.skills.operational,
-        analytical: translations.skills.analytical,
-        leadership: translations.skills.leadership,
-        languages: translations.skills.languages
-    };
+        renderSection('#skills-languages', collections.languages, (item) => `<span class="tag">${escapeHtml(item.label)}</span>`);
+    }
 
-    Object.entries(labels).forEach(([key, value]) => {
-        const heading = document.querySelector(`[data-skill-heading="${key}"]`);
-        if (heading) heading.textContent = value;
-    });
+    reobserveAll(container);
 }
 
 export function renderConnectSection(siteConfig, translations, content) {
