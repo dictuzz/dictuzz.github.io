@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 {"error":"restricted"}
+=======
+:HL["/portfolio/_next/static/chunks/ec445f3f1bd6a0b8.css","style"]
+0:{"buildId":"0P6SwmRJlBaJ0i8vZMxQC","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+>>>>>>> 8af6c3007839ed45a4709b5f80a830e692a5f69f
