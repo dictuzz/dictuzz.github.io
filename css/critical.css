@@ -48,6 +48,7 @@
     0%,
     100% {
         box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.45);
+        /* Uses --color-status-active (#1db954) at 45% opacity */
     }
 
     50% {
@@ -79,6 +80,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text-primary);
+    /* BRAND-DECISION: Gradient uses canonical warm cream (#f7f2e8 → #efe6d8) */
     background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 34%),
         linear-gradient(180deg, #f7f2e8 0%, #efe6d8 100%);
@@ -89,10 +91,11 @@ body {
 }
 
 [data-theme="dark"] body {
+    /* BRAND-DECISION: Unified dark gradient (#10161d → #141a22 → #11171f) */
     background:
         radial-gradient(circle at top left, rgba(209, 171, 105, 0.06), transparent 24%),
         radial-gradient(circle at 84% 14%, rgba(141, 168, 198, 0.06), transparent 22%),
-        linear-gradient(180deg, #10161d 0%, #151b23 54%, #11171f 100%);
+        linear-gradient(180deg, #10161d 0%, #141a22 54%, #11171f 100%);
 }
 
 img {
@@ -134,7 +137,7 @@ h3 {
     top: 14px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000;
+    z-index: var(--z-sticky);
     width: min(calc(100% - 24px), 1120px);
     padding: 8px 12px;
     background: rgba(255, 250, 242, 0.82);
@@ -374,14 +377,14 @@ h3 {
 
 [data-theme="dark"] .hero__status {
     background: rgba(20, 26, 34, 0.9);
-    border-color: rgba(255, 255, 255, 0.08);
-    color: #e2e8f0;
+    border-color: var(--color-border-default);
+    color: var(--color-text-primary);
 }
 
 .hero__status-dot {
     width: 8px;
     height: 8px;
-    background: #1db954;
+    background: var(--color-status-active);
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
 }
@@ -659,7 +662,7 @@ h3 {
     position: absolute;
     top: -100%;
     left: 16px;
-    z-index: 10000;
+    z-index: var(--z-skip-link);
     padding: 12px 24px;
     border-radius: 8px;
     background: var(--text-primary, #1a1a1a);

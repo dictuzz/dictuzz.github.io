@@ -1,135 +1,99 @@
-# dictuzz Brand Identity Manual
+# dictuzz.github.io — Brand Identity & Design System
 
-## Core Idea
-`dictuzz` is positioned as a calm, premium personal operating brand.
+This is the canonical source of truth for the dictuzz platform brand identity. 
 
-The feeling should be:
-- credible
-- composed
-- thoughtful
-- structured
-- modern without looking trend-chasing
+## 1. Brand Concept & Aesthetic
+The dictuzz identity is designed to evoke an **"Editorial Archive / Detective Case Board"** aesthetic.
+- **Tone:** Professional, Trustworthy, Forensic, Deep, Methodical.
+- **Role:** The platform behaves like an investigative dossier — presenting deep research, organized intelligence, and structured case studies.
+- **Key Concepts:** Glassmorphism layers over structured grids, "red string and thumbtack" connections (in the Portfolio app), and highly legible journalistic typography (Main Site/Resume).
 
-The brand is not loud luxury and not startup-minimal.
-It should feel like a trusted dossier, a refined control room, and a personal system built with care.
+### The Exceptions
+**The 404 Page (`/404.html`)** is intentionally excluded from this design system. It operates as an isolated digital anomaly (a retro arcade game) featuring its own neon syntax and `Inter / JetBrains Mono` type stack.
 
-## Motto
-`Quam Plurimi et Quam Aptissimi`
+---
 
-Use the motto sparingly.
-It works best as a signature line, not as repetitive headline copy.
+## 2. Global Typography Stack
 
-## Brand Personality
-- Clear under pressure
-- Warm but not casual
-- Precise without sounding cold
-- Elegant without becoming decorative
-- Confident without bragging
+The typography stack balances premium editorial authority with sharp, modern digital utility. It is implemented natively in `tokens.css`.
 
-## Visual Principles
-1. Clarity first
-Every screen should be easy to scan in under a few seconds.
+### Primary Display: Fraunces
+Used exclusively for `H1`, `H2`. Brings warmth, authority, and editorial gravitas.
+- `font-family: 'Fraunces', Georgia, serif;`
 
-2. Structured calm
-Layouts should feel deliberate and stable, with visible hierarchy and breathing room.
+### Primary Body: Manrope
+Clean, highly legible geometric sans for UI elements, paragraphs, buttons, and navigation. 
+- `font-family: 'Manrope', system-ui, sans-serif;`
 
-3. Editorial trust
-Typography and spacing should evoke a premium reading experience, not a generic app dashboard.
+### Portfolio Alternate Typestack
+The `/portfolio-app/` uses thematic fonts (`Playfair Display`, `IM Fell English`, `Special Elite`) to push the "detective's corkboard" metaphor, but falls back to pulling global styling for footer modules.
 
-4. Restrained signal
-Gold and blue accents are used to guide attention, not to dominate the interface.
+---
 
-5. Motion with purpose
-Animation should support polish and pacing, never spectacle.
+## 3. Color Palette & Theming (Tokens.css)
 
-## Color System
-### Light theme
-- Background: `#f5efe4`
-- Background alt: `#efe4d4`
-- Surface: `#fffaf2`
-- Text primary: `#1d2430`
-- Text muted: `#5a6778`
-- Accent blue: `#335c87`
-- Accent gold: `#c4974f`
+All color tokens revolve around a base dual-identity: Warm Cream/Paper (Light theme) vs Ink/Slate (Dark Theme).
+*Never use hardcoded hex values in component CSS. Always use the semantic aliases listed below.*
 
-### Dark theme
-- Background: `#121820`
-- Background alt: `#171f29`
-- Surface: `#171d25`
-- Text primary: `#f4efe7`
-- Text muted: `#bec7d3`
-- Accent blue: `#8da8c6`
-- Accent gold: `#d1ab69`
+### Primary Brand Colors
+- **The Signature Gold:** `--color-primary-500` (`#c4974f`)
+- **The Intelligence Blue:** `--color-secondary-500` (`#335c87`)
 
-## Typography
-### Display
-- `Fraunces`
-- Used for major headings, page titles, and signature statements
-- Tone: editorial, mature, intelligent
+### Core Surfaces (Light Theme)
+- **Page Background:** `--color-surface-page` (`#f5efe4`)
+- **Elevated Cards:** `--color-surface-card` (`#fffaf2`)
+- **Text Primary:** `--color-text-primary` (`#1d2430`)
+- **Universal Borders:** `--color-border-default` (`rgba(29,36,48,0.10)`)
 
-### Body
-- `Manrope`
-- Used for paragraphs, metadata, UI labels, and navigation
-- Tone: clean, modern, readable
+### Core Surfaces (Dark Theme)
+- **Page Background:** `--color-surface-page` (`#121820`)
+- **Elevated Cards:** `--color-surface-card` (`#171d25`)
+- **Text Primary:** `--color-text-primary` (`#f4efe7`)
+- **Universal Borders:** `--color-border-default` (`rgba(255,255,255,0.08)`)
 
-### Typography behavior
-- Headlines use tight tracking and strong vertical rhythm
-- Body copy should stay readable and never become dense
-- Avoid excessively small text unless it is metadata
+### Semantic Indicators
+- **Active/Success:** `--color-status-active` (`#1db954`)
 
-## Layout Rules
-- Prefer generous outer spacing with tighter inner grouping
-- Keep content widths readable; avoid full-width text blocks
-- Use rounded surfaces with soft shadows, not harsh rectangles
-- Cards should feel like refined containers, not floating gadgets
+---
 
-## Surface Language
-- Surfaces use soft translucency or layered light, not heavy glassmorphism
-- Borders are subtle and usually low-contrast
-- Shadows should be diffused and premium, never aggressive
-- Rounded corners are part of the identity and should stay consistent
+## 4. Layout & Spacing Primitives
 
-## Motion Rules
-- Use subtle reveal-on-scroll only where it improves pacing
-- Hover motion should stay within `1px-4px` vertical movement
-- Looped animations should be rare and soft
-- Always respect `prefers-reduced-motion`
+All spacing adheres strictly to an **8-point system** scaled in `rem`. 
 
-## Imagery
-- Portrait framing should feel formal, intentional, and high-trust
-- Supporting imagery should reinforce systems, operations, community, and execution
-- Avoid random stock-feeling visuals or overly abstract futuristic imagery
+| Token | Value | Pixel Equiv | Ideal Use |
+| :--- | :--- | :--- | :--- |
+| `--space-1` | `0.5rem` | 8px | Between dense UI icons / tags |
+| `--space-2` | `1rem` | 16px | Internal padding for small cards/buttons |
+| `--space-3` | `1.5rem` | 24px | Gaps between related paragraphs |
+| `--space-6` | `3rem` | 48px | Standard section separation |
+| `--space-10` | `5rem` | 80px | Major page segment margins |
 
-## Voice and Copy
-- Write like a thoughtful operator, not a marketer
-- Prefer exact language over hype
-- Keep copy compact and human
-- Trust should come from clarity, not exaggeration
+---
 
-## Component Guidance
-### Homepage
-- Compact, fast, and decisive
-- A link hub, not a profile essay
+## 5. Shape & Depth
 
-### Portfolio
-- Feels like a curated case-study gallery
-- Each project should read as evidence of thinking and execution
+The UI relies heavily on softly rounded, approachable interactive surfaces, lifted through a robust shadow array.
 
-### Resume
-- Feels like a trust dossier
-- Should be easy for interviewers to scan and remember
+### Radius (Personality: "Round & Premium")
+- **Standard Card:** `--radius-lg` (`22px` / `1.375rem`)
+- **Major Shell / Container:** `--radius-2xl` (`34px` / `2.125rem`)
+- **Tags, Inputs, Pills:** `--radius-full` (`9999px`)
 
-## Logo Usage
-- Use the website mark in compact contexts like headers and identity lockups
-- Keep logo treatments clean and framed
-- Avoid oversized decorative logo usage
+### Shadows (The "Warm Gray" Lift)
+Our shadow system has a unified base color: `rgba(29, 36, 48)`.
+- **Card Base:** `--shadow-md`
+- **Hover/Interaction:** `--shadow-lg`
+- **Brand Glow Base:** `--shadow-brand` (`rgba(196, 151, 79, 0.22)`)
 
-## Implementation Notes
-- Design tokens (Single Source of Truth): `assets/css/tokens.css`
-- Shared UI components & utilities: `assets/css/core.css`
-- Homepage styling: `css/site.css` (minified: `css/site.min.css`)
-- Resume base (nav, hero, responsive): `css/critical.css`
-- Resume page-specific styling: `resume/resume.css`
-- Theme & interaction logic: `js/ui-kit.js`
-- Portfolio styling managed by Next.js in `portfolio-app/`
-- The brand should stay consistent across homepage, portfolio, and resume before new pages are added
+---
+
+## 6. Architecture & File Structure
+
+The structural CSS for dictuzz runs sequentially:
+1. `tokens.css`: The root source of truth. Contains palettes, scales, sizes, themes.
+2. `core.css`: Component library (`.card`, `.btn`, `.global-footer`, `.glass`). Requires `tokens.css`.
+3. `site.css`: Layout behaviors for overarching pages. Requires `core.css`.
+4. Feature Styles (e.g., `resume.css`, `critical.css`): Feature-level implementations overriding or extending core elements.
+
+### The Single Footer Law
+The global footer exists in `core.css` ONLY. The logic to inject this into static HTML is governed via `site-renderers.js`, ensuring every segment of the site remains harmonized natively.
