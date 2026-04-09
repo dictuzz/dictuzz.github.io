@@ -32,7 +32,7 @@ export function renderFoldersMarkup(folders) {
             <div class="folder__panel" id="panel-${escapeHtml(folder.id)}" role="region" aria-labelledby="trigger-${escapeHtml(folder.id)}" ${folder.defaultOpen ? '' : 'hidden'}>
                 <div class="folder__items">
                     ${folder.items.map((item) => `
-                        <a class="folder-link" href="${escapeHtml(item.href)}" ${item.external ? 'target="_blank" rel="noopener"' : ''}>
+                        <a class="folder-link" href="${escapeHtml(item.href)}" ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
                             <span class="folder-link__main">
                                 <span class="folder-link__icon"><i class="${escapeHtml(item.icon)}" aria-hidden="true"></i></span>
                                 <span>${escapeHtml(item.label)}</span>
@@ -128,7 +128,7 @@ export function renderFooterMarkup(viewModel) {
         <div class="global-footer__contacts">
             ${viewModel.contacts.map((entry, index) => `
                 ${index > 0 ? '<span class="global-footer__divider">&bull;</span>' : ''}
-                <a href="${entry.href}" class="global-footer__contact-link" ${entry.external ? 'target="_blank" rel="noopener"' : ''} ${entry.current ? 'aria-current="page"' : ''} aria-label="${escapeHtml(entry.ariaLabel || entry.label)}"><i class="${entry.icon}"></i> ${escapeHtml(entry.label)}</a>
+                <a href="${entry.href}" class="global-footer__contact-link" ${entry.external ? 'target="_blank" rel="noopener noreferrer"' : ''} ${entry.current ? 'aria-current="page"' : ''} aria-label="${escapeHtml(entry.ariaLabel || entry.label)}"><i class="${entry.icon}"></i> ${escapeHtml(entry.label)}</a>
             `).join('')}
         </div>
         <p class="global-footer__copy">

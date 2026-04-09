@@ -4,7 +4,9 @@ import siteConfig from '../content/site.json' with { type: 'json' };
 import homeContent from '../content/home.json' with { type: 'json' };
 import resumeEn from '../content/resume/en.json' with { type: 'json' };
 import {
-  renderFoldersMarkup,
+  renderFoldersMarkup
+} from '../js/site-renderers.js';
+import {
   validateHomeContent,
   validateResumeContent,
   validateSharedSiteConfig

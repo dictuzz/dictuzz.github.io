@@ -9,9 +9,6 @@ export function toAbsoluteUrl(siteUrl, path = '') {
     return new URL(path, siteUrl).toString();
 }
 
-function getNestedValue(obj, path) {
-    return path.split('.').reduce((current, key) => current?.[key], obj);
-}
 
 function checkSchema(data, schema, path = 'root', issues = []) {
     if (schema === 'string') {
@@ -102,7 +99,7 @@ export function validateResumeContent(raw) {
 export async function fetchContentJson(path) {
     if (JSON_CACHE.has(path)) return JSON_CACHE.get(path);
 
-    const response = await fetch(path, { cache: 'no-store' });
+    const response = await fetch(path);
     if (!response.ok) throw new Error(`Failed to load content from ${path}`);
 
     const text = await response.text();
@@ -158,6 +155,3 @@ export function normalizeResumeTranslations(content) {
     };
 }
 
-export function translateValue(content, key) {
-    return getNestedValue(normalizeResumeTranslations(content), key);
-}

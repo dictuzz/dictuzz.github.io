@@ -654,3 +654,24 @@ h3 {
         margin: 3px;
     }
 }
+/* Accessibility: Skip-to-main-content link */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 10000;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: var(--text-primary, #1a1a1a);
+    color: var(--bg-surface, #fff);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    opacity: 0;
+    transition: top 150ms ease, opacity 150ms ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+    opacity: 1;
+}

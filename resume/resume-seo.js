@@ -1,6 +1,4 @@
-function toAbsoluteUrl(siteUrl, path) {
-    return new URL(path, siteUrl).toString();
-}
+import { toAbsoluteUrl } from '../js/site-content.js';
 
 function normalizeEntries(data) {
     return Array.isArray(data) ? data : [];

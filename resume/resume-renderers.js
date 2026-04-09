@@ -1,17 +1,6 @@
+import { escapeHtml } from '../js/site-renderers.js';
 import { resumeState } from './resume-state.js';
 
-function $(selector) {
-    return document.querySelector(selector);
-}
-
-function $$(selector) {
-    return document.querySelectorAll(selector);
-}
-
-function escapeHtml(text) {
-    if (typeof text !== 'string') return text;
-    return text.replace(/[&<>"']/g, (match) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[match]));
-}
 
 function reobserveAll(container) {
     if (resumeState.revealObserver) {
@@ -20,14 +9,14 @@ function reobserveAll(container) {
 }
 
 function renderSection(selector, data, templateFn) {
-    const container = $(selector);
+    const container = document.querySelector(selector);
     if (!container || !Array.isArray(data)) return;
     container.innerHTML = data.map(templateFn).join('');
     reobserveAll(container);
 }
 
 export function applyTranslations(translations) {
-    $$('[data-i18n]').forEach((element) => {
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
         const key = element.dataset.i18n;
         const value = key?.split('.').reduce((current, part) => current?.[part], translations);
         if (typeof value === 'string') {
@@ -87,7 +76,7 @@ export function renderCertifications(items) {
             <h3>${escapeHtml(item.name)}</h3>
             ${item.issuer ? `<p class="edu-card__degree">${escapeHtml(item.issuer)}</p>` : ''}
             ${item.year ? `<p class="edu-card__date">${escapeHtml(item.year)}</p>` : ''}
-            ${item.url ? `<p class="edu-card__focus"><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">Verify credential</a></p>` : ''}
+            ${item.url ? `<p class="edu-card__focus"><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Verify credential</a></p>` : ''}
         </div>
     `);
 }
@@ -98,7 +87,7 @@ export function renderTestimonials(items) {
             <p class="testimonial-card__mark" aria-hidden="true">“</p>
             <blockquote class="testimonial-card__quote">${escapeHtml(item.quote)}</blockquote>
             <p class="testimonial-card__meta">${escapeHtml(item.author)} · ${escapeHtml(item.role)}</p>
-            ${item.linkedin ? `<p class="testimonial-card__link"><a href="${escapeHtml(item.linkedin)}" target="_blank" rel="noopener">LinkedIn profile</a></p>` : ''}
+            ${item.linkedin ? `<p class="testimonial-card__link"><a href="${escapeHtml(item.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></p>` : ''}
         </article>
     `);
 }
@@ -146,16 +135,16 @@ export function renderSkills(collections, translations) {
 }
 
 export function renderConnectSection(siteConfig, translations, content) {
-    const scheduleLink = $('#connect-schedule-link');
-    const whatsappLink = $('#connect-whatsapp-link');
-    const emailLink = $('#connect-email-link');
-    const linkedinLink = $('#connect-linkedin-link');
-    const instagramLink = $('#connect-instagram-link');
-    const githubLink = $('#connect-github-link');
-    const downloadLink = $('#download-cv-link');
-    const status = $('#hero-status-text');
-    const heroRole = $('.hero__role [data-i18n="hero.role"]');
-    const subtitle = $('.hero__subtitle');
+    const scheduleLink = document.querySelector('#connect-schedule-link');
+    const whatsappLink = document.querySelector('#connect-whatsapp-link');
+    const emailLink = document.querySelector('#connect-email-link');
+    const linkedinLink = document.querySelector('#connect-linkedin-link');
+    const instagramLink = document.querySelector('#connect-instagram-link');
+    const githubLink = document.querySelector('#connect-github-link');
+    const downloadLink = document.querySelector('#download-cv-link');
+    const status = document.querySelector('#hero-status-text');
+    const heroRole = document.querySelector('.hero__role [data-i18n="hero.role"]');
+    const subtitle = document.querySelector('.hero__subtitle');
     const heroNameLines = document.querySelectorAll('.hero__name-line');
 
     if (scheduleLink) scheduleLink.href = siteConfig.contact.calendarUrl;

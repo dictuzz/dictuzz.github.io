@@ -1,6 +1,0 @@
-.next/types/validator.ts(60,39): error TS2307: Cannot find module '../../app/thinking/[slug]/page.js' or its corresponding type declarations.
-.next/types/validator.ts(69,39): error TS2307: Cannot find module '../../app/work/[slug]/page.js' or its corresponding type declarations.
-app/[legacySlug]/page.tsx(3,41): error TS2307: Cannot find module '@/components/protected/ProtectedPortfolioRoute' or its corresponding type declarations.
-lib/protected-route.test.ts(3,86): error TS2307: Cannot find module './protected-route.ts' or its corresponding type declarations.
-lib/seo.test.ts(3,38): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
-lib/utils.ts(2,25): error TS2307: Cannot find module 'tailwind-merge' or its corresponding type declarations.

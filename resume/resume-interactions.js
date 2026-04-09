@@ -1,14 +1,6 @@
 import { ThemeManager, Typer, updateThemeColor } from '../js/ui-kit.js';
 import { resumeState } from './resume-state.js';
 
-function $(selector) {
-    return document.querySelector(selector);
-}
-
-function $$(selector) {
-    return document.querySelectorAll(selector);
-}
-
 export function initTheme() {
     const toggleEl = document.getElementById('theme-toggle');
     const iconEl = document.getElementById('theme-icon');
@@ -27,8 +19,8 @@ export function initTheme() {
 }
 
 export function updateTyping(strings) {
-    const staticEl = $('#typing-static');
-    const dynamicEl = $('#typing-dynamic');
+    const staticEl = document.querySelector('#typing-static');
+    const dynamicEl = document.querySelector('#typing-dynamic');
     if (staticEl) staticEl.textContent = strings.hero.typing.staticText || '';
 
     if (!dynamicEl) return;
@@ -47,7 +39,7 @@ export function initRevealObserver() {
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     resumeState.revealObserver = observer;
-    $$('.reveal, .stagger').forEach((element) => observer.observe(element));
+    document.querySelectorAll('.reveal, .stagger').forEach((element) => observer.observe(element));
 }
 
 export function initInteractions() {
@@ -57,28 +49,28 @@ export function initInteractions() {
         }
     });
 
-    $$('a[href^="#"]').forEach((anchor) => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (event) => {
             event.preventDefault();
-            const target = $(anchor.getAttribute('href'));
+            const target = document.querySelector(anchor.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
-                $('.nav__links')?.classList.remove('open');
-                $('.nav__toggle')?.classList.remove('active');
+                document.querySelector('.nav__links')?.classList.remove('open');
+                document.querySelector('.nav__toggle')?.classList.remove('active');
             }
         });
     });
 
-    $('.nav__toggle')?.addEventListener('click', () => {
-        const toggle = $('.nav__toggle');
-        const links = $('.nav__links');
+    document.querySelector('.nav__toggle')?.addEventListener('click', () => {
+        const toggle = document.querySelector('.nav__toggle');
+        const links = document.querySelector('.nav__links');
         const isOpen = links.classList.toggle('open');
         toggle.classList.toggle('active');
         toggle.setAttribute('aria-expanded', isOpen);
     });
 
-    const sections = $$('section[id]');
-    const navLinks = $$('.nav__link');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__link');
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -102,8 +94,8 @@ export function initProfileTilt() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion || 'ontouchstart' in window) return;
 
-    const avatar = $('.hero__photo-wrapper');
-    const container = $('.hero__container');
+    const avatar = document.querySelector('.hero__photo-wrapper');
+    const container = document.querySelector('.hero__container');
     if (!avatar || !container) return;
 
     container.addEventListener('mousemove', (event) => {

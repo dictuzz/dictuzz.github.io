@@ -144,6 +144,8 @@ async function initFolders() {
     }
 }
 
+const LOCAL_TIME_INTERVAL_MS = 1000;
+
 initFolders();
 updateLocalTime();
-window.setInterval(updateLocalTime, 1000);
+window.setInterval(updateLocalTime, LOCAL_TIME_INTERVAL_MS);

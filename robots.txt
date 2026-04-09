@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /portfolio/
+Disallow: /portfolio-app/
+Disallow: /scripts/
+Disallow: /tests/
+Disallow: /node_modules/
 
 Sitemap: https://dictuzz.me/sitemap.xml

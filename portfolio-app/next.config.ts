@@ -11,10 +11,14 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname)
   },
   images: {
-    unoptimized: true
+    unoptimized: true,
+    formats: ['image/avif', 'image/webp']
   },
   reactStrictMode: true,
-  poweredByHeader: false
+  poweredByHeader: false,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false
+  }
 };
 
 export default nextConfig;
