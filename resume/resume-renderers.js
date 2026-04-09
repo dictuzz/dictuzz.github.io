@@ -156,7 +156,7 @@ export function renderConnectSection(siteConfig, translations, content) {
     if (downloadLink) {
         downloadLink.href = content.downloads.resumeUrl;
         downloadLink.setAttribute('target', '_blank');
-        downloadLink.setAttribute('rel', 'noopener');
+        downloadLink.setAttribute('rel', 'noopener noreferrer');
     }
     if (status) status.textContent = translations.hero.status;
     if (heroRole) heroRole.textContent = translations.hero.role;

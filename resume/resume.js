@@ -19,19 +19,27 @@ async function loadLanguage(lang) {
     try {
         const { siteConfig, content, translations } = await loadResumePageContent(lang);
 
-        renderExperience(content.sections.experience);
-        renderEducation(content.sections.education);
-        renderCertifications(content.sections.certifications);
-        renderImpact(content.sections.impact);
-        renderSkills(content.collections, translations);
-        renderList('#awards-list', content.sections.awards);
-        renderList('#etc-list', content.sections.etc);
-        renderTestimonials(content.sections.testimonials);
-        applyTranslations(translations);
-        renderConnectSection(siteConfig, translations, content);
-        updateTyping(content.strings);
-        updateResumeSeo(siteConfig, content, lang);
-        applyGlobalFooter(siteConfig);
+        // Each renderer is isolated — a failure in one must not block the rest.
+        // renderConnectSection is critical: it sets the "View Full Resume" link.
+        const renderers = [
+            () => renderExperience(content.sections.experience),
+            () => renderEducation(content.sections.education),
+            () => renderCertifications(content.sections.certifications),
+            () => renderImpact(content.sections.impact),
+            () => renderSkills(content.collections, translations),
+            () => renderList('#awards-list', content.sections.awards),
+            () => renderList('#etc-list', content.sections.etc),
+            () => renderTestimonials(content.sections.testimonials),
+            () => applyTranslations(translations),
+            () => renderConnectSection(siteConfig, translations, content),
+            () => updateTyping(content.strings),
+            () => updateResumeSeo(siteConfig, content, lang),
+            () => applyGlobalFooter(siteConfig)
+        ];
+
+        for (const render of renderers) {
+            try { render(); } catch (err) { console.error('Renderer error:', err); }
+        }
 
         document.querySelectorAll('.lang-btn').forEach((button) => {
             const isActive = button.dataset.lang === lang;
