@@ -1,0 +1,6 @@
+[
+  {
+    "regexp": "^\\/portfolio(?:\\/(_next\\/data\\/[^/]{1,}))?\\/portfolio(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\.json)?[\\/#\\?]?$",
+    "originalSource": "/portfolio/:path*"
+  }
+]

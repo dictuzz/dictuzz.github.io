@@ -34,6 +34,7 @@ export function initRevealObserver() {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
@@ -69,25 +70,46 @@ export function initInteractions() {
         toggle.setAttribute('aria-expanded', isOpen);
     });
 
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav__link');
+    const navLinks = [...document.querySelectorAll('.nav__link')];
+    const linksBySection = new Map(
+        navLinks.map((link) => [link.getAttribute('href')?.replace('#', ''), link])
+    );
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach((section) => {
-            const top = section.offsetTop - 150;
-            if (scrollY >= top) current = section.id;
-        });
-
+    const setActiveLink = (id) => {
         navLinks.forEach((link) => {
-            link.classList.remove('active');
-            link.removeAttribute('aria-current');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
+            const isActive = link.getAttribute('href') === `#${id}`;
+            link.classList.toggle('active', isActive);
+            if (isActive) {
                 link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
             }
         });
-    }, { passive: true });
+    };
+
+    const trackedSections = [...document.querySelectorAll('section[id]')];
+    if (trackedSections.length > 0) {
+        let activeId = trackedSections[0].id;
+        const sectionObserver = new IntersectionObserver((entries) => {
+            const visible = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
+
+            if (!visible) return;
+
+            const nextId = visible.target.id;
+            if (nextId === activeId || !linksBySection.has(nextId)) return;
+
+            activeId = nextId;
+            setActiveLink(activeId);
+        }, {
+            threshold: [0.15, 0.35, 0.55],
+            rootMargin: '-18% 0px -52% 0px'
+        });
+
+        trackedSections.forEach((section) => sectionObserver.observe(section));
+        setActiveLink(activeId);
+    }
 }
 
 export function initProfileTilt() {
@@ -98,14 +120,29 @@ export function initProfileTilt() {
     const container = document.querySelector('.hero__container');
     if (!avatar || !container) return;
 
+    let frameId = 0;
+    let nextX = 0;
+    let nextY = 0;
+
+    const renderTilt = () => {
+        frameId = 0;
+        avatar.style.transform = `perspective(1000px) rotateY(${nextX * 0.025}deg) rotateX(${-nextY * 0.025}deg)`;
+    };
+
     container.addEventListener('mousemove', (event) => {
         const rect = container.getBoundingClientRect();
-        const x = event.clientX - rect.left - rect.width / 2;
-        const y = event.clientY - rect.top - rect.height / 2;
-        avatar.style.transform = `perspective(1000px) rotateY(${x * 0.025}deg) rotateX(${-y * 0.025}deg)`;
+        nextX = event.clientX - rect.left - rect.width / 2;
+        nextY = event.clientY - rect.top - rect.height / 2;
+        if (!frameId) {
+            frameId = window.requestAnimationFrame(renderTilt);
+        }
     });
 
     container.addEventListener('mouseleave', () => {
+        if (frameId) {
+            window.cancelAnimationFrame(frameId);
+            frameId = 0;
+        }
         avatar.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)';
         avatar.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
         setTimeout(() => { avatar.style.transition = ''; }, 800);

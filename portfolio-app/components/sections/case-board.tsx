@@ -2,12 +2,11 @@
 
 import {
   motion,
-  useInView,
   useReducedMotion
 } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { getCases } from '@/data/cases';
-import type { CaseStudy, PortfolioHomeData } from '@/content/types';
+import type { PortfolioHomeData } from '@/content/types';
+import type { BoardCase } from '@/data/cases';
 import { ChalkboardBackground } from '@/components/ui/chalkboard-bg';
 import { type BoardNavigatorItem, CaseNavigator } from '@/components/ui/case-navigator';
 import { type BoardAnchor, RedString } from '@/components/ui/red-string';
@@ -36,21 +35,20 @@ type BoardNode =
 
 export function CaseBoardSection({
   home,
-  caseStudies
+  cases
 }: {
   home: PortfolioHomeData;
-  caseStudies: CaseStudy[];
+  cases: BoardCase[];
 }) {
   const sectionRef = useRef<HTMLElement>(null);
-  const firstCardRef = useRef<HTMLDivElement>(null);
+  const boardNodeRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [viewportHeight, setViewportHeight] = useState(900);
   const [viewportWidth, setViewportWidth] = useState(1440);
   const [isMobile, setIsMobile] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [nodeSizes, setNodeSizes] = useState<Array<{ width: number; height: number }>>([]);
   
   const prefersReducedMotion = useReducedMotion();
-  const cases = useMemo(() => getCases(), []);
-  const firstCardInView = useInView(firstCardRef, { once: true, margin: '-10% 0px -10% 0px' });
 
   useEffect(() => {
     const sync = () => {
@@ -84,6 +82,57 @@ export function CaseBoardSection({
     [cases]
   );
 
+  useEffect(() => {
+    if (isMobile) return;
+
+    const measureNodes = () => {
+      setNodeSizes((previous) => {
+        const next = boardNodes.map((_, index) => {
+          const element = boardNodeRefs.current[index];
+          if (!element) {
+            return previous[index] ?? { width: 0, height: 0 };
+          }
+
+          const { width, height } = element.getBoundingClientRect();
+          return {
+            width: Math.round(width),
+            height: Math.round(height)
+          };
+        });
+
+        if (
+          next.length === previous.length &&
+          next.every((size, index) => size.width === previous[index]?.width && size.height === previous[index]?.height)
+        ) {
+          return previous;
+        }
+
+        return next;
+      });
+    };
+
+    measureNodes();
+
+    const resizeObserver = new ResizeObserver(() => {
+      measureNodes();
+    });
+
+    boardNodeRefs.current.forEach((element) => {
+      if (element) {
+        resizeObserver.observe(element);
+      }
+    });
+
+    window.addEventListener('resize', measureNodes);
+    window.addEventListener('load', measureNodes);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', measureNodes);
+      window.removeEventListener('load', measureNodes);
+    };
+  }, [boardNodes, isMobile, viewportWidth]);
+
   const {
     backgroundX,
     backgroundY,
@@ -96,6 +145,7 @@ export function CaseBoardSection({
     jumpToNode
   } = useBoardCamera({
     nodes: boardNodes,
+    nodeSizes,
     sectionRef,
     isMobile,
     reducedMotion: reducedMotion || false,
@@ -128,11 +178,9 @@ export function CaseBoardSection({
                   <div
                     key={caseItem.id}
                     onMouseEnter={() => setActiveIndex(index + 1)}
-                    ref={index === 0 ? firstCardRef : undefined}
                   >
                     <CaseCard
                       caseItem={caseItem}
-                      caseStudy={caseStudies[index]}
                       mobile
                     />
                   </div>
@@ -215,6 +263,9 @@ export function CaseBoardSection({
               scale: Math.abs(progressValue - 0) < 0.5 ? lerp(0.96, 1, 1 - Math.abs(progressValue - 0) / 0.5) : 0.92
             }}
             className="absolute z-20 w-[clamp(320px,60vw,860px)]"
+            ref={(element) => {
+              boardNodeRefs.current[0] = element;
+            }}
             style={{ left: INTRO_NODE.boardX, top: INTRO_NODE.boardY }}
             transition={{ type: 'spring', stiffness: 86, damping: 18 }}
           >
@@ -231,7 +282,9 @@ export function CaseBoardSection({
                 animate={{ opacity, scale }}
                 className="absolute"
                 key={caseItem.id}
-                ref={index === 0 ? firstCardRef : undefined}
+                ref={(element) => {
+                  boardNodeRefs.current[index + 1] = element;
+                }}
                 style={{
                   left: caseItem.boardX,
                   top: caseItem.boardY,
@@ -241,9 +294,8 @@ export function CaseBoardSection({
               >
                 <CaseCard
                   caseItem={caseItem}
-                  caseStudy={caseStudies[index]}
-                  entranceEnabled={index === 0 && firstCardInView}
                   isActive={index + 1 === activeIndex}
+                  priorityImage={index === 0}
                 />
               </motion.div>
             );
@@ -259,6 +311,9 @@ export function CaseBoardSection({
             }}
             className="absolute z-20 w-[clamp(320px,60vw,860px)]"
             id="dispatch"
+            ref={(element) => {
+              boardNodeRefs.current[boardNodes.length - 1] = element;
+            }}
             style={{ left: CONTACT_NODE.boardX, top: CONTACT_NODE.boardY }}
             transition={{ type: 'spring', stiffness: 86, damping: 18 }}
           >

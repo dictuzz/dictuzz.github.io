@@ -1,3 +1,5 @@
+import { upgradeIcons } from './icon-kit.js';
+
 /**
  * ═══════════════════════════════════════════════════════════════════════════
  * SHARED: UI KIT
@@ -68,6 +70,10 @@ export class ThemeManager {
             if (this.iconElement) {
                 this.iconElement.className = 'fas fa-sun';
             }
+        }
+
+        if (this.iconElement) {
+            upgradeIcons(this.iconElement.parentElement || document);
         }
 
         // Persist

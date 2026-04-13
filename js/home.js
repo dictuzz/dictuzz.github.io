@@ -1,4 +1,5 @@
 import { ThemeManager, updateThemeColor } from './ui-kit.js';
+import { upgradeIcons } from './icon-kit.js';
 import {
     loadHomeContent,
     loadSiteConfig
@@ -32,6 +33,8 @@ window.addEventListener('theme-changed', (event) => {
 
 const dateEl = document.getElementById('local-date');
 const timeEl = document.getElementById('local-time');
+const ROUTE_PREFETCH_CACHE = new Set();
+const ASSET_PREFETCH_CACHE = new Set();
 
 function getLocalTimeZone() {
     try {
@@ -58,9 +61,94 @@ function updateLocalTime() {
         timeZone,
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit',
         hour12: false
     }).format(now);
+}
+
+function canWarmNavigation() {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    if (!connection) return true;
+    if (connection.saveData) return false;
+    return !/2g/.test(connection.effectiveType || '');
+}
+
+function scheduleIdle(task) {
+    if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(task, { timeout: 1600 });
+        return;
+    }
+
+    window.setTimeout(task, 900);
+}
+
+async function warmAsset(url) {
+    if (!url || ASSET_PREFETCH_CACHE.has(url)) return;
+    ASSET_PREFETCH_CACHE.add(url);
+
+    try {
+        await fetch(url, { credentials: 'same-origin', priority: 'low' });
+    } catch {
+        ASSET_PREFETCH_CACHE.delete(url);
+    }
+}
+
+function extractWarmableAssets(htmlText, baseUrl) {
+    if (!('DOMParser' in window)) return [];
+
+    const parsed = new DOMParser().parseFromString(htmlText, 'text/html');
+    const warmable = parsed.querySelectorAll(
+        'link[rel="preload"][href], link[rel="modulepreload"][href], link[rel="prefetch"][href], link[rel="stylesheet"][href]'
+    );
+
+    return [...warmable]
+        .map((asset) => asset.getAttribute('href'))
+        .filter(Boolean)
+        .map((href) => new URL(href, baseUrl).toString())
+        .filter((url) => url.startsWith(window.location.origin))
+        .slice(0, 8);
+}
+
+async function warmRoute(url) {
+    if (!canWarmNavigation() || ROUTE_PREFETCH_CACHE.has(url)) return;
+    ROUTE_PREFETCH_CACHE.add(url);
+
+    try {
+        const response = await fetch(url, { credentials: 'same-origin', priority: 'low' });
+        if (!response.ok) throw new Error('route prefetch failed');
+
+        const html = await response.text();
+        const assets = extractWarmableAssets(html, url);
+
+        assets.forEach((assetUrl) => {
+            scheduleIdle(() => {
+                void warmAsset(assetUrl);
+            });
+        });
+    } catch {
+        ROUTE_PREFETCH_CACHE.delete(url);
+    }
+}
+
+function bindRouteWarmup() {
+    const links = [...document.querySelectorAll('a[href="/resume/"], a[href="/portfolio/"]')];
+    if (links.length === 0) return;
+
+    links.forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        const warm = () => {
+            void warmRoute(new URL(href, window.location.origin).toString());
+        };
+
+        link.addEventListener('pointerenter', warm, { once: true, passive: true });
+        link.addEventListener('touchstart', warm, { once: true, passive: true });
+        link.addEventListener('focus', warm, { once: true, passive: true });
+    });
+
+    scheduleIdle(() => {
+        void warmRoute(new URL('/resume/', window.location.origin).toString());
+    });
 }
 
 function closeFolder(folder) {
@@ -138,13 +226,17 @@ async function initFolders() {
         applyHomepageIdentity(siteConfig, homeContent);
         accordionContainer.innerHTML = renderFoldersMarkup(homeContent.folders);
         bindFolderAccordion();
+        upgradeIcons(accordionContainer);
+        bindRouteWarmup();
     } catch {
         accordionContainer.innerHTML = renderDirectoryUnavailableMarkup();
         bindFolderAccordion();
+        upgradeIcons(accordionContainer);
+        bindRouteWarmup();
     }
 }
 
-const LOCAL_TIME_INTERVAL_MS = 1000;
+const LOCAL_TIME_INTERVAL_MS = 60_000;
 
 initFolders();
 updateLocalTime();

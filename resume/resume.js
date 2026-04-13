@@ -1,4 +1,5 @@
 import { applyGlobalFooter } from '../js/site-renderers.js';
+import { upgradeIcons } from '../js/icon-kit.js';
 import { loadResumePageContent, getInitialLanguage } from './resume-content-loader.js';
 import { initInteractions, initProfileTilt, initRevealObserver, initTheme, updateTyping } from './resume-interactions.js';
 import {
@@ -41,6 +42,8 @@ async function loadLanguage(lang) {
             try { render(); } catch (err) { console.error('Renderer error:', err); }
         }
 
+        upgradeIcons(document);
+
         document.querySelectorAll('.lang-btn').forEach((button) => {
             const isActive = button.dataset.lang === lang;
             button.classList.toggle('active', isActive);
@@ -59,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initRevealObserver();
     initInteractions();
     initProfileTilt();
+    upgradeIcons(document);
 
     document.querySelectorAll('.lang-btn').forEach((button) => {
         button.addEventListener('click', () => {

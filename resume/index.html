@@ -33,12 +33,10 @@
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://api.iconify.design">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://api.iconify.design">
+    <link rel="prefetch" href="/">
+    <link rel="prefetch" href="/portfolio/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="profile">
@@ -83,14 +81,6 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
             rel="stylesheet">
-    </noscript>
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
 
     <!-- Main Styles (Deferred) -->
@@ -141,16 +131,13 @@
             <!-- Language Switcher -->
             <div class="nav__lang" role="group" aria-label="Language selection">
                 <button class="lang-btn active" data-lang="en" aria-label="English" aria-pressed="true">
-                    <img src="https://api.iconify.design/circle-flags:us.svg" alt="USA Flag" loading="lazy" width="24"
-                        height="24">
+                    <span class="lang-flag" aria-hidden="true">EN</span>
                 </button>
                 <button class="lang-btn" data-lang="id" aria-label="Indonesian" aria-pressed="false">
-                    <img src="https://api.iconify.design/circle-flags:id.svg" alt="Indonesia Flag" loading="lazy"
-                        width="24" height="24">
+                    <span class="lang-flag" aria-hidden="true">ID</span>
                 </button>
                 <button class="lang-btn" data-lang="de" aria-label="German" aria-pressed="false">
-                    <img src="https://api.iconify.design/circle-flags:de.svg" alt="Germany Flag" loading="lazy"
-                        width="24" height="24">
+                    <span class="lang-flag" aria-hidden="true">DE</span>
                 </button>
             </div>
         </div>

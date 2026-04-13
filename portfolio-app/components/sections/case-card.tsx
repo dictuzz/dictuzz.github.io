@@ -3,24 +3,21 @@
 import Link from 'next/link';
 import { motion, useAnimationControls } from 'framer-motion';
 import { useEffect } from 'react';
-import { Case } from '@/data/cases';
-import { CaseStudy } from '@/content/types';
+import type { BoardCase } from '@/data/cases';
 import { CaseStamp } from '@/components/ui/case-stamp';
 import { NewspaperClipping } from '@/components/ui/newspaper-clipping';
 import { StatusStamp } from '@/components/ui/status-stamp';
 
 export function CaseCard({
   caseItem,
-  caseStudy,
-  entranceEnabled,
   isActive = false,
-  mobile = false
+  mobile = false,
+  priorityImage = false
 }: {
-  caseItem: Case;
-  caseStudy: CaseStudy;
-  entranceEnabled?: boolean;
+  caseItem: BoardCase;
   isActive?: boolean;
   mobile?: boolean;
+  priorityImage?: boolean;
 }) {
   const controls = useAnimationControls();
 
@@ -37,9 +34,9 @@ export function CaseCard({
     void controls.start({
       rotate: 0,
       y: 0,
-      transition: { duration: entranceEnabled ? 0.6 : 0.2, ease: 'easeOut' }
+      transition: { duration: 0.2, ease: 'easeOut' }
     });
-  }, [controls, entranceEnabled, isActive, mobile]);
+  }, [controls, isActive, mobile]);
 
   const clipping = (
     <NewspaperClipping
@@ -84,9 +81,14 @@ export function CaseCard({
 
         <div className="mb-5 overflow-hidden border border-[rgba(26,20,16,0.16)] bg-[var(--paper-aged)]">
           <img
-            alt={caseStudy.image.alt}
+            alt={caseItem.imageAlt}
             className="aspect-[4/3] w-full object-cover"
+            decoding="async"
+            fetchPriority={priorityImage ? 'high' : 'auto'}
+            height="600"
+            loading={priorityImage ? 'eager' : 'lazy'}
             src={caseItem.mockupImage}
+            width="800"
           />
         </div>
 
@@ -97,7 +99,7 @@ export function CaseCard({
         <div className="mb-5">
           <p className="ui-label text-[var(--stamp-blue)]">Filed findings</p>
           <ul className="mt-3 space-y-2 text-[var(--font-size-sm)] leading-7 text-[var(--ink-dark)]">
-            {caseStudy.evidenceBullets.map((item) => (
+            {caseItem.evidenceBullets.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -139,7 +141,7 @@ export function CaseCard({
     <motion.div
       animate={controls}
       className="w-[clamp(320px,60vw,860px)]"
-      initial={entranceEnabled ? { opacity: 0, x: 40, rotate: -8 } : { opacity: 1, x: 0, rotate: 0 }}
+      initial={{ opacity: 1, x: 0, rotate: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       {clipping}

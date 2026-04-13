@@ -1,7 +1,6 @@
 import type { CaseStudy } from '@/content/types';
-import { getPortfolioCaseStudies } from '@/lib/content';
 
-export interface Case {
+export interface BoardCase {
   id: string;
   slug: string;
   caseNumber: string;
@@ -19,6 +18,8 @@ export interface Case {
   boardX: number;
   boardY: number;
   rotation: number;
+  imageAlt: string;
+  evidenceBullets: string[];
 }
 
 const BOARD_POSITIONS = [
@@ -28,7 +29,7 @@ const BOARD_POSITIONS = [
   { boardX: 3970, boardY: 1340, rotation: 2.1 }
 ] as const;
 
-function normalizeStatus(status: string): Case['status'] {
+function normalizeStatus(status: string): BoardCase['status'] {
   if (status === 'ACTIVE') return 'ACTIVE';
   if (status === 'CLASSIFIED') return 'CLASSIFIED';
   return 'SOLVED';
@@ -53,7 +54,7 @@ function toReporterNote(caseStudy: CaseStudy) {
   return `IN A METHODICAL MOVE that prioritized structure over spectacle, ${caseStudy.organization} saw ${result} after ${caseStudy.title.toLowerCase()} introduced a cleaner operating rhythm. The case now stands as documentary proof that disciplined systems work can change how teams move.`;
 }
 
-export function toPortfolioBoardCard(caseStudy: CaseStudy, index: number): Case {
+export function toBoardCase(caseStudy: CaseStudy, index: number): BoardCase {
   const boardPlacement = BOARD_POSITIONS[index] ?? {
     boardX: 220 + index * 680,
     boardY: 320 + ((index % 3) - 1) * 240,
@@ -77,12 +78,12 @@ export function toPortfolioBoardCard(caseStudy: CaseStudy, index: number): Case 
     tiltDegree: boardPlacement.rotation,
     boardX: boardPlacement.boardX,
     boardY: boardPlacement.boardY,
-    rotation: boardPlacement.rotation
+    rotation: boardPlacement.rotation,
+    imageAlt: caseStudy.image.alt,
+    evidenceBullets: caseStudy.evidenceBullets
   };
 }
 
-export function getCases(): Case[] {
-  return getPortfolioCaseStudies().map(toPortfolioBoardCard);
+export function toBoardCases(caseStudies: CaseStudy[]): BoardCase[] {
+  return caseStudies.map(toBoardCase);
 }
-
-export const cases = getCases();

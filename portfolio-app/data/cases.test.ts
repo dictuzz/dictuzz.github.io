@@ -1,11 +1,11 @@
 import assert from 'node:assert';
 import { test } from 'node:test';
 import { getPortfolioCaseStudies } from '@/lib/content';
-import { getCases, toPortfolioBoardCard } from './cases';
+import { toBoardCase, toBoardCases } from './cases';
 
 test('toCase maps canonical case studies into board cases', () => {
   const caseStudies = getPortfolioCaseStudies();
-  const mapped = toPortfolioBoardCard(caseStudies[0], 0);
+  const mapped = toBoardCase(caseStudies[0], 0);
 
   assert.strictEqual(mapped.id, 'case-001');
   assert.strictEqual(mapped.slug, 'automation-mandate');
@@ -21,7 +21,7 @@ test('toCase maps canonical case studies into board cases', () => {
 
 test('getCases preserves canonical ordering and normalizes legacy statuses', () => {
   const caseStudies = getPortfolioCaseStudies();
-  const mapped = getCases();
+  const mapped = toBoardCases(caseStudies);
 
   assert.strictEqual(mapped.length, caseStudies.length);
   assert.deepStrictEqual(

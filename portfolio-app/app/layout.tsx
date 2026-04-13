@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Fraunces, IM_Fell_English, Inter, Manrope, Playfair_Display, Special_Elite } from 'next/font/google';
+import { IM_Fell_English, Inter, Playfair_Display, Special_Elite } from 'next/font/google';
 import { getSharedSiteConfig } from '@/lib/content';
 import './globals.css';
 
@@ -31,19 +31,6 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-ui-face',
   display: 'swap'
-});
-
-/* BRAND-DECISION: Core brand fonts for shared UI elements (nav, footer, links) */
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-brand-display-face',
-  display: 'swap',
-});
-
-const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-brand-body-face',
-  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -92,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${imFellEnglish.variable} ${specialElite.variable} ${inter.variable} ${fraunces.variable} ${manrope.variable}`}
+      className={`${playfairDisplay.variable} ${imFellEnglish.variable} ${specialElite.variable} ${inter.variable}`}
     >
       <body>
         {children}

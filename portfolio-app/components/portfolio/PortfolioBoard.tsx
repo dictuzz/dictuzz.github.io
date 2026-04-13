@@ -1,6 +1,7 @@
 'use client';
 
-import type { CaseStudy, PortfolioHomeData } from '@/content/types';
+import type { PortfolioHomeData } from '@/content/types';
+import type { BoardCase } from '@/data/cases';
 import { CaseBoardSection } from '@/components/sections/case-board';
 
 export function PortfolioBoard({
@@ -8,7 +9,7 @@ export function PortfolioBoard({
   cases
 }: {
   home: PortfolioHomeData;
-  cases: CaseStudy[];
+  cases: BoardCase[];
 }) {
-  return <CaseBoardSection caseStudies={cases} home={home} />;
+  return <CaseBoardSection cases={cases} home={home} />;
 }

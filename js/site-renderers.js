@@ -1,4 +1,5 @@
 import { toAbsoluteUrl } from './site-content.js';
+import { upgradeIcons } from './icon-kit.js';
 
 export function escapeHtml(text) {
     if (typeof text !== 'string') return text;
@@ -141,4 +142,5 @@ export function renderFooterMarkup(viewModel) {
 export function applyGlobalFooter(siteConfig, footerElement = document.querySelector('.global-footer'), currentPath) {
     if (!footerElement) return;
     footerElement.innerHTML = renderFooterMarkup(createFooterViewModel(siteConfig, currentPath));
+    upgradeIcons(footerElement);
 }

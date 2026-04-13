@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import type { CaseStudy } from '@/content/types';
-import { getCases } from '@/data/cases';
+import { toBoardCases } from '@/data/cases';
+import { getPortfolioCaseStudies } from '@/lib/content';
 import { ChalkboardBackground } from '@/components/ui/chalkboard-bg';
 import { CaseStamp } from '@/components/ui/case-stamp';
 import { NewspaperClipping } from '@/components/ui/newspaper-clipping';
 import { StatusStamp } from '@/components/ui/status-stamp';
 
 function resolveCaseShape(caseStudy: CaseStudy) {
-  return getCases().find((entry) => entry.slug === caseStudy.slug);
+  return toBoardCases(getPortfolioCaseStudies()).find((entry) => entry.slug === caseStudy.slug);
 }
 
 export function CaseFilePage({

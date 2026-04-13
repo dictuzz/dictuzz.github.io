@@ -24,8 +24,14 @@ interface BoardNodeData {
   boardY: number;
 }
 
+interface NodeSize {
+  height: number;
+  width: number;
+}
+
 export function useBoardCamera({
   nodes,
+  nodeSizes,
   sectionRef,
   isMobile,
   reducedMotion,
@@ -33,6 +39,7 @@ export function useBoardCamera({
   viewportHeight
 }: {
   nodes: BoardNodeData[];
+  nodeSizes: NodeSize[];
   sectionRef: RefObject<HTMLElement | null>;
   isMobile: boolean;
   reducedMotion: boolean;
@@ -46,11 +53,17 @@ export function useBoardCamera({
 
   const waypoints = useMemo<Waypoint[]>(
     () =>
-      nodes.map((node) => ({
-        cameraX: -node.boardX + viewportWidth * BOARD_CONFIG.DESKTOP_FOCUS_X_RATIO - BOARD_CONFIG.DESKTOP_CARD_WIDTH / 2,
-        cameraY: -node.boardY + viewportHeight * BOARD_CONFIG.DESKTOP_FOCUS_Y_RATIO - BOARD_CONFIG.DESKTOP_CARD_HEIGHT / 2
-      })),
-    [nodes, viewportHeight, viewportWidth]
+      nodes.map((node, index) => {
+        const nodeSize = nodeSizes[index];
+        const cardWidth = nodeSize?.width ?? BOARD_CONFIG.DESKTOP_CARD_WIDTH;
+        const cardHeight = nodeSize?.height ?? BOARD_CONFIG.DESKTOP_CARD_HEIGHT;
+
+        return {
+          cameraX: -node.boardX + viewportWidth * BOARD_CONFIG.DESKTOP_FOCUS_X_RATIO - cardWidth / 2,
+          cameraY: -node.boardY + viewportHeight * BOARD_CONFIG.DESKTOP_FOCUS_Y_RATIO - cardHeight / 2
+        };
+      }),
+    [nodeSizes, nodes, viewportHeight, viewportWidth]
   );
 
   const targetX = useMotionValue(waypoints[0]?.cameraX ?? 0);
