@@ -1,6 +1,5 @@
 import { caseStudies } from '@/content/case-studies';
 import { homeContent } from '@/content/home';
-import { insights } from '@/content/insights';
 import { sharedSiteConfig } from '@/content/site';
 import type { CaseStudy, PortfolioHomeData, SharedSiteConfig } from '@/content/types';
 
@@ -78,14 +77,6 @@ export function getPortfolioCaseStudy(slug: string) {
 
 export function getRelatedCaseStudies(slug: string, limit = 2) {
   return getPortfolioCaseStudies().filter((entry) => entry.slug !== slug).slice(0, limit);
-}
-
-export function getInsights() {
-  return insights;
-}
-
-export function getInsight(slug: string) {
-  return insights.find((entry) => entry.slug === slug);
 }
 
 export function getLegacyAliases() {
