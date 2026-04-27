@@ -8,10 +8,10 @@ import {
 } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState, RefObject } from 'react';
 import { BOARD_CONFIG } from '@/config/board';
+import { lerp } from '@/lib/utils';
 
 // Camera configurations imported from config
 
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 interface Waypoint {

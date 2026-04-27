@@ -17,10 +17,9 @@ import { IntroCard } from '@/components/ui/intro-card';
 import { ContactCard } from '@/components/ui/contact-card';
 import { useBoardCamera } from '@/hooks/use-board-camera';
 import { BOARD_CONFIG, INTRO_NODE, CONTACT_NODE } from '@/config/board';
+import { lerp } from '@/lib/utils';
 
 // Configs imported from '@/config/board'
-
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 type BoardNode =
   | (BoardAnchor &
