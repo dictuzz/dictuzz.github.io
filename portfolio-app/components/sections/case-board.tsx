@@ -122,12 +122,14 @@ export function CaseBoardSection({
       }
     });
 
-    window.addEventListener('resize', measureNodes);
+    // Note: window 'resize' is already covered transitively by the
+    // viewport-sync effect above (viewportWidth is a dep here, so any
+    // resize triggers a remeasure). Only the one-shot 'load' listener is
+    // kept to remeasure once fonts/images settle.
     window.addEventListener('load', measureNodes);
 
     return () => {
       resizeObserver.disconnect();
-      window.removeEventListener('resize', measureNodes);
       window.removeEventListener('load', measureNodes);
     };
   }, [boardNodes, isMobile, viewportWidth]);
