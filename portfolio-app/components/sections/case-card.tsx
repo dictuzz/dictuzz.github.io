@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import { motion, useAnimationControls } from 'framer-motion';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import type { BoardCase } from '@/data/cases';
 import { CaseStamp } from '@/components/ui/case-stamp';
 import { NewspaperClipping } from '@/components/ui/newspaper-clipping';
 import { StatusStamp } from '@/components/ui/status-stamp';
 
-export function CaseCard({
+function CaseCardImpl({
   caseItem,
   isActive = false,
   mobile = false,
@@ -148,3 +148,5 @@ export function CaseCard({
     </motion.div>
   );
 }
+
+export const CaseCard = memo(CaseCardImpl);

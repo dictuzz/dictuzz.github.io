@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { PortfolioHomeData } from '@/content/types';
 import { NewspaperClipping } from '@/components/ui/newspaper-clipping';
 
-export function ContactCard({ home }: { home: PortfolioHomeData }) {
+function ContactCardImpl({ home }: { home: PortfolioHomeData }) {
   return (
     <NewspaperClipping className="mx-0" scrollable={false} tiltDegree={1.3}>
       <header className="border-b-2 border-[rgba(26,20,16,0.2)] pb-4">
@@ -33,3 +34,5 @@ export function ContactCard({ home }: { home: PortfolioHomeData }) {
     </NewspaperClipping>
   );
 }
+
+export const ContactCard = memo(ContactCardImpl);
