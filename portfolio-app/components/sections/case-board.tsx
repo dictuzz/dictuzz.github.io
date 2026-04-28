@@ -17,10 +17,20 @@ import { IntroCard } from '@/components/ui/intro-card';
 import { ContactCard } from '@/components/ui/contact-card';
 import { useBoardCamera } from '@/hooks/use-board-camera';
 import { BOARD_CONFIG, INTRO_NODE, CONTACT_NODE } from '@/config/board';
+import { lerp, smoothstep } from '@/lib/utils';
+
+// Smooth card focus: as the active node moves away by 0..1.5 units of node-space,
+// scale eases from 1.0 -> 0.92 and opacity eases from 1.0 -> opacityFar.
+// Continuous (no step jumps) so cards drift in/out of focus naturally.
+const focusFalloff = (distance: number, opacityFar: number) => {
+  const eased = smoothstep(distance / 1.5);
+  return {
+    scale: lerp(1, 0.92, eased),
+    opacity: lerp(1, opacityFar, eased)
+  };
+};
 
 // Configs imported from '@/config/board'
-
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 type BoardNode =
   | (BoardAnchor &
@@ -123,12 +133,14 @@ export function CaseBoardSection({
       }
     });
 
-    window.addEventListener('resize', measureNodes);
+    // Note: window 'resize' is already covered transitively by the
+    // viewport-sync effect above (viewportWidth is a dep here, so any
+    // resize triggers a remeasure). Only the one-shot 'load' listener is
+    // kept to remeasure once fonts/images settle.
     window.addEventListener('load', measureNodes);
 
     return () => {
       resizeObserver.disconnect();
-      window.removeEventListener('resize', measureNodes);
       window.removeEventListener('load', measureNodes);
     };
   }, [boardNodes, isMobile, viewportWidth]);
@@ -258,10 +270,7 @@ export function CaseBoardSection({
           />
 
           <motion.div
-            animate={{
-              opacity: activeIndex === 0 ? 1 : 0.5,
-              scale: Math.abs(progressValue - 0) < 0.5 ? lerp(0.96, 1, 1 - Math.abs(progressValue - 0) / 0.5) : 0.92
-            }}
+            animate={focusFalloff(Math.abs(progressValue - 0), 0.5)}
             className="absolute z-20 w-[clamp(320px,60vw,860px)]"
             ref={(element) => {
               boardNodeRefs.current[0] = element;
@@ -274,12 +283,10 @@ export function CaseBoardSection({
 
           {cases.map((caseItem, index) => {
             const nodeDistance = Math.abs(progressValue - (index + 1));
-            const scale = nodeDistance < 0.5 ? lerp(0.96, 1, 1 - nodeDistance / 0.5) : 0.92;
-            const opacity = nodeDistance < 0.65 ? 1 : nodeDistance < 1.5 ? 0.72 : 0.42;
 
             return (
               <motion.div
-                animate={{ opacity, scale }}
+                animate={focusFalloff(nodeDistance, 0.42)}
                 className="absolute"
                 key={caseItem.id}
                 ref={(element) => {
@@ -302,13 +309,7 @@ export function CaseBoardSection({
           })}
 
           <motion.div
-            animate={{
-              opacity: activeIndex === boardNodes.length - 1 ? 1 : 0.5,
-              scale:
-                Math.abs(progressValue - (boardNodes.length - 1)) < 0.5
-                  ? lerp(0.96, 1, 1 - Math.abs(progressValue - (boardNodes.length - 1)) / 0.5)
-                  : 0.92
-            }}
+            animate={focusFalloff(Math.abs(progressValue - (boardNodes.length - 1)), 0.5)}
             className="absolute z-20 w-[clamp(320px,60vw,860px)]"
             id="dispatch"
             ref={(element) => {
