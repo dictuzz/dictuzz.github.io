@@ -2,11 +2,15 @@
 
 import Link from 'next/link';
 import { motion, useAnimationControls } from 'framer-motion';
-import { memo, useEffect } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import type { BoardCase } from '@/data/cases';
 import { CaseStamp } from '@/components/ui/case-stamp';
 import { NewspaperClipping } from '@/components/ui/newspaper-clipping';
 import { StatusStamp } from '@/components/ui/status-stamp';
+
+// Minimum gap between active-card nudges. Prevents the rotate/lift loop
+// from restarting mid-flight when the user scrubs back across a boundary.
+const NUDGE_MIN_INTERVAL_MS = 700;
 
 function CaseCardImpl({
   caseItem,
@@ -20,9 +24,15 @@ function CaseCardImpl({
   priorityImage?: boolean;
 }) {
   const controls = useAnimationControls();
+  const lastNudgeAtRef = useRef<number>(0);
 
   useEffect(() => {
-    if (!mobile && isActive) {
+    if (mobile) return;
+
+    if (isActive) {
+      const now = Date.now();
+      if (now - lastNudgeAtRef.current < NUDGE_MIN_INTERVAL_MS) return;
+      lastNudgeAtRef.current = now;
       void controls.start({
         rotate: [1.5, -1, 0],
         y: [0, -8, 0],
@@ -138,12 +148,7 @@ function CaseCardImpl({
   }
 
   return (
-    <motion.div
-      animate={controls}
-      className="w-[clamp(320px,60vw,860px)]"
-      initial={{ opacity: 1, x: 0, rotate: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-    >
+    <motion.div animate={controls} className="w-[clamp(320px,60vw,860px)]">
       {clipping}
     </motion.div>
   );
