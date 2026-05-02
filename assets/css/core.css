@@ -153,6 +153,9 @@
     transition:
         opacity 600ms var(--ease-out),
         transform 600ms var(--ease-out);
+    /* Pre-promote the compositor layer so the first reveal paint is smooth.
+       The hint is dropped after settle (see .reveal.is-visible / .active). */
+    will-change: opacity, transform;
 }
 
 .reveal--left {
@@ -167,6 +170,8 @@
 .reveal.active {
     opacity: 1;
     transform: none;
+    /* Free the GPU layer once the element has reached its rest state. */
+    will-change: auto;
 }
 
 .reveal-delay-1 {
