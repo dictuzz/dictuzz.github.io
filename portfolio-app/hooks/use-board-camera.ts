@@ -122,13 +122,15 @@ export function useBoardCamera({
 
     let isSubscribed = true;
 
+    // Subtle "breathing" while idle — small enough that it reads as the
+    // wall settling, not as a wobble that competes with the user's gaze.
     const playDrift = async () => {
       while (isSubscribed) {
-        const nextX = base.cameraX + (Math.random() - 0.5) * 8;
-        const nextY = base.cameraY + (Math.random() - 0.5) * 6;
+        const nextX = base.cameraX + (Math.random() - 0.5) * 4;
+        const nextY = base.cameraY + (Math.random() - 0.5) * 3;
 
-        const xAnim = animate(targetX, nextX, { duration: 4, ease: 'easeInOut' });
-        const yAnim = animate(targetY, nextY, { duration: 4, ease: 'easeInOut' });
+        const xAnim = animate(targetX, nextX, { duration: 6, ease: 'easeInOut' });
+        const yAnim = animate(targetY, nextY, { duration: 6, ease: 'easeInOut' });
 
         await Promise.all([xAnim, yAnim]);
       }
