@@ -111,7 +111,7 @@ export function RedString({
             }}
             key={`pin-${nodes[index].id}`}
             style={{ originX: `${cx}px`, originY: `${cy}px` }}
-            transition={{ type: 'spring', stiffness: 180, damping: 14 }}
+            transition={{ type: 'spring', stiffness: 220, damping: 24, mass: 1 }}
           >
             <circle cx={cx} cy={cy} fill={index <= activeIndex ? '#c0392b' : '#6b2020'} r={5} />
           </motion.g>
