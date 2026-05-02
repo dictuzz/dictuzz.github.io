@@ -12,8 +12,6 @@ import { lerp } from '@/lib/utils';
 
 // Camera configurations imported from config
 
-const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-
 interface Waypoint {
   cameraX: number;
   cameraY: number;
@@ -69,16 +67,18 @@ export function useBoardCamera({
   const targetX = useMotionValue(waypoints[0]?.cameraX ?? 0);
   const targetY = useMotionValue(waypoints[0]?.cameraY ?? 0);
 
+  // Tighter spring: camera tracks scroll input closely instead of drifting behind.
+  // Critical-ish damping (zeta ~= 1) keeps motion smooth without overshoot.
   const springX = useSpring(targetX, {
-    stiffness: 34,
-    damping: 14,
-    mass: 1.65,
+    stiffness: 220,
+    damping: 30,
+    mass: 1,
     restDelta: 0.5
   });
   const springY = useSpring(targetY, {
-    stiffness: 34,
-    damping: 14,
-    mass: 1.65,
+    stiffness: 220,
+    damping: 30,
+    mass: 1,
     restDelta: 0.5
   });
 
@@ -136,7 +136,9 @@ export function useBoardCamera({
     const bounded = Math.max(0, Math.min(value, 1));
     const nodeProgress = bounded * Math.max(nodes.length - 1, 0);
     const currentIndex = Math.min(Math.floor(nodeProgress), Math.max(nodes.length - 2, 0));
-    const localProgress = easeInOutCubic(nodeProgress - currentIndex);
+    // Linear interpolation between waypoints — camera tracks scroll 1:1.
+    // The cubic easing was adding perceptible settling between nodes.
+    const localProgress = nodeProgress - currentIndex;
     const from = waypoints[currentIndex] ?? waypoints[0];
     const to = waypoints[currentIndex + 1] ?? from;
 
