@@ -45,9 +45,10 @@ export function useBoardCamera({
   viewportHeight: number;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [progressValue, setProgressValue] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const driftTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastRoundedIndexRef = useRef<number>(0);
 
   const waypoints = useMemo<Waypoint[]>(
     () =>
@@ -90,10 +91,18 @@ export function useBoardCamera({
     offset: ['start start', 'end end']
   });
 
+  // Continuous scroll position in node-space (0..nodes.length-1) as a motion value.
+  // Cards / navigator subscribe to this directly via useTransform, so the per-frame
+  // scroll updates never trigger a React re-render of the board.
+  const nodeProgress = useTransform(scrollYProgress, (v) => {
+    const bounded = Math.max(0, Math.min(v, 1));
+    return bounded * Math.max(nodes.length - 1, 0);
+  });
+
   // Ensure scrollYProgress initializes activeIndex correctly if needed
   useEffect(() => {
     setActiveIndex(0);
-    setProgressValue(0);
+    lastRoundedIndexRef.current = 0;
   }, []);
 
   useEffect(() => {
@@ -134,11 +143,11 @@ export function useBoardCamera({
 
   useMotionValueEvent(scrollYProgress, 'change', (value) => {
     const bounded = Math.max(0, Math.min(value, 1));
-    const nodeProgress = bounded * Math.max(nodes.length - 1, 0);
-    const currentIndex = Math.min(Math.floor(nodeProgress), Math.max(nodes.length - 2, 0));
+    const progress = bounded * Math.max(nodes.length - 1, 0);
+    const currentIndex = Math.min(Math.floor(progress), Math.max(nodes.length - 2, 0));
     // Linear interpolation between waypoints — camera tracks scroll 1:1.
     // The cubic easing was adding perceptible settling between nodes.
-    const localProgress = nodeProgress - currentIndex;
+    const localProgress = progress - currentIndex;
     const from = waypoints[currentIndex] ?? waypoints[0];
     const to = waypoints[currentIndex + 1] ?? from;
 
@@ -147,8 +156,19 @@ export function useBoardCamera({
       targetY.set(lerp(from.cameraY, to.cameraY, localProgress));
     }
 
-    setProgressValue(nodeProgress);
-    setActiveIndex(Math.round(nodeProgress));
+    // Only commit React state when the rounded node actually changes — avoids
+    // re-rendering the board (and every memoized subtree) on every scroll tick.
+    const rounded = Math.round(progress);
+    if (rounded !== lastRoundedIndexRef.current) {
+      lastRoundedIndexRef.current = rounded;
+      setActiveIndex(rounded);
+    }
+
+    // React bails out when these setters are called with the same value,
+    // so per-tick calls don't trigger re-renders once they're already true.
+    if (progress > 0.05) {
+      setHasScrolled(true);
+    }
     setIsScrolling(true);
 
     if (driftTimerRef.current) {
@@ -166,8 +186,6 @@ export function useBoardCamera({
     };
   }, []);
 
-  const hasScrolled = progressValue > 0.05;
-
   const jumpToNode = (index: number) => {
     if (!sectionRef.current) return;
     const top = sectionRef.current.offsetTop + window.innerHeight * index;
@@ -181,7 +199,7 @@ export function useBoardCamera({
     springY,
     activeIndex,
     setActiveIndex,
-    progressValue,
+    nodeProgress,
     hasScrolled,
     jumpToNode
   };
