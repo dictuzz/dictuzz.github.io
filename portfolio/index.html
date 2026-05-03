@@ -1,365 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Operational Record · dictuzz — Systems Architect &amp; Automation Specialist</title>
+  <meta name="description" content="An editorial portfolio of Benedictus Richard Ricardo. Case files in workflow automation, governance, live operations, and readiness.">
+  <meta name="author" content="Benedictus Richard Ricardo">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://dictuzz.me/portfolio/">
 
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="Benedictus">
-    <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="dictuzz">
+  <meta name="theme-color" content="#f4ecdb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <title>The Operational Record · dictuzz — Systems Architect &amp; Automation Specialist</title>
-    <meta name="description" content="The Operational Record: an editorial portfolio of Benedictus Richard Ricardo (dictuzz). Case files in workflow automation, governance, live operations, and readiness from Bandung, Indonesia.">
-    <meta name="keywords" content="dictuzz portfolio, Benedictus Richard Ricardo, Systems Architect, Automation Specialist, workflow automation, KPI governance, live operations, vertical rescue, editorial portfolio, Bandung Indonesia">
-    <meta name="author" content="Benedictus Richard Ricardo">
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-    <link rel="canonical" href="https://dictuzz.me/portfolio/">
-    <meta name="theme-color" content="#f6efe1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Operational Record · dictuzz">
+  <meta property="og:description" content="An editorial portfolio of Benedictus Richard Ricardo. Case files in workflow automation, governance, live operations, and readiness.">
+  <meta property="og:url" content="https://dictuzz.me/portfolio/">
+  <meta property="og:image" content="https://dictuzz.me/assets/images/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="id_ID">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dictuzz.me/portfolio/">
-    <meta property="og:title" content="The Operational Record · dictuzz — Editorial Portfolio">
-    <meta property="og:description" content="Case files in workflow automation, governance, live operations, and readiness. Edited by Benedictus Richard Ricardo.">
-    <meta property="og:image" content="https://dictuzz.me/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="dictuzz">
-    <meta property="og:locale" content="en_US">
+  <link rel="alternate" hreflang="en" href="https://dictuzz.me/portfolio/?lang=en">
+  <link rel="alternate" hreflang="id" href="https://dictuzz.me/portfolio/?lang=id">
+  <link rel="alternate" hreflang="de" href="https://dictuzz.me/portfolio/?lang=de">
+  <link rel="alternate" hreflang="x-default" href="https://dictuzz.me/portfolio/">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://dictuzz.me/portfolio/">
-    <meta name="twitter:title" content="The Operational Record · dictuzz — Editorial Portfolio">
-    <meta name="twitter:description" content="Case files in workflow automation, governance, live operations, and readiness. Edited by Benedictus Richard Ricardo.">
-    <meta name="twitter:image" content="https://dictuzz.me/og-image.png">
-    <meta name="twitter:creator" content="@dictuzz">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap">
 
-    <script id="portfolio-structured-data" type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "@id": "https://dictuzz.me/portfolio/#page",
-        "url": "https://dictuzz.me/portfolio/",
-        "name": "The Operational Record",
-        "description": "Editorial portfolio of Benedictus Richard Ricardo, presenting case files in workflow automation, governance, live operations, and readiness.",
-        "isPartOf": { "@id": "https://dictuzz.me/#website" },
-        "about": { "@id": "https://dictuzz.me/#person" }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "@id": "https://dictuzz.me/portfolio/#cases",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://dictuzz.me/portfolio/cases/automation-mandate/", "name": "The Automation Mandate" },
-          { "@type": "ListItem", "position": 2, "url": "https://dictuzz.me/portfolio/cases/kpi-governance-record/", "name": "KPI-Based Governance" },
-          { "@type": "ListItem", "position": 3, "url": "https://dictuzz.me/portfolio/cases/large-scale-event-ops/", "name": "Large-Scale Event Ops" },
-          { "@type": "ListItem", "position": 4, "url": "https://dictuzz.me/portfolio/cases/vertical-rescue-ops/", "name": "Vertical Rescue Ops" }
-        ]
-      }
-    ]
-    </script>
+  <link rel="stylesheet" href="/portfolio/portfolio.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="prefetch" href="/">
-    <link rel="prefetch" href="/resume/">
-    <link rel="preload" href="/portfolio/portfolio.css" as="style">
-    <link rel="preload" href="/portfolio/assets/press-auto.png" as="image">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap">
-    </noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-    </noscript>
-    <link rel="stylesheet" href="/portfolio/portfolio.css">
+  <script type="application/ld+json" data-jsonld></script>
 </head>
+<body class="portfolio-page" data-page="landing">
 
-<body class="portfolio-page">
-<a href="#masthead" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="topbar">
+  <header class="topbar" role="banner">
     <div class="topbar__inner">
-        <a href="/portfolio/" class="topbar__brand">dictuzz<small>The Operational Record</small></a>
-        <nav class="topbar__nav" aria-label="Primary">
-            <a href="/" class="topbar__nav-primary">Home</a>
-            <a href="/resume/">Resume</a>
-            <a href="#cases">Case Files</a>
-            <a href="#capabilities">Beats</a>
-            <a href="#letter">Contact</a>
-            <button type="button" class="topbar__theme" data-theme-toggle aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
-            </button>
-        </nav>
+      <a class="topbar__brand" href="/">
+        <strong data-i18n="brand">dictuzz</strong>
+        <span data-i18n="brandSub">The Operational Record</span>
+      </a>
+      <nav class="topbar__nav" aria-label="Primary" data-topbar-nav></nav>
+      <div class="topbar__tools">
+        <div class="lang-switcher" role="group" data-lang-switcher></div>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch theme"></button>
+      </div>
     </div>
-    <span class="topbar__progress" data-progress aria-hidden="true"></span>
-</header>
+    <div class="topbar__progress" data-progress></div>
+  </header>
 
-<main class="shell" id="masthead">
+  <main id="main" class="shell">
 
-    <!-- ─── Masthead ─────────────────────────────────────── -->
-    <section class="masthead" aria-label="Masthead">
-        <div class="masthead__strap">
-            <span>Vol. I — No. 1</span>
-            <span data-edition-date>Bandung, Indonesia</span>
-            <span>Edited &amp; Built by dictuzz</span>
-        </div>
-        <h1 class="masthead__title">The Operational <em>Record</em></h1>
-        <p class="masthead__subtitle">An editorial portfolio of systems work — automation, governance, live operations, and readiness — kept on the public file by Benedictus Richard Ricardo.</p>
-        <div class="masthead__rule"><span>A Systems &amp; Automation Magazine</span></div>
+    <section class="masthead reveal" aria-labelledby="masthead-title">
+      <div class="masthead__strap">
+        <span data-masthead-strap-left>Vol. I — No. 1</span>
+        <span data-masthead-strap-center>Bandung · Jakarta · Indonesia</span>
+        <span data-masthead-strap-right>Edited &amp; set in Fraunces</span>
+      </div>
+      <h1 class="masthead__wordmark" id="masthead-title" data-masthead-wordmark>The Operational Record</h1>
+      <p class="masthead__subtitle" data-masthead-subtitle></p>
+      <p class="masthead__rule"><span data-masthead-rule>A Systems &amp; Automation Magazine</span></p>
     </section>
 
-    <!-- ─── Lead story (FROM THE EDITOR) ─────────────────── -->
-    <section class="section section--tight" aria-labelledby="lead-heading">
-        <div class="section__head">
-            <span class="section__label">From the Editor</span>
-            <span class="section__meta">Issue 01 · Standing Feature</span>
-        </div>
-
-        <article class="lead reveal">
-            <div class="lead__main">
-                <div class="lead__kicker kicker">Profile · Standing Feature</div>
-                <h2 id="lead-heading" class="lead__headline">Building systems that scale operations and eliminate friction.</h2>
-                <p class="lead__deck">A working file on how a systems-minded operator turns repeated friction into dependable routine — across reporting, governance, live programs, and field readiness.</p>
-
-                <div class="byline">
-                    <span>By <strong>Benedictus Richard Ricardo</strong></span>
-                    <span>Systems Architect &amp; Automation Specialist</span>
-                    <span>·</span>
-                    <span>Filed from Bandung, ID · UTC+7</span>
-                </div>
-
-                <div class="lead__body">
-                    <p>This portfolio is arranged like an evidence wall because the work itself is investigative. Find the friction. Trace the pattern. Build the structure. Measure the effect.</p>
-                    <p>I work best in environments where operations are complex, ownership is distributed, and the cost of confusion is real. My role is usually some mix of investigator, systems builder, and execution stabilizer — the person who studies the recurring failures and rebuilds the workflow so the next cycle runs cleaner than the last.</p>
-                    <p>Good systems do not feel complicated when they are used. They make the next step obvious, reduce wasted motion, and help people act with more confidence under pressure. Alongside hands-on operational work, I am studying Data Science and continuing to refine the way process design, evidence, and execution fit together.</p>
-                </div>
-
-                <blockquote class="lead__pull">“Systems before spectacle. Structured, calm, evidence-led.”</blockquote>
-            </div>
-
-            <div class="lead__divider" aria-hidden="true"></div>
-
-            <aside class="lead__side">
-                <div class="kicker kicker--mute" style="margin-bottom: 12px;">At a glance</div>
-                <dl class="quickfacts">
-                    <li><dt>Base</dt><dd>Bandung, Indonesia · UTC+7</dd></li>
-                    <li><dt>Focus</dt><dd>Ops, automation, governance</dd></li>
-                    <li><dt>Lane</dt><dd>Systems-minded execution</dd></li>
-                    <li><dt>Style</dt><dd>Structured, calm, evidence-led</dd></li>
-                    <li><dt>Value</dt><dd>Repeated friction → dependable routine</dd></li>
-                </dl>
-            </aside>
-        </article>
+    <section class="feature reveal" aria-labelledby="feature-headline">
+      <div class="feature__copy">
+        <p class="feature__kicker" data-feature-kicker></p>
+        <h2 class="feature__headline" id="feature-headline" data-feature-headline></h2>
+        <p class="feature__deck" data-feature-deck></p>
+        <p class="feature__byline" data-feature-byline></p>
+        <p class="feature__meta" data-feature-meta></p>
+        <a class="feature__cta" data-feature-link href="#"><span>Read the file</span></a>
+      </div>
+      <figure class="feature__media">
+        <img data-feature-image alt="" loading="eager" decoding="async">
+        <figcaption class="feature__caption" data-feature-caption></figcaption>
+      </figure>
     </section>
 
-    <!-- ─── Front-page case files ────────────────────────── -->
-    <section class="section" id="cases" aria-labelledby="cases-heading">
-        <div class="section__head">
-            <h2 id="cases-heading" class="section__label">Case Files · The Operational Record</h2>
-            <span class="section__meta">Four files on the public record</span>
-        </div>
-
-        <div class="front">
-            <!-- Featured case -->
-            <a class="case-card case-card--featured reveal" href="/portfolio/cases/automation-mandate/">
-                <figure class="case-card__media">
-                    <img src="/portfolio/assets/press-auto.png" alt="Operational reporting and automation evidence board graphic" loading="eager" decoding="async" width="1200" height="750">
-                    <figcaption class="case-card__status">VOL. I / NO. 1 · CLASSIFIED</figcaption>
-                </figure>
-                <div class="case-card__category">Workflow Automation · Home Digital Indonesia</div>
-                <h3 class="case-card__title">The Automation Mandate</h3>
-                <p class="case-card__deck">Built reporting and SOP systems that removed 12+ hours of weekly manual work — turning a person-dependent reporting cycle into a shared, repeatable rhythm.</p>
-                <div class="case-card__byline">By Benedictus Richard Ricardo · Jul 2024 – Sep 2025</div>
-            </a>
-
-            <!-- Side feature -->
-            <a class="case-card case-card--side reveal" href="/portfolio/cases/kpi-governance-record/">
-                <figure class="case-card__media">
-                    <img src="/portfolio/assets/press-gov.png" alt="Governance case record graphic showing an organized institutional file" loading="lazy" decoding="async" width="900" height="720">
-                    <figcaption class="case-card__status">VOL. I / NO. 2 · DECLASSIFIED</figcaption>
-                </figure>
-                <div class="case-card__category">Governance &amp; Leadership · SMA Santa Maria 2</div>
-                <h3 class="case-card__title">KPI-Based Governance</h3>
-                <p class="case-card__deck">Led 34 members across 10 divisions through a structured KPI rhythm — a council that learned to operate with more maturity, accountability, and visible momentum.</p>
-                <div class="case-card__byline">President · Nov 2021 – Nov 2022</div>
-            </a>
-
-            <!-- Minor case 1 -->
-            <a class="case-card case-card--minor reveal" href="/portfolio/cases/large-scale-event-ops/">
-                <figure class="case-card__media">
-                    <img src="/portfolio/assets/press-events.png" alt="Large-scale event operations case image showing a live audience and stage environment" loading="lazy" decoding="async" width="900" height="540">
-                    <figcaption class="case-card__status">VOL. I / NO. 3 · ACTIVE</figcaption>
-                </figure>
-                <div class="case-card__category">Live Operations · Ultimate Event Organizer</div>
-                <h3 class="case-card__title">Large-Scale Event Ops</h3>
-                <p class="case-card__deck">Kept live execution stable across 1,000+ attendee environments and high-pressure transitions; MC-led Youth Mass 2025 for 500+ participants.</p>
-                <div class="case-card__byline">Stage Coordinator &amp; MC · 2022 – 2025</div>
-            </a>
-
-            <!-- Minor case 2 -->
-            <a class="case-card case-card--minor reveal" href="/portfolio/cases/vertical-rescue-ops/">
-                <figure class="case-card__media">
-                    <img src="/portfolio/assets/press-rescue.png" alt="Vertical rescue and training readiness case image" loading="lazy" decoding="async" width="900" height="540">
-                    <figcaption class="case-card__status">VOL. I / NO. 4 · ONGOING</figcaption>
-                </figure>
-                <div class="case-card__category">Training &amp; Readiness · Vertical Rescue Indonesia</div>
-                <h3 class="case-card__title">Vertical Rescue Ops</h3>
-                <p class="case-card__deck">Supported equipment readiness, technical training, and operational discipline over 4+ active years — the quieter work that keeps the field dependable.</p>
-                <div class="case-card__byline">Assistant Instructor · Jan 2021 – Present</div>
-            </a>
-
-            <!-- Minor case 3: editor's note placeholder for grid balance / column rhythm -->
-            <article class="case-card case-card--minor reveal" aria-label="Editor's note">
-                <figure class="case-card__media" style="display: grid; place-items: center; padding: 24px; text-align: center;">
-                    <div>
-                        <div class="kicker kicker--mute" style="margin-bottom: 8px;">From the desk</div>
-                        <p style="font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.4; color: var(--ink-soft); margin: 0;">More files in preparation. The wall is never finished.</p>
-                    </div>
-                </figure>
-                <div class="case-card__category">Editor's Note · Standing</div>
-                <h3 class="case-card__title">The wall is a living document.</h3>
-                <p class="case-card__deck">Each file is a small thesis: what was wrong, what was built, and what changed because of it. Written from inside the work, not in retrospect.</p>
-                <div class="case-card__byline">Filed by the Editor</div>
-            </article>
-        </div>
+    <section class="issue" id="cases" aria-labelledby="issue-label">
+      <div class="issue__head">
+        <h2 class="issue__label" id="issue-label" data-index-label></h2>
+        <p class="issue__note" data-index-note></p>
+      </div>
+      <div class="dispatches" data-secondary-list></div>
     </section>
 
-    <!-- ─── Capabilities (Beats covered) ─────────────────── -->
-    <section class="section" id="capabilities" aria-labelledby="capabilities-heading">
-        <div class="section__head">
-            <h2 id="capabilities-heading" class="section__label">Beats Covered</h2>
-            <span class="section__meta">Five operating disciplines</span>
-        </div>
-
-        <div class="capabilities">
-            <div class="capability reveal">
-                <div class="capability__num">№ 01</div>
-                <h3 class="capability__title">Systems Architecture</h3>
-                <p class="capability__summary">Define the operating model, the handoff points, and the evidence needed for a process to remain stable.</p>
-                <ul class="capability__skills">
-                    <li>Process mapping</li>
-                    <li>Decision flow design</li>
-                    <li>Operational structure</li>
-                    <li>Standards and controls</li>
-                </ul>
-            </div>
-            <div class="capability reveal">
-                <div class="capability__num">№ 02</div>
-                <h3 class="capability__title">Workflow Automation</h3>
-                <p class="capability__summary">Remove repetitive work from recurring cycles and replace it with tools people can actually maintain.</p>
-                <ul class="capability__skills">
-                    <li>Excel automation</li>
-                    <li>Reporting systems</li>
-                    <li>SOP design</li>
-                    <li>Recurring workflow cleanup</li>
-                </ul>
-            </div>
-            <div class="capability reveal">
-                <div class="capability__num">№ 03</div>
-                <h3 class="capability__title">Governance &amp; Leadership</h3>
-                <p class="capability__summary">Create rhythm, accountability, and clarity across teams that need a cleaner operating cadence.</p>
-                <ul class="capability__skills">
-                    <li>KPI governance</li>
-                    <li>Team leadership</li>
-                    <li>Program structure</li>
-                    <li>Cross-division coordination</li>
-                </ul>
-            </div>
-            <div class="capability reveal">
-                <div class="capability__num">№ 04</div>
-                <h3 class="capability__title">Live Operations</h3>
-                <p class="capability__summary">Keep execution steady when timing, sequencing, and reliability matter in front of real people.</p>
-                <ul class="capability__skills">
-                    <li>Stage coordination</li>
-                    <li>Run-of-show planning</li>
-                    <li>Risk reduction</li>
-                    <li>On-site decision making</li>
-                </ul>
-            </div>
-            <div class="capability reveal">
-                <div class="capability__num">№ 05</div>
-                <h3 class="capability__title">Training &amp; Readiness</h3>
-                <p class="capability__summary">Support technical preparedness through equipment discipline, practice structure, and controlled repetition.</p>
-                <ul class="capability__skills">
-                    <li>Equipment readiness</li>
-                    <li>Training support</li>
-                    <li>Safety discipline</li>
-                    <li>Field coordination</li>
-                </ul>
-            </div>
-        </div>
+    <section class="dossier reveal" aria-labelledby="dossier-title">
+      <div class="dossier__copy">
+        <p class="dossier__kicker" data-editor-kicker></p>
+        <h2 class="dossier__title" id="dossier-title" data-editor-title></h2>
+        <p class="dossier__lede" data-editor-lede></p>
+        <div class="dossier__body" data-editor-body></div>
+      </div>
+      <dl class="dossier__facts" data-editor-facts></dl>
     </section>
 
-    <!-- ─── Profile feature ───────────────────────────────── -->
-    <section class="section" aria-labelledby="profile-heading">
-        <div class="section__head">
-            <span class="section__label">Profile Dossier · Standing</span>
-            <span class="section__meta">A magazine-style sidebar feature</span>
-        </div>
-
-        <div class="profile">
-            <div class="profile__main reveal">
-                <h2 id="profile-heading" class="profile__lead">Turning repeated friction into dependable routine — across reporting, governance, live operations, and readiness.</h2>
-                <div class="profile__body">
-                    <p>I work best in environments where operations are complex, ownership is distributed, and the cost of confusion is real. My role is usually some mix of investigator, systems builder, and execution stabilizer.</p>
-                    <p>Good systems do not feel complicated when they are used. They make the next step obvious, reduce wasted motion, and help people act with more confidence under pressure.</p>
-                    <p>Alongside hands-on operational work, I am studying Data Science and continuing to refine the way process design, evidence, and execution fit together.</p>
-                </div>
-            </div>
-
-            <aside class="profile__facts reveal" aria-label="Profile facts">
-                <h3>On the record</h3>
-                <dl>
-                    <div><dt>Working style</dt><dd>Structured, calm, evidence-led</dd></div>
-                    <div><dt>Primary value</dt><dd>Turning repeated friction into dependable routine</dd></div>
-                    <div><dt>Signature move</dt><dd>Systems before spectacle</dd></div>
-                    <div><dt>Currently studying</dt><dd>Data Science · Universitas Terbuka</dd></div>
-                    <div><dt>Languages</dt><dd>English, Indonesian, German</dd></div>
-                </dl>
-            </aside>
-        </div>
+    <section class="contact reveal" id="contact" aria-labelledby="contact-title">
+      <div class="contact__strap">
+        <span data-contact-kicker></span>
+        <span data-contact-strap-mid>Open file</span>
+        <span data-contact-strap-end>Available for conversations</span>
+      </div>
+      <h2 class="contact__title" id="contact-title" data-contact-title></h2>
+      <p class="contact__body" data-contact-body></p>
+      <div class="contact__actions" data-contact-actions></div>
     </section>
 
-    <!-- ─── Letter from the editor (contact) ─────────────── -->
-    <section class="section" id="letter" aria-labelledby="letter-heading">
-        <div class="section__head">
-            <span class="section__label">Letter from the Editor</span>
-            <span class="section__meta">Open file · Available for conversations</span>
-        </div>
+  </main>
 
-        <div class="letter reveal">
-            <div class="letter__kicker">A Note to the Reader</div>
-            <h2 id="letter-heading" class="letter__title">Available for a focused set of systems, automation, and operations conversations.</h2>
-            <p class="letter__body">Best fit for teams or roles that need cleaner execution, more dependable process design, or stronger operational structure. Open to conversations across GMT+7 and nearby time zones.</p>
+  <footer class="global-footer" aria-label="Site footer"></footer>
 
-            <div class="letter__signature">— Benedictus Richard Ricardo</div>
-            <div class="letter__role">Systems Architect &amp; Automation Specialist</div>
-
-            <div class="letter__actions">
-                <a class="btn btn--primary" href="mailto:contact@dictuzz.me"><i class="fas fa-envelope" aria-hidden="true"></i> contact@dictuzz.me</a>
-                <a class="btn" href="https://calendar.app.google/39u2qGH6ybaFenhdA" target="_blank" rel="noopener noreferrer"><i class="fas fa-calendar" aria-hidden="true"></i> Schedule a meeting</a>
-                <a class="btn" href="https://linkedin.com/in/dictuzz" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer class="global-footer" aria-label="Site footer"></footer>
-
-<script src="/portfolio/portfolio.js" defer></script>
+  <script src="/portfolio/portfolio.js" type="module"></script>
 </body>
-
 </html>
