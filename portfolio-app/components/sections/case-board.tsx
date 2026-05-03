@@ -276,7 +276,7 @@ export function CaseBoardSection({
               boardNodeRefs.current[0] = element;
             }}
             style={{ left: INTRO_NODE.boardX, top: INTRO_NODE.boardY }}
-            transition={{ type: 'spring', stiffness: 86, damping: 18 }}
+            transition={{ type: 'spring', stiffness: 220, damping: 28, mass: 1 }}
           >
             <IntroCard home={home} />
           </motion.div>
@@ -297,7 +297,7 @@ export function CaseBoardSection({
                   top: caseItem.boardY,
                   zIndex: index + 1 === activeIndex ? 22 : 12
                 }}
-                transition={{ type: 'spring', stiffness: 86, damping: 18 }}
+                transition={{ type: 'spring', stiffness: 220, damping: 28, mass: 1 }}
               >
                 <CaseCard
                   caseItem={caseItem}
@@ -316,7 +316,7 @@ export function CaseBoardSection({
               boardNodeRefs.current[boardNodes.length - 1] = element;
             }}
             style={{ left: CONTACT_NODE.boardX, top: CONTACT_NODE.boardY }}
-            transition={{ type: 'spring', stiffness: 86, damping: 18 }}
+            transition={{ type: 'spring', stiffness: 220, damping: 28, mass: 1 }}
           >
             <ContactCard home={home} />
           </motion.div>
