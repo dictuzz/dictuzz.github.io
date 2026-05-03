@@ -704,3 +704,23 @@ h3 {
     top: 16px;
     opacity: 1;
 }
+
+/* ═══════════════════════════════════════════
+   Reduced motion: collapse hero entrance + decorative loops to instant.
+   Mirrors the rule in css/site.css so users who prefer reduced motion
+   don't sit through slideUp/nameReveal/spinSlow/pulse/bounce.
+   ═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

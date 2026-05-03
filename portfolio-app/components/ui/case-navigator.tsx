@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useTransform, type MotionValue } from 'framer-motion';
 import { useMemo } from 'react';
 
 export type BoardNavigatorItem = {
@@ -13,15 +13,25 @@ export function CaseNavigator({
   activeIndex,
   items,
   onJump,
-  progress
+  nodeProgress
 }: {
   activeIndex: number;
   items: BoardNavigatorItem[];
   onJump: (index: number) => void;
-  progress: number;
+  nodeProgress: MotionValue<number>;
 }) {
   const activeItem = useMemo(() => items[activeIndex] ?? items[0], [activeIndex, items]);
-  const progressPercent = items.length > 1 ? Math.min(Math.max(progress / (items.length - 1), 0), 1) * 100 : 0;
+  // Derive progress bar styles from the shared motion value so the navigator
+  // tracks scroll on the rAF/compositor path without re-rendering.
+  const maxIndex = Math.max(items.length - 1, 1);
+  const progressWidth = useTransform(nodeProgress, (p) => {
+    const pct = Math.min(Math.max(p / maxIndex, 0), 1) * 100;
+    return `calc((100% - 24px) * ${pct / 100})`;
+  });
+  const progressLeft = useTransform(nodeProgress, (p) => {
+    const pct = Math.min(Math.max(p / maxIndex, 0), 1) * 100;
+    return `calc(12px + (100% - 24px) * ${pct / 100})`;
+  });
 
   return (
     <aside className="pointer-events-auto absolute bottom-4 left-1/2 z-30 w-[min(88vw,470px)] -translate-x-1/2 rounded-[18px] border border-white/10 bg-[rgba(15,18,16,0.78)] px-3 py-3 shadow-[var(--shadow-deep)] backdrop-blur-md">
@@ -30,11 +40,11 @@ export function CaseNavigator({
           <div className="absolute left-3 right-3 top-1/2 h-px -translate-y-1/2 bg-[rgba(242,237,228,0.16)]" />
           <motion.div
             className="absolute left-3 top-1/2 h-px -translate-y-1/2 bg-[rgba(242,237,228,0.7)]"
-            style={{ width: `calc((100% - 24px) * ${progressPercent / 100})` }}
+            style={{ width: progressWidth }}
           />
           <motion.div
             className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[rgba(242,237,228,0.8)] bg-[var(--chalk-white)] shadow-[0_0_10px_rgba(255,255,255,0.28)]"
-            style={{ left: `calc(12px + (100% - 24px) * ${progressPercent / 100})` }}
+            style={{ left: progressLeft }}
           />
           <div className="absolute inset-0 flex items-center justify-between">
             {items.map((entry, index) => (

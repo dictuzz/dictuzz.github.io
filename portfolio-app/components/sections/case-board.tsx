@@ -2,9 +2,12 @@
 
 import {
   motion,
-  useReducedMotion
+  useReducedMotion,
+  useSpring,
+  useTransform,
+  type MotionValue
 } from 'framer-motion';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import type { PortfolioHomeData } from '@/content/types';
 import type { BoardCase } from '@/data/cases';
 import { ChalkboardBackground } from '@/components/ui/chalkboard-bg';
@@ -19,16 +22,61 @@ import { useBoardCamera } from '@/hooks/use-board-camera';
 import { BOARD_CONFIG, INTRO_NODE, CONTACT_NODE } from '@/config/board';
 import { lerp, smoothstep } from '@/lib/utils';
 
+// Card focus spring: tracks the smoothstep falloff target without lag.
+// Critical-ish damping (zeta ~= 1) keeps motion smooth without overshoot.
+const FOCUS_SPRING = { stiffness: 220, damping: 28, mass: 1 } as const;
+
 // Smooth card focus: as the active node moves away by 0..1.5 units of node-space,
 // scale eases from 1.0 -> 0.92 and opacity eases from 1.0 -> opacityFar.
 // Continuous (no step jumps) so cards drift in/out of focus naturally.
-const focusFalloff = (distance: number, opacityFar: number) => {
+function focusFalloff(distance: number, opacityFar: number) {
   const eased = smoothstep(distance / 1.5);
   return {
     scale: lerp(1, 0.92, eased),
     opacity: lerp(1, opacityFar, eased)
   };
-};
+}
+
+// Per-card wrapper that derives scale + opacity from the shared nodeProgress
+// motion value via useTransform → useSpring. This keeps the visual update on
+// the rAF/compositor path; the parent React tree is never re-rendered when
+// scrollYProgress ticks.
+function FocusedNode({
+  cardIndex,
+  nodeProgress,
+  opacityFar,
+  className,
+  style,
+  setRef,
+  children
+}: {
+  cardIndex: number;
+  nodeProgress: MotionValue<number>;
+  opacityFar: number;
+  className?: string;
+  style?: React.CSSProperties;
+  setRef?: (element: HTMLDivElement | null) => void;
+  children: ReactNode;
+}) {
+  const targetScale = useTransform(nodeProgress, (p) =>
+    focusFalloff(Math.abs(p - cardIndex), opacityFar).scale
+  );
+  const targetOpacity = useTransform(nodeProgress, (p) =>
+    focusFalloff(Math.abs(p - cardIndex), opacityFar).opacity
+  );
+  const scale = useSpring(targetScale, FOCUS_SPRING);
+  const opacity = useSpring(targetOpacity, FOCUS_SPRING);
+
+  return (
+    <motion.div
+      className={className}
+      ref={setRef}
+      style={{ ...style, scale, opacity, willChange: 'transform, opacity' }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 // Configs imported from '@/config/board'
 
@@ -152,7 +200,7 @@ export function CaseBoardSection({
     springY,
     activeIndex,
     setActiveIndex,
-    progressValue,
+    nodeProgress,
     hasScrolled,
     jumpToNode
   } = useBoardCamera({
@@ -217,7 +265,10 @@ export function CaseBoardSection({
       style={{ height: `${Math.max(boardNodes.length, 1) * 100}vh` }}
     >
       <div className="fixed inset-0 h-screen w-screen overflow-hidden">
-        <motion.div className="absolute inset-0 z-0" style={{ x: backgroundX, y: backgroundY }}>
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{ x: backgroundX, y: backgroundY, willChange: 'transform' }}
+        >
           <ChalkboardBackground />
         </motion.div>
 
@@ -258,7 +309,8 @@ export function CaseBoardSection({
             width: BOARD_CONFIG.CANVAS_WIDTH,
             height: BOARD_CONFIG.CANVAS_HEIGHT,
             x: springX,
-            y: springY
+            y: springY,
+            willChange: 'transform'
           }}
         >
           <RedString
@@ -269,60 +321,63 @@ export function CaseBoardSection({
             orientation="horizontal"
           />
 
-          <motion.div
-            animate={focusFalloff(Math.abs(progressValue - 0), 0.5)}
+          <FocusedNode
+            cardIndex={0}
             className="absolute z-20 w-[clamp(320px,60vw,860px)]"
-            ref={(element) => {
+            nodeProgress={nodeProgress}
+            opacityFar={0.5}
+            setRef={(element) => {
               boardNodeRefs.current[0] = element;
             }}
             style={{ left: INTRO_NODE.boardX, top: INTRO_NODE.boardY }}
-            transition={{ type: 'spring', stiffness: 220, damping: 28, mass: 1 }}
           >
             <IntroCard home={home} />
-          </motion.div>
+          </FocusedNode>
 
           {cases.map((caseItem, index) => {
-            const nodeDistance = Math.abs(progressValue - (index + 1));
-
+            const cardIndex = index + 1;
+            const isActive = cardIndex === activeIndex;
             return (
-              <motion.div
-                animate={focusFalloff(nodeDistance, 0.42)}
+              <FocusedNode
+                cardIndex={cardIndex}
                 className="absolute"
                 key={caseItem.id}
-                ref={(element) => {
-                  boardNodeRefs.current[index + 1] = element;
+                nodeProgress={nodeProgress}
+                opacityFar={0.42}
+                setRef={(element) => {
+                  boardNodeRefs.current[cardIndex] = element;
                 }}
                 style={{
                   left: caseItem.boardX,
                   top: caseItem.boardY,
-                  zIndex: index + 1 === activeIndex ? 22 : 12
+                  zIndex: isActive ? 22 : 12
                 }}
-                transition={{ type: 'spring', stiffness: 220, damping: 28, mass: 1 }}
               >
-                <CaseCard
-                  caseItem={caseItem}
-                  isActive={index + 1 === activeIndex}
-                  priorityImage={index === 0}
-                />
-              </motion.div>
+                <CaseCard caseItem={caseItem} isActive={isActive} priorityImage={index === 0} />
+              </FocusedNode>
             );
           })}
 
-          <motion.div
-            animate={focusFalloff(Math.abs(progressValue - (boardNodes.length - 1)), 0.5)}
+          <FocusedNode
+            cardIndex={boardNodes.length - 1}
             className="absolute z-20 w-[clamp(320px,60vw,860px)]"
-            id="dispatch"
-            ref={(element) => {
+            nodeProgress={nodeProgress}
+            opacityFar={0.5}
+            setRef={(element) => {
               boardNodeRefs.current[boardNodes.length - 1] = element;
             }}
             style={{ left: CONTACT_NODE.boardX, top: CONTACT_NODE.boardY }}
-            transition={{ type: 'spring', stiffness: 220, damping: 28, mass: 1 }}
           >
             <ContactCard home={home} />
-          </motion.div>
+          </FocusedNode>
         </motion.div>
 
-        <CaseNavigator activeIndex={activeIndex} items={boardNodes} onJump={jumpToNode} progress={progressValue} />
+        <CaseNavigator
+          activeIndex={activeIndex}
+          items={boardNodes}
+          nodeProgress={nodeProgress}
+          onJump={jumpToNode}
+        />
       </div>
     </section>
   );
