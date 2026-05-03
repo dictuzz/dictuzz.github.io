@@ -44,9 +44,6 @@ Jalankan:
 ```bash
 npm run validate:content
 npm test
-cd portfolio-app
-npm test
-npm run typecheck
 ```
 
 Validator akan menolak:

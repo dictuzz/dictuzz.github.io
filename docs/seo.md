@@ -39,7 +39,8 @@ All OG images include `og:image:width` (1200) and `og:image:height` (630). All p
 | `/` | `Person`, `WebSite`, `ProfilePage` | Pre-populated in HTML, updated by JS |
 | `/resume/` | `BreadcrumbList` (static), `Person`, `ProfilePage` (JS) | Hybrid |
 | `/terms/` | `BreadcrumbList`, `WebPage` | Static HTML |
-| `/portfolio/` | (Next.js managed) | SSG |
+| `/portfolio/` | `CollectionPage`, `ItemList` | Static HTML |
+| `/portfolio/cases/<slug>/` | `Article` | Static HTML |
 
 ### Person Schema (Homepage)
 Includes: name, alternateName, jobTitle, description, url, image, email, nationality, address, sameAs (7 social profiles + WhatsApp), knowsAbout (6 skills).
@@ -50,16 +51,15 @@ Extended with: alumniOf, detailed knowsAbout from skills collections, section-le
 ## Sitemap
 
 - Located at `/sitemap.xml`, referenced from `/robots.txt`
-- Includes: `/`, `/resume/`, `/portfolio/`, `/terms/`
+- Includes: `/`, `/resume/`, `/portfolio/`, all `/portfolio/cases/<slug>/`, `/terms/`
 - Each entry has `<lastmod>`, `<changefreq>`, and `<priority>`
-- Excludes: `/404.html`, `/portfolio-app/`, `/scripts/`, `/tests/`
+- Excludes: `/404.html`, `/scripts/`, `/tests/`
 
 ## robots.txt
 
 ```
 User-agent: *
 Allow: /
-Disallow: /portfolio-app/
 Disallow: /scripts/
 Disallow: /tests/
 Disallow: /node_modules/

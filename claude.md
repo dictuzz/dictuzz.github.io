@@ -9,18 +9,21 @@
 
 ## 0. TL;DR (read this first)
 
-- This repo is **two products served from one domain** (`https://dictuzz.me`):
-  1. A **static site** (root `index.html`, `/resume/`, `/terms/`, `/404.html`) built from hand-written HTML + vanilla ES modules + plain CSS.
-  2. A **Next.js 16 app** in `portfolio-app/` mounted under `/portfolio/`, password-protected via cookie + middleware (`proxy.ts`).
-- A folder named **`portfolio/`** at repo root is the **published static export** of an older portfolio build. **Do not hand-edit it.** The current source of truth for the portfolio is `portfolio-app/`. The legacy `portfolio/` is kept only as the existing live mirror under the GitHub Pages deploy.
-- All shared content (profile, contact, socials, SEO, navigation, home folders, resume locales, portfolio case studies) lives as **JSON in `/content/`**. Both surfaces consume the same JSON.
+- This repo is **one static product** served at `https://dictuzz.me` from GitHub Pages: hand-written HTML, plain CSS, vanilla JS, no build step, no framework runtime.
+- Public surfaces:
+  1. Root homepage (`/index.html`) — link-hub bio card.
+  2. Resume (`/resume/`) — long-form, i18n (EN/ID/DE).
+  3. Portfolio (`/portfolio/`) — _The Operational Record_, an NYT-inspired editorial magazine treatment with a landing edition + per-case-file long-form articles in `/portfolio/cases/<slug>/`.
+  4. Terms (`/terms/`).
+  5. `404.html` — deliberate retro arcade aesthetic break (its own token stack).
+- The previous **Next.js portfolio app** (`portfolio-app/`) and the published static-export mirror at the root `portfolio/` have been **removed**. The current portfolio is hand-written HTML + CSS + JS that uses the same Fraunces + Manrope type system as the rest of the site.
+- All shared copy (profile, contact, socials, SEO, navigation, home folders, resume locales, portfolio case studies) lives as **JSON in `/content/`**. Portfolio case-study HTML is kept in sync with `/content/portfolio/case-studies.json`; both must agree.
 - **Quality gate (must pass before merge):**
   - `npm run validate:content` (root)
   - `npm test` (root, Node `--test` runner)
-  - `cd portfolio-app && npm test && npm run typecheck && npm run build`
-- **CI:** `.github/workflows/deploy.yml` runs `validate:content` + `portfolio-app` typecheck + build on push to `main`. Node **20** in CI.
-- **Deploy:** GitHub Pages serves the entire repo as-is (`.nojekyll` is present, `CNAME` is `dictuzz.me`). The current portfolio publish flow is **disabled** (`portfolio-app/scripts/publish.mjs` throws on purpose) because the portfolio now relies on cookies + middleware, which static export cannot do. The legacy `portfolio/` folder is what is actually being served at `/portfolio/` on the live site.
-- **Branding rule:** never break the contract enforced by `js/site-content.js` (`validateSharedSiteConfig`, `validateHomeContent`, `validateResumeContent`) and `portfolio-app/lib/content.ts`. Validators reject `[TODO: ...]` placeholders, missing required fields, and duplicate slugs/aliases.
+- **CI:** `.github/workflows/deploy.yml` runs `validate:content` + root tests on push to `main` and on PRs. Node **20** in CI.
+- **Deploy:** GitHub Pages serves the entire repo as-is (`.nojekyll` is present, `CNAME` is `dictuzz.me`). No publish step.
+- **Branding rule:** never break the contract enforced by `js/site-content.js` (`validateSharedSiteConfig`, `validateHomeContent`, `validateResumeContent`) and the `validatePortfolioCaseStudies` / `validatePortfolioHome` helpers in `scripts/validate-content.mjs`. Validators reject `[TODO: ...]` placeholders, missing required fields, and duplicate slugs/aliases.
 
 ---
 
@@ -43,14 +46,13 @@ These values are **canonical**. They appear in many files and must be kept in sy
 | Secondary blue | `#335c87` |
 | Display font (root + resume) | `Fraunces` (serif) |
 | Body font (root + resume) | `Manrope` (sans-serif) |
-| Portfolio headline font | `Playfair Display` |
-| Portfolio body font | `IM Fell English` |
-| Portfolio mono / typewriter | `Special Elite` |
-| Portfolio UI font | `Inter` |
+| Portfolio headline font | `Fraunces` (shared with site) |
+| Portfolio body font | `Fraunces` (shared with site) |
+| Portfolio utility font | `Manrope` (shared with site) |
 | Resume locales | `en` (default), `id`, `de` |
 | Twitter handle | from `siteConfig.seo.twitterCreator` |
 
-**Design aesthetic:** _“Editorial Archive / Detective Case Board.”_ Root + resume are warm, paper-like editorial. Portfolio is a chalkboard + newspaper-clipping evidence wall, with red-string connectors between case files.
+**Design aesthetic:** _“Editorial Archive / NYT Magazine.”_ Root + resume + portfolio share the same warm, paper-like editorial system. The portfolio is laid out as an NYT-inspired magazine: masthead, lead story / from-the-editor block, multi-column case-file front, sidebar feature for capabilities and profile, and a “letter from the editor” contact close. Per-case sub-pages are long-form articles with drop caps, pull quotes, decked headlines, and a numbered evidence list.
 
 See `BRAND_IDENTITY.md` and `BRAND_DECISIONS.md` for the complete decision log (why specific tokens were unified, what aliases are deprecated, etc.).
 

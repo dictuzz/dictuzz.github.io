@@ -132,15 +132,9 @@
       },
       "portfolio": {
         "path": "/portfolio/",
-        "title": "dictuzz · Systems Architect & Automation Specialist",
-        "titleTemplate": "%s · Systems Architect & Automation Specialist | dictuzz",
-        "description": "Building systems that scale operations and eliminate friction.",
-        "ogType": "website"
-      },
-      "portfolioLogin": {
-        "path": "/portfolio/login/",
-        "title": "Portfolio Access",
-        "description": "Secure portfolio login for dictuzz.",
+        "title": "The Operational Record · dictuzz — Systems Architect & Automation Specialist",
+        "titleTemplate": "%s · The Operational Record | dictuzz",
+        "description": "The Operational Record: an editorial portfolio of Benedictus Richard Ricardo. Case files in workflow automation, governance, live operations, and readiness.",
         "ogType": "website"
       }
     }

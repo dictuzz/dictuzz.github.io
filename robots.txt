@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /portfolio-app/
 Disallow: /scripts/
 Disallow: /tests/
 Disallow: /node_modules/
