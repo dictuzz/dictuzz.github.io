@@ -1,0 +1,284 @@
+{
+  "_locale": "id",
+  "ui": {
+    "skipLink": "Lewati ke konten utama",
+    "brand": "dictuzz",
+    "brandSub": "Catatan Operasional",
+    "topbar": {
+      "home": "Beranda",
+      "resume": "Resume",
+      "files": "Semua Berkas",
+      "contact": "Kontak"
+    },
+    "themeToLight": "Beralih ke mode terang",
+    "themeToDark": "Beralih ke mode gelap",
+    "languageLabel": "Bahasa",
+    "languages": { "en": "EN", "id": "ID", "de": "DE" },
+    "languageNames": { "en": "Inggris", "id": "Indonesia", "de": "Jerman" },
+    "byline": "Oleh",
+    "filed": "Dicatat dari",
+    "edition": "Edisi",
+    "issue": "No. 1",
+    "vol": "Vol. I",
+    "magazineLabel": "Majalah Sistem & Otomasi",
+    "previous": "Sebelumnya",
+    "next": "Selanjutnya",
+    "allFiles": "Semua berkas kasus",
+    "scope": "Lingkup",
+    "tools": "Alat & Metode",
+    "impact": "Dampak",
+    "evidence": "Catatan resmi",
+    "context": "Latar",
+    "intervention": "Yang dibangun",
+    "outcome": "Hasil"
+  },
+  "landing": {
+    "documentTitle": "Catatan Operasional · dictuzz — Systems Architect & Automation Specialist",
+    "metaDescription": "Portofolio editorial Benedictus Richard Ricardo. Berkas kasus dalam otomasi alur kerja, tata kelola, operasi langsung, dan kesiapan.",
+    "masthead": {
+      "wordmark": "Catatan Operasional",
+      "subtitle": "Portofolio editorial atas pekerjaan sistem yang ditata oleh Benedictus Richard Ricardo.",
+      "strapLeft": "Vol. I — No. 1",
+      "strapCenter": "Bandung · Jakarta · Indonesia",
+      "strapRight": "Disusun dengan tipografi Fraunces"
+    },
+    "feature": {
+      "kicker": "Berita Utama · Otomasi Alur Kerja",
+      "headline": "Bagaimana satu siklus pelaporan yang tenang kehilangan dua belas jam tiap minggu — dan cara mengembalikannya.",
+      "deck": "Di Home Digital Indonesia, tiga departemen berbagi satu siklus pelaporan yang rapuh. Solusinya bukan perangkat lunak baru, melainkan struktur: workbook yang patuh pada aturan, dan aturan yang sanggup dijaga oleh tim.",
+      "byline": "Oleh Benedictus Richard Ricardo",
+      "meta": "Jakarta · Jul 2024 – Sep 2025 · 8 menit baca",
+      "href": "/portfolio/cases/automation-mandate/",
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Dashboard analitik yang menampilkan metrik pelaporan operasional, mewakili bukti yang dibangun ulang selama penugasan.",
+      "caption": "Dashboard operasional — bentuk bukti yang menjadi dasar siklus baru. Foto digunakan sebagai ilustrasi."
+    },
+    "indexLabel": "Dalam edisi ini",
+    "indexNote": "Tiga berkas lain pada catatan publik — kepemimpinan dalam skala sekolah, program langsung, dan pekerjaan kesiapan di balik lapangan.",
+    "secondary": [
+      {
+        "slug": "kpi-governance-record",
+        "kicker": "Tata Kelola · Kepemimpinan",
+        "title": "Tiga puluh empat anggota dewan belajar menjaga ritme.",
+        "deck": "Bagaimana kepresidenan siswa mengadopsi ritme KPI — dan mulai berjalan layaknya institusi, bukan kelompok pertemanan.",
+        "meta": "Presiden · 10 divisi · 12 sekolah feeder",
+        "href": "/portfolio/cases/kpi-governance-record/"
+      },
+      {
+        "slug": "large-scale-event-ops",
+        "kicker": "Operasi Langsung",
+        "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal.",
+        "deck": "Tiga tahun kerja panggung dan belakang panggung untuk audiens seribu lebih — serta Misa Kaum Muda untuk lima ratus peserta yang dipandu sebagai MC.",
+        "meta": "Stage Coordinator & MC · 2022 – 2025",
+        "href": "/portfolio/cases/large-scale-event-ops/"
+      },
+      {
+        "slug": "vertical-rescue-ops",
+        "kicker": "Pelatihan & Kesiapan",
+        "title": "Bagian paling sunyi dari pekerjaan berisiko tinggi adalah bagian yang tak pernah direkam.",
+        "deck": "Lebih dari empat tahun perawatan peralatan dan dukungan pelatihan di Vertical Rescue Indonesia — kesiapan sebagai disiplin, bukan sekadar sikap.",
+        "meta": "Asisten Instruktur · Jan 2021 – Sekarang",
+        "href": "/portfolio/cases/vertical-rescue-ops/"
+      }
+    ],
+    "editor": {
+      "kicker": "Tentang penyunting",
+      "title": "Benedictus Richard Ricardo, untuk catatan publik.",
+      "lede": "Saya bekerja di tempat operasi terasa rumit, tanggung jawab tersebar, dan harga dari kebingungan terasa nyata. Perannya biasanya gabungan dari penyelidik, pembangun sistem, dan penstabil eksekusi.",
+      "body": [
+        "Sistem yang baik tidak terasa rumit ketika digunakan. Ia membuat langkah berikutnya jelas, mengurangi gerakan yang sia-sia, dan memungkinkan orang bertindak dengan tenang dalam tekanan.",
+        "Saat ini saya menempuh studi Sains Data di Universitas Terbuka dan terus menyempurnakan cara desain proses, bukti, dan eksekusi saling melekat."
+      ],
+      "facts": [
+        { "label": "Domisili", "value": "Bandung, Indonesia · UTC+7" },
+        { "label": "Studi", "value": "Sains Data, Universitas Terbuka" },
+        { "label": "Bahasa", "value": "Inggris · Indonesia · Jerman" },
+        { "label": "Gaya", "value": "Terstruktur, tenang, berbasis bukti" }
+      ]
+    },
+    "contact": {
+      "kicker": "Surat untuk penyunting",
+      "title": "Terbuka untuk percakapan tentang sistem, otomasi, dan operasi.",
+      "body": "Cocok untuk tim atau peran yang membutuhkan eksekusi lebih bersih, desain proses yang lebih dapat diandalkan, atau struktur operasional yang lebih kuat. Tersedia di GMT+7 dan zona waktu sekitarnya.",
+      "actions": [
+        { "type": "primary", "label": "contact@dictuzz.me", "href": "mailto:contact@dictuzz.me", "icon": "envelope" },
+        { "type": "ghost", "label": "Atur jadwal pertemuan", "href": "https://calendar.app.google/39u2qGH6ybaFenhdA", "icon": "calendar", "external": true },
+        { "type": "ghost", "label": "LinkedIn", "href": "https://linkedin.com/in/dictuzz", "icon": "linkedin", "external": true }
+      ]
+    }
+  },
+  "cases": {
+    "automation-mandate": {
+      "documentTitle": "Mandat Otomasi · Catatan Operasional",
+      "metaDescription": "Membangun sistem pelaporan dan SOP yang menghapus 12+ jam kerja manual mingguan di Home Digital Indonesia.",
+      "vol": "Vol. I / No. 1",
+      "kicker": "Otomasi Alur Kerja · Home Digital Indonesia",
+      "title": "Mandat Otomasi",
+      "deck": "Membangun sistem pelaporan dan SOP yang menghapus dua belas jam lebih kerja manual setiap minggu — mengubah siklus pelaporan yang bergantung pada satu orang menjadi ritme bersama yang dapat diulang.",
+      "bylineRole": "Management Trainee · Home Digital Indonesia",
+      "bylineMeta": "Jul 2024 – Sep 2025 · Jakarta, Indonesia",
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Dashboard operasional menampilkan metrik pelaporan mingguan — bukti yang menjadi acuan setelah siklus dibangun ulang.",
+      "caption": "Dashboard operasional sebagai ilustrasi siklus pelaporan mingguan. Foto digunakan sebagai ilustrasi.",
+      "lead": "Sebuah siklus pelaporan lintas fungsi menghabiskan terlalu banyak waktu untuk pekerjaan manual berulang. Solusinya adalah pipa pelaporan yang lebih terstruktur, didukung oleh aturan kerja yang lebih jelas.",
+      "narrative": [
+        {
+          "heading": "Latar",
+          "body": "Bagian keuangan, penjualan, dan operasi mengelola pelaporan rutin lewat pengumpulan manual, format ulang, dan estafet yang rapuh. Prosesnya berjalan — tetapi memakan banyak waktu dan terlalu bergantung pada ingatan tiap orang. Setiap minggu siklus yang sama dimulai lagi, sering kali dari awal, dengan kesalahan yang nyaris terulang."
+        },
+        {
+          "heading": "Yang dibangun",
+          "body": "Saya memperlakukan alur kerja sebagai sistem operasional, bukan sekadar lembar kerja. Logika workbook yang berulang dibangun ulang di Excel, SOP pendukung distandardisasi agar rutinitas yang sama berjalan setiap siklus, dan jalur pelaporan dipetakan dari hulu ke hilir. Yang penting bukan workbook itu sendiri; yang penting adalah tim bisa menjalankannya dengan cara yang sama setiap Senin tanpa perlu mengingat-ingat."
+        },
+        {
+          "heading": "Hasil",
+          "body": "Tim memangkas sekitar dua belas jam kerja manual dari ritme mingguan. Pergeseran yang lebih besar adalah keyakinan: irama yang lebih bersih, lebih sedikit penundaan yang bisa dihindari, dan proses yang dapat dipelihara lintas fungsi alih-alih dirumuskan ulang setiap siklus."
+        }
+      ],
+      "pull": "Tim memangkas sekitar dua belas jam kerja manual dari ritme mingguan — dan menggantikannya dengan rutinitas.",
+      "evidence": [
+        "Membangun sistem pelaporan otomatis di Excel yang menghapus sekitar 12 jam kerja manual mingguan.",
+        "Menstandardisasi SOP lintas keuangan, penjualan, dan operasi untuk mengurangi friksi pada siklus pelaporan rutin.",
+        "Mengalihkan pekerjaan dari pengulangan yang bergantung pada satu orang ke rutinitas operasional bersama."
+      ],
+      "impact": [
+        { "value": "12+", "label": "Jam dihemat per minggu", "note": "Beban pelaporan manual yang dipangkas dari siklus rutin." },
+        { "value": "3", "label": "Fungsi diselaraskan", "note": "Keuangan, penjualan, dan operasi pada satu struktur." },
+        { "value": "1", "label": "Rutinitas bersama", "note": "Otomasi dan SOP digabungkan menjadi alur mingguan yang dapat diulang." }
+      ],
+      "scope": ["Desain alur pelaporan", "Otomasi Excel", "Standardisasi SOP"],
+      "tools": ["Excel", "Pelaporan operasional", "Desain SOP"],
+      "prev": null,
+      "next": { "slug": "kpi-governance-record", "title": "Tiga puluh empat anggota dewan belajar menjaga ritme." }
+    },
+    "kpi-governance-record": {
+      "documentTitle": "Tata Kelola Berbasis KPI · Catatan Operasional",
+      "metaDescription": "Memimpin 34 anggota di 10 divisi melalui ritme KPI di SMA Santa Maria 2.",
+      "vol": "Vol. I / No. 2",
+      "kicker": "Tata Kelola · Kepemimpinan · SMA Santa Maria 2",
+      "title": "Tiga puluh empat anggota dewan belajar menjaga ritme.",
+      "deck": "Bagaimana kepresidenan siswa mengadopsi ritme KPI — dan mulai berjalan layaknya institusi, bukan kelompok pertemanan.",
+      "bylineRole": "Presiden · SMA Santa Maria 2",
+      "bylineMeta": "Nov 2021 – Nov 2022 · Jakarta, Indonesia",
+      "image": "/portfolio/assets/photos/governance.jpg",
+      "imageAlt": "Seorang pembicara menyapa peserta dalam ruang kerja — digunakan sebagai ilustrasi kepemimpinan dan desain program kelembagaan.",
+      "caption": "Kepemimpinan dalam suasana kerja — sebagai ilustrasi ritme kelembagaan dan desain program.",
+      "lead": "Dewan beranggotakan 34 orang di 10 divisi membutuhkan ritme yang lebih kuat, akuntabilitas, dan struktur program. Pendekatan tata kelola berbasis KPI memberi kepemimpinan dan eksekusi irama yang lebih bersih.",
+      "narrative": [
+        {
+          "heading": "Latar",
+          "body": "Begitu sebuah organisasi siswa menjadi multi-divisi, kepemimpinan informal tidak lagi cukup. Dewan membutuhkan visibilitas yang lebih jelas, tindak lanjut yang lebih konsisten, dan cara untuk mengevaluasi program saat berlangsung — bukan hanya setelahnya."
+        },
+        {
+          "heading": "Yang dibangun",
+          "body": "Sebuah model tata kelola yang lebih eksplisit dengan ekspektasi yang dapat diukur, titik pemeriksaan berkala, dan keselarasan antara pekerjaan divisi dan tujuan kelembagaan. Dewan beralih ke ritme KPI dengan tinjauan mingguan, ekspektasi divisi yang lebih jelas, dan pendekatan perencanaan kelembagaan yang lebih kokoh untuk program tingkat sekolah."
+        },
+        {
+          "heading": "Hasil",
+          "body": "Dewan akhirnya bisa melihat apa yang berjalan, apa yang tersendat, dan ke mana energi kepemimpinan harus diarahkan. Program-program berjalan lebih stabil — termasuk kampanye yang menjangkau dua belas sekolah feeder — karena ritme operasional bertahan di bawah beban."
+        }
+      ],
+      "pull": "Memimpin tim menjadi lebih mudah ketika tim itu sendiri bisa melihat apa yang sedang dikerjakan.",
+      "evidence": [
+        "Memimpin 34 anggota di 10 divisi melalui ritme tata kelola berbasis KPI yang terstruktur.",
+        "Mendesain program kelembagaan jangka panjang yang diadopsi pada tingkat sekolah.",
+        "Mengarahkan kegiatan jangkauan dan kampanye yang menjangkau 12 sekolah feeder."
+      ],
+      "impact": [
+        { "value": "34", "label": "Anggota dipimpin", "note": "Cakupan kepemimpinan di seluruh organisasi." },
+        { "value": "10", "label": "Divisi dikoordinasikan", "note": "Tata kelola diterapkan di seluruh dewan." },
+        { "value": "12", "label": "Sekolah feeder dijangkau", "note": "Skala satu kampanye penjangkauan utama." }
+      ],
+      "scope": ["Desain sistem kepemimpinan", "Tata kelola KPI", "Perencanaan program"],
+      "tools": ["Kerangka tata kelola", "Manajemen tim", "Penjangkauan strategis"],
+      "prev": { "slug": "automation-mandate", "title": "Mandat Otomasi" },
+      "next": { "slug": "large-scale-event-ops", "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal." }
+    },
+    "large-scale-event-ops": {
+      "documentTitle": "Operasi Acara Skala Besar · Catatan Operasional",
+      "metaDescription": "Eksekusi langsung yang stabil di lingkungan 1.000+ peserta; Misa Kaum Muda 2025 yang dipandu sebagai MC untuk 500+ peserta.",
+      "vol": "Vol. I / No. 3",
+      "kicker": "Operasi Langsung · Ultimate Event Organizer",
+      "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal.",
+      "deck": "Tiga tahun kerja panggung dan belakang panggung untuk audiens seribu lebih — serta Misa Kaum Muda untuk lima ratus peserta yang dipandu sebagai MC.",
+      "bylineRole": "Stage Coordinator & MC · Ultimate Event Organizer",
+      "bylineMeta": "2022 – 2025 · Jakarta, Indonesia",
+      "image": "/portfolio/assets/photos/events.jpg",
+      "imageAlt": "Confetti berhamburan di atas kerumunan dalam acara langsung, menggambarkan skala dan tekanan waktu pada program publik berskala besar.",
+      "caption": "Program langsung mengandalkan transisi yang sanggup bertahan di bawah tekanan. Foto digunakan sebagai ilustrasi.",
+      "lead": "Program langsung dengan audiens besar mengandalkan transisi yang presisi, irama yang dipakai bersama, dan koordinasi belakang panggung yang bersih. Kegagalan kecil langsung terlihat — tidak ada draft yang sunyi.",
+      "narrative": [
+        {
+          "heading": "Latar",
+          "body": "Transisi yang sedikit pun tidak jelas akan menjadi kegagalan yang terlihat begitu ruangan mulai menonton. Tantangan acara publik berskala besar bukan menciptakan momen dramatis — melainkan menjaga laju dan eksekusi tetap tenang di bawah tekanan yang juga dirasakan oleh penonton."
+        },
+        {
+          "heading": "Yang dibangun",
+          "body": "Peran saya berada dekat dengan garis antara perencanaan dan eksekusi: menerjemahkan alur acara menjadi sesuatu yang bisa dijalankan oleh tim teknis dan peserta panggung tanpa keraguan, mendukung perencanaan transisi, dan menjaga laju tetap rapat agar tim teknis, pembicara, penampil, dan audiens tetap selaras."
+        },
+        {
+          "heading": "Hasil",
+          "body": "Acara berjalan dengan lebih sedikit jeda transisi yang terlihat, alur panggung yang lebih jelas, dan kontrol yang lebih dapat diandalkan saat momentum harus tetap terjaga — termasuk Misa Kaum Muda 2025 yang menjadi bukti nyata atas komunikasi langsung di hadapan 500+ peserta."
+        }
+      ],
+      "pull": "Saat laju terjaga, acara terasa disengaja. Saat ia patah, semua orang tahu.",
+      "evidence": [
+        "Mengoordinasikan eksekusi teknis untuk acara dengan 1.000+ peserta.",
+        "Memandu Misa Kaum Muda 2025 sebagai MC untuk 500+ peserta sambil menjaga laju dan kejelasan di panggung.",
+        "Mengurangi friksi transisi yang terlihat melalui alur kerja panggung yang lebih terstruktur."
+      ],
+      "impact": [
+        { "value": "1.000+", "label": "Skala audiens", "note": "Lingkungan acara langsung berskala besar dengan tekanan eksekusi yang tampak." },
+        { "value": "500+", "label": "Dipimpin sebagai MC", "note": "Misa Kaum Muda 2025 sebagai bukti komunikasi langsung." },
+        { "value": "2022–25", "label": "Periode aktif", "note": "Keterlibatan berkelanjutan di berbagai lingkungan." }
+      ],
+      "scope": ["Koordinasi belakang panggung", "Manajemen alur panggung", "Komunikasi langsung"],
+      "tools": ["Perencanaan rundown", "Operasi panggung", "Fasilitasi MC"],
+      "prev": { "slug": "kpi-governance-record", "title": "Tiga puluh empat anggota dewan belajar menjaga ritme." },
+      "next": { "slug": "vertical-rescue-ops", "title": "Bagian paling sunyi dari pekerjaan berisiko tinggi adalah bagian yang tak pernah direkam." }
+    },
+    "vertical-rescue-ops": {
+      "documentTitle": "Operasi Vertical Rescue · Catatan Operasional",
+      "metaDescription": "Kesiapan peralatan, pelatihan teknis, dan disiplin operasional sepanjang lebih dari empat tahun aktif di Vertical Rescue Indonesia.",
+      "vol": "Vol. I / No. 4",
+      "kicker": "Pelatihan & Kesiapan · Vertical Rescue Indonesia",
+      "title": "Bagian paling sunyi dari pekerjaan berisiko tinggi adalah bagian yang tak pernah direkam.",
+      "deck": "Lebih dari empat tahun perawatan peralatan dan dukungan pelatihan di Vertical Rescue Indonesia — kesiapan sebagai disiplin, bukan sekadar sikap.",
+      "bylineRole": "Asisten Instruktur · Vertical Rescue Indonesia",
+      "bylineMeta": "Jan 2021 – Sekarang · Indonesia",
+      "image": null,
+      "imageAlt": null,
+      "caption": null,
+      "lead": "Pekerjaan kesiapan jauh lebih sunyi daripada eksekusi langsung, tetapi standarnya lebih tinggi: peralatan, orang, dan proses harus dapat diandalkan jauh sebelum lapangan menjadi berat.",
+      "narrative": [
+        {
+          "heading": "Latar",
+          "body": "Lingkungan rescue teknis bergantung pada persiapan yang berdisiplin. Pemeriksaan peralatan, irama latihan, dan kejelasan peran tidak boleh diimprovisasi ketika kondisi sudah serius. Pekerjaannya bukan menghasilkan momen dramatis. Ia memastikan hal-hal mendasar sudah benar jauh sebelum momen itu tiba."
+        },
+        {
+          "heading": "Yang dibangun",
+          "body": "Perawatan peralatan, dukungan pelatihan, dan keandalan teknis — menjaga peralatan dalam kondisi yang dapat diperiksa, mendukung pemanjatan teknis sebagai lead climber dan belayer, serta membantu menjaga disiplin pelatihan yang dibutuhkan agar pekerjaan kesiapan tetap aman dan dapat diulang."
+        },
+        {
+          "heading": "Hasil",
+          "body": "Kesiapan operasional yang lebih stabil, persiapan yang lebih terstruktur, dan dukungan yang lebih kuat bagi orang-orang yang memasuki lingkungan pelatihan rescue teknis. Standarnya, sederhananya, lebih tinggi daripada yang akan dipaksa oleh pekerjaan langsung saja."
+        }
+      ],
+      "pull": "Di lingkungan teknis, keyakinan datang dari persiapan — bukan improvisasi.",
+      "evidence": [
+        "Memelihara peralatan melalui rutinitas inspeksi dan kesiapan yang terstruktur.",
+        "Mendukung sesi pelatihan teknis sebagai lead climber dan belayer.",
+        "Menjaga budaya di mana keselamatan dan persiapan tetap menjadi bagian yang terlihat dari pekerjaan."
+      ],
+      "impact": [
+        { "value": "4+", "label": "Tahun aktif", "note": "Keterlibatan berkelanjutan dalam pekerjaan kesiapan dan pelatihan." },
+        { "value": "Rutin", "label": "Disiplin peralatan", "note": "Inspeksi dan perawatan sebagai bagian dari standar." },
+        { "value": "Lapangan", "label": "Dukungan pelatihan", "note": "Kontribusi langsung di lingkungan pemanjatan dan belay." }
+      ],
+      "scope": ["Kesiapan peralatan", "Dukungan pelatihan", "Disiplin keselamatan"],
+      "tools": ["Rutinitas inspeksi", "Pemanjatan teknis", "Dukungan belay"],
+      "prev": { "slug": "large-scale-event-ops", "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal." },
+      "next": null
+    }
+  }
+}

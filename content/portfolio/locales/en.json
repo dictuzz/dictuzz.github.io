@@ -1,0 +1,284 @@
+{
+  "_locale": "en",
+  "ui": {
+    "skipLink": "Skip to main content",
+    "brand": "dictuzz",
+    "brandSub": "The Operational Record",
+    "topbar": {
+      "home": "Home",
+      "resume": "Resume",
+      "files": "All Files",
+      "contact": "Contact"
+    },
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "languageLabel": "Language",
+    "languages": { "en": "EN", "id": "ID", "de": "DE" },
+    "languageNames": { "en": "English", "id": "Indonesian", "de": "German" },
+    "byline": "By",
+    "filed": "Filed from",
+    "edition": "Edition",
+    "issue": "No. 1",
+    "vol": "Vol. I",
+    "magazineLabel": "A Systems & Automation Magazine",
+    "previous": "Previous",
+    "next": "Next",
+    "allFiles": "All case files",
+    "scope": "Scope",
+    "tools": "Tools & Methods",
+    "impact": "Impact",
+    "evidence": "On the record",
+    "context": "Context",
+    "intervention": "What was built",
+    "outcome": "Outcome"
+  },
+  "landing": {
+    "documentTitle": "The Operational Record · dictuzz — Systems Architect & Automation Specialist",
+    "metaDescription": "An editorial portfolio of Benedictus Richard Ricardo. Case files in workflow automation, governance, live operations, and readiness.",
+    "masthead": {
+      "wordmark": "The Operational Record",
+      "subtitle": "An editorial portfolio of operational systems work, kept on the public record by Benedictus Richard Ricardo.",
+      "strapLeft": "Vol. I — No. 1",
+      "strapCenter": "Bandung · Jakarta · Indonesia",
+      "strapRight": "Edited & set in Fraunces"
+    },
+    "feature": {
+      "kicker": "Lead Story · Workflow Automation",
+      "headline": "How a quiet reporting workflow lost twelve hours a week — and how it got them back.",
+      "deck": "At Home Digital Indonesia, three departments shared one fragile reporting cycle. The fix was less software than structure: a workbook that obeyed rules, and rules a team could keep.",
+      "byline": "By Benedictus Richard Ricardo",
+      "meta": "Jakarta · Jul 2024 – Sep 2025 · 8 min read",
+      "href": "/portfolio/cases/automation-mandate/",
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Analytics dashboards showing operational reporting metrics, the kind of evidence rebuilt during the engagement.",
+      "caption": "Operational dashboards — the kind of evidence the cycle was rebuilt around. Photograph used as illustration."
+    },
+    "indexLabel": "In this issue",
+    "indexNote": "Three further files on the public record — leadership at school scale, the live programs, the readiness work behind the field.",
+    "secondary": [
+      {
+        "slug": "kpi-governance-record",
+        "kicker": "Governance · Leadership",
+        "title": "A council of thirty-four learns to keep time.",
+        "deck": "How a student presidency adopted a KPI rhythm — and started running like an institution instead of a friendship group.",
+        "meta": "President · 10 divisions · 12 feeder schools",
+        "href": "/portfolio/cases/kpi-governance-record/"
+      },
+      {
+        "slug": "large-scale-event-ops",
+        "kicker": "Live Operations",
+        "title": "When the room is watching, the only thing visible is what fails.",
+        "deck": "Three years of stage and backstage work for audiences of one thousand and more — and a Youth Mass for five hundred, MC-led.",
+        "meta": "Stage Coordinator & MC · 2022 – 2025",
+        "href": "/portfolio/cases/large-scale-event-ops/"
+      },
+      {
+        "slug": "vertical-rescue-ops",
+        "kicker": "Training & Readiness",
+        "title": "The quieter part of high-risk work is the part nobody films.",
+        "deck": "Four-plus years of equipment care and training support at Vertical Rescue Indonesia — readiness as a discipline, not a posture.",
+        "meta": "Assistant Instructor · Jan 2021 – Present",
+        "href": "/portfolio/cases/vertical-rescue-ops/"
+      }
+    ],
+    "editor": {
+      "kicker": "About the editor",
+      "title": "Benedictus Richard Ricardo, on the record.",
+      "lede": "I work where operations are complex, ownership is distributed, and the cost of confusion is real. The role is usually some mix of investigator, systems builder, and execution stabilizer.",
+      "body": [
+        "Good systems do not feel complicated when they are used. They make the next step obvious, reduce wasted motion, and let people act with more confidence under pressure.",
+        "I am studying Data Science at Universitas Terbuka and continuing to refine the way process design, evidence, and execution fit together."
+      ],
+      "facts": [
+        { "label": "Base", "value": "Bandung, Indonesia · UTC+7" },
+        { "label": "Studying", "value": "Data Science, Universitas Terbuka" },
+        { "label": "Languages", "value": "English · Indonesian · German" },
+        { "label": "Style", "value": "Structured, calm, evidence-led" }
+      ]
+    },
+    "contact": {
+      "kicker": "Letter to the editor",
+      "title": "Open to systems, automation, and operations conversations.",
+      "body": "Best fit for teams or roles that need cleaner execution, more dependable process design, or stronger operational structure. Open across GMT+7 and nearby time zones.",
+      "actions": [
+        { "type": "primary", "label": "contact@dictuzz.me", "href": "mailto:contact@dictuzz.me", "icon": "envelope" },
+        { "type": "ghost", "label": "Schedule a meeting", "href": "https://calendar.app.google/39u2qGH6ybaFenhdA", "icon": "calendar", "external": true },
+        { "type": "ghost", "label": "LinkedIn", "href": "https://linkedin.com/in/dictuzz", "icon": "linkedin", "external": true }
+      ]
+    }
+  },
+  "cases": {
+    "automation-mandate": {
+      "documentTitle": "The Automation Mandate · The Operational Record",
+      "metaDescription": "Built reporting and SOP systems that removed 12+ hours of weekly manual work at Home Digital Indonesia.",
+      "vol": "Vol. I / No. 1",
+      "kicker": "Workflow Automation · Home Digital Indonesia",
+      "title": "The Automation Mandate",
+      "deck": "Built reporting and SOP systems that removed twelve-plus hours of weekly manual work — turning a person-dependent reporting cycle into a shared, repeatable rhythm.",
+      "bylineRole": "Management Trainee · Home Digital Indonesia",
+      "bylineMeta": "Jul 2024 – Sep 2025 · Jakarta, Indonesia",
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Operational dashboards showing weekly reporting metrics — the evidence the rebuilt cycle measured against.",
+      "caption": "Operational dashboards used to illustrate the weekly reporting cycle. Photograph used as illustration.",
+      "lead": "A cross-functional reporting cycle was spending too much time on repeated manual work. The fix was a structured reporting pipeline supported by clearer operating rules.",
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "Finance, sales, and operations were handling recurring reporting work through manual collection, repeat formatting, and fragile handoffs. The process worked — but it consumed too much time and depended too heavily on individual memory. Each week the same cycle started again, often from scratch, with the same near-misses."
+        },
+        {
+          "heading": "What was built",
+          "body": "I treated the workflow like an operational system, not just a spreadsheet. The recurring workbook logic was rebuilt in Excel, the supporting SOPs were standardized so the same routine ran every cycle, and the reporting path was mapped end-to-end. The point was not the workbook; the point was that the team could run it the same way every Monday without thinking about it."
+        },
+        {
+          "heading": "Outcome",
+          "body": "The team removed roughly twelve hours of manual work from the weekly rhythm. The bigger shift was confidence: a cleaner cadence, fewer avoidable delays, and a process that could be maintained across functions instead of rediscovered each cycle."
+        }
+      ],
+      "pull": "The team removed roughly twelve hours of manual work from the weekly rhythm — and replaced it with a routine.",
+      "evidence": [
+        "Built automated reporting systems in Excel that removed roughly 12 hours of weekly manual work.",
+        "Standardized SOPs across finance, sales, and operations to reduce friction during recurring reporting cycles.",
+        "Shifted the work from person-dependent repetition toward a shared operating routine."
+      ],
+      "impact": [
+        { "value": "12+", "label": "Hours saved weekly", "note": "Manual reporting effort removed from the recurring cycle." },
+        { "value": "3", "label": "Functions aligned", "note": "Finance, sales, and operations on one structure." },
+        { "value": "1", "label": "Shared routine", "note": "Automation and SOPs combined into a repeatable weekly flow." }
+      ],
+      "scope": ["Reporting workflow design", "Excel automation", "SOP standardization"],
+      "tools": ["Excel", "Operational reporting", "SOP design"],
+      "prev": null,
+      "next": { "slug": "kpi-governance-record", "title": "A council of thirty-four learns to keep time." }
+    },
+    "kpi-governance-record": {
+      "documentTitle": "KPI-Based Governance · The Operational Record",
+      "metaDescription": "Led 34 members across 10 divisions through a KPI rhythm at SMA Santa Maria 2.",
+      "vol": "Vol. I / No. 2",
+      "kicker": "Governance · Leadership · SMA Santa Maria 2",
+      "title": "A council of thirty-four learns to keep time.",
+      "deck": "How a student presidency adopted a KPI rhythm — and started running like an institution instead of a friendship group.",
+      "bylineRole": "President · SMA Santa Maria 2",
+      "bylineMeta": "Nov 2021 – Nov 2022 · Jakarta, Indonesia",
+      "image": "/portfolio/assets/photos/governance.jpg",
+      "imageAlt": "A speaker addresses a small audience in a workspace setting — used to illustrate institutional leadership and program design.",
+      "caption": "Leadership in a working setting — used as an illustration for institutional rhythm and program design.",
+      "lead": "A 34-member council across 10 divisions needed stronger rhythm, accountability, and program structure. A KPI-based governance approach gave leadership and execution a cleaner cadence.",
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "Once a student organization becomes multi-division, informal leadership stops being enough. The council needed clearer visibility, more consistent follow-through, and a way to evaluate programs as they went — not only after the fact."
+        },
+        {
+          "heading": "What was built",
+          "body": "A more explicit governance model with measurable expectations, recurring checkpoints, and alignment between division work and institutional objectives. The council moved to a KPI rhythm with weekly reviews, clearer division expectations, and a stronger institutional planning approach for school-wide programs."
+        },
+        {
+          "heading": "Outcome",
+          "body": "A council that could finally see what was moving, what was blocked, and where leadership energy needed to be applied. Programs ran with more stability — including outreach that engaged twelve feeder schools — because the operating cadence held under load."
+        }
+      ],
+      "pull": "It is easier to lead a team when the team can see what it is doing.",
+      "evidence": [
+        "Led 34 members across 10 divisions through a structured KPI-based governance rhythm.",
+        "Designed long-term institutional programs that were adopted at the school level.",
+        "Directed outreach and campaign activity that engaged 12 feeder schools."
+      ],
+      "impact": [
+        { "value": "34", "label": "Members led", "note": "Leadership scope across the full organization." },
+        { "value": "10", "label": "Divisions coordinated", "note": "Governance applied across the council." },
+        { "value": "12", "label": "Feeder schools reached", "note": "Scale of one major outward-facing campaign." }
+      ],
+      "scope": ["Leadership system design", "KPI governance", "Program planning"],
+      "tools": ["Governance frameworks", "Team management", "Strategic outreach"],
+      "prev": { "slug": "automation-mandate", "title": "The Automation Mandate" },
+      "next": { "slug": "large-scale-event-ops", "title": "When the room is watching, the only thing visible is what fails." }
+    },
+    "large-scale-event-ops": {
+      "documentTitle": "Large-Scale Event Ops · The Operational Record",
+      "metaDescription": "Live execution stable across 1,000+ attendee environments; MC-led Youth Mass 2025 for 500+ participants.",
+      "vol": "Vol. I / No. 3",
+      "kicker": "Live Operations · Ultimate Event Organizer",
+      "title": "When the room is watching, the only thing visible is what fails.",
+      "deck": "Three years of stage and backstage work for audiences of one thousand and more — and a Youth Mass for five hundred, MC-led.",
+      "bylineRole": "Stage Coordinator & MC · Ultimate Event Organizer",
+      "bylineMeta": "2022 – 2025 · Jakarta, Indonesia",
+      "image": "/portfolio/assets/photos/events.jpg",
+      "imageAlt": "Confetti falls over a crowd at a live event, illustrating the scale and timing pressure of large public programs.",
+      "caption": "Live programs depend on transitions that hold under pressure. Photograph used as illustration.",
+      "lead": "Live programs with large audiences depend on precise transitions, shared timing, and clean backstage coordination. Small breakdowns become visible immediately — there is no quiet draft.",
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "A transition that is even slightly unclear becomes a visible failure the moment the room is watching. The challenge in large public events is not creating dramatic moments — it is making sure pacing and execution stay calm under pressure that the audience can feel."
+        },
+        {
+          "heading": "What was built",
+          "body": "My role sat close to the line between planning and execution: translating the show flow into something technical teams and on-stage participants could actually run without hesitation, supporting transition planning, and keeping pacing tight enough that technical teams, speakers, performers, and audiences stayed in sync."
+        },
+        {
+          "heading": "Outcome",
+          "body": "Events ran with less transition downtime, clearer stage flow, and more dependable control during moments where timing had to hold under pressure — including Youth Mass 2025, which served as a clear proof point for live communication in front of 500+ participants."
+        }
+      ],
+      "pull": "When pacing holds, the event feels intentional. When it breaks, everyone notices.",
+      "evidence": [
+        "Coordinated technical execution for events with 1,000+ attendees.",
+        "MC-led Youth Mass 2025 for 500+ participants while maintaining pacing and clarity on stage.",
+        "Reduced visible transition friction through more structured stage workflows."
+      ],
+      "impact": [
+        { "value": "1,000+", "label": "Audience scale", "note": "Large live-event environments with visible execution pressure." },
+        { "value": "500+", "label": "Led as MC", "note": "Youth Mass 2025 as a proof point for live communication." },
+        { "value": "2022–25", "label": "Active period", "note": "Sustained involvement across multiple environments." }
+      ],
+      "scope": ["Backstage coordination", "Stage flow management", "Live communication"],
+      "tools": ["Run-of-show planning", "Stage operations", "MC facilitation"],
+      "prev": { "slug": "kpi-governance-record", "title": "A council of thirty-four learns to keep time." },
+      "next": { "slug": "vertical-rescue-ops", "title": "The quieter part of high-risk work is the part nobody films." }
+    },
+    "vertical-rescue-ops": {
+      "documentTitle": "Vertical Rescue Ops · The Operational Record",
+      "metaDescription": "Equipment readiness, technical training, and operational discipline over 4+ active years at Vertical Rescue Indonesia.",
+      "vol": "Vol. I / No. 4",
+      "kicker": "Training & Readiness · Vertical Rescue Indonesia",
+      "title": "The quieter part of high-risk work is the part nobody films.",
+      "deck": "Four-plus years of equipment care and training support at Vertical Rescue Indonesia — readiness as a discipline, not a posture.",
+      "bylineRole": "Assistant Instructor · Vertical Rescue Indonesia",
+      "bylineMeta": "Jan 2021 – Present · Indonesia",
+      "image": null,
+      "imageAlt": null,
+      "caption": null,
+      "lead": "Readiness work is quieter than live delivery, but the standard is higher: equipment, people, and process all have to be dependable before the field ever becomes demanding.",
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "Technical rescue environments depend on disciplined preparation. Equipment checks, training cadence, and role clarity cannot be improvised once conditions become serious. The work is not producing dramatic moments. It is making sure the fundamentals are correct long before those moments arrive."
+        },
+        {
+          "heading": "What was built",
+          "body": "Equipment care, training support, and technical reliability — keeping equipment in inspectable condition, supporting technical climbing as a lead climber and belayer, and helping uphold the training discipline needed for safe and repeatable readiness work."
+        },
+        {
+          "heading": "Outcome",
+          "body": "Steadier operational readiness, more structured preparation, and stronger support for the people entering technical rescue training environments. The standard, simply, was higher than what live work alone would force."
+        }
+      ],
+      "pull": "In technical environments, confidence comes from preparation — not improvisation.",
+      "evidence": [
+        "Maintained equipment through structured inspection and readiness routines.",
+        "Supported technical training sessions as a lead climber and belayer.",
+        "Contributed to a culture where safety and preparation remained visible parts of the work."
+      ],
+      "impact": [
+        { "value": "4+", "label": "Years active", "note": "Sustained involvement in readiness and training work." },
+        { "value": "Routine", "label": "Equipment discipline", "note": "Inspection and maintenance as part of the standard." },
+        { "value": "Field", "label": "Training support", "note": "Hands-on contribution in climbing and belay environments." }
+      ],
+      "scope": ["Equipment readiness", "Training support", "Safety discipline"],
+      "tools": ["Inspection routines", "Technical climbing", "Belay support"],
+      "prev": { "slug": "large-scale-event-ops", "title": "When the room is watching, the only thing visible is what fails." },
+      "next": null
+    }
+  }
+}
