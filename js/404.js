@@ -33,19 +33,20 @@
   const MAX_OBSTACLES = 8;
   const LOCAL_KEY     = 'dictuzz_404_best';
 
-  /* ── Palette ─────────────────────────────────────────────────── */
+  /* ── Palette (neobrutalism) ─────────────────────────────────── */
   const COLOR = {
-    bg:        '#0f1520',
-    grid:      'rgba(255,255,255,0.02)',
-    snakeHead: '#6ee7b7',
-    snakeBody: '#34d399',
-    snakeTail: '#059669',
-    food:      '#fbbf24',
-    foodGlow:  'rgba(251,191,36,0.18)',
-    obstacle:  '#f87171',
-    obstacleBg:'rgba(248,113,113,0.08)',
-    text404:   '#f87171',
-    wallFlash: '#ef4444',
+    bg:        '#FFF8E7',
+    grid:      'rgba(10,10,10,0.10)',
+    snakeHead: '#FF7A2A',
+    snakeBody: '#FF6B9D',
+    snakeTail: '#C8A2FF',
+    food:      '#FFE066',
+    foodGlow:  'rgba(255,224,102,0.0)',
+    obstacle:  '#FF6B9D',
+    obstacleBg:'rgba(255,107,157,0.10)',
+    text404:   '#0A0A0A',
+    wallFlash: '#FF6B9D',
+    ink:       '#0A0A0A',
   };
 
   /* ── Funny death messages ────────────────────────────────────── */
@@ -212,24 +213,23 @@
 
   function drawFood() {
     if (!food) return;
-    const cx = food.x * cell + cell / 2;
-    const cy = food.y * cell + cell / 2;
-    const r  = cell * 0.38;
-
-    // glow
-    ctx.shadowBlur = 18;
-    ctx.shadowColor = COLOR.foodGlow;
+    const x = food.x * cell;
+    const y = food.y * cell;
+    const pad = cell * 0.18;
+    const w = cell - pad * 2;
+    // hard offset shadow block
+    ctx.fillStyle = COLOR.ink;
+    roundRect(x + pad + 3, y + pad + 3, w, w, 4);
+    ctx.fill();
+    // body
     ctx.fillStyle = COLOR.food;
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    roundRect(x + pad, y + pad, w, w, 4);
     ctx.fill();
-    ctx.shadowBlur = 0;
-
-    // gleam
-    ctx.fillStyle = 'rgba(255,255,255,0.35)';
-    ctx.beginPath();
-    ctx.arc(cx - r * 0.25, cy - r * 0.28, r * 0.25, 0, Math.PI * 2);
-    ctx.fill();
+    // ink border
+    ctx.strokeStyle = COLOR.ink;
+    ctx.lineWidth = 2;
+    roundRect(x + pad, y + pad, w, w, 4);
+    ctx.stroke();
   }
 
   function drawSnake() {
@@ -237,25 +237,23 @@
     snake.forEach((seg, i) => {
       const x = seg.x * cell;
       const y = seg.y * cell;
-      const pad = i === 0 ? 1 : 2;
-      const radius = i === 0 ? cell * 0.3 : cell * 0.2;
+      const pad = 1;
+      const radius = i === 0 ? 6 : 4;
 
-      // color gradient from head to tail
-      const t = len > 1 ? i / (len - 1) : 0;
-      const r = Math.round(lerp(0x6e, 0x05, t));
-      const g = Math.round(lerp(0xe7, 0x96, t));
-      const b = Math.round(lerp(0xb7, 0x69, t));
-      ctx.fillStyle = `rgb(${r},${g},${b})`;
+      // alternating Gen Z palette: pink, orange, purple
+      let fill;
+      if (i === 0) fill = COLOR.snakeHead;        // orange head
+      else if (i % 2 === 0) fill = COLOR.snakeBody; // pink
+      else fill = COLOR.snakeTail;                  // purple
 
-      if (i === 0) {
-        // Head glow
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = 'rgba(110,231,183,0.3)';
-      }
-
+      // ink-ringed segment with no glow
+      ctx.fillStyle = fill;
       roundRect(x + pad, y + pad, cell - pad * 2, cell - pad * 2, radius);
       ctx.fill();
-      ctx.shadowBlur = 0;
+      ctx.strokeStyle = COLOR.ink;
+      ctx.lineWidth = 2;
+      roundRect(x + pad, y + pad, cell - pad * 2, cell - pad * 2, radius);
+      ctx.stroke();
 
       // Eyes on head
       if (i === 0) {
@@ -281,7 +279,7 @@
     ctx.beginPath(); ctx.arc(e2x, e2y, eyeR, 0, Math.PI * 2); ctx.fill();
 
     // pupils
-    ctx.fillStyle = '#0a0e17';
+    ctx.fillStyle = COLOR.ink;
     const pr = eyeR * 0.55;
     ctx.beginPath(); ctx.arc(e1x + dir.x * pr * 0.3, e1y + dir.y * pr * 0.3, pr, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.arc(e2x + dir.x * pr * 0.3, e2y + dir.y * pr * 0.3, pr, 0, Math.PI * 2); ctx.fill();
@@ -293,20 +291,25 @@
       const y = o.y * cell;
       const bw = cell * 3;
 
-      // background block
-      ctx.fillStyle = COLOR.obstacleBg;
-      roundRect(x + 1, y + 1, bw - 2, cell - 2, cell * 0.15);
+      // hard drop shadow
+      ctx.fillStyle = COLOR.ink;
+      roundRect(x + 4, y + 4, bw - 2, cell - 2, 6);
       ctx.fill();
 
-      // border
-      ctx.strokeStyle = 'rgba(248,113,113,0.25)';
-      ctx.lineWidth = 1.5;
-      roundRect(x + 1, y + 1, bw - 2, cell - 2, cell * 0.15);
+      // pink background block
+      ctx.fillStyle = COLOR.obstacle;
+      roundRect(x + 1, y + 1, bw - 2, cell - 2, 6);
+      ctx.fill();
+
+      // ink border
+      ctx.strokeStyle = COLOR.ink;
+      ctx.lineWidth = 2.5;
+      roundRect(x + 1, y + 1, bw - 2, cell - 2, 6);
       ctx.stroke();
 
       // "404" text
-      ctx.fillStyle = COLOR.text404;
-      ctx.font = `800 ${Math.floor(cell * 0.6)}px 'JetBrains Mono', monospace`;
+      ctx.fillStyle = COLOR.ink;
+      ctx.font = `900 ${Math.floor(cell * 0.65)}px 'Archivo Black', 'JetBrains Mono', monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText('404', x + bw / 2, y + cell / 2 + 1);
@@ -315,11 +318,11 @@
 
   function drawWallFlash() {
     if (flashTimer > 0) {
-      const a = flashTimer * 0.4;
+      const a = flashTimer * 0.85;
       ctx.shadowBlur = 0;
-      ctx.strokeStyle = `rgba(239, 68, 68, ${a})`;
-      ctx.lineWidth = 4;
-      roundRect(2, 2, w - 4, h - 4, 12);
+      ctx.strokeStyle = `rgba(255, 107, 157, ${a})`;
+      ctx.lineWidth = 6;
+      roundRect(3, 3, w - 6, h - 6, 8);
       ctx.stroke();
       flashTimer -= 0.08;
     }

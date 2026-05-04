@@ -99,7 +99,7 @@ export class ThemeManager {
 
 export function updateThemeColor(theme, themeMeta = document.querySelector('meta[name="theme-color"]')) {
     if (!themeMeta) return;
-    themeMeta.setAttribute('content', theme === 'dark' ? '#121820' : '#f5efe4');
+    themeMeta.setAttribute('content', theme === 'dark' ? '#1A1A1A' : '#FFE066');
 }
 
 // 2. TYPING ANIMATION (Typewriter)

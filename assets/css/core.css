@@ -1,7 +1,7 @@
-/* ═══════════════════════════════════════════
-   CORE UI UTILITIES (.card, .btn, .glass, .reveal)
-   Shared Across All Pages
-   ═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   CORE UI UTILITIES (.card, .btn, .glass, .reveal, footer)
+   Shared Across All Pages — NEOBRUTALISM EDITION
+   ═══════════════════════════════════════════════════════════ */
 
 /* --- LAYOUT UTILITIES --- */
 .container {
@@ -28,117 +28,142 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* --- GLASSMORPHISM --- */
-.glass {
-    background: var(--bg-glass);
-    border: 1px solid var(--color-border-default);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-}
 
-.glass--hover {
-    transition:
-        transform var(--duration-normal) var(--ease-out),
-        border-color var(--duration-normal) var(--ease-out),
-        box-shadow var(--duration-normal) var(--ease-out),
-        background-color var(--duration-normal) ease;
-}
+/* ════════ CARDS — chunky, hard-shadowed, ink-bordered ════════ */
 
-.glass--hover:hover,
-.glass--hover:focus-visible {
-    transform: translateY(-2px);
-    border-color: var(--color-border-strong);
-    box-shadow: var(--shadow-md);
-}
-
-/* --- CARDS --- */
 .card {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     padding: clamp(1.35rem, 1.1rem + 0.8vw, 1.9rem);
-    border: 1px solid var(--color-border-default);
-    border-radius: var(--radius-lg);
-    background: var(--color-surface-elevated);
-    box-shadow: var(--shadow-md);
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-radius: var(--nb-radius);
+    background: var(--nb-paper);
+    box-shadow: var(--nb-shadow);
 }
 
 .card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 44%);
-    pointer-events: none;
+    display: none;
 }
 
 .card--interactive {
     transition:
-        transform var(--duration-normal) var(--ease-out),
-        box-shadow var(--duration-normal) var(--ease-out),
-        border-color var(--duration-normal) var(--ease-out),
-        background-color var(--duration-normal) ease;
+        transform var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-fast) var(--ease-out);
 }
 
 .card--interactive:hover,
 .card--interactive:focus-visible {
-    transform: translateY(-4px);
-    border-color: var(--color-border-strong);
-    box-shadow: var(--shadow-lg);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--nb-shadow-lg);
 }
 
-/* --- BUTTONS --- */
+.card--interactive:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 0 var(--nb-ink);
+}
+
+
+/* ════════ GLASS — alias for card, no blur in neobrutalism ════════ */
+
+.glass {
+    background: var(--nb-paper);
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-radius: var(--nb-radius);
+    box-shadow: var(--nb-shadow);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.glass--hover {
+    transition:
+        transform var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.glass--hover:hover,
+.glass--hover:focus-visible {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--nb-shadow-lg);
+}
+
+
+/* ════════ BUTTONS — chunky stamp ════════ */
+
 .btn,
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-1);
-    min-height: 3.125rem;
-    padding: 0 var(--space-3);
-    border: 1px solid transparent;
-    border-radius: var(--radius-full);
-    font-weight: 700;
-    background: var(--color-text-primary);
-    color: var(--color-surface-card);
-    transition:
-        transform var(--duration-fast) ease,
-        background-color var(--duration-fast) ease,
-        border-color var(--duration-fast) ease,
-        color var(--duration-fast) ease;
+    min-height: 3rem;
+    padding: 0.65rem 1.25rem;
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-radius: var(--nb-radius);
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    background: var(--nb-yellow);
+    color: var(--nb-ink);
+    box-shadow: var(--nb-shadow);
     cursor: pointer;
     text-decoration: none;
+    transition:
+        transform var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-fast) var(--ease-out),
+        background-color var(--duration-fast) ease,
+        color var(--duration-fast) ease;
 }
 
 .btn:hover,
 .btn:focus-visible,
 .button:hover,
 .button:focus-visible {
-    transform: translateY(-2px);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--nb-shadow-lg);
+}
+
+.btn:active,
+.button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 0 var(--nb-ink);
 }
 
 .btn--primary {
-    background: var(--color-text-primary);
-    color: var(--color-surface-card);
+    background: var(--nb-pink);
+    color: var(--nb-ink);
 }
 
 .btn--ghost,
 .btn--outline,
 .button--ghost {
-    background: transparent;
-    border: 1px solid var(--color-border-strong);
-    color: var(--color-text-primary);
+    background: var(--nb-paper);
+    color: var(--nb-ink);
 }
 
 .btn--ghost:hover,
 .btn--outline:hover,
 .button--ghost:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--nb-yellow);
 }
 
-[data-theme="light"] .btn--ghost:hover,
-[data-theme="light"] .btn--outline:hover {
-    background: rgba(29, 36, 48, 0.04);
+[data-theme="dark"] .btn,
+[data-theme="dark"] .button {
+    background: var(--nb-yellow);
+    color: #0A0A0A;
+}
+
+[data-theme="dark"] .btn--primary {
+    background: var(--nb-pink);
+    color: #0A0A0A;
+}
+
+[data-theme="dark"] .btn--ghost,
+[data-theme="dark"] .btn--outline,
+[data-theme="dark"] .button--ghost {
+    background: var(--nb-paper);
+    color: var(--nb-ink);
 }
 
 .btn--glow::before,
@@ -146,44 +171,61 @@
     display: none;
 }
 
+
+/* ════════ NEOBRUTALISM STICKER / TAG ════════ */
+
+.nb-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.6rem;
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-radius: var(--nb-radius-sm);
+    background: var(--nb-yellow);
+    color: var(--nb-ink);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: var(--nb-shadow-sm);
+}
+
+.nb-tag--pink   { background: var(--nb-pink); }
+.nb-tag--cyan   { background: var(--nb-cyan); }
+.nb-tag--lime   { background: var(--nb-lime); }
+.nb-tag--purple { background: var(--nb-purple); }
+.nb-tag--orange { background: var(--nb-orange); }
+.nb-tag--paper  { background: var(--nb-paper); }
+.nb-tag--ink    { background: var(--nb-ink); color: var(--nb-bg); }
+.nb-tag--tilt   { transform: rotate(-2deg); }
+.nb-tag--tilt-r { transform: rotate(2deg); }
+
+
 /* --- REVEAL ANIMATIONS --- */
 .reveal {
     opacity: 0;
     transform: translateY(22px);
     transition:
-        opacity 600ms var(--ease-out),
-        transform 600ms var(--ease-out);
-    /* Pre-promote the compositor layer so the first reveal paint is smooth.
-       The hint is dropped after settle (see .reveal.is-visible / .active). */
+        opacity 500ms var(--ease-out),
+        transform 500ms var(--ease-out);
     will-change: opacity, transform;
 }
 
-.reveal--left {
-    transform: translateX(-26px);
-}
-
-.reveal--right {
-    transform: translateX(26px);
-}
+.reveal--left  { transform: translateX(-26px); }
+.reveal--right { transform: translateX(26px); }
 
 .reveal.is-visible,
 .reveal.active {
     opacity: 1;
     transform: none;
-    /* Free the GPU layer once the element has reached its rest state. */
     will-change: auto;
 }
 
-.reveal-delay-1 {
-    transition-delay: 70ms;
-}
-
-.reveal-delay-2 {
-    transition-delay: 140ms;
-}
+.reveal-delay-1 { transition-delay: 70ms; }
+.reveal-delay-2 { transition-delay: 140ms; }
 
 @media (prefers-reduced-motion: reduce) {
-
     .reveal,
     .card--interactive,
     .glass--hover,
@@ -195,37 +237,42 @@
     }
 }
 
+
 /* --- FOCUS RING --- */
 .focus-ring:focus-visible,
 :focus-visible {
-    outline: none;
-    box-shadow: var(--focus-ring);
+    outline: 3px solid var(--nb-pink);
+    outline-offset: 3px;
+    box-shadow: none;
 }
 
-/* --- TYPOGRAPHY UTILITIES --- */
-.text-xs { font-size: var(--text-xs); }
-.text-sm { font-size: var(--text-sm); }
-.text-base { font-size: var(--text-base); }
-.text-lg { font-size: var(--text-lg); }
-.text-xl { font-size: var(--text-xl); }
-.text-2xl { font-size: var(--text-2xl); }
-.text-3xl { font-size: var(--text-3xl); }
-.text-4xl { font-size: var(--text-4xl); }
 
-.text-muted { color: var(--color-text-muted); }
-.text-subtle { color: var(--color-text-soft); }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
+/* --- TYPOGRAPHY UTILITIES --- */
+.text-xs   { font-size: var(--text-xs); }
+.text-sm   { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg   { font-size: var(--text-lg); }
+.text-xl   { font-size: var(--text-xl); }
+.text-2xl  { font-size: var(--text-2xl); }
+.text-3xl  { font-size: var(--text-3xl); }
+.text-4xl  { font-size: var(--text-4xl); }
+
+.text-muted   { color: var(--nb-muted); }
+.text-subtle  { color: var(--color-text-soft); }
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
 .font-display { font-family: var(--font-display); }
-.font-body { font-family: var(--font-body); }
-.font-bold { font-weight: 700; }
-.font-semibold { font-weight: 600; }
+.font-body    { font-family: var(--font-body); }
+.font-mono    { font-family: var(--font-mono); }
+.font-bold      { font-weight: 700; }
+.font-semibold  { font-weight: 600; }
+
 
 /* --- SPACING UTILITIES --- */
-.mt-2 { margin-top: var(--space-2); }
-.mt-4 { margin-top: var(--space-4); }
-.mt-6 { margin-top: var(--space-6); }
-.mt-8 { margin-top: var(--space-8); }
+.mt-2  { margin-top: var(--space-2); }
+.mt-4  { margin-top: var(--space-4); }
+.mt-6  { margin-top: var(--space-6); }
+.mt-8  { margin-top: var(--space-8); }
 .mt-12 { margin-top: var(--space-12); }
 .mt-16 { margin-top: var(--space-16); }
 
@@ -243,6 +290,7 @@
 .gap-4 { gap: var(--space-4); }
 .gap-6 { gap: var(--space-6); }
 
+
 /* --- ACCESSIBILITY --- */
 .sr-only {
     position: absolute;
@@ -256,32 +304,53 @@
     border: 0;
 }
 
+
 /* ═══════════════════════════════════════════
    GLOBAL FOOTER (Shared Across All Pages)
-   Moved here from site.css to be available
-   via both site.css and critical.css imports.
+   Neobrutalism: chunky stamp panel with ink border
    ═══════════════════════════════════════════ */
 .global-footer {
     width: 100%;
     margin-top: auto;
-    padding: var(--space-6) var(--space-2\.5) var(--space-4);
-    border-top: 1px solid var(--color-border-default);
+    padding: var(--space-6) var(--space-3) var(--space-4);
+    border-top: var(--nb-border-width) solid var(--nb-ink);
+    background: var(--nb-bg-alt);
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 12px,
+            rgba(10, 10, 10, 0.05) 12px,
+            rgba(10, 10, 10, 0.05) 13px
+        );
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-2);
-    background: transparent;
+}
+
+[data-theme="dark"] .global-footer {
+    background: var(--nb-bg-alt);
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 12px,
+            rgba(255, 248, 231, 0.05) 12px,
+            rgba(255, 248, 231, 0.05) 13px
+        );
 }
 
 .global-footer__nav {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px;
-    border-radius: var(--radius-full);
-    background: var(--color-surface-elevated);
-    border: 1px solid var(--color-border-default);
-    box-shadow: var(--shadow-lg);
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+    border: var(--nb-border-width) solid var(--nb-ink);
+    border-radius: var(--nb-radius);
+    background: var(--nb-paper);
+    box-shadow: var(--nb-shadow);
 }
 
 .global-footer__link {
@@ -290,27 +359,35 @@
     justify-content: center;
     height: 38px;
     padding: 0 var(--space-2);
-    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    border-radius: var(--nb-radius-sm);
+    font-family: var(--font-body);
     font-size: var(--text-sm);
-    font-weight: 700;
-    color: var(--color-text-muted);
-    transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--nb-ink);
+    transition:
+        background-color var(--duration-fast) ease,
+        border-color var(--duration-fast) ease,
+        color var(--duration-fast) ease;
 }
 
 .global-footer__link:hover,
 .global-footer__link:focus-visible {
-    background: var(--color-surface-strong);
-    color: var(--color-text-primary);
+    background: var(--nb-yellow);
+    border-color: var(--nb-ink);
 }
 
 .global-footer__link[aria-current="page"] {
-    background: var(--color-text-primary);
-    color: var(--color-surface-page);
+    background: var(--nb-ink);
+    color: var(--nb-bg);
+    border-color: var(--nb-ink);
 }
 
 [data-theme="dark"] .global-footer__link[aria-current="page"] {
-    background: var(--color-text-primary);
-    color: var(--color-surface-page);
+    background: var(--nb-ink);
+    color: var(--nb-bg);
 }
 
 .global-footer__contacts {
@@ -326,15 +403,24 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    padding: 6px 12px;
+    border: 2px solid var(--nb-ink);
+    border-radius: var(--nb-radius-sm);
+    background: var(--nb-paper);
+    font-family: var(--font-mono);
     font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-text-subtle);
-    transition: color var(--duration-fast) ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--nb-ink);
+    transition: background-color var(--duration-fast) ease,
+                transform var(--duration-fast) var(--ease-out);
 }
 
 .global-footer__contact-link:hover,
 .global-footer__contact-link:focus-visible {
-    color: var(--color-text-primary);
+    background: var(--nb-pink);
+    transform: translate(-1px, -1px);
 }
 
 .global-footer__contact-link i {
@@ -342,19 +428,22 @@
 }
 
 .global-footer__divider {
-    color: var(--color-border-strong);
-    font-size: var(--text-xs);
+    display: none;
 }
 
 .global-footer__copy {
     text-align: center;
-    color: var(--color-text-subtle);
-    font-size: 0.8rem;
-    line-height: 1.5;
+    color: var(--nb-ink);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
     margin: 0;
 }
 
 .global-footer__copy span {
     display: block;
     margin-top: var(--space-0\.5);
+    color: var(--nb-muted);
 }

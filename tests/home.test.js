@@ -12,7 +12,7 @@ function setupEnvironment() {
   global.window = window;
   global.CustomEvent = window.CustomEvent;
 
-  document.head.innerHTML = '<meta name="theme-color" content="#f5efe4">';
+  document.head.innerHTML = '<meta name="theme-color" content="#FFE066">';
   document.body.innerHTML = `
     <button id="theme-toggle"></button>
     <i id="theme-icon"></i>
