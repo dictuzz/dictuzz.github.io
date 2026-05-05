@@ -74,7 +74,7 @@ function applyTheme(theme) {
   const next = theme === 'dark' ? 'dark' : 'light';
   docEl.setAttribute('data-theme', next);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', next === 'dark' ? '#0e1218' : '#f6efe1');
+  if (meta) meta.setAttribute('content', next === 'dark' ? '#1A1A1A' : '#FFE066');
   document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
     btn.setAttribute('aria-pressed', String(next === 'dark'));
     const labelKey = next === 'dark' ? 'themeToLight' : 'themeToDark';
