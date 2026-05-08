@@ -1,0 +1,148 @@
+{
+  "site": {
+    "name": "dictuzz",
+    "domain": "dictuzz.me",
+    "siteUrl": "https://dictuzz.me",
+    "defaultLocale": "en",
+    "themeColorLight": "#f5efe4",
+    "themeColorDark": "#121820"
+  },
+  "profile": {
+    "name": "Benedictus Richard Ricardo",
+    "handle": "dictuzz",
+    "title": "Systems Architect & Automation Specialist",
+    "description": "Building systems that scale operations and eliminate friction.",
+    "longDescription": "Systems Architect & Automation Specialist building systems that reduce friction, improve workflow clarity, and scale operations.",
+    "motto": "Quam Plurimi et Quam Aptissimi.",
+    "image": {
+      "portrait": "/assets/images/Aku.webp",
+      "og": "/og-image.png",
+      "resumeOg": "/assets/images/resume-og-image.png",
+      "alt": "Portrait of Benedictus Richard Ricardo with dictuzz branding"
+    },
+    "location": {
+      "city": "Bandung",
+      "countryCode": "ID",
+      "countryName": "Indonesia",
+      "timeZone": "Asia/Bangkok"
+    },
+    "alumniOf": {
+      "name": "Universitas Terbuka",
+      "url": "https://www.ut.ac.id/"
+    },
+    "knowsAbout": [
+      "Systems architecture",
+      "Workflow automation",
+      "Operational systems",
+      "Process improvement",
+      "Governance design",
+      "Reporting automation"
+    ]
+  },
+  "contact": {
+    "email": "contact@dictuzz.me",
+    "whatsappLabel": "WhatsApp",
+    "whatsappUrl": "https://wa.me/6285186888630",
+    "calendarUrl": "https://calendar.app.google/39u2qGH6ybaFenhdA"
+  },
+  "socials": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/dictuzz",
+      "icon": "fab fa-linkedin-in"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/dictuzz",
+      "icon": "fab fa-github"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com/dictuzz",
+      "icon": "fab fa-instagram"
+    },
+    {
+      "id": "threads",
+      "label": "Threads",
+      "url": "https://www.threads.net/@dictuzz",
+      "icon": "fas fa-at"
+    },
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/share/1BBT96Ypdf/",
+      "icon": "fab fa-facebook-f"
+    },
+    {
+      "id": "steam",
+      "label": "Steam",
+      "url": "https://steamcommunity.com/profiles/76561199806080510",
+      "icon": "fab fa-steam-symbol"
+    },
+    {
+      "id": "discord",
+      "label": "Discord",
+      "url": "https://discord.gg/DVCySSUM",
+      "icon": "fab fa-discord"
+    }
+  ],
+  "navigation": {
+    "footer": [
+      {
+        "label": "Links",
+        "href": "/"
+      },
+      {
+        "label": "Resume",
+        "href": "/resume/"
+      },
+      {
+        "label": "Portfolio",
+        "href": "/portfolio/"
+      }
+    ]
+  },
+  "seo": {
+    "twitterCreator": "@dictuzz",
+    "keywords": {
+      "home": "Benedictus Richard Ricardo, dictuzz, Systems Architect, Automation Specialist, workflow automation, operations systems, process improvement, resume, portfolio, GitHub, WhatsApp, Bandung Indonesia",
+      "resume": "Benedictus Richard Ricardo resume, dictuzz resume, Systems Architect, Automation Specialist, workflow automation, operational leadership, KPI governance, process improvement, Bandung Indonesia"
+    },
+    "pages": {
+      "home": {
+        "path": "/",
+        "title": "Benedictus Richard Ricardo (dictuzz) — Systems Architect & Automation Specialist",
+        "description": "Benedictus Richard Ricardo, known as dictuzz, is a Systems Architect & Automation Specialist in Bandung, Indonesia. Explore the homepage, resume, portfolio access, GitHub, and direct WhatsApp contact.",
+        "ogType": "website"
+      },
+      "resume": {
+        "path": "/resume/",
+        "title": "Benedictus Richard Ricardo — Systems Architect & Automation Specialist",
+        "description": "Resume of Benedictus Richard Ricardo, Systems Architect & Automation Specialist. Explore experience, workflow automation, operational leadership, certifications, skills, and direct contact options.",
+        "ogType": "profile"
+      },
+      "terms": {
+        "path": "/terms/",
+        "title": "Terms & Conditions | dictuzz — Systems Architect & Automation Specialist",
+        "description": "Terms and Conditions for the website of Benedictus Richard Ricardo, Systems Architect & Automation Specialist.",
+        "ogType": "website"
+      },
+      "portfolio": {
+        "path": "/portfolio/",
+        "title": "dictuzz · Systems Architect & Automation Specialist",
+        "titleTemplate": "%s · Systems Architect & Automation Specialist | dictuzz",
+        "description": "Building systems that scale operations and eliminate friction.",
+        "ogType": "website"
+      },
+      "portfolioLogin": {
+        "path": "/portfolio/login/",
+        "title": "Portfolio Access",
+        "description": "Secure portfolio login for dictuzz.",
+        "ogType": "website"
+      }
+    }
+  }
+}
