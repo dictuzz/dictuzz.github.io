@@ -1,6 +1,6 @@
 # SEO Implementation
 
-Last updated: 2026-04-09
+Last updated: 2026-06-02
 
 ## Architecture
 
@@ -28,7 +28,7 @@ Every page has:
 | `/` | website | `/og-image.png` | summary_large_image |
 | `/resume/` | profile | `/assets/images/resume-og-image.png` | summary_large_image |
 | `/terms/` | website | `/og-image.png` | summary |
-| `/portfolio/` | website | (Next.js managed) | summary_large_image |
+| `/portfolio/` | website | `/og-image.png` plus case-specific images | summary_large_image |
 
 All OG images include `og:image:width` (1200) and `og:image:height` (630). All pages include `og:locale` (en_US) and `og:site_name` (dictuzz).
 
@@ -51,7 +51,7 @@ Extended with: alumniOf, detailed knowsAbout from skills collections, section-le
 ## Sitemap
 
 - Located at `/sitemap.xml`, referenced from `/robots.txt`
-- Includes: `/`, `/resume/`, `/portfolio/`, all `/portfolio/cases/<slug>/`, `/terms/`
+- Includes: `/`, `/resume/`, `/portfolio/`, all `/portfolio/cases/<slug>/`, `/resources/`, `/terms/`
 - Each entry has `<lastmod>`, `<changefreq>`, and `<priority>`
 - Excludes: `/404.html`, `/scripts/`, `/tests/`
 
@@ -70,7 +70,6 @@ Sitemap: https://dictuzz.me/sitemap.xml
 ## Performance Optimizations (SEO Impact)
 
 - Hero images use `fetchpriority="high"` and `loading="eager"` for LCP
-- Font Awesome loads non-blocking via `media="print"` + `onload` pattern
 - Google Fonts load non-blocking with same pattern
 - `dns-prefetch` added for all third-party domains
 - `preconnect` for font and CDN providers
@@ -81,7 +80,7 @@ Sitemap: https://dictuzz.me/sitemap.xml
 - Skip-to-main-content link on all pages
 - ARIA labels on all interactive elements
 - Proper heading hierarchy (single H1 per page)
-- `lang="en"` on all `<html>` elements
+- Static HTML defaults to `lang="en"`; runtime language switching updates localized resume and portfolio content.
 - Form controls and buttons have descriptive labels/aria-labels
 
 ## External Link Policy

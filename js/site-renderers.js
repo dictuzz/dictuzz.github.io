@@ -85,7 +85,7 @@ export function renderDirectoryUnavailableMarkup() {
     `;
 }
 
-export function createFooterViewModel(siteConfig, currentPath = window.location.pathname) {
+function createFooterViewModel(siteConfig, currentPath = window.location.pathname) {
     const footerNav = siteConfig.navigation.footer.map((entry) => ({
         ...entry,
         current: currentPath === entry.href
@@ -119,7 +119,7 @@ export function createFooterViewModel(siteConfig, currentPath = window.location.
     };
 }
 
-export function renderFooterMarkup(viewModel) {
+function renderFooterMarkup(viewModel) {
     return `
         <nav class="global-footer__nav" aria-label="Global navigation">
             ${viewModel.navigation.map((entry) => `

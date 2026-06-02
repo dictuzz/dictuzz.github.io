@@ -55,7 +55,7 @@
       "recordCode": "VOL. I / NO. 1",
       "status": "CLASSIFIED",
       "preview": "A reporting cycle with too many manual steps was rebuilt into a repeatable system with automation and clearer operating rules.",
-      "coverImage": "/portfolio/press-auto.png",
+      "coverImage": "/portfolio/assets/photos/automation.jpg",
       "cardStyle": "newsprint",
       "rotation": -1.4,
       "quickFacts": [
@@ -65,7 +65,7 @@
       ]
     },
     "image": {
-      "src": "/portfolio/press-auto.png",
+      "src": "/portfolio/assets/photos/automation.jpg",
       "alt": "Operational reporting and automation evidence board graphic",
       "caption": "Reporting and automation case record used as the primary evidence image for the file."
     }
@@ -126,7 +126,7 @@
       "recordCode": "VOL. I / NO. 2",
       "status": "DECLASSIFIED",
       "preview": "A growing council needed clearer accountability. KPI governance and stronger operational rhythm made execution easier to steer.",
-      "coverImage": "/portfolio/press-gov.png",
+      "coverImage": "/portfolio/assets/photos/governance.jpg",
       "cardStyle": "dossier",
       "rotation": 1.2,
       "quickFacts": [
@@ -136,7 +136,7 @@
       ]
     },
     "image": {
-      "src": "/portfolio/press-gov.png",
+      "src": "/portfolio/assets/photos/governance.jpg",
       "alt": "Governance case record graphic showing an organized institutional file",
       "caption": "Governance and leadership case record used as the evidence image for the file."
     }
@@ -197,7 +197,7 @@
       "recordCode": "VOL. I / NO. 3",
       "status": "ACTIVE",
       "preview": "Large audiences leave little room for operational confusion. This file covers the backstage systems and stage pacing used to keep events moving cleanly.",
-      "coverImage": "/portfolio/press-events.png",
+      "coverImage": "/portfolio/assets/photos/events.jpg",
       "cardStyle": "bulletin",
       "rotation": -0.8,
       "quickFacts": [
@@ -207,7 +207,7 @@
       ]
     },
     "image": {
-      "src": "/portfolio/press-events.png",
+      "src": "/portfolio/assets/photos/events.jpg",
       "alt": "Large-scale event operations case image showing a live audience and stage environment",
       "caption": "Live-operations case record used as the principal evidence image for the file."
     }
@@ -268,7 +268,7 @@
       "recordCode": "VOL. I / NO. 4",
       "status": "ONGOING",
       "preview": "This file covers the less visible work behind readiness: inspection routines, training support, and the discipline needed to keep technical environments dependable.",
-      "coverImage": "/portfolio/press-rescue.png",
+      "coverImage": "/assets/images/vertical-rescue.jpg",
       "cardStyle": "field",
       "rotation": 1.5,
       "quickFacts": [
@@ -278,7 +278,7 @@
       ]
     },
     "image": {
-      "src": "/portfolio/press-rescue.png",
+      "src": "/assets/images/vertical-rescue.jpg",
       "alt": "Vertical rescue and training readiness case image",
       "caption": "Training and readiness case record used as the evidence image for the file."
     }

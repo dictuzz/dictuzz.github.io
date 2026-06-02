@@ -1,30 +1,32 @@
-# Performance Optimization Metrics
+# Performance Notes
 
-## Baselines (Before Optimization)
-- **Large Assets Identified**:
-  - `og-image.png` (~1015.7 KB)
-  - `portfolio-home-clean-desktop.png` (~648.3 KB)
-  - `portfolio-selected-work.png` (~472.4 KB)
-  - `portfolio-home-clean.png` (~432.6 KB)
-- **Unminified Assets**:
-  - `css/site.css` (~19.8 KB)
-  - `js/home.js` (~5.9 KB)
-- **Render-Blocking Resources**: 
-  - Font references and sync stylesheets loaded in `<head>`.
+Last updated: 2026-06-02
 
-## Optimizations Applied
-- **Asset Minification**:
-  - Generated `js/home.min.js` using `terser`, reducing size to ~4.1 KB.
-  - Generated `css/site.min.css` using `clean-css` (size remained roughly identical due to its clean source).
-- **Core Images Converted to WebP**:
-  - `og-image.webp`: ~61.2 KB (reduced from ~1.04 MB)
-  - `portfolio-home-clean-desktop.webp`: ~82.5 KB (reduced from ~648 KB)
-  - `portfolio-selected-work.webp`: ~93 KB (reduced from ~472 KB)
-  - `portfolio-home-clean.webp`: ~47.8 KB (reduced from ~432 KB)
-- **Render-Blocking Eliminated**:
-  - Font configurations defer loaded and `preload` headers added for minified static assets in `index.html`. 
+## Current Shape
 
-## Results
-- **Lighthouse Performance Score**: 100
-- **LCP (Largest Contentful Paint)**: ~228 ms
-- **FCP (First Contentful Paint)**: ~228 ms
+The site is served directly from GitHub Pages with no build step. Performance-sensitive files are the static HTML shells, shared CSS, vanilla JavaScript modules, JSON content, and images committed in the repo.
+
+## Active Optimizations
+
+- Critical homepage assets are preloaded in `index.html`.
+- Google Fonts are loaded with the non-blocking `media="print"` and `onload` pattern.
+- Core images use modern formats where available, including `assets/images/Aku.webp`.
+- JavaScript is split by surface: homepage, resume, portfolio, resources, terms, and 404 each load only their own entry module.
+- Shared content is centralized in JSON and cached by `js/site-content.js` during runtime fetches.
+
+## Current Checks
+
+Run:
+
+```bash
+npm run validate:content
+npm test
+```
+
+These checks validate content contracts and the homepage rendering paths. They do not currently run Lighthouse or asset-budget checks.
+
+## Known Follow-Up
+
+- Add an automated link/asset audit for internal routes and anchors.
+- Add a size budget for large images before committing new assets.
+- Re-run Lighthouse after any major visual or image change and record fresh metrics here.

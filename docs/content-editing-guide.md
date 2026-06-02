@@ -30,12 +30,23 @@ Jika menambah locale baru, gunakan shape file resume yang sama persis.
 
 ## Ubah portfolio
 
+- [`/content/portfolio/locales/en.json`](../content/portfolio/locales/en.json)
+- [`/content/portfolio/locales/id.json`](../content/portfolio/locales/id.json)
+- [`/content/portfolio/locales/de.json`](../content/portfolio/locales/de.json)
+  Untuk copy runtime portfolio, landing edition, dan case-file content per bahasa.
 - [`/content/portfolio/home.json`](../content/portfolio/home.json)
-  Untuk intro board, capability clusters, dan dispatch/contact card.
+  Legacy dataset untuk intro board, capability clusters, dan dispatch/contact card.
 - [`/content/portfolio/case-studies.json`](../content/portfolio/case-studies.json)
-  Untuk seluruh case study, alias slug, impact metric, board presentation, image, dan narrative.
+  Legacy structured dataset untuk seluruh case study, alias slug, impact metric, board presentation, image, dan narrative.
 
-Menambah case baru cukup dengan menambahkan object baru yang valid ke array `case-studies`.
+Menambah case baru perlu tiga langkah: tambahkan HTML shell di `/portfolio/cases/<slug>/index.html`, tambahkan content per bahasa di `/content/portfolio/locales/*.json`, lalu sinkronkan legacy dataset jika masih ingin mempertahankan validasi case-study lama.
+
+## Ubah resources
+
+- [`/resources/index.html`](../resources/index.html)
+- [`/resources/*.html`](../resources)
+
+Halaman resources adalah file HTML statis. Link antar topik harus memakai bentuk `/resources/<topic>.html#anchor`, bukan `/resources/<topic>/#anchor`, karena tidak ada folder `index.html` per topik.
 
 ## Quality gate
 

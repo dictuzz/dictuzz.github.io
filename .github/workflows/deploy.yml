@@ -5,13 +5,18 @@ on:
       - main
     paths:
       - 'content/**'
+      - 'docs/**'
       - 'js/**'
       - 'css/**'
       - 'assets/**'
       - 'resume/**'
       - 'portfolio/**'
+      - 'resources/**'
       - 'index.html'
       - '404.html'
+      - 'note.svg'
+      - 'robots.txt'
+      - 'sitemap.xml'
       - 'terms/**'
       - 'tests/**'
       - 'scripts/**'

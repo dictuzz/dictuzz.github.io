@@ -9,6 +9,7 @@ Public surfaces:
 - **Root homepage** (`/`): link hub with categorized folder-style navigation
 - **Resume** (`/resume/`): long-form professional profile with i18n data (EN/ID/DE)
 - **Portfolio** (`/portfolio/`): _The Operational Record_ — an NYT-inspired editorial magazine portfolio with a landing edition and four case-file articles
+- **Resources** (`/resources/`): static resource index with individual `.html` topic pages
 - **Terms** (`/terms/`): shared legal page
 - **404** (`/404.html`): custom 404 page (deliberate retro arcade aesthetic exception)
 
@@ -22,6 +23,7 @@ The repo is a hand-written static site:
 - [`/resume/index.html`](./resume/index.html): resume page shell
 - [`/portfolio/index.html`](./portfolio/index.html): editorial portfolio landing (_The Operational Record_)
 - [`/portfolio/cases/<slug>/index.html`](./portfolio/cases): one long-form article per case file
+- [`/resources/index.html`](./resources/index.html): resource index; topic pages live as `resources/<topic>.html`
 - [`/terms/index.html`](./terms/index.html): terms page
 - [`/404.html`](./404.html): custom 404
 
@@ -53,10 +55,11 @@ All copy, profile data, and SEO defaults live as JSON in `/content/`:
 - [`/content/site.json`](./content/site.json): identity, contact, footer, SEO defaults
 - [`/content/home.json`](./content/home.json): homepage folders and link groups
 - [`/content/resume/{en,id,de}.json`](./content/resume): resume content per locale
-- [`/content/portfolio/case-studies.json`](./content/portfolio/case-studies.json): canonical portfolio case-study source
-- [`/content/portfolio/home.json`](./content/portfolio/home.json): portfolio intro / contact content
+- [`/content/portfolio/locales/{en,id,de}.json`](./content/portfolio/locales): runtime portfolio content and case-file copy
+- [`/content/portfolio/case-studies.json`](./content/portfolio/case-studies.json): legacy structured case-study dataset used by validation and documentation
+- [`/content/portfolio/home.json`](./content/portfolio/home.json): legacy portfolio intro / contact dataset
 
-The portfolio HTML is rendered statically from this JSON. Update the JSON when you also update the HTML — both are validated together.
+The portfolio runtime reads locale JSON from `/content/portfolio/locales/`. Static HTML shells and case pages still contain crawler-friendly defaults, so content changes that affect visible portfolio copy should keep both the locale JSON and static HTML fallbacks aligned.
 
 ## Positioning and Brand
 
@@ -107,11 +110,11 @@ npm test
 
 ## Deployment
 
-The current GitHub Action in [`/.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) validates content and runs root tests on push to `main` and on PRs. GitHub Pages serves the entire repo as-is (`.nojekyll` is present, `CNAME` is `dictuzz.me`).
+The current GitHub Action in [`/.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) validates content and runs root tests on push to `main` and on PRs. The push path filter includes source, docs, resources, sitemap, robots, and shared assets. GitHub Pages serves the entire repo as-is (`.nojekyll` is present, `CNAME` is `dictuzz.me`).
 
 ## SEO and Crawl Notes
 
-- Homepage, resume, portfolio (and per-case-file URLs), and terms are included in [`/sitemap.xml`](./sitemap.xml)
+- Homepage, resume, portfolio (and per-case-file URLs), resources index, and terms are included in [`/sitemap.xml`](./sitemap.xml)
 - [`/robots.txt`](./robots.txt) allows the public site and disallows `/scripts/`, `/tests/`, `/node_modules/`
 - Homepage metadata includes `Person`, `WebSite`, and `ProfilePage` schema; portfolio includes `CollectionPage` + `ItemList`; case files include `Article` schema
 
