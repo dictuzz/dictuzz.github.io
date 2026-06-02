@@ -27,6 +27,74 @@ const state = {
   caseSlug: bodyEl.dataset.case || null
 };
 
+/* ---------- authentication ---------- */
+const EXPECTED_HASH = 'c28595c067550031126e2dbe55cd86afdb7209fc25e2edf8f18a87e4fc9095cf';
+const isUnlocked = STORAGE_OK && sessionStorage.getItem('portfolio_unlocked') === 'true';
+
+if (!isUnlocked) {
+  docEl.classList.add('is-locked');
+}
+
+async function hashPassword(password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+window.generatePasswordHash = async function(password) {
+  const hash = await hashPassword(password);
+  console.log('New Hash for "' + password + '":', hash);
+  return hash;
+};
+
+function renderLockScreen() {
+  if (isUnlocked) return;
+  const overlay = document.createElement('div');
+  overlay.id = 'lock-overlay';
+  overlay.innerHTML = `
+    <div class="lock-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0110 0v4"></path>
+      </svg>
+      <h2>Authorized Personnel Only</h2>
+      <p>Please enter the passphrase to view the operational records.</p>
+      <form class="lock-form" id="lock-form">
+        <input type="password" id="lock-pass" class="lock-input" placeholder="Passphrase" required autofocus>
+        <button type="submit" class="lock-btn">Unlock Records</button>
+        <div id="lock-error" class="lock-error"></div>
+      </form>
+    </div>
+  `;
+  document.body.prepend(overlay);
+
+  const form = document.getElementById('lock-form');
+  const input = document.getElementById('lock-pass');
+  const error = document.getElementById('lock-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const val = input.value.trim();
+    if (!val) return;
+    
+    const hash = await hashPassword(val);
+    if (hash === EXPECTED_HASH) {
+      if (STORAGE_OK) sessionStorage.setItem('portfolio_unlocked', 'true');
+      overlay.classList.add('is-hidden');
+      setTimeout(() => {
+        docEl.classList.remove('is-locked');
+        overlay.remove();
+      }, 300);
+    } else {
+      error.textContent = 'Incorrect passphrase.';
+      input.value = '';
+      input.focus();
+    }
+  });
+}
+
 /* ---------- language ---------- */
 
 function readStoredLang() {
@@ -473,6 +541,7 @@ function render() {
 }
 
 async function init() {
+  renderLockScreen();
   applyTheme(initialTheme());
 
   document.addEventListener('click', (e) => {

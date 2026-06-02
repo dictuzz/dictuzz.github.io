@@ -61,18 +61,18 @@
   --color-primary-900: #5a3f21;
   --color-primary-950: #3b2814;
 
-  /* --- Secondary Brand: Blue --- */
-  --color-secondary-50:  #f0f4f8;
-  --color-secondary-100: #dce5ee;
-  --color-secondary-200: #b8cbdd;
-  --color-secondary-300: #8aa9c4;
-  --color-secondary-400: #5f87a8;
-  --color-secondary-500: #335c87;  /* ← Base brand blue */
-  --color-secondary-600: #284a6e;
-  --color-secondary-700: #1e3a57;
-  --color-secondary-800: #162c42;
-  --color-secondary-900: #16395f;
-  --color-secondary-950: #0d1f35;
+  /* --- Secondary Brand: Red Accent (Mapped to portfolio --accent) --- */
+  --color-secondary-50:  #faeaea;
+  --color-secondary-100: #f4cccc;
+  --color-secondary-200: #ec9b9b;
+  --color-secondary-300: #e26767;
+  --color-secondary-400: #d44444;
+  --color-secondary-500: #a8351c;  /* ← Base brand accent */
+  --color-secondary-600: #8c2a15;
+  --color-secondary-700: #712111;
+  --color-secondary-800: #55180c;
+  --color-secondary-900: #3e1208;
+  --color-secondary-950: #1d0703;
 
   /* --- Neutral Scale --- */
   --color-neutral-0:    #ffffff;
@@ -92,28 +92,28 @@
   --color-neutral-1000: #0a0e14;
 
   /* --- Surface Colors --- */
-  --color-surface-page:     #f5efe4;
-  --color-surface-card:     #fffaf2;
-  --color-surface-elevated: rgba(255, 250, 242, 0.84);
-  --color-surface-strong:   #ede2d3;
+  --color-surface-page:     #f4ecdb;
+  --color-surface-card:     #efe5d0;
+  --color-surface-elevated: rgba(244, 236, 219, 0.84);
+  --color-surface-strong:   #e8dbbc;
   --color-surface-soft:     rgba(255, 255, 255, 0.55);
   --color-surface-sunken:   #ece1d0;
   --color-surface-overlay:  rgba(0, 0, 0, 0.5);
 
   /* --- Text Colors --- */
-  --color-text-primary:   #1d2430;
-  --color-text-secondary: #4f5b6d;
-  --color-text-muted:     #687487;
-  --color-text-subtle:    #7b8798;
+  --color-text-primary:   #15181d;
+  --color-text-secondary: #2b2f37;
+  --color-text-muted:     #5a5f69;
+  --color-text-subtle:    #8d8f95;
   --color-text-disabled:  #a3adb8;
-  --color-text-inverse:   #f4efe7;
+  --color-text-inverse:   #f4ecdb;
   --color-text-brand:     #c4974f;
 
   /* --- Border Colors --- */
-  --color-border-default: rgba(29, 36, 48, 0.10);
-  --color-border-strong:  rgba(29, 36, 48, 0.16);
-  --color-border-subtle:  rgba(29, 36, 48, 0.06);
-  --color-border-focus:   #285992;
+  --color-border-default: rgba(20, 24, 31, 0.16);
+  --color-border-strong:  rgba(20, 24, 31, 0.32);
+  --color-border-subtle:  rgba(20, 24, 31, 0.08);
+  --color-border-focus:   #a8351c;
   --color-border-brand:   rgba(196, 151, 79, 0.35);
 
   /* --- Semantic Colors --- */
@@ -317,12 +317,12 @@
 [data-theme="dark"] {
 
   /* --- Surface Colors --- */
-  --color-surface-page:     #121820;
-  --color-surface-card:     #171d25;
-  --color-surface-elevated: rgba(24, 31, 40, 0.82);
-  --color-surface-strong:   #222c38;
+  --color-surface-page:     #0d1117;
+  --color-surface-card:     #11161e;
+  --color-surface-elevated: rgba(13, 17, 23, 0.82);
+  --color-surface-strong:   #18202b;
   --color-surface-soft:     rgba(255, 255, 255, 0.04);
-  --color-surface-sunken:   #232c39;
+  --color-surface-sunken:   #090c10;
   --color-surface-overlay:  rgba(0, 0, 0, 0.7);
 
   /* --- Neutral overrides --- */
@@ -330,24 +330,24 @@
   --color-neutral-250: #202b38;
 
   /* --- Text Colors --- */
-  --color-text-primary:   #f4efe7;
-  --color-text-secondary: #c2c8d2;
-  --color-text-muted:     #97a1af;
-  --color-text-subtle:    #93a0b0;
+  --color-text-primary:   #ecebe4;
+  --color-text-secondary: #d6d4cb;
+  --color-text-muted:     #8d949e;
+  --color-text-subtle:    #5b6068;
   --color-text-disabled:  #5a6678;
-  --color-text-inverse:   #1d2430;
-  --color-text-brand:     #d1ab69;
+  --color-text-inverse:   #0d1117;
+  --color-text-brand:     #d2b787;
 
   /* --- Border Colors --- */
-  --color-border-default: rgba(255, 255, 255, 0.08);
-  --color-border-strong:  rgba(255, 255, 255, 0.14);
-  --color-border-subtle:  rgba(255, 255, 255, 0.04);
-  --color-border-focus:   #7393b3;
-  --color-border-brand:   rgba(209, 171, 105, 0.35);
+  --color-border-default: rgba(236, 235, 228, 0.18);
+  --color-border-strong:  rgba(236, 235, 228, 0.36);
+  --color-border-subtle:  rgba(236, 235, 228, 0.10);
+  --color-border-focus:   #d6543e;
+  --color-border-brand:   rgba(210, 183, 135, 0.35);
 
   /* --- Brand accent overrides --- */
-  --color-primary-500:   #d1ab69;
-  --color-secondary-500: #8da8c6;
+  --color-primary-500:   #d2b787;
+  --color-secondary-500: #d6543e;
 
   /* --- Accent shorthand overrides --- */
   --site-accent-soft:      rgba(141, 168, 198, 0.10);

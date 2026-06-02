@@ -20,18 +20,8 @@ body {
     min-height: 100vh;
     font-family: var(--font-body);
     color: var(--site-text);
-    background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.68), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(196, 151, 79, 0.08), transparent 28%),
-        linear-gradient(180deg, #f7f1e7 0%, #efe6d8 100%);
+    background: var(--site-bg);
     transition: background-color 220ms ease, color 220ms ease;
-}
-
-[data-theme="dark"] body {
-    background:
-        radial-gradient(circle at top left, rgba(209, 171, 105, 0.06), transparent 24%),
-        radial-gradient(circle at 86% 16%, rgba(141, 168, 198, 0.06), transparent 22%),
-        linear-gradient(180deg, #10161d 0%, #141a22 55%, #11171f 100%);
 }
 
 ::selection {
