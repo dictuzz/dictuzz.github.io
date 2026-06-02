@@ -1,0 +1,31 @@
+{
+  "name": "dictuzz",
+  "short_name": "dictuzz",
+  "description": "Curated resource guides for software, media, and privacy.",
+  "theme_color": "#f7f2e8",
+  "background_color": "#f7f2e8",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/pwa_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "entertainment", "lifestyle", "utilities"]
+}

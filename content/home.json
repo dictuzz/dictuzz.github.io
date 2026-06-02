@@ -30,6 +30,13 @@
           "href": "https://github.com/dictuzz",
           "external": true,
           "priority": true
+        },
+        {
+          "label": "Resources",
+          "icon": "fas fa-toolbox",
+          "href": "/resources/",
+          "external": false,
+          "priority": true
         }
       ]
     },
