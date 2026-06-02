@@ -1,5 +1,9 @@
 const ICON_MAP = {
     'fa-arrow-right': icon('M5 12h14 M13 5l7 7-7 7'),
+    'fa-bars': icon('M4 6h16 M4 12h16 M4 18h16'),
+    'fa-house': icon('M3 12l9-8 9 8 M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9'),
+    'fa-link': icon('M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71'),
+    'fa-xmark': icon('M18 6 6 18 M6 6l12 12'),
     'fa-arrow-up-right-from-square': icon('M8 8h8v8 M10 14 16 8 M14 5h5v5 M5 9V6a1 1 0 0 1 1-1h5 M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V10'),
     'fa-calendar-check': icon('M8 3v3 M16 3v3 M4 8h16 M7 13l3 3 7-7 M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1'),
     'fa-chevron-down': icon('M6 9l6 6 6-6'),

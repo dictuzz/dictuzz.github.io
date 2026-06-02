@@ -1,78 +1,453 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome • dictuzz</title>
-    <meta name="description" content="Curated resource guides for software, media, and privacy.">
-    <meta name="generator" content="VitePress v1.6.4">
-    <link rel="preload stylesheet" href="/resources/assets/style.xYEfQCov.css" as="style">
-    <link rel="preload stylesheet" href="/resources/vp-icons.css" as="style">
-    
-    <script type="module" src="/resources/assets/app.CK-00rDl.js"></script>
-    <link rel="preload" href="/resources/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="modulepreload" href="/resources/assets/chunks/theme.79Cniu0B.js">
-    <link rel="modulepreload" href="/resources/assets/chunks/framework.BGh0NSIy.js">
-    <link rel="modulepreload" href="/resources/assets/index.md.BvzCL2jk.lean.js">
-    <meta name="theme-color" content="#f7f2e8">
-    <meta name="og:type" content="website">
-    <meta name="og:locale" content="en">
-    <link rel="icon" href="/resources/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
-    <link rel="manifest" href="/resources/manifest.json">
-    <link rel="icon" href="/resources/pwa_icon.png" type="image/svg+xml">
-    <link rel="alternate icon" href="/resources/pwa_icon.png">
-    <link rel="mask-icon" href="/resources/pwa_icon.png" color="#000000ff">
-    <meta name="keywords" content="stream movies gaming reading anime">
-    <link rel="apple-touch-icon" href="/resources/pwa_icon.png" sizes="192x192">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="msvalidate.01" content="F3028112EF6F929B562F4B18E58E3691">
-    <meta name="google-site-verification" content="XCq-ZTw6VJPQ7gVNEOl8u0JRqfadK7WcsJ0H598Wv9E">
-    <script>(function(){window.self!==window.top&&(window.top.location=window.location.href)})();</script>
-    <script>(function(){try{var e=document.documentElement,t=localStorage.getItem("vitepress-display-mode"),l=localStorage.getItem("vitepress-amoled-enabled")==="true",o=localStorage.getItem("vitepress-theme-name"),r=localStorage.getItem("vitepress-theme-vars");if(t||(t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),t==="dark"?(e.classList.add("dark"),e.classList.remove("light")):(e.classList.add("light"),e.classList.remove("dark")),t==="dark"&&l?e.classList.add("amoled"):e.classList.remove("amoled"),o==="monochrome"?e.classList.add("monochrome"):e.classList.remove("monochrome"),r){var s=JSON.parse(r);for(var a in s)Object.prototype.hasOwnProperty.call(s,a)&&a.indexOf("--vp-")===0&&e.style.setProperty(a,s[a])}}catch{}})();</script>
-    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
-    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
-    <link rel="canonical" href="https://fmhy.net/">
-    <meta property="og:url" content="https://fmhy.net/">
-    <meta name="twitter:url" content="https://fmhy.net/">
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="dictuzz Resources">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>Resources — Curated Guides for Software, Media & Privacy | dictuzz</title>
+    <meta name="description" content="Curated resource guides for software, media, privacy, and digital tools. Browse categories for streaming, gaming, reading, downloading, AI, and more.">
+    <meta name="keywords" content="dictuzz resources, free software, media guides, privacy tools, streaming, gaming, reading, downloading, torrenting, AI, educational, Linux, macOS, Android, iOS">
+    <meta name="author" content="Benedictus Richard Ricardo">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://dictuzz.me/resources/">
+    <meta name="theme-color" content="#f5efe4">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dictuzz.me/resources/">
+    <meta property="og:title" content="Resources — Curated Guides for Software, Media & Privacy | dictuzz">
+    <meta property="og:description" content="Curated resource guides for software, media, privacy, and digital tools.">
+    <meta property="og:image" content="https://dictuzz.me/og-image.png">
+    <meta property="og:site_name" content="dictuzz">
+    <meta property="og:locale" content="en_US">
+
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:title" content="Welcome">
-    <meta name="twitter:title" content="Welcome">
-    <meta property="og:description" content="Curated resource guides for software, media, and privacy.">
-    <meta name="twitter:description" content="Curated resource guides for software, media, and privacy.">
-    <meta property="og:image" content="https://fmhy.net/__og_image__/index.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Welcome">
-    <meta name="twitter:image" content="https://fmhy.net/__og_image__/index.webp">
-    <meta name="twitter:image:width" content="1200">
-    <meta name="twitter:image:height" content="630">
-    <meta name="twitter:image:alt" content="Welcome">
-  </head>
-  <body><!--teleport start anchor--><div class="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style="display:none;"><div class="p-6 rounded-xl shadow-2xl max-w-md w-full" style="background-color:var(--vp-c-bg);border:1px solid var(--vp-c-divider);"><h2 class="text-xl font-bold mb-4 flex items-center gap-2"><div class="i-carbon:information-filled text-primary"></div> Base64 Encoded Link </h2><p class="mb-4 text-text-1"> The link you clicked leads to a Base64 encoded string. </p><p class="mb-2 text-text-1">To decode it, you can use:</p><ul class="list-disc list-inside mb-4 space-y-2 text-text-1"><li> An online tool: <a href="https://www.base64decode.org/" target="_blank" rel="noreferrer" class="text-primary hover:underline font-medium"> Base64 Decode </a></li><li> A userscript: <a href="https://greasyfork.org/en/scripts/485772-fmhy-base64-auto-decoder" target="_blank" rel="noreferrer" class="text-primary hover:underline font-medium"> Base64 Auto Decoder </a> (using a <a href="/resources/internet-tools#userscripts" target="_blank" class="text-primary hover:underline font-medium"> userscript manager </a> ) </li></ul><p class="mb-6 text-sm text-text-2"> For more options: <a href="/resources/text-tools#encode-decode" target="_blank" class="text-primary hover:underline font-medium"> Base64 Decoders </a></p><div class="flex items-center gap-2 mb-4"><input id="dont-show" type="checkbox" class="rounded border-border bg-bg-input text-brand focus:ring-brand"><label for="dont-show" class="text-sm text-text-1 select-none"> Don&#39;t show again </label></div><div class="flex justify-end gap-3"><button class="px-4 py-2 border border-border rounded-lg hover:bg-bg-input transition-colors font-medium text-text-2"> Cancel </button><button class="px-4 py-2 border-2 border-brand text-brand bg-[var(--vp-c-bg-alt)] hover:bg-brand hover:text-white rounded-lg transition-colors font-medium"> Open Link </button></div></div></div><!--teleport anchor-->
-    <div id="app"><!--[--><div class="Layout" data-v-6c5cd8da><!--[--><!--]--><!--[--><span tabindex="-1" data-v-7e7ed5b6></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-7e7ed5b6>Skip to content</a><!--]--><!----><!--[--><div class="vp-nav-spacer" data-v-4417ab36></div><header class="VPNav" data-v-4417ab36><div class="VPNavBar" data-v-4417ab36 data-v-3f17745c><div class="wrapper" data-v-3f17745c><div class="container" data-v-3f17745c><div class="title" data-v-3f17745c><div class="VPNavBarTitle" data-v-3f17745c data-v-41496c31><a class="title" href="/resources/" data-v-41496c31><!--[--><!--]--><!--[--><img class="VPImage logo" src="/resources/favicon.ico" alt="dictuzz Logo" data-v-06dbaf3d><!--]--><span data-v-41496c31>dictuzz</span><!--[--><!--]--></a></div></div><div class="content" data-v-3f17745c><div class="content-body" data-v-3f17745c><!--[--><!--]--><div class="VPNavBarSearch search" data-v-3f17745c><!--[--><!----><div id="local-search"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search"><span class="DocSearch-Button-Container"><span class="vp-icon DocSearch-Search-Icon"></span><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"></kbd><kbd class="DocSearch-Button-Key">K</kbd></span></button></div><!--]--></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-3f17745c data-v-cc78cde1><span id="main-nav-aria-label" class="visually-hidden" data-v-cc78cde1> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/resources/beginners-guide" tabindex="0" data-v-cc78cde1 data-v-d4de0d3b><!--[--><span data-v-d4de0d3b>Guides</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/resources/system-tools" tabindex="0" data-v-cc78cde1 data-v-d4de0d3b><!--[--><span data-v-d4de0d3b>Tools</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/resources/privacy" tabindex="0" data-v-cc78cde1 data-v-d4de0d3b><!--[--><span data-v-d4de0d3b>Privacy</span><!--]--></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-3f17745c data-v-7b039227><div class="theme-dropdown-wrapper" data-v-7b039227 data-v-6fab949e><div class="v-popper v-popper--theme-theme-selector theme-dropdown" data-v-6fab949e><!--[--><!--[--><button type="button" class="theme-dropdown-toggle" title="Light" data-v-6fab949e><!----></button><!--]--><div id="popper_3uh9az09_vw4fcj" class="v-popper__popper v-popper--theme-theme-selector v-popper__popper--hidden v-popper__popper--hide-to" style="position:absolute;transform:translate3d(0px,0px,0);" aria-hidden="true" tabindex="0" data-popper-placement><div class="v-popper__backdrop"></div><div class="v-popper__wrapper" style=""><div class="v-popper__inner"><!----></div><div class="v-popper__arrow-container" style="left:0px;top:0px;"><div class="v-popper__arrow-outer"></div><div class="v-popper__arrow-inner"></div></div></div></div><!--]--></div></div></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-3f17745c data-v-753fe9f7 data-v-42bb1eac><!--[--><a class="VPSocialLink no-icon" href="https://github.com/fmhy/FMHY" aria-label="github" target="_blank" rel="noopener" data-v-42bb1eac data-v-feddc2f9><span class="vpi-social-github"></span></a><a class="VPSocialLink no-icon" href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/" aria-label="reddit" target="_blank" rel="noopener" data-v-42bb1eac data-v-feddc2f9><span class="vpi-social-reddit"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-3f17745c data-v-77699740 data-v-c5ec456c><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-c5ec456c><span class="vpi-more-horizontal icon" data-v-c5ec456c></span></button><div class="menu" data-v-c5ec456c><div class="VPMenu" data-v-c5ec456c data-v-cbab59db><!----><!--[--><!--[--><!----><div class="group" data-v-77699740><div class="item appearance" data-v-77699740><p class="label" data-v-77699740>Appearance</p><div class="appearance-action" data-v-77699740><div class="theme-dropdown-wrapper" data-v-77699740 data-v-6fab949e><div class="v-popper v-popper--theme-theme-selector theme-dropdown" data-v-6fab949e><!--[--><!--[--><button type="button" class="theme-dropdown-toggle" title="Light" data-v-6fab949e><!----></button><!--]--><div id="popper_02rugogm_vw4fck" class="v-popper__popper v-popper--theme-theme-selector v-popper__popper--hidden v-popper__popper--hide-to" style="position:absolute;transform:translate3d(0px,0px,0);" aria-hidden="true" tabindex="0" data-popper-placement><div class="v-popper__backdrop"></div><div class="v-popper__wrapper" style=""><div class="v-popper__inner"><!----></div><div class="v-popper__arrow-container" style="left:0px;top:0px;"><div class="v-popper__arrow-outer"></div><div class="v-popper__arrow-inner"></div></div></div></div><!--]--></div></div></div></div></div><div class="group" data-v-77699740><div class="item social-links" data-v-77699740><div class="VPSocialLinks social-links-list" data-v-77699740 data-v-42bb1eac><!--[--><a class="VPSocialLink no-icon" href="https://github.com/fmhy/FMHY" aria-label="github" target="_blank" rel="noopener" data-v-42bb1eac data-v-feddc2f9><span class="vpi-social-github"></span></a><a class="VPSocialLink no-icon" href="https://www.reddit.com/r/FREEMEDIAHECKYEAH/" aria-label="reddit" target="_blank" rel="noopener" data-v-42bb1eac data-v-feddc2f9><span class="vpi-social-reddit"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-3f17745c data-v-90ab19d3><span class="container" data-v-90ab19d3><span class="top" data-v-90ab19d3></span><span class="middle" data-v-90ab19d3></span><span class="bottom" data-v-90ab19d3></span></span></button></div></div></div></div><div class="divider" data-v-3f17745c><div class="divider-line" data-v-3f17745c></div></div></div><!----></header><!--]--><!----><!----><div class="VPContent is-home" id="VPContent" data-v-6c5cd8da data-v-9bbafdc1><div class="VPHome" data-v-9bbafdc1 data-v-4687450a><!--[--><!--]--><div class="VPHero has-image VPHomeHero" data-v-4687450a data-v-a5385eb4><div class="container" data-v-a5385eb4><div class="main" data-v-a5385eb4><!--[--><!--[--><!--[--><!--[--><!--[--><!----><!--]--><!--]--><!--]--><!--]--><!--]--><!--[--><h1 class="heading" data-v-a5385eb4><span class="name clip" data-v-a5385eb4>dictuzz</span><span class="text" data-v-a5385eb4>Curated resource guides for software, media, and privacy.</span></h1><p class="tagline" data-v-a5385eb4>Built as a compact field desk for finding useful software, safer browsing paths, and practical digital tools.</p><!--]--><!--[--><!--]--><div class="actions" data-v-a5385eb4><!--[--><div class="action" data-v-a5385eb4><a class="VPButton medium brand" href="/resources/beginners-guide" data-v-a5385eb4 data-v-15873f3b>Explore Guides</a></div><div class="action" data-v-a5385eb4><a class="VPButton medium alt" href="/resources/system-tools" data-v-a5385eb4 data-v-15873f3b>Open Tools</a></div><!--]--></div><!--[--><!--]--></div><div class="image" data-v-a5385eb4><div class="image-container" data-v-a5385eb4><div class="image-bg" data-v-a5385eb4></div><!--[--><!--[--><img class="VPImage image-src" src="favicon.ico" alt="dictuzz Icon" data-v-06dbaf3d><!--]--><!--]--></div></div></div></div><!--[--><!--]--><!--[--><!--]--><div class="VPFeatures VPHomeFeatures" data-v-4687450a data-v-274d1f14><div class="container" data-v-274d1f14><div class="items" data-v-274d1f14><!--[--><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/privacy" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D05A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-ellipsis"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/><title>Ad-block / Privacy</title></svg>
-</div><h2 class="title" data-v-18585808>Adblocking / Privacy</h2><p class="details" data-v-18585808>Learn how to block ads, trackers and other nasty things. <div class="i-carbon-logo-discord"></div></p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/ai" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#91989F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/><title>Artificial Intelligence</title></svg>
-</div><h2 class="title" data-v-18585808>Artificial Intelligence</h2><p class="details" data-v-18585808>Explore the world of AI and machine learning.</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/video" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7aa2f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tv-minimal-play"><path d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z"/><path d="M7 21h10"/><rect width="20" height="14" x="2" y="3" rx="2"/><title>Streaming</title></svg>
-</div><h2 class="title" data-v-18585808>Streaming</h2><p class="details" data-v-18585808>Stream, download, torrent and binge all your favourite movies and shows!</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/audio" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c82fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><title>Listening</title></svg>
-</div><h2 class="title" data-v-18585808>Listening</h2><p class="details" data-v-18585808>Stream, download and torrent songs, podcasts and more!</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/gaming" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#49d3e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/><title>Gaming</title></svg>
-</div><h2 class="title" data-v-18585808>Gaming</h2><p class="details" data-v-18585808>Download and play all your favourite games or emulate some old but gold ones!</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/reading" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3ccd93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-text"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8"/><path d="M8 7h6"/><title>Reading</title></svg>
-</div><h2 class="title" data-v-18585808>Reading</h2><p class="details" data-v-18585808>Whether you're a bookworm, otaku or comic book fan, you'll be able to find your favourite pieces of literature here!</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/downloading" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BEC23F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-drive-download"><path d="M12 2v8"/><path d="m16 6-4 4-4-4"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 18h.01"/><path d="M10 18h.01"/><title>Downloading</title></svg>
-</div><h2 class="title" data-v-18585808>Downloading</h2><p class="details" data-v-18585808>Download all your favourite software, movies, shows, music, games and more!</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/torrenting" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A6BBE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-magnet"><path d="m12 15 4 4"/><path d="M2.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.029-6.029a1 1 0 1 1 3 3l-6.029 6.029a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.365-6.367A1 1 0 0 0 8.716 4.282z"/><path d="m5 8 4 4"/><title>Torrenting</title></svg>
-</div><h2 class="title" data-v-18585808>Torrenting</h2><p class="details" data-v-18585808>Download your favourite media using the BitTorrent protocol.</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/educational" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8D8B9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/><title>Educational</title></svg>
-</div><h2 class="title" data-v-18585808>Educational</h2><p class="details" data-v-18585808>Educational content for all ages.</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/mobile" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0
-0 24 24" fill="none" stroke="#DAC9A6" stroke-width="2"
-stroke-linecap="round" stroke-linejoin="round" class="lucide
-lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2"
-ry="2"/><path d="M12 18h.01"/><title>Android / iOS</title></svg>
-</div><h2 class="title" data-v-18585808>Android / iOS</h2><p class="details" data-v-18585808>All forms of content for Android and iOS.</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/linux-macos" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f17c67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-terminal"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><title>Linux / macOS</title></svg>
-</div><h2 class="title" data-v-18585808>Linux / macOS</h2><p class="details" data-v-18585808>The $HOME of Linux and macOS.</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/non-english" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FB9966" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-languages"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/><title>Non-English</title></svg>
-</div><h2 class="title" data-v-18585808>Non-English</h2><p class="details" data-v-18585808>Content in languages other than English.</p><!----></article><!--]--></a></div><div class="grid-4 item" data-v-274d1f14><a class="VPLink link no-icon VPFeature" href="/resources/misc" data-v-274d1f14 data-v-18585808><!--[--><article class="box" data-v-18585808><div class="icon" data-v-18585808><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DDD23B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/><title>Miscellaneous</title></svg>
-</div><h2 class="title" data-v-18585808>Miscellaneous</h2><p class="details" data-v-18585808>Various topics like food, travel, news, shopping, fun sites and more!</p><!----></article><!--]--></a></div><!--]--></div></div></div><!--[--><!--]--><div class="vp-doc container" style="" data-v-4687450a data-v-315d9a05><!--[--><div style="position:relative;" data-v-4687450a><div></div></div><!--]--></div></div></div><footer class="VPFooter" data-v-6c5cd8da data-v-66602e94><div class="container" data-v-66602e94><p class="message" data-v-66602e94>Built by dictuzz (rev: dev)</p><p class="copyright" data-v-66602e94>© 2026, <a href="https://i.ibb.co/VJQmQ9t/image.png">Estd 2018.</a><br/> This site does not host any files.</p></div></footer><!--[--><!--]--></div><!--teleport start--><!--teleport end--><!--]--></div>
-    <script>window.__VP_HASH_MAP__=JSON.parse("{\"ai.md\":\"DVOZxPVZ\",\"audio.md\":\"C30vIKq9\",\"beginners-guide.md\":\"FeN_ps0H\",\"developer-tools.md\":\"DzmS3Z9w\",\"downloading.md\":\"BrSSRhHU\",\"educational.md\":\"q88Qc40P\",\"feedback.md\":\"CIMrTCAe\",\"file-tools.md\":\"nCFK_7NQ\",\"gaming-tools.md\":\"CTRRz96z\",\"gaming.md\":\"BBLpN6-d\",\"image-tools.md\":\"DYMkxAC6\",\"index.md\":\"BvzCL2jk\",\"internet-tools.md\":\"CNcbwJTu\",\"linux-macos.md\":\"DRZS2kGo\",\"misc.md\":\"Be_uk08w\",\"mobile.md\":\"C9RkuUHp\",\"non-english.md\":\"2f7JqkLB\",\"other_backups.md\":\"DueMyH2Y\",\"other_contributing.md\":\"Cb_j8Cmc\",\"privacy.md\":\"ChRnBoTD\",\"reading.md\":\"Dk59sqtt\",\"recently-removed.md\":\"BIk1gKPA\",\"sandbox.md\":\"Dsy96uFa\",\"social-media-tools.md\":\"BuE40IRy\",\"startpage.md\":\"tW7B5E8w\",\"storage.md\":\"Bc1rOjbU\",\"system-tools.md\":\"CwwA7jUE\",\"text-tools.md\":\"BEzmxcAm\",\"torrenting.md\":\"KSrgry9v\",\"unsafe.md\":\"CtgEort9\",\"video-tools.md\":\"CLS3Yz7I\",\"video.md\":\"Cg5ZNjct\"}");function deserializeFunctions(r){return Array.isArray(r)?r.map(deserializeFunctions):typeof r=="object"&&r!==null?Object.keys(r).reduce((t,n)=>(t[n]=deserializeFunctions(r[n]),t),{}):typeof r=="string"&&r.startsWith("_vp-fn_")?new Function(`return ${r.slice(7)}`)():r};window.__VP_SITE_DATA__=deserializeFunctions(JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"dictuzz\",\"titleTemplate\":\":title • dictuzz\",\"description\":\"The largest collection of free stuff on the internet!\",\"base\":\"/resources/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"search\":{\"options\":{\"miniSearch\":{\"options\":{\"tokenize\":\"_vp-fn_(text) => text.replace(/\\\\u2060|\\\\u200B|\\\\u200C|\\\\u200D|\\\\uFEFF/g, \\\"\\\").split(/[\\\\n\\\\r #%*,=/:;?[\\\\]{}()&]+/u)\",\"processTerm\":\"_vp-fn_(term, fieldName) => {\\n          term = term.trim().toLowerCase().replace(/^\\\\.+/, \\\"\\\").replace(/\\\\.+$/, \\\"\\\");\\n          const stopWords = [\\n            \\\"frontmatter\\\",\\n            \\\"$frontmatter.synopsis\\\",\\n            \\\"and\\\",\\n            \\\"about\\\",\\n            \\\"but\\\",\\n            \\\"now\\\",\\n            \\\"the\\\",\\n            \\\"with\\\",\\n            \\\"you\\\"\\n          ];\\n          if (term.length < 2 || stopWords.includes(term)) return false;\\n          if (fieldName === \\\"text\\\") {\\n            const parts = term.split(\\\".\\\");\\n            if (parts.length > 1) {\\n              const newTerms = [term, ...parts].filter((t) => t.length >= 2).filter((t) => !stopWords.includes(t));\\n              return newTerms;\\n            }\\n          }\\n          return term;\\n        }\"},\"searchOptions\":{\"combineWith\":\"AND\",\"fuzzy\":false,\"boostDocument\":\"_vp-fn_(documentId, term, storedFields) => {\\n          const titles2 = (storedFields?.titles || []).filter((t) => Boolean(t)).map((t) => t.toLowerCase());\\n          let boost = 1;\\n          const titleIndex = titles2.map((t, i) => t?.includes(term) ? i : -1).find((i) => i >= 0) ?? -1;\\n          if (titleIndex >= 0) {\\n            boost = 1e4 - titleIndex;\\n          }\\n          if (documentId.match(/\\\\/other/)) {\\n            boost *= 0.1;\\n          }\\n          return boost;\\n        }\"}},\"detailedView\":true},\"provider\":\"local\"},\"footer\":{\"message\":\"Built by dictuzz (rev: dev)\",\"copyright\":\"© 2026, <a href=\\\"https://i.ibb.co/VJQmQ9t/image.png\\\">Estd 2018.</a><br/> This site does not host any files.\"},\"editLink\":{\"pattern\":\"https://github.com/fmhy/edit/edit/main/docs/:path\",\"text\":\"📝 Edit this page\"},\"outline\":\"deep\",\"logo\":{\"src\":\"/resources/favicon.ico\",\"alt\":\"dictuzz Logo\"},\"nav\":[{\"text\":\"Guides\",\"link\":\"/resources/beginners-guide\"},{\"text\":\"Tools\",\"link\":\"/resources/system-tools\"},{\"text\":\"Privacy\",\"link\":\"/resources/privacy\"}],\"sidebar\":[{\"text\":\"<span class=\\\"i-twemoji:books\\\"></span> Beginners Guide\",\"link\":\"/resources/beginners-guide\"},{\"text\":\"<span class=\\\"i-twemoji:newspaper\\\"></span> Posts\",\"link\":\"/resources/posts\"},{\"text\":\"<span class=\\\"i-twemoji:light-bulb\\\"></span> Contribute\",\"link\":\"/resources/other/contributing\"},{\"text\":\"Wiki\",\"collapsed\":false,\"items\":[{\"text\":\"<span class=\\\"i-twemoji:name-badge\\\"></span> Adblocking / Privacy\",\"link\":\"/resources/privacy\"},{\"text\":\"<span class=\\\"i-twemoji:robot\\\"></span> Artificial Intelligence\",\"link\":\"/resources/ai\"},{\"text\":\"<span class=\\\"i-twemoji:television\\\"></span> Movies / TV / Anime\",\"link\":\"/resources/video\"},{\"text\":\"<span class=\\\"i-twemoji:musical-note\\\"></span> Music / Podcasts / Radio\",\"link\":\"/resources/audio\"},{\"text\":\"<span class=\\\"i-twemoji:video-game\\\"></span> Gaming / Emulation\",\"link\":\"/resources/gaming\"},{\"text\":\"<span class=\\\"i-twemoji:green-book\\\"></span> Books / Comics / Manga\",\"link\":\"/resources/reading\"},{\"text\":\"<span class=\\\"i-twemoji:floppy-disk\\\"></span> Downloading\",\"link\":\"/resources/downloading\"},{\"text\":\"<span class=\\\"i-twemoji:cyclone\\\"></span> Torrenting\",\"link\":\"/resources/torrenting\"},{\"text\":\"<span class=\\\"i-twemoji:brain\\\"></span> Educational\",\"link\":\"/resources/educational\"},{\"text\":\"<span class=\\\"i-twemoji:mobile-phone\\\"></span> Android / iOS\",\"link\":\"/resources/mobile\"},{\"text\":\"<span class=\\\"i-twemoji:penguin\\\"></span> Linux / macOS\",\"link\":\"/resources/linux-macos\"},{\"text\":\"<span class=\\\"i-twemoji:globe-showing-asia-australia\\\"></span> Non-English\",\"link\":\"/resources/non-english\"},{\"text\":\"<span class=\\\"i-twemoji:file-folder\\\"></span> Miscellaneous\",\"link\":\"/resources/misc\"}]},{\"text\":\"Tools\",\"collapsed\":false,\"items\":[{\"text\":\"<span class=\\\"i-twemoji:laptop\\\"></span> System Tools\",\"link\":\"/resources/system-tools\"},{\"text\":\"<span class=\\\"i-twemoji:card-file-box\\\"></span> File Tools\",\"link\":\"/resources/file-tools\"},{\"text\":\"<span class=\\\"i-twemoji:paperclip\\\"></span> Internet Tools\",\"link\":\"/resources/internet-tools\"},{\"text\":\"<span class=\\\"i-twemoji:left-speech-bubble\\\"></span> Social Media Tools\",\"link\":\"/resources/social-media-tools\"},{\"text\":\"<span class=\\\"i-twemoji:memo\\\"></span> Text Tools\",\"link\":\"/resources/text-tools\"},{\"text\":\"<span class=\\\"i-twemoji:alien-monster\\\"></span> Gaming Tools\",\"link\":\"/resources/gaming-tools\"},{\"text\":\"<span class=\\\"i-twemoji:camera\\\"></span> Image Tools\",\"link\":\"/resources/image-tools\"},{\"text\":\"<span class=\\\"i-twemoji:videocassette\\\"></span> Video Tools\",\"link\":\"/resources/video-tools\"},{\"text\":\"<span class=\\\"i-twemoji:speaker-high-volume\\\"></span> Audio Tools\",\"link\":\"/resources/audio#audio-tools\"},{\"text\":\"<span class=\\\"i-twemoji:red-apple\\\"></span> Educational Tools\",\"link\":\"/resources/educational#educational-tools\"},{\"text\":\"<span class=\\\"i-twemoji:man-technologist\\\"></span> Developer Tools\",\"link\":\"/resources/developer-tools\"}]},{\"text\":\"More\",\"collapsed\":true,\"items\":[{\"text\":\"<span class=\\\"i-twemoji:no-one-under-eighteen\\\"></span> NSFW\",\"link\":\"https://rentry.org/NSFW-Checkpoint\"},{\"text\":\"<span class=\\\"i-twemoji:warning\\\"></span> Unsafe Sites\",\"link\":\"/resources/unsafe\"},{\"text\":\"<span class=\\\"i-twemoji:wastebasket\\\"></span> Recently Removed\",\"link\":\"/resources/recently-removed\"},{\"text\":\"<span class=\\\"i-twemoji:package\\\"></span> Storage\",\"link\":\"/resources/storage\"}]}],\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/fmhy/FMHY\"},{\"icon\":\"reddit\",\"link\":\"https://www.reddit.com/r/FREEMEDIAHECKYEAH/\"}]},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":true}"));</script>
-    
-  </body>
+    <meta name="twitter:url" content="https://dictuzz.me/resources/">
+    <meta name="twitter:title" content="Resources — Curated Guides | dictuzz">
+    <meta name="twitter:description" content="Curated resource guides for software, media, privacy, and digital tools.">
+    <meta name="twitter:image" content="https://dictuzz.me/og-image.png">
+    <meta name="twitter:creator" content="@dictuzz">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/resources/resources.css">
+</head>
+
+<body class="resources-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ═══ NAVBAR ═══ -->
+    <nav class="resources-navbar" aria-label="Resources navigation">
+        <div class="resources-navbar__inner">
+            <a href="/" class="resources-navbar__brand">
+                <div class="resources-navbar__logo">
+                    <img src="/assets/images/favicon.png" alt="" width="36" height="36">
+                </div>
+                <span class="resources-navbar__title">dictuzz</span>
+            </a>
+
+            <div class="resources-navbar__nav">
+                <a href="/" class="resources-navbar__link"><i class="fas fa-house" aria-hidden="true"></i> Home</a>
+                <a href="/resume/" class="resources-navbar__link">Resume</a>
+                <a href="/portfolio/" class="resources-navbar__link">Portfolio</a>
+                <a href="/resources/" class="resources-navbar__link" aria-current="page">Resources</a>
+            </div>
+
+            <div class="resources-navbar__actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="resources-hamburger" id="resources-hamburger" aria-label="Open navigation menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ MOBILE NAV ═══ -->
+    <div class="resources-mobile-nav" id="resources-mobile-nav" aria-hidden="true">
+        <div class="resources-mobile-nav__panel">
+            <button class="resources-mobile-nav__close" id="resources-mobile-close" aria-label="Close navigation menu">
+                <i class="fas fa-xmark" aria-hidden="true"></i>
+            </button>
+            <a href="/" class="resources-mobile-nav__link"><i class="fas fa-house" aria-hidden="true"></i> Home</a>
+            <a href="/resume/" class="resources-mobile-nav__link"><i class="fas fa-file-lines" aria-hidden="true"></i> Resume</a>
+            <a href="/portfolio/" class="resources-mobile-nav__link"><i class="fas fa-table-cells-large" aria-hidden="true"></i> Portfolio</a>
+            <a href="/resources/" class="resources-mobile-nav__link" aria-current="page"><i class="fas fa-link" aria-hidden="true"></i> Resources</a>
+        </div>
+    </div>
+
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <main class="resources-shell" id="main-content">
+
+        <!-- Hero -->
+        <section class="resources-hero">
+            <span class="resources-hero__kicker">dictuzz resources</span>
+            <h1 class="resources-hero__title">Curated Resource Guides</h1>
+            <p class="resources-hero__subtitle">A compact field desk for finding useful software, safer browsing paths, and practical digital tools.</p>
+        </section>
+
+        <!-- ═══ WIKI — Content Categories ═══ -->
+        <section class="resources-section" aria-labelledby="section-wiki">
+            <div class="resources-section__header">
+                <span class="resources-section__icon"><i class="fas fa-folder-open" aria-hidden="true"></i></span>
+                <h2 class="resources-section__title" id="section-wiki">Wiki</h2>
+                <span class="resources-section__count">13</span>
+            </div>
+            <div class="resources-grid">
+                <!-- Adblocking / Privacy -->
+                <a href="/resources/privacy" class="resource-card" id="card-privacy">
+                    <span class="resource-card__icon resource-card__icon--privacy">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Adblocking / Privacy</span>
+                        <span class="resource-card__desc">Block ads, trackers and protect your privacy.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Artificial Intelligence -->
+                <a href="/resources/ai" class="resource-card" id="card-ai">
+                    <span class="resource-card__icon resource-card__icon--ai">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Artificial Intelligence</span>
+                        <span class="resource-card__desc">AI tools, chatbots, and machine learning.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Streaming -->
+                <a href="/resources/video" class="resource-card" id="card-video">
+                    <span class="resource-card__icon resource-card__icon--video">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Streaming</span>
+                        <span class="resource-card__desc">Movies, TV shows, and anime streaming.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Listening -->
+                <a href="/resources/audio" class="resource-card" id="card-audio">
+                    <span class="resource-card__icon resource-card__icon--audio">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Listening</span>
+                        <span class="resource-card__desc">Music, podcasts, and radio streaming.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Gaming -->
+                <a href="/resources/gaming" class="resource-card" id="card-gaming">
+                    <span class="resource-card__icon resource-card__icon--gaming">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Gaming</span>
+                        <span class="resource-card__desc">Games, emulators, and retro titles.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Reading -->
+                <a href="/resources/reading" class="resource-card" id="card-reading">
+                    <span class="resource-card__icon resource-card__icon--reading">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8"/><path d="M8 7h6"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Reading</span>
+                        <span class="resource-card__desc">Books, comics, manga, and literature.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Downloading -->
+                <a href="/resources/downloading" class="resource-card" id="card-downloading">
+                    <span class="resource-card__icon resource-card__icon--download">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m16 6-4 4-4-4"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 18h.01"/><path d="M10 18h.01"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Downloading</span>
+                        <span class="resource-card__desc">Software, movies, shows, music, and more.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Torrenting -->
+                <a href="/resources/torrenting" class="resource-card" id="card-torrenting">
+                    <span class="resource-card__icon resource-card__icon--torrent">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 15 4 4"/><path d="M2.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.029-6.029a1 1 0 1 1 3 3l-6.029 6.029a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l6.365-6.367A1 1 0 0 0 8.716 4.282z"/><path d="m5 8 4 4"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Torrenting</span>
+                        <span class="resource-card__desc">BitTorrent clients, trackers, and guides.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Educational -->
+                <a href="/resources/educational" class="resource-card" id="card-educational">
+                    <span class="resource-card__icon resource-card__icon--education">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Educational</span>
+                        <span class="resource-card__desc">Courses, tutorials, and learning resources.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Android / iOS -->
+                <a href="/resources/mobile" class="resource-card" id="card-mobile">
+                    <span class="resource-card__icon resource-card__icon--mobile">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Android / iOS</span>
+                        <span class="resource-card__desc">Mobile apps, mods, and content.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Linux / macOS -->
+                <a href="/resources/linux-macos" class="resource-card" id="card-linux">
+                    <span class="resource-card__icon resource-card__icon--linux">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Linux / macOS</span>
+                        <span class="resource-card__desc">The $HOME of Linux and macOS.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Non-English -->
+                <a href="/resources/non-english" class="resource-card" id="card-nonenglish">
+                    <span class="resource-card__icon resource-card__icon--language">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Non-English</span>
+                        <span class="resource-card__desc">Content in languages other than English.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <!-- Miscellaneous -->
+                <a href="/resources/misc" class="resource-card" id="card-misc">
+                    <span class="resource-card__icon resource-card__icon--misc">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Miscellaneous</span>
+                        <span class="resource-card__desc">Food, travel, news, shopping, and more.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ═══ TOOLS ═══ -->
+        <section class="resources-section" aria-labelledby="section-tools">
+            <div class="resources-section__header">
+                <span class="resources-section__icon"><i class="fas fa-link" aria-hidden="true"></i></span>
+                <h2 class="resources-section__title" id="section-tools">Tools</h2>
+                <span class="resources-section__count">9</span>
+            </div>
+            <div class="resources-grid">
+                <a href="/resources/system-tools" class="resource-card" id="card-system-tools">
+                    <span class="resource-card__icon resource-card__icon--tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">System Tools</span>
+                        <span class="resource-card__desc">OS utilities, system tweaks, and apps.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/file-tools" class="resource-card" id="card-file-tools">
+                    <span class="resource-card__icon resource-card__icon--tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">File Tools</span>
+                        <span class="resource-card__desc">File managers, converters, and archivers.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/internet-tools" class="resource-card" id="card-internet-tools">
+                    <span class="resource-card__icon resource-card__icon--tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Internet Tools</span>
+                        <span class="resource-card__desc">Browsers, extensions, and web utilities.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/social-media-tools" class="resource-card" id="card-social-tools">
+                    <span class="resource-card__icon resource-card__icon--tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a2 2 0 1 0 0-.01"/><path d="M18 6a2 2 0 1 0 0-.01"/><path d="M18 18a2 2 0 1 0 0-.01"/><path d="M10 11l6-4"/><path d="M10 13l6 4"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Social Media Tools</span>
+                        <span class="resource-card__desc">Social platform tools and downloaders.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/text-tools" class="resource-card" id="card-text-tools">
+                    <span class="resource-card__icon resource-card__icon--tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6.1H3"/><path d="M21 12.1H3"/><path d="M15.1 18H3"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Text Tools</span>
+                        <span class="resource-card__desc">Editors, translators, and text utilities.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/gaming-tools" class="resource-card" id="card-gaming-tools">
+                    <span class="resource-card__icon resource-card__icon--gaming">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="10" height="14" x="3" y="8" rx="2"/><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7"/><path d="M15 2v4"/><path d="M15 10v6"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Gaming Tools</span>
+                        <span class="resource-card__desc">Optimization, mods, and game tools.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/image-tools" class="resource-card" id="card-image-tools">
+                    <span class="resource-card__icon resource-card__icon--tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Image Tools</span>
+                        <span class="resource-card__desc">Editors, generators, and image utilities.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/video-tools" class="resource-card" id="card-video-tools">
+                    <span class="resource-card__icon resource-card__icon--video">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="m16 6-4 4-4-4"/><rect width="20" height="8" x="2" y="14" rx="2"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Video Tools</span>
+                        <span class="resource-card__desc">Editors, converters, and video utilities.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/developer-tools" class="resource-card" id="card-dev-tools">
+                    <span class="resource-card__icon resource-card__icon--tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Developer Tools</span>
+                        <span class="resource-card__desc">IDEs, APIs, DevOps, and coding resources.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ═══ GUIDES & MORE ═══ -->
+        <section class="resources-section" aria-labelledby="section-more">
+            <div class="resources-section__header">
+                <span class="resources-section__icon"><i class="fas fa-link" aria-hidden="true"></i></span>
+                <h2 class="resources-section__title" id="section-more">Guides & More</h2>
+                <span class="resources-section__count">5</span>
+            </div>
+            <div class="resources-grid">
+                <a href="/resources/beginners-guide" class="resource-card" id="card-guide">
+                    <span class="resource-card__icon resource-card__icon--guide">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Beginners Guide</span>
+                        <span class="resource-card__desc">Start here if you're new.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/storage" class="resource-card" id="card-storage">
+                    <span class="resource-card__icon resource-card__icon--storage">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Storage</span>
+                        <span class="resource-card__desc">Cloud storage, file hosting, and backups.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/unsafe" class="resource-card" id="card-unsafe">
+                    <span class="resource-card__icon resource-card__icon--warning">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 21 20H3L12 4z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Unsafe Sites</span>
+                        <span class="resource-card__desc">Sites to avoid — known dangers.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/recently-removed" class="resource-card" id="card-removed">
+                    <span class="resource-card__icon resource-card__icon--warning">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Recently Removed</span>
+                        <span class="resource-card__desc">Entries recently taken down.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+
+                <a href="/resources/feedback" class="resource-card" id="card-feedback">
+                    <span class="resource-card__icon resource-card__icon--guide">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </span>
+                    <span class="resource-card__body">
+                        <span class="resource-card__title">Feedback</span>
+                        <span class="resource-card__desc">Suggest edits or report issues.</span>
+                    </span>
+                    <i class="fas fa-arrow-right resource-card__arrow" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <footer class="global-footer"></footer>
+    </main>
+
+    <script type="module" src="/resources/resources.js"></script>
+</body>
+
 </html>

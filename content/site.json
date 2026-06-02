@@ -102,6 +102,10 @@
       {
         "label": "Portfolio",
         "href": "/portfolio/"
+      },
+      {
+        "label": "Resources",
+        "href": "/resources/"
       }
     ]
   },
