@@ -33,7 +33,7 @@
         },
         {
           "label": "Resources",
-          "icon": "fas fa-toolbox",
+          "icon": "fas fa-link",
           "href": "/resources/",
           "external": false,
           "priority": true
