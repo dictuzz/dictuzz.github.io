@@ -9,6 +9,58 @@ const resourcesDir = path.join(__dirname, '../resources');
 
 const SKIP_FILES = ['index.html', '404.html', 'sandbox.html', 'startpage.html'];
 
+const SIDEBAR_HTML = `
+<aside class="resources-sidebar">
+    <div class="sidebar-section">
+        <a href="/resources/beginners-guide.html" class="sidebar-link"><span class="i-twemoji-books"></span> Beginners Guide</a>
+        <!-- Skipping posts & contribute as they don't apply directly to our dictuzz mirror -->
+    </div>
+    
+    <div class="sidebar-section">
+        <h4 class="sidebar-title">Wiki</h4>
+        <nav class="sidebar-nav">
+            <a href="/resources/privacy.html" class="sidebar-link"><span class="i-twemoji-name-badge"></span> Adblocking / Privacy</a>
+            <a href="/resources/ai.html" class="sidebar-link"><span class="i-twemoji-robot"></span> Artificial Intelligence</a>
+            <a href="/resources/video.html" class="sidebar-link"><span class="i-twemoji-television"></span> Movies / TV / Anime</a>
+            <a href="/resources/audio.html" class="sidebar-link"><span class="i-twemoji-musical-note"></span> Music / Podcasts / Radio</a>
+            <a href="/resources/gaming.html" class="sidebar-link"><span class="i-twemoji-video-game"></span> Gaming / Emulation</a>
+            <a href="/resources/reading.html" class="sidebar-link"><span class="i-twemoji-green-book"></span> Books / Comics / Manga</a>
+            <a href="/resources/downloading.html" class="sidebar-link"><span class="i-twemoji-floppy-disk"></span> Downloading</a>
+            <a href="/resources/torrenting.html" class="sidebar-link"><span class="i-twemoji-cyclone"></span> Torrenting</a>
+            <a href="/resources/educational.html" class="sidebar-link"><span class="i-twemoji-brain"></span> Educational</a>
+            <a href="/resources/mobile.html" class="sidebar-link"><span class="i-twemoji-mobile-phone"></span> Android / iOS</a>
+            <a href="/resources/linux-macos.html" class="sidebar-link"><span class="i-twemoji-penguin"></span> Linux / macOS</a>
+            <a href="/resources/non-english.html" class="sidebar-link"><span class="i-twemoji-globe-showing-asia-australia"></span> Non-English</a>
+            <a href="/resources/misc.html" class="sidebar-link"><span class="i-twemoji-file-folder"></span> Miscellaneous</a>
+        </nav>
+    </div>
+
+    <div class="sidebar-section">
+        <h4 class="sidebar-title">Tools</h4>
+        <nav class="sidebar-nav">
+            <a href="/resources/system-tools.html" class="sidebar-link"><span class="i-twemoji-laptop"></span> System Tools</a>
+            <a href="/resources/file-tools.html" class="sidebar-link"><span class="i-twemoji-card-file-box"></span> File Tools</a>
+            <a href="/resources/internet-tools.html" class="sidebar-link"><span class="i-twemoji-paperclip"></span> Internet Tools</a>
+            <a href="/resources/social-media-tools.html" class="sidebar-link"><span class="i-twemoji-left-speech-bubble"></span> Social Media Tools</a>
+            <a href="/resources/text-tools.html" class="sidebar-link"><span class="i-twemoji-memo"></span> Text Tools</a>
+            <a href="/resources/gaming-tools.html" class="sidebar-link"><span class="i-twemoji-alien-monster"></span> Gaming Tools</a>
+            <a href="/resources/image-tools.html" class="sidebar-link"><span class="i-twemoji-camera"></span> Image Tools</a>
+            <a href="/resources/video-tools.html" class="sidebar-link"><span class="i-twemoji-videocassette"></span> Video Tools</a>
+            <a href="/resources/developer-tools.html" class="sidebar-link"><span class="i-twemoji-man-technologist"></span> Developer Tools</a>
+        </nav>
+    </div>
+
+    <div class="sidebar-section">
+        <h4 class="sidebar-title">More</h4>
+        <nav class="sidebar-nav">
+            <a href="/resources/unsafe.html" class="sidebar-link"><span class="i-twemoji-warning"></span> Unsafe Sites</a>
+            <a href="/resources/recently-removed.html" class="sidebar-link"><span class="i-twemoji-wastebasket"></span> Recently Removed</a>
+            <a href="/resources/storage.html" class="sidebar-link"><span class="i-twemoji-package"></span> Storage</a>
+        </nav>
+    </div>
+</aside>
+`;
+
 function buildTemplate(title, content) {
     return `<!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -36,6 +88,7 @@ function buildTemplate(title, content) {
 
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/resources/resources.css">
+    <link rel="stylesheet" href="/resources/fmhy-icons.css">
 </head>
 <body class="resources-page subpage">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -82,13 +135,14 @@ function buildTemplate(title, content) {
     </div>
 
     <!-- ═══ MAIN CONTENT ═══ -->
-    <main class="resources-shell" id="main-content">
+    <main class="resources-shell has-sidebar" id="main-content">
+        ${SIDEBAR_HTML}
         <div class="resources-content vp-doc">
 ${content}
         </div>
-        <footer class="global-footer"></footer>
     </main>
 
+    <footer class="global-footer"></footer>
     <script type="module" src="/resources/resources.js"></script>
 </body>
 </html>`;
