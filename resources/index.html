@@ -3,15 +3,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png?v=2" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+    <link rel="shortcut icon" href="/favicon.ico?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
     <meta name="apple-mobile-web-app-title" content="dictuzz Resources">
     <link rel="manifest" href="/site.webmanifest">
 
     <title>Resources — Curated Guides for Software, Media &amp; Privacy | dictuzz</title>
-    <meta name="description" content="Curated resource guides for software, media, privacy, and digital tools. Browse categories for streaming, gaming, reading, downloading, AI, and more.">
+    <meta name="description" content="A comprehensive, curated directory of digital resources, software guides, and privacy tools compiled by Benedictus Richard Ricardo (dictuzz).">
     <meta name="keywords" content="dictuzz resources, free software, media guides, privacy tools, streaming, gaming, reading, downloading, torrenting, AI, educational, Linux, macOS, Android, iOS">
     <meta name="author" content="Benedictus Richard Ricardo">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -21,7 +21,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dictuzz.me/resources/">
     <meta property="og:title" content="Resources — Curated Guides for Software, Media &amp; Privacy | dictuzz">
-    <meta property="og:description" content="Curated resource guides for software, media, privacy, and digital tools.">
+    <meta property="og:description" content="A comprehensive, curated directory of digital resources, software guides, and privacy tools compiled by Benedictus Richard Ricardo (dictuzz).">
     <meta property="og:image" content="https://dictuzz.me/og-image.png">
     <meta property="og:site_name" content="dictuzz">
     <meta property="og:locale" content="en_US">
@@ -78,14 +78,39 @@
 
     <!-- ═══ MOBILE NAV ═══ -->
     <div class="resources-mobile-nav" id="resources-mobile-nav" aria-hidden="true">
-        <div class="resources-mobile-nav__panel">
+                <div class="resources-mobile-nav__panel">
             <button class="resources-mobile-nav__close" id="resources-mobile-close" aria-label="Close navigation menu">
                 <i class="i-ph-x-duotone" aria-hidden="true"></i>
             </button>
-            <a href="/" class="resources-mobile-nav__link"><i class="i-ph-house-duotone" aria-hidden="true"></i> Home</a>
-            <a href="/resume/" class="resources-mobile-nav__link"><i class="i-ph-file-text-duotone" aria-hidden="true"></i> Resume</a>
-            <a href="/portfolio/" class="resources-mobile-nav__link"><i class="i-ph-squares-four-duotone" aria-hidden="true"></i> Portfolio</a>
-            <a href="/resources/" class="resources-mobile-nav__link" aria-current="page"><i class="i-ph-link-duotone" aria-hidden="true"></i> Resources</a>
+            <div style="padding: 1rem 0; overflow-y: auto;">
+                <a href="/resources/beginners-guide.html" class="resources-mobile-nav__link"><i class="i-ph-books-duotone"></i> Beginners Guide</a>
+                <h4 style="margin: 1.5rem 1.5rem 0.5rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted);">Wiki</h4>
+                <a href="/resources/privacy.html" class="resources-mobile-nav__link"><i class="i-ph-identification-badge-duotone"></i> Adblocking / Privacy</a>
+                <a href="/resources/ai.html" class="resources-mobile-nav__link"><i class="i-ph-robot-duotone"></i> Artificial Intelligence</a>
+                <a href="/resources/video.html" class="resources-mobile-nav__link"><i class="i-ph-television-duotone"></i> Movies / TV / Anime</a>
+                <a href="/resources/audio.html" class="resources-mobile-nav__link"><i class="i-ph-music-note-duotone"></i> Music / Podcasts / Radio</a>
+                <a href="/resources/gaming.html" class="resources-mobile-nav__link"><i class="i-ph-game-controller-duotone"></i> Gaming / Emulation</a>
+                <a href="/resources/reading.html" class="resources-mobile-nav__link"><i class="i-ph-book-open-text-duotone"></i> Books / Comics / Manga</a>
+                <a href="/resources/downloading.html" class="resources-mobile-nav__link"><i class="i-ph-floppy-disk-duotone"></i> Downloading</a>
+                <a href="/resources/torrenting.html" class="resources-mobile-nav__link"><i class="i-ph-cloud-rain-duotone"></i> Torrenting</a>
+                <a href="/resources/educational.html" class="resources-mobile-nav__link"><i class="i-ph-brain-duotone"></i> Educational</a>
+                <a href="/resources/mobile.html" class="resources-mobile-nav__link"><i class="i-ph-device-mobile-camera-duotone"></i> Android / iOS</a>
+                <a href="/resources/linux-macos.html" class="resources-mobile-nav__link"><i class="i-ph-linux-logo-duotone"></i> Linux / macOS</a>
+                <a href="/resources/non-english.html" class="resources-mobile-nav__link"><i class="i-ph-globe-hemisphere-east-duotone"></i> Non-English</a>
+                <a href="/resources/misc.html" class="resources-mobile-nav__link"><i class="i-ph-folder-duotone"></i> Misc</a>
+
+                <h4 style="margin: 1.5rem 1.5rem 0.5rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted);">Tools</h4>
+                <a href="/resources/system-tools.html" class="resources-mobile-nav__link"><i class="i-ph-desktop-duotone"></i> System Tools</a>
+                <a href="/resources/file-tools.html" class="resources-mobile-nav__link"><i class="i-ph-folder-open-duotone"></i> File Tools</a>
+                <a href="/resources/internet-tools.html" class="resources-mobile-nav__link"><i class="i-ph-globe-hemisphere-west-duotone"></i> Internet Tools</a>
+                <a href="/resources/social-media-tools.html" class="resources-mobile-nav__link"><i class="i-ph-chat-circle-dots-duotone"></i> Social Media Tools</a>
+                <a href="/resources/text-tools.html" class="resources-mobile-nav__link"><i class="i-ph-pencil-simple-duotone"></i> Text Tools</a>
+                <a href="/resources/image-tools.html" class="resources-mobile-nav__link"><i class="i-ph-camera-duotone"></i> Image Tools</a>
+                <a href="/resources/video-tools.html" class="resources-mobile-nav__link"><i class="i-ph-film-strip-duotone"></i> Video Tools</a>
+                <a href="/resources/audio-tools.html" class="resources-mobile-nav__link"><i class="i-ph-music-note-duotone"></i> Audio Tools</a>
+                <a href="/resources/gaming-tools.html" class="resources-mobile-nav__link"><i class="i-ph-game-controller-duotone"></i> Gaming Tools</a>
+                <a href="/resources/developer-tools.html" class="resources-mobile-nav__link"><i class="i-ph-code-duotone"></i> Developer Tools</a>
+            </div>
         </div>
     </div>
 
