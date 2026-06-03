@@ -61,12 +61,12 @@ export class ThemeManager {
         if (theme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
             if (this.iconElement) {
-                this.iconElement.className = 'fas fa-moon';
+                this.iconElement.className = 'i-ph-moon-duotone';
             }
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
             if (this.iconElement) {
-                this.iconElement.className = 'fas fa-sun';
+                this.iconElement.className = 'i-ph-sun-duotone';
             }
         }
 

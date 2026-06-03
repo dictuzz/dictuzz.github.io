@@ -50,49 +50,49 @@
       "id": "linkedin",
       "label": "LinkedIn",
       "url": "https://linkedin.com/in/dictuzz",
-      "icon": "fab fa-linkedin-in"
+      "icon": "i-ph-linkedin-logo-duotone"
     },
     {
       "id": "github",
       "label": "GitHub",
       "url": "https://github.com/dictuzz",
-      "icon": "fab fa-github"
+      "icon": "i-ph-github-logo-duotone"
     },
     {
       "id": "kaggle",
       "label": "Kaggle",
       "url": "https://www.kaggle.com/dictuzz",
-      "icon": "fab fa-kaggle"
+      "icon": "i-ph-student-duotone"
     },
     {
       "id": "instagram",
       "label": "Instagram",
       "url": "https://instagram.com/dictuzz",
-      "icon": "fab fa-instagram"
+      "icon": "i-ph-instagram-logo-duotone"
     },
     {
       "id": "threads",
       "label": "Threads",
       "url": "https://www.threads.net/@dictuzz",
-      "icon": "fas fa-at"
+      "icon": "i-ph-at-duotone"
     },
     {
       "id": "facebook",
       "label": "Facebook",
       "url": "https://www.facebook.com/share/1BBT96Ypdf/",
-      "icon": "fab fa-facebook-f"
+      "icon": "i-ph-facebook-logo-duotone"
     },
     {
       "id": "steam",
       "label": "Steam",
       "url": "https://steamcommunity.com/profiles/76561199806080510",
-      "icon": "fab fa-steam-symbol"
+      "icon": "i-ph-game-controller-duotone"
     },
     {
       "id": "discord",
       "label": "Discord",
       "url": "https://discord.gg/DVCySSUM",
-      "icon": "fab fa-discord"
+      "icon": "i-ph-discord-logo-duotone"
     }
   ],
   "navigation": {

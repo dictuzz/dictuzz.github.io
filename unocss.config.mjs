@@ -3,7 +3,9 @@ import { defineConfig, presetIcons } from 'unocss'
 export default defineConfig({
   content: {
     filesystem: [
-      'resources/*.html'
+      '**/*.html',
+      '**/*.json',
+      '**/*.js'
     ]
   },
   presets: [

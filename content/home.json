@@ -7,33 +7,33 @@
       "id": "links",
       "title": "Links",
       "summary": "Primary routes to portfolio, resume, and public work.",
-      "icon": "fas fa-folder-open",
+      "icon": "i-ph-folder-open-duotone",
       "defaultOpen": true,
       "items": [
         {
           "label": "Portfolio",
-          "icon": "fas fa-table-cells-large",
+          "icon": "i-ph-squares-four-duotone",
           "href": "/portfolio/",
           "external": false,
           "priority": true
         },
         {
           "label": "Resume",
-          "icon": "fas fa-file-lines",
+          "icon": "i-ph-file-text-duotone",
           "href": "/resume/",
           "external": false,
           "priority": true
         },
         {
           "label": "GitHub Projects",
-          "icon": "fab fa-github",
+          "icon": "i-ph-github-logo-duotone",
           "href": "https://github.com/dictuzz",
           "external": true,
           "priority": true
         },
         {
           "label": "Resources",
-          "icon": "fas fa-link",
+          "icon": "i-ph-link-duotone",
           "href": "/resources/",
           "external": false,
           "priority": true
@@ -44,25 +44,25 @@
       "id": "contact",
       "title": "Contact Me",
       "summary": "Direct channels for introductions, proposals, and calls.",
-      "icon": "fas fa-paper-plane",
+      "icon": "i-ph-paper-plane-tilt-duotone",
       "defaultOpen": false,
       "items": [
         {
           "label": "Email",
-          "icon": "fas fa-envelope",
+          "icon": "i-ph-envelope-duotone",
           "href": "mailto:contact@dictuzz.me",
           "external": false,
           "priority": true
         },
         {
           "label": "Book a Call",
-          "icon": "fas fa-calendar-check",
+          "icon": "i-ph-calendar-check-duotone",
           "href": "https://calendar.app.google/39u2qGH6ybaFenhdA",
           "external": true
         },
         {
           "label": "WhatsApp",
-          "icon": "fab fa-whatsapp",
+          "icon": "i-ph-whatsapp-logo-duotone",
           "href": "https://wa.me/6285186888630",
           "external": true
         }
@@ -72,55 +72,55 @@
       "id": "socials",
       "title": "Socials",
       "summary": "Extended social presence and community profiles.",
-      "icon": "fas fa-share-nodes",
+      "icon": "i-ph-share-network-duotone",
       "defaultOpen": false,
       "items": [
         {
           "label": "LinkedIn",
-          "icon": "fab fa-linkedin-in",
+          "icon": "i-ph-linkedin-logo-duotone",
           "href": "https://linkedin.com/in/dictuzz",
           "external": true,
           "priority": true
         },
         {
           "label": "Instagram",
-          "icon": "fab fa-instagram",
+          "icon": "i-ph-instagram-logo-duotone",
           "href": "https://instagram.com/dictuzz",
           "external": true
         },
         {
           "label": "Facebook",
-          "icon": "fab fa-facebook-f",
+          "icon": "i-ph-facebook-logo-duotone",
           "href": "https://www.facebook.com/share/1BBT96Ypdf/",
           "external": true
         },
         {
           "label": "Threads",
-          "icon": "fas fa-at",
+          "icon": "i-ph-at-duotone",
           "href": "https://www.threads.net/@dictuzz",
           "external": true
         },
         {
           "label": "GitHub",
-          "icon": "fab fa-github",
+          "icon": "i-ph-github-logo-duotone",
           "href": "https://github.com/dictuzz",
           "external": true
         },
         {
           "label": "Kaggle",
-          "icon": "fab fa-kaggle",
+          "icon": "i-ph-student-duotone",
           "href": "https://www.kaggle.com/dictuzz",
           "external": true
         },
         {
           "label": "Steam",
-          "icon": "fab fa-steam-symbol",
+          "icon": "i-ph-game-controller-duotone",
           "href": "https://steamcommunity.com/profiles/76561199806080510",
           "external": true
         },
         {
           "label": "Discord",
-          "icon": "fab fa-discord",
+          "icon": "i-ph-discord-logo-duotone",
           "href": "https://discord.gg/DVCySSUM",
           "external": true
         }

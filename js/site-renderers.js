@@ -27,7 +27,7 @@ export function renderFoldersMarkup(folders) {
                             <span class="folder__summary">${escapeHtml(folder.summary || '')}</span>
                         </span>
                     </span>
-                    <span class="folder__chevron" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                    <span class="folder__chevron" aria-hidden="true"><i class="i-ph-caret-down-duotone"></i></span>
                 </button>
             </h2>
             <div class="folder__panel" id="panel-${escapeHtml(folder.id)}" role="region" aria-labelledby="trigger-${escapeHtml(folder.id)}" ${folder.defaultOpen ? '' : 'hidden'}>
@@ -38,7 +38,7 @@ export function renderFoldersMarkup(folders) {
                                 <span class="folder-link__icon"><i class="${escapeHtml(item.icon)}" aria-hidden="true"></i></span>
                                 <span>${escapeHtml(item.label)}</span>
                             </span>
-                            <i class="${item.external ? 'fas fa-arrow-up-right-from-square' : 'fas fa-arrow-right'}" aria-hidden="true"></i>
+                            <i class="${item.external ? 'i-ph-arrow-up-right-duotone' : 'i-ph-arrow-right-duotone'}" aria-hidden="true"></i>
                         </a>
                     `).join('')}
                 </div>
@@ -53,7 +53,7 @@ export function renderDirectoryUnavailableMarkup() {
             <h2 class="folder__heading">
                 <button class="folder__trigger" type="button" aria-expanded="true">
                     <span class="folder__label">
-                        <span class="folder__icon"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
+                        <span class="folder__icon"><i class="i-ph-warning-duotone" aria-hidden="true"></i></span>
                         <span class="folder__title-group">
                             <span class="folder__title-row">
                                 <span class="folder__title">Directory unavailable</span>
@@ -67,17 +67,17 @@ export function renderDirectoryUnavailableMarkup() {
                 <div class="folder__items">
                     <a class="folder-link" href="/resume/">
                         <span class="folder-link__main">
-                            <span class="folder-link__icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+                            <span class="folder-link__icon"><i class="i-ph-file-text-duotone" aria-hidden="true"></i></span>
                             <span>Resume</span>
                         </span>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <i class="i-ph-arrow-right-duotone" aria-hidden="true"></i>
                     </a>
                     <a class="folder-link" href="mailto:contact@dictuzz.me">
                         <span class="folder-link__main">
-                            <span class="folder-link__icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                            <span class="folder-link__icon"><i class="i-ph-envelope-duotone" aria-hidden="true"></i></span>
                             <span>Email</span>
                         </span>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        <i class="i-ph-arrow-right-duotone" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -96,20 +96,20 @@ function createFooterViewModel(siteConfig, currentPath = window.location.pathnam
         contacts: [
             {
                 href: `mailto:${siteConfig.contact.email}`,
-                icon: 'fas fa-envelope',
+                icon: 'i-ph-envelope-duotone',
                 label: siteConfig.contact.email,
                 ariaLabel: 'Email Me'
             },
             {
                 href: siteConfig.contact.whatsappUrl,
-                icon: 'fab fa-whatsapp',
+                icon: 'i-ph-whatsapp-logo-duotone',
                 label: siteConfig.contact.whatsappLabel,
                 ariaLabel: 'WhatsApp',
                 external: true
             },
             {
                 href: '/terms/',
-                icon: 'fas fa-file-contract',
+                icon: 'i-ph-file-text-duotone',
                 label: 'Terms',
                 current: currentPath === '/terms/'
             }
