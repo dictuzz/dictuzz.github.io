@@ -226,18 +226,19 @@ async function initFolders() {
         applyHomepageIdentity(siteConfig, homeContent);
         accordionContainer.innerHTML = renderFoldersMarkup(homeContent.folders);
         bindFolderAccordion();
-        upgradeIcons(accordionContainer);
+        upgradeIcons(document);
         bindRouteWarmup();
     } catch {
         accordionContainer.innerHTML = renderDirectoryUnavailableMarkup();
         bindFolderAccordion();
-        upgradeIcons(accordionContainer);
+        upgradeIcons(document);
         bindRouteWarmup();
     }
 }
 
 const LOCAL_TIME_INTERVAL_MS = 60_000;
 
+upgradeIcons(document);
 initFolders();
 updateLocalTime();
 window.setInterval(updateLocalTime, LOCAL_TIME_INTERVAL_MS);
