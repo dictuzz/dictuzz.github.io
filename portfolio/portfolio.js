@@ -64,6 +64,7 @@ function renderLockScreen() {
       <form class="lock-form" id="lock-form">
         <input type="password" id="lock-pass" class="lock-input" placeholder="Passphrase" required autofocus>
         <button type="submit" class="lock-btn">Unlock Records</button>
+        <a href="https://wa.me/6285186888630" target="_blank" rel="noopener noreferrer" class="lock-btn request-access-btn" style="display: block; text-align: center; margin-top: 10px; background: transparent; border: 1px solid currentColor; text-decoration: none;">Request Access</a>
         <div id="lock-error" class="lock-error"></div>
       </form>
     </div>

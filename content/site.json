@@ -59,6 +59,12 @@
       "icon": "fab fa-github"
     },
     {
+      "id": "kaggle",
+      "label": "Kaggle",
+      "url": "https://www.kaggle.com/dictuzz",
+      "icon": "fab fa-kaggle"
+    },
+    {
       "id": "instagram",
       "label": "Instagram",
       "url": "https://instagram.com/dictuzz",

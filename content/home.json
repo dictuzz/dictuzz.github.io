@@ -107,6 +107,12 @@
           "external": true
         },
         {
+          "label": "Kaggle",
+          "icon": "fab fa-kaggle",
+          "href": "https://www.kaggle.com/dictuzz",
+          "external": true
+        },
+        {
           "label": "Steam",
           "icon": "fab fa-steam-symbol",
           "href": "https://steamcommunity.com/profiles/76561199806080510",

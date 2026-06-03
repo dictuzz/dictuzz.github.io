@@ -79,6 +79,38 @@
         "deck": "Four-plus years of equipment care and training support at Vertical Rescue Indonesia — readiness as a discipline, not a posture.",
         "meta": "Assistant Instructor · Jan 2021 – Present",
         "href": "/portfolio/cases/vertical-rescue-ops/"
+      },
+      {
+        "slug": "tua-spatial-analyzer",
+        "kicker": "Analytics & Routing",
+        "title": "Spatial Analyzer",
+        "deck": "A spatial analysis tool built for Tirta Utama Abadi to evaluate and optimize route efficiency.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/TUASpatial"
+      },
+      {
+        "slug": "tua-route-validator",
+        "kicker": "Operations",
+        "title": "Route Validator",
+        "deck": "An operational tool developed for validating route compliance and delivery performance at Tirta Utama Abadi.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/49cpunb"
+      },
+      {
+        "slug": "tua-online-meeting-rtm",
+        "kicker": "Management",
+        "title": "Online Meeting RTM",
+        "deck": "A centralized management and tracking dashboard for Tirta Utama Abadi online meetings.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/RTMTUA"
+      },
+      {
+        "slug": "sample-report",
+        "kicker": "Analytics",
+        "title": "Sample Report",
+        "deck": "A sample data report built on Google Data Studio.",
+        "meta": "Data Studio",
+        "href": "https://datastudio.google.com/s/mT9LfU0JTPc"
       }
     ],
     "editor": {
