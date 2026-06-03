@@ -1,7 +1,14 @@
 User-agent: *
 Allow: /
-Disallow: /scripts/
-Disallow: /tests/
-Disallow: /node_modules/
+
+# Specifically allow standard AI and Search engine bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://dictuzz.me/sitemap.xml

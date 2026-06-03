@@ -116,10 +116,10 @@
     "editor": {
       "kicker": "About the editor",
       "title": "Benedictus Richard Ricardo, on the record.",
-      "lede": "I work where operations are complex, ownership is distributed, and the cost of confusion is real. The role is usually some mix of investigator, systems builder, and execution stabilizer.",
+      "lede": "I specialize in environments where operations are complex and ownership is distributed. My work focuses on removing operational confusion, stabilizing execution, and building systems that make the next right step obvious.",
       "body": [
-        "Good systems do not feel complicated when they are used. They make the next step obvious, reduce wasted motion, and let people act with more confidence under pressure.",
-        "I am studying Data Science at Universitas Terbuka and continuing to refine the way process design, evidence, and execution fit together."
+        "Well-designed systems shouldn't feel complicated; they should feel intuitive. By reducing wasted motion, teams can execute with greater confidence under pressure.",
+        "Currently pursuing Data Science at Universitas Terbuka, I continually refine the intersection of process design, empirical evidence, and seamless execution."
       ],
       "facts": [
         { "label": "Base", "value": "Bandung, Indonesia · UTC+7" },
