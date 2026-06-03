@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const VERSION = 'v3';
+const VERSION = 'v4';
 
 function walk(dir) {
   for (const file of fs.readdirSync(dir)) {

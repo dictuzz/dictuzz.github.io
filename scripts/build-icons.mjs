@@ -15,27 +15,23 @@ function getAllHtmlFiles(dir) {
     const stat = fs.statSync(filePath);
     if (stat && stat.isDirectory()) {
       results = results.concat(getAllHtmlFiles(filePath));
-    } else if (filePath.endsWith('.html')) {
+    } else if (filePath.endsWith('.html') || filePath.endsWith('.json')) {
       results.push(filePath);
     }
   }
   return results;
 }
 
-const htmlFiles = getAllHtmlFiles('.');
+const targetFiles = getAllHtmlFiles('.');
 const iconClasses = new Set();
-const classRegex = /class="([^"]+)"/g;
+// Match directly any token that looks like an icon class
+const classRegex = /(i-(?:ph|twemoji|carbon|fluent|gravity-ui)-[a-z0-9-]+)/g;
 
-for (const file of htmlFiles) {
+for (const file of targetFiles) {
   const content = fs.readFileSync(file, 'utf8');
   let match;
   while ((match = classRegex.exec(content)) !== null) {
-    const classes = match[1].split(/\s+/);
-    for (const c of classes) {
-      if (c.startsWith('i-ph-') || c.startsWith('i-twemoji-') || c.startsWith('i-carbon-') || c.startsWith('i-fluent-') || c.startsWith('i-gravity-')) {
-        iconClasses.add(c);
-      }
-    }
+    iconClasses.add(match[1]);
   }
 }
 
