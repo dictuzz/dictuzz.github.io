@@ -47,7 +47,6 @@ let jsOutput = `// Auto-generated icon data\nexport const ICON_MAP = {\n`;
 
 for (const c of iconClasses) {
   const parts = c.split('-');
-  const prefixParts = parts.slice(1, -1); 
   let prefix = '';
   let name = '';
   

@@ -9,6 +9,7 @@
     "validate:content": "node scripts/validate-content.mjs",
     "test": "node --test tests/*.test.js",
     "build:icons": "node scripts/build-icons.mjs",
+    "build:search-index": "node scripts/build-search-index.mjs",
     "test:a11y": "axe-cli http://localhost:8000 --tags wcag2aa,wcag21aa --save results/axe-report.json --exit",
     "test:a11y:ci": "lighthouse http://localhost:8000 --only-categories=accessibility --output=json --output-path=results/lighthouse-a11y.json --chrome-flags='--headless --no-sandbox' --budget-path=.lighthouse-budget.json",
     "serve:ci": "npx serve . -l 8000"

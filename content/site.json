@@ -24,7 +24,7 @@
       "city": "Bandung",
       "countryCode": "ID",
       "countryName": "Indonesia",
-      "timeZone": "Asia/Bangkok"
+      "timeZone": "Asia/Jakarta"
     },
     "alumniOf": {
       "name": "Universitas Terbuka",
@@ -116,22 +116,24 @@
     ]
   },
   "seo": {
-    "twitterCreator": "@dictuzz",
     "keywords": {
-      "home": "Benedictus Richard Ricardo, dictuzz, Systems Architect, Automation Specialist, workflow automation, operations systems, process improvement, resume, portfolio, GitHub, WhatsApp, Bandung Indonesia",
-      "resume": "Benedictus Richard Ricardo resume, dictuzz resume, Systems Architect, Automation Specialist, workflow automation, operational leadership, KPI governance, process improvement, Bandung Indonesia"
+      "home": "Systems Architect, Automation Specialist, workflow automation, operational governance, reporting automation, process improvement, fractional operations, Bandung Indonesia",
+      "resume": "Systems Architect resume, Automation Specialist, workflow automation, operational leadership, KPI governance, reporting automation, fractional COO, Bandung Indonesia",
+      "portfolio": "workflow automation case study, operational governance, live event operations, systems architecture portfolio, Home Digital Indonesia",
+      "resources": "workflow automation tools, operational governance templates, KPI framework, reporting automation guide, event operations checklist"
     },
+    "twitterCreator": "@dictuzz",
     "pages": {
       "home": {
         "path": "/",
-        "title": "Benedictus Richard Ricardo (dictuzz) — Systems Architect & Automation Specialist",
-        "description": "Benedictus Richard Ricardo, known as dictuzz, is a Systems Architect & Automation Specialist in Bandung, Indonesia. Explore the homepage, resume, portfolio access, GitHub, and direct WhatsApp contact.",
+        "title": "Systems Architect & Automation Specialist — Eliminate 12+ hrs/week Manual Work | dictuzz",
+        "description": "Systems Architect & Automation Specialist. I build operational systems that cut 12+ hrs/week manual work, standardize governance for 30+ teams, and coordinate 1,000+ attendee events. Based in Bandung (GMT+7).",
         "ogType": "website"
       },
       "resume": {
         "path": "/resume/",
-        "title": "Benedictus Richard Ricardo — Systems Architect & Automation Specialist",
-        "description": "Resume of Benedictus Richard Ricardo, Systems Architect & Automation Specialist. Explore experience, workflow automation, operational leadership, certifications, skills, and direct contact options.",
+        "title": "Systems Architect Resume | Workflow Automation, Operational Governance, 1K+ Event Scale | dictuzz",
+        "description": "Systems Architect & Automation Specialist resume. 12+ hrs/week saved via reporting automation (Home Digital), KPI governance for 34-member org, 1,000+ event operations. Available for fractional engagements.",
         "ogType": "profile"
       },
       "terms": {
@@ -142,9 +144,15 @@
       },
       "portfolio": {
         "path": "/portfolio/",
-        "title": "The Operational Record · dictuzz — Systems Architect & Automation Specialist",
+        "title": "The Operational Record: Case Studies in Workflow Automation & Operational Governance | dictuzz",
         "titleTemplate": "%s · The Operational Record | dictuzz",
-        "description": "The Operational Record: an editorial portfolio of Benedictus Richard Ricardo. Case files in workflow automation, governance, live operations, and readiness.",
+        "description": "The Operational Record: editorial case studies in workflow automation, operational governance & live operations. Home Digital reporting automation, student council KPI system, 1,000+ event ops.",
+        "ogType": "website"
+      },
+      "resources": {
+        "path": "/resources/",
+        "title": "Free Tools & Guides for Workflow Automation, Data Analysis & Operations | dictuzz",
+        "description": "Curated free tools & guides for workflow automation (Excel, Power Query, Python), operational governance (KPI frameworks, SOP templates), and live event operations.",
         "ogType": "website"
       }
     }

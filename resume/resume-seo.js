@@ -50,7 +50,7 @@ export function updateResumeSeo(siteConfig, content, lang) {
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
     document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', toAbsoluteUrl(siteConfig.site.siteUrl, siteConfig.profile.image.resumeOg));
     document.querySelector('meta[name="twitter:image:alt"]')?.setAttribute('content', siteConfig.profile.image.alt);
-    document.querySelector('meta[name="twitter:creator"]')?.setAttribute('content', siteConfig.seo.twitterCreator);
+    document.querySelector('meta[name="twitter:creator"]')?.setAttribute('content', siteConfig.seo.twitterCreator || '');
 
     const graph = [
         {

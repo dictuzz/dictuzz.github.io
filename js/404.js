@@ -429,11 +429,13 @@
     } else {
       snake.pop();
     }
+
+    scheduleTick();
   }
 
   function die() {
     running = false;
-    clearInterval(tickId);
+    clearTimeout(tickId);
 
     // Death particles
     const headPx = snake[0].x * cell + cell / 2;
@@ -463,21 +465,25 @@
     deathScreen.style.animation = '';
   }
 
+  function scheduleTick() {
+    clearTimeout(tickId);
+    tickId = setTimeout(tick, tickMs);
+  }
+
   function startGame() {
     initState();
     started = true;
     running = true;
     startScreen.classList.add('hidden');
     deathScreen.classList.add('hidden');
-    tickId = setInterval(tick, tickMs);
+    scheduleTick();
   }
 
   function restartGame() {
     initState();
     running = true;
     deathScreen.classList.add('hidden');
-    clearInterval(tickId);
-    tickId = setInterval(tick, tickMs);
+    scheduleTick();
   }
 
   /* ── Input: Keyboard ─────────────────────────────────────────── */
@@ -585,10 +591,10 @@
 
   /* ── Focus / Blur ────────────────────────────────────────────── */
   window.addEventListener('blur', () => {
-    if (running) { clearInterval(tickId); }
+    if (running) { clearTimeout(tickId); }
   });
   window.addEventListener('focus', () => {
-    if (running) { clearInterval(tickId); tickId = setInterval(tick, tickMs); }
+    if (running) { scheduleTick(); }
   });
 
   /* ── Resize ──────────────────────────────────────────────────── */

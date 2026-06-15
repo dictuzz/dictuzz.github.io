@@ -38,7 +38,7 @@ export function applyManagedPageMetadata(siteConfig, pageKey, overrides = {}) {
     setMetaAttribute('meta[name="twitter:description"]', 'content', description);
     setMetaAttribute('meta[name="twitter:image"]', 'content', absoluteImage);
     setMetaAttribute('meta[name="twitter:image:alt"]', 'content', siteConfig.profile.image.alt);
-    setMetaAttribute('meta[name="twitter:creator"]', 'content', siteConfig.seo.twitterCreator);
+    setMetaAttribute('meta[name="twitter:creator"]', 'content', siteConfig.seo.twitterCreator || '');
 }
 
 export function buildHomeStructuredData(siteConfig) {

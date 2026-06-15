@@ -6,7 +6,8 @@ export default defineConfig({
       '**/*.html',
       '**/*.json',
       '**/*.js'
-    ]
+    ],
+    exclude: ['node_modules']
   },
   presets: [
     presetIcons({

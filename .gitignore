@@ -21,3 +21,6 @@ portfolio/*/__next*
 portfolio/work/*/__next*
 portfolio/_global-error/
 portfolio/_not-found/
+
+# CI artifacts
+results/

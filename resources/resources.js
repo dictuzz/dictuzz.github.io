@@ -55,8 +55,30 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// --- Inject search link into navbar ---
+function injectSearchLink() {
+    const nav = document.querySelector('.resources-navbar__nav');
+    if (!nav) return;
+    const existing = nav.querySelector('.resources-navbar__link--search');
+    if (existing) return;
+    const link = document.createElement('a');
+    link.href = '/resources/search.html';
+    link.className = 'resources-navbar__link resources-navbar__link--search';
+    link.innerHTML = '<i class="i-ph-magnifying-glass-duotone" aria-hidden="true"></i> Search';
+    nav.appendChild(link);
+}
+
+// --- Ctrl+K shortcut to search ---
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        window.location.href = '/resources/search.html';
+    }
+});
+
 // --- Icons + Footer ---
 async function init() {
+    injectSearchLink();
     upgradeIcons(document);
 
     try {

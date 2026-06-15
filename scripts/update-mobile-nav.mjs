@@ -1,5 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const html = `        <div class="resources-mobile-nav__panel">
             <button class="resources-mobile-nav__close" id="resources-mobile-close" aria-label="Close navigation menu">
                 <i class="i-ph-x-duotone" aria-hidden="true"></i>
@@ -29,13 +32,15 @@ const html = `        <div class="resources-mobile-nav__panel">
                 <a href="/resources/text-tools.html" class="resources-mobile-nav__link"><i class="i-ph-pencil-simple-duotone"></i> Text Tools</a>
                 <a href="/resources/image-tools.html" class="resources-mobile-nav__link"><i class="i-ph-camera-duotone"></i> Image Tools</a>
                 <a href="/resources/video-tools.html" class="resources-mobile-nav__link"><i class="i-ph-film-strip-duotone"></i> Video Tools</a>
-                <a href="/resources/audio-tools.html" class="resources-mobile-nav__link"><i class="i-ph-music-note-duotone"></i> Audio Tools</a>
                 <a href="/resources/gaming-tools.html" class="resources-mobile-nav__link"><i class="i-ph-game-controller-duotone"></i> Gaming Tools</a>
                 <a href="/resources/developer-tools.html" class="resources-mobile-nav__link"><i class="i-ph-code-duotone"></i> Developer Tools</a>
+
+                <h4 style="margin: 1.5rem 1.5rem 0.5rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted);">Guides &amp; More</h4>
+                <a href="/resources/storage.html" class="resources-mobile-nav__link"><i class="i-ph-package-duotone"></i> Storage</a>
             </div>
         </div>`;
 
-const dir = 'r:\\Github Project\\dictuzz.github.io\\resources';
+const dir = path.resolve(__dirname, '..', 'resources');
 for (let file of fs.readdirSync(dir)) {
     if (!file.endsWith('.html')) continue;
     let p = path.join(dir, file);

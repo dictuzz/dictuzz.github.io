@@ -44,9 +44,7 @@ async function hashPassword(password) {
 }
 
 window.generatePasswordHash = async function(password) {
-  const hash = await hashPassword(password);
-  console.log('New Hash for "' + password + '":', hash);
-  return hash;
+  return await hashPassword(password);
 };
 
 function renderLockScreen() {

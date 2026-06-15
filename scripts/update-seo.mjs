@@ -1,5 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, '..');
 
 const files = {
   'index.html': 'Discover the professional portfolio and curated resources of Benedictus Richard Ricardo (dictuzz). Exploring software engineering, data analytics, and digital optimization.',
@@ -9,7 +13,7 @@ const files = {
 };
 
 for (const [file, desc] of Object.entries(files)) {
-  let p = path.join('r:/Github Project/dictuzz.github.io', file);
+  let p = path.join(root, file);
   if (fs.existsSync(p)) {
     let content = fs.readFileSync(p, 'utf8');
     content = content.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${desc}">`);

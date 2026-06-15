@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 — You Broke It. Play Snake. | dictuzz</title>
     <meta name="description" content="This page doesn't exist, but this snake game does. Dodge the 404 obstacles and collect points while you figure out where you actually wanted to go.">
     <meta name="robots" content="noindex, nofollow">
@@ -86,10 +86,10 @@
         </div>
 
         <!-- Canvas -->
-        <canvas id="game-canvas" aria-label="Snake game — dodge the 404 obstacles"></canvas>
+        <canvas id="game-canvas" role="img" aria-label="Snake game — dodge the 404 obstacles"></canvas>
 
         <!-- Mobile D-Pad -->
-        <div class="dpad" id="dpad" aria-label="Direction controls">
+        <div class="dpad" id="dpad" role="toolbar" aria-label="Direction controls">
             <button class="dpad__btn dpad__btn--up" data-dir="up" type="button" aria-label="Move up">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
             </button>

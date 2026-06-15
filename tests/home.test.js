@@ -100,8 +100,9 @@ test('initFolders error path - fetch non-OK', async (t) => {
   restoreConsole();
 });
 
-test('initFolders renders centralized content on success', async () => {
-  const { document } = setupEnvironment();
+test('initFolders renders centralized content on success', async (t) => {
+  const { document, restoreTimers } = setupEnvironment();
+  t.after(restoreTimers);
 
   const siteConfig = JSON.parse(await readFile(path.resolve('content/site.json'), 'utf8'));
   const homeContent = JSON.parse(await readFile(path.resolve('content/home.json'), 'utf8'));
@@ -130,8 +131,9 @@ test('initFolders renders centralized content on success', async () => {
   assert.match(document.querySelector('.global-footer').textContent, /contact@dictuzz.me/);
 });
 
-test('initFolders error path - fetch throws', async () => {
-  const { document } = setupEnvironment();
+test('initFolders error path - fetch throws', async (t) => {
+  const { document, restoreTimers } = setupEnvironment();
+  t.after(restoreTimers);
 
   const { calledWith, restoreConsole } = setupConsoleMock();
 
@@ -153,8 +155,9 @@ test('initFolders error path - fetch throws', async () => {
   restoreConsole();
 });
 
-test('initFolders error path - malformed JSON', async () => {
-  const { document } = setupEnvironment();
+test('initFolders error path - malformed JSON', async (t) => {
+  const { document, restoreTimers } = setupEnvironment();
+  t.after(restoreTimers);
 
   const { calledWith, restoreConsole } = setupConsoleMock();
 
