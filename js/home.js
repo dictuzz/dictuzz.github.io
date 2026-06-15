@@ -159,6 +159,7 @@ function closeFolder(folder) {
     folder.classList.remove('is-open');
     trigger.setAttribute('aria-expanded', 'false');
     panel.hidden = true;
+    panel.setAttribute('inert', '');
 }
 
 function openFolder(folder) {
@@ -169,6 +170,7 @@ function openFolder(folder) {
     folder.classList.add('is-open');
     trigger.setAttribute('aria-expanded', 'true');
     panel.hidden = false;
+    panel.removeAttribute('inert');
 }
 
 function bindFolderAccordion() {

@@ -547,6 +547,25 @@ body {
   }
 }
 
+/* --- Skip Game Link --- */
+.skip-game {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 200ms ease;
+}
+.skip-game:hover,
+.skip-game:focus-visible {
+  color: var(--c-text);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--c-bg), 0 0 0 4px var(--c-accent);
+}
+
 /* --- Reduced Motion --- */
 @media (prefers-reduced-motion: reduce) {
   *,

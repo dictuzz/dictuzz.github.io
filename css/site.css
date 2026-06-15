@@ -116,7 +116,7 @@ select {
     font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 .brand-name {
@@ -333,7 +333,7 @@ select {
 
 .bio-nameplate {
     margin: 0 0 10px;
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
     font-family: var(--font-body);
     font-size: 0.74rem;
     font-weight: 800;
@@ -357,7 +357,7 @@ select {
 
 .bio-text::before {
     content: '◆';
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
     font-size: 0.72rem;
 }
 
@@ -472,7 +472,7 @@ select {
     height: 34px;
     border-radius: 12px;
     background: var(--site-accent-soft);
-    color: var(--site-accent);
+    color: var(--site-accent-text);
     flex: 0 0 auto;
 }
 
@@ -515,14 +515,14 @@ select {
     padding: 0 8px;
     border-radius: 999px;
     background: var(--site-accent-soft);
-    color: var(--site-accent);
+    color: var(--site-accent-text);
     font-size: 0.72rem;
     font-weight: 800;
 }
 
 [data-theme="dark"] .folder__count {
     background: rgba(209, 171, 105, 0.12);
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 .folder__chevron {
@@ -610,14 +610,14 @@ select {
     height: 28px;
     border-radius: 9px;
     background: var(--site-accent-soft);
-    color: var(--site-accent);
+    color: var(--site-accent-text);
     font-size: 0.8rem;
     flex: 0 0 auto;
 }
 
 [data-theme="dark"] .folder-link__icon {
     background: rgba(209, 171, 105, 0.1);
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 .folder-link i:last-child {

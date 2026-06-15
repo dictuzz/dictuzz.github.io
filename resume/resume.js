@@ -42,6 +42,9 @@ async function loadLanguage(lang) {
             try { render(); } catch (err) { console.error('Renderer error:', err); }
         }
 
+        // Update document language for screen readers
+        document.documentElement.lang = lang;
+
         upgradeIcons(document);
 
         document.querySelectorAll('.lang-btn').forEach((button) => {

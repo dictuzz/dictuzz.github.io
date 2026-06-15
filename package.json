@@ -8,11 +8,15 @@
     "dev": "npx -y serve . -l 8000 --no-clipboard",
     "validate:content": "node scripts/validate-content.mjs",
     "test": "node --test tests/*.test.js",
-    "build:icons": "node scripts/build-icons.mjs"
+    "build:icons": "node scripts/build-icons.mjs",
+    "test:a11y": "axe-cli http://localhost:8000 --tags wcag2aa,wcag21aa --save results/axe-report.json --exit",
+    "test:a11y:ci": "lighthouse http://localhost:8000 --only-categories=accessibility --output=json --output-path=results/lighthouse-a11y.json --chrome-flags='--headless --no-sandbox' --budget-path=.lighthouse-budget.json",
+    "serve:ci": "npx serve . -l 8000"
   },
   "author": "Benedictus Richard Ricardo",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@axe-core/cli": "^4.11.3",
     "@iconify-json/carbon": "^1.2.22",
     "@iconify-json/fluent": "^1.2.48",
     "@iconify-json/fluent-mdl2": "^1.2.1",
@@ -21,6 +25,7 @@
     "@iconify-json/simple-icons": "^1.2.84",
     "@iconify-json/twemoji": "^1.2.5",
     "@unocss/preset-icons": "^66.7.0",
+    "axe-core": "^4.12.1",
     "happy-dom": "^20.8.4",
     "unocss": "^66.7.0"
   },

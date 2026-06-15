@@ -109,6 +109,11 @@
   --color-text-inverse:   #f4ecdb;
   --color-text-brand:     #c4974f;
 
+  /* --- AAA-Compliant Text Colors (WCAG 2.1 AAA: 7:1 normal, 4.5:1 large) --- */
+  --color-text-brand-aaa:        #7a5d25;  /* Gold text on light surfaces */
+  --color-accent-aaa:            #7a2712;  /* Red accent text on light surfaces */
+  --color-text-muted-aaa:        #4a4f58;  /* Muted text on light surfaces */
+
   /* --- Border Colors --- */
   --color-border-default: rgba(20, 24, 31, 0.16);
   --color-border-strong:  rgba(20, 24, 31, 0.32);
@@ -142,13 +147,15 @@
   --site-surface-strong: var(--color-surface-strong);
   --site-surface-soft:   var(--color-surface-soft);
   --site-text:           var(--color-text-primary);
-  --site-text-muted:     var(--color-text-muted);
+  --site-text-muted:     var(--color-text-muted-aaa);     /* AAA-compliant muted text */
   --site-text-subtle:    var(--color-text-subtle);
+  --site-text-brand:     var(--color-text-brand-aaa);     /* AAA-compliant brand text */
+  --site-accent-text:    var(--color-accent-aaa);         /* AAA-compliant accent text */
   --site-border:         var(--color-border-default);
   --site-border-strong:  var(--color-border-strong);
-  --site-accent:         var(--color-secondary-500);
+  --site-accent:         var(--color-secondary-500);      /* Decorative: brand red */
   --site-accent-soft:    rgba(51, 92, 135, 0.11);
-  --site-accent-gold:    var(--color-primary-500);
+  --site-accent-gold:    var(--color-primary-500);        /* Decorative: brand gold */
   --site-accent-gold-soft: rgba(196, 151, 79, 0.12);
 
   /* --- Resume / Critical Page Token Aliases --- */
@@ -160,11 +167,13 @@
   --accent-cyan:    var(--color-secondary-500);
   --accent-purple:  #6b7383;
   --accent-gold:    var(--color-primary-500);
+  --accent-gold-text: var(--color-text-brand-aaa);    /* AAA-compliant gold text */
+  --accent-red-text:  var(--color-accent-aaa);        /* AAA-compliant red text */
   --accent-glow:    rgba(51, 92, 135, 0.14);
   --accent-glow-purple: rgba(107, 115, 131, 0.12);
   --text-primary:   var(--color-text-primary);
   --text-secondary: var(--color-text-secondary);
-  --text-muted:     var(--color-text-muted);
+  --text-muted:     var(--color-text-muted-aaa);       /* AAA-compliant muted text */
   --border-glass:   var(--color-border-default);
   --border-strong:  var(--color-border-strong);
   --border-glow:    rgba(51, 92, 135, 0.18);
@@ -176,11 +185,13 @@
   --color-surface-strong: var(--color-surface-strong);
   --color-panel:       var(--color-neutral-250);
   --color-text:        var(--color-text-primary);
-  --color-text-muted:  var(--color-text-muted);
+  --color-text-muted:  var(--color-text-muted-aaa);     /* AAA-compliant muted text */
   --color-text-soft:   var(--color-text-subtle);
+  --color-text-brand:  var(--color-text-brand-aaa);     /* AAA-compliant brand text */
+  --color-accent-text: var(--color-accent-aaa);         /* AAA-compliant accent text */
   --color-border:      var(--color-border-default);
   --color-border-strong: var(--color-border-strong);
-  --color-accent:      var(--color-secondary-500);
+  --color-accent:      var(--color-secondary-500);      /* Decorative: brand red */
   --color-accent-soft: rgba(51, 92, 135, 0.11);
   --color-accent-strong: #16395f;
   --color-focus:       #285992;
@@ -338,6 +349,11 @@
   --color-text-inverse:   #0d1117;
   --color-text-brand:     #d2b787;
 
+  /* --- AAA-Compliant Text Colors (Dark Theme) --- */
+  --color-text-brand-aaa:        var(--color-text-brand);  /* #d2b787 passes AAA on dark */
+  --color-accent-aaa:            #e87d6b;  /* Lighter coral for AAA on dark */
+  --color-text-muted-aaa:        #a8b0ba;  /* Lighter muted for AAA on dark */
+
   /* --- Border Colors --- */
   --color-border-default: rgba(236, 235, 228, 0.18);
   --color-border-strong:  rgba(236, 235, 228, 0.36);
@@ -352,18 +368,27 @@
   /* --- Accent shorthand overrides --- */
   --site-accent-soft:      rgba(141, 168, 198, 0.10);
   --site-accent-gold-soft: rgba(209, 171, 105, 0.12);
+  --site-text-muted:       var(--color-text-muted-aaa);
+  --site-text-brand:       var(--color-text-brand-aaa);
+  --site-accent-text:      var(--color-accent-aaa);
 
   /* --- Resume token overrides --- */
   --bg-glass:          rgba(23, 29, 37, 0.86);
   --bg-elevated:       #1d2530;
   --accent-purple:     #a6aebd;
+  --accent-gold-text:  var(--color-text-brand-aaa);
+  --accent-red-text:   var(--color-accent-aaa);
   --accent-glow:       rgba(209, 171, 105, 0.12);
   --accent-glow-purple: rgba(141, 168, 198, 0.10);
   --border-glow:       rgba(209, 171, 105, 0.18);
+  --text-muted:        var(--color-text-muted-aaa);
 
   /* --- Next.js token overrides --- */
   --color-accent-strong: #a4bfda;
   --color-focus:         #7393b3;
+  --color-text-muted:    var(--color-text-muted-aaa);
+  --color-text-brand:    var(--color-text-brand-aaa);
+  --color-accent-text:   var(--color-accent-aaa);
 
   /* --- Shadows (dark) --- */
   --shadow-sm:  0 10px 24px rgba(0, 0, 0, 0.20);

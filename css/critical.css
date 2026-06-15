@@ -302,7 +302,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-gold);
+    color: var(--accent-gold-text);
     font-size: var(--text-xl);
     box-shadow: 0 6px 20px rgba(196, 151, 79, 0.22);
     transition: transform var(--duration-normal) var(--ease-out), background-color var(--duration-normal) ease, color var(--duration-normal) ease;
@@ -426,7 +426,7 @@ h3 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--accent-gold);
+    color: var(--accent-gold-text);
     opacity: 0;
     animation: slideUp 1s var(--ease-out) 0.1s forwards;
 }
@@ -457,7 +457,7 @@ h3 {
 }
 
 .hero__name-line--accent {
-    color: var(--accent-gold);
+    color: var(--accent-gold-text);
 }
 
 .hero__role {
@@ -471,7 +471,7 @@ h3 {
 }
 
 .hero__role-icon {
-    color: var(--accent-gold);
+    color: var(--accent-gold-text);
     font-size: 0.9rem;
 }
 

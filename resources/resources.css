@@ -130,7 +130,7 @@
     font-weight: 800;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 .resources-hero__title {
@@ -174,13 +174,13 @@
     height: 30px;
     border-radius: 10px;
     background: var(--site-accent-soft);
-    color: var(--site-accent);
+    color: var(--site-accent-text);
     font-size: 0.85rem;
 }
 
 [data-theme="dark"] .resources-section__icon {
     background: var(--site-accent-gold-soft);
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 .resources-section__title {
@@ -201,14 +201,14 @@
     padding: 0 7px;
     border-radius: var(--radius-full);
     background: var(--site-accent-soft);
-    color: var(--site-accent);
+    color: var(--site-accent-text);
     font-size: 0.7rem;
     font-weight: 800;
 }
 
 [data-theme="dark"] .resources-section__count {
     background: rgba(209, 171, 105, 0.12);
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 /* --- Card Grid --- */
@@ -311,19 +311,19 @@
 .resource-card__icon--linux      { background: rgba(241, 124, 103, 0.12); color: #f17c67; }
 .resource-card__icon--language   { background: rgba(251, 153, 102, 0.12); color: #FB9966; }
 .resource-card__icon--misc       { background: rgba(221, 210, 59, 0.12); color: #DDD23B; }
-.resource-card__icon--tools      { background: rgba(51, 92, 135, 0.12); color: var(--site-accent); }
-.resource-card__icon--guide      { background: rgba(196, 151, 79, 0.12); color: var(--site-accent-gold); }
+.resource-card__icon--tools      { background: rgba(51, 92, 135, 0.12); color: var(--site-accent-text); }
+.resource-card__icon--guide      { background: rgba(196, 151, 79, 0.12); color: var(--site-text-brand); }
 .resource-card__icon--storage    { background: rgba(93, 173, 226, 0.12); color: #5dade2; }
 .resource-card__icon--warning    { background: rgba(192, 57, 43, 0.10); color: #c0392b; }
 
 [data-theme="dark"] .resource-card__icon--tools {
     background: var(--site-accent-gold-soft);
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 [data-theme="dark"] .resource-card__icon--guide {
     background: var(--site-accent-gold-soft);
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 /* --- Mobile hamburger --- */
@@ -538,7 +538,7 @@
 }
 
 .vp-doc a {
-    color: var(--site-accent);
+    color: var(--site-accent-text);
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: text-decoration-color var(--duration-fast) ease, color var(--duration-fast) ease;
@@ -549,7 +549,7 @@
 }
 
 [data-theme="dark"] .vp-doc a {
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 [data-theme="dark"] .vp-doc a:hover {
@@ -620,11 +620,11 @@
     background: var(--color-surface-strong);
     padding: 0.2em 0.4em;
     border-radius: 3px;
-    color: var(--site-accent);
+    color: var(--site-accent-text);
 }
 
 [data-theme="dark"] .vp-doc code {
-    color: var(--site-accent-gold);
+    color: var(--site-text-brand);
 }
 
 .vp-doc pre {

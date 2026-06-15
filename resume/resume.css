@@ -220,7 +220,7 @@
 .timeline__content h4 {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--accent-cyan);
+    color: var(--accent-red-text);
 }
 
 .timeline__details {
@@ -499,7 +499,7 @@
     place-items: center;
     border-radius: 18px;
     background: rgba(196, 151, 79, 0.1);
-    color: var(--accent-gold);
+    color: var(--accent-gold-text);
     font-size: 1.2rem;
 }
 
@@ -563,7 +563,7 @@
     font-family: var(--font-display);
     font-size: 3rem;
     line-height: 1;
-    color: var(--accent-gold);
+    color: var(--accent-gold-text);
 }
 
 .testimonial-card__quote {

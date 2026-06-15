@@ -26,6 +26,8 @@ export function updateTyping(strings) {
     if (!dynamicEl) return;
     if (resumeState.typerInstance) resumeState.typerInstance.stop();
     dynamicEl.textContent = '';
+    dynamicEl.setAttribute('aria-live', 'polite');
+    dynamicEl.setAttribute('aria-atomic', 'true');
     resumeState.typerInstance = new Typer(dynamicEl, strings.hero.typing.dynamicTexts, 80);
 }
 
