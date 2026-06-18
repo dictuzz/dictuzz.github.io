@@ -24,7 +24,7 @@ Struktur resume dipisah menjadi:
 - `sections`: pengalaman, pendidikan, impact, awards, dll
 - `collections`: skills dan languages
 - `seo`: deskripsi halaman resume
-- `downloads`: link resume eksternal
+- `downloads`: (Obsolete/Usang) Tidak lagi digunakan karena sekarang menggunakan generator ATS PDF dinamis berbasis data JSON.
 
 Jika menambah locale baru, gunakan shape file resume yang sama persis.
 

@@ -19,7 +19,8 @@
       "cta2": "Jelajahi",
       "stat1Label": "Jam/Minggu Dihemat",
       "stat2Label": "Anggota Dipimpin",
-      "stat3Label": "Skala Acara"
+      "stat3Label": "Skala Acara",
+      "atsCv": "Unduh Resume ATS"
     },
     "nav": {
       "home": "Beranda",
@@ -29,7 +30,7 @@
       "impact": "Dampak",
       "skills": "Keahlian",
       "awards": "Pencapaian",
-      "etc": "Lainnya",
+      "volunteering": "Sukarelawan",
       "contact": "Kontak"
     },
     "section": {
@@ -41,7 +42,7 @@
       "skills": "KEAHLIAN & ALAT UTAMA",
       "awards": "PENGHARGAAN & PENGAKUAN",
       "testimonials": "TESTIMONI & BUKTI SOSIAL",
-      "etc": "AKTIVITAS TAMBAHAN",
+      "volunteering": "SUKARELAWAN & KOMUNITAS",
       "contact": "KONTAK & KETERSEDIAAN"
     },
     "sectionLede": {
@@ -52,7 +53,7 @@
       "impact": "Contoh hasil terukur dalam otomatisasi pelaporan, tata kelola, dan operasional.",
       "skills": "Kapabilitas utama di bidang desain sistem, otomatisasi, analitik, operasional, dan kepemimpinan.",
       "awards": "Penghargaan dan pengakuan yang terkait dengan komunikasi, kreativitas, dan performa.",
-      "etc": "Aktivitas tambahan di bidang public speaking, komunitas, dan peran pendukung lain yang memperlihatkan jangkauan eksekusi.",
+      "volunteering": "Kontribusi komunitas dalam kepemimpinan pemuda, pelayanan gereja, dan pelatihan keselamatan.",
       "testimonials": "Referensi dan rekomendasi dari atasan, kolaborator, dan klien.",
       "contact": "Jalur kontak utama untuk wawancara, kemitraan, pekerjaan freelance, dan percakapan profesional."
     },
@@ -81,9 +82,19 @@
   },
   "sections": {
     "summary": {
-      "text": "Dengan latar belakang Data Science dan pengalaman langsung dalam operasional lintas fungsi, saya membangun sistem yang menghadirkan kejelasan, konsistensi, dan kemajuan nyata. Pekerjaan saya mencakup otomatisasi alur pelaporan yang menghemat 12+ jam kerja manual per minggu, memimpin organisasi beranggotakan 34 orang melalui tata kelola berbasis KPI, serta mengoordinasikan acara berskala besar dengan lebih dari 1.000 peserta. Saya bekerja dengan pendekatan yang terstruktur, berbasis data, dan berorientasi pada kualitas eksekusi."
+      "text": "Arsitek Sistem & Spesialis Operasi berbasis data yang memadukan latar belakang Data Science dengan keahlian dalam optimasi alur kerja lintas fungsi untuk membangun sistem yang menghadirkan kejelasan, konsistensi, dan kemajuan nyata. Pekerjaan saya mencakup otomatisasi alur pelaporan yang menghemat 12+ jam kerja manual per minggu, memimpin organisasi beranggotakan 34 orang melalui tata kelola berbasis KPI, serta mengoordinasikan acara berskala besar dengan lebih dari 1.000 peserta. Saya bekerja dengan pendekatan yang terstruktur, berbasis data, dan berorientasi pada kualitas eksekusi. Berkomitmen memanfaatkan teknologi data terkini dan metodologi agile untuk membangun organisasi yang tangguh dan siap menghadapi masa depan."
     },
     "experience": [
+      {
+        "date": "APR 2026 – SEKARANG",
+        "role": "Management Trainee",
+        "company": "Tirta Utama Abadi",
+        "details": [
+          "Mengimplementasikan restrukturisasi komprehensif dashboard sprint harian untuk seluruh segmen, menyajikan visualisasi data yang aktual dan terperinci sebagai alat bantu pengambilan keputusan strategis.",
+          "Sukses mengeksekusi perbaikan total operasional Call Frequency Management (CFM) untuk 31 depo di seluruh Jawa Barat guna mengoptimalkan efisiensi layanan secara signifikan.",
+          "Mengembangkan aplikasi dasbor analitik baru untuk divisi Route-to-Market (RTM), menyajikan analitik data komprehensif dari seluruh outlet dan segmen di jaringan depo."
+        ]
+      },
       {
         "date": "JUL 2024 – SEP 2025",
         "role": "Management Trainee",
@@ -91,7 +102,7 @@
         "details": [
           "Merancang dan mengimplementasikan sistem pelaporan otomatis menggunakan Excel, mengurangi beban kerja pelaporan manual sebesar ~12 jam per minggu.",
           "Menstandardisasi SOP lintas fungsi di divisi Keuangan, Penjualan, dan Operasional untuk meningkatkan konsistensi operasional.",
-          "Menganalisis data umpan balik internal untuk menghasilkan rekomendasi perbaikan terstruktur bagi tinjauan manajemen."
+          "Memanfaatkan analitik data pada umpan balik internal untuk merancang perbaikan proses yang terstruktur, secara langsung memengaruhi keputusan manajemen."
         ]
       },
       {
@@ -101,7 +112,7 @@
         "details": [
           "Memastikan kesiapan operasional peralatan keselamatan melalui sistem inspeksi dan pemeliharaan terstruktur.",
           "Mendukung sesi pelatihan teknis sebagai pemanjat utama dan belayer untuk operasi penyelamatan.",
-          "Membantu penyampaian instruksi dan penilaian keterampilan untuk peserta pelatihan baru."
+          "Memfasilitasi penyampaian instruksi teknis dan melakukan penilaian keterampilan yang ketat untuk peserta pelatihan baru."
         ]
       },
       {
@@ -110,7 +121,7 @@
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
           "Memimpin organisasi dengan 34 anggota di 10 divisi melalui tata kelola berbasis KPI yang terstruktur.",
-          "Merancang dan mengeksekusi program institusional jangka panjang yang diadopsi di tingkat sekolah.",
+          "Mengarsiteki dan mengeksekusi program institusional jangka panjang yang berhasil diadopsi di seluruh sekolah.",
           "Mengelola kampanye outreach strategis ke 12 sekolah feeder.",
           "Membangun ritme koordinasi operasional mingguan untuk menjaga keselarasan lintas divisi."
         ]
@@ -159,9 +170,50 @@
       "Juara 1 – Kompetisi Film Pendek, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
       "Runner-Up, Water Rocket Competition (2017) oleh PLANET SAINS"
     ],
-    "etc": [
-      "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ peserta",
-      "Kuliah umum (2023): kelas Jurnalisme & Komunikasi Publik, Universitas Parahyangan"
+    "volunteering": [
+      {
+        "date": "JUL 2025 – SEKARANG",
+        "role": "Relawan — MC",
+        "company": "GEMA Bandung (Gereja Mahasiswa)",
+        "details": [
+          "Bertindak sebagai MC untuk acara besar GEMA Bandung bertajuk \"Misa Angkatan Muda 2025\" untuk 500+ mahasiswa Katolik."
+        ]
+      },
+      {
+        "date": "AGU 2023 – AGU 2024",
+        "role": "Wakil Ketua",
+        "company": "Orang Muda Katolik Wilayah Ujung Berung",
+        "details": [
+          "Menyusun kalender program tahunan, mengoordinasikan hasil kerja lintas tim dan jadwal relawan.",
+          "Mengorganisir acara berskala besar: pertemuan malam (±100 peserta) dan ibadah pemuda (±400 peserta)."
+        ]
+      },
+      {
+        "date": "JAN 2021 – SEKARANG",
+        "role": "Asisten Instruktur",
+        "company": "Vertical Rescue Indonesia",
+        "details": [
+          "Memastikan kesiapan operasional peralatan penyelamatan melalui pemeliharaan rutin.",
+          "Mendukung sesi pelatihan dengan bertindak sebagai pemanjat utama dan pengaman tali."
+        ]
+      },
+      {
+        "date": "NOV 2021 – NOV 2022",
+        "role": "Kepala Divisi Bisnis & Kemitraan",
+        "company": "Forum OSIS Jawa Barat",
+        "details": [
+          "Membangun basis data kemitraan historis yang melacak kolaborasi dari angkatan sebelumnya."
+        ]
+      },
+      {
+        "date": "MAR 2020 – MAR 2022",
+        "role": "Wakil Ketua Misdinar",
+        "company": "Misdinar Gereja Zipur",
+        "details": [
+          "Menjamin kelancaran layanan liturgi dengan mengelola daftar misdinar secara ketat.",
+          "Mengadakan acara apresiasi anggota dan perayaan ulang tahun."
+        ]
+      }
     ]
   },
   "collections": {
@@ -186,6 +238,10 @@
         {
           "name": "Operational Planning",
           "level": "expert"
+        },
+        {
+          "name": "Agile Methodologies",
+          "level": "proficient"
         }
       ],
       "operational": [
@@ -234,6 +290,26 @@
         {
           "name": "Project Management Tools",
           "level": "proficient"
+        },
+        {
+          "name": "Business Intelligence Principles",
+          "level": "proficient"
+        },
+        {
+          "name": "Power BI",
+          "level": "proficient"
+        },
+        {
+          "name": "Looker Studio",
+          "level": "proficient"
+        },
+        {
+          "name": "DBeaver",
+          "level": "proficient"
+        },
+        {
+          "name": "QGIS",
+          "level": "proficient"
         }
       ],
       "leadership": [
@@ -248,6 +324,10 @@
         {
           "name": "Public Speaking",
           "level": "proficient"
+        },
+        {
+          "name": "Complex Problem-Solving",
+          "level": "expert"
         },
         {
           "name": "Training Delivery",

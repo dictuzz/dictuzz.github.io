@@ -16,7 +16,7 @@ function checkSchema(data, schema, path = 'root', issues = []) {
     } else if (schema === 'email') {
         if (typeof data !== 'string' || !data.includes('@')) issues.push(`${path} is required`);
     } else if (schema === 'url') {
-        if (typeof data !== 'string' || !data.startsWith('http')) issues.push(`${path} is required`);
+        if (typeof data !== 'string' || (!data.startsWith('http') && !data.startsWith('/'))) issues.push(`${path} is required`);
     } else if (schema === 'array') {
         if (!Array.isArray(data)) issues.push(`${path} must be an array`);
     } else if (schema === 'object') {
@@ -72,6 +72,7 @@ const RESUME_CONTENT_SCHEMA = {
         certifications: 'array_optional',
         testimonials: 'array_optional',
         awards: 'array_optional',
+        volunteering: 'array_optional',
         etc: 'array_optional'
     },
     collections: 'object',

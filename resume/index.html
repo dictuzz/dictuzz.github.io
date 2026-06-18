@@ -112,7 +112,7 @@
                 </li>
                 <li role="none"><a href="#awards" class="nav__link" role="menuitem" data-i18n="nav.awards">Awards</a>
                 </li>
-                <li role="none"><a href="#etc" class="nav__link" role="menuitem" data-i18n="nav.etc">Etc</a>
+                <li role="none"><a href="#volunteering" class="nav__link" role="menuitem" data-i18n="nav.volunteering">Volunteering</a>
                 </li>
                 <li role="none"><a href="#connect" class="nav__link" role="menuitem" data-i18n="nav.contact">Contact</a>
                 </li>
@@ -215,6 +215,10 @@
                     <a href="#connect" class="btn btn--primary btn--glow">
                         <span data-i18n="hero.cta1">Let's Talk</span>
                         <i class="i-ph-arrow-right-duotone"></i>
+                    </a>
+                    <a href="#" id="hero-download-cv-link" class="btn btn--ghost">
+                        <i class="i-ph-download-simple-duotone"></i>
+                        <span data-i18n="hero.atsCv">Download ATS Resume</span>
                     </a>
                     <a href="#about" class="btn btn--ghost">
                         <span data-i18n="hero.cta2">Explore</span>
@@ -361,17 +365,19 @@
             </div>
         </section>
 
-        <!-- Etc Section -->
-        <section id="etc" class="section" aria-labelledby="etc-title">
+        <!-- Volunteering Section -->
+        <section id="volunteering" class="section" aria-labelledby="volunteering-title">
             <div class="container">
-                <h2 id="etc-title" class="section__title reveal" data-i18n="section.etc">ETC</h2>
-                <p class="section__lede reveal" data-i18n="sectionLede.etc">Additional public-speaking, community, and supporting activities that reinforce execution range.</p>
-                <ul class="awards__list glass card reveal" id="etc-list" aria-live="polite">
-                    <!-- Skeleton loader -->
-                    <li>
+                <h2 id="volunteering-title" class="section__title reveal" data-i18n="section.volunteering">VOLUNTEERING & COMMUNITY</h2>
+                <p class="section__lede reveal" data-i18n="sectionLede.volunteering">Community contributions in youth leadership, church service, and outdoor safety training.</p>
+                <div class="timeline" aria-live="polite" id="volunteering-list">
+                    <!-- Skeleton loader (replaced by JS) -->
+                    <div class="glass card">
+                        <div class="skeleton skeleton--title"></div>
                         <div class="skeleton skeleton--text"></div>
-                    </li>
-                </ul>
+                        <div class="skeleton skeleton--text"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -442,9 +448,14 @@
 
 
                 <!-- CV Download -->
-                <div class="flex flex--center mt-12">
+                <div class="flex flex--center mt-12 gap-4">
+                    <a href="https://bukaaaadonggg.my.canva.site/benedictus-richard-ricardo-resume-en" target="_blank" rel="noopener noreferrer"
+                        id="download-canva-link" class="btn btn--outline btn--glow reveal">View Visual Resume &rarr;</a>
                     <a href="#" target="_blank" rel="noopener noreferrer"
-                        id="download-cv-link" class="btn btn--outline btn--glow reveal" data-i18n="connect.cv">View Full Resume &rarr;</a>
+                        id="download-cv-link" class="btn btn--primary btn--glow reveal">
+                        <i class="i-ph-download-simple-duotone"></i>
+                        <span data-i18n="connect.cv">Download ATS Resume</span>
+                    </a>
                 </div>
             </div>
         </section>

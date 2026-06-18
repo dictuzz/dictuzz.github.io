@@ -19,7 +19,8 @@
       "cta2": "Explore",
       "stat1Label": "Hrs/Week Saved",
       "stat2Label": "Members Led",
-      "stat3Label": "Audience Scale"
+      "stat3Label": "Audience Scale",
+      "atsCv": "Download ATS Resume"
     },
     "nav": {
       "home": "Home",
@@ -29,7 +30,7 @@
       "impact": "Impact",
       "skills": "Skills",
       "awards": "Awards",
-      "etc": "Etc",
+      "volunteering": "Volunteering",
       "contact": "Contact"
     },
     "section": {
@@ -41,7 +42,7 @@
       "skills": "CORE SKILLS & TOOLS",
       "awards": "AWARDS & RECOGNITION",
       "testimonials": "TESTIMONIALS & SOCIAL PROOF",
-      "etc": "ADDITIONAL ACTIVITIES",
+      "volunteering": "VOLUNTEERING & COMMUNITY",
       "contact": "CONTACT & AVAILABILITY"
     },
     "sectionLede": {
@@ -52,7 +53,7 @@
       "impact": "Selected examples of measurable results in reporting automation, governance, and operations.",
       "skills": "Core capabilities across systems design, automation, analytics, operations, and leadership.",
       "awards": "Selected awards and recognition tied to communication, creativity, and performance.",
-      "etc": "Additional public-speaking, community, and supporting activities that reinforce execution range.",
+      "volunteering": "Community contributions in youth leadership, church service, and outdoor safety training.",
       "testimonials": "References and recommendations from managers, collaborators, and clients.",
       "contact": "Primary contact routes for interviews, partnerships, freelance work, and professional conversations."
     },
@@ -81,9 +82,19 @@
   },
   "sections": {
     "summary": {
-      "text": "With a background in Data Science and hands-on experience in cross-functional operations, I build systems that create clarity, consistency, and forward momentum. My work includes automating reporting workflows that saved 12+ hours of manual work per week, leading a 34-member organization through KPI-based governance, and coordinating large-scale events for more than 1,000 attendees. I bring a structured, data-informed approach to execution, improvement, and team alignment."
+      "text": "Data-driven Systems Architect & Operations Specialist combining a Data Science background with expertise in cross-functional workflow optimization to build systems that create clarity, consistency, and forward momentum. My work includes automating reporting workflows that saved 12+ hours of manual work per week, leading a 34-member organization through KPI-based governance, and coordinating large-scale events for more than 1,000 attendees. I bring a structured, data-informed approach to execution, improvement, and team alignment. Passionate about leveraging emerging data technologies and agile methodologies to build resilient, future-ready organizations."
     },
     "experience": [
+      {
+        "date": "APR 2026 – PRESENT",
+        "role": "Management Trainee",
+        "company": "Tirta Utama Abadi",
+        "details": [
+          "Implemented the comprehensive restructuring of daily sprint dashboards across all segments, delivering real-time, granular data visualization to drive strategic decision-making and future planning.",
+          "Successfully executed a total overhaul of Call Frequency Management (CFM) operations across 31 depots throughout West Java, significantly optimizing service efficiency.",
+          "Engineered a new analytical dashboard application for the Route-to-Market (RTM) division, providing comprehensive data analytics for all outlets and segments across the entire depot network."
+        ]
+      },
       {
         "date": "JUL 2024 – SEP 2025",
         "role": "Management Trainee",
@@ -91,7 +102,7 @@
         "details": [
           "Designed and implemented automated reporting systems using Excel, reducing manual reporting workload by ~12 hours per week.",
           "Standardized cross-functional SOPs across Finance, Sales, and Operations to improve operational consistency.",
-          "Analyzed internal feedback data to generate structured improvement recommendations for management review."
+          "Leveraged data analytics on internal feedback to engineer structured process improvements, directly influencing management decisions."
         ]
       },
       {
@@ -101,7 +112,7 @@
         "details": [
           "Ensured operational readiness of safety equipment through structured inspection and maintenance systems.",
           "Supported technical training sessions as lead climber and belayer for rescue operations.",
-          "Assisted instruction delivery and skill assessment for new trainees."
+          "Facilitated technical instruction delivery and conducted rigorous skill assessments for new trainees."
         ]
       },
       {
@@ -110,7 +121,7 @@
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
           "Led 34-member organization across 10 divisions using structured KPI-based governance.",
-          "Designed and executed long-term institutional programs adopted school-wide.",
+          "Architected and executed long-term institutional programs successfully adopted school-wide.",
           "Directed strategic outreach campaigns to 12 feeder schools.",
           "Implemented weekly operational coordination rhythm to maintain cross-divisional alignment."
         ]
@@ -159,9 +170,50 @@
       "1st Place – Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
       "Runner-Up, Water Rocket Competition (2017) by PLANET SAINS"
     ],
-    "etc": [
-      "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ participants",
-      "Public lectures (2023): Journalism & Public Communication classes, Universitas Parahyangan"
+    "volunteering": [
+      {
+        "date": "JUL 2025 – PRESENT",
+        "role": "Volunteer — MC",
+        "company": "GEMA Bandung (Gereja Mahasiswa)",
+        "details": [
+          "Acted as Master of Ceremony for large-scale GEMA Bandung events called \"Misa Angkatan Muda 2025\", managing stage flow and audience engagement for 500+ Catholic students across Bandung."
+        ]
+      },
+      {
+        "date": "AUG 2023 – AUG 2024",
+        "role": "Vice Chief",
+        "company": "Ujung Berung Catholic Youth Organisation",
+        "details": [
+          "Planned annual program calendar, coordinating cross-team deliverables and volunteer schedules.",
+          "Organized large-scale events: night gathering (±100 participants) and youth worship (±400 participants)."
+        ]
+      },
+      {
+        "date": "JAN 2021 – PRESENT",
+        "role": "Assistant Instructor",
+        "company": "Vertical Rescue Indonesia",
+        "details": [
+          "Ensured operational readiness of rescue equipment through routine maintenance and rigorous safety inspections.",
+          "Supported training sessions as lead climber and belayer, assisting in instruction of new trainees."
+        ]
+      },
+      {
+        "date": "NOV 2021 – NOV 2022",
+        "role": "Head of Business & Partnership Division",
+        "company": "Forum OSIS Jawa Barat",
+        "details": [
+          "Built a historical partnership database tracking collaborations from previous committees to streamline future sponsorship outreach."
+        ]
+      },
+      {
+        "date": "MAR 2020 – MAR 2022",
+        "role": "Vice Chief Acolyte",
+        "company": "Zipur Church Acolyte",
+        "details": [
+          "Ensured seamless liturgical services by managing strict Altar Server rosters.",
+          "Organized member appreciation events and birthday celebrations to foster team morale."
+        ]
+      }
     ]
   },
   "collections": {
@@ -186,6 +238,10 @@
         {
           "name": "Operational Planning",
           "level": "expert"
+        },
+        {
+          "name": "Agile Methodologies",
+          "level": "proficient"
         }
       ],
       "operational": [
@@ -234,6 +290,26 @@
         {
           "name": "Project Management Tools",
           "level": "proficient"
+        },
+        {
+          "name": "Business Intelligence Principles",
+          "level": "proficient"
+        },
+        {
+          "name": "Power BI",
+          "level": "proficient"
+        },
+        {
+          "name": "Looker Studio",
+          "level": "proficient"
+        },
+        {
+          "name": "DBeaver",
+          "level": "proficient"
+        },
+        {
+          "name": "QGIS",
+          "level": "proficient"
         }
       ],
       "leadership": [
@@ -248,6 +324,10 @@
         {
           "name": "Public Speaking",
           "level": "proficient"
+        },
+        {
+          "name": "Complex Problem-Solving",
+          "level": "expert"
         },
         {
           "name": "Training Delivery",

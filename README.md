@@ -7,7 +7,7 @@ The repository is now a single static site built with semantic HTML, shared CSS,
 Public surfaces:
 
 - **Root homepage** (`/`): link hub with categorized folder-style navigation
-- **Resume** (`/resume/`): long-form professional profile with i18n data (EN/ID/DE)
+- **Resume** (`/resume/`): long-form professional profile with i18n data (EN/ID/DE) and dynamic ATS PDF generation
 - **Portfolio** (`/portfolio/`): _The Operational Record_ — an NYT-inspired editorial magazine portfolio with a landing edition and four case-file articles
 - **Resources** (`/resources/`): static resource index with individual `.html` topic pages
 - **Terms** (`/terms/`): shared legal page

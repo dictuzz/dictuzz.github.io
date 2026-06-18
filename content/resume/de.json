@@ -17,9 +17,10 @@
       "status": "Offen für Möglichkeiten",
       "cta1": "Kontakt aufnehmen",
       "cta2": "Entdecken",
-      "stat1Label": "Std./Woche gespart",
-      "stat2Label": "Mitglieder geleitet",
-      "stat3Label": "Veranstaltungsskala"
+      "stat1Label": "Gesparte Std./Woche",
+      "stat2Label": "Geführte Mitglieder",
+      "stat3Label": "Veranstaltungsgröße",
+      "atsCv": "ATS-Lebenslauf Herunterladen"
     },
     "nav": {
       "home": "Startseite",
@@ -29,7 +30,7 @@
       "impact": "Wirkung",
       "skills": "Fähigkeiten",
       "awards": "Auszeichnungen",
-      "etc": "Sonstiges",
+      "volunteering": "Ehrenamt",
       "contact": "Kontakt"
     },
     "section": {
@@ -41,7 +42,7 @@
       "skills": "KERNKOMPETENZEN & TOOLS",
       "awards": "AUSZEICHNUNGEN & ANERKENNUNG",
       "testimonials": "REFERENZEN & SOCIAL PROOF",
-      "etc": "WEITERE AKTIVITÄTEN",
+      "volunteering": "EHRENAMT & GEMEINSCHAFT",
       "contact": "KONTAKT & VERFÜGBARKEIT"
     },
     "sectionLede": {
@@ -52,7 +53,7 @@
       "impact": "Ausgewählte Beispiele messbarer Ergebnisse in Reporting-Automatisierung, Governance und Operations.",
       "skills": "Zentrale Fähigkeiten in Systemdesign, Automatisierung, Analytik, Operations und Führung.",
       "awards": "Auszeichnungen und Anerkennungen im Zusammenhang mit Kommunikation, Kreativität und Leistung.",
-      "etc": "Zusätzliche Aktivitäten in Moderation, Community-Arbeit und unterstützenden Rollen, die die Umsetzungsbreite zeigen.",
+      "volunteering": "Gesellschaftliches Engagement in den Bereichen Jugendführung, Kirchendienst und Sicherheitstraining im Freien.",
       "testimonials": "Referenzen und Empfehlungen von Führungskräften, Kolleginnen und Kollegen oder Kundschaft.",
       "contact": "Wichtige Kontaktwege für Gespräche zu Interviews, Partnerschaften, Freelance-Arbeit und beruflichen Möglichkeiten."
     },
@@ -81,17 +82,27 @@
   },
   "sections": {
     "summary": {
-      "text": "Mit einem Hintergrund in Data Science und praktischer Erfahrung in funktionsübergreifenden Abläufen entwickle ich Systeme, die Klarheit, Konsistenz und messbaren Fortschritt schaffen. Zu meiner Arbeit gehören die Automatisierung von Reporting-Workflows mit einer Einsparung von über 12 Stunden manueller Arbeit pro Woche, die Leitung einer 34-köpfigen Organisation mit KPI-basierter Governance sowie die Koordination von Großveranstaltungen mit mehr als 1.000 Teilnehmenden."
+      "text": "Datengetriebener Systemarchitekt & Operations-Spezialist, der einen Hintergrund in Data Science mit Fachwissen in der funktionsübergreifenden Workflow-Optimierung kombiniert, um Systeme aufzubauen, die Klarheit, Konsistenz und Fortschritt schaffen. Meine Arbeit umfasst die Automatisierung von Reporting-Workflows (Zeitersparnis von 12+ Stunden pro Woche), die Führung einer 34-köpfigen Organisation durch KPI-basierte Steuerung und die Koordination von Großveranstaltungen mit über 1.000 Teilnehmenden. Ich bringe einen strukturierten, datengestützten Ansatz für Umsetzung, Verbesserung und Team-Ausrichtung mit. Leidenschaftlich darin, aufkommende Daten-Technologien und agile Methoden zu nutzen, um widerstandsfähige, zukunftsfähige Organisationen aufzubauen."
     },
     "experience": [
+      {
+        "date": "APR 2026 – HEUTE",
+        "role": "Management Trainee",
+        "company": "Tirta Utama Abadi",
+        "details": [
+          "Implementierung der umfassenden Umstrukturierung von Dashboards für tägliche Sprints über alle Segmente hinweg, um detaillierte Echtzeit-Datenvisualisierungen für strategische Entscheidungsfindungen bereitzustellen.",
+          "Erfolgreiche Durchführung einer kompletten Überarbeitung des Call Frequency Managements (CFM) für 31 Depots in ganz Westjava zur signifikanten Optimierung der Serviceeffizienz.",
+          "Entwicklung einer neuen Analyse-Dashboard-Anwendung für die Route-to-Market (RTM)-Abteilung, die umfassende Datenanalysen für alle Verkaufsstellen und Segmente im gesamten Depotnetzwerk bietet."
+        ]
+      },
       {
         "date": "JUL 2024 – SEP 2025",
         "role": "Management Trainee",
         "company": "Home Digital Indonesia",
         "details": [
           "Automatisierte Berichtssysteme mit Excel konzipiert und implementiert, wodurch der manuelle Berichtsaufwand um ~12 Stunden pro Woche reduziert wurde.",
-          "Funktionsübergreifende SOPs in Finanzen, Vertrieb und Betrieb standardisiert zur Verbesserung der operativen Konsistenz.",
-          "Internes Feedback analysiert, um strukturierte Verbesserungsempfehlungen für die Geschäftsführung zu erstellen."
+          "Standardisierung funktionsübergreifender SOPs in den Bereichen Finanzen, Vertrieb und Operations zur Verbesserung der operativen Konsistenz.",
+          "Nutzung von Datenanalysen zu internem Feedback, um strukturierte Prozessverbesserungen zu entwickeln, die Managemententscheidungen direkt beeinflussen."
         ]
       },
       {
@@ -100,8 +111,8 @@
         "company": "Vertical Rescue Indonesia",
         "details": [
           "Betriebsbereitschaft der Sicherheitsausrüstung durch strukturierte Inspektions- und Wartungssysteme sichergestellt.",
-          "Technische Trainingseinheiten als Leitkletterer und Sicherer für Rettungseinsätze unterstützt.",
-          "Die Durchführung von Schulungen und die Beurteilung neuer Teilnehmender unterstützt."
+          "Unterstützung technischer Schulungen als Vorstiegskletterer und Sicherer bei Rettungseinsätzen.",
+          "Moderation der technischen Ausbildung und Durchführung strenger Kompetenzbewertungen für neue Auszubildende."
         ]
       },
       {
@@ -109,9 +120,9 @@
         "role": "Präsident",
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
-          "Eine 34-köpfige Organisation in 10 Abteilungen mit strukturierter KPI-basierter Governance geführt.",
-          "Langfristige institutionelle Programme konzipiert und umgesetzt, die schulweit übernommen wurden.",
-          "Strategische Outreach-Kampagnen für 12 Feeder Schools geleitet."
+          "Leitung einer 34-köpfigen Organisation in 10 Abteilungen mit strukturierter KPI-basierter Steuerung.",
+          "Architektur und Durchführung langfristiger institutioneller Programme, die schulweit erfolgreich übernommen wurden.",
+          "Leitung strategischer Outreach-Kampagnen an 12 Zulieferschulen."
         ]
       },
       {
@@ -158,9 +169,50 @@
       "1. Platz – Kurzfilmwettbewerb, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
       "2. Platz, Water Rocket Competition (2017) von PLANET SAINS"
     ],
-    "etc": [
-      "Master of Ceremony – Youth Mass 2025 (GEMA Bandung), 500+ Teilnehmende",
-      "Öffentliche Vorlesungen (2023): Journalismus- und Public-Communication-Kurse, Universitas Parahyangan"
+    "volunteering": [
+      {
+        "date": "JUL 2025 – HEUTE",
+        "role": "Ehrenamtlicher Moderator",
+        "company": "GEMA Bandung (Studentengemeinde)",
+        "details": [
+          "Moderation der Großveranstaltung „Misa Angkatan Muda 2025“ für über 500 katholische Studenten."
+        ]
+      },
+      {
+        "date": "AUG 2023 – AUG 2024",
+        "role": "Stellvertretender Vorsitzender",
+        "company": "Katholische Jugendorganisation Ujung Berung",
+        "details": [
+          "Planung des Jahresprogramms, Koordination teamübergreifender Aufgaben und Freiwilligenpläne.",
+          "Organisation von Großveranstaltungen: Abendtreffen (±100 Teilnehmer) und Jugendgottesdienst (±400 Teilnehmer)."
+        ]
+      },
+      {
+        "date": "JAN 2021 – HEUTE",
+        "role": "Assistenz-Ausbilder",
+        "company": "Vertical Rescue Indonesia",
+        "details": [
+          "Sicherstellung der Einsatzbereitschaft der Rettungsausrüstung durch regelmäßige Wartung.",
+          "Unterstützung von Trainingseinheiten als Vorstiegskletterer und Sicherer."
+        ]
+      },
+      {
+        "date": "NOV 2021 – NOV 2022",
+        "role": "Leiter der Abteilung Wirtschaft & Partnerschaft",
+        "company": "Schülersprecher-Forum Westjava",
+        "details": [
+          "Aufbau einer historischen Partnerschaftsdatenbank zur Verfolgung früherer Kooperationen."
+        ]
+      },
+      {
+        "date": "MÄR 2020 – MÄR 2022",
+        "role": "Stellvertretender Oberministrant",
+        "company": "Ministranten der Zipur-Kirche",
+        "details": [
+          "Gewährleistung reibungsloser Gottesdienste durch strikte Dienstplanverwaltung.",
+          "Organisation von Mitgliederveranstaltungen und Geburtstagsfeiern."
+        ]
+      }
     ]
   },
   "collections": {
@@ -170,7 +222,8 @@
         { "name": "Workflow Design", "level": "expert" },
         { "name": "Process Standardization", "level": "expert" },
         { "name": "KPI Framework Design", "level": "proficient" },
-        { "name": "Operational Planning", "level": "expert" }
+        { "name": "Operational Planning", "level": "expert" },
+        { "name": "Agile Methodologies", "level": "proficient" }
       ],
       "operational": [
         { "name": "SOP Development", "level": "expert" },
@@ -185,14 +238,20 @@
         { "name": "Data Visualization", "level": "proficient" },
         { "name": "Data Analysis", "level": "proficient" },
         { "name": "Obsidian", "level": "proficient" },
-        { "name": "Project Management Tools", "level": "proficient" }
+        { "name": "Project Management Tools", "level": "proficient" },
+        { "name": "Business Intelligence Principles", "level": "proficient" },
+        { "name": "Power BI", "level": "proficient" },
+        { "name": "Looker Studio", "level": "proficient" },
+        { "name": "DBeaver", "level": "proficient" },
+        { "name": "QGIS", "level": "proficient" }
       ],
       "leadership": [
         { "name": "Team Governance", "level": "expert" },
         { "name": "Stakeholder Communication", "level": "expert" },
         { "name": "Public Speaking", "level": "proficient" },
         { "name": "Training Delivery", "level": "proficient" },
-        { "name": "Strategic Outreach", "level": "proficient" }
+        { "name": "Strategic Outreach", "level": "proficient" },
+        { "name": "Complex Problem-Solving", "level": "expert" }
       ]
     },
     "languages": [

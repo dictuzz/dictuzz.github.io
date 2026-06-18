@@ -23,13 +23,13 @@ async function loadLanguage(lang) {
         // Each renderer is isolated — a failure in one must not block the rest.
         // renderConnectSection is critical: it sets the "View Full Resume" link.
         const renderers = [
-            () => renderExperience(content.sections.experience),
+            () => renderExperience(content.sections.experience, '#experience .timeline'),
+            () => renderExperience(content.sections.volunteering, '#volunteering-list'),
             () => renderEducation(content.sections.education),
             () => renderCertifications(content.sections.certifications),
             () => renderImpact(content.sections.impact),
             () => renderSkills(content.collections, translations),
             () => renderList('#awards-list', content.sections.awards),
-            () => renderList('#etc-list', content.sections.etc),
             () => renderTestimonials(content.sections.testimonials),
             () => applyTranslations(translations),
             () => renderConnectSection(siteConfig, translations, content),
