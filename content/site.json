@@ -11,8 +11,8 @@
     "name": "Benedictus Richard Ricardo",
     "handle": "dictuzz",
     "title": "Systems Architect & Automation Specialist",
-    "description": "I am a Systems Architect and Automation Specialist. I build intuitive operational systems that eliminate friction and help teams scale their execution seamlessly.",
-    "longDescription": "I am a Systems Architect and Automation Specialist based in Bandung, Indonesia. I specialize in designing operational systems that eliminate friction, clarify complex workflows, and help teams scale their execution reliably and seamlessly.",
+    "description": "I build the behind-the-scenes systems that keep teams running — automated reports, shared SOPs, and the kind of structure that makes work less chaotic.",
+    "longDescription": "Based in Bandung, Indonesia. I focus on the operational side of things — building reports that don't need babysitting, writing SOPs that people actually follow, and sorting out the workflow problems that slow teams down.",
     "motto": "Quam Plurimi et Quam Aptissimi.",
     "image": {
       "portrait": "/assets/images/Aku.webp",
@@ -126,14 +126,14 @@
     "pages": {
       "home": {
         "path": "/",
-        "title": "Systems Architect & Automation Specialist — Eliminate 12+ hrs/week Manual Work | dictuzz",
-        "description": "Systems Architect & Automation Specialist. I build operational systems that cut 12+ hrs/week manual work, standardize governance for 30+ teams, and coordinate 1,000+ attendee events. Based in Bandung (GMT+7).",
+        "title": "Systems Architect & Automation Specialist — 12+ hrs/week of Manual Work Eliminated | dictuzz",
+        "description": "I've cut 12+ hrs/week of manual reporting, run governance for 30+ team members, and kept 1,000-person events on track from backstage. Based in Bandung, GMT+7.",
         "ogType": "website"
       },
       "resume": {
         "path": "/resume/",
         "title": "Systems Architect Resume | Workflow Automation, Operational Governance, 1K+ Event Scale | dictuzz",
-        "description": "Systems Architect & Automation Specialist resume. 12+ hrs/week saved via reporting automation (Home Digital), KPI governance for 34-member org, 1,000+ event operations. Available for fractional engagements.",
+        "description": "Benedictus Richard Ricardo's resume — the work, the tools, and how to get in touch. 12+ hrs/week saved via reporting automation, 34-member org governance, 1,000+ event ops.",
         "ogType": "profile"
       },
       "terms": {
@@ -146,13 +146,13 @@
         "path": "/portfolio/",
         "title": "The Operational Record: Case Studies in Workflow Automation & Operational Governance | dictuzz",
         "titleTemplate": "%s · The Operational Record | dictuzz",
-        "description": "The Operational Record: editorial case studies in workflow automation, operational governance & live operations. Home Digital reporting automation, student council KPI system, 1,000+ event ops.",
+        "description": "Case studies from real operational work — how a reporting cycle got 12 hours back, how a 34-member council learned to keep score, and what backstage looks like at 1,000-person events.",
         "ogType": "website"
       },
       "resources": {
         "path": "/resources/",
         "title": "Free Tools & Guides for Workflow Automation, Data Analysis & Operations | dictuzz",
-        "description": "Curated free tools & guides for workflow automation (Excel, Power Query, Python), operational governance (KPI frameworks, SOP templates), and live event operations.",
+        "description": "Free tools and guides I actually use — Excel automation, Power Query, KPI templates, SOP frameworks, and event ops checklists.",
         "ogType": "website"
       }
     }

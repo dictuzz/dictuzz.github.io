@@ -2,13 +2,13 @@
   "masthead": {
     "archiveLabel": "The Universal Archive",
     "archiveTitle": "Operational Record.",
-    "guidance": "Scroll to investigate the wall. Open any pinned case to inspect the short file or jump to the full dossier."
+    "guidance": "Scroll the wall. Open any pinned case to read the short file, or jump straight to the full write-up."
   },
   "hero": {
     "name": "Benedictus Richard Ricardo",
     "designation": "Systems Architect & Automation Specialist",
-    "lead": "Building systems that scale operations and eliminate friction.",
-    "body": "This portfolio is arranged like an evidence wall because the work itself is investigative. Find the friction. Trace the pattern. Build the structure. Measure the effect.",
+    "lead": "I make messy operations run clean.",
+    "body": "This portfolio is laid out like a case board — because that's kind of how I work. Find what's broken, figure out the pattern, build something that holds, then check if it actually worked.",
     "primaryCta": "Open Primary Case",
     "secondaryCta": "Contact Dispatch",
     "quickFacts": [
@@ -28,9 +28,9 @@
   },
   "profile": {
     "title": "Profile Dossier",
-    "summary": "I work best in environments where operations are complex, ownership is distributed, and the cost of confusion is real. My role is usually some mix of investigator, systems builder, and execution stabilizer.",
-    "philosophy": "Good systems do not feel complicated when they are used. They make the next step obvious, reduce wasted motion, and help people act with more confidence under pressure.",
-    "note": "Alongside hands-on operational work, I am studying Data Science and continuing to refine the way process design, evidence, and execution fit together.",
+    "summary": "I tend to land in situations where nobody's quite sure who owns what, the process is a mess, and things keep slipping through. My job is usually part detective, part builder.",
+    "philosophy": "If a system feels complicated to use, it's not done yet. The goal is making the next step obvious — so people stop guessing and start moving.",
+    "note": "I'm also studying Data Science at Universitas Terbuka. It changes how I look at process problems — more evidence, less gut feeling.",
     "facts": [
       {
         "label": "Working style",
@@ -50,38 +50,38 @@
     {
       "id": "systems",
       "title": "Systems Architecture",
-      "summary": "Define the operating model, the handoff points, and the evidence needed for a process to remain stable.",
+      "summary": "Figuring out how things should flow, where handoffs break, and what needs to be tracked to keep it all running.",
       "skills": ["Process mapping", "Decision flow design", "Operational structure", "Standards and controls"]
     },
     {
       "id": "automation",
       "title": "Workflow Automation",
-      "summary": "Remove repetitive work from recurring cycles and replace it with tools people can actually maintain.",
+      "summary": "Getting rid of the copy-paste-reformat cycle and replacing it with something that runs on its own.",
       "skills": ["Excel automation", "Reporting systems", "SOP design", "Recurring workflow cleanup"]
     },
     {
       "id": "governance",
       "title": "Governance & Leadership",
-      "summary": "Create rhythm, accountability, and clarity across teams that need a cleaner operating cadence.",
+      "summary": "Giving teams a cadence — regular check-ins, clear expectations, and a way to see who's doing what.",
       "skills": ["KPI governance", "Team leadership", "Program structure", "Cross-division coordination"]
     },
     {
       "id": "execution",
       "title": "Live Operations",
-      "summary": "Keep execution steady when timing, sequencing, and reliability matter in front of real people.",
+      "summary": "Keeping things on track when the audience is watching and there's no room to wing it.",
       "skills": ["Stage coordination", "Run-of-show planning", "Risk reduction", "On-site decision making"]
     },
     {
       "id": "readiness",
       "title": "Training & Readiness",
-      "summary": "Support technical preparedness through equipment discipline, practice structure, and controlled repetition.",
+      "summary": "Making sure gear is ready, drills are run, and people know what to do before the situation demands it.",
       "skills": ["Equipment readiness", "Training support", "Safety discipline", "Field coordination"]
     }
   ],
   "contact": {
-    "title": "Available for a focused set of systems, automation, and operations conversations.",
-    "body": "Best fit for teams or roles that need cleaner execution, more dependable process design, or stronger operational structure.",
-    "availability": "Open to conversations across GMT+7 and nearby time zones.",
+    "title": "Open to talking about systems, automation, and ops work.",
+    "body": "Best fit for teams or roles that need things to run cleaner, more reliably, or with less manual overhead. Based in GMT+7.",
+    "availability": "Happy to chat across GMT+7 and nearby time zones.",
     "email": "contact@dictuzz.me",
     "linkedin": "https://linkedin.com/in/dictuzz",
     "calendar": "https://calendar.app.google/39u2qGH6ybaFenhdA"

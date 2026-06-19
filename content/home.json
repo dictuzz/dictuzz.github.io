@@ -6,7 +6,7 @@
     {
       "id": "links",
       "title": "Links",
-      "summary": "Primary routes to portfolio, resume, and public work.",
+      "summary": "Portfolio, resume, and other work.",
       "icon": "i-ph-folder-open-duotone",
       "defaultOpen": true,
       "items": [
@@ -43,7 +43,7 @@
     {
       "id": "contact",
       "title": "Contact Me",
-      "summary": "Direct channels for introductions, proposals, and calls.",
+      "summary": "Email, WhatsApp, or book a call.",
       "icon": "i-ph-paper-plane-tilt-duotone",
       "defaultOpen": false,
       "items": [
@@ -71,7 +71,7 @@
     {
       "id": "socials",
       "title": "Socials",
-      "summary": "Extended social presence and community profiles.",
+      "summary": "Where else you can find me.",
       "icon": "i-ph-share-network-duotone",
       "defaultOpen": false,
       "items": [

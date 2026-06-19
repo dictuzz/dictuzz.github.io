@@ -37,15 +37,15 @@
     "metaDescription": "Das Operative Protokoll: redaktionelle Fallstudien zu Workflow-Automatisierung, operativer Governance & Live-Operationen. Home Digital Reporting-Automatisierung (12+ Std./Woche gespart), KPI-Governance für 34-köpfige Organisation, Veranstaltungen mit 1.000+ Teilnehmern.",
     "masthead": {
       "wordmark": "Das Operative Protokoll",
-      "subtitle": "Ein redaktionelles Portfolio operativer Systemarbeit, geführt von Benedictus Richard Ricardo.",
+      "subtitle": "Ein Portfolio operativer Systemarbeit, öffentlich protokolliert von Benedictus Richard Ricardo.",
       "strapLeft": "Bd. I — Nr. 1",
       "strapCenter": "Bandung · Jakarta · Indonesien",
       "strapRight": "Redigiert in Fraunces"
     },
     "feature": {
       "kicker": "Leitartikel · Workflow-Automatisierung",
-      "headline": "Wie ein leiser Berichtszyklus jede Woche zwölf Stunden verlor — und wie er sie wiederbekam.",
-      "deck": "Bei Home Digital Indonesia teilten sich drei Abteilungen einen brüchigen Berichtszyklus. Die Lösung war weniger Software als Struktur: eine Arbeitsmappe, die Regeln gehorcht, und Regeln, die ein Team einhalten konnte.",
+      "headline": "Der Wochenbericht hat 12 Stunden gefressen. Wir haben sie zurückgeholt.",
+      "deck": "Drei Abteilungen bei Home Digital teilen sich einen manuellen Berichtszyklus. Die Lösung war keine ausgefallene Software — nur eine Excel-Mappe mit richtiger Logik und SOPs, an die sich das Team tatsächlich halten konnte.",
       "byline": "Von Benedictus Richard Ricardo",
       "meta": "Jakarta · Juli 2024 – Sep. 2025 · 8 Min. Lesezeit",
       "href": "/portfolio/cases/automation-mandate/",
@@ -54,13 +54,13 @@
       "caption": "Operative Dashboards — die Form von Beleg, um die der Zyklus neu aufgebaut wurde. Foto als Illustration verwendet."
     },
     "indexLabel": "In dieser Ausgabe",
-    "indexNote": "Drei weitere Akten im öffentlichen Protokoll — Führung in der Schule, die Live-Programme und die Bereitschaftsarbeit hinter dem Feld.",
+    "indexNote": "Noch drei weitere Fälle im öffentlichen Protokoll — Führung im Schulalltag, Live-Veranstaltungen und die Bereitschaftsarbeit im Hintergrund.",
     "secondary": [
       {
         "slug": "kpi-governance-record",
         "kicker": "Governance · Führung",
         "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten.",
-        "deck": "Wie eine Schülerpräsidentschaft einen KPI-Rhythmus übernahm — und begann, wie eine Institution zu arbeiten, nicht wie ein Freundeskreis.",
+        "deck": "Wie eine Schülervertretung einen KPI-Rhythmus einführte — und anfing, wie eine echte Organisation zu arbeiten statt wie eine Clique.",
         "meta": "Präsident · 10 Abteilungen · 12 zuliefernde Schulen",
         "href": "/portfolio/cases/kpi-governance-record/"
       },
@@ -68,7 +68,7 @@
         "slug": "large-scale-event-ops",
         "kicker": "Live-Operationen",
         "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert.",
-        "deck": "Drei Jahre Bühnen- und Backstage-Arbeit für Publikum von tausend und mehr — und eine Jugendmesse für fünfhundert Teilnehmende, moderiert.",
+        "deck": "Drei Jahre Arbeit auf und hinter der Bühne für über tausend Zuschauer — und eine Jugendmesse für 500 Leute, die ich selbst moderiert habe.",
         "meta": "Stage Coordinator & Moderation · 2022 – 2025",
         "href": "/portfolio/cases/large-scale-event-ops/"
       },
@@ -76,18 +76,18 @@
         "slug": "vertical-rescue-ops",
         "kicker": "Ausbildung & Bereitschaft",
         "title": "Der ruhigere Teil riskanter Arbeit ist der Teil, den niemand filmt.",
-        "deck": "Über vier Jahre Materialpflege und Trainingsunterstützung bei Vertical Rescue Indonesia — Bereitschaft als Disziplin, nicht als Pose.",
+        "deck": "Mehr als vier Jahre Pflege der Ausrüstung und Unterstützung beim Training bei Vertical Rescue Indonesia — Einsatzbereitschaft als Gewohnheit, nicht als Show.",
         "meta": "Assistierender Ausbilder · Jan. 2021 – heute",
         "href": "/portfolio/cases/vertical-rescue-ops/"
       }
     ],
     "editor": {
-      "kicker": "Über den Redakteur",
+      "kicker": "Über mich",
       "title": "Benedictus Richard Ricardo, fürs Protokoll.",
-      "lede": "Ich arbeite dort, wo Operationen komplex sind, Verantwortung verteilt ist und der Preis von Verwirrung spürbar wird. Die Rolle ist meist eine Mischung aus Ermittler, Systembauer und Stabilisator.",
+      "lede": "Ich arbeite am besten, wenn der Betrieb unübersichtlich ist und niemand genau weiß, wer wofür zuständig ist. Ich komme rein, sortiere das und baue etwas, das hält.",
       "body": [
-        "Gute Systeme fühlen sich beim Gebrauch nicht kompliziert an. Sie machen den nächsten Schritt offensichtlich, vermeiden überflüssige Bewegung und erlauben den Beteiligten, unter Druck mit mehr Ruhe zu handeln.",
-        "Ich studiere Datenwissenschaft an der Universitas Terbuka und arbeite weiter daran, Prozessdesign, Belege und Ausführung sauber miteinander zu verzahnen."
+        "Ein gutes System soll sich offensichtlich anfühlen, nicht beeindruckend. Es geht darum, dass Teams aufhören zu grübeln und einfach ihre Arbeit machen können.",
+        "Gerade studiere ich Data Science an der Universitas Terbuka. Das verändert, wie ich an Abläufe herangehe — mehr Daten und Fakten, weniger Bauchgefühl."
       ],
       "facts": [
         { "label": "Sitz", "value": "Bandung, Indonesien · UTC+7" },
@@ -97,9 +97,9 @@
       ]
     },
     "contact": {
-      "kicker": "Brief an den Redakteur",
-      "title": "Offen für Gespräche zu Systemen, Automatisierung und Operations.",
-      "body": "Geeignet für Teams oder Rollen, die sauberere Ausführung, verlässlicheres Prozessdesign oder eine stärkere operative Struktur suchen. Erreichbar in GMT+7 und benachbarten Zeitzonen.",
+      "kicker": "Kontakt",
+      "title": "Offen für Gespräche über Systeme, Automatisierung und Betriebsabläufe.",
+      "body": "Passt am besten für Teams oder Rollen, die sauberere Abläufe, weniger Handarbeit oder eine solidere Betriebsstruktur brauchen. Erreichbar in GMT+7.",
       "actions": [
         { "type": "primary", "label": "contact@dictuzz.me", "href": "mailto:contact@dictuzz.me", "icon": "envelope" },
         { "type": "ghost", "label": "Termin vereinbaren", "href": "https://calendar.app.google/39u2qGH6ybaFenhdA", "icon": "calendar", "external": true },
@@ -114,32 +114,32 @@
       "vol": "Bd. I / Nr. 1",
       "kicker": "Workflow-Automatisierung · Home Digital Indonesia",
       "title": "Das Automatisierungsmandat",
-      "deck": "Reporting- und SOP-Systeme, die jede Woche zwölf Stunden manuelle Arbeit entfernten — aus einem personenabhängigen Zyklus wurde ein gemeinsamer, wiederholbarer Rhythmus.",
+      "deck": "Wir haben einen personengebundenen Berichtszyklus so umgebaut, dass das Team ihn jeden Montag genau gleich durchlaufen kann — ohne groß nachzudenken.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
       "bylineMeta": "Juli 2024 – Sep. 2025 · Jakarta, Indonesien",
       "image": "/portfolio/assets/photos/automation.jpg",
       "imageAlt": "Operative Dashboards mit wöchentlichen Berichts-Kennzahlen — die Belegquelle, an der der neu gebaute Zyklus gemessen wurde.",
       "caption": "Operative Dashboards als Illustration des wöchentlichen Berichtszyklus. Foto als Illustration verwendet.",
-      "lead": "Ein bereichsübergreifender Berichtszyklus verbrachte zu viel Zeit mit wiederholter manueller Arbeit. Die Lösung war eine strukturierte Berichtspipeline, gestützt auf klarere Betriebsregeln.",
+      "lead": "Drei Abteilungen haben jede Woche zu viel Zeit mit derselben Berichtsroutine verloren. Die Lösung war weniger Software, sondern feste Regeln für den Ablauf.",
       "narrative": [
         {
-          "heading": "Ausgangslage",
-          "body": "Finanzen, Vertrieb und Operations bearbeiteten wiederkehrendes Reporting über manuelle Erfassung, wiederholtes Formatieren und brüchige Übergaben. Der Prozess funktionierte — er kostete jedoch zu viel Zeit und stützte sich zu stark auf das Gedächtnis Einzelner. Jede Woche begann derselbe Zyklus von vorn, oft bei null, mit denselben Beinahe-Fehlern."
+          "heading": "Kontext",
+          "body": "Finanzen, Vertrieb und Operations haben mit denselben Daten hantiert, ständig Tabellen neu formatiert und halbgare Dateien hin- und hergeschickt. Es hat zwar irgendwie funktioniert, aber es ging extrem viel Zeit verloren. Und sobald jemand einen Schritt vergessen hat, lag alles lahm."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Ich habe den Workflow als operatives System behandelt, nicht als bloße Tabellenkalkulation. Die wiederkehrende Arbeitsmappen-Logik wurde in Excel neu aufgebaut, die unterstützenden SOPs standardisiert, sodass dieselbe Routine in jedem Zyklus lief, und der Berichtspfad Ende-zu-Ende abgebildet. Entscheidend war nicht die Mappe selbst; entscheidend war, dass das Team sie jeden Montag gleich ausführen konnte, ohne darüber nachdenken zu müssen."
+          "body": "Ich habe den gesamten Ablauf wie ein richtiges System behandelt, nicht nur wie eine Tabellenkalkulation. Die Logik der Excel-Mappe habe ich komplett neu aufgesetzt und SOPs geschrieben, damit in jedem Durchlauf dieselben Schritte passieren. Am Ende war es so gebaut, dass jeder im Team den Bericht montags fehlerfrei erstellen kann, ohne groß nachzugrübeln."
         },
         {
           "heading": "Ergebnis",
-          "body": "Das Team entfernte rund zwölf Stunden manueller Arbeit aus dem Wochenrhythmus. Die größere Verschiebung war Selbstvertrauen: ein klarerer Takt, weniger vermeidbare Verzögerungen und ein Prozess, der über Bereiche hinweg gepflegt wurde, statt in jedem Zyklus neu erfunden zu werden."
+          "body": "Wir haben rund 12 Stunden Handarbeit aus der Woche gestrichen. Aber der wichtigste Erfolg war, dass niemand mehr Angst vor dem Montag hatte. Die Übergaben klappen jetzt reibungslos, der Takt ist sauber und der Prozess bricht nicht gleich zusammen, wenn mal jemand krank ist."
         }
       ],
-      "pull": "Das Team entfernte rund zwölf Stunden manueller Arbeit aus dem Wochenrhythmus — und ersetzte sie durch eine Routine.",
+      "pull": "Zwölf Stunden manuelle Arbeit pro Woche gespart. Ersetzt durch eine Routine, die jeder im Team beherrscht.",
       "evidence": [
-        "Aufbau automatisierter Reporting-Systeme in Excel, die rund 12 Stunden manueller Wochenarbeit entfernten.",
-        "Standardisierung von SOPs über Finanzen, Vertrieb und Operations hinweg, um Reibung in wiederkehrenden Berichtszyklen zu reduzieren.",
-        "Verlagerung der Arbeit von personenabhängiger Wiederholung hin zu einer geteilten Betriebsroutine."
+        "Automatisierte Berichte in Excel gebaut, die dem Team gut 12 Stunden Copy-Paste-Arbeit pro Woche ersparen.",
+        "Gemeinsame SOPs für Finanzen, Vertrieb und Operations geschrieben, damit der Ablauf nicht mehr an der Erinnerung einer einzelnen Person hängt.",
+        "Die Arbeit von 'jemand muss dran denken' zu einem festen, wöchentlichen Standard umgestellt."
       ],
       "impact": [
         { "value": "12+", "label": "Stunden pro Woche gespart", "note": "Manueller Berichtsaufwand aus dem regulären Zyklus entfernt." },
@@ -157,32 +157,32 @@
       "vol": "Bd. I / Nr. 2",
       "kicker": "Governance · Führung · SMA Santa Maria 2",
       "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten.",
-      "deck": "Wie eine Schülerpräsidentschaft einen KPI-Rhythmus übernahm — und begann, wie eine Institution zu arbeiten, nicht wie ein Freundeskreis.",
+      "deck": "Wie eine Schülervertretung einen KPI-Rhythmus einführte — und anfing, wie eine echte Organisation zu arbeiten statt wie eine Clique.",
       "bylineRole": "Präsident · SMA Santa Maria 2",
       "bylineMeta": "Nov. 2021 – Nov. 2022 · Jakarta, Indonesien",
       "image": "/portfolio/assets/photos/governance.jpg",
       "imageAlt": "Ein Sprecher wendet sich an eine kleine Gruppe in einer Arbeitsumgebung — als Illustration für institutionelle Führung und Programmgestaltung.",
       "caption": "Führung in einer Arbeitsumgebung — als Illustration für institutionellen Rhythmus und Programmgestaltung.",
-      "lead": "Ein Rat mit 34 Mitgliedern in 10 Abteilungen brauchte mehr Rhythmus, mehr Verbindlichkeit und mehr Programmstruktur. Ein KPI-basierter Governance-Ansatz gab Führung und Ausführung einen klareren Takt.",
+      "lead": "Ein Rat mit 34 Leuten in 10 Abteilungen brauchte einen Weg, um zu sehen, was läuft und was stockt. KPIs und wöchentliche Check-ins haben uns genau das gegeben.",
       "narrative": [
         {
-          "heading": "Ausgangslage",
-          "body": "Sobald eine Schülerorganisation mehrere Abteilungen umfasst, reicht informelle Führung nicht mehr. Der Rat brauchte klarere Sichtbarkeit, beständigere Nachverfolgung und eine Möglichkeit, Programme schon im Verlauf zu bewerten — nicht erst am Ende."
+          "heading": "Kontext",
+          "body": "Ab einer bestimmten Größe funktioniert eine Organisation nicht mehr nur über Chatgruppen und guten Willen. Wir brauchten einen klaren Blick darauf, welche Abteilungen wirklich liefern und wo die Arbeit liegen bleibt."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Ein expliziteres Governance-Modell mit messbaren Erwartungen, wiederkehrenden Kontrollpunkten und einer Ausrichtung zwischen Abteilungsarbeit und institutionellen Zielen. Der Rat ging zu einem KPI-Rhythmus über, mit wöchentlichen Reviews, klareren Abteilungserwartungen und einer kräftigeren institutionellen Planung für schulweite Programme."
+          "body": "Ich habe KPIs mit wöchentlichen Reviews eingeführt, die Aufgaben der Abteilungen deutlicher formuliert und die Planung für Schulveranstaltungen auf feste Beine gestellt. Keine Raketenwissenschaft — einfach nur Struktur, wo vorher Chaos war."
         },
         {
           "heading": "Ergebnis",
-          "body": "Ein Rat, der endlich sehen konnte, was sich bewegte, was blockierte und wohin Führungsenergie gelenkt werden musste. Programme liefen stabiler — einschließlich einer Kampagne, die zwölf zuliefernde Schulen erreichte —, weil der operative Takt unter Last hielt."
+          "body": "Wir konnten endlich sehen, woran es hakt. Die Projekte liefen viel stabiler, darunter auch eine Kampagne für zwölf Zubringerschulen. Der Rat hat angefangen, wie eine professionelle Organisation zu arbeiten, nicht wie eine lockere Clique."
         }
       ],
-      "pull": "Ein Team zu führen ist leichter, wenn das Team selbst sehen kann, was es tut.",
+      "pull": "Es ist viel einfacher ein Team zu führen, wenn jeder selbst sehen kann, was er leistet.",
       "evidence": [
-        "Führung von 34 Mitgliedern in 10 Abteilungen über einen strukturierten KPI-basierten Governance-Rhythmus.",
-        "Entwurf langfristiger institutioneller Programme, die auf Schulebene übernommen wurden.",
-        "Steuerung von Outreach- und Kampagnenarbeit, die 12 zuliefernde Schulen erreichte."
+        "Einen 34-köpfigen Rat über 10 Abteilungen hinweg mit KPIs und wöchentlichen Syncs geleitet.",
+        "Schulprojekte entworfen, die von der Schulleitung dauerhaft übernommen wurden.",
+        "Outreach-Kampagnen gesteuert, die 12 Zubringerschulen erreicht haben."
       ],
       "impact": [
         { "value": "34", "label": "Mitglieder geführt", "note": "Führungsumfang für die gesamte Organisation." },
@@ -200,32 +200,32 @@
       "vol": "Bd. I / Nr. 3",
       "kicker": "Live-Operationen · Ultimate Event Organizer",
       "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert.",
-      "deck": "Drei Jahre Bühnen- und Backstage-Arbeit für Publikum von tausend und mehr — und eine Jugendmesse für fünfhundert Teilnehmende, moderiert.",
+      "deck": "Drei Jahre Arbeit auf und hinter der Bühne für über tausend Zuschauer — und eine Jugendmesse für 500 Leute, die ich selbst moderiert habe.",
       "bylineRole": "Stage Coordinator & Moderation · Ultimate Event Organizer",
       "bylineMeta": "2022 – 2025 · Jakarta, Indonesien",
       "image": "/portfolio/assets/photos/events.jpg",
       "imageAlt": "Konfetti fällt über ein Publikum in einer Live-Veranstaltung und illustriert die Größenordnung und den Zeitdruck großer Programme.",
       "caption": "Live-Programme hängen von Übergängen ab, die unter Druck halten. Foto als Illustration verwendet.",
-      "lead": "Live-Programme mit großem Publikum hängen von präzisen Übergängen, geteiltem Timing und sauberer Backstage-Koordination ab. Kleine Brüche werden sofort sichtbar — es gibt keinen leisen Entwurf.",
+      "lead": "Live-Events mit großem Publikum verzeihen keine holprigen Übergänge. Mein Job war es, hinter der Bühne alles so straff zu organisieren, dass die Zuschauer nichts bemerkten.",
       "narrative": [
         {
-          "heading": "Ausgangslage",
-          "body": "Ein nur leicht unklarer Übergang wird zum sichtbaren Scheitern, sobald der Saal hinsieht. Die Herausforderung großer Veranstaltungen ist nicht das Erzeugen dramatischer Momente — es ist, Tempo und Ausführung unter spürbarem Druck ruhig zu halten."
+          "heading": "Kontext",
+          "body": "Wenn bei einem Übergang auf der Bühne auch nur eine Kleinigkeit schiefgeht, merkt es das Publikum sofort. Die Kunst bei großen Events sind nicht die Knalleffekte — sondern sicherzustellen, dass die langweiligen Dinge wie Timing und Technikübergaben reibungslos klappen."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Meine Rolle lag nahe an der Linie zwischen Planung und Ausführung: den Showablauf so zu übersetzen, dass technische Teams und Mitwirkende auf der Bühne ihn ohne Zögern ausführen konnten, Übergangsplanung zu unterstützen und das Tempo eng genug zu halten, damit Technik, Sprecher, Künstler und Publikum im Einklang blieben."
+          "body": "Ich stand genau an der Schnittstelle zwischen Planung und Ausführung. Meine Aufgabe war es, den Ablaufplan so für Licht-, Ton- und Security-Teams zu übersetzen, dass jeder Handgriff saß. Das bedeutete enge Absprachen und ständige Kommunikation."
         },
         {
           "heading": "Ergebnis",
-          "body": "Veranstaltungen liefen mit weniger sichtbaren Übergangsausfällen, klarerem Bühnenfluss und verlässlicherer Kontrolle in den Momenten, in denen Timing unter Druck halten musste — einschließlich der Jugendmesse 2025, die zu einem klaren Beleg für Live-Kommunikation vor 500+ Teilnehmenden wurde."
+          "body": "Die Übergänge liefen flüssiger, der Bühnenablauf war planbar und das Timing stimmte auch unter Stress. Der beste Beweis war die Jugendmesse 2025: 500 Leute im Saal, Live-Bühne und alles lief auf die Minute genau ab."
         }
       ],
-      "pull": "Wenn das Tempo hält, wirkt das Ereignis gewollt. Bricht es, merken es alle.",
+      "pull": "Wenn das Timing stimmt, wirkt das Event perfekt geplant. Wenn es hakt, fällt es jedem auf.",
       "evidence": [
-        "Koordination der technischen Ausführung für Veranstaltungen mit 1.000+ Teilnehmenden.",
-        "Moderation der Jugendmesse 2025 vor 500+ Teilnehmenden bei gehaltenem Tempo und klarer Bühnenpräsenz.",
-        "Reduzierung sichtbarer Übergangsreibung durch strukturiertere Bühnenabläufe."
+        "Die Backstage-Koordination für Veranstaltungen mit über 1.000 Gästen geleitet.",
+        "Die Jugendmesse 2025 mit 500 Teilnehmenden moderiert und das Tempo von Anfang bis Ende hochgehalten.",
+        "Übergangsreibung reduziert, indem jedes Team einen klaren Ablaufplan bekommen hat."
       ],
       "impact": [
         { "value": "1.000+", "label": "Publikumsgröße", "note": "Live-Umgebungen mit sichtbarem Ausführungsdruck." },
@@ -243,32 +243,32 @@
       "vol": "Bd. I / Nr. 4",
       "kicker": "Ausbildung & Bereitschaft · Vertical Rescue Indonesia",
       "title": "Der ruhigere Teil riskanter Arbeit ist der Teil, den niemand filmt.",
-      "deck": "Über vier Jahre Materialpflege und Trainingsunterstützung bei Vertical Rescue Indonesia — Bereitschaft als Disziplin, nicht als Pose.",
+      "deck": "Mehr als vier Jahre Pflege der Ausrüstung und Unterstützung beim Training bei Vertical Rescue Indonesia — Einsatzbereitschaft als Gewohnheit, nicht als Show.",
       "bylineRole": "Assistierender Ausbilder · Vertical Rescue Indonesia",
       "bylineMeta": "Jan. 2021 – heute · Indonesien",
       "image": null,
       "imageAlt": null,
       "caption": null,
-      "lead": "Bereitschaftsarbeit ist leiser als Live-Auslieferung, doch der Maßstab ist höher: Material, Menschen und Prozess müssen verlässlich sein, lange bevor das Feld anspruchsvoll wird.",
+      "lead": "Niemand filmt die Vorbereitung. Aber wenn im Feld etwas schiefgeht, ist sie das Einzige, was zählt.",
       "narrative": [
         {
-          "heading": "Ausgangslage",
-          "body": "Technische Rettungseinsätze hängen an disziplinierter Vorbereitung. Materialprüfungen, Trainingstakt und Rollenklarheit lassen sich nicht improvisieren, sobald die Lage ernst wird. Die Arbeit bringt keine dramatischen Momente hervor. Sie sorgt dafür, dass die Grundlagen stimmen, lange bevor diese Momente kommen."
+          "heading": "Kontext",
+          "body": "Bei technischen Rettungseinsätzen kann man nicht improvisieren, wenn es ernst wird. Die Ausrüstung muss geprüft sein, das Training muss sitzen und jeder muss seine Rolle kennen, bevor Gefahr droht."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Materialpflege, Trainingsunterstützung und technische Verlässlichkeit — Material in inspizierbarem Zustand halten, technisches Klettern als Lead Climber und Sichernder begleiten und die Trainingsdisziplin tragen, die für sichere und wiederholbare Bereitschaftsarbeit nötig ist."
+          "body": "Ich habe mich um das Equipment gekümmert, Klettereinheiten als Vorstiegskletterer und Sicherer abgesichert und geholfen, den Trainingsstandard hochzuhalten. Keine glamouröse Arbeit, aber sie muss jedes Mal stimmen."
         },
         {
           "heading": "Ergebnis",
-          "body": "Stabilere operative Bereitschaft, strukturiertere Vorbereitung und stärkere Unterstützung für jene, die in technische Rettungsausbildung einsteigen. Der Maßstab war schlicht höher als das, was Live-Arbeit allein erzwungen hätte."
+          "body": "Die Ausrüstung war immer einsatzbereit. Die Trainings liefen flüssiger ab und neue Teilnehmende hatten eine solidere Basis, bevor sie überhaupt in eine echte Notsituation kamen."
         }
       ],
-      "pull": "In technischen Umgebungen kommt Sicherheit aus Vorbereitung — nicht aus Improvisation.",
+      "pull": "In technischen Bereichen kommt Sicherheit durch Vorbereitung, nicht durch Improvisation.",
       "evidence": [
-        "Materialpflege durch strukturierte Inspektions- und Bereitschaftsroutinen.",
-        "Begleitung technischer Trainingseinheiten als Lead Climber und Sichernder.",
-        "Beitrag zu einer Kultur, in der Sicherheit und Vorbereitung sichtbarer Teil der Arbeit blieben."
+        "Die Ausrüstung durch regelmäßige Wartung und Kontrollen einsatzbereit gehalten.",
+        "Kletter- und Sicherungsübungen als Teil des Trainer-Teams abgesichert.",
+        "Mitgeholfen, eine Kultur zu prägen, in der Vorbereitung keine Option ist, sondern der Standard."
       ],
       "impact": [
         { "value": "4+", "label": "Aktive Jahre", "note": "Anhaltende Mitwirkung in Bereitschafts- und Trainingsarbeit." },

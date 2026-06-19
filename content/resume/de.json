@@ -2,16 +2,16 @@
   "locale": "de",
   "strings": {
     "hero": {
-      "subtitle": "Building systems that scale operations and eliminate friction.",
+      "subtitle": "Ich bringe Ordnung in chaotische Abläufe.",
       "role": "Systems Architect & Automation Specialist",
       "typing": {
         "staticText": "",
         "dynamicTexts": [
-          "Operative Systeme aufbauen",
-          "Arbeitsabläufe optimieren",
-          "Teams bereichsübergreifend koordinieren",
-          "Datenbasiert entscheiden",
-          "Strukturiert umsetzen"
+          "Kaputte Abläufe reparieren",
+          "Abteilungen verbinden",
+          "Daten in konkrete Pläne umsetzen",
+          "Großevents am Laufen halten",
+          "Teams flüssiger machen"
         ]
       },
       "status": "Offen für Möglichkeiten",
@@ -46,16 +46,16 @@
       "contact": "KONTAKT & VERFÜGBARKEIT"
     },
     "sectionLede": {
-      "summary": "Profil zu Systemarchitektur, Workflow-Automatisierung und bereichsübergreifender Umsetzung.",
-      "experience": "Rollen mit Schwerpunkt auf Workflow-Automatisierung, operativer Führung, Trainingsbereitschaft und Veranstaltungsdurchführung.",
-      "education": "Akademischer Hintergrund zur Unterstützung von Datenanalyse, Systemdenken und Prozessverbesserung.",
-      "certifications": "Verifizierte Weiterbildungen und Sprachqualifikationen für strukturierte Arbeit und internationale Zusammenarbeit.",
-      "impact": "Ausgewählte Beispiele messbarer Ergebnisse in Reporting-Automatisierung, Governance und Operations.",
-      "skills": "Zentrale Fähigkeiten in Systemdesign, Automatisierung, Analytik, Operations und Führung.",
-      "awards": "Auszeichnungen und Anerkennungen im Zusammenhang mit Kommunikation, Kreativität und Leistung.",
-      "volunteering": "Gesellschaftliches Engagement in den Bereichen Jugendführung, Kirchendienst und Sicherheitstraining im Freien.",
-      "testimonials": "Referenzen und Empfehlungen von Führungskräften, Kolleginnen und Kollegen oder Kundschaft.",
-      "contact": "Wichtige Kontaktwege für Gespräche zu Interviews, Partnerschaften, Freelance-Arbeit und beruflichen Möglichkeiten."
+      "summary": "Was ich tue und wie ich über Arbeit denke.",
+      "experience": "Wo ich gearbeitet habe und was ich dort gebaut habe.",
+      "education": "Wo ich studiert habe und was hängen geblieben ist.",
+      "certifications": "Zertifikate und Sprachnachweise.",
+      "impact": "Zahlen, auf die ich verweisen kann.",
+      "skills": "Was ich kann, Werkzeug für Werkzeug.",
+      "awards": "Auszeichnungen und Preise auf dem Weg.",
+      "volunteering": "Ehrenamt und Zeugs in der Community.",
+      "testimonials": "Was andere über die Arbeit mit mir sagen.",
+      "contact": "Wie man mich erreicht."
     },
     "skills": {
       "strategic": "Strategie & Systeme",
@@ -82,7 +82,7 @@
   },
   "sections": {
     "summary": {
-      "text": "Datengetriebener Systemarchitekt & Operations-Spezialist, der einen Hintergrund in Data Science mit Fachwissen in der funktionsübergreifenden Workflow-Optimierung kombiniert, um Systeme aufzubauen, die Klarheit, Konsistenz und Fortschritt schaffen. Meine Arbeit umfasst die Automatisierung von Reporting-Workflows (Zeitersparnis von 12+ Stunden pro Woche), die Führung einer 34-köpfigen Organisation durch KPI-basierte Steuerung und die Koordination von Großveranstaltungen mit über 1.000 Teilnehmenden. Ich bringe einen strukturierten, datengestützten Ansatz für Umsetzung, Verbesserung und Team-Ausrichtung mit. Leidenschaftlich darin, aufkommende Daten-Technologien und agile Methoden zu nutzen, um widerstandsfähige, zukunftsfähige Organisationen aufzubauen."
+      "text": "Ich baue das operative Rückgrat, auf das Teams sich verlassen, ohne es groß zu bemerken — Reports, die von alleine laufen, SOPs, die tatsächlich benutzt werden, Koordination, die eine Veranstaltung mit 1.000 Leuten nicht hinter der Bühne zusammenbrechen lässt. Bei Home Digital Indonesia habe ich eine wöchentliche Reporting-Pipeline in Excel neu gebaut, die dem Team über 12 Stunden Handarbeit pro Woche zurückgegeben hat. Davor habe ich als Schülersprecher eine 34-köpfige Organisation über 10 Abteilungen mit KPIs und wöchentlichen Check-ins geführt — nicht weil es modern war, sondern weil nichts anderes funktioniert hat. Aktuell studiere ich Data Science an der Universitas Terbuka, was verändert, wie ich über Belege, Prozesse und 'gut genug' nachdenke."
     },
     "experience": [
       {
@@ -90,9 +90,9 @@
         "role": "Management Trainee",
         "company": "Tirta Utama Abadi",
         "details": [
-          "Implementierung der umfassenden Umstrukturierung von Dashboards für tägliche Sprints über alle Segmente hinweg, um detaillierte Echtzeit-Datenvisualisierungen für strategische Entscheidungsfindungen bereitzustellen.",
-          "Erfolgreiche Durchführung einer kompletten Überarbeitung des Call Frequency Managements (CFM) für 31 Depots in ganz Westjava zur signifikanten Optimierung der Serviceeffizienz.",
-          "Entwicklung einer neuen Analyse-Dashboard-Anwendung für die Route-to-Market (RTM)-Abteilung, die umfassende Datenanalysen für alle Verkaufsstellen und Segmente im gesamten Depotnetzwerk bietet."
+          "Die Sprint-Dashboards komplett neu gebaut, damit jedes Segment seine Zahlen in Echtzeit sehen kann — ohne auf jemanden warten zu müssen, der sie zusammenstellt.",
+          "Das Call-Frequency-Management (CFM) in allen 31 Depots in West-Java komplett überarbeitet, damit es besser zu den Teams vor Ort passt.",
+          "Ein neues Analyse-Dashboard für die RTM-Abteilung gebaut, das zum ersten Mal alle Verkaufsstellen und Segmente an einem Ort zusammenbringt."
         ]
       },
       {
@@ -100,9 +100,9 @@
         "role": "Management Trainee",
         "company": "Home Digital Indonesia",
         "details": [
-          "Automatisierte Berichtssysteme mit Excel konzipiert und implementiert, wodurch der manuelle Berichtsaufwand um ~12 Stunden pro Woche reduziert wurde.",
-          "Standardisierung funktionsübergreifender SOPs in den Bereichen Finanzen, Vertrieb und Operations zur Verbesserung der operativen Konsistenz.",
-          "Nutzung von Datenanalysen zu internem Feedback, um strukturierte Prozessverbesserungen zu entwickeln, die Managemententscheidungen direkt beeinflussen."
+          "Automatische Reports in Excel aufgesetzt, die dem Team rund 12 Stunden Copy-Paste-Arbeit pro Woche erspart haben.",
+          "Gemeinsame SOPs für Finanzen, Vertrieb und Operations geschrieben, damit nicht jede Abteilung ihr eigenes Ding macht.",
+          "Internes Feedback analysiert, um Engpässe in den Abläufen zu finden und konkrete Vorschläge zu liefern, die das Management dann umgesetzt hat."
         ]
       },
       {
@@ -110,9 +110,9 @@
         "role": "Assistenztrainer",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Betriebsbereitschaft der Sicherheitsausrüstung durch strukturierte Inspektions- und Wartungssysteme sichergestellt.",
-          "Unterstützung technischer Schulungen als Vorstiegskletterer und Sicherer bei Rettungseinsätzen.",
-          "Moderation der technischen Ausbildung und Durchführung strenger Kompetenzbewertungen für neue Auszubildende."
+          "Alle Sicherheitsausrüstung regelmäßig geprüft und gewartet — Seile, Gurte, Karabiner, das volle Programm.",
+          "Als Vorstiegskletterer und Sicherer bei technischen Rettungsübungen geholfen.",
+          "Praktische Übungen angeleitet und die Prüfungen für neue Auszubildende durchgeführt."
         ]
       },
       {
@@ -120,9 +120,10 @@
         "role": "Präsident",
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
-          "Leitung einer 34-köpfigen Organisation in 10 Abteilungen mit strukturierter KPI-basierter Steuerung.",
-          "Architektur und Durchführung langfristiger institutioneller Programme, die schulweit erfolgreich übernommen wurden.",
-          "Leitung strategischer Outreach-Kampagnen an 12 Zulieferschulen."
+          "34 Leute in 10 Abteilungen geführt. KPIs eingeführt, weil ohne sie niemand wusste, welche Abteilung wirklich liefert.",
+          "Schulprojekte entworfen, die von der Schulleitung so gut gefunden wurden, dass sie auch nach meiner Amtszeit weitergeführt wurden.",
+          "Kampagnen an 12 Zubringerschulen geleitet, um mehr Schüler an Bord zu holen.",
+          "Wöchentliche Absprachen zwischen den Abteilungen eingeführt — simpel, aber es ging nichts mehr verloren."
         ]
       },
       {
@@ -130,8 +131,8 @@
         "role": "Stage Operations Crew",
         "company": "Ultimate Event Organizer",
         "details": [
-          "Koordinierte die technische Backstage-Abwicklung für Veranstaltungen mit 1.000+ Teilnehmenden.",
-          "Reduzierte Übergangsausfallzeiten durch strukturierte Bühnenabläufe in den Teams für Beleuchtung, Ton und Sicherheit."
+          "Die Backstage-Koordination bei Events mit über 1.000 Zuschauern organisiert — Licht, Ton und Security gleichzeitig im Blick behalten.",
+          "Die Übergangszeiten zwischen Programmpunkten verkürzt, indem jedes Team einen klaren Ablaufplan bekommen hat."
         ]
       }
     ],
@@ -151,18 +152,34 @@
     "impact": [
       {
         "title": "Reporting-Automatisierung",
-        "desc": "Automatisierte Berichtssysteme bei Home Digital Indonesia mit Excel entwickelt und implementiert. Dadurch sank der manuelle Berichtsaufwand um etwa 12 Stunden pro Woche."
+        "desc": "Bei Home Digital hat der Wochenbericht alle aufgefressen — Dateneingabe, Neuformatierung, Gegenprüfung. Ich hab den ganzen Ablauf in Excel neu gebaut, sodass er praktisch von alleine läuft. Das Team hat etwa 12 Stunden pro Woche zurückbekommen."
       },
       {
         "title": "KPI-basierte Governance",
-        "desc": "Eine 34-köpfige Schülerorganisation mit KPI-basierter Governance und wöchentlicher Abstimmungsroutine geführt. Institutionelle Programme wurden schulweit übernommen."
+        "desc": "Ich habe die Schülerorganisation (34 Leute, 10 Abteilungen) mit echten KPIs und wöchentlichen Syncs geführt. Die Programme wurden von der Schule übernommen und wir haben 12 Zubringerschulen erreicht."
       },
       {
         "title": "Großveranstaltungen",
-        "desc": "Programmabläufe als MC bei Youth Mass 2025 (GEMA Bandung) für 500+ Teilnehmende gesteuert und zuvor Backstage-Operations für Veranstaltungen mit 1.000+ Gästen unterstützt."
+        "desc": "Als MC bei der Jugendmesse 2025 vor 500 Leuten das Programm moderiert und auf Takt gehalten. Davor habe ich Backstage-Operations bei Events mit 1.000+ Zuschauern koordiniert, wo jeder Fehler sofort auffällt."
       }
     ],
-    "certifications": [],
+    "certifications": [
+      {
+        "name": "Goethe-Zertifikat B1",
+        "issuer": "Goethe-Institut",
+        "year": "2023"
+      },
+      {
+        "name": "Personal Financial Fundamentals",
+        "issuer": "MySkill",
+        "year": "2024"
+      },
+      {
+        "name": "Öffentliche Vorlesung: Kurs für journalistisches Schreiben",
+        "issuer": "Katholische Universität Parahyangan",
+        "year": "2023"
+      }
+    ],
     "testimonials": [],
     "awards": [
       "1. Platz – Instagram-Reels-Wettbewerb, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
@@ -172,10 +189,10 @@
     "volunteering": [
       {
         "date": "JUL 2025 – HEUTE",
-        "role": "Ehrenamtlicher Moderator",
+        "role": "Ehrenamtlicher Moderator (MC)",
         "company": "GEMA Bandung (Studentengemeinde)",
         "details": [
-          "Moderation der Großveranstaltung „Misa Angkatan Muda 2025“ für über 500 katholische Studenten."
+          "Als MC die Misa Angkatan Muda 2025 moderiert und das Programm für über 500 katholische Studierende flüssig gehalten."
         ]
       },
       {
@@ -183,8 +200,8 @@
         "role": "Stellvertretender Vorsitzender",
         "company": "Katholische Jugendorganisation Ujung Berung",
         "details": [
-          "Planung des Jahresprogramms, Koordination teamübergreifender Aufgaben und Freiwilligenpläne.",
-          "Organisation von Großveranstaltungen: Abendtreffen (±100 Teilnehmer) und Jugendgottesdienst (±400 Teilnehmer)."
+          "Das Jahresprogramm geplant und dafür gesorgt, dass alle Teams und Freiwilligen auf dem gleichen Stand waren.",
+          "Ein Abendtreffen (~100 Teilnehmende) und einen Jugendgottesdienst (~400 Teilnehmende) organisiert."
         ]
       },
       {
@@ -192,16 +209,16 @@
         "role": "Assistenz-Ausbilder",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Sicherstellung der Einsatzbereitschaft der Rettungsausrüstung durch regelmäßige Wartung.",
-          "Unterstützung von Trainingseinheiten als Vorstiegskletterer und Sicherer."
+          "Die Rettungsausrüstung durch regelmäßige Wartung und Sicherheitschecks einsatzbereit gehalten.",
+          "Trainingseinheiten als Vorstiegskletterer und Sicherer unterstützt und neuen Leuten geholfen."
         ]
       },
       {
         "date": "NOV 2021 – NOV 2022",
-        "role": "Leiter der Abteilung Wirtschaft & Partnerschaft",
+        "role": "Leiter Wirtschaft & Partnerships",
         "company": "Schülersprecher-Forum Westjava",
         "details": [
-          "Aufbau einer historischen Partnerschaftsdatenbank zur Verfolgung früherer Kooperationen."
+          "Eine Datenbank für frühere Sponsoren und Partner aufgebaut, damit das nächste Team nicht wieder bei null anfängt."
         ]
       },
       {
@@ -209,8 +226,8 @@
         "role": "Stellvertretender Oberministrant",
         "company": "Ministranten der Zipur-Kirche",
         "details": [
-          "Gewährleistung reibungsloser Gottesdienste durch strikte Dienstplanverwaltung.",
-          "Organisation von Mitgliederveranstaltungen und Geburtstagsfeiern."
+          "Den Ministrantenplan verwaltet — sichergestellt, dass bei jeder Messe genug Leute da waren und die Rotation fair blieb.",
+          "Kleine Events zur Anerkennung und Geburtstage organisiert, um das Team zusammenzuhalten."
         ]
       }
     ]
@@ -223,27 +240,31 @@
         { "name": "Process Standardization", "level": "expert" },
         { "name": "KPI Framework Design", "level": "proficient" },
         { "name": "Operational Planning", "level": "expert" },
-        { "name": "Agile Methodologies", "level": "proficient" }
+        { "name": "Agile Methodologies", "level": "proficient" },
+        { "name": "Change Management", "level": "expert" }
       ],
       "operational": [
         { "name": "SOP Development", "level": "expert" },
         { "name": "Cross-Functional Coordination", "level": "expert" },
         { "name": "Event Operations Management", "level": "proficient" },
         { "name": "Reporting Automation", "level": "expert" },
-        { "name": "Structured Delegation", "level": "proficient" }
+        { "name": "Structured Delegation", "level": "proficient" },
+        { "name": "Incident Management", "level": "expert" }
       ],
       "analytical": [
-        { "name": "Microsoft Excel (Advanced)", "level": "expert" },
+        { "name": "Microsoft Excel", "level": "expert" },
         { "name": "Google Workspace", "level": "expert" },
         { "name": "Data Visualization", "level": "proficient" },
         { "name": "Data Analysis", "level": "proficient" },
         { "name": "Obsidian", "level": "proficient" },
         { "name": "Project Management Tools", "level": "proficient" },
-        { "name": "Business Intelligence Principles", "level": "proficient" },
+        { "name": "Business Intelligence", "level": "proficient" },
         { "name": "Power BI", "level": "proficient" },
         { "name": "Looker Studio", "level": "proficient" },
         { "name": "DBeaver", "level": "proficient" },
-        { "name": "QGIS", "level": "proficient" }
+        { "name": "QGIS", "level": "proficient" },
+        { "name": "Python", "level": "proficient" },
+        { "name": "SQL", "level": "proficient" }
       ],
       "leadership": [
         { "name": "Team Governance", "level": "expert" },
@@ -251,7 +272,8 @@
         { "name": "Public Speaking", "level": "proficient" },
         { "name": "Training Delivery", "level": "proficient" },
         { "name": "Strategic Outreach", "level": "proficient" },
-        { "name": "Complex Problem-Solving", "level": "expert" }
+        { "name": "Complex Problem-Solving", "level": "expert" },
+        { "name": "Prozessdiagnose", "level": "expert" }
       ]
     },
     "languages": [
@@ -262,7 +284,7 @@
     ]
   },
   "seo": {
-    "description": "Lebenslauf von Benedictus Richard Ricardo, Systems Architect & Automation Specialist. Erfahrung, Workflow-Automatisierung, operative Führung und Kernkompetenzen im Überblick."
+    "description": "Lebenslauf von Benedictus Richard Ricardo — der Mensch hinter dictuzz. Berufserfahrung, Fähigkeiten und Kontaktmöglichkeiten."
   },
   "downloads": {
     "resumeUrl": "https://rxresu.me/me.richardricardo/de"

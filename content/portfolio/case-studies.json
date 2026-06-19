@@ -9,27 +9,27 @@
     "role": "Management Trainee",
     "timeline": "Jul 2024 – Sep 2025",
     "location": "Jakarta, Indonesia",
-    "summary": "A cross-functional reporting cycle was spending too much time on repeated manual work. The fix was a structured reporting pipeline supported by clearer operating rules.",
-    "problem": "Finance, sales, and operations were handling recurring reporting work through manual collection, repeat formatting, and fragile handoffs. The process worked, but it consumed too much time and depended too heavily on individual memory.",
-    "intervention": "I mapped the reporting path, rebuilt the recurring workbook logic in Excel, and documented the supporting SOPs so the workflow could run the same way every cycle instead of being rediscovered each week.",
-    "outcome": "The team removed roughly 12 hours of manual work from the weekly rhythm, reduced process ambiguity, and created a reporting structure that was easier to maintain across functions.",
+    "summary": "Three departments were losing time to the same manual reporting routine every week. The fix was less about software and more about giving the process real rules.",
+    "problem": "Finance, sales, and ops were all touching the same data, reformatting the same spreadsheets, handing off the same half-finished files. It worked, technically — but it ate too much time and broke whenever someone forgot a step.",
+    "intervention": "I mapped out the reporting path, rebuilt the recurring workbook logic in Excel, and wrote SOPs so the same steps happen every cycle. The point wasn't the spreadsheet — it was making the process run the same way every week without anyone having to reinvent it.",
+    "outcome": "About 12 hours of manual work came off the weekly rhythm. But the bigger win was that people stopped dreading the process. Handoffs stopped breaking, and the whole thing could survive someone being out sick.",
     "evidenceBullets": [
-      "Built automated reporting systems in Excel that removed roughly 12 hours of manual weekly work.",
-      "Standardized SOPs across finance, sales, and operations to reduce friction during recurring reporting cycles.",
-      "Shifted the work from person-dependent repetition toward a shared operating routine."
+      "Built automated reports in Excel that took roughly 12 hours of manual work out of the weekly cycle.",
+      "Wrote shared SOPs across finance, sales, and operations so the process stopped depending on one person's memory.",
+      "Moved the work from 'someone needs to remember this' to 'this just runs now'."
     ],
     "narrative": [
       {
         "title": "Case Context",
-        "body": "The core issue was not a lack of effort. It was a lack of repeatable structure. Reporting relied on people remembering the right sequence and touching the same information too many times."
+        "body": "The problem wasn't effort — it was structure. People were remembering the right sequence from last week and touching the same information too many times. Every Monday was a fresh scramble."
       },
       {
         "title": "What I Built",
-        "body": "I treated the workflow like an operational system, not just a spreadsheet. The solution combined workbook automation, clearer rules for ownership, and documented steps that made the reporting cycle easier to execute and easier to hand off."
+        "body": "I treated the workflow like a system, not just a spreadsheet. Combined workbook automation with clearer rules for who owns what and documented steps that made the cycle easy to execute and easy to hand off."
       },
       {
         "title": "Why It Mattered",
-        "body": "The gain was not only time saved. The bigger shift was confidence. Teams had a cleaner rhythm, fewer avoidable delays, and a process that could be run more consistently week after week."
+        "body": "The gain wasn't only time. People had a cleaner rhythm, fewer avoidable delays, and a process that could run consistently week after week without depending on any single person."
       }
     ],
     "impact": [
@@ -54,7 +54,7 @@
     "board": {
       "recordCode": "VOL. I / NO. 1",
       "status": "CLASSIFIED",
-      "preview": "A reporting cycle with too many manual steps was rebuilt into a repeatable system with automation and clearer operating rules.",
+      "preview": "A reporting cycle that was eating 12 hours of manual work every week got rebuilt into something that runs itself.",
       "coverImage": "/portfolio/assets/photos/automation.jpg",
       "cardStyle": "newsprint",
       "rotation": -1.4,
@@ -80,27 +80,27 @@
     "role": "President",
     "timeline": "Nov 2021 – Nov 2022",
     "location": "Bandung, Indonesia",
-    "summary": "A large student organization needed stronger rhythm, accountability, and program structure. I introduced a KPI-based governance approach to help leadership and execution operate with more clarity.",
-    "problem": "A 34-member council spread across 10 divisions needed better visibility, more consistent follow-through, and a clearer way to evaluate how programs were progressing.",
-    "intervention": "I led the organization with a KPI-based governance model, weekly operating rhythms, clearer division expectations, and a stronger institutional planning approach for larger school programs.",
-    "outcome": "The council gained clearer accountability, more stable program execution, and better coordination across both internal leadership work and outward-facing initiatives.",
+    "summary": "A 34-member student council across 10 divisions needed a better way to see what was working and what wasn't. I introduced KPIs and weekly check-ins to give leadership and execution a cleaner cadence.",
+    "problem": "Once you hit 10 divisions and 34 people, group chats and good intentions don't cut it anymore. The council needed real visibility into which programs were progressing and which were stalling.",
+    "intervention": "I led the organization with KPIs, weekly reviews, clearer division expectations, and a stronger planning approach for school-wide programs. Nothing fancy — just structure where there wasn't any.",
+    "outcome": "We could finally see what was moving and what was stuck. Programs ran more steadily, outreach reached 12 feeder schools, and the council started operating like an institution instead of a friend group.",
     "evidenceBullets": [
-      "Led 34 members across 10 divisions through a more structured KPI-based governance rhythm.",
-      "Designed long-term institutional programs that were adopted at the school level.",
-      "Directed outreach and campaign activity that engaged 12 feeder schools."
+      "Ran a 34-person council across 10 divisions with KPIs and weekly check-ins.",
+      "Built institutional programs that the school itself ended up adopting.",
+      "Led outreach campaigns that reached 12 feeder schools."
     ],
     "narrative": [
       {
         "title": "Case Context",
-        "body": "The challenge was scale. Once a team becomes multi-division, informal leadership stops being enough. Without structure, momentum becomes uneven and accountability starts to blur."
+        "body": "Once a student org goes multi-division, running on informal leadership doesn't work anymore. Without structure, momentum gets uneven and nobody's sure who's actually accountable."
       },
       {
         "title": "What I Changed",
-        "body": "I introduced a more explicit governance model with measurable expectations, recurring checkpoints, and better alignment between division work and institution-wide objectives."
+        "body": "I brought in a governance model with measurable expectations, recurring checkpoints, and better alignment between what each division was doing and what the council needed overall."
       },
       {
         "title": "Why It Mattered",
-        "body": "The result was a council that could operate with more maturity. It became easier to see what was moving, what was blocked, and where leadership energy needed to be applied."
+        "body": "The council grew up. It was easier to see what was actually moving, what was blocked, and where leadership energy needed to go next."
       }
     ],
     "impact": [
@@ -125,7 +125,7 @@
     "board": {
       "recordCode": "VOL. I / NO. 2",
       "status": "DECLASSIFIED",
-      "preview": "A growing council needed clearer accountability. KPI governance and stronger operational rhythm made execution easier to steer.",
+      "preview": "A 34-person council needed to stop running on vibes. KPIs and weekly rhythms gave it real accountability.",
       "coverImage": "/portfolio/assets/photos/governance.jpg",
       "cardStyle": "dossier",
       "rotation": 1.2,
@@ -151,27 +151,27 @@
     "role": "Stage Coordinator & MC",
     "timeline": "2022 – 2025",
     "location": "Jakarta, Indonesia",
-    "summary": "Large public events compress time, pressure, and risk into a single live window. My work focused on keeping execution stable when the room could not afford confusion.",
-    "problem": "Live programs with large audiences depend on precise transitions, shared timing, and clean backstage coordination. Small breakdowns become visible immediately when the environment is live.",
-    "intervention": "I coordinated stage and backstage execution, supported transition planning, and helped maintain the pacing needed for technical teams, speakers, performers, and audiences to stay in sync.",
-    "outcome": "Events ran with less transition downtime, clearer stage flow, and more dependable control during moments where timing and execution had to hold under pressure.",
+    "summary": "Big public events compress time, pressure, and risk into one live window. My job was keeping the backstage tight enough that the audience never noticed the work.",
+    "problem": "When you have 1,000+ people watching, a sloppy transition doesn't just feel bad — it's visible to everyone. Live programs need precise timing, shared coordination, and zero room for improvisation.",
+    "intervention": "I coordinated stage and backstage execution, supported transition planning, and kept the pacing tight enough that tech crews, speakers, performers, and the audience stayed in sync.",
+    "outcome": "Events ran with cleaner transitions, more predictable stage flow, and solid control during the moments where timing really mattered.",
     "evidenceBullets": [
-      "Coordinated technical execution for events with 1,000+ attendees.",
-      "MC-led Youth Mass 2025 for 500+ participants while maintaining pacing and clarity on stage.",
-      "Reduced visible transition friction through more structured stage workflows."
+      "Ran backstage coordination for events with 1,000+ people.",
+      "MC'd Youth Mass 2025 for 500+ participants — kept pacing tight from start to finish.",
+      "Cut down transition friction by giving every crew a clear, documented sequence."
     ],
     "narrative": [
       {
         "title": "Case Context",
-        "body": "Live operations are unforgiving. There is no quiet draft. A transition that is even slightly unclear becomes a visible failure the moment the room is watching."
+        "body": "When a transition is even slightly unclear, the whole room sees it. The challenge isn't creating wow moments — it's making sure the boring parts (cues, pacing, handoffs) don't turn into visible failures."
       },
       {
         "title": "How I Operated",
-        "body": "My role sat close to the line between planning and execution. I helped translate the show flow into something technical teams and on-stage participants could actually run without hesitation."
+        "body": "I sat right between planning and execution. My job was turning the show flow into something the tech crew and on-stage participants could follow without hesitating. That meant tighter transition plans and constant communication."
       },
       {
         "title": "Why It Mattered",
-        "body": "The work mattered because consistency is what protects the audience experience. When pacing holds, the event feels intentional. When it breaks, everyone notices."
+        "body": "When pacing holds, the event feels intentional. When it breaks, everyone notices. Consistency protects the audience experience — that's the whole point."
       }
     ],
     "impact": [
@@ -196,7 +196,7 @@
     "board": {
       "recordCode": "VOL. I / NO. 3",
       "status": "ACTIVE",
-      "preview": "Large audiences leave little room for operational confusion. This file covers the backstage systems and stage pacing used to keep events moving cleanly.",
+      "preview": "1,000+ people watching, and the only thing visible is what fails. This file covers the backstage systems that kept things clean.",
       "coverImage": "/portfolio/assets/photos/events.jpg",
       "cardStyle": "bulletin",
       "rotation": -0.8,
@@ -222,27 +222,27 @@
     "role": "Assistant Instructor",
     "timeline": "Jan 2021 – Present",
     "location": "Indonesia",
-    "summary": "Readiness work is quieter than live delivery, but the standard is higher: equipment, people, and process all have to be dependable before the field ever becomes demanding.",
-    "problem": "Technical rescue environments depend on disciplined preparation. Equipment checks, training cadence, and role clarity cannot be improvised once conditions become serious.",
-    "intervention": "I supported equipment maintenance, assisted technical climbing sessions, and helped uphold the training discipline needed for safe and repeatable readiness work.",
-    "outcome": "The result was steadier operational readiness, more structured preparation, and stronger support for the people entering technical rescue training environments.",
+    "summary": "Readiness work doesn't get filmed. But when things go wrong in the field, it's the only thing that matters. Equipment, people, and process all have to be solid before the situation demands it.",
+    "problem": "In technical rescue, you can't improvise once things get serious. Equipment has to be checked, training has to be consistent, and everyone needs to know their role before anyone is actually in danger.",
+    "intervention": "I took care of equipment maintenance, supported technical climbing sessions, and helped keep the training standard high. Not glamorous — just the kind of work that has to be right every time.",
+    "outcome": "Equipment stayed ready. Training sessions ran more smoothly. And the people coming into the program had a better foundation before they ever hit a real situation.",
     "evidenceBullets": [
-      "Maintained equipment through structured inspection and readiness routines.",
-      "Supported technical training sessions as a lead climber and belayer.",
-      "Contributed to a culture where safety and preparation remained visible parts of the work."
+      "Kept equipment inspection-ready through regular maintenance.",
+      "Supported climbing and belay sessions as part of the training team.",
+      "Helped build a culture where preparation isn't optional — it's the baseline."
     ],
     "narrative": [
       {
         "title": "Case Context",
-        "body": "Readiness work is built on discipline. The challenge is not producing dramatic moments. It is making sure the fundamentals are correct long before those moments arrive."
+        "body": "In technical rescue, the challenge isn't dramatic moments. It's making sure the basics are solid long before the stakes get real. Equipment checks, training reps, role clarity — none of it can be improvised."
       },
       {
         "title": "What the Work Required",
-        "body": "My contribution centered on equipment care, training support, and technical reliability. That meant paying attention to repeatable standards and supporting sessions in ways that made the environment safer and more useful."
+        "body": "I took care of equipment, supported training sessions, and kept things reliable. That meant showing up, paying attention to repeatable standards, and making the environment safer and more useful for everyone."
       },
       {
         "title": "Why It Mattered",
-        "body": "In technical environments, confidence comes from preparation. Strong readiness work reduces uncertainty, strengthens training quality, and keeps high-risk tasks grounded in discipline rather than improvisation."
+        "body": "Confidence in the field comes from preparation. When readiness work is done right, it reduces uncertainty, makes training better, and keeps high-risk situations grounded in discipline instead of guesswork."
       }
     ],
     "impact": [
@@ -267,7 +267,7 @@
     "board": {
       "recordCode": "VOL. I / NO. 4",
       "status": "ONGOING",
-      "preview": "This file covers the less visible work behind readiness: inspection routines, training support, and the discipline needed to keep technical environments dependable.",
+      "preview": "The quieter side of high-risk work: inspection routines, training support, and the discipline that keeps things dependable when it counts.",
       "coverImage": "/assets/images/vertical-rescue.jpg",
       "cardStyle": "field",
       "rotation": 1.5,

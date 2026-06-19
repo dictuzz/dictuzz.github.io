@@ -2,16 +2,16 @@
   "locale": "id",
   "strings": {
     "hero": {
-      "subtitle": "Building systems that scale operations and eliminate friction.",
+      "subtitle": "Saya yang bikin operasional berjalan rapi.",
       "role": "Systems Architect & Automation Specialist",
       "typing": {
         "staticText": "",
         "dynamicTexts": [
-          "Membangun Sistem Operasional",
-          "Menyederhanakan Alur Kerja",
-          "Mengoordinasikan Tim Lintas Fungsi",
-          "Mengambil Keputusan Berbasis Data",
-          "Memimpin Eksekusi Terstruktur"
+          "Memperbaiki Alur Kerja",
+          "Menghubungkan Antar Divisi",
+          "Membuat data olahan laporan siap pakai",
+          "Menjaga Acara Besar Tetap On-Track",
+          "Membuat Tim Kerja Lebih Lancar"
         ]
       },
       "status": "Terbuka untuk peluang",
@@ -46,16 +46,16 @@
       "contact": "KONTAK & KETERSEDIAAN"
     },
     "sectionLede": {
-      "summary": "Profil sistem, otomatisasi alur kerja, dan eksekusi lintas fungsi.",
-      "experience": "Peran yang berfokus pada otomatisasi workflow, kepemimpinan operasional, kesiapan pelatihan, dan eksekusi acara.",
-      "education": "Latar akademik yang mendukung analisis data, pemikiran sistem, dan perbaikan proses.",
-      "certifications": "Pelatihan dan kredensial bahasa yang relevan untuk kerja terstruktur dan kolaborasi internasional.",
-      "impact": "Contoh hasil terukur dalam otomatisasi pelaporan, tata kelola, dan operasional.",
-      "skills": "Kapabilitas utama di bidang desain sistem, otomatisasi, analitik, operasional, dan kepemimpinan.",
-      "awards": "Penghargaan dan pengakuan yang terkait dengan komunikasi, kreativitas, dan performa.",
-      "volunteering": "Kontribusi komunitas dalam kepemimpinan pemuda, pelayanan gereja, dan pelatihan keselamatan.",
-      "testimonials": "Referensi dan rekomendasi dari atasan, kolaborator, dan klien.",
-      "contact": "Jalur kontak utama untuk wawancara, kemitraan, pekerjaan freelance, dan percakapan profesional."
+      "summary": "Apa yang saya kerjakan dan bagaimana cara saya berpikir soal pekerjaan.",
+      "experience": "Tempat saya pernah bekerja dan apa yang saya bangun di sana.",
+      "education": "Di mana saya belajar dan apa yang nempel.",
+      "certifications": "Sertifikat dan kualifikasi bahasa.",
+      "impact": "Angka-angka yang bisa saya tunjukkan.",
+      "skills": "Keahlian saya, satu per satu.",
+      "awards": "Penghargaan yang pernah saya dapat.",
+      "volunteering": "Kerja sukarela dan kegiatan komunitas.",
+      "testimonials": "Apa kata orang tentang kerja sama dengan saya.",
+      "contact": "Cara menghubungi saya."
     },
     "skills": {
       "strategic": "Strategis & Sistem",
@@ -82,7 +82,7 @@
   },
   "sections": {
     "summary": {
-      "text": "Arsitek Sistem & Spesialis Operasi berbasis data yang memadukan latar belakang Data Science dengan keahlian dalam optimasi alur kerja lintas fungsi untuk membangun sistem yang menghadirkan kejelasan, konsistensi, dan kemajuan nyata. Pekerjaan saya mencakup otomatisasi alur pelaporan yang menghemat 12+ jam kerja manual per minggu, memimpin organisasi beranggotakan 34 orang melalui tata kelola berbasis KPI, serta mengoordinasikan acara berskala besar dengan lebih dari 1.000 peserta. Saya bekerja dengan pendekatan yang terstruktur, berbasis data, dan berorientasi pada kualitas eksekusi. Berkomitmen memanfaatkan teknologi data terkini dan metodologi agile untuk membangun organisasi yang tangguh dan siap menghadapi masa depan."
+      "text": "Saya yang biasa bikin sistem di balik layar — laporan yang jalan sendiri, SOP yang beneran dipakai, koordinasi yang bikin acara 1.000 orang nggak berantakan. Di Home Digital Indonesia, saya rebuild pipeline pelaporan mingguan pakai Excel sampai tim dapat balik 12+ jam yang tadinya habis buat kerja manual. Sebelumnya, saya pimpin OSIS 34 anggota di 10 divisi pakai KPI dan weekly check-in — bukan karena ikut-ikutan, tapi karena cara lain nggak jalan. Sekarang lagi kuliah Data Science di Universitas Terbuka, yang ngaruhin cara saya lihat masalah proses — lebih ke bukti, kurang nebak-nebak."
     },
     "experience": [
       {
@@ -90,9 +90,9 @@
         "role": "Management Trainee",
         "company": "Tirta Utama Abadi",
         "details": [
-          "Mengimplementasikan restrukturisasi komprehensif dashboard sprint harian untuk seluruh segmen, menyajikan visualisasi data yang aktual dan terperinci sebagai alat bantu pengambilan keputusan strategis.",
-          "Sukses mengeksekusi perbaikan total operasional Call Frequency Management (CFM) untuk 31 depo di seluruh Jawa Barat guna mengoptimalkan efisiensi layanan secara signifikan.",
-          "Mengembangkan aplikasi dasbor analitik baru untuk divisi Route-to-Market (RTM), menyajikan analitik data komprehensif dari seluruh outlet dan segmen di jaringan depo."
+          "Bongkar pasang ulang dashboard sprint harian supaya tiap segmen bisa lihat datanya sendiri secara real-time — nggak perlu nunggu kompilasi manual.",
+          "Benahi total sistem Call Frequency Management (CFM) di 31 depo se-Jawa Barat. Sistem lama lambat dan nggak konsisten; yang baru lebih cocok sama kebutuhan tim lapangan.",
+          "Bangun dashboard analitik untuk divisi RTM yang cakup semua outlet dan segmen. Pertama kalinya tim punya semua data di satu tempat."
         ]
       },
       {
@@ -100,9 +100,9 @@
         "role": "Management Trainee",
         "company": "Home Digital Indonesia",
         "details": [
-          "Merancang dan mengimplementasikan sistem pelaporan otomatis menggunakan Excel, mengurangi beban kerja pelaporan manual sebesar ~12 jam per minggu.",
-          "Menstandardisasi SOP lintas fungsi di divisi Keuangan, Penjualan, dan Operasional untuk meningkatkan konsistensi operasional.",
-          "Memanfaatkan analitik data pada umpan balik internal untuk merancang perbaikan proses yang terstruktur, secara langsung memengaruhi keputusan manajemen."
+          "Bikin laporan otomatis di Excel yang pangkas sekitar 12 jam kerja copy-paste dari minggu tim.",
+          "Tulis SOP yang dipakai bareng untuk Finance, Sales, dan Ops — sebelumnya tiap divisi punya caranya sendiri-sendiri.",
+          "Pakai data feedback internal buat nemuin bottleneck proses. Diubah jadi proposal konkret yang beneran dijalanin manajemen."
         ]
       },
       {
@@ -110,9 +110,9 @@
         "role": "Asisten Instruktur",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Memastikan kesiapan operasional peralatan keselamatan melalui sistem inspeksi dan pemeliharaan terstruktur.",
-          "Mendukung sesi pelatihan teknis sebagai pemanjat utama dan belayer untuk operasi penyelamatan.",
-          "Memfasilitasi penyampaian instruksi teknis dan melakukan penilaian keterampilan yang ketat untuk peserta pelatihan baru."
+          "Cek dan rawat semua peralatan safety secara rutin — tali, harness, carabiner, semua.",
+          "Jadi lead climber dan belayer di sesi pelatihan teknis rescue.",
+          "Bantu delivery instruksi langsung dan jalanin tes keterampilan untuk trainee baru."
         ]
       },
       {
@@ -120,10 +120,10 @@
         "role": "Presiden",
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
-          "Memimpin organisasi dengan 34 anggota di 10 divisi melalui tata kelola berbasis KPI yang terstruktur.",
-          "Mengarsiteki dan mengeksekusi program institusional jangka panjang yang berhasil diadopsi di seluruh sekolah.",
-          "Mengelola kampanye outreach strategis ke 12 sekolah feeder.",
-          "Membangun ritme koordinasi operasional mingguan untuk menjaga keselarasan lintas divisi."
+          "Pimpin OSIS 34 orang di 10 divisi. Perkenalkan KPI karena tanpa itu nggak ada yang tahu divisi mana yang beneran jalan.",
+          "Rancang program sekolah yang akhirnya tetap dipakai administrasi bahkan setelah masa jabatan saya selesai.",
+          "Jalanin kampanye outreach ke 12 sekolah feeder untuk menarik lebih banyak siswa.",
+          "Bikin weekly check-in antar divisi — simpel, tapi ini yang bikin hal-hal nggak lolos dari perhatian."
         ]
       },
       {
@@ -131,8 +131,8 @@
         "role": "Stage Operations Crew",
         "company": "Ultimate Event Organizer",
         "details": [
-          "Mengkoordinasikan eksekusi teknis backstage untuk acara dengan 1.000+ peserta.",
-          "Mengurangi waktu transisi dengan menerapkan alur kerja panggung terstruktur di seluruh tim pencahayaan, suara, dan keamanan."
+          "Handle koordinasi backstage untuk acara dengan 1.000+ penonton — lighting, sound, security, semua bergerak bareng.",
+          "Perketat waktu transisi antar segmen dengan kasih tiap crew urutan yang jelas."
         ]
       }
     ],
@@ -152,18 +152,34 @@
     "impact": [
       {
         "title": "Sistem Otomatisasi Pelaporan",
-        "desc": "Merancang dan mengimplementasikan sistem pelaporan otomatis di Home Digital Indonesia menggunakan Excel, menghilangkan input data dan formatting berulang. Beban kerja pelaporan manual berkurang sekitar 12 jam per minggu."
+        "desc": "Di Home Digital, laporan mingguan makan waktu semua orang — input data, reformat, cross-check. Saya rebuild seluruh alurnya di Excel sampai jalan sendiri. Tim dapat balik sekitar 12 jam per minggu."
       },
       {
         "title": "Kepemimpinan Tata Kelola Berbasis KPI",
-        "desc": "Memimpin OSIS dengan 34 anggota di 10 divisi melalui tata kelola berbasis KPI dan ritme koordinasi mingguan. Merancang program institusional yang diadopsi sekolah dan outreach strategis ke 12 sekolah feeder."
+        "desc": "Pimpin OSIS (34 orang, 10 divisi) pakai KPI dan sync-up mingguan. Program yang kami buat diadopsi sekolah, dan outreach kami tembus 12 sekolah feeder."
       },
       {
         "title": "Eksekusi Acara Skala Besar",
-        "desc": "Mengelola alur acara sebagai MC pada Youth Mass 2025 (GEMA Bandung) untuk 500+ peserta, serta sebelumnya menangani backstage operations untuk acara dengan 1.000+ peserta."
+        "desc": "Jadi MC di Youth Mass GEMA Bandung untuk 500+ peserta — jaga speaker, panitia, dan tim teknis tetap sinkron. Sebelumnya handle backstage untuk acara 1.000+ orang di mana satu kesalahan langsung kelihatan."
       }
     ],
-    "certifications": [],
+    "certifications": [
+      {
+        "name": "Goethe-Zertifikat B1",
+        "issuer": "Goethe-Institut",
+        "year": "2023"
+      },
+      {
+        "name": "Personal Financial Fundamentals",
+        "issuer": "MySkill",
+        "year": "2024"
+      },
+      {
+        "name": "Kuliah Umum: Kelas Penulisan Jurnalistik",
+        "issuer": "Universitas Katolik Parahyangan",
+        "year": "2023"
+      }
+    ],
     "testimonials": [],
     "awards": [
       "Juara 1 – Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
@@ -176,7 +192,7 @@
         "role": "Relawan — MC",
         "company": "GEMA Bandung (Gereja Mahasiswa)",
         "details": [
-          "Bertindak sebagai MC untuk acara besar GEMA Bandung bertajuk \"Misa Angkatan Muda 2025\" untuk 500+ mahasiswa Katolik."
+          "Jadi MC di acara besar GEMA Bandung \"Misa Angkatan Muda 2025\" — jaga alur acara tetap jalan untuk 500+ mahasiswa Katolik se-Bandung."
         ]
       },
       {
@@ -184,8 +200,8 @@
         "role": "Wakil Ketua",
         "company": "Orang Muda Katolik Wilayah Ujung Berung",
         "details": [
-          "Menyusun kalender program tahunan, mengoordinasikan hasil kerja lintas tim dan jadwal relawan.",
-          "Mengorganisir acara berskala besar: pertemuan malam (±100 peserta) dan ibadah pemuda (±400 peserta)."
+          "Susun kalender program tahunan dan pastikan semua tim dan relawan tetap sinkron.",
+          "Organisir acara malam (~100 orang) dan ibadah pemuda (~400 orang)."
         ]
       },
       {
@@ -193,8 +209,8 @@
         "role": "Asisten Instruktur",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Memastikan kesiapan operasional peralatan penyelamatan melalui pemeliharaan rutin.",
-          "Mendukung sesi pelatihan dengan bertindak sebagai pemanjat utama dan pengaman tali."
+          "Jaga semua peralatan rescue tetap siap pakai lewat perawatan rutin dan cek keamanan.",
+          "Bantu sesi latihan sebagai lead climber dan belayer, sambil ajarin trainee yang baru."
         ]
       },
       {
@@ -202,7 +218,7 @@
         "role": "Kepala Divisi Bisnis & Kemitraan",
         "company": "Forum OSIS Jawa Barat",
         "details": [
-          "Membangun basis data kemitraan historis yang melacak kolaborasi dari angkatan sebelumnya."
+          "Bikin database kemitraan dari angkatan-angkatan sebelumnya supaya panitia berikutnya nggak mulai dari nol waktu cari sponsor."
         ]
       },
       {
@@ -210,8 +226,8 @@
         "role": "Wakil Ketua Misdinar",
         "company": "Misdinar Gereja Zipur",
         "details": [
-          "Menjamin kelancaran layanan liturgi dengan mengelola daftar misdinar secara ketat.",
-          "Mengadakan acara apresiasi anggota dan perayaan ulang tahun."
+          "Urus jadwal misdinar — pastikan tiap Misa ada cukup orang dan rotasinya adil.",
+          "Adain acara apresiasi dan perayaan ulang tahun buat jaga kebersamaan tim."
         ]
       }
     ]
@@ -242,6 +258,10 @@
         {
           "name": "Agile Methodologies",
           "level": "proficient"
+        },
+        {
+          "name": "Manajemen Perubahan",
+          "level": "expert"
         }
       ],
       "operational": [
@@ -264,11 +284,15 @@
         {
           "name": "Structured Delegation",
           "level": "proficient"
+        },
+        {
+          "name": "Manajemen Insiden",
+          "level": "expert"
         }
       ],
       "analytical": [
         {
-          "name": "Microsoft Excel (Advanced)",
+          "name": "Microsoft Excel",
           "level": "expert"
         },
         {
@@ -292,7 +316,7 @@
           "level": "proficient"
         },
         {
-          "name": "Business Intelligence Principles",
+          "name": "Business Intelligence",
           "level": "proficient"
         },
         {
@@ -309,6 +333,14 @@
         },
         {
           "name": "QGIS",
+          "level": "proficient"
+        },
+        {
+          "name": "Python",
+          "level": "proficient"
+        },
+        {
+          "name": "SQL",
           "level": "proficient"
         }
       ],
@@ -336,6 +368,10 @@
         {
           "name": "Strategic Outreach",
           "level": "proficient"
+        },
+        {
+          "name": "Process Diagnostics",
+          "level": "expert"
         }
       ]
     },
@@ -359,7 +395,7 @@
     ]
   },
   "seo": {
-    "description": "Resume Benedictus Richard Ricardo, Systems Architect & Automation Specialist. Jelajahi pengalaman, otomatisasi workflow, kepemimpinan operasional, dan keahlian inti."
+    "description": "Resume Benedictus Richard Ricardo — orang di balik dictuzz. Pengalaman kerja, keahlian, dan cara menghubungi."
   },
   "downloads": {
     "resumeUrl": "https://bukaaaadonggg.my.canva.site/benedictus-richard-ricardo-resume-id"
