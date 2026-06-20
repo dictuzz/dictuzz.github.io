@@ -75,8 +75,7 @@ const RESUME_CONTENT_SCHEMA = {
         volunteering: 'array_optional',
         etc: 'array_optional'
     },
-    collections: 'object',
-    downloads: { resumeUrl: 'url' }
+    collections: 'object'
 };
 
 export function validateSharedSiteConfig(raw) {

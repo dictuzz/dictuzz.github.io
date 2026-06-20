@@ -270,23 +270,21 @@
         { "name": "Team Governance", "level": "expert" },
         { "name": "Stakeholder Communication", "level": "expert" },
         { "name": "Public Speaking", "level": "proficient" },
+        { "name": "Complex Problem-Solving", "level": "expert" },
         { "name": "Training Delivery", "level": "proficient" },
         { "name": "Strategic Outreach", "level": "proficient" },
-        { "name": "Complex Problem-Solving", "level": "expert" },
-        { "name": "Prozessdiagnose", "level": "expert" }
+        { "name": "Process Diagnostics", "level": "expert" }
       ]
     },
     "languages": [
       { "id": "id", "label": "Indonesisch (Muttersprache)" },
       { "id": "su", "label": "Sundanesisch (fließend)" },
       { "id": "en", "label": "Englisch (Professional Working Proficiency)" },
+      { "id": "jv", "label": "Javanisch (Mittelstufe)" },
       { "id": "de", "label": "Deutsch (B1 Certified – Goethe-Zertifikat B1)" }
     ]
   },
   "seo": {
     "description": "Lebenslauf von Benedictus Richard Ricardo — der Mensch hinter dictuzz. Berufserfahrung, Fähigkeiten und Kontaktmöglichkeiten."
-  },
-  "downloads": {
-    "resumeUrl": "https://rxresu.me/me.richardricardo/de"
   }
 }

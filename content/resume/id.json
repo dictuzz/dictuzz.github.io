@@ -260,7 +260,7 @@
           "level": "proficient"
         },
         {
-          "name": "Manajemen Perubahan",
+          "name": "Change Management",
           "level": "expert"
         }
       ],
@@ -286,7 +286,7 @@
           "level": "proficient"
         },
         {
-          "name": "Manajemen Insiden",
+          "name": "Incident Management",
           "level": "expert"
         }
       ],
@@ -389,6 +389,10 @@
         "label": "Bahasa Inggris (Professional Working Proficiency)"
       },
       {
+        "id": "jv",
+        "label": "Bahasa Jawa (Menengah)"
+      },
+      {
         "id": "de",
         "label": "Bahasa Jerman (B1 Certified – Goethe-Zertifikat B1)"
       }
@@ -396,8 +400,5 @@
   },
   "seo": {
     "description": "Resume Benedictus Richard Ricardo — orang di balik dictuzz. Pengalaman kerja, keahlian, dan cara menghubungi."
-  },
-  "downloads": {
-    "resumeUrl": "https://bukaaaadonggg.my.canva.site/benedictus-richard-ricardo-resume-id"
   }
 }

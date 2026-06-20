@@ -193,6 +193,7 @@ export function generateATSResume(content, translations, siteConfig) {
     const name = siteConfig.profile.name || "Benedictus Richard Ricardo";
     const email = siteConfig.contact.email || "contact@dictuzz.me";
     const website = siteConfig.site.siteUrl || "https://dictuzz.me";
+    const linkedinUrl = (siteConfig.socials || []).find(s => s.id === 'linkedin')?.url || '';
     const whatsappUrl = siteConfig.contact.whatsappUrl || "";
     let phone = "(+62) 851-8688-8630";
     if (whatsappUrl.includes('wa.me/')) {
@@ -202,74 +203,106 @@ export function generateATSResume(content, translations, siteConfig) {
         }
     }
 
-    const t = translations.section || {}; 
+    const t = translations.section || {};
     const heroRole = translations.hero?.role || content.strings?.hero?.role || '';
     const summaryText = content.sections?.summary?.text || '';
+
+    // Build contact parts, only include non-empty values
+    const contactParts = [email, phone, website, linkedinUrl].filter(Boolean);
 
     const html = `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
 <meta charset="UTF-8">
-<title>${name} — Resume</title>
+<title>${name} | Resume</title>
 <style>
-  body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; color: #000; max-width: 8.5in; margin: 0 auto; padding: 0.5in; }
-  h1 { font-size: 22pt; margin: 0 0 4px; }
-  h2 { font-size: 13pt; border-bottom: 1px solid #000; padding-bottom: 2px; margin: 18px 0 8px; text-transform: uppercase; }
-  h3 { font-size: 11pt; margin: 8px 0 2px; }
+  body { font-family: Calibri, 'Segoe UI', Arial, sans-serif; font-size: 11pt; line-height: 1.45; color: #000; max-width: 8.5in; margin: 0 auto; padding: 0.5in; }
+  h1 { font-size: 20pt; margin: 0 0 2px; letter-spacing: 0.5px; }
+  .role { font-size: 11pt; font-style: italic; margin: 0 0 4px; color: #333; }
+  h2 { font-size: 11.5pt; font-weight: bold; border-bottom: 1px solid #555; padding-bottom: 2px; margin: 16px 0 6px; text-transform: uppercase; letter-spacing: 0.3px; }
+  h3 { font-size: 11pt; margin: 6px 0 1px; font-weight: bold; }
   p, li { margin: 2px 0; }
-  ul { padding-left: 20px; }
-  .contact { font-size: 10pt; color: #333; }
-  .entry { margin-bottom: 12px; }
-  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
-  .entry-date { font-style: italic; font-size: 10pt; }
-  @media print { body { padding: 0; } }
+  ul { padding-left: 18px; margin: 2px 0 0; }
+  .contact { font-size: 9.5pt; color: #444; margin: 0 0 6px; }
+  .summary { margin: 4px 0 0; }
+  .entry { margin-bottom: 10px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+  .entry-title { margin: 6px 0 1px; font-weight: bold; font-size: 11pt; }
+  .entry-org { font-weight: normal; }
+  .entry-date { font-size: 9.5pt; color: #444; white-space: nowrap; }
+  .skills-line { margin: 2px 0; }
+  .cert-item { margin: 1px 0; }
+  @media print { body { padding: 0.4in; } }
 </style>
 </head>
 <body>
+
 <h1>${name}</h1>
-<p class="contact">${email} · ${website} · ${phone}</p>
-<p><em>${heroRole}</em></p>
-<p>${summaryText}</p>
+<p class="contact">${contactParts.join('  |  ')}</p>
+<p class="role">${heroRole}</p>
+<p class="summary">${summaryText}</p>
 
 <h2>${t.experience || 'WORK EXPERIENCE'}</h2>
 ${(content.sections.experience || []).map(e => `
 <div class="entry">
-  <div class="entry-header"><h3>${e.role} — ${e.company}</h3><span class="entry-date">${e.date}</span></div>
+  <div class="entry-header">
+    <p class="entry-title">${e.role}, <span class="entry-org">${e.company}</span></p>
+    <span class="entry-date">${e.date}</span>
+  </div>
   <ul>${(e.details || []).map(b => `<li>${b}</li>`).join('')}</ul>
 </div>`).join('')}
 
 <h2>${t.education || 'EDUCATION'}</h2>
 ${(content.sections.education || []).map(e => `
 <div class="entry">
-  <div class="entry-header"><h3>${e.name} — ${e.degree}</h3><span class="entry-date">${e.date}</span></div>
-  <ul><li>${e.focus}</li></ul>
+  <div class="entry-header">
+    <p class="entry-title">${e.name}, <span class="entry-org">${e.degree}</span></p>
+    <span class="entry-date">${e.date}</span>
+  </div>${e.focus ? `
+  <p>${e.focus}</p>` : ''}
 </div>`).join('')}
 
-<h2>${t.impact || 'IMPACT'}</h2>
+<h2>${t.impact || 'SELECTED OPERATIONAL IMPACT'}</h2>
 ${(content.sections.impact || []).map(i => `
 <div class="entry">
-  <h3>${i.title}</h3>
+  <p class="entry-title">${i.title}</p>
   <p>${i.desc}</p>
 </div>`).join('')}
 
 <h2>${t.volunteering || 'VOLUNTEERING & COMMUNITY'}</h2>
 ${(content.sections.volunteering || []).map(v => `
 <div class="entry">
-  <div class="entry-header"><h3>${v.role} — ${v.company}</h3><span class="entry-date">${v.date}</span></div>
+  <div class="entry-header">
+    <p class="entry-title">${v.role}, <span class="entry-org">${v.company}</span></p>
+    <span class="entry-date">${v.date}</span>
+  </div>
   <ul>${(v.details || []).map(b => `<li>${b}</li>`).join('')}</ul>
 </div>`).join('')}
 
-<h2>${t.skills || 'SKILLS'}</h2>
+<h2>${t.skills || 'CORE SKILLS & TOOLS'}</h2>
 ${Object.entries(content.collections.skills || {}).map(([key, items]) => {
     const catName = translations.skills?.[key] || key;
-    return `<p><strong>${catName}:</strong> ${items.map(i => i.name).join(', ')}</p>`;
+    return `<p class="skills-line"><strong>${catName}:</strong> ${items.map(i => i.name).join(', ')}</p>`;
 }).join('')}
 
 <h2>${translations.skills?.languages || 'Languages'}</h2>
-${(content.collections.languages || []).map(l => `<p>${l.label}</p>`).join('')}
+<p>${(content.collections.languages || []).map(l => l.label).join('  |  ')}</p>
 
-<h2>${t.certifications || 'CERTIFICATIONS'}</h2>
-<ul>${(content.sections.certifications || []).map(c => `<li>${c.name}</li>`).join('')}</ul>
+<h2>${t.certifications || 'CERTIFICATIONS & TRAINING'}</h2>
+<ul>${(content.sections.certifications || []).map(c => {
+    const parts = [c.name];
+    if (c.issuer) parts.push(c.issuer);
+    if (c.year) parts.push(c.year);
+    return `<li class="cert-item">${parts.join(', ')}</li>`;
+}).join('')}</ul>
+
+${(content.sections.awards || content.collections?.awards || []).length > 0 ? `
+<h2>${t.awards || 'AWARDS & RECOGNITION'}</h2>
+<ul>${(content.sections.awards || content.collections?.awards || []).map(a => {
+    if (typeof a === 'string') return `<li>${a}</li>`;
+    return `<li>${a.name || a}</li>`;
+}).join('')}</ul>` : ''}
+
 </body>
 </html>`;
 

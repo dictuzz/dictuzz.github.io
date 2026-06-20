@@ -389,6 +389,10 @@
         "label": "English (Professional Working Proficiency)"
       },
       {
+        "id": "jv",
+        "label": "Javanese (Intermediate)"
+      },
+      {
         "id": "de",
         "label": "German (B1 Certified – Goethe-Zertifikat B1)"
       }
@@ -396,8 +400,5 @@
   },
   "seo": {
     "description": "Resume of Benedictus Richard Ricardo — the person behind dictuzz. Work experience, skills, and how to get in touch."
-  },
-  "downloads": {
-    "resumeUrl": "https://bukaaaadonggg.my.canva.site/benedictus-richard-ricardo-resume-en"
   }
 }
