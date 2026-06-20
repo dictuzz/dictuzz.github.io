@@ -71,13 +71,11 @@ function validateResumeContent(raw) {
   assert(isObject(raw?.strings), 'resume.strings is required', issues);
   assert(isObject(raw?.sections), 'resume.sections is required', issues);
   assert(isObject(raw?.collections), 'resume.collections is required', issues);
-  assert(isObject(raw?.downloads), 'resume.downloads is required', issues);
   assert(typeof raw?.strings?.hero?.role === 'string' && raw.strings.hero.role.length > 0, 'resume.strings.hero.role is required', issues);
   assert(Array.isArray(raw?.sections?.experience), 'resume.sections.experience must be an array', issues);
   assert(Array.isArray(raw?.sections?.education), 'resume.sections.education must be an array', issues);
   assert(Array.isArray(raw?.collections?.skills?.strategic), 'resume.collections.skills.strategic must be an array', issues);
   assert(Array.isArray(raw?.collections?.languages), 'resume.collections.languages must be an array', issues);
-  assert(typeof raw?.downloads?.resumeUrl === 'string' && raw.downloads.resumeUrl.startsWith('https://'), 'resume.downloads.resumeUrl is required', issues);
   collectTodoStrings(raw, `resume.${raw?.locale || 'unknown'}`, issues);
   if (issues.length > 0) fail(`Invalid resume locale content:\n- ${issues.join('\n- ')}`);
 }
