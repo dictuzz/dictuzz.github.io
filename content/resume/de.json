@@ -2,16 +2,16 @@
   "locale": "de",
   "strings": {
     "hero": {
-      "subtitle": "Ich bringe Ordnung in chaotische Abläufe.",
+      "subtitle": "Operative Systeme aufbauen, die eigenständig funktionieren.",
       "role": "Systems Architect & Automation Specialist",
       "typing": {
         "staticText": "",
         "dynamicTexts": [
-          "Kaputte Abläufe reparieren",
-          "Abteilungen verbinden",
-          "Daten in konkrete Pläne umsetzen",
-          "Großevents am Laufen halten",
-          "Teams flüssiger machen"
+          "Arbeitsabläufe neu gestalten",
+          "Teams abteilungsübergreifend verbinden",
+          "Daten in Handlungspläne umsetzen",
+          "Großveranstaltungen koordinieren",
+          "Teamabläufe optimieren"
         ]
       },
       "status": "Offen für Möglichkeiten",
@@ -46,16 +46,16 @@
       "contact": "KONTAKT & VERFÜGBARKEIT"
     },
     "sectionLede": {
-      "summary": "Was ich tue und wie ich über Arbeit denke.",
-      "experience": "Wo ich gearbeitet habe und was ich dort gebaut habe.",
-      "education": "Wo ich studiert habe und was hängen geblieben ist.",
-      "certifications": "Zertifikate und Sprachnachweise.",
-      "impact": "Zahlen, auf die ich verweisen kann.",
-      "skills": "Was ich kann, Werkzeug für Werkzeug.",
-      "awards": "Auszeichnungen und Preise auf dem Weg.",
-      "volunteering": "Ehrenamt und Zeugs in der Community.",
-      "testimonials": "Was andere über die Arbeit mit mir sagen.",
-      "contact": "Wie man mich erreicht."
+      "summary": "Hintergrund, Arbeitsweise und beruflicher Fokus.",
+      "experience": "Berufliche Stationen und wesentliche Beiträge.",
+      "education": "Akademischer Hintergrund und Studienschwerpunkte.",
+      "certifications": "Berufliche Zertifikate und Sprachqualifikationen.",
+      "impact": "Messbare Ergebnisse und operative Auswirkungen.",
+      "skills": "Kernkompetenzen und technische Fähigkeiten.",
+      "awards": "Auszeichnungen und Wettbewerbserfolge.",
+      "volunteering": "Ehrenamtliches Engagement und Gemeinschaftsarbeit.",
+      "testimonials": "Rückmeldungen von Kollegen und Stakeholdern.",
+      "contact": "Verfügbarkeit und bevorzugte Kontaktwege."
     },
     "skills": {
       "strategic": "Strategie & Systeme",
@@ -82,7 +82,7 @@
   },
   "sections": {
     "summary": {
-      "text": "Ich baue das operative Rückgrat, auf das Teams sich verlassen, ohne es groß zu bemerken — Reports, die von alleine laufen, SOPs, die tatsächlich benutzt werden, Koordination, die eine Veranstaltung mit 1.000 Leuten nicht hinter der Bühne zusammenbrechen lässt. Bei Home Digital Indonesia habe ich eine wöchentliche Reporting-Pipeline in Excel neu gebaut, die dem Team über 12 Stunden Handarbeit pro Woche zurückgegeben hat. Davor habe ich als Schülersprecher eine 34-köpfige Organisation über 10 Abteilungen mit KPIs und wöchentlichen Check-ins geführt — nicht weil es modern war, sondern weil nichts anderes funktioniert hat. Aktuell studiere ich Data Science an der Universitas Terbuka, was verändert, wie ich über Belege, Prozesse und 'gut genug' nachdenke."
+      "text": "Operative Fachkraft mit Schwerpunkt auf eigenständig laufenden Systemen: automatisierte Reporting-Pipelines, standardisierte SOPs und Koordinationsstrukturen, die auch unter Belastung funktionieren. Bei Home Digital Indonesia wurde die wöchentliche Reporting-Pipeline in Excel grundlegend neu aufgebaut, wodurch das Team über 12 Stunden manueller Datenarbeit pro Woche einsparen konnte. Zuvor Leitung einer 34-köpfigen Schülerorganisation über 10 Abteilungen mit KPI-basierter Leistungserfassung und wöchentlichen Abstimmungen. Aktuell Studium der Data Science an der Universitas Terbuka, das einen datengestützten Ansatz in Prozessgestaltung und operativer Entscheidungsfindung stärkt."
     },
     "experience": [
       {
@@ -90,9 +90,9 @@
         "role": "Management Trainee",
         "company": "Tirta Utama Abadi",
         "details": [
-          "Die Sprint-Dashboards komplett neu gebaut, damit jedes Segment seine Zahlen in Echtzeit sehen kann — ohne auf jemanden warten zu müssen, der sie zusammenstellt.",
-          "Das Call-Frequency-Management (CFM) in allen 31 Depots in West-Java komplett überarbeitet, damit es besser zu den Teams vor Ort passt.",
-          "Ein neues Analyse-Dashboard für die RTM-Abteilung gebaut, das zum ersten Mal alle Verkaufsstellen und Segmente an einem Ort zusammenbringt."
+          "Die täglichen Sprint-Dashboards grundlegend neu gestaltet, sodass jedes Segment seine Leistungsdaten in Echtzeit einsehen kann, ohne auf manuelle Zusammenstellung warten zu müssen.",
+          "Das Call-Frequency-Management (CFM) in allen 31 Depots in Westjava überarbeitet und inkonsistente Prozesse durch ein standardisiertes System ersetzt, das auf die Anforderungen der Außendienstteams abgestimmt ist.",
+          "Ein konsolidiertes Analyse-Dashboard für die Route-to-Market-Abteilung (RTM) erstellt, das Outlet- und Segmentdaten aus dem gesamten Depotnetzwerk in einer einzigen Ansicht vereint."
         ]
       },
       {
@@ -100,9 +100,9 @@
         "role": "Management Trainee",
         "company": "Home Digital Indonesia",
         "details": [
-          "Automatische Reports in Excel aufgesetzt, die dem Team rund 12 Stunden Copy-Paste-Arbeit pro Woche erspart haben.",
-          "Gemeinsame SOPs für Finanzen, Vertrieb und Operations geschrieben, damit nicht jede Abteilung ihr eigenes Ding macht.",
-          "Internes Feedback analysiert, um Engpässe in den Abläufen zu finden und konkrete Vorschläge zu liefern, die das Management dann umgesetzt hat."
+          "Automatisierte Excel-Reports entwickelt, die dem Team rund 12 Stunden manueller Dateneingabe pro Woche einsparten.",
+          "Einheitliche SOPs für Finanzen, Vertrieb und Operations verfasst, die fragmentierte Abteilungspraktiken durch konsistente, abteilungsübergreifende Standards ersetzten.",
+          "Internes Feedback analysiert, um Prozessengpässe zu identifizieren, und daraus umsetzbare Verbesserungsvorschläge erarbeitet, die vom Management übernommen wurden."
         ]
       },
       {
@@ -110,9 +110,9 @@
         "role": "Assistenztrainer",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Alle Sicherheitsausrüstung regelmäßig geprüft und gewartet — Seile, Gurte, Karabiner, das volle Programm.",
-          "Als Vorstiegskletterer und Sicherer bei technischen Rettungsübungen geholfen.",
-          "Praktische Übungen angeleitet und die Prüfungen für neue Auszubildende durchgeführt."
+          "Regelmäßige Inspektion und Wartung sämtlicher Sicherheitsausrüstung, einschließlich Seile, Gurte und Karabiner.",
+          "Einsatz als Vorstiegskletterer und Sicherer bei technischen Rettungsübungen.",
+          "Praktische Übungen angeleitet und Kompetenzprüfungen für neue Auszubildende durchgeführt."
         ]
       },
       {
@@ -120,10 +120,10 @@
         "role": "Präsident",
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
-          "34 Leute in 10 Abteilungen geführt. KPIs eingeführt, weil ohne sie niemand wusste, welche Abteilung wirklich liefert.",
-          "Schulprojekte entworfen, die von der Schulleitung so gut gefunden wurden, dass sie auch nach meiner Amtszeit weitergeführt wurden.",
-          "Kampagnen an 12 Zubringerschulen geleitet, um mehr Schüler an Bord zu holen.",
-          "Wöchentliche Absprachen zwischen den Abteilungen eingeführt — simpel, aber es ging nichts mehr verloren."
+          "Leitung einer 34-köpfigen Organisation in 10 Abteilungen mit Einführung einer KPI-basierten Leistungserfassung zur Herstellung klarer Verantwortlichkeiten.",
+          "Schulweite Programme entwickelt, die anschließend von der Schulleitung als dauerhafte Initiativen übernommen wurden.",
+          "Outreach-Kampagnen an 12 Zubringerschulen geleitet, um die Schülerbeteiligung zu erhöhen.",
+          "Wöchentliche Koordinationstreffen zwischen den Abteilungen eingeführt, wodurch Informationsverluste und versäumte Fristen reduziert wurden."
         ]
       },
       {
@@ -131,8 +131,8 @@
         "role": "Stage Operations Crew",
         "company": "Ultimate Event Organizer",
         "details": [
-          "Die Backstage-Koordination bei Events mit über 1.000 Zuschauern organisiert — Licht, Ton und Security gleichzeitig im Blick behalten.",
-          "Die Übergangszeiten zwischen Programmpunkten verkürzt, indem jedes Team einen klaren Ablaufplan bekommen hat."
+          "Backstage-Koordination bei Veranstaltungen mit über 1.000 Zuschauern, einschließlich gleichzeitigem Management von Beleuchtung, Ton und Sicherheit.",
+          "Übergangszeiten zwischen Programmpunkten verkürzt durch Einführung standardisierter Ablaufprotokolle für jedes Team."
         ]
       }
     ],
@@ -152,15 +152,15 @@
     "impact": [
       {
         "title": "Reporting-Automatisierung",
-        "desc": "Bei Home Digital hat der Wochenbericht alle aufgefressen — Dateneingabe, Neuformatierung, Gegenprüfung. Ich hab den ganzen Ablauf in Excel neu gebaut, sodass er praktisch von alleine läuft. Das Team hat etwa 12 Stunden pro Woche zurückbekommen."
+        "desc": "Der wöchentliche Reporting-Prozess bei Home Digital umfasste umfangreiche manuelle Dateneingabe, Neuformatierung und Gegenprüfung. Der gesamte Ablauf wurde in Excel so umgestaltet, dass er mit minimalem Aufwand läuft. Das Team gewann dadurch rund 12 Stunden pro Woche zurück."
       },
       {
         "title": "KPI-basierte Governance",
-        "desc": "Ich habe die Schülerorganisation (34 Leute, 10 Abteilungen) mit echten KPIs und wöchentlichen Syncs geführt. Die Programme wurden von der Schule übernommen und wir haben 12 Zubringerschulen erreicht."
+        "desc": "Leitung einer 34-köpfigen Schülerorganisation in 10 Abteilungen mit KPI-basierter Leistungserfassung und wöchentlichen Koordinationstreffen. Die entwickelten Programme wurden von der Schulleitung übernommen, die Outreach-Aktivitäten erreichten 12 Zubringerschulen."
       },
       {
         "title": "Großveranstaltungen",
-        "desc": "Als MC bei der Jugendmesse 2025 vor 500 Leuten das Programm moderiert und auf Takt gehalten. Davor habe ich Backstage-Operations bei Events mit 1.000+ Zuschauern koordiniert, wo jeder Fehler sofort auffällt."
+        "desc": "Moderation der GEMA Bandung Jugendmesse (500+ Teilnehmende) als MC, mit Koordination von Referenten, Gremien und Technikteam. Zuvor Backstage-Koordination bei Veranstaltungen mit über 1.000 Zuschauern, bei denen präzises Timing unverzichtbar war."
       }
     ],
     "certifications": [
@@ -192,7 +192,7 @@
         "role": "Ehrenamtlicher Moderator (MC)",
         "company": "GEMA Bandung (Studentengemeinde)",
         "details": [
-          "Als MC die Misa Angkatan Muda 2025 moderiert und das Programm für über 500 katholische Studierende flüssig gehalten."
+          "Moderation der \"Misa Angkatan Muda 2025\" von GEMA Bandung als MC, Sicherstellung eines reibungslosen Programmablaufs für über 500 katholische Studierende."
         ]
       },
       {
@@ -200,8 +200,8 @@
         "role": "Stellvertretender Vorsitzender",
         "company": "Katholische Jugendorganisation Ujung Berung",
         "details": [
-          "Das Jahresprogramm geplant und dafür gesorgt, dass alle Teams und Freiwilligen auf dem gleichen Stand waren.",
-          "Ein Abendtreffen (~100 Teilnehmende) und einen Jugendgottesdienst (~400 Teilnehmende) organisiert."
+          "Das Jahresprogramm entwickelt und die Abstimmung aller Teams und Freiwilligen sichergestellt.",
+          "Organisation eines Abendtreffens (~100 Teilnehmende) und eines Jugendgottesdienstes (~400 Teilnehmende)."
         ]
       },
       {
@@ -209,8 +209,8 @@
         "role": "Assistenz-Ausbilder",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Die Rettungsausrüstung durch regelmäßige Wartung und Sicherheitschecks einsatzbereit gehalten.",
-          "Trainingseinheiten als Vorstiegskletterer und Sicherer unterstützt und neuen Leuten geholfen."
+          "Einsatzbereitschaft der Rettungsausrüstung durch planmäßige Wartung und Sicherheitsinspektionen gewährleistet.",
+          "Trainingseinheiten als Vorstiegskletterer und Sicherer unterstützt und Anleitung für neue Teilnehmende gegeben."
         ]
       },
       {
@@ -218,7 +218,7 @@
         "role": "Leiter Wirtschaft & Partnerships",
         "company": "Schülersprecher-Forum Westjava",
         "details": [
-          "Eine Datenbank für frühere Sponsoren und Partner aufgebaut, damit das nächste Team nicht wieder bei null anfängt."
+          "Aufbau einer Partnerschaftsdatenbank mit Dokumentation früherer Sponsoren, um Kontinuität für zukünftige Komitees zu gewährleisten."
         ]
       },
       {
@@ -226,8 +226,8 @@
         "role": "Stellvertretender Oberministrant",
         "company": "Ministranten der Zipur-Kirche",
         "details": [
-          "Den Ministrantenplan verwaltet — sichergestellt, dass bei jeder Messe genug Leute da waren und die Rotation fair blieb.",
-          "Kleine Events zur Anerkennung und Geburtstage organisiert, um das Team zusammenzuhalten."
+          "Verwaltung des Ministrantenplans mit Sicherstellung ausreichender Besetzung bei jeder Messe und gerechter Rotation.",
+          "Organisation von Anerkennungsveranstaltungen und Feiern zur Stärkung des Teamzusammenhalts."
         ]
       }
     ]

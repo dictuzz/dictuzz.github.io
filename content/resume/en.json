@@ -2,16 +2,16 @@
   "locale": "en",
   "strings": {
     "hero": {
-      "subtitle": "I make messy operations run clean.",
+      "subtitle": "Building operations that run themselves.",
       "role": "Systems Architect & Automation Specialist",
       "typing": {
         "staticText": "",
         "dynamicTexts": [
-          "Fixing broken workflows",
-          "Connecting departments",
-          "Turning data into action plans",
-          "Keeping big events on track",
-          "Making teams run smoother"
+          "Redesigning broken workflows",
+          "Bridging cross-functional teams",
+          "Turning raw data into action plans",
+          "Coordinating large-scale events",
+          "Streamlining team operations"
         ]
       },
       "status": "Available for opportunities",
@@ -46,16 +46,16 @@
       "contact": "CONTACT & AVAILABILITY"
     },
     "sectionLede": {
-      "summary": "What I do and how I think about work.",
-      "experience": "Where I've worked and what I built there.",
-      "education": "Where I studied and what stuck.",
-      "certifications": "Certificates and language qualifications.",
-      "impact": "Numbers I can point to.",
-      "skills": "What I'm good at, tool by tool.",
-      "awards": "Stuff I won along the way.",
-      "volunteering": "Volunteer work and community stuff.",
-      "testimonials": "What other people say about working with me.",
-      "contact": "How to reach me."
+      "summary": "Background, approach, and professional focus.",
+      "experience": "Professional roles and key contributions.",
+      "education": "Academic background and areas of study.",
+      "certifications": "Professional certificates and language qualifications.",
+      "impact": "Measurable results and operational outcomes.",
+      "skills": "Core competencies and technical proficiencies.",
+      "awards": "Recognitions and competitive achievements.",
+      "volunteering": "Service, leadership, and community involvement.",
+      "testimonials": "Peer and stakeholder endorsements.",
+      "contact": "Availability and preferred channels."
     },
     "skills": {
       "strategic": "Strategic & Systems",
@@ -82,7 +82,7 @@
   },
   "sections": {
     "summary": {
-      "text": "I build the operational backbone that teams rely on but rarely notice — the reports that run themselves, the SOPs people actually follow, the coordination that keeps 1,000-person events from falling apart backstage. At Home Digital Indonesia, I rebuilt a weekly reporting pipeline in Excel that gave the team back 12+ hours they were losing to manual data work. Before that, I ran a 34-member student council across 10 divisions on KPIs and weekly check-ins — not because it was trendy, but because nothing else was working. Currently studying Data Science at Universitas Terbuka, which shapes how I think about evidence, process, and what 'good enough' actually looks like in practice."
+      "text": "Operations specialist focused on building self-sustaining systems: automated reporting pipelines, standardized SOPs, and coordination frameworks that hold under pressure. At Home Digital Indonesia, redesigned the weekly reporting workflow in Excel, returning 12+ hours per week to the team by eliminating manual data handling. Previously led a 34-member student council across 10 divisions, implementing KPI tracking and weekly check-ins to drive accountability and measurable output. Currently pursuing a Data Science degree at Universitas Terbuka, strengthening a data-driven approach to process design and operational decision-making."
     },
     "experience": [
       {
@@ -90,9 +90,9 @@
         "role": "Management Trainee",
         "company": "Tirta Utama Abadi",
         "details": [
-          "Rebuilt the daily sprint dashboards from scratch so every segment could see their own numbers in real time — no more waiting for someone to compile them.",
-          "Overhauled how we manage call frequency (CFM) across all 31 depots in West Java. The old system was slow and inconsistent; the new one actually matches what the field teams need.",
-          "Built an analytics dashboard for the Route-to-Market (RTM) division that covers every outlet and segment across the depot network. First time the team had all their data in one place."
+          "Redesigned daily sprint dashboards from the ground up, enabling each segment to access real-time performance data without manual compilation.",
+          "Overhauled the Call Frequency Management (CFM) system across all 31 depots in West Java, replacing inconsistent processes with a standardized framework suited to field operations.",
+          "Built a consolidated analytics dashboard for the Route-to-Market (RTM) division, unifying outlet and segment data across the entire depot network into a single view."
         ]
       },
       {
@@ -100,9 +100,9 @@
         "role": "Management Trainee",
         "company": "Home Digital Indonesia",
         "details": [
-          "Set up automated reports in Excel that cut about 12 hours of copy-paste work out of the team's week.",
-          "Wrote shared SOPs for Finance, Sales, and Ops — before that, each department had their own way of doing the same thing.",
-          "Used internal feedback data to flag process bottlenecks. Turned those into concrete proposals that management actually acted on."
+          "Developed automated Excel reports that eliminated approximately 12 hours of manual data entry per week.",
+          "Authored unified SOPs for Finance, Sales, and Operations, replacing fragmented department-level practices with consistent cross-functional standards.",
+          "Analyzed internal feedback data to identify process bottlenecks, translating findings into actionable proposals that were adopted by management."
         ]
       },
       {
@@ -110,9 +110,9 @@
         "role": "Assistant Instructor",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Checked and maintained all safety gear on a regular schedule — ropes, harnesses, carabiners, the works.",
-          "Acted as lead climber and belayer during technical rescue training sessions.",
-          "Helped deliver hands-on instruction and ran skill tests for new trainees."
+          "Conducted scheduled inspections and maintenance of all safety equipment, including ropes, harnesses, and carabiners.",
+          "Served as lead climber and belayer during technical rescue training exercises.",
+          "Delivered hands-on instruction and administered proficiency assessments for incoming trainees."
         ]
       },
       {
@@ -120,10 +120,10 @@
         "role": "President",
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
-          "Ran a 34-person council across 10 divisions. Introduced KPIs because without them nobody knew which divisions were actually delivering.",
-          "Designed school-wide programs that the administration ended up keeping even after my term.",
-          "Led outreach campaigns to 12 feeder schools to get more students involved.",
-          "Set up weekly coordination check-ins between divisions — simple, but it stopped things from falling through the cracks."
+          "Led a 34-member council across 10 divisions, introducing KPI-based performance tracking to establish clear accountability per division.",
+          "Designed school-wide programs subsequently adopted as permanent initiatives by the administration.",
+          "Led outreach campaigns across 12 feeder schools to increase student engagement and recruitment.",
+          "Established weekly inter-division coordination meetings, reducing miscommunication and missed deadlines."
         ]
       },
       {
@@ -131,8 +131,8 @@
         "role": "Stage Operations Crew",
         "company": "Ultimate Event Organizer",
         "details": [
-          "Handled backstage coordination for events with 1,000+ people in the audience — lighting, sound, security, all moving at once.",
-          "Tightened transition times between segments by giving every crew a clear sequence to follow."
+          "Coordinated backstage operations for events with 1,000+ attendees, managing concurrent lighting, sound, and security logistics.",
+          "Reduced segment transition times by implementing standardized crew sequencing protocols."
         ]
       }
     ],
@@ -152,15 +152,15 @@
     "impact": [
       {
         "title": "Reporting Automation System",
-        "desc": "At Home Digital, the weekly report was eating up everyone's time — data entry, reformatting, cross-checking. I rebuilt the whole flow in Excel so it practically runs itself. The team got about 12 hours back every week."
+        "desc": "The weekly reporting process at Home Digital involved extensive manual data entry, reformatting, and cross-checking. Redesigned the entire workflow in Excel to run with minimal intervention, returning approximately 12 hours per week to the team."
       },
       {
         "title": "KPI-Based Governance Leadership",
-        "desc": "I ran our student council (34 people, 10 divisions) with actual KPIs and weekly sync-ups. The programs we built got adopted by the school itself, and our outreach hit 12 feeder schools."
+        "desc": "Managed a 34-member student council across 10 divisions using KPI-based performance tracking and weekly coordination meetings. Programs developed during this period were adopted by the school administration, and outreach efforts extended to 12 feeder schools."
       },
       {
         "title": "Large-Scale Event Execution",
-        "desc": "MC'd the GEMA Bandung Youth Mass for 500+ people — kept speakers, committees, and tech crew all on the same clock. Before that, I did backstage ops for 1,000+ person events where a missed cue meant everyone noticed."
+        "desc": "Served as MC for the GEMA Bandung Youth Mass (500+ attendees), coordinating speakers, committees, and technical crew on a unified timeline. Previously managed backstage operations for events with 1,000+ attendees, where precise timing was critical."
       }
     ],
     "certifications": [
@@ -192,7 +192,7 @@
         "role": "Volunteer — MC",
         "company": "GEMA Bandung (Gereja Mahasiswa)",
         "details": [
-          "MC'd the GEMA Bandung \"Misa Angkatan Muda 2025\" — kept the whole program moving for 500+ Catholic students across Bandung."
+          "Served as MC for GEMA Bandung's \"Misa Angkatan Muda 2025,\" maintaining program flow for 500+ Catholic students across Bandung."
         ]
       },
       {
@@ -200,8 +200,8 @@
         "role": "Vice Chief",
         "company": "Ujung Berung Catholic Youth Organisation",
         "details": [
-          "Put together the yearly program calendar and kept all the teams and volunteers on the same page.",
-          "Organized a night gathering (~100 people) and a youth worship event (~400 people)."
+          "Developed the annual program calendar and maintained alignment across all teams and volunteers.",
+          "Organized a night gathering (~100 attendees) and a youth worship event (~400 attendees)."
         ]
       },
       {
@@ -209,8 +209,8 @@
         "role": "Assistant Instructor",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Kept all rescue equipment in working order through regular maintenance and safety checks.",
-          "Supported training sessions as lead climber and belayer, helping teach the newer trainees."
+          "Maintained all rescue equipment through scheduled maintenance and safety inspections.",
+          "Supported training sessions as lead climber and belayer, providing instruction to incoming trainees."
         ]
       },
       {
@@ -218,7 +218,7 @@
         "role": "Head of Business & Partnership Division",
         "company": "Forum OSIS Jawa Barat",
         "details": [
-          "Created a database of past partnerships so the next committee wouldn't start from scratch when reaching out to sponsors."
+          "Built a partnership database documenting previous sponsors, enabling continuity for future committee outreach."
         ]
       },
       {
@@ -226,8 +226,8 @@
         "role": "Vice Chief Acolyte",
         "company": "Zipur Church Acolyte",
         "details": [
-          "Managed the Altar Server schedule — making sure every Mass had enough people and the rotation was fair.",
-          "Organized appreciation events and birthday celebrations to keep the team close."
+          "Managed Altar Server scheduling, ensuring adequate coverage for every Mass and equitable rotation.",
+          "Organized appreciation events and celebrations to strengthen team cohesion."
         ]
       }
     ]
