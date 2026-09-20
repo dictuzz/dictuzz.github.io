@@ -798,3 +798,51 @@
     display: none;
   }
 }
+/*
+---
+FMHY
+Tailwind
+Polyfills
+---
+*/
+
+/* --- FMHY Tailwind Polyfills --- */
+.vp-doc .grid {
+    display: grid;
+}
+.vp-doc .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.vp-doc .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.vp-doc .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.vp-doc .gap-4 {
+    gap: 1rem;
+}
+.vp-doc .gap-2 {
+    gap: 0.5rem;
+}
+.vp-doc .gap-8 {
+    gap: 2rem;
+}
+.vp-doc .mt-8 {
+    margin-top: 2rem;
+}
+.vp-doc .mt-4 {
+    margin-top: 1rem;
+}
+.vp-doc .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .vp-doc .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .vp-doc .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
