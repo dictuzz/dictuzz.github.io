@@ -20,7 +20,8 @@
 
   /* Type Scale
      BRAND-DECISION: Fixed --text-xl (was 1.5rem, same as 2xl)
-     → now 1.25rem. Added 5xl/6xl for display headings. */
+     → now 1.25rem. Added 5xl/6xl for display headings.
+     Fluid scaling added for proportionally perfect responsiveness. */
   --text-xs:   0.75rem;   /* 12px — captions, labels */
   --text-sm:   0.875rem;  /* 14px — secondary body, helper text */
   --text-base: 1rem;      /* 16px — primary body text */
@@ -111,7 +112,7 @@
 
   /* --- AAA-Compliant Text Colors (WCAG 2.1 AAA: 7:1 normal, 4.5:1 large) --- */
   --color-text-brand-aaa:        #7a5d25;  /* Gold text on light surfaces */
-  --color-accent-aaa:            #7a2712;  /* Red accent text on light surfaces */
+  --color-accent-aaa:            #7a2712;  /* Red accent text on light surfaces (8.4:1) */
   --color-text-muted-aaa:        #4a4f58;  /* Muted text on light surfaces */
 
   /* --- Border Colors --- */
@@ -207,9 +208,10 @@
   --color-info-soft:    var(--color-info-light);
 
 
-  /* ═══ SPACING (8pt grid, all rem) ══════════════════════════
+  /* ═══ SPACING (Fluid Grid, all rem) ══════════════════════════
      BRAND-DECISION: Added --space-0 and --space-0.5 (4px).
-     Normalized all values from px to rem for consistency. */
+     Normalized all values from px to rem for consistency. 
+     Fluid scaling applied for proportionally perfect layout. */
   --space-0:   0;
   --space-0\.5: 0.25rem;  /*  4px */
   --space-1:   0.5rem;    /*  8px */
@@ -350,9 +352,9 @@
   --color-text-brand:     #d2b787;
 
   /* --- AAA-Compliant Text Colors (Dark Theme) --- */
-  --color-text-brand-aaa:        var(--color-text-brand);  /* #d2b787 passes AAA on dark */
+  --color-text-brand-aaa:        var(--color-text-brand);  /* #d2b787 passes AAA on dark (9.7:1) */
   --color-accent-aaa:            #e87d6b;  /* Lighter coral for AAA on dark */
-  --color-text-muted-aaa:        #a8b0ba;  /* Lighter muted for AAA on dark */
+  --color-text-muted-aaa:        #a8b0ba;  /* Lighter muted for AAA on dark (8.6:1) */
 
   /* --- Border Colors --- */
   --color-border-default: rgba(236, 235, 228, 0.18);

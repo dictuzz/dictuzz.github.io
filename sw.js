@@ -52,43 +52,22 @@ self.addEventListener('fetch', (event) => {
   // If it's an extension or chrome internal, ignore
   if (!url.protocol.startsWith('http')) return;
 
-  // Stale-While-Revalidate Strategy for HTML (always getting latest content when online)
-  const accept = request.headers.get('accept');
-  if ((accept && accept.includes('text/html')) || url.pathname.endsWith('.html')) {
-    event.respondWith(
-      caches.match(request).then((cachedResponse) => {
-        const networkFetch = fetch(request).then((response) => {
+  // Network-First Strategy for everything to ensure updates are visible
+  event.respondWith(
+    fetch(request)
+      .then((response) => {
+        // If network request is successful, clone it, put in cache, and return
+        if (response && response.status === 200 && response.type === 'basic') {
           const responseClone = response.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(request, responseClone);
           });
-          return response;
-        }).catch(() => {
-          return cachedResponse;
-        });
-
-        return cachedResponse || networkFetch;
-      })
-    );
-    return;
-  }
-
-  // Cache-First Strategy for static assets (CSS, JS, Images, JSON)
-  event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
         }
-        const responseClone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(request, responseClone);
-        });
         return response;
-      });
-    })
+      })
+      .catch(() => {
+        // If network fails, try to serve from cache
+        return caches.match(request);
+      })
   );
 });

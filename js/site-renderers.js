@@ -98,7 +98,7 @@ function createFooterViewModel(siteConfig, currentPath = window.location.pathnam
                 href: `mailto:${siteConfig.contact.email}`,
                 icon: 'i-ph-envelope-duotone',
                 label: siteConfig.contact.email,
-                ariaLabel: 'Email Me'
+                ariaLabel: `Email Me at ${siteConfig.contact.email}`
             },
             {
                 href: siteConfig.contact.whatsappUrl,
