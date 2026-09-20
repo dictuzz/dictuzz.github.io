@@ -76,9 +76,77 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// --- Table of Contents ---
+function buildToC() {
+    const content = document.querySelector('.resources-content');
+    if (!content) return;
+
+    const headings = content.querySelectorAll('h2, h3');
+    if (headings.length === 0) return;
+
+    const toc = document.createElement('aside');
+    toc.className = 'resources-toc';
+    
+    const title = document.createElement('h4');
+    title.textContent = 'On this page';
+    toc.appendChild(title);
+
+    const ul = document.createElement('ul');
+    
+    headings.forEach(heading => {
+        if (!heading.id) return;
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        // Strip the trailing invisible anchor character if present
+        a.textContent = heading.textContent.replace('​', '').trim();
+        if (heading.tagName === 'H3') {
+            a.className = 'toc-h3';
+        }
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+
+    toc.appendChild(ul);
+    
+    // Insert ToC right after the resources-content
+    content.parentNode.insertBefore(toc, content.nextSibling);
+
+    // Active state highlighting using IntersectionObserver
+    const links = toc.querySelectorAll('a');
+    const observer = new IntersectionObserver((entries) => {
+        let activeId = null;
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                activeId = entry.target.id;
+            }
+        });
+        if (activeId) {
+            links.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
+            });
+        }
+    }, { rootMargin: '0px 0px -80% 0px' });
+
+    headings.forEach(h => observer.observe(h));
+}
+
+// --- Service Worker ---
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').catch(err => {
+                console.error('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+}
+
 // --- Icons + Footer ---
 async function init() {
     injectSearchLink();
+    buildToC();
+    registerServiceWorker();
     upgradeIcons(document);
 
     try {
@@ -90,3 +158,4 @@ async function init() {
 }
 
 init();
+

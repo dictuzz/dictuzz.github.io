@@ -240,7 +240,19 @@ async function initFolders() {
 
 const LOCAL_TIME_INTERVAL_MS = 60_000;
 
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').catch(err => {
+                console.error('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+}
+
 upgradeIcons(document);
 initFolders();
 updateLocalTime();
+registerServiceWorker();
 window.setInterval(updateLocalTime, LOCAL_TIME_INTERVAL_MS);
+
