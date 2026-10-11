@@ -2,27 +2,74 @@ name: Automatically Update FMHY Content
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight (UTC)
+    # Runs every 6 hours: midnight, 6 AM, noon, 6 PM (UTC)
+    - cron: '0 */6 * * *'
   workflow_dispatch: # Allows manual trigger
 
+# Prevent concurrent runs from piling up
+concurrency:
+  group: fmhy-sync
+  cancel-in-progress: true
+
 jobs:
+  check-upstream:
+    runs-on: ubuntu-latest
+    outputs:
+      should_update: ${{ steps.check.outputs.should_update }}
+    steps:
+      - name: Check FMHY latest commit
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch the latest commit SHA from the FMHY source repo
+          LATEST_SHA=$(curl -sf \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/fmhy/edit/commits?per_page=1" \
+            | jq -r '.[0].sha // empty')
+
+          if [ -z "$LATEST_SHA" ]; then
+            echo "⚠️ Could not fetch FMHY latest commit, proceeding with update anyway"
+            echo "should_update=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Latest FMHY commit: $LATEST_SHA"
+
+          # Check if we've already synced this commit (stored as a repo variable)
+          LAST_SYNCED="${{ vars.FMHY_LAST_SYNCED_SHA }}"
+          echo "Last synced commit:  ${LAST_SYNCED:-<none>}"
+
+          if [ "$LATEST_SHA" = "$LAST_SYNCED" ]; then
+            echo "✅ Already up-to-date, skipping sync"
+            echo "should_update=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "🔄 New changes detected, will sync"
+            echo "should_update=true" >> "$GITHUB_OUTPUT"
+            echo "latest_sha=$LATEST_SHA" >> "$GITHUB_OUTPUT"
+          fi
+
   update-content:
+    needs: check-upstream
+    if: needs.check-upstream.outputs.should_update == 'true'
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
+      actions: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: main
           fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
@@ -30,15 +77,57 @@ jobs:
 
       - name: Run update script
         run: npm run update:fmhy
+        env:
+          # Increase default timeout for large pages
+          NODE_OPTIONS: '--max-http-header-size=32768'
 
       - name: Run tests
-        run: npm run test
+        run: npm test
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            echo "ℹ️ No content changes detected"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo "📝 Changes detected:"
+            git diff --stat
+          fi
 
       - name: Commit and push changes
+        if: steps.diff.outputs.has_changes == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(resources): automatically sync latest FMHY content"
+          commit_message: "chore(resources): sync FMHY content [automated]"
           branch: main
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
           commit_author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+
+      - name: Store synced commit SHA
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          LATEST_SHA=$(curl -sf \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            "https://api.github.com/repos/fmhy/edit/commits?per_page=1" \
+            | jq -r '.[0].sha // empty')
+
+          if [ -n "$LATEST_SHA" ]; then
+            # Save the SHA as a repository variable for next run comparison
+            curl -sf -X PATCH \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/variables/FMHY_LAST_SYNCED_SHA" \
+              -d "{\"value\":\"$LATEST_SHA\"}" \
+            || curl -sf -X POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              "https://api.github.com/repos/${{ github.repository }}/actions/variables" \
+              -d "{\"name\":\"FMHY_LAST_SYNCED_SHA\",\"value\":\"$LATEST_SHA\"}"
+            echo "✅ Stored synced SHA: $LATEST_SHA"
+          fi
