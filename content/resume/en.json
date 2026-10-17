@@ -1,5 +1,6 @@
 {
   "locale": "en",
+  "visualCvUrl": "https://canva.link/benedictus-richard-ricardo-en",
   "strings": {
     "hero": {
       "subtitle": "Building operations that run themselves.",
@@ -7,18 +8,18 @@
       "typing": {
         "staticText": "",
         "dynamicTexts": [
-          "Redesigning broken workflows",
-          "Bridging cross-functional teams",
-          "Turning raw data into action plans",
-          "Coordinating large-scale events",
-          "Streamlining team operations"
+          "Standardizing route-to-market workflows",
+          "Eliminating fraudulent transactions at scale",
+          "Bridging cross-functional operations",
+          "Automating data pipelines and reporting",
+          "Coordinating large-scale events"
         ]
       },
       "status": "Available for opportunities",
       "cta1": "Let's Talk",
       "cta2": "Explore",
-      "stat1Label": "Hrs/Week Saved",
-      "stat2Label": "Members Led",
+      "stat1Label": "Hrs/Wk Saved",
+      "stat2Label": "Depots Standardized",
       "stat3Label": "Audience Scale",
       "atsCv": "Download ATS Resume"
     },
@@ -69,7 +70,8 @@
       "schedule": "Book a Call",
       "whatsapp": "Message Me",
       "email": "Let's Talk",
-      "cv": "View Full Resume →",
+      "visualCv": "View Visual Resume →",
+      "cv": "Download ATS Resume",
       "desc": {
         "schedule": "15-min call • No obligation",
         "whatsapp": "Fast and practical communication",
@@ -82,38 +84,33 @@
   },
   "sections": {
     "summary": {
-      "text": "Operations specialist focused on building self-sustaining systems: automated reporting pipelines, standardized SOPs, and coordination frameworks that hold under pressure. At Home Digital Indonesia, redesigned the weekly reporting workflow in Excel, returning 12+ hours per week to the team by eliminating manual data handling. Previously led a 34-member student council across 10 divisions, implementing KPI tracking and weekly check-ins to drive accountability and measurable output. Currently pursuing a Data Science degree at Universitas Terbuka, strengthening a data-driven approach to process design and operational decision-making."
+      "text": "Disciplined, systems-oriented Route-to-Market Analyst who leads a team of 3 across 3 entities in West Java. Known for turning inconsistent field processes into standardized, measurable frameworks, including a Call Frequency Management system across 32 depots and the removal of 12,000+ suspicious outlets through data-driven anomaly detection. Combines a data science foundation with hands-on field and stakeholder experience, so analysis becomes action that depots actually adopt. Guided by \"Quam plurimi et quam aptissimi\", aiming to continuously learn and drive lasting operational impact."
     },
     "experience": [
       {
         "date": "APR 2026 – PRESENT",
-        "role": "Route to Market Analyst",
-        "company": "Tirta Utama Abadi",
+        "role": "Route-to-Market Analyst",
+        "company": "Tirta Utama Abadi (Danone Distributor, West Java)",
         "details": [
-          "Saved the team approximately 8.6 hours per month on analyzing the new opening outlet location market potentials, and distance from active existing outlet.",
-          "Redesigned daily sprint dashboards from the ground up, enabling each segment to access real-time performance data without manual compilation.",
-          "Overhauled the Call Frequency Management (CFM) system across all 31 depots in West Java, replacing inconsistent processes with a standardized framework suited to field operations. Increasing more than 10% profit growth on almost all depots.",
-          "Deactivating >8,000 possible fraudulent outlets by analyzing the transaction pattern and geolocation."
+          "Detected anomalies in transaction patterns and geolocation data to deactivate 12,000+ potentially fraudulent outlets, cleaning the outlet base that all coverage and incentive decisions rely on.",
+          "Replaced inconsistent visit practices with one standardized, field-tailored Call Frequency Management framework across all 32 depots in West Java, driving double-digit profit growth at nearly every depot.",
+          "Lead a team of 3 across 3 entities, keeping salesman territories and sales fundamentals healthy and well maintained.",
+          "Rebuilt daily sprint dashboards from scratch, giving every depot live performance data with zero manual compilation.",
+          "Automated market-potential and distance-to-active-outlet analysis for new outlet openings, saving the team ~8.6 hours per month.",
+          "Analyze monthly fleet requirements per depot and channel by combining sales targets with the previous month's fleet data, ensuring delivery capacity matches expected demand.",
+          "Conduct market analysis, including trade economics, to guide coverage, outlet-opening, and channel decisions across depots."
         ]
       },
       {
-        "date": "JUL 2024 – SEP 2025",
+        "date": "JUL 2024 – FEB 2026",
         "role": "Management Trainee",
         "company": "Home Digital Indonesia",
         "details": [
-          "Developed automated Excel reports that eliminated approximately 12 hours of manual data entry per week.",
-          "Authored unified SOPs for Finance, Sales, and Operations, replacing fragmented department-level practices with consistent cross-functional standards.",
-          "Analyzed internal feedback data to identify process bottlenecks, translating findings into actionable proposals that were adopted by management."
-        ]
-      },
-      {
-        "date": "JAN 2021 – PRESENT",
-        "role": "Assistant Instructor",
-        "company": "Vertical Rescue Indonesia",
-        "details": [
-          "Conducted scheduled inspections and maintenance of all safety equipment, including ropes, harnesses, and carabiners.",
-          "Served as lead climber and belayer during technical rescue training exercises.",
-          "Delivered hands-on instruction and administered proficiency assessments for incoming trainees."
+          "Automated manual reporting workflows in Excel, eliminating approximately 12 hours of manual data entry per week.",
+          "Partnered with Finance, Sales, and Operations to design systems and standardize SOPs, replacing fragmented department-level practices with consistent cross-functional standards.",
+          "Drove sales through direct customer engagement, consistently working toward and achieving monthly sales targets.",
+          "Assessed customer credit applications using 7C and 5S principles, safeguarding receivables quality while keeping approval turnaround efficient.",
+          "Followed up daily on overdue customer accounts through structured negotiation and payment-commitment tracking to secure repayment."
         ]
       },
       {
@@ -126,31 +123,27 @@
           "Led outreach campaigns across 12 feeder schools to increase student engagement and recruitment.",
           "Established weekly inter-division coordination meetings, reducing miscommunication and missed deadlines."
         ]
-      },
-      {
-        "date": "JUN 2022 – AUG 2022",
-        "role": "Stage Operations Crew",
-        "company": "Ultimate Event Organizer",
-        "details": [
-          "Coordinated backstage operations for events with 1,000+ attendees, managing concurrent lighting, sound, and security logistics.",
-          "Reduced segment transition times by implementing standardized crew sequencing protocols."
-        ]
       }
     ],
     "education": [
       {
-        "name": "Universitas Terbuka",
-        "degree": "S1 Data Science (Ongoing)",
+        "name": "Universitas Terbuka (Open University Indonesia)",
+        "degree": "B.Sc. Data Science (Ongoing)",
         "date": "Started Aug 2025",
-        "focus": "Focus: Data Analysis, Statistics, Information Systems"
+        "focus": "Focus: Data Analysis, Statistics, Information Systems & Anomaly Detection"
       },
       {
-        "name": "SMA Santa Maria 2",
-        "degree": "Science Program",
-        "date": "2020 – 2023"
+        "name": "Saint Mary 2 Senior High School",
+        "degree": "Science Program (IPA)",
+        "date": "2020 – 2023",
+        "focus": "Elected President & VP of OSIS; School representative at UNDIP Biology Championship (2022); Active Scouting & outdoor leadership training"
       }
     ],
     "impact": [
+      {
+        "title": "Route-to-Market System Standardization",
+        "desc": "Overhauled Call Frequency Management across all 32 depots in West Java and deactivated 12,000+ fraudulent outlets via geolocation and transaction anomaly detection, generating double-digit profit growth across nearly every depot."
+      },
       {
         "title": "Reporting Automation System",
         "desc": "The weekly reporting process at Home Digital involved extensive manual data entry, reformatting, and cross-checking. Redesigned the entire workflow in Excel to run with minimal intervention, returning approximately 12 hours per week to the team."
@@ -161,7 +154,7 @@
       },
       {
         "title": "Large-Scale Event Execution",
-        "desc": "Served as MC for the GEMA Bandung Youth Mass (500+ attendees), coordinating speakers, committees, and technical crew on a unified timeline. Previously managed backstage operations for events with 1,000+ attendees, where precise timing was critical."
+        "desc": "Served as MC for the GEMA Bandung Youth Mass (500+ attendees), coordinating speakers, committees, and technical crew on a unified timeline. Previously managed backstage operations for events with 1,000+ attendees with strict cue precision."
       }
     ],
     "certifications": [
@@ -169,6 +162,11 @@
         "name": "Goethe-Zertifikat B1",
         "issuer": "Goethe-Institut",
         "year": "2023"
+      },
+      {
+        "name": "Vertical Rescue Instructor",
+        "issuer": "Vertical Rescue Indonesia",
+        "year": "2021"
       },
       {
         "name": "Personal Financial Fundamentals",
@@ -184,25 +182,17 @@
     "testimonials": [],
     "awards": [
       "1st Place – Instagram Reels Competition, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
+      "School Representative – UNDIP Biology Championship (2022)",
       "1st Place – Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
       "Runner-Up, Water Rocket Competition (2017) by PLANET SAINS"
     ],
     "volunteering": [
       {
         "date": "JUL 2025 – PRESENT",
-        "role": "Volunteer — MC",
-        "company": "GEMA Bandung (Gereja Mahasiswa)",
+        "role": "Master of Ceremony (Volunteer)",
+        "company": "GEMA (Gereja Mahasiswa) Bandung",
         "details": [
-          "Served as MC for GEMA Bandung's \"Misa Angkatan Muda 2025,\" maintaining program flow for 500+ Catholic students across Bandung."
-        ]
-      },
-      {
-        "date": "AUG 2023 – AUG 2024",
-        "role": "Vice Chief",
-        "company": "Ujung Berung Catholic Youth Organisation",
-        "details": [
-          "Developed the annual program calendar and maintained alignment across all teams and volunteers.",
-          "Organized a night gathering (~100 attendees) and a youth worship event (~400 attendees)."
+          "Acted as Master of Ceremony for large-scale GEMA Bandung event \"Misa Angkatan Muda 2025\", managing stage flow and audience engagement for 500+ Catholic students across Bandung while coordinating with committee members, speakers, and technical teams to ensure precise run sheet execution."
         ]
       },
       {
@@ -210,16 +200,39 @@
         "role": "Assistant Instructor",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Maintained all rescue equipment through scheduled maintenance and safety inspections.",
-          "Supported training sessions as lead climber and belayer, providing instruction to incoming trainees."
+          "Maintain rescue equipment readiness through routine maintenance and strict safety inspections of ropes, harnesses, and hardware.",
+          "Serve as lead climber and belayer in technical rescue training exercises and coach new trainees in technical outdoor and safety skills."
         ]
       },
       {
-        "date": "NOV 2021 – NOV 2022",
+        "date": "AUG 2023 – AUG 2024",
+        "role": "Vice Chief",
+        "company": "Ujung Berung Catholic Youth Organisation",
+        "details": [
+          "Planned the annual program calendar, coordinating cross-team deliverables and volunteer schedules.",
+          "Organized two large-scale events: a night gathering (~100 participants) and a youth worship service (~400 participants).",
+          "Served as Master of Ceremony for the organization's major community gatherings."
+        ]
+      },
+      {
+        "date": "2021 – 2022",
         "role": "Head of Business & Partnership Division",
         "company": "Forum OSIS Jawa Barat",
         "details": [
-          "Built a partnership database documenting previous sponsors, enabling continuity for future committee outreach."
+          "Headed the Business & Partnership Division of Forum OSIS Jawa Barat, responsible for external partnerships, sponsorship, and media outreach for forum programs.",
+          "Handled partnerships for flagship events, including the Public Discussion / Legislative Hearing and the FOJB Student Festival & Charity Concert, plus additional charity activities.",
+          "Coordinated sponsorship with by.U, Telkom University, and Dinas Pendidikan, and media partnerships with Halo KRW, Media Bandung, and others to widen event reach.",
+          "Built a historical partnership database consolidating past committee collaborations, providing continuity for future committees instead of starting outreach from scratch."
+        ]
+      },
+      {
+        "date": "JUN 2022 – AUG 2022",
+        "role": "Stage Crew",
+        "company": "Ultimate Event Organizer",
+        "details": [
+          "Supported backstage operations for events of 1,000+ attendees, assisting the stage and production team in keeping every session on the run sheet.",
+          "Assisted with stage and equipment setup and teardown, coordinating technical cues and hand-offs between segments.",
+          "Followed planned workflows during changeovers, helping keep downtime between sessions to a minimum."
         ]
       },
       {
@@ -236,144 +249,44 @@
   "collections": {
     "skills": {
       "strategic": [
-        {
-          "name": "Systems Thinking",
-          "level": "expert"
-        },
-        {
-          "name": "Workflow Design",
-          "level": "expert"
-        },
-        {
-          "name": "Process Standardization",
-          "level": "expert"
-        },
-        {
-          "name": "KPI Framework Design",
-          "level": "proficient"
-        },
-        {
-          "name": "Operational Planning",
-          "level": "expert"
-        },
-        {
-          "name": "Agile Methodologies",
-          "level": "proficient"
-        },
-        {
-          "name": "Change Management",
-          "level": "expert"
-        }
+        { "name": "Systems Thinking", "level": "expert" },
+        { "name": "Route-to-Market Planning", "level": "expert" },
+        { "name": "Territory & Coverage Planning", "level": "expert" },
+        { "name": "Call Frequency Management", "level": "expert" },
+        { "name": "Workflow Design", "level": "expert" },
+        { "name": "Process Standardization", "level": "expert" },
+        { "name": "KPI Framework Design", "level": "proficient" },
+        { "name": "Change Management at Scale", "level": "expert" }
       ],
       "operational": [
-        {
-          "name": "SOP Development",
-          "level": "expert"
-        },
-        {
-          "name": "Cross-Functional Coordination",
-          "level": "expert"
-        },
-        {
-          "name": "Event Operations Management",
-          "level": "proficient"
-        },
-        {
-          "name": "Reporting Automation",
-          "level": "expert"
-        },
-        {
-          "name": "Structured Delegation",
-          "level": "proficient"
-        },
-        {
-          "name": "Incident Management",
-          "level": "expert"
-        }
+        { "name": "SOP Development", "level": "expert" },
+        { "name": "Cross-Functional Coordination", "level": "expert" },
+        { "name": "Risk & Fraud Control", "level": "expert" },
+        { "name": "Fleet Planning", "level": "proficient" },
+        { "name": "Reporting Automation", "level": "expert" },
+        { "name": "Event Operations Management", "level": "proficient" },
+        { "name": "Incident Management", "level": "expert" }
       ],
       "analytical": [
-        {
-          "name": "Microsoft Excel",
-          "level": "expert"
-        },
-        {
-          "name": "Google Workspace",
-          "level": "expert"
-        },
-        {
-          "name": "Data Visualization",
-          "level": "proficient"
-        },
-        {
-          "name": "Data Analysis",
-          "level": "proficient"
-        },
-        {
-          "name": "Obsidian",
-          "level": "proficient"
-        },
-        {
-          "name": "Project Management Tools",
-          "level": "proficient"
-        },
-        {
-          "name": "Business Intelligence",
-          "level": "proficient"
-        },
-        {
-          "name": "Power BI",
-          "level": "proficient"
-        },
-        {
-          "name": "Looker Studio",
-          "level": "proficient"
-        },
-        {
-          "name": "DBeaver",
-          "level": "proficient"
-        },
-        {
-          "name": "QGIS",
-          "level": "proficient"
-        },
-        {
-          "name": "Python",
-          "level": "proficient"
-        },
-        {
-          "name": "SQL",
-          "level": "proficient"
-        }
+        { "name": "SQL", "level": "proficient" },
+        { "name": "Python", "level": "proficient" },
+        { "name": "Microsoft Excel / VBA", "level": "expert" },
+        { "name": "Anomaly Detection", "level": "expert" },
+        { "name": "Dashboards & Visualization", "level": "expert" },
+        { "name": "Power BI & Looker Studio", "level": "proficient" },
+        { "name": "Trade Economics", "level": "proficient" },
+        { "name": "DBeaver", "level": "proficient" },
+        { "name": "QGIS", "level": "proficient" },
+        { "name": "LLM & AI-Assisted Analytics", "level": "proficient" },
+        { "name": "Obsidian, Canva, Trello", "level": "proficient" }
       ],
       "leadership": [
-        {
-          "name": "Team Governance",
-          "level": "expert"
-        },
-        {
-          "name": "Stakeholder Communication",
-          "level": "expert"
-        },
-        {
-          "name": "Public Speaking",
-          "level": "proficient"
-        },
-        {
-          "name": "Complex Problem-Solving",
-          "level": "expert"
-        },
-        {
-          "name": "Training Delivery",
-          "level": "proficient"
-        },
-        {
-          "name": "Strategic Outreach",
-          "level": "proficient"
-        },
-        {
-          "name": "Process Diagnostics",
-          "level": "expert"
-        }
+        { "name": "Team Leadership (3 entities)", "level": "expert" },
+        { "name": "Cross-Functional Influence", "level": "expert" },
+        { "name": "Public Speaking & MC", "level": "expert" },
+        { "name": "Complex Problem-Solving", "level": "expert" },
+        { "name": "Training Delivery", "level": "proficient" },
+        { "name": "Strategic Partnerships", "level": "proficient" }
       ]
     },
     "languages": [
@@ -383,23 +296,23 @@
       },
       {
         "id": "su",
-        "label": "Sundanese (Fluent)"
+        "label": "Sundanese (Native)"
       },
       {
         "id": "en",
-        "label": "English (Professional Working Proficiency)"
+        "label": "English (Intermediate, B1)"
+      },
+      {
+        "id": "de",
+        "label": "German (B1 Goethe-Zertifikat; B2 Course Participant)"
       },
       {
         "id": "jv",
         "label": "Javanese (Intermediate)"
-      },
-      {
-        "id": "de",
-        "label": "German (B1 Certified – Goethe-Zertifikat B1)"
       }
     ]
   },
   "seo": {
-    "description": "Resume of Benedictus Richard Ricardo — the person behind dictuzz. Work experience, skills, and how to get in touch."
+    "description": "Resume of Benedictus Richard Ricardo — Route-to-Market Analyst and Systems Architect behind dictuzz. Work experience, skills, and how to get in touch."
   }
 }

@@ -143,6 +143,7 @@ export function renderConnectSection(siteConfig, translations, content) {
     const githubLink = document.querySelector('#connect-github-link');
     const downloadLink = document.querySelector('#download-cv-link');
     const heroDownloadLink = document.querySelector('#hero-download-cv-link');
+    const canvaLink = document.querySelector('#download-canva-link');
     const status = document.querySelector('#hero-status-text');
     const heroRole = document.querySelector('.hero__role [data-i18n="hero.role"]');
     const subtitle = document.querySelector('.hero__subtitle');
@@ -154,6 +155,17 @@ export function renderConnectSection(siteConfig, translations, content) {
     if (linkedinLink) linkedinLink.href = siteConfig.socials.find((entry) => entry.id === 'linkedin')?.url || '#';
     if (instagramLink) instagramLink.href = siteConfig.socials.find((entry) => entry.id === 'instagram')?.url || '#';
     if (githubLink) githubLink.href = siteConfig.socials.find((entry) => entry.id === 'github')?.url || '#';
+
+    // Update Canva / Visual Resume Link based on language
+    if (canvaLink) {
+        const canvaUrls = {
+            en: 'https://canva.link/benedictus-richard-ricardo-en',
+            id: 'https://canva.link/benedictus-richard-ricardo-id',
+            de: 'https://canva.link/benedictus-richard-ricardo-de'
+        };
+        const lang = content.locale || 'en';
+        canvaLink.href = content.visualCvUrl || canvaUrls[lang] || canvaUrls.en;
+    }
     
     // Setup ATS CV download button
     if (downloadLink) {
