@@ -318,13 +318,6 @@ h3 {
     padding: 150px 0 90px;
 }
 
-.hero__decorations,
-.hero__shape,
-.hero__grid-lines,
-.hero__orb {
-    display: none;
-}
-
 .hero__container {
     display: grid;
     grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);

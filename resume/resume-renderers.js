@@ -81,17 +81,6 @@ export function renderCertifications(items) {
     `);
 }
 
-export function renderTestimonials(items) {
-    renderSection('#testimonials-list', items, (item) => `
-        <article class="testimonial-card glass card reveal">
-            <p class="testimonial-card__mark" aria-hidden="true">“</p>
-            <blockquote class="testimonial-card__quote">${escapeHtml(item.quote)}</blockquote>
-            <p class="testimonial-card__meta">${escapeHtml(item.author)} · ${escapeHtml(item.role)}</p>
-            ${item.linkedin ? `<p class="testimonial-card__link"><a href="${escapeHtml(item.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></p>` : ''}
-        </article>
-    `);
-}
-
 export function renderList(selector, items) {
     renderSection(selector, items, (item) => `<li>${escapeHtml(item)}</li>`);
 }

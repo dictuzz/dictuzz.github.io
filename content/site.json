@@ -117,10 +117,10 @@
   },
   "seo": {
     "keywords": {
-      "home": "Systems Architect, Automation Specialist, workflow automation, operational governance, reporting automation, process improvement, fractional operations, Bandung Indonesia",
-      "resume": "Systems Architect resume, Automation Specialist, workflow automation, operational leadership, KPI governance, reporting automation, fractional COO, Bandung Indonesia",
+      "home": "Systems Architect, Automation Specialist, workflow automation, operational governance, reporting automation, process improvement, route-to-market analysis, operations specialist, Bandung Indonesia",
+      "resume": "Systems Architect resume, Route to Market Analyst, Automation Specialist, workflow automation, operational leadership, KPI governance, reporting automation, Operations Specialist, Tirta Utama Abadi, Bandung Indonesia",
       "portfolio": "workflow automation case study, operational governance, live event operations, systems architecture portfolio, Home Digital Indonesia",
-      "resources": "workflow automation tools, operational governance templates, KPI framework, reporting automation guide, event operations checklist"
+      "resources": "free software tools, digital resources, privacy tools, system utilities, open source guides, internet tools"
     },
     "twitterCreator": "@dictuzz",
     "pages": {
@@ -151,8 +151,8 @@
       },
       "resources": {
         "path": "/resources/",
-        "title": "Free Tools & Guides for Workflow Automation, Data Analysis & Operations | dictuzz",
-        "description": "Free tools and guides I actually use — Excel automation, Power Query, KPI templates, SOP frameworks, and event ops checklists.",
+        "title": "Free Tools, Software Guides & Digital Resources | dictuzz",
+        "description": "Curated directory of free software, privacy guides, system utilities, media archives, and digital resources.",
         "ogType": "website"
       }
     }

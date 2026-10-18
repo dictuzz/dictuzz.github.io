@@ -42,7 +42,6 @@
       "certifications": "SERTIFIKASI & PELATIHAN",
       "skills": "KEAHLIAN & ALAT UTAMA",
       "awards": "PENGHARGAAN & PENGAKUAN",
-      "testimonials": "TESTIMONI & BUKTI SOSIAL",
       "volunteering": "SUKARELAWAN & KOMUNITAS",
       "contact": "KONTAK & KETERSEDIAAN"
     },
@@ -55,7 +54,6 @@
       "skills": "Kompetensi inti dan keahlian teknis.",
       "awards": "Penghargaan dan pencapaian kompetitif.",
       "volunteering": "Pelayanan, kepemimpinan, dan keterlibatan komunitas.",
-      "testimonials": "Testimoni dari rekan kerja dan pemangku kepentingan.",
       "contact": "Ketersediaan dan jalur komunikasi."
     },
     "skills": {
@@ -179,7 +177,6 @@
         "year": "2023"
       }
     ],
-    "testimonials": [],
     "awards": [
       "Juara 1 – Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
       "Perwakilan Sekolah – UNDIP Biology Championship (2022)",

@@ -10,8 +10,7 @@ import {
     renderExperience,
     renderImpact,
     renderList,
-    renderSkills,
-    renderTestimonials
+    renderSkills
 } from './resume-renderers.js';
 import { updateResumeSeo } from './resume-seo.js';
 import { SUPPORTED_LANGS } from './resume-state.js';
@@ -21,7 +20,6 @@ async function loadLanguage(lang) {
         const { siteConfig, content, translations } = await loadResumePageContent(lang);
 
         // Each renderer is isolated — a failure in one must not block the rest.
-        // renderConnectSection is critical: it sets the "View Full Resume" link.
         const renderers = [
             () => renderExperience(content.sections.experience, '#experience .timeline'),
             () => renderExperience(content.sections.volunteering, '#volunteering-list'),
@@ -30,7 +28,6 @@ async function loadLanguage(lang) {
             () => renderImpact(content.sections.impact),
             () => renderSkills(content.collections, translations),
             () => renderList('#awards-list', content.sections.awards),
-            () => renderTestimonials(content.sections.testimonials),
             () => applyTranslations(translations),
             () => renderConnectSection(siteConfig, translations, content),
             () => updateTyping(content.strings),
