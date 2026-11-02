@@ -13,13 +13,17 @@
     "themeToLight": "Switch to light theme",
     "themeToDark": "Switch to dark theme",
     "languageLabel": "Language",
-    "languages": { "en": "EN", "id": "ID", "de": "DE" },
-    "languageNames": { "en": "English", "id": "Indonesian", "de": "German" },
+    "languages": {
+      "en": "EN",
+      "id": "ID",
+      "de": "DE"
+    },
+    "languageNames": {
+      "en": "English",
+      "id": "Indonesian",
+      "de": "German"
+    },
     "byline": "By",
-    "filed": "Filed from",
-    "edition": "Edition",
-    "issue": "No. 1",
-    "vol": "Vol. I",
     "magazineLabel": "A Systems & Automation Magazine",
     "previous": "Previous",
     "next": "Next",
@@ -27,10 +31,7 @@
     "scope": "Scope",
     "tools": "Tools & Methods",
     "impact": "Impact",
-    "evidence": "On the record",
-    "context": "Context",
-    "intervention": "What was built",
-    "outcome": "Outcome"
+    "evidence": "On the record"
   },
   "landing": {
     "documentTitle": "Case Studies in Workflow Automation & Operational Governance | The Operational Record | dictuzz",
@@ -122,10 +123,22 @@
         "I'm studying Data Science at Universitas Terbuka right now. It's shaping how I think about process problems — more data, fewer assumptions."
       ],
       "facts": [
-        { "label": "Base", "value": "Bandung, Indonesia · UTC+7" },
-        { "label": "Studying", "value": "Data Science, Universitas Terbuka" },
-        { "label": "Languages", "value": "English · Indonesian · German" },
-        { "label": "Style", "value": "Structured, calm, evidence-led" }
+        {
+          "label": "Base",
+          "value": "Bandung, Indonesia · UTC+7"
+        },
+        {
+          "label": "Studying",
+          "value": "Data Science, Universitas Terbuka"
+        },
+        {
+          "label": "Languages",
+          "value": "English · Indonesian · German"
+        },
+        {
+          "label": "Style",
+          "value": "Structured, calm, evidence-led"
+        }
       ]
     },
     "contact": {
@@ -133,9 +146,26 @@
       "title": "Open to talking about systems, automation, and ops work.",
       "body": "Best fit for teams or roles that need things to run cleaner, more reliably, or with less manual overhead. Based in GMT+7.",
       "actions": [
-        { "type": "primary", "label": "contact@dictuzz.me", "href": "mailto:contact@dictuzz.me", "icon": "envelope" },
-        { "type": "ghost", "label": "Schedule a meeting", "href": "https://calendar.app.google/39u2qGH6ybaFenhdA", "icon": "calendar", "external": true },
-        { "type": "ghost", "label": "LinkedIn", "href": "https://linkedin.com/in/dictuzz", "icon": "linkedin", "external": true }
+        {
+          "type": "primary",
+          "label": "contact@dictuzz.me",
+          "href": "mailto:contact@dictuzz.me",
+          "icon": "envelope"
+        },
+        {
+          "type": "ghost",
+          "label": "Schedule a meeting",
+          "href": "https://calendar.app.google/39u2qGH6ybaFenhdA",
+          "icon": "calendar",
+          "external": true
+        },
+        {
+          "type": "ghost",
+          "label": "LinkedIn",
+          "href": "https://linkedin.com/in/dictuzz",
+          "icon": "linkedin",
+          "external": true
+        }
       ]
     }
   },
@@ -174,14 +204,37 @@
         "Moved the work from 'someone needs to remember this' to 'this just runs now'."
       ],
       "impact": [
-        { "value": "12+", "label": "Hours saved weekly", "note": "Manual reporting effort removed from the recurring cycle." },
-        { "value": "3", "label": "Functions aligned", "note": "Finance, sales, and operations on one structure." },
-        { "value": "1", "label": "Shared routine", "note": "Automation and SOPs combined into a repeatable weekly flow." }
+        {
+          "value": "12+",
+          "label": "Hours saved weekly",
+          "note": "Manual reporting effort removed from the recurring cycle."
+        },
+        {
+          "value": "3",
+          "label": "Functions aligned",
+          "note": "Finance, sales, and operations on one structure."
+        },
+        {
+          "value": "1",
+          "label": "Shared routine",
+          "note": "Automation and SOPs combined into a repeatable weekly flow."
+        }
       ],
-      "scope": ["Reporting workflow design", "Excel automation", "SOP standardization"],
-      "tools": ["Excel", "Operational reporting", "SOP design"],
+      "scope": [
+        "Reporting workflow design",
+        "Excel automation",
+        "SOP standardization"
+      ],
+      "tools": [
+        "Excel",
+        "Operational reporting",
+        "SOP design"
+      ],
       "prev": null,
-      "next": { "slug": "kpi-governance-record", "title": "A council of thirty-four learns to keep time." }
+      "next": {
+        "slug": "kpi-governance-record",
+        "title": "A council of thirty-four learns to keep time."
+      }
     },
     "kpi-governance-record": {
       "documentTitle": "KPI-Based Governance · The Operational Record",
@@ -217,14 +270,40 @@
         "Led outreach campaigns that reached 12 feeder schools."
       ],
       "impact": [
-        { "value": "34", "label": "Members led", "note": "Leadership scope across the full organization." },
-        { "value": "10", "label": "Divisions coordinated", "note": "Governance applied across the council." },
-        { "value": "12", "label": "Feeder schools reached", "note": "Scale of one major outward-facing campaign." }
+        {
+          "value": "34",
+          "label": "Members led",
+          "note": "Leadership scope across the full organization."
+        },
+        {
+          "value": "10",
+          "label": "Divisions coordinated",
+          "note": "Governance applied across the council."
+        },
+        {
+          "value": "12",
+          "label": "Feeder schools reached",
+          "note": "Scale of one major outward-facing campaign."
+        }
       ],
-      "scope": ["Leadership system design", "KPI governance", "Program planning"],
-      "tools": ["Governance frameworks", "Team management", "Strategic outreach"],
-      "prev": { "slug": "automation-mandate", "title": "The Automation Mandate" },
-      "next": { "slug": "large-scale-event-ops", "title": "When the room is watching, the only thing visible is what fails." }
+      "scope": [
+        "Leadership system design",
+        "KPI governance",
+        "Program planning"
+      ],
+      "tools": [
+        "Governance frameworks",
+        "Team management",
+        "Strategic outreach"
+      ],
+      "prev": {
+        "slug": "automation-mandate",
+        "title": "The Automation Mandate"
+      },
+      "next": {
+        "slug": "large-scale-event-ops",
+        "title": "When the room is watching, the only thing visible is what fails."
+      }
     },
     "large-scale-event-ops": {
       "documentTitle": "Large-Scale Event Ops · The Operational Record",
@@ -260,14 +339,40 @@
         "Cut down transition friction by giving every crew a clear, documented sequence."
       ],
       "impact": [
-        { "value": "1,000+", "label": "Audience scale", "note": "Large live-event environments with visible execution pressure." },
-        { "value": "500+", "label": "Led as MC", "note": "Youth Mass 2025 as a proof point for live communication." },
-        { "value": "2022–25", "label": "Active period", "note": "Sustained involvement across multiple environments." }
+        {
+          "value": "1,000+",
+          "label": "Audience scale",
+          "note": "Large live-event environments with visible execution pressure."
+        },
+        {
+          "value": "500+",
+          "label": "Led as MC",
+          "note": "Youth Mass 2025 as a proof point for live communication."
+        },
+        {
+          "value": "2022–25",
+          "label": "Active period",
+          "note": "Sustained involvement across multiple environments."
+        }
       ],
-      "scope": ["Backstage coordination", "Stage flow management", "Live communication"],
-      "tools": ["Run-of-show planning", "Stage operations", "MC facilitation"],
-      "prev": { "slug": "kpi-governance-record", "title": "A council of thirty-four learns to keep time." },
-      "next": { "slug": "vertical-rescue-ops", "title": "The quieter part of high-risk work is the part nobody films." }
+      "scope": [
+        "Backstage coordination",
+        "Stage flow management",
+        "Live communication"
+      ],
+      "tools": [
+        "Run-of-show planning",
+        "Stage operations",
+        "MC facilitation"
+      ],
+      "prev": {
+        "slug": "kpi-governance-record",
+        "title": "A council of thirty-four learns to keep time."
+      },
+      "next": {
+        "slug": "vertical-rescue-ops",
+        "title": "The quieter part of high-risk work is the part nobody films."
+      }
     },
     "vertical-rescue-ops": {
       "documentTitle": "Vertical Rescue Ops · The Operational Record",
@@ -303,13 +408,36 @@
         "Helped build a culture where preparation isn't optional — it's the baseline."
       ],
       "impact": [
-        { "value": "4+", "label": "Years active", "note": "Sustained involvement in readiness and training work." },
-        { "value": "Routine", "label": "Equipment discipline", "note": "Inspection and maintenance as part of the standard." },
-        { "value": "Field", "label": "Training support", "note": "Hands-on contribution in climbing and belay environments." }
+        {
+          "value": "4+",
+          "label": "Years active",
+          "note": "Sustained involvement in readiness and training work."
+        },
+        {
+          "value": "Routine",
+          "label": "Equipment discipline",
+          "note": "Inspection and maintenance as part of the standard."
+        },
+        {
+          "value": "Field",
+          "label": "Training support",
+          "note": "Hands-on contribution in climbing and belay environments."
+        }
       ],
-      "scope": ["Equipment readiness", "Training support", "Safety discipline"],
-      "tools": ["Inspection routines", "Technical climbing", "Belay support"],
-      "prev": { "slug": "large-scale-event-ops", "title": "When the room is watching, the only thing visible is what fails." },
+      "scope": [
+        "Equipment readiness",
+        "Training support",
+        "Safety discipline"
+      ],
+      "tools": [
+        "Inspection routines",
+        "Technical climbing",
+        "Belay support"
+      ],
+      "prev": {
+        "slug": "large-scale-event-ops",
+        "title": "When the room is watching, the only thing visible is what fails."
+      },
       "next": null
     }
   }

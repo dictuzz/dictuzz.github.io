@@ -80,38 +80,31 @@ function validateResumeContent(raw) {
   if (issues.length > 0) fail(`Invalid resume locale content:\n- ${issues.join('\n- ')}`);
 }
 
-function validatePortfolioCaseStudies(raw) {
+function validatePortfolioLocale(raw, locale) {
   const issues = [];
-  assert(Array.isArray(raw), 'portfolio case studies must be an array', issues);
-  const slugs = new Set();
-  const aliases = new Set();
+  assert(raw?._locale === locale, `portfolio._locale must match "${locale}"`, issues);
+  assert(isObject(raw?.ui), 'portfolio.ui is required', issues);
+  assert(isObject(raw?.landing), 'portfolio.landing is required', issues);
+  assert(typeof raw?.landing?.documentTitle === 'string' && raw.landing.documentTitle.length > 0, 'landing.documentTitle is required', issues);
+  assert(Array.isArray(raw?.landing?.secondary), 'landing.secondary must be an array', issues);
 
-  raw.forEach((item, index) => {
-    assert(typeof item?.slug === 'string' && item.slug.length > 0, `caseStudies[${index}].slug is required`, issues);
-    assert(!slugs.has(item?.slug), `caseStudies[${index}].slug must be unique`, issues);
-    slugs.add(item?.slug);
-    assert(Array.isArray(item?.impact), `caseStudies[${index}].impact must be an array`, issues);
-    assert(Array.isArray(item?.narrative), `caseStudies[${index}].narrative must be an array`, issues);
-    assert(isObject(item?.board), `caseStudies[${index}].board is required`, issues);
-    assert(isObject(item?.image), `caseStudies[${index}].image is required`, issues);
-
-    (item.aliases || []).forEach((alias) => {
-      assert(!aliases.has(alias), `alias "${alias}" must be unique`, issues);
-      assert(alias !== item.slug, `alias "${alias}" cannot match its own slug`, issues);
-      aliases.add(alias);
-    });
+  assert(isObject(raw?.cases), 'portfolio.cases is required', issues);
+  const expectedCases = ['automation-mandate', 'kpi-governance-record', 'large-scale-event-ops', 'vertical-rescue-ops'];
+  expectedCases.forEach((slug) => {
+    const c = raw?.cases?.[slug];
+    assert(isObject(c), `case "${slug}" is required in locale ${locale}`, issues);
+    if (c) {
+      assert(typeof c.title === 'string' && c.title.length > 0, `${slug}.title is required`, issues);
+      assert(Array.isArray(c.narrative) && c.narrative.length > 0, `${slug}.narrative must be non-empty array`, issues);
+      assert(Array.isArray(c.impact) && c.impact.length > 0, `${slug}.impact must be non-empty array`, issues);
+      assert(Array.isArray(c.scope) && c.scope.length > 0, `${slug}.scope must be non-empty array`, issues);
+      assert(Array.isArray(c.tools) && c.tools.length > 0, `${slug}.tools must be non-empty array`, issues);
+      assert(Array.isArray(c.evidence), `${slug}.evidence must be an array`, issues);
+    }
   });
 
-  collectTodoStrings(raw, 'portfolio.caseStudies', issues);
-  if (issues.length > 0) fail(`Invalid portfolio case studies:\n- ${issues.join('\n- ')}`);
-}
-
-function validatePortfolioHome(raw) {
-  const issues = [];
-  assert(typeof raw?.hero?.name === 'string' && raw.hero.name.length > 0, 'portfolio.home.hero.name is required', issues);
-  assert(Array.isArray(raw?.capabilityClusters), 'portfolio.home.capabilityClusters must be an array', issues);
-  collectTodoStrings(raw, 'portfolio.home', issues);
-  if (issues.length > 0) fail(`Invalid portfolio home content:\n- ${issues.join('\n- ')}`);
+  collectTodoStrings(raw, `portfolio.${locale}`, issues);
+  if (issues.length > 0) fail(`Invalid portfolio locale [${locale}]:\n- ${issues.join('\n- ')}`);
 }
 
 async function readJson(relativePath) {
@@ -128,8 +121,10 @@ async function main() {
     validateResumeContent(await readJson(`content/resume/${locale}.json`));
   }
 
-  validatePortfolioCaseStudies(await readJson('content/portfolio/case-studies.json'));
-  validatePortfolioHome(await readJson('content/portfolio/home.json'));
+  for (const locale of ['en', 'id', 'de']) {
+    validatePortfolioLocale(await readJson(`content/portfolio/locales/${locale}.json`), locale);
+  }
+
   process.stdout.write('Content validation passed.\n');
 }
 

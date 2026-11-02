@@ -7,20 +7,10 @@ Thumbs.db
 
 # Editor
 .idea/
+.vscode/
 *.swp
 *.swo
 
-# Next.js Build Output
-portfolio-app/out/
-portfolio-app/.next/
-portfolio-app/build_log.txt
-portfolio-app/tsconfig.tsbuildinfo
-
-# Legacy static-export helper artifacts inside tracked portfolio pages
-portfolio/*/__next*
-portfolio/work/*/__next*
-portfolio/_global-error/
-portfolio/_not-found/
-
-# CI artifacts
+# Build & CI outputs
 results/
+temp/

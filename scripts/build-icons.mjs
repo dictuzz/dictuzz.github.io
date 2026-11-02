@@ -6,26 +6,26 @@ import carbon from '@iconify-json/carbon/icons.json' with { type: 'json' };
 import fluent from '@iconify-json/fluent/icons.json' with { type: 'json' };
 import gravity from '@iconify-json/gravity-ui/icons.json' with { type: 'json' };
 
-function getAllHtmlFiles(dir) {
+function getAllScanFiles(dir) {
   let results = [];
   const list = fs.readdirSync(dir);
   for (const file of list) {
-    if (file === 'node_modules' || file.startsWith('.')) continue;
+    if (file === 'node_modules' || file === '.git' || file.startsWith('.')) continue;
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     if (stat && stat.isDirectory()) {
-      results = results.concat(getAllHtmlFiles(filePath));
-    } else if (filePath.endsWith('.html') || filePath.endsWith('.json')) {
+      results = results.concat(getAllScanFiles(filePath));
+    } else if (filePath.endsWith('.html') || filePath.endsWith('.json') || filePath.endsWith('.js')) {
       results.push(filePath);
     }
   }
   return results;
 }
 
-const targetFiles = getAllHtmlFiles('.');
+const targetFiles = getAllScanFiles('.');
 const iconClasses = new Set();
-// Match directly any token that looks like an icon class
-const classRegex = /(i-(?:ph|twemoji|carbon|fluent|gravity-ui)-[a-z0-9-]+)/g;
+// Match icon class identifiers: i-ph-*, i-twemoji-*, i-carbon-*, i-fluent-*, i-gravity-ui-*
+const classRegex = /\b(i-(?:ph|twemoji|carbon|fluent|gravity-ui)-[a-z0-9-]+)\b/g;
 
 for (const file of targetFiles) {
   const content = fs.readFileSync(file, 'utf8');
@@ -45,8 +45,9 @@ const collections = {
 
 let jsOutput = `// Auto-generated icon data\nexport const ICON_MAP = {\n`;
 
-for (const c of iconClasses) {
-  const parts = c.split('-');
+const sortedIcons = Array.from(iconClasses).sort();
+
+for (const c of sortedIcons) {
   let prefix = '';
   let name = '';
   
@@ -55,25 +56,29 @@ for (const c of iconClasses) {
   else if (c.startsWith('i-carbon-')) { prefix = 'carbon'; name = c.substring(9); }
   else if (c.startsWith('i-fluent-')) { prefix = 'fluent'; name = c.substring(9); }
   else if (c.startsWith('i-gravity-ui-')) { prefix = 'gravity-ui'; name = c.substring(13); }
-  else { prefix = parts[1]; name = parts.slice(2).join('-'); }
+  else {
+    const parts = c.split('-');
+    prefix = parts[1];
+    name = parts.slice(2).join('-');
+  }
 
   const collection = collections[prefix];
-  if (collection && collection.icons[name]) {
+  if (collection && collection.icons && collection.icons[name]) {
     const iconData = collection.icons[name];
     const width = iconData.width || collection.width || 24;
     const height = iconData.height || collection.height || 24;
     
-    // Convert currentcolor to currentColor for case-sensitive matches if any
-    let body = iconData.body.replace(/currentColor/gi, 'currentColor');
-    
+    // Normalize currentcolor
+    const body = iconData.body.replace(/currentcolor/gi, 'currentColor');
     const svgStr = `<svg viewBox="0 0 ${width} ${height}" aria-hidden="true" focusable="false" width="1em" height="1em">${body}</svg>`;
     
-    jsOutput += `  '${c}': \`${svgStr}\`,\n`;
+    // Safely emit using JSON.stringify to prevent broken syntax from backticks or ${}
+    jsOutput += `  ${JSON.stringify(c)}: ${JSON.stringify(svgStr)},\n`;
   } else {
-    console.warn('Icon not found:', c);
+    console.warn('Icon not found in collections:', c);
   }
 }
 
 jsOutput += `};\n`;
-fs.writeFileSync('js/icon-data.js', jsOutput);
-console.log('js/icon-data.js generated successfully.');
+fs.writeFileSync('js/icon-data.js', jsOutput, 'utf8');
+console.log(`js/icon-data.js generated successfully with ${sortedIcons.length} icons.`);

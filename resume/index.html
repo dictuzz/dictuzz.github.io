@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon & PWA -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png?v=2" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
     <link rel="shortcut icon" href="/favicon.ico?v=2" />
@@ -20,16 +19,20 @@
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://dictuzz.me/resume/">
+    <link rel="alternate" hreflang="en" href="https://dictuzz.me/resume/?lang=en">
+    <link rel="alternate" hreflang="id" href="https://dictuzz.me/resume/?lang=id">
+    <link rel="alternate" hreflang="de" href="https://dictuzz.me/resume/?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://dictuzz.me/resume/">
 
     <link rel="preload" href="/assets/images/Aku.webp" as="image" type="image/webp">
     <meta name="theme-color" content="#f5efe4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Critical CSS (Extracted) -->
-    <link rel="stylesheet" href="/css/critical.css?v=v4">
+    <link rel="stylesheet" href="/assets/css/tokens.css?v=v4">
+    <link rel="stylesheet" href="/assets/css/core.css?v=v4">
+    <link rel="stylesheet" href="/resume/resume.css?v=v4">
 
-    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -37,7 +40,6 @@
     <link rel="prefetch" href="/">
     <link rel="prefetch" href="/portfolio/">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://dictuzz.me/resume/">
     <meta property="og:title" content="Systems Architect Resume | Workflow Automation, Operational Governance, 1K+ Event Scale | dictuzz">
@@ -49,7 +51,6 @@
     <meta property="og:site_name" content="dictuzz">
     <meta property="og:locale" content="en_US">
 
-    <!-- JSON-LD Schema -->
     <script id="resume-structured-data" type="application/ld+json">
     [
       {
@@ -63,7 +64,6 @@
     ]
     </script>
 
-    <!-- Fonts (Lazy Load) - Modern Premium Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
@@ -73,51 +73,41 @@
             rel="stylesheet">
     </noscript>
 
-    <!-- Main Styles (Deferred) -->
-    <link rel="preload" href="/resume/resume.css?v=v4" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="/resume/resume.css?v=v4">
-    </noscript>
 </head>
 
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Navigation -->
     <nav class="nav glass" role="navigation" aria-label="Main navigation">
         <div class="nav__container">
-            <!-- Logo (mobile) -->
             <a href="/" class="nav__logo" aria-label="Back to home">
                 <img src="/favicon-96x96.png?v=2" alt="Home" width="32" height="32">
             </a>
 
-            <!-- Mobile toggle -->
             <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <!-- Nav links -->
-            <ul class="nav__links" role="menubar">
-                <li role="none"><a href="#hero" class="nav__link" role="menuitem" data-i18n="nav.home">Home</a></li>
-                <li role="none"><a href="#about" class="nav__link" role="menuitem" data-i18n="nav.about">About</a></li>
-                <li role="none"><a href="#experience" class="nav__link" role="menuitem"
+            <ul class="nav__links">
+                <li><a href="#hero" class="nav__link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" class="nav__link" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" class="nav__link"
                         data-i18n="nav.experience">Experience</a></li>
-                <li role="none"><a href="#education" class="nav__link" role="menuitem"
+                <li><a href="#education" class="nav__link"
                         data-i18n="nav.education">Education</a></li>
-                <li role="none"><a href="#impact" class="nav__link" role="menuitem" data-i18n="nav.impact">Impact</a>
+                <li><a href="#impact" class="nav__link" data-i18n="nav.impact">Impact</a>
                 </li>
-                <li role="none"><a href="#skills" class="nav__link" role="menuitem" data-i18n="nav.skills">Skills</a>
+                <li><a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
                 </li>
-                <li role="none"><a href="#awards" class="nav__link" role="menuitem" data-i18n="nav.awards">Awards</a>
+                <li><a href="#awards" class="nav__link" data-i18n="nav.awards">Awards</a>
                 </li>
-                <li role="none"><a href="#volunteering" class="nav__link" role="menuitem" data-i18n="nav.volunteering">Volunteering</a>
+                <li><a href="#volunteering" class="nav__link" data-i18n="nav.volunteering">Volunteering</a>
                 </li>
-                <li role="none"><a href="#connect" class="nav__link" role="menuitem" data-i18n="nav.contact">Contact</a>
+                <li><a href="#connect" class="nav__link" data-i18n="nav.contact">Contact</a>
                 </li>
             </ul>
 
-            <!-- Language Switcher -->
             <div class="nav__lang" role="group" aria-label="Language selection">
                 <button class="lang-btn active" data-lang="en" aria-label="English" aria-pressed="true">
                     <span class="lang-flag" aria-hidden="true">EN</span>
@@ -134,32 +124,26 @@
 
     <section id="hero" class="hero">
         <div class="container hero__container">
-            <!-- Left side - Photo -->
             <div class="hero__photo-section">
                 <div class="hero__photo-wrapper">
                     <div class="hero__photo glass">
                         <img src="/assets/images/Aku.webp" alt="Benedictus Richard Ricardo" loading="eager" width="560"
                             height="771" fetchpriority="high">
                     </div>
-                    <!-- Photo decorations -->
                     <div class="hero__photo-ring"></div>
                     <div class="hero__photo-dots"></div>
-                    <!-- Theme Toggle -->
                     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode"
                         title="Toggle theme">
                         <i class="i-ph-sun-duotone" id="theme-icon"></i>
                     </button>
                 </div>
-                <!-- Status badge -->
                 <div class="hero__status glass">
                     <span class="hero__status-dot"></span>
                     <span id="hero-status-text" data-i18n="hero.status"></span>
                 </div>
             </div>
 
-            <!-- Right side - Content -->
             <div class="hero__content">
-                <!-- Tagline with typing -->
                 <p class="hero__tagline">
                     <span id="typing-static"></span>
                     <span id="typing-dynamic"></span>
@@ -172,16 +156,13 @@
                     <span class="hero__name-line">RICARDO</span>
                 </h1>
 
-                <!-- Role -->
                 <p class="hero__role">
                     <span class="hero__role-icon">◆</span>
                     <span data-i18n="hero.role">Systems Architect &amp; Automation Specialist</span>
                 </p>
 
-                <!-- Subtitle -->
                 <p class="hero__subtitle" data-i18n="hero.subtitle">Building systems that scale operations and eliminate friction.</p>
 
-                <!-- CTA Buttons -->
                 <div class="hero__actions">
                     <a href="#connect" class="btn btn--primary btn--glow">
                         <span data-i18n="hero.cta1">Let's Talk</span>
@@ -218,10 +199,7 @@
         </a>
     </section>
 
-
-    <!-- Main Content -->
     <main id="main-content">
-        <!-- About Section -->
         <section id="about" class="section" aria-labelledby="about-title">
             <div class="container">
                 <h2 id="about-title" class="section__title section__title--big reveal" data-i18n="section.summary">ABOUT
@@ -246,13 +224,11 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="section" aria-labelledby="experience-title">
             <div class="container">
                 <h2 id="experience-title" class="section__title reveal" data-i18n="section.experience">EXPERIENCE</h2>
                 <p class="section__lede reveal" data-i18n="sectionLede.experience">Roles focused on workflow automation, operational leadership, training readiness, and event execution.</p>
-                <div class="timeline" aria-live="polite">
-                    <!-- Skeleton loader (replaced by JS) -->
+                <div class="timeline">
                     <div class="glass card">
                         <div class="skeleton skeleton--title"></div>
                         <div class="skeleton skeleton--text"></div>
@@ -262,13 +238,11 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="section" aria-labelledby="education-title">
             <div class="container">
                 <h2 id="education-title" class="section__title reveal" data-i18n="section.education">EDUCATION</h2>
                 <p class="section__lede reveal" data-i18n="sectionLede.education">Academic background supporting data analysis, systems thinking, and process improvement.</p>
-                <div class="grid grid--2" id="education-list" aria-live="polite">
-                    <!-- Skeleton loader (replaced by JS) -->
+                <div class="grid grid--2" id="education-list">
                     <div class="glass card">
                         <div class="skeleton skeleton--title"></div>
                         <div class="skeleton skeleton--text"></div>
@@ -285,7 +259,7 @@
             <div class="container">
                 <h2 id="certifications-title" class="section__title reveal" data-i18n="section.certifications">CERTIFICATIONS &amp; TRAINING</h2>
                 <p class="section__lede reveal" data-i18n="sectionLede.certifications">Verified training and language credentials relevant to structured work and international collaboration.</p>
-                <div class="grid grid--2" id="certifications-list" aria-live="polite">
+                <div class="grid grid--2" id="certifications-list">
                     <div class="glass card">
                         <div class="skeleton skeleton--title"></div>
                         <div class="skeleton skeleton--text"></div>
@@ -294,14 +268,12 @@
             </div>
         </section>
 
-        <!-- Operational Impact Highlights Section -->
         <section id="impact" class="section" aria-labelledby="impact-title">
             <div class="container">
                 <h2 id="impact-title" class="section__title reveal" data-i18n="section.impact">OPERATIONAL IMPACT
                     HIGHLIGHTS</h2>
                 <p class="section__lede reveal" data-i18n="sectionLede.impact">Selected examples of measurable results in reporting automation, governance, and operations.</p>
-                <div class="impact__list grid grid--2" aria-live="polite">
-                    <!-- Skeleton loader (replaced by JS) -->
+                <div class="impact__list grid grid--2">
                     <div class="glass card">
                         <div class="skeleton skeleton--title"></div>
                         <div class="skeleton skeleton--text"></div>
@@ -310,8 +282,6 @@
             </div>
         </section>
 
-
-        <!-- Skills Section -->
         <section id="skills" class="section" aria-labelledby="skills-title">
             <div class="container">
                 <h2 id="skills-title" class="section__title reveal" data-i18n="section.skills">SKILLS</h2>
@@ -320,13 +290,11 @@
             </div>
         </section>
 
-        <!-- Awards Section -->
         <section id="awards" class="section" aria-labelledby="awards-title">
             <div class="container">
                 <h2 id="awards-title" class="section__title reveal" data-i18n="section.awards">AWARDS</h2>
                 <p class="section__lede reveal" data-i18n="sectionLede.awards">Selected awards and recognition tied to communication, creativity, and performance.</p>
-                <ul class="awards__list glass card reveal" id="awards-list" aria-live="polite">
-                    <!-- Skeleton loader -->
+                <ul class="awards__list glass card reveal" id="awards-list">
                     <li>
                         <div class="skeleton skeleton--text"></div>
                     </li>
@@ -334,13 +302,11 @@
             </div>
         </section>
 
-        <!-- Volunteering Section -->
         <section id="volunteering" class="section" aria-labelledby="volunteering-title">
             <div class="container">
                 <h2 id="volunteering-title" class="section__title reveal" data-i18n="section.volunteering">VOLUNTEERING & COMMUNITY</h2>
                 <p class="section__lede reveal" data-i18n="sectionLede.volunteering">Community contributions in youth leadership, church service, and outdoor safety training.</p>
-                <div class="timeline" aria-live="polite" id="volunteering-list">
-                    <!-- Skeleton loader (replaced by JS) -->
+                <div class="timeline" id="volunteering-list">
                     <div class="glass card">
                         <div class="skeleton skeleton--title"></div>
                         <div class="skeleton skeleton--text"></div>
@@ -350,16 +316,13 @@
             </div>
         </section>
 
-        <!-- Connect Section -->
         <section id="connect" class="section" aria-labelledby="connect-title">
             <div class="container">
                 <h2 id="connect-title" class="section__title section__title--big reveal" data-i18n="connect.title">Let's
                     Connect</h2>
                 <p class="section__lede reveal" data-i18n="sectionLede.contact">Primary contact routes for interviews, partnerships, freelance work, and professional conversations.</p>
 
-                <!-- Bento Grid -->
                 <div class="bento">
-                    <!-- Schedule -->
                     <a href="#" target="_blank" rel="noopener noreferrer" id="connect-schedule-link"
                         class="bento__item bento__item--lg glass glass--hover reveal">
                         <div class="bento__icon"><i class="i-ph-video-camera-duotone"></i></div>
@@ -370,7 +333,6 @@
                         <div class="bento__arrow"><i class="i-ph-arrow-right-duotone"></i></div>
                     </a>
 
-                    <!-- WhatsApp -->
                     <a href="#" target="_blank" rel="noopener noreferrer" id="connect-whatsapp-link"
                         class="bento__item bento__item--whatsapp glass glass--hover reveal">
                         <div class="bento__icon"><i class="i-ph-whatsapp-logo-duotone"></i></div>
@@ -381,7 +343,6 @@
                         <div class="bento__arrow"><i class="i-ph-arrow-right-duotone"></i></div>
                     </a>
 
-                    <!-- Email -->
                     <a href="#" id="connect-email-link" class="bento__item bento__item--full glass glass--hover reveal">
                         <div class="bento__icon"><i class="i-ph-envelope-duotone"></i></div>
                         <div class="bento__content">
@@ -391,32 +352,26 @@
                         <div class="bento__arrow"><i class="i-ph-arrow-right-duotone"></i></div>
                     </a>
 
-                    <!-- LinkedIn -->
                     <a href="#" target="_blank" rel="noopener noreferrer" id="connect-linkedin-link"
                         class="bento__item bento__item--social bento__item--linkedin glass glass--hover reveal">
                         <div class="bento__icon"><i class="i-ph-linkedin-logo-duotone"></i></div>
                         <span>LinkedIn</span>
                     </a>
 
-                    <!-- Instagram -->
                     <a href="#" target="_blank" rel="noopener noreferrer" id="connect-instagram-link"
                         class="bento__item bento__item--social bento__item--instagram glass glass--hover reveal">
                         <div class="bento__icon"><i class="i-ph-instagram-logo-duotone"></i></div>
                         <span>Instagram</span>
                     </a>
 
-                    <!-- GitHub -->
                     <a href="#" target="_blank" rel="noopener noreferrer" id="connect-github-link"
                         class="bento__item bento__item--social bento__item--github glass glass--hover reveal">
                         <div class="bento__icon"><i class="i-ph-github-logo-duotone"></i></div>
                         <span>GitHub</span>
                     </a>
 
-
                 </div>
 
-
-                <!-- CV Download -->
                 <div class="flex flex--center mt-12 gap-4">
                     <a href="https://canva.link/benedictus-richard-ricardo-en" target="_blank" rel="noopener noreferrer"
                         id="download-canva-link" class="btn btn--outline btn--glow reveal" data-i18n="connect.visualCv">View Visual Resume &rarr;</a>
@@ -430,9 +385,25 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="global-footer"></footer>
-
+    <footer class="global-footer">
+            <nav class="global-footer__nav" aria-label="Global navigation">
+                <a href="/" class="global-footer__link">Home</a>
+                <a href="/resume/" class="global-footer__link" aria-current="page">Resume</a>
+                <a href="/portfolio/" class="global-footer__link">Portfolio</a>
+                <a href="/resources/" class="global-footer__link">Resources</a>
+            </nav>
+            <div class="global-footer__contacts">
+                <a href="mailto:contact@dictuzz.me" class="global-footer__contact-link" aria-label="Email Benedictus"><i class="i-ph-envelope-simple-duotone"></i> contact@dictuzz.me</a>
+                <span class="global-footer__divider">&bull;</span>
+                <a href="https://linkedin.com/in/dictuzz" class="global-footer__contact-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="i-ph-linkedin-logo-duotone"></i> LinkedIn</a>
+                <span class="global-footer__divider">&bull;</span>
+                <a href="https://github.com/dictuzz" class="global-footer__contact-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="i-ph-github-logo-duotone"></i> GitHub</a>
+            </div>
+            <p class="global-footer__copy">
+                &copy; 2026 Benedictus Richard Ricardo.
+                <span>Systems Architect &amp; Automation Specialist</span>
+            </p>
+        </footer>
 
     <script type="module" src="/resume/resume.js?v=v4"></script>
 </body>

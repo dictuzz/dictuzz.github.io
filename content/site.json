@@ -3,15 +3,12 @@
     "name": "dictuzz",
     "domain": "dictuzz.me",
     "siteUrl": "https://dictuzz.me",
-    "defaultLocale": "en",
-    "themeColorLight": "#f5efe4",
-    "themeColorDark": "#121820"
+    "themeColorLight": "#f5efe4"
   },
   "profile": {
     "name": "Benedictus Richard Ricardo",
     "handle": "dictuzz",
     "title": "Systems Architect & Automation Specialist",
-    "description": "Operations specialist focused on building self-sustaining systems: automated reporting pipelines, standardized SOPs, and coordination frameworks that hold under pressure.",
     "longDescription": "Based in Bandung, Indonesia. Specializing in reporting automation, process standardization, and operational coordination. Currently a Route to Market Analyst at Tirta Utama Abadi and pursuing a Data Science degree at Universitas Terbuka.",
     "motto": "Quam Plurimi et Quam Aptissimi.",
     "image": {
@@ -127,7 +124,7 @@
       "home": {
         "path": "/",
         "title": "Systems Architect & Automation Specialist — 12+ hrs/week of Manual Work Eliminated | dictuzz",
-        "description": "I've cut 12+ hrs/week of manual reporting, run governance for 30+ team members, and kept 1,000-person events on track from backstage. Based in Bandung, GMT+7.",
+        "description": "I've cut 12+ hrs/week of manual reporting, run governance for 34 team members, and kept 1,000-person events on track from backstage. Based in Bandung, GMT+7.",
         "ogType": "website"
       },
       "resume": {
@@ -145,7 +142,6 @@
       "portfolio": {
         "path": "/portfolio/",
         "title": "The Operational Record: Case Studies in Workflow Automation & Operational Governance | dictuzz",
-        "titleTemplate": "%s · The Operational Record | dictuzz",
         "description": "Case studies from real operational work — how a reporting cycle got 12 hours back, how a 34-member council learned to keep score, and what backstage looks like at 1,000-person events.",
         "ogType": "website"
       },

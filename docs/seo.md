@@ -1,6 +1,6 @@
 # SEO Implementation
 
-Last updated: 2026-06-02
+Last updated: 2026-11-02
 
 ## Architecture
 
@@ -9,6 +9,8 @@ This is a static HTML site with JavaScript modules that dynamically enhance page
 1. **HTML source (primary)** — All `<title>`, `<meta>`, Open Graph, Twitter Card, and JSON-LD tags contain real values in the static HTML. This ensures crawlers that do not execute JavaScript (Facebook, Twitter/X, LinkedIn, most bots) see complete metadata.
 
 2. **JavaScript runtime (secondary)** — The `js/site-seo.js` and `resume/resume-seo.js` modules update meta tags dynamically from `content/site.json` and locale-specific content files. This enables language switching on the resume page without breaking the static defaults.
+
+The portfolio landing page and the four case files are prerendered in English by `scripts/prerender_portfolio.py` before deploy. That script fills the `data-*` placeholders and the `application/ld+json` slot from `content/portfolio/locales/en.json`, so no-JS crawlers get the full issue and `portfolio.js` only replaces it when the visitor picks another language. CI runs `python3 scripts/prerender_portfolio.py --check` and fails when the checked-in HTML is stale.
 
 ## Meta Tags
 
@@ -20,6 +22,14 @@ Every page has:
 - `<meta name="robots">` with `index, follow` (except 404 page: `noindex, nofollow`)
 - `<link rel="canonical">` with absolute URL
 - `<meta name="google-site-verification">` placeholder (needs real code)
+
+### Hreflang Configuration
+
+The resume page (`/resume/`) serves multilingual content across three locales. It declares bidirectional alternate hreflang links:
+- `en`: `https://dictuzz.me/resume/?lang=en`
+- `id`: `https://dictuzz.me/resume/?lang=id`
+- `de`: `https://dictuzz.me/resume/?lang=de`
+- `x-default`: `https://dictuzz.me/resume/`
 
 ## Open Graph & Twitter Cards
 
@@ -39,8 +49,8 @@ All OG images include `og:image:width` (1200) and `og:image:height` (630). All p
 | `/` | `Person`, `WebSite`, `ProfilePage` | Pre-populated in HTML, updated by JS |
 | `/resume/` | `BreadcrumbList` (static), `Person`, `ProfilePage` (JS) | Hybrid |
 | `/terms/` | `BreadcrumbList`, `WebPage` | Static HTML |
-| `/portfolio/` | `CollectionPage`, `ItemList` | Static HTML |
-| `/portfolio/cases/<slug>/` | `Article` | Static HTML |
+| `/portfolio/` | `CollectionPage`, `ItemList` | Static HTML (prerendered), updated by JS |
+| `/portfolio/cases/<slug>/` | `Article` | Static HTML (prerendered), updated by JS |
 
 ### Person Schema (Homepage)
 Includes: name, alternateName, jobTitle, description, url, image, email, nationality, address, sameAs (7 social profiles + WhatsApp), knowsAbout (6 skills).
@@ -51,8 +61,9 @@ Extended with: alumniOf, detailed knowsAbout from skills collections, section-le
 ## Sitemap
 
 - Located at `/sitemap.xml`, referenced from `/robots.txt`
-- Includes: `/`, `/resume/`, `/portfolio/`, all `/portfolio/cases/<slug>/`, `/resources/`, `/terms/`
+- Includes: `/`, `/resume/`, `/portfolio/`, all 4 `/portfolio/cases/<slug>/`, `/resources/`, `/resources/search.html`, all 24 `/resources/<topic>.html` pages, and `/terms/` (34 pages total)
 - Each entry has `<lastmod>`, `<changefreq>`, and `<priority>`
+- `<lastmod>` reflects verified commit history per file from git.
 - Excludes: `/404.html`, `/scripts/`, `/tests/`
 
 ## robots.txt
@@ -85,10 +96,13 @@ Sitemap: https://dictuzz.me/sitemap.xml
 
 ## External Link Policy
 
-All external links (`target="_blank"`) include `rel="noopener noreferrer"` for security. This is enforced in:
-- Static HTML templates
+All newly authored external links (`target="_blank"`) should include `rel="noopener noreferrer"`. The renderers that create links at runtime already do:
+
 - `js/site-renderers.js` (dynamic folder items and footer contacts)
 - `resume/resume-renderers.js` (dynamic resume content)
+- `portfolio/portfolio.js` (contact actions)
+
+This is **not** yet true for the hand-written resource pages under `resources/`: roughly 4,000 `target="_blank"` anchors there have no `rel` attribute (mostly `rel="nofollow"` variants or none). `noopener` is implicit for modern browsers, but the attribute is still expected. Treat this as an open cleanup item rather than an enforced invariant.
 
 ## 404 Page
 
@@ -98,6 +112,4 @@ All external links (`target="_blank"`) include `rel="noopener noreferrer"` for s
 
 ## Core Web Vitals Baseline
 
-- LCP: ~228 ms ✅
-- FCP: ~228 ms ✅
-- See `docs/performance.md` for full metrics.
+No Lighthouse or field measurement is recorded in this repository, and CI does not run Lighthouse against the public pages yet. The previous "LCP ~228 ms / FCP ~228 ms" figures were not reproducible and have been removed. See `docs/performance.md` for the current checks and the open follow-up to record real metrics.

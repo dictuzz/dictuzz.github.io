@@ -81,7 +81,10 @@ jobs:
           # Increase default timeout for large pages
           NODE_OPTIONS: '--max-http-header-size=32768'
 
-      - name: Run tests
+      - name: Validate content schema
+        run: npm run validate:content
+
+      - name: Run tests (links, search-index, sitemap, content)
         run: npm test
 
       - name: Check for changes

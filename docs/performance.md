@@ -21,12 +21,19 @@ Run:
 ```bash
 npm run validate:content
 npm test
+npm run test:a11y
+npm run test:a11y:ci
 ```
 
-These checks validate content contracts and the homepage rendering paths. They do not currently run Lighthouse or asset-budget checks.
+These automated checks run on Node `--test` and CI actions:
+- `validate:content`: validates shared site, home, resume, and portfolio locale schemas.
+- `tests/links.test.js`: verifies all internal routes and anchors resolve to existing elements across all 34 HTML files.
+- `tests/search-index.test.js`: verifies search index data, targets, and checks for entity leaks.
+- `tests/sitemap.test.js`: verifies 34 pages with valid `<lastmod>`.
+- `tests/portfolio.test.js`: verifies static case article prerendering and Schema.org metadata.
+- `test:a11y` & `test:a11y:ci`: evaluates WCAG 2.1 AA via axe and runs Lighthouse CI assertions against `.lighthouse-budget.json` / `lighthouserc.json` (min 98% accessibility, 90% category budgets).
 
 ## Known Follow-Up
 
-- Add an automated link/asset audit for internal routes and anchors.
-- Add a size budget for large images before committing new assets.
-- Re-run Lighthouse after any major visual or image change and record fresh metrics here.
+- Add a pre-commit size budget check for uncompressed images.
+- Periodically verify real device Core Web Vitals via Chrome UX Report / Search Console.

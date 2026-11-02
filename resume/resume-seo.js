@@ -22,25 +22,18 @@ export function updateResumeSeo(siteConfig, content, lang) {
     const personId = `${siteConfig.site.siteUrl}/#person`;
     const sections = getSectionSnapshot(siteConfig.site.siteUrl);
 
-    // Update document language for screen readers
-    document.documentElement.lang = lang;
 
-    // Update og:locale
-    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', `${lang}_${lang.toUpperCase()}`);
 
-    // Update hreflang links
-    const altLinks = document.querySelectorAll('link[rel="alternate"][hreflang]');
-    altLinks.forEach(link => {
-        const hrefLang = link.getAttribute('hreflang');
-        if (hrefLang === lang) link.setAttribute('hreflang', 'x-default');
-        else if (hrefLang === 'x-default') link.setAttribute('hreflang', lang);
-    });
+    // Update og:locale to standard valid BCP-47 / OpenGraph values
+    const ogLocales = { en: 'en_US', id: 'id_ID', de: 'de_DE' };
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', ogLocales[lang] || 'en_US');
 
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', resumeUrl);
     document.querySelector('meta[property="og:type"]')?.setAttribute('content', pageSeo.ogType);
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content', resumeUrl);
+    const currentUrl = lang === 'en' ? resumeUrl : `${resumeUrl}?lang=${lang}`;
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', currentUrl);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
     document.querySelector('meta[property="og:image"]')?.setAttribute('content', toAbsoluteUrl(siteConfig.site.siteUrl, siteConfig.profile.image.resumeOg));

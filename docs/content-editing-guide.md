@@ -24,7 +24,6 @@ Struktur resume dipisah menjadi:
 - `sections`: pengalaman, pendidikan, impact, awards, dll
 - `collections`: skills dan languages
 - `seo`: deskripsi halaman resume
-- `downloads`: (Obsolete/Usang) Tidak lagi digunakan karena sekarang menggunakan generator ATS PDF dinamis berbasis data JSON.
 
 Jika menambah locale baru, gunakan shape file resume yang sama persis.
 
@@ -34,12 +33,11 @@ Jika menambah locale baru, gunakan shape file resume yang sama persis.
 - [`/content/portfolio/locales/id.json`](../content/portfolio/locales/id.json)
 - [`/content/portfolio/locales/de.json`](../content/portfolio/locales/de.json)
   Untuk copy runtime portfolio, landing edition, dan case-file content per bahasa.
-- [`/content/portfolio/home.json`](../content/portfolio/home.json)
-  Legacy dataset untuk intro board, capability clusters, dan dispatch/contact card.
-- [`/content/portfolio/case-studies.json`](../content/portfolio/case-studies.json)
-  Legacy structured dataset untuk seluruh case study, alias slug, impact metric, board presentation, image, dan narrative.
-
-Menambah case baru perlu tiga langkah: tambahkan HTML shell di `/portfolio/cases/<slug>/index.html`, tambahkan content per bahasa di `/content/portfolio/locales/*.json`, lalu sinkronkan legacy dataset jika masih ingin mempertahankan validasi case-study lama.
+Menambah case study baru:
+1. Tambahkan HTML shell di `/portfolio/cases/<slug>/index.html`
+2. Tambahkan content per bahasa di `/content/portfolio/locales/{en,id,de}.json`
+3. Jalankan `python scripts/prerender_portfolio.py` untuk menghasilkan prerender statis dan Schema.org Article metadata
+4. Jalankan `npm run validate:content` dan `npm test` untuk memverifikasi validitas schema dan routing
 
 ## Ubah resources
 

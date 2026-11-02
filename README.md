@@ -32,8 +32,7 @@ The repo is a hand-written static site:
 - [`/assets/css/tokens.css`](./assets/css/tokens.css): canonical design tokens (Fraunces + Manrope, light/dark, spacing, color, type scale)
 - [`/assets/css/core.css`](./assets/css/core.css): shared utilities (footer, glass, etc.)
 - [`/css/site.css`](./css/site.css): homepage layout + shared layer
-- [`/css/critical.css`](./css/critical.css): resume above-the-fold critical CSS
-- [`/resume/resume.css`](./resume/resume.css): resume layout
+- [`/resume/resume.css`](./resume/resume.css): complete resume styles (base, nav, hero, sections, timeline, contact, print)
 - [`/portfolio/portfolio.css`](./portfolio/portfolio.css): editorial / magazine layout for the portfolio
 - [`/css/404.css`](./css/404.css): 404 arcade page
 
@@ -56,8 +55,6 @@ All copy, profile data, and SEO defaults live as JSON in `/content/`:
 - [`/content/home.json`](./content/home.json): homepage folders and link groups
 - [`/content/resume/{en,id,de}.json`](./content/resume): resume content per locale
 - [`/content/portfolio/locales/{en,id,de}.json`](./content/portfolio/locales): runtime portfolio content and case-file copy
-- [`/content/portfolio/case-studies.json`](./content/portfolio/case-studies.json): legacy structured case-study dataset used by validation and documentation
-- [`/content/portfolio/home.json`](./content/portfolio/home.json): legacy portfolio intro / contact dataset
 
 The portfolio runtime reads locale JSON from `/content/portfolio/locales/`. Static HTML shells and case pages still contain crawler-friendly defaults, so content changes that affect visible portfolio copy should keep both the locale JSON and static HTML fallbacks aligned.
 
@@ -97,9 +94,13 @@ There is no separate build step. Editing HTML / CSS / JS / JSON updates the site
 
 Defined in [`/package.json`](./package.json):
 
-- `npm run dev`: serve the static site
-- `npm run validate:content`: validate all shared content contracts (TODO placeholders, slug uniqueness, required fields)
-- `npm test`: run root tests (Node `--test` runner)
+- `npm run dev`: serve the static site locally
+- `npm run validate:content`: validate all shared content contracts and portfolio locale schemas
+- `npm test`: run automated test suite (links, search index, sitemap, portfolio, and content validation)
+- `npm run test:a11y`: run axe-core accessibility audit (WCAG 2.1 AA)
+- `npm run test:a11y:ci`: run Lighthouse CI against local server with budget assertions
+- `npm run build:icons`: compile icon SVG bundles from Iconify sources
+- `npm run build:search-index`: build search index from resource HTML files
 
 ## Testing
 

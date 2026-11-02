@@ -26,8 +26,9 @@ export function updateTyping(strings) {
     if (!dynamicEl) return;
     if (resumeState.typerInstance) resumeState.typerInstance.stop();
     dynamicEl.textContent = '';
-    dynamicEl.setAttribute('aria-live', 'polite');
-    dynamicEl.setAttribute('aria-atomic', 'true');
+    dynamicEl.removeAttribute('aria-live');
+    dynamicEl.removeAttribute('aria-atomic');
+    dynamicEl.setAttribute('aria-hidden', 'true');
     resumeState.typerInstance = new Typer(dynamicEl, strings.hero.typing.dynamicTexts, 80);
 }
 
@@ -53,9 +54,13 @@ export function initInteractions() {
     });
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        const href = anchor.getAttribute('href');
+        // Buttons wired to JavaScript (e.g. the ATS resume download) use href="#" as a
+        // placeholder; "#" is not a valid selector, so leave those to their own handler.
+        if (!href || href === '#') return;
         anchor.addEventListener('click', (event) => {
             event.preventDefault();
-            const target = document.querySelector(anchor.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
                 document.querySelector('.nav__links')?.classList.remove('open');

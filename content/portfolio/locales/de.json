@@ -13,13 +13,17 @@
     "themeToLight": "Zum hellen Modus wechseln",
     "themeToDark": "Zum dunklen Modus wechseln",
     "languageLabel": "Sprache",
-    "languages": { "en": "EN", "id": "ID", "de": "DE" },
-    "languageNames": { "en": "Englisch", "id": "Indonesisch", "de": "Deutsch" },
+    "languages": {
+      "en": "EN",
+      "id": "ID",
+      "de": "DE"
+    },
+    "languageNames": {
+      "en": "Englisch",
+      "id": "Indonesisch",
+      "de": "Deutsch"
+    },
     "byline": "Von",
-    "filed": "Verfasst aus",
-    "edition": "Ausgabe",
-    "issue": "Nr. 1",
-    "vol": "Bd. I",
     "magazineLabel": "Eine Zeitschrift für Systeme & Automatisierung",
     "previous": "Zurück",
     "next": "Weiter",
@@ -27,10 +31,7 @@
     "scope": "Umfang",
     "tools": "Werkzeuge & Methoden",
     "impact": "Wirkung",
-    "evidence": "Aktenkundig",
-    "context": "Ausgangslage",
-    "intervention": "Was gebaut wurde",
-    "outcome": "Ergebnis"
+    "evidence": "Aktenkundig"
   },
   "landing": {
     "documentTitle": "Fallstudien zu Workflow-Automatisierung & Operativer Governance | Das Operative Protokoll | dictuzz",
@@ -90,10 +91,22 @@
         "Gerade studiere ich Data Science an der Universitas Terbuka. Das verändert, wie ich an Abläufe herangehe — mehr Daten und Fakten, weniger Bauchgefühl."
       ],
       "facts": [
-        { "label": "Sitz", "value": "Bandung, Indonesien · UTC+7" },
-        { "label": "Studium", "value": "Datenwissenschaft, Universitas Terbuka" },
-        { "label": "Sprachen", "value": "Englisch · Indonesisch · Deutsch" },
-        { "label": "Stil", "value": "Strukturiert, ruhig, belegbasiert" }
+        {
+          "label": "Sitz",
+          "value": "Bandung, Indonesien · UTC+7"
+        },
+        {
+          "label": "Studium",
+          "value": "Datenwissenschaft, Universitas Terbuka"
+        },
+        {
+          "label": "Sprachen",
+          "value": "Englisch · Indonesisch · Deutsch"
+        },
+        {
+          "label": "Stil",
+          "value": "Strukturiert, ruhig, belegbasiert"
+        }
       ]
     },
     "contact": {
@@ -101,9 +114,26 @@
       "title": "Offen für Gespräche über Systeme, Automatisierung und Betriebsabläufe.",
       "body": "Passt am besten für Teams oder Rollen, die sauberere Abläufe, weniger Handarbeit oder eine solidere Betriebsstruktur brauchen. Erreichbar in GMT+7.",
       "actions": [
-        { "type": "primary", "label": "contact@dictuzz.me", "href": "mailto:contact@dictuzz.me", "icon": "envelope" },
-        { "type": "ghost", "label": "Termin vereinbaren", "href": "https://calendar.app.google/39u2qGH6ybaFenhdA", "icon": "calendar", "external": true },
-        { "type": "ghost", "label": "LinkedIn", "href": "https://linkedin.com/in/dictuzz", "icon": "linkedin", "external": true }
+        {
+          "type": "primary",
+          "label": "contact@dictuzz.me",
+          "href": "mailto:contact@dictuzz.me",
+          "icon": "envelope"
+        },
+        {
+          "type": "ghost",
+          "label": "Termin vereinbaren",
+          "href": "https://calendar.app.google/39u2qGH6ybaFenhdA",
+          "icon": "calendar",
+          "external": true
+        },
+        {
+          "type": "ghost",
+          "label": "LinkedIn",
+          "href": "https://linkedin.com/in/dictuzz",
+          "icon": "linkedin",
+          "external": true
+        }
       ]
     }
   },
@@ -142,14 +172,37 @@
         "Die Arbeit von 'jemand muss dran denken' zu einem festen, wöchentlichen Standard umgestellt."
       ],
       "impact": [
-        { "value": "12+", "label": "Stunden pro Woche gespart", "note": "Manueller Berichtsaufwand aus dem regulären Zyklus entfernt." },
-        { "value": "3", "label": "Funktionen abgestimmt", "note": "Finanzen, Vertrieb und Operations auf einer Struktur." },
-        { "value": "1", "label": "Gemeinsame Routine", "note": "Automatisierung und SOPs zu einem wiederholbaren Wochenfluss verbunden." }
+        {
+          "value": "12+",
+          "label": "Stunden pro Woche gespart",
+          "note": "Manueller Berichtsaufwand aus dem regulären Zyklus entfernt."
+        },
+        {
+          "value": "3",
+          "label": "Funktionen abgestimmt",
+          "note": "Finanzen, Vertrieb und Operations auf einer Struktur."
+        },
+        {
+          "value": "1",
+          "label": "Gemeinsame Routine",
+          "note": "Automatisierung und SOPs zu einem wiederholbaren Wochenfluss verbunden."
+        }
       ],
-      "scope": ["Design des Berichtsworkflows", "Excel-Automatisierung", "SOP-Standardisierung"],
-      "tools": ["Excel", "Operatives Reporting", "SOP-Design"],
+      "scope": [
+        "Design des Berichtsworkflows",
+        "Excel-Automatisierung",
+        "SOP-Standardisierung"
+      ],
+      "tools": [
+        "Excel",
+        "Operatives Reporting",
+        "SOP-Design"
+      ],
       "prev": null,
-      "next": { "slug": "kpi-governance-record", "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten." }
+      "next": {
+        "slug": "kpi-governance-record",
+        "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten."
+      }
     },
     "kpi-governance-record": {
       "documentTitle": "KPI-basierte Governance · Das Operative Protokoll",
@@ -185,14 +238,40 @@
         "Outreach-Kampagnen gesteuert, die 12 Zubringerschulen erreicht haben."
       ],
       "impact": [
-        { "value": "34", "label": "Mitglieder geführt", "note": "Führungsumfang für die gesamte Organisation." },
-        { "value": "10", "label": "Abteilungen koordiniert", "note": "Governance über den gesamten Rat hinweg." },
-        { "value": "12", "label": "Zuliefernde Schulen erreicht", "note": "Reichweite einer wesentlichen Outreach-Kampagne." }
+        {
+          "value": "34",
+          "label": "Mitglieder geführt",
+          "note": "Führungsumfang für die gesamte Organisation."
+        },
+        {
+          "value": "10",
+          "label": "Abteilungen koordiniert",
+          "note": "Governance über den gesamten Rat hinweg."
+        },
+        {
+          "value": "12",
+          "label": "Zuliefernde Schulen erreicht",
+          "note": "Reichweite einer wesentlichen Outreach-Kampagne."
+        }
       ],
-      "scope": ["Design des Führungssystems", "KPI-Governance", "Programmplanung"],
-      "tools": ["Governance-Frameworks", "Teamführung", "Strategischer Outreach"],
-      "prev": { "slug": "automation-mandate", "title": "Das Automatisierungsmandat" },
-      "next": { "slug": "large-scale-event-ops", "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert." }
+      "scope": [
+        "Design des Führungssystems",
+        "KPI-Governance",
+        "Programmplanung"
+      ],
+      "tools": [
+        "Governance-Frameworks",
+        "Teamführung",
+        "Strategischer Outreach"
+      ],
+      "prev": {
+        "slug": "automation-mandate",
+        "title": "Das Automatisierungsmandat"
+      },
+      "next": {
+        "slug": "large-scale-event-ops",
+        "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert."
+      }
     },
     "large-scale-event-ops": {
       "documentTitle": "Großveranstaltungs-Operationen · Das Operative Protokoll",
@@ -228,14 +307,40 @@
         "Übergangsreibung reduziert, indem jedes Team einen klaren Ablaufplan bekommen hat."
       ],
       "impact": [
-        { "value": "1.000+", "label": "Publikumsgröße", "note": "Live-Umgebungen mit sichtbarem Ausführungsdruck." },
-        { "value": "500+", "label": "Als Moderator geführt", "note": "Jugendmesse 2025 als Beleg für Live-Kommunikation." },
-        { "value": "2022–25", "label": "Aktive Phase", "note": "Anhaltende Mitwirkung in unterschiedlichen Umgebungen." }
+        {
+          "value": "1.000+",
+          "label": "Publikumsgröße",
+          "note": "Live-Umgebungen mit sichtbarem Ausführungsdruck."
+        },
+        {
+          "value": "500+",
+          "label": "Als Moderator geführt",
+          "note": "Jugendmesse 2025 als Beleg für Live-Kommunikation."
+        },
+        {
+          "value": "2022–25",
+          "label": "Aktive Phase",
+          "note": "Anhaltende Mitwirkung in unterschiedlichen Umgebungen."
+        }
       ],
-      "scope": ["Backstage-Koordination", "Bühnenfluss-Management", "Live-Kommunikation"],
-      "tools": ["Run-of-Show-Planung", "Bühnenoperationen", "Moderation"],
-      "prev": { "slug": "kpi-governance-record", "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten." },
-      "next": { "slug": "vertical-rescue-ops", "title": "Der ruhigere Teil riskanter Arbeit ist der Teil, den niemand filmt." }
+      "scope": [
+        "Backstage-Koordination",
+        "Bühnenfluss-Management",
+        "Live-Kommunikation"
+      ],
+      "tools": [
+        "Run-of-Show-Planung",
+        "Bühnenoperationen",
+        "Moderation"
+      ],
+      "prev": {
+        "slug": "kpi-governance-record",
+        "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten."
+      },
+      "next": {
+        "slug": "vertical-rescue-ops",
+        "title": "Der ruhigere Teil riskanter Arbeit ist der Teil, den niemand filmt."
+      }
     },
     "vertical-rescue-ops": {
       "documentTitle": "Vertical-Rescue-Operationen · Das Operative Protokoll",
@@ -271,13 +376,36 @@
         "Mitgeholfen, eine Kultur zu prägen, in der Vorbereitung keine Option ist, sondern der Standard."
       ],
       "impact": [
-        { "value": "4+", "label": "Aktive Jahre", "note": "Anhaltende Mitwirkung in Bereitschafts- und Trainingsarbeit." },
-        { "value": "Routine", "label": "Materialdisziplin", "note": "Inspektion und Wartung als Teil des Standards." },
-        { "value": "Feld", "label": "Trainingsunterstützung", "note": "Praktischer Beitrag in Klettersituationen und beim Sichern." }
+        {
+          "value": "4+",
+          "label": "Aktive Jahre",
+          "note": "Anhaltende Mitwirkung in Bereitschafts- und Trainingsarbeit."
+        },
+        {
+          "value": "Routine",
+          "label": "Materialdisziplin",
+          "note": "Inspektion und Wartung als Teil des Standards."
+        },
+        {
+          "value": "Feld",
+          "label": "Trainingsunterstützung",
+          "note": "Praktischer Beitrag in Klettersituationen und beim Sichern."
+        }
       ],
-      "scope": ["Materialbereitschaft", "Trainingsunterstützung", "Sicherheitsdisziplin"],
-      "tools": ["Inspektionsroutinen", "Technisches Klettern", "Sicherungsunterstützung"],
-      "prev": { "slug": "large-scale-event-ops", "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert." },
+      "scope": [
+        "Materialbereitschaft",
+        "Trainingsunterstützung",
+        "Sicherheitsdisziplin"
+      ],
+      "tools": [
+        "Inspektionsroutinen",
+        "Technisches Klettern",
+        "Sicherungsunterstützung"
+      ],
+      "prev": {
+        "slug": "large-scale-event-ops",
+        "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert."
+      },
       "next": null
     }
   }

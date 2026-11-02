@@ -1,7 +1,6 @@
 import { escapeHtml } from '../js/site-renderers.js';
 import { resumeState } from './resume-state.js';
 
-
 function reobserveAll(container) {
     if (resumeState.revealObserver) {
         container.querySelectorAll('.reveal, .stagger').forEach((element) => resumeState.revealObserver.observe(element));
@@ -15,25 +14,51 @@ function renderSection(selector, data, templateFn) {
     reobserveAll(container);
 }
 
+const MONTH_INDEX = {
+    jan: 0, feb: 1, mar: 2, mrz: 2, apr: 3, may: 4, mai: 4, mei: 4,
+    jun: 5, jul: 6, aug: 7, agu: 7, sep: 8, oct: 9, okt: 9,
+    nov: 10, dec: 11, des: 11, dez: 11
+};
+
+function parseExperienceEndDate(dateStr) {
+    if (!dateStr) return 0;
+    if (/present|sekarang|heute/i.test(dateStr)) return Infinity;
+    const parts = dateStr.split(/[–—\-]/);
+    const endSegment = parts[parts.length - 1].trim();
+    if (/present|sekarang|heute/i.test(endSegment)) return Infinity;
+
+    const yearMatch = endSegment.match(/\b(19\d\d|20\d\d)\b/);
+    if (!yearMatch) return 0;
+    const year = parseInt(yearMatch[1], 10);
+
+    const monthMatch = endSegment.match(/[a-zA-Z]{3,}/);
+    let month = 0;
+    if (monthMatch) {
+        const key = monthMatch[0].toLowerCase().slice(0, 3);
+        if (key in MONTH_INDEX) {
+            month = MONTH_INDEX[key];
+        }
+    }
+    return new Date(Date.UTC(year, month, 1)).getTime();
+}
+
 export function applyTranslations(translations) {
     document.querySelectorAll('[data-i18n]').forEach((element) => {
         const key = element.dataset.i18n;
         const value = key?.split('.').reduce((current, part) => current?.[part], translations);
         if (typeof value === 'string') {
-            element.textContent = value;
+            if (value.includes('<') || value.includes('&')) {
+                element.innerHTML = value;
+            } else {
+                element.textContent = value;
+            }
         }
     });
 }
 
 export function renderExperience(items, selector = '#experience .timeline') {
     const sorted = [...items].sort((left, right) => {
-        const toEndDate = (item) => {
-            if (!item.date) return new Date();
-            if (/present|sekarang|heute/i.test(item.date)) return new Date();
-            const parts = item.date.replace(/–/g, '-').split('-');
-            return parts.length > 1 ? new Date(parts[1].trim()) : new Date();
-        };
-        return toEndDate(right) - toEndDate(left);
+        return parseExperienceEndDate(right.date) - parseExperienceEndDate(left.date);
     });
 
     renderSection(selector, sorted, (job) => `
@@ -89,8 +114,7 @@ export function renderSkills(collections, translations) {
     const container = document.getElementById('skills-dynamic-container');
     if (!container) return;
     
-    // Clear in case of re-renders
-    container.innerHTML = '';
+        container.innerHTML = '';
 
     // Iterate over all skills dynamically without hardcoded keys
     Object.entries(collections.skills).forEach(([key, items]) => {
@@ -156,8 +180,7 @@ export function renderConnectSection(siteConfig, translations, content) {
         canvaLink.href = content.visualCvUrl || canvaUrls[lang] || canvaUrls.en;
     }
     
-    // Setup ATS CV download button
-    if (downloadLink) {
+        if (downloadLink) {
         downloadLink.href = '#';
         downloadLink.removeAttribute('target');
         downloadLink.removeAttribute('rel');
@@ -170,8 +193,7 @@ export function renderConnectSection(siteConfig, translations, content) {
             cvText.textContent = translations.connect.cv;
         }
     }
-    // Setup Hero ATS CV download button
-    if (heroDownloadLink) {
+        if (heroDownloadLink) {
         heroDownloadLink.href = '#';
         heroDownloadLink.onclick = (e) => {
             e.preventDefault();
@@ -207,15 +229,15 @@ export function generateATSResume(content, translations, siteConfig) {
     const t = translations.section || {};
     const heroRole = translations.hero?.role || content.strings?.hero?.role || '';
     const summaryText = content.sections?.summary?.text || '';
+    const esc = (value) => escapeHtml(String(value ?? ''));
 
-    // Build contact parts, only include non-empty values
-    const contactParts = [email, phone, website, linkedinUrl].filter(Boolean);
+        const contactParts = [email, phone, website, linkedinUrl].filter(Boolean);
 
     const html = `<!DOCTYPE html>
-<html lang="${lang}">
+<html lang="${esc(lang)}">
 <head>
 <meta charset="UTF-8">
-<title>${name} | Resume</title>
+<title>${esc(name)} | Resume</title>
 <style>
   body { font-family: Calibri, 'Segoe UI', Arial, sans-serif; font-size: 11pt; line-height: 1.45; color: #000; max-width: 8.5in; margin: 0 auto; padding: 0.5in; }
   h1 { font-size: 20pt; margin: 0 0 2px; letter-spacing: 0.5px; }
@@ -233,86 +255,99 @@ export function generateATSResume(content, translations, siteConfig) {
   .entry-date { font-size: 9.5pt; color: #444; white-space: nowrap; }
   .skills-line { margin: 2px 0; }
   .cert-item { margin: 1px 0; }
-  @media print { body { padding: 0.4in; } }
+  .print-btn { display: block; margin: 0 0 18px; padding: 10px 16px; font: inherit; cursor: pointer; }
+  @media print { body { padding: 0.4in; } .print-btn { display: none; } }
 </style>
 </head>
 <body>
 
-<h1>${name}</h1>
-<p class="contact">${contactParts.join('  |  ')}</p>
-<p class="role">${heroRole}</p>
-<p class="summary">${summaryText}</p>
+<button type="button" class="print-btn" onclick="window.print()">Print / Save as PDF</button>
 
-<h2>${t.experience || 'WORK EXPERIENCE'}</h2>
+<h1>${esc(name)}</h1>
+<p class="contact">${esc(contactParts.join('  |  '))}</p>
+<p class="role">${esc(heroRole)}</p>
+<p class="summary">${esc(summaryText)}</p>
+
+<h2>${esc(t.experience || 'WORK EXPERIENCE')}</h2>
 ${(content.sections.experience || []).map(e => `
 <div class="entry">
   <div class="entry-header">
-    <p class="entry-title">${e.role}, <span class="entry-org">${e.company}</span></p>
-    <span class="entry-date">${e.date}</span>
+    <p class="entry-title">${esc(e.role)}, <span class="entry-org">${esc(e.company)}</span></p>
+    <span class="entry-date">${esc(e.date)}</span>
   </div>
-  <ul>${(e.details || []).map(b => `<li>${b}</li>`).join('')}</ul>
+  <ul>${(e.details || []).map(b => `<li>${esc(b)}</li>`).join('')}</ul>
 </div>`).join('')}
 
-<h2>${t.education || 'EDUCATION'}</h2>
+<h2>${esc(t.education || 'EDUCATION')}</h2>
 ${(content.sections.education || []).map(e => `
 <div class="entry">
   <div class="entry-header">
-    <p class="entry-title">${e.name}, <span class="entry-org">${e.degree}</span></p>
-    <span class="entry-date">${e.date}</span>
+    <p class="entry-title">${esc(e.name)}, <span class="entry-org">${esc(e.degree)}</span></p>
+    <span class="entry-date">${esc(e.date)}</span>
   </div>${e.focus ? `
-  <p>${e.focus}</p>` : ''}
+  <p>${esc(e.focus)}</p>` : ''}
 </div>`).join('')}
 
-<h2>${t.impact || 'SELECTED OPERATIONAL IMPACT'}</h2>
+<h2>${esc(t.impact || 'SELECTED OPERATIONAL IMPACT')}</h2>
 ${(content.sections.impact || []).map(i => `
 <div class="entry">
-  <p class="entry-title">${i.title}</p>
-  <p>${i.desc}</p>
+  <p class="entry-title">${esc(i.title)}</p>
+  <p>${esc(i.desc)}</p>
 </div>`).join('')}
 
-<h2>${t.volunteering || 'VOLUNTEERING & COMMUNITY'}</h2>
+<h2>${esc(t.volunteering || 'VOLUNTEERING & COMMUNITY')}</h2>
 ${(content.sections.volunteering || []).map(v => `
 <div class="entry">
   <div class="entry-header">
-    <p class="entry-title">${v.role}, <span class="entry-org">${v.company}</span></p>
-    <span class="entry-date">${v.date}</span>
+    <p class="entry-title">${esc(v.role)}, <span class="entry-org">${esc(v.company)}</span></p>
+    <span class="entry-date">${esc(v.date)}</span>
   </div>
-  <ul>${(v.details || []).map(b => `<li>${b}</li>`).join('')}</ul>
+  <ul>${(v.details || []).map(b => `<li>${esc(b)}</li>`).join('')}</ul>
 </div>`).join('')}
 
-<h2>${t.skills || 'CORE SKILLS & TOOLS'}</h2>
+<h2>${esc(t.skills || 'CORE SKILLS & TOOLS')}</h2>
 ${Object.entries(content.collections.skills || {}).map(([key, items]) => {
     const catName = translations.skills?.[key] || key;
-    return `<p class="skills-line"><strong>${catName}:</strong> ${items.map(i => i.name).join(', ')}</p>`;
+    return `<p class="skills-line"><strong>${esc(catName)}:</strong> ${esc(items.map(i => i.name).join(', '))}</p>`;
 }).join('')}
 
-<h2>${translations.skills?.languages || 'Languages'}</h2>
-<p>${(content.collections.languages || []).map(l => l.label).join('  |  ')}</p>
+<h2>${esc(translations.skills?.languages || 'Languages')}</h2>
+<p>${esc((content.collections.languages || []).map(l => l.label).join('  |  '))}</p>
 
-<h2>${t.certifications || 'CERTIFICATIONS & TRAINING'}</h2>
+<h2>${esc(t.certifications || 'CERTIFICATIONS & TRAINING')}</h2>
 <ul>${(content.sections.certifications || []).map(c => {
-    const parts = [c.name];
-    if (c.issuer) parts.push(c.issuer);
-    if (c.year) parts.push(c.year);
-    return `<li class="cert-item">${parts.join(', ')}</li>`;
+    const parts = [c.name, c.issuer, c.year].filter(Boolean);
+    return `<li class="cert-item">${esc(parts.join(', '))}</li>`;
 }).join('')}</ul>
 
 ${(content.sections.awards || content.collections?.awards || []).length > 0 ? `
-<h2>${t.awards || 'AWARDS & RECOGNITION'}</h2>
+<h2>${esc(t.awards || 'AWARDS & RECOGNITION')}</h2>
 <ul>${(content.sections.awards || content.collections?.awards || []).map(a => {
-    if (typeof a === 'string') return `<li>${a}</li>`;
-    return `<li>${a.name || a}</li>`;
+    if (typeof a === 'string') return `<li>${esc(a)}</li>`;
+    return `<li>${esc(a.name || a)}</li>`;
 }).join('')}</ul>` : ''}
 
 </body>
 </html>`;
 
-    const w = window.open('', '_blank');
-    if (w) {
-        w.document.write(html);
-        w.document.close();
-        setTimeout(() => w.print(), 500);
+    const filename = `${name.replace(/[^\w-]+/g, '-').replace(/^-|-$/g, '')}-Resume-${lang.toUpperCase()}.html`;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const printWindow = window.open(url, '_blank');
+    if (printWindow) {
+        printWindow.addEventListener('load', () => {
+            try { printWindow.focus(); printWindow.print(); } catch {  }
+        }, { once: true });
+        setTimeout(() => URL.revokeObjectURL(url), 60_000);
     } else {
-        console.warn('Popup blocked: Could not open ATS resume window.');
+        // Pop-up blocked: deliver the same document as a download instead of failing silently.
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1_000);
     }
 }

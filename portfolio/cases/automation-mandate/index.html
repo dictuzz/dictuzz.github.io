@@ -34,8 +34,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap">
 
   <link rel="stylesheet" href="/portfolio/portfolio.css?v=v4">
+  <noscript id="reveal-fallback"><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
-  <script type="application/ld+json" data-jsonld></script>
+  <script type="application/ld+json" data-jsonld>{"@context":"https://schema.org","@type":"Article","headline":"The Automation Mandate","description":"Built reporting and SOP systems that removed 12+ hours of weekly manual work at Home Digital Indonesia.","inLanguage":"en","author":{"@type":"Person","name":"Benedictus Richard Ricardo","url":"https://dictuzz.me/"},"publisher":{"@type":"Person","name":"Benedictus Richard Ricardo","url":"https://dictuzz.me/"},"url":"https://dictuzz.me/portfolio/cases/automation-mandate/","image":"https://dictuzz.me/portfolio/assets/photos/automation.jpg"}</script>
 </head>
 <body class="portfolio-page" data-page="case" data-case="automation-mandate">
 
@@ -47,10 +48,16 @@
         <strong data-i18n="brand">dictuzz</strong>
         <span data-i18n="brandSub">The Operational Record</span>
       </a>
-      <nav class="topbar__nav" aria-label="Primary" data-topbar-nav></nav>
+      <nav class="topbar__nav" aria-label="Primary" data-topbar-nav>
+        <a href="/portfolio/">All case files</a><a href="/">Home</a><a href="/resume/">Resume</a>
+      </nav>
       <div class="topbar__tools">
-        <div class="lang-switcher" role="group" data-lang-switcher></div>
-        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch theme"></button>
+        <div class="lang-switcher" role="group" data-lang-switcher>
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true" aria-label="English">EN</button><button type="button" class="lang-btn" data-lang="id" aria-pressed="false" aria-label="Indonesian">ID</button><button type="button" class="lang-btn" data-lang="de" aria-pressed="false" aria-label="German">DE</button>
+        </div>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch theme">
+          <span class="theme-toggle__icon theme-toggle__icon--sun"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.4 4.4l1.4 1.4M14.2 14.2l1.4 1.4M4.4 15.6l1.4-1.4M14.2 5.8l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="theme-toggle__icon theme-toggle__icon--moon"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.5 12.4A6.5 6.5 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+        </button>
       </div>
     </div>
     <div class="topbar__progress" data-progress></div>
@@ -59,46 +66,120 @@
   <main id="main" class="article-shell">
 
     <header class="article-hero shell reveal">
-      <p class="article-hero__vol" data-case-vol></p>
-      <p class="article-hero__kicker" data-case-kicker></p>
-      <h1 class="article-hero__title" data-case-title></h1>
-      <p class="article-hero__deck" data-case-deck></p>
+      <p class="article-hero__vol" data-case-vol>
+        Vol. I / No. 1
+      </p>
+      <p class="article-hero__kicker" data-case-kicker>
+        Workflow Automation · Home Digital Indonesia
+      </p>
+      <h1 class="article-hero__title" data-case-title>
+        The Automation Mandate
+      </h1>
+      <p class="article-hero__deck" data-case-deck>
+        Took a person-dependent reporting cycle and turned it into something the team could run the same way every Monday — without thinking about it.
+      </p>
       <p class="article-hero__byline">
-        <strong><span data-byline-prefix>By </span><span>Benedictus Richard Ricardo</span></strong>
+        <strong><span data-byline-prefix>
+    By&nbsp;
+  </span><span>Benedictus Richard Ricardo</span></strong>
         <span class="article-hero__byline-sep" aria-hidden="true"></span>
-        <span data-case-byline-role></span>
+        <span data-case-byline-role>
+          Management Trainee · Home Digital Indonesia
+        </span>
         <span class="article-hero__byline-sep" aria-hidden="true"></span>
-        <span data-case-byline-meta></span>
+        <span data-case-byline-meta>
+          Jul 2024 – Sep 2025 · Jakarta, Indonesia
+        </span>
       </p>
     </header>
 
-    <figure class="article-figure shell reveal" data-case-figure></figure>
+    <figure class="article-figure shell reveal" data-case-figure>
+      <img src="/portfolio/assets/photos/automation.jpg" alt="Operational dashboards showing weekly reporting metrics — the evidence the rebuilt cycle measured against.">
+      <figcaption>Operational dashboards used to illustrate the weekly reporting cycle. Photograph used as illustration.</figcaption>
+    </figure>
 
     <article class="article">
-      <p class="article__lead" data-case-lead></p>
-      <div data-case-narrative></div>
-      <p class="pull reveal" data-case-pull></p>
+      <p class="article__lead" data-case-lead>
+        Three departments were losing time to the same reporting routine every week. The fix was less about software and more about giving the process real rules.
+      </p>
+      <div data-case-narrative>
+        <section class="article__section reveal">
+          <h2>Context</h2>
+          <p>Finance, sales, and ops were all touching the same data, reformatting the same spreadsheets, handing off the same half-finished files. It worked, technically — but it ate too much time and broke whenever someone forgot a step.</p>
+        </section>
+        <section class="article__section reveal">
+          <h2>What was built</h2>
+          <p>I treated the workflow like a system, not just a spreadsheet. Rebuilt the workbook logic in Excel, wrote SOPs so the same steps happen every cycle, and mapped the whole reporting path end-to-end. The point was that anyone on the team could run it the same way every Monday without thinking.</p>
+        </section>
+        <section class="article__section reveal">
+          <h2>Outcome</h2>
+          <p>About twelve hours of manual work came off the weekly rhythm. But the bigger win was that people stopped dreading Mondays. The cadence was cleaner, handoffs stopped breaking, and the process could survive someone being out sick.</p>
+        </section>
+      </div>
+      <p class="pull reveal" data-case-pull>
+        Twelve hours of manual work, gone. Replaced with a routine anyone on the team can run.
+      </p>
 
-      <p class="article__block-label" data-evidence-label>On the record</p>
-      <ol class="evidence reveal" data-case-evidence></ol>
+      <p class="article__block-label" data-evidence-label>
+        On the record
+      </p>
+      <ol class="evidence reveal" data-case-evidence>
+        <li><span class="evidence__num">01</span><span>Built automated reports in Excel that took roughly 12 hours of manual work out of the weekly cycle.</span></li>
+        <li><span class="evidence__num">02</span><span>Wrote shared SOPs across finance, sales, and operations so the process stopped depending on one person&#x27;s memory.</span></li>
+        <li><span class="evidence__num">03</span><span>Moved the work from &#x27;someone needs to remember this&#x27; to &#x27;this just runs now&#x27;.</span></li>
+      </ol>
 
-      <p class="article__block-label" data-impact-label>Impact</p>
-      <div class="impact reveal" data-case-impact></div>
+      <p class="article__block-label" data-impact-label>
+        Impact
+      </p>
+      <div class="impact reveal" data-case-impact>
+        <div class="impact__cell">
+          <p class="impact__value">12+</p>
+          <p class="impact__label">Hours saved weekly</p>
+          <p class="impact__note">Manual reporting effort removed from the recurring cycle.</p>
+        </div>
+        <div class="impact__cell">
+          <p class="impact__value">3</p>
+          <p class="impact__label">Functions aligned</p>
+          <p class="impact__note">Finance, sales, and operations on one structure.</p>
+        </div>
+        <div class="impact__cell">
+          <p class="impact__value">1</p>
+          <p class="impact__label">Shared routine</p>
+          <p class="impact__note">Automation and SOPs combined into a repeatable weekly flow.</p>
+        </div>
+      </div>
 
       <div class="details reveal">
         <div>
-          <h3 data-scope-label>Scope</h3>
-          <ul data-case-scope></ul>
+          <h3 data-scope-label>
+            Scope
+          </h3>
+          <ul data-case-scope>
+            <li>Reporting workflow design</li>
+            <li>Excel automation</li>
+            <li>SOP standardization</li>
+          </ul>
         </div>
         <div>
-          <h3 data-tools-label>Tools &amp; Methods</h3>
-          <ul data-case-tools></ul>
+          <h3 data-tools-label>
+            Tools &amp; Methods
+          </h3>
+          <ul data-case-tools>
+            <li>Excel</li>
+            <li>Operational reporting</li>
+            <li>SOP design</li>
+          </ul>
         </div>
       </div>
 
       <nav class="case-nav" aria-label="Case navigation">
-        <div data-case-prev></div>
-        <div data-case-next></div>
+        <div data-case-prev>
+          <a href="/portfolio/"><span class="case-nav__direction">← All case files</span></a>
+        </div>
+        <div data-case-next>
+          <a href="/portfolio/cases/kpi-governance-record/"><span class="case-nav__direction">Next →</span><span class="case-nav__title">A council of thirty-four learns to keep time.</span></a>
+        </div>
       </nav>
     </article>
 
@@ -106,7 +187,25 @@
 
   </main>
 
-  <footer class="global-footer" aria-label="Site footer"></footer>
+  <footer class="global-footer">
+            <nav class="global-footer__nav" aria-label="Global navigation">
+                <a href="/" class="global-footer__link">Home</a>
+                <a href="/resume/" class="global-footer__link">Resume</a>
+                <a href="/portfolio/" class="global-footer__link" aria-current="page">Portfolio</a>
+                <a href="/resources/" class="global-footer__link">Resources</a>
+            </nav>
+            <div class="global-footer__contacts">
+                <a href="mailto:contact@dictuzz.me" class="global-footer__contact-link" aria-label="Email Benedictus"><i class="i-ph-envelope-simple-duotone"></i> contact@dictuzz.me</a>
+                <span class="global-footer__divider">&bull;</span>
+                <a href="https://linkedin.com/in/dictuzz" class="global-footer__contact-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="i-ph-linkedin-logo-duotone"></i> LinkedIn</a>
+                <span class="global-footer__divider">&bull;</span>
+                <a href="https://github.com/dictuzz" class="global-footer__contact-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="i-ph-github-logo-duotone"></i> GitHub</a>
+            </div>
+            <p class="global-footer__copy">
+                &copy; 2026 Benedictus Richard Ricardo.
+                <span>Systems Architect &amp; Automation Specialist</span>
+            </p>
+        </footer>
 
   <script src="/portfolio/portfolio.js?v=v4" type="module"></script>
 </body>

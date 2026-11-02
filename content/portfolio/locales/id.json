@@ -13,13 +13,17 @@
     "themeToLight": "Beralih ke mode terang",
     "themeToDark": "Beralih ke mode gelap",
     "languageLabel": "Bahasa",
-    "languages": { "en": "EN", "id": "ID", "de": "DE" },
-    "languageNames": { "en": "Inggris", "id": "Indonesia", "de": "Jerman" },
+    "languages": {
+      "en": "EN",
+      "id": "ID",
+      "de": "DE"
+    },
+    "languageNames": {
+      "en": "Inggris",
+      "id": "Indonesia",
+      "de": "Jerman"
+    },
     "byline": "Oleh",
-    "filed": "Dicatat dari",
-    "edition": "Edisi",
-    "issue": "No. 1",
-    "vol": "Vol. I",
     "magazineLabel": "Majalah Sistem & Otomasi",
     "previous": "Sebelumnya",
     "next": "Selanjutnya",
@@ -27,10 +31,7 @@
     "scope": "Lingkup",
     "tools": "Alat & Metode",
     "impact": "Dampak",
-    "evidence": "Catatan resmi",
-    "context": "Latar",
-    "intervention": "Yang dibangun",
-    "outcome": "Hasil"
+    "evidence": "Catatan resmi"
   },
   "landing": {
     "documentTitle": "Studi Kasus Otomasi Alur Kerja & Tata Kelola Operasional | Catatan Operasional | dictuzz",
@@ -90,10 +91,22 @@
         "Saat ini saya menempuh studi Sains Data di Universitas Terbuka dan terus menyempurnakan cara desain proses, bukti, dan eksekusi saling melekat."
       ],
       "facts": [
-        { "label": "Domisili", "value": "Bandung, Indonesia · UTC+7" },
-        { "label": "Studi", "value": "Sains Data, Universitas Terbuka" },
-        { "label": "Bahasa", "value": "Inggris · Indonesia · Jerman" },
-        { "label": "Gaya", "value": "Terstruktur, tenang, berbasis bukti" }
+        {
+          "label": "Domisili",
+          "value": "Bandung, Indonesia · UTC+7"
+        },
+        {
+          "label": "Studi",
+          "value": "Sains Data, Universitas Terbuka"
+        },
+        {
+          "label": "Bahasa",
+          "value": "Inggris · Indonesia · Jerman"
+        },
+        {
+          "label": "Gaya",
+          "value": "Terstruktur, tenang, berbasis bukti"
+        }
       ]
     },
     "contact": {
@@ -101,9 +114,26 @@
       "title": "Terbuka untuk percakapan tentang sistem, otomasi, dan operasi.",
       "body": "Cocok untuk tim atau peran yang membutuhkan eksekusi lebih bersih, desain proses yang lebih dapat diandalkan, atau struktur operasional yang lebih kuat. Tersedia di GMT+7 dan zona waktu sekitarnya.",
       "actions": [
-        { "type": "primary", "label": "contact@dictuzz.me", "href": "mailto:contact@dictuzz.me", "icon": "envelope" },
-        { "type": "ghost", "label": "Atur jadwal pertemuan", "href": "https://calendar.app.google/39u2qGH6ybaFenhdA", "icon": "calendar", "external": true },
-        { "type": "ghost", "label": "LinkedIn", "href": "https://linkedin.com/in/dictuzz", "icon": "linkedin", "external": true }
+        {
+          "type": "primary",
+          "label": "contact@dictuzz.me",
+          "href": "mailto:contact@dictuzz.me",
+          "icon": "envelope"
+        },
+        {
+          "type": "ghost",
+          "label": "Atur jadwal pertemuan",
+          "href": "https://calendar.app.google/39u2qGH6ybaFenhdA",
+          "icon": "calendar",
+          "external": true
+        },
+        {
+          "type": "ghost",
+          "label": "LinkedIn",
+          "href": "https://linkedin.com/in/dictuzz",
+          "icon": "linkedin",
+          "external": true
+        }
       ]
     }
   },
@@ -142,14 +172,37 @@
         "Mengalihkan pekerjaan dari pengulangan yang bergantung pada satu orang ke rutinitas operasional bersama."
       ],
       "impact": [
-        { "value": "12+", "label": "Jam dihemat per minggu", "note": "Beban pelaporan manual yang dipangkas dari siklus rutin." },
-        { "value": "3", "label": "Fungsi diselaraskan", "note": "Keuangan, penjualan, dan operasi pada satu struktur." },
-        { "value": "1", "label": "Rutinitas bersama", "note": "Otomasi dan SOP digabungkan menjadi alur mingguan yang dapat diulang." }
+        {
+          "value": "12+",
+          "label": "Jam dihemat per minggu",
+          "note": "Beban pelaporan manual yang dipangkas dari siklus rutin."
+        },
+        {
+          "value": "3",
+          "label": "Fungsi diselaraskan",
+          "note": "Keuangan, penjualan, dan operasi pada satu struktur."
+        },
+        {
+          "value": "1",
+          "label": "Rutinitas bersama",
+          "note": "Otomasi dan SOP digabungkan menjadi alur mingguan yang dapat diulang."
+        }
       ],
-      "scope": ["Desain alur pelaporan", "Otomasi Excel", "Standardisasi SOP"],
-      "tools": ["Excel", "Pelaporan operasional", "Desain SOP"],
+      "scope": [
+        "Desain alur pelaporan",
+        "Otomasi Excel",
+        "Standardisasi SOP"
+      ],
+      "tools": [
+        "Excel",
+        "Pelaporan operasional",
+        "Desain SOP"
+      ],
       "prev": null,
-      "next": { "slug": "kpi-governance-record", "title": "Tiga puluh empat anggota dewan belajar menjaga ritme." }
+      "next": {
+        "slug": "kpi-governance-record",
+        "title": "Tiga puluh empat anggota dewan belajar menjaga ritme."
+      }
     },
     "kpi-governance-record": {
       "documentTitle": "Tata Kelola Berbasis KPI · Catatan Operasional",
@@ -185,14 +238,40 @@
         "Mengarahkan kegiatan jangkauan dan kampanye yang menjangkau 12 sekolah feeder."
       ],
       "impact": [
-        { "value": "34", "label": "Anggota dipimpin", "note": "Cakupan kepemimpinan di seluruh organisasi." },
-        { "value": "10", "label": "Divisi dikoordinasikan", "note": "Tata kelola diterapkan di seluruh dewan." },
-        { "value": "12", "label": "Sekolah feeder dijangkau", "note": "Skala satu kampanye penjangkauan utama." }
+        {
+          "value": "34",
+          "label": "Anggota dipimpin",
+          "note": "Cakupan kepemimpinan di seluruh organisasi."
+        },
+        {
+          "value": "10",
+          "label": "Divisi dikoordinasikan",
+          "note": "Tata kelola diterapkan di seluruh dewan."
+        },
+        {
+          "value": "12",
+          "label": "Sekolah feeder dijangkau",
+          "note": "Skala satu kampanye penjangkauan utama."
+        }
       ],
-      "scope": ["Desain sistem kepemimpinan", "Tata kelola KPI", "Perencanaan program"],
-      "tools": ["Kerangka tata kelola", "Manajemen tim", "Penjangkauan strategis"],
-      "prev": { "slug": "automation-mandate", "title": "Mandat Otomasi" },
-      "next": { "slug": "large-scale-event-ops", "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal." }
+      "scope": [
+        "Desain sistem kepemimpinan",
+        "Tata kelola KPI",
+        "Perencanaan program"
+      ],
+      "tools": [
+        "Kerangka tata kelola",
+        "Manajemen tim",
+        "Penjangkauan strategis"
+      ],
+      "prev": {
+        "slug": "automation-mandate",
+        "title": "Mandat Otomasi"
+      },
+      "next": {
+        "slug": "large-scale-event-ops",
+        "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal."
+      }
     },
     "large-scale-event-ops": {
       "documentTitle": "Operasi Acara Skala Besar · Catatan Operasional",
@@ -228,14 +307,40 @@
         "Mengurangi friksi transisi yang terlihat melalui alur kerja panggung yang lebih terstruktur."
       ],
       "impact": [
-        { "value": "1.000+", "label": "Skala audiens", "note": "Lingkungan acara langsung berskala besar dengan tekanan eksekusi yang tampak." },
-        { "value": "500+", "label": "Dipimpin sebagai MC", "note": "Misa Kaum Muda 2025 sebagai bukti komunikasi langsung." },
-        { "value": "2022–25", "label": "Periode aktif", "note": "Keterlibatan berkelanjutan di berbagai lingkungan." }
+        {
+          "value": "1.000+",
+          "label": "Skala audiens",
+          "note": "Lingkungan acara langsung berskala besar dengan tekanan eksekusi yang tampak."
+        },
+        {
+          "value": "500+",
+          "label": "Dipimpin sebagai MC",
+          "note": "Misa Kaum Muda 2025 sebagai bukti komunikasi langsung."
+        },
+        {
+          "value": "2022–25",
+          "label": "Periode aktif",
+          "note": "Keterlibatan berkelanjutan di berbagai lingkungan."
+        }
       ],
-      "scope": ["Koordinasi belakang panggung", "Manajemen alur panggung", "Komunikasi langsung"],
-      "tools": ["Perencanaan rundown", "Operasi panggung", "Fasilitasi MC"],
-      "prev": { "slug": "kpi-governance-record", "title": "Tiga puluh empat anggota dewan belajar menjaga ritme." },
-      "next": { "slug": "vertical-rescue-ops", "title": "Bagian paling sunyi dari pekerjaan berisiko tinggi adalah bagian yang tak pernah direkam." }
+      "scope": [
+        "Koordinasi belakang panggung",
+        "Manajemen alur panggung",
+        "Komunikasi langsung"
+      ],
+      "tools": [
+        "Perencanaan rundown",
+        "Operasi panggung",
+        "Fasilitasi MC"
+      ],
+      "prev": {
+        "slug": "kpi-governance-record",
+        "title": "Tiga puluh empat anggota dewan belajar menjaga ritme."
+      },
+      "next": {
+        "slug": "vertical-rescue-ops",
+        "title": "Bagian paling sunyi dari pekerjaan berisiko tinggi adalah bagian yang tak pernah direkam."
+      }
     },
     "vertical-rescue-ops": {
       "documentTitle": "Operasi Vertical Rescue · Catatan Operasional",
@@ -271,13 +376,36 @@
         "Menjaga budaya di mana keselamatan dan persiapan tetap menjadi bagian yang terlihat dari pekerjaan."
       ],
       "impact": [
-        { "value": "4+", "label": "Tahun aktif", "note": "Keterlibatan berkelanjutan dalam pekerjaan kesiapan dan pelatihan." },
-        { "value": "Rutin", "label": "Disiplin peralatan", "note": "Inspeksi dan perawatan sebagai bagian dari standar." },
-        { "value": "Lapangan", "label": "Dukungan pelatihan", "note": "Kontribusi langsung di lingkungan pemanjatan dan belay." }
+        {
+          "value": "4+",
+          "label": "Tahun aktif",
+          "note": "Keterlibatan berkelanjutan dalam pekerjaan kesiapan dan pelatihan."
+        },
+        {
+          "value": "Rutin",
+          "label": "Disiplin peralatan",
+          "note": "Inspeksi dan perawatan sebagai bagian dari standar."
+        },
+        {
+          "value": "Lapangan",
+          "label": "Dukungan pelatihan",
+          "note": "Kontribusi langsung di lingkungan pemanjatan dan belay."
+        }
       ],
-      "scope": ["Kesiapan peralatan", "Dukungan pelatihan", "Disiplin keselamatan"],
-      "tools": ["Rutinitas inspeksi", "Pemanjatan teknis", "Dukungan belay"],
-      "prev": { "slug": "large-scale-event-ops", "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal." },
+      "scope": [
+        "Kesiapan peralatan",
+        "Dukungan pelatihan",
+        "Disiplin keselamatan"
+      ],
+      "tools": [
+        "Rutinitas inspeksi",
+        "Pemanjatan teknis",
+        "Dukungan belay"
+      ],
+      "prev": {
+        "slug": "large-scale-event-ops",
+        "title": "Saat ruangan menonton, yang tampak hanyalah apa yang gagal."
+      },
       "next": null
     }
   }

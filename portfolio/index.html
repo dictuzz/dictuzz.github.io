@@ -40,8 +40,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap">
 
   <link rel="stylesheet" href="/portfolio/portfolio.css?v=v4">
+  <noscript id="reveal-fallback"><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
-  <script type="application/ld+json" data-jsonld></script>
+  <script type="application/ld+json" data-jsonld>{"@context":"https://schema.org","@type":"CollectionPage","name":"Case Studies in Workflow Automation & Operational Governance | The Operational Record | dictuzz","description":"The Operational Record: editorial case studies in workflow automation, operational governance & live operations. Home Digital reporting automation (12+ hrs/week saved), student council KPI governance for 34-member org, 1,000+ attendee event ops.","inLanguage":"en","url":"https://dictuzz.me/portfolio/","mainEntity":{"@type":"ItemList","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://dictuzz.me/portfolio/cases/automation-mandate/","name":"The weekly report was eating 12 hours. We got them back."},{"@type":"ListItem","position":2,"url":"https://dictuzz.me/portfolio/cases/kpi-governance-record/","name":"A council of thirty-four learns to keep time."},{"@type":"ListItem","position":3,"url":"https://dictuzz.me/portfolio/cases/large-scale-event-ops/","name":"When the room is watching, the only thing visible is what fails."},{"@type":"ListItem","position":4,"url":"https://dictuzz.me/portfolio/cases/vertical-rescue-ops/","name":"The quieter part of high-risk work is the part nobody films."},{"@type":"ListItem","position":5,"url":"https://bit.ly/TUASpatial","name":"Spatial Analyzer"},{"@type":"ListItem","position":6,"url":"https://bit.ly/49cpunb","name":"Route Validator"},{"@type":"ListItem","position":7,"url":"https://bit.ly/RTMTUA","name":"Online Meeting RTM"},{"@type":"ListItem","position":8,"url":"https://datastudio.google.com/s/mT9LfU0JTPc","name":"Sample Report"}]},"hasPart":[{"@type":"Article","name":"The weekly report was eating 12 hours. We got them back.","url":"https://dictuzz.me/portfolio/cases/automation-mandate/"},{"@type":"Article","name":"A council of thirty-four learns to keep time.","url":"https://dictuzz.me/portfolio/cases/kpi-governance-record/"},{"@type":"Article","name":"When the room is watching, the only thing visible is what fails.","url":"https://dictuzz.me/portfolio/cases/large-scale-event-ops/"},{"@type":"Article","name":"The quieter part of high-risk work is the part nobody films.","url":"https://dictuzz.me/portfolio/cases/vertical-rescue-ops/"},{"@type":"Article","name":"Spatial Analyzer","url":"https://bit.ly/TUASpatial"},{"@type":"Article","name":"Route Validator","url":"https://bit.ly/49cpunb"},{"@type":"Article","name":"Online Meeting RTM","url":"https://bit.ly/RTMTUA"},{"@type":"Article","name":"Sample Report","url":"https://datastudio.google.com/s/mT9LfU0JTPc"}]}</script>
 </head>
 <body class="portfolio-page" data-page="landing">
 
@@ -53,10 +54,16 @@
         <strong data-i18n="brand">dictuzz</strong>
         <span data-i18n="brandSub">The Operational Record</span>
       </a>
-      <nav class="topbar__nav" aria-label="Primary" data-topbar-nav></nav>
+      <nav class="topbar__nav" aria-label="Primary" data-topbar-nav>
+        <a href="/">Home</a><a href="/resume/">Resume</a><a href="#cases">All Files</a><a href="#contact">Contact</a>
+      </nav>
       <div class="topbar__tools">
-        <div class="lang-switcher" role="group" data-lang-switcher></div>
-        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch theme"></button>
+        <div class="lang-switcher" role="group" data-lang-switcher>
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true" aria-label="English">EN</button><button type="button" class="lang-btn" data-lang="id" aria-pressed="false" aria-label="Indonesian">ID</button><button type="button" class="lang-btn" data-lang="de" aria-pressed="false" aria-label="German">DE</button>
+        </div>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch theme">
+          <span class="theme-toggle__icon theme-toggle__icon--sun"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.4 4.4l1.4 1.4M14.2 14.2l1.4 1.4M4.4 15.6l1.4-1.4M14.2 5.8l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="theme-toggle__icon theme-toggle__icon--moon"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.5 12.4A6.5 6.5 0 0 1 7.6 3.5a7 7 0 1 0 8.9 8.9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+        </button>
       </div>
     </div>
     <div class="topbar__progress" data-progress></div>
@@ -66,62 +73,208 @@
 
     <section class="masthead reveal" aria-labelledby="masthead-title">
       <div class="masthead__strap">
-        <span data-masthead-strap-left>Vol. I — No. 1</span>
-        <span data-masthead-strap-center>Bandung · Jakarta · Indonesia</span>
-        <span data-masthead-strap-right>Edited &amp; set in Fraunces</span>
+        <span data-masthead-strap-left>
+          Vol. I — No. 1
+        </span>
+        <span data-masthead-strap-center>
+          Bandung · Jakarta · Indonesia
+        </span>
+        <span data-masthead-strap-right>
+          Edited &amp; set in Fraunces
+        </span>
       </div>
-      <h1 class="masthead__wordmark" id="masthead-title" data-masthead-wordmark>The Operational Record</h1>
-      <p class="masthead__subtitle" data-masthead-subtitle></p>
-      <p class="masthead__rule"><span data-masthead-rule>A Systems &amp; Automation Magazine</span></p>
+      <h1 class="masthead__wordmark" id="masthead-title" data-masthead-wordmark>
+        The Operational Record
+      </h1>
+      <p class="masthead__subtitle" data-masthead-subtitle>
+        A portfolio of operational systems work, kept on the public record by Benedictus Richard Ricardo.
+      </p>
+      <p class="masthead__rule"><span data-masthead-rule>
+    A Systems &amp; Automation Magazine
+  </span></p>
     </section>
 
     <section class="feature reveal" aria-labelledby="feature-headline">
       <div class="feature__copy">
-        <p class="feature__kicker" data-feature-kicker></p>
-        <h2 class="feature__headline" id="feature-headline" data-feature-headline></h2>
-        <p class="feature__deck" data-feature-deck></p>
-        <p class="feature__byline" data-feature-byline></p>
-        <p class="feature__meta" data-feature-meta></p>
-        <a class="feature__cta" data-feature-link href="#"><span>Read the file</span></a>
+        <p class="feature__kicker" data-feature-kicker>
+          Lead Story · Workflow Automation
+        </p>
+        <h2 class="feature__headline" id="feature-headline" data-feature-headline>
+          The weekly report was eating 12 hours. We got them back.
+        </h2>
+        <p class="feature__deck" data-feature-deck>
+          Three departments at Home Digital shared one manual reporting cycle. The fix wasn&#x27;t fancy software — just an Excel workbook with real logic, and SOPs the team could actually stick to.
+        </p>
+        <p class="feature__byline" data-feature-byline>
+          By Benedictus Richard Ricardo
+        </p>
+        <p class="feature__meta" data-feature-meta>
+          Jakarta · Jul 2024 – Sep 2025 · 8 min read
+        </p>
+        <a class="feature__cta" data-feature-link href="/portfolio/cases/automation-mandate/"><span>Read the file</span></a>
       </div>
       <figure class="feature__media">
-        <img data-feature-image alt="" loading="eager" decoding="async">
-        <figcaption class="feature__caption" data-feature-caption></figcaption>
+        <img data-feature-image alt="Analytics dashboards showing operational reporting metrics, the kind of evidence rebuilt during the engagement." loading="eager" decoding="async" src="/portfolio/assets/photos/automation.jpg">
+        <figcaption class="feature__caption" data-feature-caption>
+          Operational dashboards — the kind of evidence the cycle was rebuilt around. Photograph used as illustration.
+        </figcaption>
       </figure>
     </section>
 
     <section class="issue" id="cases" aria-labelledby="issue-label">
       <div class="issue__head">
-        <h2 class="issue__label" id="issue-label" data-index-label></h2>
-        <p class="issue__note" data-index-note></p>
+        <h2 class="issue__label" id="issue-label" data-index-label>
+          In this issue
+        </h2>
+        <p class="issue__note" data-index-note>
+          Three more files on the record — leadership at school scale, the live programs, and the readiness work behind the field.
+        </p>
       </div>
-      <div class="dispatches" data-secondary-list></div>
+      <div class="dispatches" data-secondary-list>
+        <article class="dispatch reveal">
+          <span class="dispatch__num">01</span>
+          <a class="dispatch__inner" href="/portfolio/cases/kpi-governance-record/" data-track="case" data-slug="kpi-governance-record">
+            <p class="dispatch__kicker">Governance · Leadership</p>
+            <h3 class="dispatch__title">A council of thirty-four learns to keep time.</h3>
+            <p class="dispatch__deck">How a student presidency adopted a KPI rhythm — and started running like an institution instead of a friendship group.</p>
+            <p class="dispatch__meta">President · 10 divisions · 12 feeder schools</p>
+          </a>
+        </article>
+        <article class="dispatch reveal">
+          <span class="dispatch__num">02</span>
+          <a class="dispatch__inner" href="/portfolio/cases/large-scale-event-ops/" data-track="case" data-slug="large-scale-event-ops">
+            <p class="dispatch__kicker">Live Operations</p>
+            <h3 class="dispatch__title">When the room is watching, the only thing visible is what fails.</h3>
+            <p class="dispatch__deck">Three years of stage and backstage work for audiences of one thousand and more — and a Youth Mass for five hundred, MC-led.</p>
+            <p class="dispatch__meta">Stage Coordinator &amp; MC · 2022 – 2025</p>
+          </a>
+        </article>
+        <article class="dispatch reveal">
+          <span class="dispatch__num">03</span>
+          <a class="dispatch__inner" href="/portfolio/cases/vertical-rescue-ops/" data-track="case" data-slug="vertical-rescue-ops">
+            <p class="dispatch__kicker">Training &amp; Readiness</p>
+            <h3 class="dispatch__title">The quieter part of high-risk work is the part nobody films.</h3>
+            <p class="dispatch__deck">Four-plus years of equipment care and training support at Vertical Rescue Indonesia — readiness as a discipline, not a posture.</p>
+            <p class="dispatch__meta">Assistant Instructor · Jan 2021 – Present</p>
+          </a>
+        </article>
+        <article class="dispatch reveal">
+          <span class="dispatch__num">04</span>
+          <a class="dispatch__inner" href="https://bit.ly/TUASpatial" data-track="tool" data-slug="tua-spatial-analyzer" target="_blank" rel="noopener noreferrer">
+            <p class="dispatch__kicker">Analytics &amp; Routing</p>
+            <h3 class="dispatch__title">Spatial Analyzer</h3>
+            <p class="dispatch__deck">A spatial analysis tool built for Tirta Utama Abadi to evaluate and optimize route efficiency.</p>
+            <p class="dispatch__meta">Tirta Utama Abadi</p>
+          </a>
+        </article>
+        <article class="dispatch reveal">
+          <span class="dispatch__num">05</span>
+          <a class="dispatch__inner" href="https://bit.ly/49cpunb" data-track="tool" data-slug="tua-route-validator" target="_blank" rel="noopener noreferrer">
+            <p class="dispatch__kicker">Operations</p>
+            <h3 class="dispatch__title">Route Validator</h3>
+            <p class="dispatch__deck">An operational tool developed for validating route compliance and delivery performance at Tirta Utama Abadi.</p>
+            <p class="dispatch__meta">Tirta Utama Abadi</p>
+          </a>
+        </article>
+        <article class="dispatch reveal">
+          <span class="dispatch__num">06</span>
+          <a class="dispatch__inner" href="https://bit.ly/RTMTUA" data-track="tool" data-slug="tua-online-meeting-rtm" target="_blank" rel="noopener noreferrer">
+            <p class="dispatch__kicker">Management</p>
+            <h3 class="dispatch__title">Online Meeting RTM</h3>
+            <p class="dispatch__deck">A centralized management and tracking dashboard for Tirta Utama Abadi online meetings.</p>
+            <p class="dispatch__meta">Tirta Utama Abadi</p>
+          </a>
+        </article>
+        <article class="dispatch reveal">
+          <span class="dispatch__num">07</span>
+          <a class="dispatch__inner" href="https://datastudio.google.com/s/mT9LfU0JTPc" data-track="tool" data-slug="sample-report" target="_blank" rel="noopener noreferrer">
+            <p class="dispatch__kicker">Analytics</p>
+            <h3 class="dispatch__title">Sample Report</h3>
+            <p class="dispatch__deck">A sample data report built on Google Data Studio.</p>
+            <p class="dispatch__meta">Data Studio</p>
+          </a>
+        </article>
+      </div>
     </section>
 
     <section class="dossier reveal" aria-labelledby="dossier-title">
       <div class="dossier__copy">
-        <p class="dossier__kicker" data-editor-kicker></p>
-        <h2 class="dossier__title" id="dossier-title" data-editor-title></h2>
-        <p class="dossier__lede" data-editor-lede></p>
-        <div class="dossier__body" data-editor-body></div>
+        <p class="dossier__kicker" data-editor-kicker>
+          About the editor
+        </p>
+        <h2 class="dossier__title" id="dossier-title" data-editor-title>
+          Benedictus Richard Ricardo, on the record.
+        </h2>
+        <p class="dossier__lede" data-editor-lede>
+          I work best when operations are messy and nobody&#x27;s sure who&#x27;s responsible for what. I come in, sort it out, and build something that holds.
+        </p>
+        <div class="dossier__body" data-editor-body>
+          <p>A good system should feel obvious, not impressive. The point is that teams stop overthinking and just do the work.</p>
+          <p>I&#x27;m studying Data Science at Universitas Terbuka right now. It&#x27;s shaping how I think about process problems — more data, fewer assumptions.</p>
+        </div>
       </div>
-      <dl class="dossier__facts" data-editor-facts></dl>
+      <dl class="dossier__facts" data-editor-facts>
+        <div class="dossier__row">
+          <dt>Base</dt>
+          <dd>Bandung, Indonesia · UTC+7</dd>
+        </div>
+        <div class="dossier__row">
+          <dt>Studying</dt>
+          <dd>Data Science, Universitas Terbuka</dd>
+        </div>
+        <div class="dossier__row">
+          <dt>Languages</dt>
+          <dd>English · Indonesian · German</dd>
+        </div>
+        <div class="dossier__row">
+          <dt>Style</dt>
+          <dd>Structured, calm, evidence-led</dd>
+        </div>
+      </dl>
     </section>
 
     <section class="contact reveal" id="contact" aria-labelledby="contact-title">
       <div class="contact__strap">
-        <span data-contact-kicker></span>
+        <span data-contact-kicker>
+          Letter to the editor
+        </span>
         <span data-contact-strap-mid>Open file</span>
         <span data-contact-strap-end>Available for conversations</span>
       </div>
-      <h2 class="contact__title" id="contact-title" data-contact-title></h2>
-      <p class="contact__body" data-contact-body></p>
-      <div class="contact__actions" data-contact-actions></div>
+      <h2 class="contact__title" id="contact-title" data-contact-title>
+        Open to talking about systems, automation, and ops work.
+      </h2>
+      <p class="contact__body" data-contact-body>
+        Best fit for teams or roles that need things to run cleaner, more reliably, or with less manual overhead. Based in GMT+7.
+      </p>
+      <div class="contact__actions" data-contact-actions>
+        <a class="btn-cta btn-cta--primary" href="mailto:contact@dictuzz.me"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2.5 5.5h15v9h-15z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2.8 6 10 11l7.2-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>contact@dictuzz.me</span></a>
+        <a class="btn-cta btn-cta--ghost" href="https://calendar.app.google/39u2qGH6ybaFenhdA" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="3" y="5" width="14" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 8.5h14M7 3.5v3M13 3.5v3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Schedule a meeting</span></a>
+        <a class="btn-cta btn-cta--ghost" href="https://linkedin.com/in/dictuzz" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="15" height="15" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 8.6v6M6 6.4v.05M9 14.6v-3.6c0-1.4 2.5-1.6 2.5 0v3.6M14 14.6v-3.6c0-1.4-2.5-1.6-2.5 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>LinkedIn</span></a>
+      </div>
     </section>
 
   </main>
 
-  <footer class="global-footer" aria-label="Site footer"></footer>
+  <footer class="global-footer">
+            <nav class="global-footer__nav" aria-label="Global navigation">
+                <a href="/" class="global-footer__link">Home</a>
+                <a href="/resume/" class="global-footer__link">Resume</a>
+                <a href="/portfolio/" class="global-footer__link" aria-current="page">Portfolio</a>
+                <a href="/resources/" class="global-footer__link">Resources</a>
+            </nav>
+            <div class="global-footer__contacts">
+                <a href="mailto:contact@dictuzz.me" class="global-footer__contact-link" aria-label="Email Benedictus"><i class="i-ph-envelope-simple-duotone"></i> contact@dictuzz.me</a>
+                <span class="global-footer__divider">&bull;</span>
+                <a href="https://linkedin.com/in/dictuzz" class="global-footer__contact-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="i-ph-linkedin-logo-duotone"></i> LinkedIn</a>
+                <span class="global-footer__divider">&bull;</span>
+                <a href="https://github.com/dictuzz" class="global-footer__contact-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="i-ph-github-logo-duotone"></i> GitHub</a>
+            </div>
+            <p class="global-footer__copy">
+                &copy; 2026 Benedictus Richard Ricardo.
+                <span>Systems Architect &amp; Automation Specialist</span>
+            </p>
+        </footer>
 
   <script src="/portfolio/portfolio.js?v=v4" type="module"></script>
 </body>

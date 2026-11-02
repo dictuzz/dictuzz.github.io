@@ -39,8 +39,13 @@ async function loadLanguage(lang) {
             try { render(); } catch (err) { console.error('Renderer error:', err); }
         }
 
-        // Update document language for screen readers
+        // Single source of truth for document language and URL
         document.documentElement.lang = lang;
+        const currentUrl = new URL(location);
+        if (currentUrl.searchParams.get('lang') !== lang) {
+            currentUrl.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', currentUrl);
+        }
 
         upgradeIcons(document);
 

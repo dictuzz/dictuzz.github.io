@@ -1,20 +1,12 @@
 import { applyGlobalFooter } from '../js/site-renderers.js';
 import { upgradeIcons } from '../js/icon-kit.js';
 import { loadSiteConfig } from '../js/site-content.js';
+import { safeStorage } from '../js/ui-kit.js';
 
 const SUPPORTED_LANGS = ['en', 'id', 'de'];
 const DEFAULT_LANG = 'en';
 const LANG_KEY = 'dictuzz-lang';
 const THEME_KEY = 'dictuzz-theme';
-
-const STORAGE_OK = (() => {
-  try {
-    const t = '__t__';
-    localStorage.setItem(t, t);
-    localStorage.removeItem(t);
-    return true;
-  } catch { return false; }
-})();
 
 const docEl = document.documentElement;
 const bodyEl = document.body;
@@ -27,82 +19,13 @@ const state = {
   caseSlug: bodyEl.dataset.case || null
 };
 
-/* ---------- authentication ---------- */
-const EXPECTED_HASH = 'c28595c067550031126e2dbe55cd86afdb7209fc25e2edf8f18a87e4fc9095cf';
-const isUnlocked = STORAGE_OK && sessionStorage.getItem('portfolio_unlocked') === 'true';
-
-if (!isUnlocked) {
-  docEl.classList.add('is-locked');
-}
-
-async function hashPassword(password) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-window.generatePasswordHash = async function(password) {
-  return await hashPassword(password);
-};
-
-function renderLockScreen() {
-  if (isUnlocked) return;
-  const overlay = document.createElement('div');
-  overlay.id = 'lock-overlay';
-  overlay.innerHTML = `
-    <div class="lock-box">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-        <path d="M7 11V7a5 5 0 0110 0v4"></path>
-      </svg>
-      <h2>Authorized Personnel Only</h2>
-      <p>Please enter the passphrase to view the operational records.</p>
-      <form class="lock-form" id="lock-form">
-        <input type="password" id="lock-pass" class="lock-input" placeholder="Passphrase" required autofocus>
-        <button type="submit" class="lock-btn">Unlock Records</button>
-        <a href="https://wa.me/6285186888630" target="_blank" rel="noopener noreferrer" class="lock-btn request-access-btn" style="display: block; text-align: center; margin-top: 10px; background: transparent; border: 1px solid currentColor; text-decoration: none;">Request Access</a>
-        <div id="lock-error" class="lock-error" aria-live="assertive"></div>
-      </form>
-    </div>
-  `;
-  document.body.prepend(overlay);
-
-  const form = document.getElementById('lock-form');
-  const input = document.getElementById('lock-pass');
-  const error = document.getElementById('lock-error');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const val = input.value.trim();
-    if (!val) return;
-    
-    const hash = await hashPassword(val);
-    if (hash === EXPECTED_HASH) {
-      if (STORAGE_OK) sessionStorage.setItem('portfolio_unlocked', 'true');
-      overlay.classList.add('is-hidden');
-      setTimeout(() => {
-        docEl.classList.remove('is-locked');
-        overlay.remove();
-      }, 300);
-    } else {
-      error.textContent = 'Incorrect passphrase.';
-      input.value = '';
-      input.focus();
-    }
-  });
-}
-
-/* ---------- language ---------- */
+let revealObserver = null;
 
 function readStoredLang() {
-  if (!STORAGE_OK) return null;
-  try { return localStorage.getItem(LANG_KEY); } catch { return null; }
+  return safeStorage.getItem(LANG_KEY);
 }
 function writeStoredLang(lang) {
-  if (!STORAGE_OK) return;
-  try { localStorage.setItem(LANG_KEY, lang); } catch { /* ignore */ }
+  safeStorage.setItem(LANG_KEY, lang);
 }
 function getInitialLang() {
   const url = new URLSearchParams(location.search).get('lang');
@@ -127,15 +50,11 @@ async function loadLocale(lang) {
   return JSON.parse(text.replace(/^\uFEFF/, ''));
 }
 
-/* ---------- theme ---------- */
-
 function readStoredTheme() {
-  if (!STORAGE_OK) return null;
-  try { return localStorage.getItem(THEME_KEY); } catch { return null; }
+  return safeStorage.getItem(THEME_KEY);
 }
 function writeStoredTheme(theme) {
-  if (!STORAGE_OK) return;
-  try { localStorage.setItem(THEME_KEY, theme); } catch { /* ignore */ }
+  safeStorage.setItem(THEME_KEY, theme);
 }
 function applyTheme(theme) {
   const next = theme === 'dark' ? 'dark' : 'light';
@@ -194,8 +113,6 @@ function iconHtml(name) {
   }
 }
 
-/* ---------- topbar ---------- */
-
 function renderTopbar(data) {
   const ui = data.ui;
   const homeRoot = `/?lang=${state.lang}`;
@@ -241,8 +158,6 @@ function renderTopbar(data) {
   if (skip) skip.textContent = ui.skipLink;
 }
 
-/* ---------- landing ---------- */
-
 function renderLanding(data) {
   const L = data.landing;
 
@@ -250,16 +165,14 @@ function renderLanding(data) {
   setAttr('meta[name="description"]', 'content', L.metaDescription);
   document.documentElement.lang = state.lang;
 
-  // Masthead
-  setText('[data-masthead-strap-left]', L.masthead.strapLeft);
+    setText('[data-masthead-strap-left]', L.masthead.strapLeft);
   setText('[data-masthead-strap-center]', L.masthead.strapCenter);
   setText('[data-masthead-strap-right]', L.masthead.strapRight);
   setText('[data-masthead-wordmark]', L.masthead.wordmark);
   setText('[data-masthead-subtitle]', L.masthead.subtitle);
   setText('[data-masthead-rule]', data.ui.magazineLabel);
 
-  // Feature
-  const f = L.feature;
+    const f = L.feature;
   setText('[data-feature-kicker]', f.kicker);
   setText('[data-feature-headline]', f.headline);
   setText('[data-feature-deck]', f.deck);
@@ -270,27 +183,31 @@ function renderLanding(data) {
   setAttr('[data-feature-image]', 'alt', f.imageAlt || '');
   setText('[data-feature-caption]', f.caption);
 
-  // Index
-  setText('[data-index-label]', L.indexLabel);
+    setText('[data-index-label]', L.indexLabel);
   setText('[data-index-note]', L.indexNote);
 
   const list = document.querySelector('[data-secondary-list]');
   if (list && Array.isArray(L.secondary)) {
-    list.innerHTML = L.secondary.map((item, i) => `
+    list.innerHTML = L.secondary.map((item, i) => {
+      const isExternal = /^https?:\/\//i.test(item.href);
+      const linkHref = isExternal ? item.href : `${item.href}?lang=${state.lang}`;
+      const extAttrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+      const trackKind = isExternal ? 'tool' : 'case';
+      return `
       <article class="dispatch reveal">
         <span class="dispatch__num">${String(i + 1).padStart(2, '0')}</span>
-        <a class="dispatch__inner" href="${item.href}?lang=${state.lang}" data-track="case" data-slug="${item.slug}">
+        <a class="dispatch__inner" href="${linkHref}" data-track="${trackKind}" data-slug="${item.slug}"${extAttrs}>
           <p class="dispatch__kicker">${escapeHtml(item.kicker)}</p>
           <h3 class="dispatch__title">${escapeHtml(item.title)}</h3>
           <p class="dispatch__deck">${escapeHtml(item.deck)}</p>
           <p class="dispatch__meta">${escapeHtml(item.meta)}</p>
         </a>
       </article>
-    `).join('');
+      `;
+    }).join('');
   }
 
-  // Editor
-  setText('[data-editor-kicker]', L.editor.kicker);
+    setText('[data-editor-kicker]', L.editor.kicker);
   setText('[data-editor-title]', L.editor.title);
   setText('[data-editor-lede]', L.editor.lede);
 
@@ -309,8 +226,7 @@ function renderLanding(data) {
     `).join('');
   }
 
-  // Contact
-  setText('[data-contact-kicker]', L.contact.kicker);
+    setText('[data-contact-kicker]', L.contact.kicker);
   setText('[data-contact-title]', L.contact.title);
   setText('[data-contact-body]', L.contact.body);
 
@@ -323,8 +239,6 @@ function renderLanding(data) {
     }).join('');
   }
 }
-
-/* ---------- case page ---------- */
 
 function renderCase(data) {
   const slug = state.caseSlug;
@@ -414,8 +328,6 @@ function renderCase(data) {
   }
 }
 
-/* ---------- progress + reveal ---------- */
-
 function initProgress() {
   const bar = document.querySelector('[data-progress]');
   if (!bar) return;
@@ -432,16 +344,19 @@ function initProgress() {
 }
 
 function initReveal() {
+  revealObserver?.disconnect();
+  revealObserver = null;
+
+  const targets = document.querySelectorAll('.reveal');
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+    targets.forEach((el) => el.classList.add('is-visible'));
     return;
   }
-  const targets = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
     targets.forEach((el) => el.classList.add('is-visible'));
     return;
   }
-  const io = new IntersectionObserver((entries, obs) => {
+  revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
@@ -449,26 +364,34 @@ function initReveal() {
       }
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
-  targets.forEach((el) => io.observe(el));
+  targets.forEach((el) => revealObserver.observe(el));
 }
 
-/* ---------- structured data ---------- */
+function getSiteUrl() {
+  return state.siteConfig?.site?.siteUrl || 'https://dictuzz.me';
+}
+
+function absoluteUrl(href) {
+  const base = getSiteUrl();
+  return /^https?:\/\//i.test(href) ? href : `${base}${href}`;
+}
 
 function injectJsonLd(data) {
   const slot = document.querySelector('[data-jsonld]');
   if (!slot) return;
+  const siteUrl = getSiteUrl();
   let payload = null;
   if (state.pageType === 'landing') {
     const itemList = (data.landing.secondary || []).map((s, i) => ({
       '@type': 'ListItem',
       position: i + 2,
-      url: `https://dictuzz.me${s.href}`,
+      url: absoluteUrl(s.href),
       name: s.title
     }));
     itemList.unshift({
       '@type': 'ListItem',
       position: 1,
-      url: `https://dictuzz.me${data.landing.feature.href}`,
+      url: absoluteUrl(data.landing.feature.href),
       name: data.landing.feature.headline
     });
     payload = {
@@ -477,7 +400,12 @@ function injectJsonLd(data) {
       name: data.landing.documentTitle,
       description: data.landing.metaDescription,
       inLanguage: state.lang,
-      url: `https://dictuzz.me/portfolio/?lang=${state.lang}`,
+      url: `${siteUrl}/portfolio/?lang=${state.lang}`,
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: itemList.length,
+        itemListElement: itemList
+      },
       hasPart: itemList.map((i) => ({ '@type': 'Article', name: i.name, url: i.url }))
     };
   } else if (state.pageType === 'case') {
@@ -491,18 +419,18 @@ function injectJsonLd(data) {
         inLanguage: state.lang,
         author: {
           '@type': 'Person',
-          name: 'Benedictus Richard Ricardo',
-          url: 'https://dictuzz.me/'
+          name: state.siteConfig?.profile?.name || 'Benedictus Richard Ricardo',
+          url: `${siteUrl}/`
         },
         publisher: {
           '@type': 'Person',
-          name: 'Benedictus Richard Ricardo',
-          url: 'https://dictuzz.me/'
+          name: state.siteConfig?.profile?.name || 'Benedictus Richard Ricardo',
+          url: `${siteUrl}/`
         },
-        url: `https://dictuzz.me/portfolio/cases/${state.caseSlug}/?lang=${state.lang}`
+        url: `${siteUrl}/portfolio/cases/${state.caseSlug}/?lang=${state.lang}`
       };
       if (c.image) {
-        payload.image = `https://dictuzz.me${c.image}`;
+        payload.image = absoluteUrl(c.image);
       }
     }
   }
@@ -510,8 +438,6 @@ function injectJsonLd(data) {
     slot.textContent = JSON.stringify(payload);
   }
 }
-
-/* ---------- core ---------- */
 
 async function switchLang(lang) {
   if (!SUPPORTED_LANGS.includes(lang) || lang === state.lang) return;
@@ -537,10 +463,10 @@ function render() {
   injectJsonLd(state.data);
   upgradeIcons(document);
   applyTheme(docEl.getAttribute('data-theme') || 'light');
+  initReveal();
 }
 
 async function init() {
-  renderLockScreen();
   applyTheme(initialTheme());
 
   document.addEventListener('click', (e) => {
@@ -572,7 +498,6 @@ async function init() {
 
   render();
   initProgress();
-  initReveal();
 }
 
 document.addEventListener('DOMContentLoaded', init);

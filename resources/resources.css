@@ -1,7 +1,4 @@
-/* ═══════════════════════════════════════════
-   RESOURCES PAGE — Custom Styles
-   Inherits tokens.css + core.css via site.css
-   ═══════════════════════════════════════════ */
+
 
 /* --- Page Layout --- */
 .resources-page {
@@ -495,9 +492,6 @@
     }
 }
 
-/* ═══════════════════════════════════════════
-   Raw Content (.vp-doc) Styling
-   ═══════════════════════════════════════════ */
 .vp-doc {
     color: var(--color-text-primary);
     line-height: 1.7;
@@ -643,9 +637,6 @@
     font-size: var(--text-sm);
 }
 
-/* ═══════════════════════════════════════════
-   Sidebar Layout & Styling
-   ═══════════════════════════════════════════ */
 .resources-shell.has-sidebar {
     display: flex;
     gap: 36px;
@@ -740,10 +731,6 @@
         max-width: 100%;
     }
 }
-
-/* ═══════════════════════════════════════════
-   Search Promo (index page)
-   ═══════════════════════════════════════════ */
 
 .search-promo {
   max-width: 540px;

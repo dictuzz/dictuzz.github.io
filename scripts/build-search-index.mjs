@@ -87,6 +87,15 @@ function parseLi(html, liClass, category, slug, section, subsection) {
     .trim()
     .slice(0, 250);
 
+  if (url && url.startsWith('/') && !url.startsWith('/resources/')) {
+    const match = url.match(/^\/([^/#]+)(?:(\/)?|(#.*)?)$/);
+    if (match) {
+      const topic = match[1];
+      const frag = match[3] || '';
+      url = `/resources/${topic}.html${frag}`;
+    }
+  }
+
   return {
     t: title,
     u: url,
@@ -99,6 +108,21 @@ function parseLi(html, liClass, category, slug, section, subsection) {
   };
 }
 
+function decodeEntities(str) {
+  if (!str) return '';
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+}
+
 function stripTags(str) {
-  return str.replace(/<[^>]*>/g, '');
+  if (!str) return '';
+  return decodeEntities(str.replace(/<[^>]*>/g, ''));
 }

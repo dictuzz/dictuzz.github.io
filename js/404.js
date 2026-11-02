@@ -48,7 +48,7 @@
     wallFlash: '#ef4444',
   };
 
-  /* ── Funny death messages ────────────────────────────────────── */
+  /* ── Death messages ── */
   const DEATH_DATA = [
     { emoji: '💀', title: 'Wasted.',         quip: 'You hit a 404. The irony writes itself.' },
     { emoji: '🐍', title: 'Snake Down!',     quip: 'That 404 wasn\'t a page — it was a wall.' },
@@ -216,8 +216,7 @@
     const cy = food.y * cell + cell / 2;
     const r  = cell * 0.38;
 
-    // glow
-    ctx.shadowBlur = 18;
+        ctx.shadowBlur = 18;
     ctx.shadowColor = COLOR.foodGlow;
     ctx.fillStyle = COLOR.food;
     ctx.beginPath();
@@ -225,8 +224,7 @@
     ctx.fill();
     ctx.shadowBlur = 0;
 
-    // gleam
-    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+        ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.beginPath();
     ctx.arc(cx - r * 0.25, cy - r * 0.28, r * 0.25, 0, Math.PI * 2);
     ctx.fill();
@@ -248,8 +246,7 @@
       ctx.fillStyle = `rgb(${r},${g},${b})`;
 
       if (i === 0) {
-        // Head glow
-        ctx.shadowBlur = 10;
+                ctx.shadowBlur = 10;
         ctx.shadowColor = 'rgba(110,231,183,0.3)';
       }
 
@@ -257,8 +254,7 @@
       ctx.fill();
       ctx.shadowBlur = 0;
 
-      // Eyes on head
-      if (i === 0) {
+            if (i === 0) {
         drawEyes(seg);
       }
     });
@@ -280,8 +276,7 @@
     ctx.beginPath(); ctx.arc(e1x, e1y, eyeR, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.arc(e2x, e2y, eyeR, 0, Math.PI * 2); ctx.fill();
 
-    // pupils
-    ctx.fillStyle = '#0a0e17';
+        ctx.fillStyle = '#0a0e17';
     const pr = eyeR * 0.55;
     ctx.beginPath(); ctx.arc(e1x + dir.x * pr * 0.3, e1y + dir.y * pr * 0.3, pr, 0, Math.PI * 2); ctx.fill();
     ctx.beginPath(); ctx.arc(e2x + dir.x * pr * 0.3, e2y + dir.y * pr * 0.3, pr, 0, Math.PI * 2); ctx.fill();
@@ -293,19 +288,16 @@
       const y = o.y * cell;
       const bw = cell * 3;
 
-      // background block
-      ctx.fillStyle = COLOR.obstacleBg;
+            ctx.fillStyle = COLOR.obstacleBg;
       roundRect(x + 1, y + 1, bw - 2, cell - 2, cell * 0.15);
       ctx.fill();
 
-      // border
-      ctx.strokeStyle = 'rgba(248,113,113,0.25)';
+            ctx.strokeStyle = 'rgba(248,113,113,0.25)';
       ctx.lineWidth = 1.5;
       roundRect(x + 1, y + 1, bw - 2, cell - 2, cell * 0.15);
       ctx.stroke();
 
-      // "404" text
-      ctx.fillStyle = COLOR.text404;
+            ctx.fillStyle = COLOR.text404;
       ctx.font = `800 ${Math.floor(cell * 0.6)}px 'JetBrains Mono', monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';

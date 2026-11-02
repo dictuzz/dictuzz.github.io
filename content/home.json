@@ -14,29 +14,25 @@
           "label": "Portfolio",
           "icon": "i-ph-squares-four-duotone",
           "href": "/portfolio/",
-          "external": false,
-          "priority": true
+          "external": false
         },
         {
           "label": "Resume",
           "icon": "i-ph-file-text-duotone",
           "href": "/resume/",
-          "external": false,
-          "priority": true
+          "external": false
         },
         {
           "label": "GitHub Projects",
           "icon": "i-ph-github-logo-duotone",
           "href": "https://github.com/dictuzz",
-          "external": true,
-          "priority": true
+          "external": true
         },
         {
           "label": "Resources",
           "icon": "i-ph-link-duotone",
           "href": "/resources/",
-          "external": false,
-          "priority": true
+          "external": false
         }
       ]
     },
@@ -51,8 +47,7 @@
           "label": "Email",
           "icon": "i-ph-envelope-duotone",
           "href": "mailto:contact@dictuzz.me",
-          "external": false,
-          "priority": true
+          "external": false
         },
         {
           "label": "Book a Call",
@@ -79,8 +74,7 @@
           "label": "LinkedIn",
           "icon": "i-ph-linkedin-logo-duotone",
           "href": "https://linkedin.com/in/dictuzz",
-          "external": true,
-          "priority": true
+          "external": true
         },
         {
           "label": "Instagram",

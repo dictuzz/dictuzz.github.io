@@ -2,9 +2,6 @@
 @import '../assets/css/tokens.css';
 @import '../assets/css/core.css';
 
-
-
-
 *,
 *::before,
 *::after {
@@ -160,12 +157,6 @@ select {
 }
 
 /* Global footer styles: see assets/css/core.css */
-
-
-
-
-
-
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -645,7 +636,6 @@ select {
     }
 }
 
-
 @media (max-width: 480px) {
     .bio-shell {
         width: min(calc(100% - 16px), 640px);
@@ -686,7 +676,6 @@ select {
         font-size: 0.78rem;
         letter-spacing: 0.1em;
     }
-
 
     .bio-status,
     .bio-meta__item {
@@ -737,9 +726,6 @@ select {
     }
 }
 
-/* ═══════════════════════════════════════════
-   ACCESSIBILITY: Skip-to-main-content link
-   ═══════════════════════════════════════════ */
 .skip-link {
     position: absolute;
     top: -100%;
