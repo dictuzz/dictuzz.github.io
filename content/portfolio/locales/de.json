@@ -3,7 +3,7 @@
   "ui": {
     "skipLink": "Zum Hauptinhalt springen",
     "brand": "dictuzz",
-    "brandSub": "Systeme & Automatisierung",
+    "brandSub": "Route-to-Market · Reporting · Betrieb",
     "topbar": {
       "home": "Start",
       "resume": "Lebenslauf",
@@ -38,9 +38,6 @@
     "tools": "Werkzeuge & Methoden",
     "impact": "Wirkung",
     "evidence": "Nachweise",
-    "artifactPlaceholderLabel": "Platzhalter für Projektnachweise",
-    "artifactPlaceholderTitle": "Projektansicht folgt",
-    "artifactPlaceholderBody": "Hier folgt später ein freigegebener und anonymisierter Projektnachweis.",
     "featureCta": "Fallstudie lesen",
     "contactStrapMid": "Für Projekte offen",
     "contactStrapEnd": "Ich freue mich auf den Austausch",
@@ -59,11 +56,12 @@
       "VERTRIEB",
       "BETRIEB"
     ],
-    "systemRole": "Systemarchitekt & Automatisierungsspezialist"
+    "systemRole": "Route-to-Market-Analyst"
   },
   "landing": {
     "documentTitle": "Portfolio | dictuzz",
-    "metaDescription": "Ausgewählte Arbeiten zu Reporting-Automatisierung, Teamsteuerung, Veranstaltungsbetrieb und technischer Einsatzbereitschaft von Benedictus Richard Ricardo.",
+    "shareTitle": "Ausgewählte Projekte zu Prozessen & Betrieb | dictuzz",
+    "metaDescription": "Fallstudien von Benedictus Richard Ricardo zu Reporting-Automatisierung, operativer Steuerung, Veranstaltungen und Einsatzbereitschaft.",
     "masthead": {
       "wordmark": "Systeme, die Zeit zurückgeben.",
       "subtitle": "Ich entwickle automatisierte Arbeitsabläufe, klare Zuständigkeiten und verlässliche Veranstaltungsprozesse, damit Teams sich auf ihre Kernaufgaben konzentrieren können.",
@@ -78,9 +76,12 @@
       "byline": "Von Benedictus Richard Ricardo",
       "meta": "Bandung · Juli 2024 – Feb. 2026 · 8 Min. Lesezeit",
       "href": "/portfolio/cases/automation-mandate/",
-      "image": "/portfolio/assets/graphics/reporting-system.svg",
-      "imageAlt": "Eine abstrakte Prozessgrafik, die drei Arbeitsstränge in einem gemeinsamen Berichtssystem vereint.",
-      "caption": "Eine visuelle Interpretation des in dieser Fallstudie beschriebenen Berichtswesen-Ablaufs."
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Ein Analytics-Dashboard mit Wochenverläufen und wichtigen Kennzahlen.",
+      "caption": "Dashboard-Ansicht zur Prüfung der wöchentlichen Leistungskennzahlen.",
+      "imageFit": "contain",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "indexLabel": "Ausgewählte Fallstudien",
     "indexNote": "Vier Fallstudien zu automatisiertem Berichtswesen, Organisationssteuerung, Live-Veranstaltungen und technischer Einsatzbereitschaft.",
@@ -200,16 +201,17 @@
   "cases": {
     "automation-mandate": {
       "documentTitle": "Reporting-Automatisierung | dictuzz",
-      "metaDescription": "Wie ein gemeinsames Berichtssystem den manuellen Aufwand bei Home Digital Indonesia um mehr als zwölf Stunden pro Woche senkte.",
+      "shareTitle": "12+ Stunden pro Woche eingespart | dictuzz",
+      "metaDescription": "Ein gemeinsamer Excel-Reportingprozess für Finanzen, Vertrieb und Betrieb bei Home Digital Indonesia sparte wöchentlich über zwölf Stunden manuelle Arbeit.",
       "vol": "Bd. I / Nr. 1",
       "kicker": "Prozessautomatisierung · Home Digital Indonesia",
       "title": "Ein Berichtssystem, das dem Team jede Woche mehr als 12 Stunden spart.",
       "deck": "Ich strukturierte den Berichtsprozess und die zugehörigen Arbeitsanweisungen neu. Dadurch sank der manuelle Aufwand um mehr als zwölf Stunden pro Woche. Das Team kann den Ablauf nun zuverlässig und unabhängig von einzelnen Personen wiederholen.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
       "bylineMeta": "Juli 2024 – Feb. 2026 · Bandung, Indonesien",
-      "image": "/portfolio/assets/graphics/reporting-system.svg",
-      "imageAlt": "Eine Prozessgrafik, die drei Arbeitsbereiche in einem gemeinsamen Berichtssystem verbindet.",
-      "caption": "Visuelle Darstellung des in dieser Fallstudie beschriebenen Berichtsprozesses.",
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Ein Dashboard mit Leistungsdiagrammen und wichtigen Kennzahlen für Berichte.",
+      "caption": "Eine Dashboard-Ansicht aus einem Berichtsablauf.",
       "lead": "Drei Bereiche verloren jede Woche viel Zeit mit demselben manuellen Berichtsprozess. Entscheidend waren klare Abläufe und Zuständigkeiten, nicht zusätzliche Software.",
       "process": {
         "kicker": "Der Prozess",
@@ -279,20 +281,24 @@
       "next": {
         "slug": "kpi-governance-record",
         "title": "Eine Schülervertretung mit 34 Mitgliedern arbeitet mit klarer Verantwortung."
-      }
+      },
+      "imageFit": "contain",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "kpi-governance-record": {
       "documentTitle": "KPI-Steuerung | dictuzz",
-      "metaDescription": "Wie eine Schülervertretung mit 34 Mitgliedern mithilfe klarer KPIs zehn Abteilungen koordinierte.",
+      "shareTitle": "Klare Verantwortung in 10 Abteilungen | dictuzz",
+      "metaDescription": "Klare KPIs und regelmäßige Auswertungen stärkten die Verantwortung in einer Schülervertretung mit 34 Mitgliedern, zehn Abteilungen und zwölf Partnerschulen.",
       "vol": "Bd. I / Nr. 2",
       "kicker": "Organisationssteuerung · Führung · SMA Santa Maria 2",
       "title": "Eine Schülervertretung mit 34 Mitgliedern arbeitet mit klarer Verantwortung.",
       "deck": "Wie eine Schülervertretung KPIs und regelmäßige Auswertungen einführte, um Programme und Zuständigkeiten verlässlicher zu koordinieren.",
       "bylineRole": "Vorsitzender der Schülervertretung · SMA Santa Maria 2",
       "bylineMeta": "Nov. 2021 – Nov. 2022 · Bandung, Indonesien",
-      "image": "/portfolio/assets/graphics/governance-rhythm.svg",
-      "imageAlt": "Eine Schülervertretung mit 34 Mitgliedern, dargestellt als zehn vernetzte Abteilungen mit einem gemeinsamen Arbeitsrhythmus.",
-      "caption": "Konzeptionelle Darstellung des in dieser Fallstudie beschriebenen Organisationsmodells.",
+      "image": "/portfolio/assets/photos/governance.jpg",
+      "imageAlt": "Ein Team trifft sich zu einer Arbeitssitzung an einem Konferenztisch.",
+      "caption": "Eine Arbeitssitzung mit dem Governance-Team.",
       "lead": "Die Schülervertretung mit 34 Mitgliedern in zehn Abteilungen benötigte klare Zuständigkeiten und einen verlässlichen Überblick über den Projektfortschritt. KPIs und wöchentliche Auswertungen schufen dafür eine gemeinsame Grundlage.",
       "process": {
         "kicker": "Arbeitsrhythmus der Organisation",
@@ -365,20 +371,24 @@
       "next": {
         "slug": "large-scale-event-ops",
         "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden."
-      }
+      },
+      "imageFit": "cover",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "large-scale-event-ops": {
       "documentTitle": "Veranstaltungsbetrieb | dictuzz",
-      "metaDescription": "Wie Bühnen- und Backstage-Planung Veranstaltungen mit mehr als 1.000 Teilnehmenden unterstützte.",
+      "shareTitle": "Veranstaltungsbetrieb für 1.000+ Gäste | dictuzz",
+      "metaDescription": "Koordination von Bühne und Backstage für Veranstaltungen mit mehr als 1.000 Gästen, darunter ein Jugendgottesdienst mit über 500 Teilnehmenden.",
       "vol": "Bd. I / Nr. 3",
       "kicker": "Veranstaltungsbetrieb · Ultimate Event Organizer",
       "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden.",
       "deck": "Drei Jahre Bühnen- und Backstage-Koordination bei Großveranstaltungen, darunter die Moderation eines Jugendgottesdienstes mit mehr als 500 Teilnehmenden.",
       "bylineRole": "Bühnenkoordination und Moderation · Ultimate Event Organizer",
       "bylineMeta": "2022 – 2025 · Bandung, Indonesien",
-      "image": "/portfolio/assets/graphics/live-operations.svg",
-      "imageAlt": "Ein Bühnenplan mit Lichtkegeln und markierten Übergängen im Live-Programm.",
-      "caption": "Visuelle Darstellung von Regieanweisungen, Timing und Übergaben hinter der Bühne.",
+      "image": "/portfolio/assets/photos/events.jpg",
+      "imageAlt": "Konfetti schwebt über dem Publikum einer Live-Veranstaltung.",
+      "caption": "Ein Moment einer Veranstaltung, die das Betriebsteam unterstützt hat.",
       "lead": "Großveranstaltungen erfordern präzise Übergänge, klare Absprachen und verlässliche Abläufe hinter der Bühne. Kleine Störungen fallen sofort auf; deshalb braucht jedes Team einen gemeinsamen Plan.",
       "process": {
         "kicker": "Ablaufplan",
@@ -451,20 +461,24 @@
       "next": {
         "slug": "vertical-rescue-ops",
         "title": "Einsatzbereitschaft entsteht lange vor einem Rettungseinsatz."
-      }
+      },
+      "imageFit": "cover",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "vertical-rescue-ops": {
       "documentTitle": "Vertical-Rescue-Einsätze | dictuzz",
-      "metaDescription": "Ein Einblick in Ausrüstungsbereitschaft, technisches Training und Außeneinsätze bei Vertical Rescue Indonesia.",
+      "shareTitle": "Technische Einsatzbereitschaft | dictuzz",
+      "metaDescription": "Mehr als vier Jahre Unterstützung bei Ausrüstungsbereitschaft und technischem Rettungstraining bei Vertical Rescue Indonesia.",
       "vol": "Bd. I / Nr. 4",
       "kicker": "Ausbildung und Einsatzbereitschaft · Vertical Rescue Indonesia",
       "title": "Einsatzbereitschaft entsteht lange vor einem Rettungseinsatz.",
       "deck": "Seit mehr als vier Jahren unterstütze ich bei Vertical Rescue Indonesia die Ausrüstungspflege und das technische Training. Einsatzbereitschaft beruht auf konsequenter Vorbereitung und klaren Standards.",
       "bylineRole": "Assistenztrainer · Vertical Rescue Indonesia",
       "bylineMeta": "Jan. 2021 – heute · Indonesien",
-      "image": "/portfolio/assets/graphics/readiness-discipline.svg",
-      "imageAlt": "Prüfmarkierungen und technische Ausrüstung stehen für sorgfältige Trainingsvorbereitung.",
-      "caption": "Konzeptionelle Darstellung von Ausrüstungskontrollen und Trainingsvorbereitung.",
+      "image": "/assets/images/vertical-rescue.jpg",
+      "imageAlt": "Rettungskräfte üben Seiltechniken an einer Felswand.",
+      "caption": "Technisches Rettungstraining im Gelände.",
       "lead": "Vorbereitung bleibt meist unbeachtet. Sie entscheidet jedoch darüber, ob Ausrüstung, Team und Abläufe zuverlässig funktionieren, wenn es darauf ankommt.",
       "process": {
         "kicker": "Einsatzbereitschaft",
@@ -534,7 +548,10 @@
         "slug": "large-scale-event-ops",
         "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden."
       },
-      "next": null
+      "next": null,
+      "imageFit": "cover",
+      "imageWidth": 1216,
+      "imageHeight": 913
     }
   }
 }

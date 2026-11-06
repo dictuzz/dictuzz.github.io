@@ -12,6 +12,7 @@ export function applyManagedPageMetadata(siteConfig, pageKey, overrides = {}) {
     if (!pageSeo) return;
 
     const title = overrides.title || pageSeo.title;
+    const shareTitle = overrides.shareTitle || pageSeo.shareTitle || title;
     const description = overrides.description || pageSeo.description;
     const absoluteUrl = toAbsoluteUrl(siteConfig.site.siteUrl, overrides.path || pageSeo.path);
     const imagePath = overrides.imagePath || (pageKey === 'resume' ? siteConfig.profile.image.resumeOg : siteConfig.profile.image.og);
@@ -25,18 +26,22 @@ export function applyManagedPageMetadata(siteConfig, pageKey, overrides = {}) {
 
     setMetaAttribute('meta[property="og:type"]', 'content', pageSeo.ogType || 'website');
     setMetaAttribute('meta[property="og:url"]', 'content', absoluteUrl);
-    setMetaAttribute('meta[property="og:title"]', 'content', title);
+    setMetaAttribute('meta[property="og:title"]', 'content', shareTitle);
     setMetaAttribute('meta[property="og:description"]', 'content', description);
     setMetaAttribute('meta[property="og:image"]', 'content', absoluteImage);
-    setMetaAttribute('meta[property="og:image:alt"]', 'content', siteConfig.profile.image.alt);
+    setMetaAttribute('meta[property="og:image:type"]', 'content', 'image/png');
+    setMetaAttribute('meta[property="og:image:width"]', 'content', '1200');
+    setMetaAttribute('meta[property="og:image:height"]', 'content', '630');
+    const imageAlt = overrides.imageAlt || siteConfig.profile.image.alt;
+    setMetaAttribute('meta[property="og:image:alt"]', 'content', imageAlt);
     setMetaAttribute('meta[property="og:site_name"]', 'content', siteConfig.site.name);
 
-    setMetaAttribute('meta[name="twitter:card"]', 'content', pageKey === 'terms' ? 'summary' : 'summary_large_image');
+    setMetaAttribute('meta[name="twitter:card"]', 'content', 'summary_large_image');
     setMetaAttribute('meta[name="twitter:url"]', 'content', absoluteUrl);
-    setMetaAttribute('meta[name="twitter:title"]', 'content', title);
+    setMetaAttribute('meta[name="twitter:title"]', 'content', shareTitle);
     setMetaAttribute('meta[name="twitter:description"]', 'content', description);
     setMetaAttribute('meta[name="twitter:image"]', 'content', absoluteImage);
-    setMetaAttribute('meta[name="twitter:image:alt"]', 'content', siteConfig.profile.image.alt);
+    setMetaAttribute('meta[name="twitter:image:alt"]', 'content', imageAlt);
     setMetaAttribute('meta[name="twitter:creator"]', 'content', siteConfig.seo.twitterCreator || '');
 }
 
@@ -82,7 +87,7 @@ export function buildHomeStructuredData(siteConfig) {
             '@id': `${homeUrl}#profile`,
             url: homeUrl,
             name: `${siteConfig.profile.name} (${siteConfig.profile.handle})`,
-            description: `Portfolio, résumé, and curated resources by ${siteConfig.profile.name}.`,
+            description: siteConfig.seo.pages.home.description,
             mainEntity: {
                 '@id': personId
             },

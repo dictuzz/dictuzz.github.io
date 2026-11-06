@@ -14,8 +14,7 @@ const { updateResumeSeo } = await import('../resume/resume-seo.js');
 const siteConfig = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/site.json'), 'utf8'));
 const template = fs.readFileSync(path.join(ROOT, 'resume/index.html'), 'utf8');
 const DOM_TEMPLATE = template
-  .replace(/<script\b(?![^>]*\btype=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>/gi, '')
-  .replace(/<link\b(?=[^>]*\brel=["'](?:stylesheet|preload|prefetch|preconnect|dns-prefetch)["'])[^>]*>/gi, '');
+  .replace(/<script\b(?![^>]*\btype=["']application\/ld\+json["'])(?![^>]*\bsrc=)[^>]*>[\s\S]*?<\/script>/gi, '');
 
 function resumePath(lang) {
   return lang === 'en' ? '/resume/' : `/resume/${lang}/`;

@@ -19,13 +19,13 @@
     z-index: var(--z-sticky);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    background: rgba(245, 239, 228, 0.82);
+    background: var(--color-surface-elevated);
     border-bottom: 1px solid var(--color-border-default);
     transition: background-color var(--duration-fast) ease;
 }
 
 [data-theme="dark"] .resources-navbar {
-    background: rgba(18, 24, 32, 0.82);
+    background: var(--color-surface-elevated);
 }
 
 .resources-navbar__inner {
@@ -223,7 +223,7 @@
     padding: 14px 16px;
     border-radius: var(--radius-md);
     border: 1px solid var(--color-border-default);
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--color-surface-soft);
     text-decoration: none;
     color: var(--color-text-primary);
     transition:
@@ -234,21 +234,21 @@
 }
 
 [data-theme="dark"] .resource-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--color-surface-soft);
 }
 
 .resource-card:hover,
 .resource-card:focus-visible {
     transform: translateY(-2px);
-    border-color: rgba(51, 92, 135, 0.18);
+    border-color: var(--color-border-brand);
     box-shadow: var(--shadow-md);
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--color-surface-elevated);
 }
 
 [data-theme="dark"] .resource-card:hover,
 [data-theme="dark"] .resource-card:focus-visible {
-    border-color: rgba(209, 171, 105, 0.18);
-    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--color-border-brand);
+    background: var(--color-surface-elevated);
 }
 
 .resource-card__icon {
@@ -259,6 +259,8 @@
     border-radius: 12px;
     flex: 0 0 38px;
     font-size: 1.1rem;
+    background: var(--site-accent-gold-soft);
+    color: var(--site-text-brand);
 }
 
 .resource-card__body {
@@ -292,35 +294,6 @@
 
 .resource-card:hover .resource-card__arrow {
     transform: translateX(3px);
-}
-
-/* --- Card Icon Palette --- */
-.resource-card__icon--privacy    { background: rgba(208, 90, 110, 0.12); color: #D05A6E; }
-.resource-card__icon--ai         { background: rgba(145, 152, 159, 0.12); color: #91989F; }
-.resource-card__icon--video      { background: rgba(122, 162, 247, 0.12); color: #7aa2f7; }
-.resource-card__icon--audio      { background: rgba(124, 130, 254, 0.12); color: #7c82fe; }
-.resource-card__icon--gaming     { background: rgba(73, 211, 233, 0.12); color: #49d3e9; }
-.resource-card__icon--reading    { background: rgba(60, 205, 147, 0.12); color: #3ccd93; }
-.resource-card__icon--download   { background: rgba(190, 194, 63, 0.12); color: #BEC23F; }
-.resource-card__icon--torrent    { background: rgba(138, 107, 190, 0.12); color: #8A6BBE; }
-.resource-card__icon--education  { background: rgba(168, 216, 185, 0.12); color: #6BBE8A; }
-.resource-card__icon--mobile     { background: rgba(218, 201, 166, 0.12); color: #DAC9A6; }
-.resource-card__icon--linux      { background: rgba(241, 124, 103, 0.12); color: #f17c67; }
-.resource-card__icon--language   { background: rgba(251, 153, 102, 0.12); color: #FB9966; }
-.resource-card__icon--misc       { background: rgba(221, 210, 59, 0.12); color: #DDD23B; }
-.resource-card__icon--tools      { background: rgba(51, 92, 135, 0.12); color: var(--site-accent-text); }
-.resource-card__icon--guide      { background: rgba(196, 151, 79, 0.12); color: var(--site-text-brand); }
-.resource-card__icon--storage    { background: rgba(93, 173, 226, 0.12); color: #5dade2; }
-.resource-card__icon--warning    { background: rgba(192, 57, 43, 0.10); color: #c0392b; }
-
-[data-theme="dark"] .resource-card__icon--tools {
-    background: var(--site-accent-gold-soft);
-    color: var(--site-text-brand);
-}
-
-[data-theme="dark"] .resource-card__icon--guide {
-    background: var(--site-accent-gold-soft);
-    color: var(--site-text-brand);
 }
 
 /* --- Mobile hamburger --- */
@@ -743,18 +716,18 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.7rem 1rem;
-  border-radius: var(--radius-lg, 12px);
-  border: 1px solid var(--color-border, rgba(0,0,0,0.08));
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
   text-decoration: none;
-  color: var(--color-text-muted-aaa, #6b7280);
+  color: var(--color-text-muted-aaa);
   transition: border-color 0.2s, box-shadow 0.2s, color 0.2s;
   cursor: text;
 }
 
 .search-promo__link:hover {
-  border-color: var(--site-accent-gold, #c4974f);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--site-accent-gold, #c4974f) 15%, transparent);
-  color: var(--color-text, inherit);
+  border-color: var(--site-accent-gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--site-accent-gold) 15%, transparent);
+  color: var(--color-text-primary);
 }
 
 .search-promo__icon {
@@ -765,7 +738,7 @@
 
 .search-promo__text {
   flex: 1;
-  font-family: var(--font-body, Manrope, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.9rem;
 }
 
@@ -775,8 +748,8 @@
   font-size: 0.7rem;
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
-  border: 1px solid var(--color-border, rgba(0,0,0,0.1));
-  background: var(--color-bg-muted, rgba(0,0,0,0.03));
+  border: 1px solid var(--color-border-default);
+  background: var(--color-surface-soft);
   line-height: 1.4;
 }
 
@@ -785,15 +758,7 @@
     display: none;
   }
 }
-/*
----
-FMHY
-Tailwind
-Polyfills
----
-*/
-
-/* --- FMHY Tailwind Polyfills --- */
+/* Utilities required by the imported resource topic markup. */
 .vp-doc .grid {
     display: grid;
 }

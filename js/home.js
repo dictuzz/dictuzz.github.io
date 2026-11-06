@@ -3,12 +3,12 @@ import { upgradeIcons } from './icon-kit.js';
 import {
     loadHomeContent,
     loadSiteConfig
-} from './site-content.js?v=v9';
+} from './site-content.js?v=v11';
 import {
     applyManagedPageMetadata,
     applyStructuredData,
     buildHomeStructuredData
-} from './site-seo.js?v=v2';
+} from './site-seo.js?v=v3';
 import {
     applyGlobalFooter,
     renderDirectoryUnavailableMarkup,
@@ -109,15 +109,15 @@ function bindFolderAccordion() {
 }
 
 function applyHomepageIdentity(siteConfig, homeContent) {
-    const nameplate = document.querySelector('.bio-nameplate');
+    const brand = document.getElementById('site-brand');
     const title = document.querySelector('.bio-title');
     const subtitle = document.querySelector('.bio-text');
     const statusLabel = document.querySelector('.bio-status span:last-child');
     const avatar = document.querySelector('.bio-avatar img');
 
-    if (nameplate) nameplate.textContent = siteConfig?.profile?.handle ? `@${siteConfig.profile.handle}` : '@dictuzz';
+    if (brand) brand.textContent = siteConfig?.site?.name || 'dictuzz';
     if (title) title.textContent = siteConfig?.profile?.name || 'Benedictus Richard Ricardo';
-    if (subtitle) subtitle.textContent = siteConfig?.profile?.title || 'Systems Architect & Automation Specialist';
+    if (subtitle) subtitle.textContent = 'Portfolio · Resume · Resources';
     if (statusLabel && homeContent?.hero?.status) statusLabel.textContent = homeContent.hero.status;
     if (avatar && siteConfig?.profile?.name) avatar.setAttribute('alt', siteConfig.profile.name);
 

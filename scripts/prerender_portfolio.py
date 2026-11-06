@@ -249,6 +249,26 @@ def set_head_metadata(text: str, title: str, description: str, page_url: str) ->
     return text
 
 
+def set_social_share_metadata(text: str, title: str, image_path: str, image_alt: str, page_type: str) -> str:
+    """Use a page-specific, crawlable image and title for social previews."""
+    image_url = absolute_url(image_path)
+    for attr, value, content in (
+        ("property", "og:type", page_type),
+        ("property", "og:title", title),
+        ("property", "og:image", image_url),
+        ("property", "og:image:type", "image/png"),
+        ("property", "og:image:width", "1200"),
+        ("property", "og:image:height", "630"),
+        ("property", "og:image:alt", image_alt),
+        ("name", "twitter:card", "summary_large_image"),
+        ("name", "twitter:title", title),
+        ("name", "twitter:image", image_url),
+        ("name", "twitter:image:alt", image_alt),
+    ):
+        text = set_head_meta(text, attr, value, content)
+    return text
+
+
 def set_canonical(text: str, page_url: str) -> str:
     pattern = re.compile(r'(<link\b(?=[^>]*\brel="canonical")[^>]*\bhref=")[^"]*("[^>]*>)', re.IGNORECASE)
     return pattern.sub(lambda match: match.group(1) + esc(page_url) + match.group(2), text, count=1)
@@ -321,6 +341,7 @@ def render_topbar(text: str, page: str, lang: str, ui: dict) -> str:
         )
     text = replace_content(text, "data-lang-switcher", lang_buttons)
     text = replace_content(text, "data-theme-toggle", THEME_TOGGLE)
+    text = replace_content(text, "data-footer-role", esc(ui["systemRole"]))
     return text
 
 
@@ -387,6 +408,10 @@ def render_landing(text: str, data: dict, lang: str) -> str:
     text = replace_content(text, "data-feature-meta", esc(feature["meta"]))
     text = set_attr(text, "data-feature-image", "src", feature["image"])
     text = set_attr(text, "data-feature-image", "alt", feature.get("imageAlt", ""))
+    text = set_attr(text, "data-feature-image", "data-image-fit", feature.get("imageFit", "cover"))
+    if feature.get("imageWidth") and feature.get("imageHeight"):
+        text = set_attr(text, "data-feature-image", "width", str(feature["imageWidth"]))
+        text = set_attr(text, "data-feature-image", "height", str(feature["imageHeight"]))
     text = replace_content(text, "data-feature-caption", esc(feature["caption"]))
 
     # Issue index
@@ -473,8 +498,15 @@ def render_case(text: str, data: dict, slug: str, lang: str) -> str:
     text = replace_content(text, "data-case-byline-meta", esc(case["bylineMeta"]))
 
     if case.get("image"):
+        image_attrs = [
+            f'src="{esc(case["image"])}"',
+            f'alt="{esc(case.get("imageAlt", ""))}"',
+            f'data-image-fit="{esc(case.get("imageFit", "cover"))}"',
+        ]
+        if case.get("imageWidth") and case.get("imageHeight"):
+            image_attrs.extend((f'width="{int(case["imageWidth"])}"', f'height="{int(case["imageHeight"])}"'))
         figure = (
-            f'<img src="{esc(case["image"])}" alt="{esc(case.get("imageAlt", ""))}">\n'
+            f'<img {" ".join(image_attrs)}>\n'
             f'<figcaption>{esc(case.get("caption", ""))}</figcaption>'
         )
         text = replace_content(text, "data-case-figure", figure)
@@ -641,6 +673,13 @@ def build() -> dict[str, str]:
         text = render_landing(text, data, lang)
         landing_route = landing_path(lang)
         text = set_head_metadata(text, data["landing"]["documentTitle"], data["landing"]["metaDescription"], SITE_URL + landing_route)
+        share_title = data["landing"].get("shareTitle", data["landing"]["documentTitle"])
+        landing_alt = {
+            "en": "Illustrated profile card for Benedictus Richard Ricardo, with dictuzz branding and the tagline Automate, Create, Solve.",
+            "id": "Kartu profil ilustrasi Benedictus Richard Ricardo dengan identitas dictuzz dan slogan Automate, Create, Solve.",
+            "de": "Illustrierte Profilkarte von Benedictus Richard Ricardo mit dictuzz-Markenzeichen und dem Motto Automate, Create, Solve.",
+        }[lang]
+        text = set_social_share_metadata(text, share_title, "/og-image.png", landing_alt, "website")
         text = set_canonical(text, SITE_URL + landing_route)
         text = set_head_meta(text, "property", "og:locale", {"en": "en_US", "id": "id_ID", "de": "de_DE"}[lang])
         text = set_og_locale_alternates(text, lang)
@@ -663,6 +702,8 @@ def build() -> dict[str, str]:
             case = data["cases"][slug]
             route = case_path(slug, lang)
             text = set_head_metadata(text, case["documentTitle"], case["metaDescription"], SITE_URL + route)
+            share_title = case.get("shareTitle", case["documentTitle"])
+            text = set_social_share_metadata(text, share_title, "/og-image.png", landing_alt, "article")
             text = set_canonical(text, SITE_URL + route)
             text = set_head_meta(text, "property", "og:locale", {"en": "en_US", "id": "id_ID", "de": "de_DE"}[lang])
             text = set_og_locale_alternates(text, lang)

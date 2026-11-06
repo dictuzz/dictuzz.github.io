@@ -8,14 +8,14 @@
   "profile": {
     "name": "Benedictus Richard Ricardo",
     "handle": "dictuzz",
-    "title": "Systems Architect & Automation Specialist",
-    "longDescription": "Based in Bandung, Indonesia, Benedictus works in route-to-market analysis and builds practical systems for reporting, process improvement, and operations. He is also studying Data Science at Universitas Terbuka.",
+    "title": "Route-to-Market Analyst",
+    "longDescription": "Based in Bandung, Indonesia, Benedictus Richard Ricardo works in route-to-market analysis and improves reporting and operational processes with practical automation. His projects span cross-functional workflows, governance, and live operations.",
     "motto": "Quam Plurimi et Quam Aptissimi.",
     "image": {
       "portrait": "/assets/images/Aku.webp",
       "og": "/og-image.png",
-      "resumeOg": "/assets/images/resume-og-image.png",
-      "alt": "Portrait of Benedictus Richard Ricardo with dictuzz branding"
+      "resumeOg": "/og-image.png",
+      "alt": "Illustrated profile card for Benedictus Richard Ricardo, with dictuzz branding and the tagline Automate, Create, Solve."
     },
     "location": {
       "city": "Bandung",
@@ -28,12 +28,12 @@
       "url": "https://www.ut.ac.id/"
     },
     "knowsAbout": [
-      "Systems architecture",
+      "Route-to-market planning",
       "Workflow automation",
-      "Operational systems",
-      "Process improvement",
-      "Governance design",
-      "Reporting automation"
+      "Operational governance",
+      "Process design",
+      "Reporting automation",
+      "Live operations"
     ]
   },
   "contact": {
@@ -118,19 +118,20 @@
       "home": {
         "path": "/",
         "title": "dictuzz",
-        "description": "Portfolio, résumé, and curated resources by Benedictus Richard Ricardo, based in Bandung, Indonesia.",
+        "shareTitle": "dictuzz | Benedictus Richard Ricardo",
+        "description": "Benedictus Richard Ricardo is a Route-to-Market Analyst focused on reporting automation, operational governance, and process design. Explore selected work and experience.",
         "ogType": "website"
       },
       "resume": {
         "path": "/resume/",
         "title": "Resume | dictuzz",
-        "description": "Route-to-Market Analyst with experience in reporting automation, operational governance, and data analysis. Explore Benedictus Richard Ricardo’s experience and skills.",
+        "description": "Benedictus Richard Ricardo is a Route-to-Market Analyst with experience in territory planning, reporting automation, operational governance, and data analysis.",
         "ogType": "profile"
       },
       "terms": {
         "path": "/terms/",
-        "title": "Terms | dictuzz",
-        "description": "Terms of use for the dictuzz website.",
+      "title": "Site Terms | dictuzz",
+      "description": "Terms governing use of dictuzz.me and its linked resources.",
         "ogType": "website"
       },
       "portfolio": {

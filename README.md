@@ -1,8 +1,8 @@
 # dictuzz.me
 
-Personal website for **Benedictus Richard Ricardo** (`dictuzz`), positioned as a **Systems Architect & Automation Specialist**.
+Personal website for **Benedictus Richard Ricardo** (`dictuzz`), a Route-to-Market Analyst focused on reporting automation, operational governance, and process design.
 
-The repository is now a single static site built with semantic HTML, shared CSS, and vanilla JavaScript — no build step, no framework runtime. GitHub Pages serves the repo as-is.
+The repository is a static site built with semantic HTML, shared CSS, and vanilla JavaScript. It has no framework runtime; deterministic scripts prerender localized resume and portfolio pages before deployment. GitHub Pages serves the checked-in site files.
 
 Public surfaces:
 
@@ -29,8 +29,8 @@ The repo is a hand-written static site:
 
 ### Stylesheets
 
-- [`/assets/css/tokens.css`](./assets/css/tokens.css): canonical design tokens (Fraunces + Manrope, light/dark, spacing, color, type scale)
-- [`/assets/css/core.css`](./assets/css/core.css): shared utilities (footer, glass, etc.)
+- [`/assets/css/tokens.css`](./assets/css/tokens.css): shared design tokens (Fraunces + Manrope, light/dark colors, spacing, type, and motion)
+- [`/assets/css/core.css`](./assets/css/core.css): shared utilities, drafting grid, focus treatments, and footer
 - [`/css/site.css`](./css/site.css): homepage layout + shared layer
 - [`/resume/resume.css`](./resume/resume.css): complete resume styles (base, nav, hero, sections, timeline, contact, print)
 - [`/portfolio/portfolio.css`](./portfolio/portfolio.css): editorial / magazine layout for the portfolio
@@ -64,7 +64,7 @@ Canonical positioning used across the site:
 
 - Name: Benedictus Richard Ricardo
 - Handle: dictuzz
-- Title: Systems Architect & Automation Specialist
+- Title: Route-to-Market Analyst
 
 Brand direction:
 
@@ -88,19 +88,22 @@ Default local URL:
 http://localhost:8000
 ```
 
-There is no separate build step. Editing HTML / CSS / JS / JSON updates the site directly.
+Most HTML, CSS, JavaScript, and JSON changes appear immediately while serving the site. Changes to resume or portfolio source content require regenerating their checked-in HTML before commit.
 
 ## Scripts
 
 Defined in [`/package.json`](./package.json):
 
 - `npm run dev`: serve the static site locally
+- `npm run build:resume`: prerender English, Indonesian, and German resume pages
+- `npm run build:portfolio`: prerender localized portfolio pages and case studies
 - `npm run validate:content`: validate all shared content contracts and portfolio locale schemas
 - `npm test`: run automated test suite (links, search index, sitemap, portfolio, and content validation)
 - `npm run test:a11y`: run axe-core accessibility audit (WCAG 2.1 AA)
 - `npm run test:a11y:ci`: run Lighthouse CI against local server with budget assertions
 - `npm run build:icons`: compile icon SVG bundles from Iconify sources
 - `npm run build:search-index`: build search index from resource HTML files
+- `npm run update:fmhy`: update the Resources topic pages from their upstream source, then rebuild the search index
 
 ## Testing
 
@@ -109,9 +112,18 @@ npm run validate:content
 npm test
 ```
 
+Before committing content changes, run the matching prerender command and verify its freshness with `--check`:
+
+```bash
+npm run build:resume
+npm run build:portfolio
+node scripts/prerender_resume.mjs --check
+python scripts/prerender_portfolio.py --check
+```
+
 ## Deployment
 
-The current GitHub Action in [`/.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) validates content and runs root tests on push to `main` and on PRs. The push path filter includes source, docs, resources, sitemap, robots, and shared assets. GitHub Pages serves the entire repo as-is (`.nojekyll` is present, `CNAME` is `dictuzz.me`).
+The current GitHub Action in [`/.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) checks resume and portfolio prerender freshness, validates shared content, runs the test suite, then runs axe and Lighthouse checks. GitHub Pages serves the checked-in site (`.nojekyll` is present, `CNAME` is `dictuzz.me`).
 
 ## SEO and Crawl Notes
 
@@ -121,12 +133,13 @@ The current GitHub Action in [`/.github/workflows/deploy.yml`](./.github/workflo
 
 ## Repository Guidance
 
-- Prefer editing source files in place; the site has no generator
-- For content changes that affect copy, start with [`/content`](./content), then update the corresponding HTML if it is statically rendered
+- Treat [`/content`](./content) and the shared source files as canonical; regenerate localized resume and portfolio HTML after changing their content or templates
+- For resource topic edits, rebuild `search-index.json` so search results stay current
 - For homepage rendering logic, use [`/js/home.js`](./js/home.js) and [`/js/site-content.js`](./js/site-content.js)
 - For resume rendering logic, use [`/resume`](./resume)
 - For portfolio rendering, use [`/portfolio`](./portfolio)
 - For editor-facing guidance, see [`/docs/content-editing-guide.md`](./docs/content-editing-guide.md)
+- For visual decisions and shared tokens, see [`/design.md`](./design.md)
 
 ## License
 

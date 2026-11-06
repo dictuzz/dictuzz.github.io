@@ -1,6 +1,6 @@
 /* dictuzz: Shared Brand System */
-@import '../assets/css/tokens.css';
-@import '../assets/css/core.css?v=v5';
+@import '../assets/css/tokens.css?v=v2';
+@import '../assets/css/core.css?v=v6';
 
 *,
 *::before,
@@ -239,6 +239,16 @@ select {
     object-fit: cover;
 }
 
+.bio-brand {
+    margin-right: auto;
+    margin-left: 10px;
+    color: var(--site-text);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
 .theme-toggle {
     align-self: auto;
     margin-bottom: 0;
@@ -320,16 +330,6 @@ select {
         width: 38px;
         height: 38px;
     }
-}
-
-.bio-nameplate {
-    margin: 0 0 10px;
-    color: var(--site-text-brand);
-    font-family: var(--font-body);
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
 }
 
 .bio-text {
@@ -421,7 +421,7 @@ select {
 }
 
 .folder.is-open {
-    border-color: rgba(51, 92, 135, 0.18);
+    border-color: rgba(196, 151, 79, 0.24);
     background: rgba(255, 255, 255, 0.8);
 }
 
@@ -579,7 +579,7 @@ select {
 .folder-link:hover,
 .folder-link:focus-visible {
     transform: translateY(-1px);
-    border-color: rgba(51, 92, 135, 0.18);
+    border-color: rgba(196, 151, 79, 0.24);
 }
 
 [data-theme="dark"] .folder-link:hover,
@@ -653,6 +653,11 @@ select {
         border-radius: 15px;
     }
 
+    .bio-brand {
+        margin-left: 8px;
+        font-size: 1rem;
+    }
+
     .bio-toolbar {
         margin-bottom: 8px;
     }
@@ -665,10 +670,6 @@ select {
 
     .bio-title {
         font-size: clamp(2.35rem, 11vw, 3.55rem);
-    }
-
-    .bio-nameplate {
-        font-size: 0.72rem;
     }
 
     .bio-text {

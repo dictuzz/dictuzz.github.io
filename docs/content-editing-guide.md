@@ -36,7 +36,7 @@ Jika menambah locale baru, gunakan shape file resume yang sama persis.
 Menambah case study baru:
 1. Tambahkan HTML shell di `/portfolio/cases/<slug>/index.html`
 2. Tambahkan content per bahasa di `/content/portfolio/locales/{en,id,de}.json`
-3. Jalankan `python scripts/prerender_portfolio.py` untuk menghasilkan prerender statis dan Schema.org Article metadata
+3. Jalankan `npm run build:portfolio` untuk menghasilkan prerender statis dan Schema.org Article metadata
 4. Jalankan `npm run validate:content` dan `npm test` untuk memverifikasi validitas schema dan routing
 
 ## Ubah resources
@@ -45,6 +45,20 @@ Menambah case study baru:
 - [`/resources/*.html`](../resources)
 
 Halaman resources adalah file HTML statis. Link antar topik harus memakai bentuk `/resources/<topic>.html#anchor`, bukan `/resources/<topic>/#anchor`, karena tidak ada folder `index.html` per topik.
+Setelah mengubah atau memperbarui halaman topik, jalankan `npm run build:search-index` agar pencarian mengikuti konten terbaru.
+
+## Sebelum commit
+
+Jika mengubah sumber resume atau portfolio, jalankan generator yang sesuai lalu periksa hasilnya:
+
+```bash
+npm run build:resume
+npm run build:portfolio
+node scripts/prerender_resume.mjs --check
+python scripts/prerender_portfolio.py --check
+npm run validate:content
+npm test
+```
 
 ## Quality gate
 

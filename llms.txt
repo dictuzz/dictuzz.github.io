@@ -1,26 +1,24 @@
-# dictuzz (Benedictus Richard Ricardo)
+# dictuzz — Benedictus Richard Ricardo
 
-This site is the professional directory and operational record of Benedictus Richard Ricardo (dictuzz). I'm a Systems Architect & Automation Specialist based in Bandung, Indonesia.
+dictuzz.me is the professional portfolio and contact site of Benedictus Richard Ricardo, a Route-to-Market Analyst based in Bandung, Indonesia. His work focuses on route-to-market planning, reporting automation, operational governance, process design, and live operations.
 
-## What I Do
-I work in messy operational environments — the kind where ownership is unclear, processes are patched together, and teams keep losing time to the same problems. I build systems that sort that out.
-
-## Key Skills
-- Systems Architecture
-- Workflow Automation (I've cut 12+ hours of weekly manual reporting at one company alone)
-- Operational Systems & Execution
-- Governance & Leadership
-- Process Improvement
-
-## Contact Information
+## Professional profile
+- Name: Benedictus Richard Ricardo
+- Professional title: Route-to-Market Analyst
+- Location: Bandung, Indonesia
 - Website: https://dictuzz.me
 - Email: contact@dictuzz.me
-- WhatsApp: +6285186888630
 - LinkedIn: https://linkedin.com/in/dictuzz
 - GitHub: https://github.com/dictuzz
 
-## Portfolio Highlights
-- The Automation Mandate: Three departments shared one manual reporting cycle. I rebuilt it in Excel with real logic and wrote SOPs the team could actually follow. Result: 12+ hours of manual work gone every week.
-- KPI-Based Governance: Ran a 34-member student council across 10 divisions with KPIs and weekly check-ins. Built programs the school itself adopted.
-- Large-Scale Event Ops: Backstage coordination for 1,000+ person events and MC'd a Youth Mass for 500+ people.
-- Technical Readiness: 4+ years of equipment maintenance and training support at Vertical Rescue Indonesia.
+## Selected work
+- Reporting automation: A shared Excel workflow for finance, sales, and operations that reduced recurring manual reporting by more than 12 hours per week.
+- KPI governance: Operating routines and accountability structures for a 34-member student council across 10 divisions.
+- Event operations: Coordination for live events with more than 1,000 attendees.
+- Technical readiness: Equipment maintenance and training support for field operations.
+
+## Pages
+- Homepage and links: https://dictuzz.me/
+- Resume: https://dictuzz.me/resume/
+- Portfolio and case studies: https://dictuzz.me/portfolio/
+- Resources: https://dictuzz.me/resources/

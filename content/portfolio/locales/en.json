@@ -3,7 +3,7 @@
   "ui": {
     "skipLink": "Skip to main content",
     "brand": "dictuzz",
-    "brandSub": "Systems & automation",
+    "brandSub": "Route-to-market · Reporting · Operations",
     "topbar": {
       "home": "Home",
       "resume": "Resume",
@@ -38,9 +38,6 @@
     "tools": "Tools & Methods",
     "impact": "Impact",
     "evidence": "Evidence",
-    "artifactPlaceholderLabel": "Evidence placeholder",
-    "artifactPlaceholderTitle": "Project preview coming soon",
-    "artifactPlaceholderBody": "This space is reserved for an approved, anonymized project artifact.",
     "featureCta": "Read the case study",
     "contactStrapMid": "Open for work",
     "contactStrapEnd": "Available for conversations",
@@ -59,11 +56,12 @@
       "SALES",
       "OPERATIONS"
     ],
-    "systemRole": "Systems Architect & Automation Specialist"
+    "systemRole": "Route-to-Market Analyst"
   },
   "landing": {
     "documentTitle": "Portfolio | dictuzz",
-    "metaDescription": "Selected work in reporting automation, team governance, live-event operations, and technical readiness by Benedictus Richard Ricardo.",
+    "shareTitle": "Selected Work in Reporting & Operations | dictuzz",
+    "metaDescription": "Selected case studies by Benedictus Richard Ricardo in reporting automation, operational governance, event delivery, and technical readiness.",
     "masthead": {
       "wordmark": "Systems that give time back.",
       "subtitle": "I design workflow automation, governance, and live-event systems that help teams focus on meaningful work.",
@@ -78,9 +76,12 @@
       "byline": "By Benedictus Richard Ricardo",
       "meta": "Bandung · Jul 2024 – Feb 2026 · 8 min read",
       "href": "/portfolio/cases/automation-mandate/",
-      "image": "/portfolio/assets/graphics/reporting-system.svg",
-      "imageAlt": "An abstract process map joining three workstreams into a shared reporting system.",
-      "caption": "A visual interpretation of the reporting workflow described in this case study."
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "A real analytics dashboard showing weekly performance charts and key metrics.",
+      "caption": "A dashboard view used to review weekly performance metrics.",
+      "imageFit": "contain",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "indexLabel": "Selected work",
     "indexNote": "Four detailed case studies span reporting automation, organization-wide governance, live-event execution and technical readiness.",
@@ -200,16 +201,17 @@
   "cases": {
     "automation-mandate": {
       "documentTitle": "Reporting Automation | dictuzz",
-      "metaDescription": "How a shared reporting system cut more than 12 hours of manual work each week at Home Digital Indonesia.",
+      "shareTitle": "12+ Hours Saved Each Week | dictuzz",
+      "metaDescription": "Built a shared Excel reporting workflow for finance, sales, and operations at Home Digital Indonesia, reducing recurring manual work by more than 12 hours each week.",
       "vol": "Vol. I / No. 1",
       "kicker": "Workflow Automation · Home Digital Indonesia",
       "title": "A reporting system that saves the team 12+ hours each week.",
       "deck": "I redesigned the reporting workflow and its supporting procedures, removing more than 12 hours of manual work each week. The team can now repeat the process reliably without depending on one person.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
       "bylineMeta": "Jul 2024 – Feb 2026 · Bandung, Indonesia",
-      "image": "/portfolio/assets/graphics/reporting-system.svg",
-      "imageAlt": "A conceptual process map joining three workstreams into a shared reporting system.",
-      "caption": "An original visual interpretation of the reporting workflow described in this case study.",
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "A dashboard showing performance charts and key reporting metrics.",
+      "caption": "A captured dashboard view from a reporting workflow.",
       "lead": "Three functions were spending too much time each week on the same manual reporting cycle. The key improvement was a clear, shared process rather than additional software.",
       "process": {
         "kicker": "The process",
@@ -279,20 +281,24 @@
       "next": {
         "slug": "kpi-governance-record",
         "title": "A 34-member student council established clear accountability."
-      }
+      },
+      "imageFit": "contain",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "kpi-governance-record": {
       "documentTitle": "KPI Governance | dictuzz",
-      "metaDescription": "How a 34-member student council used clear KPIs and regular reviews to coordinate 10 divisions.",
+      "shareTitle": "Clear Accountability Across 10 Divisions | dictuzz",
+      "metaDescription": "Introduced KPIs and regular reviews for a 34-member student council, clarifying accountability across 10 divisions and 12 partner schools.",
       "vol": "Vol. I / No. 2",
       "kicker": "Governance · Leadership · SMA Santa Maria 2",
       "title": "A 34-member student council established clear accountability.",
       "deck": "How a student council introduced KPIs and regular reviews to coordinate its programs and responsibilities more consistently.",
       "bylineRole": "Student Council President · SMA Santa Maria 2",
       "bylineMeta": "Nov 2021 – Nov 2022 · Bandung, Indonesia",
-      "image": "/portfolio/assets/graphics/governance-rhythm.svg",
-      "imageAlt": "A 34-person council represented as ten connected divisions around a shared operating rhythm.",
-      "caption": "A conceptual visual of the governance rhythm described in this case study.",
+      "image": "/portfolio/assets/photos/governance.jpg",
+      "imageAlt": "A team gathers around a conference table for a working session.",
+      "caption": "A working session with the governance team.",
       "lead": "A 34-member student council across ten divisions needed clearer responsibilities and better visibility into program delivery. KPIs and weekly reviews created a shared operating rhythm.",
       "process": {
         "kicker": "Governance rhythm",
@@ -365,20 +371,24 @@
       "next": {
         "slug": "large-scale-event-ops",
         "title": "Reliable operations for events with 1,000+ attendees."
-      }
+      },
+      "imageFit": "cover",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "large-scale-event-ops": {
       "documentTitle": "Event Operations | dictuzz",
-      "metaDescription": "How stage and backstage planning supported events with more than 1,000 attendees.",
+      "shareTitle": "Event Operations for 1,000+ Attendees | dictuzz",
+      "metaDescription": "Coordinated stage and backstage operations for events with more than 1,000 attendees, including a youth service hosted for 500+ participants.",
       "vol": "Vol. I / No. 3",
       "kicker": "Live Operations · Ultimate Event Organizer",
       "title": "Reliable operations for events with 1,000+ attendees.",
       "deck": "Three years coordinating stage and backstage operations for large events, including hosting a youth service attended by more than 500 people.",
       "bylineRole": "Stage Coordinator & MC · Ultimate Event Organizer",
       "bylineMeta": "2022 – 2025 · Bandung, Indonesia",
-      "image": "/portfolio/assets/graphics/live-operations.svg",
-      "imageAlt": "A stage plan with light beams and cue lines representing live transitions.",
-      "caption": "A visual interpretation of cueing, pacing and backstage handoffs.",
+      "image": "/portfolio/assets/photos/events.jpg",
+      "imageAlt": "Confetti fills the air above an audience at a live event.",
+      "caption": "A moment from a live event supported by the operations team.",
       "lead": "Large events depend on precise transitions, clear coordination, and well-managed backstage operations. Small breakdowns are immediately visible, so every team needs a shared plan.",
       "process": {
         "kicker": "The show flow",
@@ -451,20 +461,24 @@
       "next": {
         "slug": "vertical-rescue-ops",
         "title": "Readiness is built long before a field assignment."
-      }
+      },
+      "imageFit": "cover",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "vertical-rescue-ops": {
       "documentTitle": "Vertical Rescue Operations | dictuzz",
-      "metaDescription": "A look at equipment readiness, technical training, and field operations at Vertical Rescue Indonesia.",
+      "shareTitle": "Technical Readiness for Field Operations | dictuzz",
+      "metaDescription": "Supported equipment readiness and technical rescue training at Vertical Rescue Indonesia for more than four years.",
       "vol": "Vol. I / No. 4",
       "kicker": "Training & Readiness · Vertical Rescue Indonesia",
       "title": "Readiness is built long before a field assignment.",
       "deck": "More than four years supporting equipment care and technical training at Vertical Rescue Indonesia. Readiness depends on consistent checks and disciplined preparation.",
       "bylineRole": "Assistant Instructor · Vertical Rescue Indonesia",
       "bylineMeta": "Jan 2021 – Present · Indonesia",
-      "image": "/portfolio/assets/graphics/readiness-discipline.svg",
-      "imageAlt": "Inspection marks and technical equipment shapes representing training readiness.",
-      "caption": "A conceptual illustration of equipment checks and training preparation.",
+      "image": "/assets/images/vertical-rescue.jpg",
+      "imageAlt": "Rescue trainees practice rope techniques on a rocky cliff.",
+      "caption": "Technical rescue training in the field.",
       "lead": "Readiness work happens out of view, but it determines whether equipment, people, and procedures are dependable when conditions become difficult.",
       "process": {
         "kicker": "Readiness work",
@@ -534,7 +548,10 @@
         "slug": "large-scale-event-ops",
         "title": "Reliable operations for events with 1,000+ attendees."
       },
-      "next": null
+      "next": null,
+      "imageFit": "cover",
+      "imageWidth": 1216,
+      "imageHeight": 913
     }
   }
 }

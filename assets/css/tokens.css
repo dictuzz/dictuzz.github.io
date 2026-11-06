@@ -1,15 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════
-   DESIGN TOKENS — Single Source of Truth
-   dictuzz Brand System v2.0
-   ═══════════════════════════════════════════════════════════════
-   BRAND-DECISION: Complete token restructure. Resolved conflicts:
-   - --text-xl/--text-2xl collision (both were 1.5rem → now 1.25/1.5)
-   - --radius-sm/--radius-md redefinition (2px→12px / 4px→16px → single values)
-   - Mixed spacing units (px vs rem → all rem)
-   - Dual shadow color bases (rgba(52,57,68) vs rgba(27,36,48) → unified)
-   - --duration-base removed (was identical to --duration-normal)
-   - --transition-* shorthand tokens removed (unused legacy)
-   ═══════════════════════════════════════════════════════════════ */
+/* dictuzz design tokens: shared color, type, spacing, shape, and motion values. */
 
 :root {
 
@@ -18,10 +7,7 @@
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Manrope', system-ui, sans-serif;
 
-  /* Type Scale
-     BRAND-DECISION: Fixed --text-xl (was 1.5rem, same as 2xl)
-     → now 1.25rem. Added 5xl/6xl for display headings.
-     Fluid scaling added for proportionally perfect responsiveness. */
+  /* Type scale */
   --text-xs:   0.75rem;   /* 12px — captions, labels */
   --text-sm:   0.875rem;  /* 14px — secondary body, helper text */
   --text-base: 1rem;      /* 16px — primary body text */
@@ -34,22 +20,9 @@
   --text-6xl:  3.75rem;   /* 60px — Display / Hero */
   --text-hero: clamp(3rem, 8vw, 5.9rem); /* Responsive hero */
 
-  /* Legacy aliases — compat only, prefer --text-* */
-  --font-size-xs:   var(--text-xs);
-  --font-size-sm:   var(--text-sm);
-  --font-size-base: var(--text-base);
-  --font-size-lg:   var(--text-lg);
-  --font-size-xl:   var(--text-xl);
-  --font-size-2xl:  var(--text-2xl);
-  --font-size-3xl:  var(--text-3xl);
-  --font-size-4xl:  var(--text-4xl);
-
-
   /* ═══ COLORS — LIGHT THEME ═══════════════════════════════ */
 
-  /* --- Primary Brand: Gold ---
-     BRAND-DECISION: #c4974f chosen as --color-primary-500.
-     Full scale generated via consistent HSL luminance steps (H≈35, S≈55%). */
+  /* Primary brand: archival gold */
   --color-primary-50:  #fdf8f0;
   --color-primary-100: #f9edda;
   --color-primary-200: #f2d8b2;
@@ -108,7 +81,6 @@
   --color-text-subtle:    #8d8f95;
   --color-text-disabled:  #a3adb8;
   --color-text-inverse:   #f4ecdb;
-  --color-text-brand:     #c4974f;
 
   /* --- AAA-Compliant Text Colors (WCAG 2.1 AAA: 7:1 normal, 4.5:1 large) --- */
   --color-text-brand-aaa:        #7a5d25;  /* Gold text on light surfaces */
@@ -139,14 +111,11 @@
   /* --- Status Colors --- */
   --color-status-active: #1db954;
 
-  /* --- Interactive / Accent Shorthand ---
-     These provide the "old" token names for backward compatibility */
+  /* Shared site aliases */
   --site-bg:             var(--color-surface-page);
-  --site-bg-alt:         var(--color-neutral-150);
   --site-bg-elevated:    var(--color-surface-elevated);
   --site-surface:        var(--color-surface-card);
   --site-surface-strong: var(--color-surface-strong);
-  --site-surface-soft:   var(--color-surface-soft);
   --site-text:           var(--color-text-primary);
   --site-text-muted:     var(--color-text-muted-aaa);     /* AAA-compliant muted text */
   --site-text-subtle:    var(--color-text-subtle);
@@ -155,63 +124,24 @@
   --site-border:         var(--color-border-default);
   --site-border-strong:  var(--color-border-strong);
   --site-accent:         var(--color-secondary-500);      /* Decorative: brand red */
-  --site-accent-soft:    rgba(51, 92, 135, 0.11);
+  --site-accent-soft:    rgba(168, 53, 28, 0.11);
   --site-accent-gold:    var(--color-primary-500);        /* Decorative: brand gold */
   --site-accent-gold-soft: rgba(196, 151, 79, 0.12);
+  --color-text-soft:      var(--color-text-subtle);
 
-  /* --- Resume / Critical Page Token Aliases --- */
-  --bg-glass:       rgba(255, 250, 242, 0.88);
-  --bg-soft:        var(--color-surface-sunken);
-  --bg-deep:        var(--color-surface-page);
+  /* Resume component aliases */
   --bg-surface:     var(--color-surface-card);
   --bg-elevated:    var(--color-neutral-0);
-  --accent-cyan:    var(--color-secondary-500);
-  --accent-purple:  #6b7383;
   --accent-gold:    var(--color-primary-500);
   --accent-gold-text: var(--color-text-brand-aaa);    /* AAA-compliant gold text */
   --accent-red-text:  var(--color-accent-aaa);        /* AAA-compliant red text */
-  --accent-glow:    rgba(51, 92, 135, 0.14);
-  --accent-glow-purple: rgba(107, 115, 131, 0.12);
+  --accent-glow:    rgba(196, 151, 79, 0.14);
   --text-primary:   var(--color-text-primary);
   --text-secondary: var(--color-text-secondary);
   --text-muted:     var(--color-text-muted-aaa);       /* AAA-compliant muted text */
   --border-glass:   var(--color-border-default);
-  --border-strong:  var(--color-border-strong);
-  --border-glow:    rgba(51, 92, 135, 0.18);
 
-  /* --- Next.js / Shared Component Token Aliases --- */
-  --color-bg:          var(--color-surface-page);
-  --color-bg-elevated: var(--color-surface-elevated);
-  --color-surface:     var(--color-surface-card);
-  --color-surface-strong: var(--color-surface-strong);
-  --color-panel:       var(--color-neutral-250);
-  --color-text:        var(--color-text-primary);
-  --color-text-muted:  var(--color-text-muted-aaa);     /* AAA-compliant muted text */
-  --color-text-soft:   var(--color-text-subtle);
-  --color-text-brand:  var(--color-text-brand-aaa);     /* AAA-compliant brand text */
-  --color-accent-text: var(--color-accent-aaa);         /* AAA-compliant accent text */
-  --color-border:      var(--color-border-default);
-  --color-border-strong: var(--color-border-strong);
-  --color-accent:      var(--color-secondary-500);      /* Decorative: brand red */
-  --color-accent-soft: rgba(51, 92, 135, 0.11);
-  --color-accent-strong: #16395f;
-  --color-focus:       #285992;
-
-  /* Legacy compat */
-  --color-success:      var(--color-success-base);
-  --color-success-soft: var(--color-success-light);
-  --color-warning:      var(--color-warning-base);
-  --color-warning-soft: var(--color-warning-light);
-  --color-error:        var(--color-error-base);
-  --color-error-soft:   var(--color-error-light);
-  --color-info:         var(--color-info-base);
-  --color-info-soft:    var(--color-info-light);
-
-
-  /* ═══ SPACING (Fluid Grid, all rem) ══════════════════════════
-     BRAND-DECISION: Added --space-0 and --space-0.5 (4px).
-     Normalized all values from px to rem for consistency. 
-     Fluid scaling applied for proportionally perfect layout. */
+  /* Spacing scale */
   --space-0:   0;
   --space-0\.5: 0.25rem;  /*  4px */
   --space-1:   0.5rem;    /*  8px */
@@ -231,9 +161,7 @@
   --space-32:  16rem;     /* 256px */
 
 
-  /* ═══ BORDER RADIUS ════════════════════════════════════════
-     BRAND-DECISION: Resolved redefinition conflict.
-     Brand personality: ROUND (16-34px) — friendly, premium. */
+  /* Border radii */
   --radius-none: 0;
   --radius-xs:   0.25rem;   /*  4px — minimal rounding */
   --radius-sm:   0.5rem;    /*  8px — subtle rounding */
@@ -244,15 +172,7 @@
   --radius-2xl:  2.125rem;  /* 34px — hero elements, bio card */
   --radius-full: 9999px;    /* pills, avatars, tags */
 
-  /* Legacy radius aliases */
-  --site-radius:    var(--radius-2xl);
-  --site-radius-md: var(--radius-lg);
-  --site-radius-sm: var(--radius-md);
-
-
-  /* ═══ SHADOWS ══════════════════════════════════════════════
-     BRAND-DECISION: Unified rgba base to (29,36,48) warm-gray.
-     Removed duplicate --shadow-soft (was near-identical to --site-shadow). */
+  /* Shadows */
   --shadow-xs:  0 1px 2px 0 rgba(29, 36, 48, 0.05);
   --shadow-sm:  0 10px 24px rgba(29, 36, 48, 0.04);
   --shadow-md:  0 18px 40px rgba(29, 36, 48, 0.06);
@@ -262,17 +182,10 @@
   --shadow-inner: inset 0 2px 4px 0 rgba(29, 36, 48, 0.05);
   --shadow-brand: 0 6px 20px rgba(196, 151, 79, 0.22);
 
-  /* Legacy shadow aliases */
-  --site-shadow:        var(--shadow-lg);
-  --site-shadow-hover:  0 26px 60px rgba(29, 36, 48, 0.12);
   --site-shadow-strong: var(--shadow-xl);
-  --shadow-soft:        var(--shadow-lg);
-  --shadow-glow:        var(--site-shadow-hover);
 
 
-  /* ═══ MOTION ═══════════════════════════════════════════════
-     BRAND-DECISION: Removed --duration-base (dup of --duration-normal).
-     Removed --transition-* shorthand tokens (unused legacy). */
+  /* Motion */
   --duration-instant: 0ms;
   --duration-fast:    160ms;
   --duration-normal:  260ms;
@@ -286,13 +199,6 @@
   --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
   --ease-soft:    cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* Legacy compat aliases */
-  --duration-base: var(--duration-normal);
-  --transition-fast:   var(--duration-fast) var(--ease-out);
-  --transition-medium: var(--duration-slower) var(--ease-out);
-  --transition-slow:   var(--duration-slowest) var(--ease-out);
-
 
   /* ═══ Z-INDEX SCALE ════════════════════════════════════════ */
   --z-below:    -1;
@@ -368,29 +274,21 @@
   --color-secondary-500: #d6543e;
 
   /* --- Accent shorthand overrides --- */
-  --site-accent-soft:      rgba(141, 168, 198, 0.10);
+  --site-accent-soft:      rgba(214, 84, 62, 0.12);
   --site-accent-gold-soft: rgba(209, 171, 105, 0.12);
   --site-text-muted:       var(--color-text-muted-aaa);
   --site-text-brand:       var(--color-text-brand-aaa);
   --site-accent-text:      var(--color-accent-aaa);
 
   /* --- Resume token overrides --- */
-  --bg-glass:          rgba(23, 29, 37, 0.86);
-  --bg-elevated:       #1d2530;
-  --accent-purple:     #a6aebd;
+  --bg-elevated:       var(--color-neutral-900);
   --accent-gold-text:  var(--color-text-brand-aaa);
   --accent-red-text:   var(--color-accent-aaa);
   --accent-glow:       rgba(209, 171, 105, 0.12);
-  --accent-glow-purple: rgba(141, 168, 198, 0.10);
-  --border-glow:       rgba(209, 171, 105, 0.18);
   --text-muted:        var(--color-text-muted-aaa);
 
-  /* --- Next.js token overrides --- */
-  --color-accent-strong: #a4bfda;
-  --color-focus:         #7393b3;
   --color-text-muted:    var(--color-text-muted-aaa);
-  --color-text-brand:    var(--color-text-brand-aaa);
-  --color-accent-text:   var(--color-accent-aaa);
+  --color-text-soft:     var(--color-text-muted-aaa);
 
   /* --- Shadows (dark) --- */
   --shadow-sm:  0 10px 24px rgba(0, 0, 0, 0.20);
@@ -400,7 +298,6 @@
   --shadow-2xl: 0 40px 90px rgba(0, 0, 0, 0.40);
   --shadow-brand: 0 6px 20px rgba(209, 171, 105, 0.18);
 
-  --site-shadow-hover: 0 30px 72px rgba(0, 0, 0, 0.34);
 
   /* --- Semantic Colors (adjusted for dark backgrounds) --- */
   --color-success-base:  #3ddc84;

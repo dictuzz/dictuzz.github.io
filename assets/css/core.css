@@ -63,7 +63,7 @@ body:has(:focus-visible)::after {
 
 /* --- GLASSMORPHISM --- */
 .glass {
-    background: var(--bg-glass);
+    background: var(--color-surface-elevated);
     border: 1px solid var(--color-border-default);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
@@ -293,11 +293,7 @@ body:has(:focus-visible)::after {
     border: 0;
 }
 
-/* ═══════════════════════════════════════════
-   GLOBAL FOOTER (Shared Across All Pages)
-   Moved here from site.css to be available
-   via both site.css and critical.css imports.
-   ═══════════════════════════════════════════ */
+/* Shared site footer */
 .global-footer {
     width: 100%;
     margin-top: auto;

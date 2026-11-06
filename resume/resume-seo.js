@@ -1,4 +1,4 @@
-import { toAbsoluteUrl } from '../js/site-content.js?v=v8';
+import { toAbsoluteUrl } from '../js/site-content.js?v=v11';
 
 function normalizeEntries(data) {
     return Array.isArray(data) ? data : [];
@@ -16,7 +16,11 @@ function getSectionSnapshot(pageUrl) {
 
 export function updateResumeSeo(siteConfig, content, lang) {
     const pageSeo = siteConfig.seo.pages.resume;
-    const titles = { en: 'Resume | dictuzz', id: 'Resume | dictuzz', de: 'Lebenslauf | dictuzz' };
+    const titles = {
+        en: 'Resume | Benedictus Richard Ricardo | dictuzz',
+        id: 'Resume | Benedictus Richard Ricardo | dictuzz',
+        de: 'Lebenslauf | Benedictus Richard Ricardo | dictuzz'
+    };
     const title = titles[lang] || titles.en;
     const description = content.seo?.description || pageSeo.description;
     const resumePath = lang === 'en' ? '/resume/' : `/resume/${lang}/`;
@@ -48,14 +52,28 @@ export function updateResumeSeo(siteConfig, content, lang) {
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', currentUrl);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
-    document.querySelector('meta[property="og:image"]')?.setAttribute('content', toAbsoluteUrl(siteConfig.site.siteUrl, siteConfig.profile.image.resumeOg));
-    document.querySelector('meta[property="og:image:alt"]')?.setAttribute('content', siteConfig.profile.image.alt);
+    const resumeImages = {
+        en: '/og-image.png',
+        id: '/og-image.png',
+        de: '/og-image.png'
+    };
+    const resumeImage = toAbsoluteUrl(siteConfig.site.siteUrl, resumeImages[lang] || resumeImages.en);
+    const imageAlt = {
+        en: 'Illustrated profile card for Benedictus Richard Ricardo, with dictuzz branding and the tagline Automate, Create, Solve.',
+        id: 'Kartu profil ilustrasi Benedictus Richard Ricardo dengan identitas dictuzz dan slogan Automate, Create, Solve.',
+        de: 'Illustrierte Profilkarte von Benedictus Richard Ricardo mit dictuzz-Markenzeichen und dem Motto Automate, Create, Solve.'
+    }[lang] || 'Professional resume card for Benedictus Richard Ricardo.';
+    document.querySelector('meta[property="og:image"]')?.setAttribute('content', resumeImage);
+    document.querySelector('meta[property="og:image:type"]')?.setAttribute('content', 'image/png');
+    document.querySelector('meta[property="og:image:width"]')?.setAttribute('content', '1200');
+    document.querySelector('meta[property="og:image:height"]')?.setAttribute('content', '630');
+    document.querySelector('meta[property="og:image:alt"]')?.setAttribute('content', imageAlt);
     document.querySelector('meta[property="og:site_name"]')?.setAttribute('content', siteConfig.site.name);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
     document.querySelector('meta[name="twitter:url"]')?.setAttribute('content', currentUrl);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
-    document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', toAbsoluteUrl(siteConfig.site.siteUrl, siteConfig.profile.image.resumeOg));
-    document.querySelector('meta[name="twitter:image:alt"]')?.setAttribute('content', siteConfig.profile.image.alt);
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', resumeImage);
+    document.querySelector('meta[name="twitter:image:alt"]')?.setAttribute('content', imageAlt);
     document.querySelector('meta[name="twitter:creator"]')?.setAttribute('content', siteConfig.seo.twitterCreator || '');
 
     const graph = [

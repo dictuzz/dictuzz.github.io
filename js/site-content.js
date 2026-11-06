@@ -104,7 +104,7 @@ export async function fetchContentJson(path) {
 
     const text = await response.text();
     const cleanText = text.replace(/^\uFEFF/, '');
-    
+
     const issues = [];
     const parsed = JSON.parse(cleanText, (key, value) => {
         if (typeof value === 'string' && TODO_PATTERN.test(value)) {
@@ -126,7 +126,7 @@ export function clearContentCache() {
 }
 
 export async function loadSiteConfig() {
-    return validateSharedSiteConfig(await fetchContentJson('/content/site.json?v=v2'));
+    return validateSharedSiteConfig(await fetchContentJson('/content/site.json?v=v3'));
 }
 
 export async function loadHomeContent() {
@@ -134,7 +134,7 @@ export async function loadHomeContent() {
 }
 
 export async function loadResumeContent(locale) {
-    return validateResumeContent(await fetchContentJson(`/content/resume/${locale}.json?v=v8`));
+    return validateResumeContent(await fetchContentJson(`/content/resume/${locale}.json?v=v9`));
 }
 
 export function normalizeResumeTranslations(content) {

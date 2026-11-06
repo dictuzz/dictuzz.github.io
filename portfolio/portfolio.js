@@ -1,6 +1,6 @@
 import { applyGlobalFooter } from '../js/site-renderers.js';
 import { upgradeIcons } from '../js/icon-kit.js';
-import { loadSiteConfig } from '../js/site-content.js?v=v9';
+import { loadSiteConfig } from '../js/site-content.js?v=v11';
 import { safeStorage } from '../js/ui-kit.js';
 
 const SUPPORTED_LANGS = ['en', 'id', 'de'];
@@ -18,6 +18,72 @@ const state = {
   pageType: bodyEl.dataset.page || 'landing',
   caseSlug: bodyEl.dataset.case || null
 };
+
+const PORTFOLIO_ACCESS_KEY = 'portfolio-unlocked-v2';
+const PORTFOLIO_ACCESS_HASH = 'c28595c067550031126e2dbe55cd86afdb7209fc25e2edf8f18a87e4fc9095cf';
+const portfolioUnlocked = (() => {
+  try {
+    return sessionStorage.getItem(PORTFOLIO_ACCESS_KEY) === 'true';
+  } catch {
+    return false;
+  }
+})();
+
+if (!portfolioUnlocked) docEl.classList.add('is-locked');
+
+async function hashPassphrase(value) {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+function renderAccessGate() {
+  if (portfolioUnlocked) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'portfolio-access-gate';
+  overlay.innerHTML = `
+    <main class="access-gate" aria-labelledby="access-gate-title">
+      <span class="access-gate__mark" aria-hidden="true">◆</span>
+      <p class="access-gate__eyebrow">dictuzz / private records</p>
+      <h1 id="access-gate-title">Authorized personnel only.</h1>
+      <p class="access-gate__copy">Enter the passphrase to view the operational record.</p>
+      <form class="access-gate__form" id="portfolio-access-form">
+        <label class="sr-only" for="portfolio-access-passphrase">Passphrase</label>
+        <input id="portfolio-access-passphrase" class="access-gate__input" type="password" autocomplete="current-password" placeholder="Passphrase" required autofocus>
+        <button class="access-gate__submit" type="submit">Unlock records</button>
+        <a class="access-gate__request" href="https://wa.me/6285186888630" target="_blank" rel="noopener noreferrer">Request access</a>
+        <p class="access-gate__error" id="portfolio-access-error" aria-live="polite"></p>
+      </form>
+    </main>
+  `;
+  document.body.prepend(overlay);
+
+  const form = overlay.querySelector('#portfolio-access-form');
+  const input = overlay.querySelector('#portfolio-access-passphrase');
+  const error = overlay.querySelector('#portfolio-access-error');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const candidate = input.value.trim();
+    if (!candidate) return;
+
+    const hash = await hashPassphrase(candidate);
+    if (hash !== PORTFOLIO_ACCESS_HASH) {
+      error.textContent = 'Incorrect passphrase.';
+      input.value = '';
+      input.focus();
+      return;
+    }
+
+    try { sessionStorage.setItem(PORTFOLIO_ACCESS_KEY, 'true'); } catch { /* storage is optional */ }
+    overlay.classList.add('is-hidden');
+    window.setTimeout(() => {
+      docEl.classList.remove('is-locked');
+      overlay.remove();
+      initReveal();
+    }, 220);
+  });
+}
 
 let revealObserver = null;
 
@@ -88,6 +154,19 @@ function updatePageMetadata(title, description) {
   setHeadMeta('meta[property="og:url"]', 'content', url);
   setHeadMeta('meta[property="og:title"]', 'content', title);
   setHeadMeta('meta[property="og:description"]', 'content', description);
+  const imagePath = '/og-image.png';
+  const imageUrl = absoluteUrl(imagePath);
+  const imageAlt = ({
+    en: 'Illustrated profile card for Benedictus Richard Ricardo, with dictuzz branding and the tagline Automate, Create, Solve.',
+    id: 'Kartu profil ilustrasi Benedictus Richard Ricardo dengan identitas dictuzz dan slogan Automate, Create, Solve.',
+    de: 'Illustrierte Profilkarte von Benedictus Richard Ricardo mit dictuzz-Markenzeichen und dem Motto Automate, Create, Solve.'
+  })[state.lang];
+  setHeadMeta('meta[property="og:type"]', 'content', state.pageType === 'case' ? 'article' : 'website');
+  setHeadMeta('meta[property="og:image"]', 'content', imageUrl);
+  setHeadMeta('meta[property="og:image:type"]', 'content', 'image/png');
+  setHeadMeta('meta[property="og:image:width"]', 'content', '1200');
+  setHeadMeta('meta[property="og:image:height"]', 'content', '630');
+  setHeadMeta('meta[property="og:image:alt"]', 'content', imageAlt);
   setHeadMeta('meta[property="og:locale"]', 'content', ({ en: 'en_US', id: 'id_ID', de: 'de_DE' })[state.lang] || 'en_US');
   const ogLocales = { en: 'en_US', id: 'id_ID', de: 'de_DE' };
   document.querySelectorAll('meta[property="og:locale:alternate"]').forEach((meta) => meta.remove());
@@ -101,11 +180,14 @@ function updatePageMetadata(title, description) {
   setHeadMeta('meta[name="twitter:url"]', 'content', url);
   setHeadMeta('meta[name="twitter:title"]', 'content', title);
   setHeadMeta('meta[name="twitter:description"]', 'content', description);
+  setHeadMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
+  setHeadMeta('meta[name="twitter:image"]', 'content', imageUrl);
+  setHeadMeta('meta[name="twitter:image:alt"]', 'content', imageAlt);
   document.documentElement.lang = state.lang;
 }
 
 async function loadLocale(lang) {
-  const url = `/content/portfolio/locales/${lang}.json?v=v6`;
+  const url = `/content/portfolio/locales/${lang}.json?v=v8`;
   const res = await fetch(url, { credentials: 'omit', cache: 'no-cache' });
   if (!res.ok) throw new Error(`Failed to load locale ${lang}: ${res.status}`);
   const text = await res.text();
@@ -122,7 +204,7 @@ function applyTheme(theme) {
   const next = theme === 'dark' ? 'dark' : 'light';
   docEl.setAttribute('data-theme', next);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', next === 'dark' ? '#0e1218' : '#f6efe1');
+  if (meta) meta.setAttribute('content', next === 'dark' ? '#0d1117' : '#f4ecdb');
   document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
     btn.setAttribute('aria-pressed', String(next === 'dark'));
     const labelKey = next === 'dark' ? 'themeToLight' : 'themeToDark';
@@ -225,7 +307,7 @@ function renderLanding(data) {
 
   document.title = L.documentTitle;
   setAttr('meta[name="description"]', 'content', L.metaDescription);
-  updatePageMetadata(L.documentTitle, L.metaDescription);
+  updatePageMetadata(L.shareTitle || L.documentTitle, L.metaDescription);
 
     setText('[data-masthead-strap-left]', L.masthead.strapLeft);
   setText('[data-masthead-strap-center]', L.masthead.strapCenter);
@@ -251,6 +333,11 @@ function renderLanding(data) {
   setAttr('[data-feature-link]', 'href', localizedPath(f.href, state.lang));
   setAttr('[data-feature-image]', 'src', f.image);
   setAttr('[data-feature-image]', 'alt', f.imageAlt || '');
+  setAttr('[data-feature-image]', 'data-image-fit', f.imageFit || 'cover');
+  if (f.imageWidth && f.imageHeight) {
+    setAttr('[data-feature-image]', 'width', String(f.imageWidth));
+    setAttr('[data-feature-image]', 'height', String(f.imageHeight));
+  }
   setText('[data-feature-caption]', f.caption);
   setText('[data-feature-cta]', data.ui.featureCta);
 
@@ -320,7 +407,7 @@ function renderCase(data) {
 
   document.title = c.documentTitle;
   setAttr('meta[name="description"]', 'content', c.metaDescription);
-  updatePageMetadata(c.documentTitle, c.metaDescription);
+  updatePageMetadata(c.shareTitle || c.documentTitle, c.metaDescription);
 
   setText('[data-case-vol]', c.vol);
   setText('[data-case-kicker]', c.kicker);
@@ -328,10 +415,6 @@ function renderCase(data) {
   setText('[data-case-deck]', c.deck);
   setText('[data-case-byline-role]', c.bylineRole);
   setText('[data-case-byline-meta]', c.bylineMeta);
-  setText('[data-artifact-placeholder-label]', data.ui.artifactPlaceholderLabel);
-  setText('[data-artifact-placeholder-title]', data.ui.artifactPlaceholderTitle);
-  setText('[data-artifact-placeholder-body]', data.ui.artifactPlaceholderBody);
-  setAttr('[data-artifact-placeholder]', 'aria-label', data.ui.artifactPlaceholderTitle);
   setHtml('[data-byline-prefix]', `${escapeHtml(data.ui.byline)}&nbsp;`);
 
   const figure = document.querySelector('[data-case-figure]');
@@ -339,7 +422,7 @@ function renderCase(data) {
     if (c.image) {
       figure.hidden = false;
       figure.innerHTML = `
-        <img src="${c.image}" alt="${escapeHtml(c.imageAlt || '')}">
+        <img src="${c.image}" alt="${escapeHtml(c.imageAlt || '')}" data-image-fit="${c.imageFit || 'cover'}"${c.imageWidth && c.imageHeight ? ` width="${c.imageWidth}" height="${c.imageHeight}"` : ''}>
         <figcaption>${escapeHtml(c.caption || '')}</figcaption>
       `;
     } else {
@@ -628,6 +711,7 @@ async function init() {
     console.error('site config load failed', err);
   }
 
+  renderAccessGate();
   render();
   initProgress();
 }

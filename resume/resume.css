@@ -1,9 +1,7 @@
-@import url('/assets/css/tokens.css');
-@import url('/assets/css/core.css');
+@import url('/assets/css/tokens.css?v=v2');
+@import url('/assets/css/core.css?v=v6');
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   CRITICAL CSS: Trust Dossier Base, Nav, Hero
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* Resume page styles */
 
 
 @keyframes slideUp {
@@ -81,10 +79,9 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text-primary);
-    /* BRAND-DECISION: Gradient uses canonical warm cream (#f7f2e8 → #efe6d8) */
     background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 34%),
-        linear-gradient(180deg, #f7f2e8 0%, #efe6d8 100%);
+        linear-gradient(180deg, var(--color-surface-page) 0%, var(--color-surface-card) 100%);
     line-height: 1.65;
     overflow-x: clip;
     min-height: 100vh;
@@ -92,11 +89,9 @@ body {
 }
 
 [data-theme="dark"] body {
-    /* BRAND-DECISION: Unified dark gradient (#10161d → #141a22 → #11171f) */
     background:
         radial-gradient(circle at top left, rgba(209, 171, 105, 0.06), transparent 24%),
-        radial-gradient(circle at 84% 14%, rgba(141, 168, 198, 0.06), transparent 22%),
-        linear-gradient(180deg, #10161d 0%, #141a22 54%, #11171f 100%);
+        linear-gradient(180deg, var(--color-surface-page) 0%, var(--color-neutral-1000) 100%);
 }
 
 img {
@@ -211,7 +206,7 @@ h3 {
 .nav__link:hover,
 .nav__link.active {
     color: var(--text-primary);
-    background: rgba(51, 92, 135, 0.08);
+    background: rgba(196, 151, 79, 0.08);
 }
 
 [data-theme="dark"] .nav__link:hover,
@@ -367,7 +362,7 @@ h3 {
 .hero__photo-ring {
     position: absolute;
     inset: -20px;
-    border: 1px dashed var(--accent-cyan);
+    border: 1px dashed var(--color-secondary-500);
     border-radius: 9999px;
     opacity: 0.3;
     animation: spinSlow 30s linear infinite;
@@ -593,7 +588,7 @@ h3 {
         background: var(--bg-surface);
         border: 1px solid var(--border-glass);
         border-radius: 22px;
-        box-shadow: var(--shadow-soft);
+        box-shadow: var(--shadow-lg);
         max-height: 56vh;
         overflow-y: auto;
     }
@@ -752,7 +747,7 @@ h3 {
     content: '';
     width: clamp(48px, 8vw, 92px);
     height: 1px;
-    background: linear-gradient(90deg, rgba(196, 151, 79, 0.85), rgba(51, 92, 135, 0.25));
+    background: linear-gradient(90deg, rgba(196, 151, 79, 0.85), rgba(168, 53, 28, 0.25));
 }
 
 .section__title--big {
@@ -811,7 +806,7 @@ h3 {
 
 .about__image::after {
     inset: -18px;
-    border: 1px dashed rgba(51, 92, 135, 0.18);
+    border: 1px dashed rgba(196, 151, 79, 0.24);
     opacity: 0.7;
     animation: aboutFrameOrbit 14s linear infinite;
 }
@@ -863,11 +858,11 @@ h3 {
     bottom: 12px;
     left: 18px;
     width: 1px;
-    background: linear-gradient(180deg, rgba(196, 151, 79, 0.55), rgba(51, 92, 135, 0.18));
+    background: linear-gradient(180deg, rgba(196, 151, 79, 0.55), rgba(168, 53, 28, 0.18));
 }
 
 [data-theme="dark"] .timeline::before {
-    background: linear-gradient(180deg, rgba(209, 171, 105, 0.42), rgba(141, 168, 198, 0.16));
+    background: linear-gradient(180deg, rgba(209, 171, 105, 0.42), rgba(168, 53, 28, 0.16));
 }
 
 .timeline__item {
@@ -905,7 +900,6 @@ h3 {
     padding: 0.35rem 0.75rem;
     border-radius: 999px;
     background: rgba(196, 151, 79, 0.12);
-    /* BRAND-DECISION: was #916729 → uses primary-800 for gold-dark text */
     color: var(--color-primary-800);
     font-size: 0.73rem;
     font-weight: 800;
@@ -915,7 +909,6 @@ h3 {
 
 [data-theme="dark"] .timeline__date {
     background: rgba(209, 171, 105, 0.14);
-    /* BRAND-DECISION: was #e2c087 → uses primary-300 for gold-light text */
     color: var(--color-primary-300);
 }
 
@@ -1005,7 +998,7 @@ h3 {
 }
 
 .edu-card__degree {
-    color: var(--accent-cyan);
+    color: var(--color-secondary-500);
     font-weight: 700;
 }
 
@@ -1587,4 +1580,4 @@ h3 {
 
 }
 
-/* Global footer styles are shared from site.css / critical.css */
+/* The shared footer is styled in assets/css/core.css. */

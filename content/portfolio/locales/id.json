@@ -3,7 +3,7 @@
   "ui": {
     "skipLink": "Lewati ke konten utama",
     "brand": "dictuzz",
-    "brandSub": "Sistem & otomasi",
+    "brandSub": "Route-to-market · Pelaporan · Operasional",
     "topbar": {
       "home": "Beranda",
       "resume": "Resume",
@@ -38,9 +38,6 @@
     "tools": "Alat & Metode",
     "impact": "Dampak",
     "evidence": "Dokumentasi",
-    "artifactPlaceholderLabel": "Placeholder artefak",
-    "artifactPlaceholderTitle": "Pratinjau proyek menyusul",
-    "artifactPlaceholderBody": "Ruang ini disiapkan untuk dokumentasi proyek yang telah disetujui dan disamarkan.",
     "featureCta": "Baca studi kasus",
     "contactStrapMid": "Terbuka untuk kolaborasi",
     "contactStrapEnd": "Siap berdiskusi",
@@ -59,11 +56,12 @@
       "PENJUALAN",
       "OPERASIONAL"
     ],
-    "systemRole": "Arsitek Sistem & Spesialis Otomasi"
+    "systemRole": "Analis Route-to-Market"
   },
   "landing": {
     "documentTitle": "Portofolio | dictuzz",
-    "metaDescription": "Karya pilihan dalam otomasi pelaporan, tata kelola tim, operasional acara, dan kesiapan teknis oleh Benedictus Richard Ricardo.",
+    "shareTitle": "Studi Kasus Otomasi & Operasional | dictuzz",
+    "metaDescription": "Studi kasus Benedictus Richard Ricardo tentang otomasi pelaporan, tata kelola operasional, acara, dan kesiapan teknis. Tiap studi memuat tantangan, pendekatan, dan hasil.",
     "masthead": {
       "wordmark": "Sistem yang mengembalikan waktu.",
       "subtitle": "Saya merancang otomasi alur kerja, tata kelola, dan operasi langsung agar tim dapat fokus pada pekerjaan mereka.",
@@ -78,9 +76,12 @@
       "byline": "Oleh Benedictus Richard Ricardo",
       "meta": "Bandung · Jul 2024 – Feb 2026 · 8 menit baca",
       "href": "/portfolio/cases/automation-mandate/",
-      "image": "/portfolio/assets/graphics/reporting-system.svg",
-      "imageAlt": "Peta proses abstrak yang menyatukan tiga alur kerja ke dalam satu sistem pelaporan.",
-      "caption": "Interpretasi visual alur pelaporan yang dijelaskan dalam studi kasus ini."
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Dasbor analitik menampilkan grafik performa mingguan dan metrik utama.",
+      "caption": "Tampilan dasbor untuk meninjau metrik performa mingguan.",
+      "imageFit": "contain",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "indexLabel": "Karya pilihan",
     "indexNote": "Empat studi kasus mendalam: otomasi pelaporan, tata kelola organisasi, pelaksanaan acara langsung, dan kesiapan teknis.",
@@ -200,16 +201,17 @@
   "cases": {
     "automation-mandate": {
       "documentTitle": "Otomasi Pelaporan | dictuzz",
-      "metaDescription": "Bagaimana sistem pelaporan bersama mengurangi lebih dari 12 jam kerja manual per minggu di Home Digital Indonesia.",
+      "shareTitle": "12+ Jam Kerja Dihemat per Minggu | dictuzz",
+      "metaDescription": "Membangun alur pelaporan Excel untuk tim keuangan, penjualan, dan operasional Home Digital Indonesia; mengurangi pekerjaan manual lebih dari 12 jam per minggu.",
       "vol": "Vol. I / No. 1",
       "kicker": "Otomasi Alur Kerja · Home Digital Indonesia",
       "title": "Sistem pelaporan yang menghemat 12+ jam kerja setiap minggu.",
       "deck": "Saya merancang ulang sistem pelaporan dan SOP untuk mengurangi lebih dari 12 jam kerja manual setiap minggu. Proses yang sebelumnya bergantung pada satu orang kini dapat dijalankan bersama secara konsisten.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
       "bylineMeta": "Jul 2024 – Feb 2026 · Bandung, Indonesia",
-      "image": "/portfolio/assets/graphics/reporting-system.svg",
-      "imageAlt": "Peta proses konseptual yang menyatukan tiga alur kerja dalam satu sistem pelaporan bersama.",
-      "caption": "Interpretasi visual orisinal dari alur pelaporan yang dijelaskan dalam studi kasus ini.",
+      "image": "/portfolio/assets/photos/automation.jpg",
+      "imageAlt": "Dasbor menampilkan grafik performa dan metrik pelaporan utama.",
+      "caption": "Tampilan dasbor dari alur kerja pelaporan.",
       "lead": "Tiga fungsi menghabiskan terlalu banyak waktu setiap minggu untuk menyusun laporan yang sama secara manual. Perbaikannya bukan sekadar mengganti perangkat lunak, tetapi menetapkan alur kerja dan aturan yang dapat diikuti bersama.",
       "process": {
         "kicker": "Proses",
@@ -279,20 +281,24 @@
       "next": {
         "slug": "kpi-governance-record",
         "title": "Kepengurusan 34 anggota membangun ritme kerja yang akuntabel."
-      }
+      },
+      "imageFit": "contain",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "kpi-governance-record": {
       "documentTitle": "Tata Kelola KPI | dictuzz",
-      "metaDescription": "Bagaimana OSIS dengan 34 anggota memakai KPI dan tinjauan rutin untuk mengoordinasikan 10 divisi.",
+      "shareTitle": "Tanggung Jawab Jelas di 10 Divisi | dictuzz",
+      "metaDescription": "Menerapkan KPI dan evaluasi berkala bagi OSIS dengan 34 anggota, memperjelas tanggung jawab di 10 divisi dan koordinasi dengan 12 sekolah jejaring.",
       "vol": "Vol. I / No. 2",
       "kicker": "Tata Kelola · Kepemimpinan · SMA Santa Maria 2",
       "title": "Kepengurusan 34 anggota membangun ritme kerja yang akuntabel.",
       "deck": "Bagaimana kepengurusan OSIS menerapkan KPI dan tinjauan kinerja berkala untuk mengelola organisasi dengan lebih terarah dan konsisten.",
       "bylineRole": "Ketua OSIS · SMA Santa Maria 2",
       "bylineMeta": "Nov 2021 – Nov 2022 · Bandung, Indonesia",
-      "image": "/portfolio/assets/graphics/governance-rhythm.svg",
-      "imageAlt": "Dewan beranggotakan 34 orang divisualisasikan sebagai sepuluh divisi yang terhubung dalam satu ritme kerja.",
-      "caption": "Visual konseptual tentang ritme tata kelola yang dijelaskan dalam studi kasus ini.",
+      "image": "/portfolio/assets/photos/governance.jpg",
+      "imageAlt": "Tim berkumpul di meja konferensi untuk sesi kerja bersama.",
+      "caption": "Sesi kerja bersama tim tata kelola.",
       "lead": "Dewan beranggotakan 34 orang di 10 divisi membutuhkan ritme yang lebih kuat, akuntabilitas, dan struktur program. Pendekatan tata kelola berbasis KPI membantu menyelaraskan kepemimpinan dan pelaksanaan program.",
       "process": {
         "kicker": "Ritme tata kelola",
@@ -365,20 +371,24 @@
       "next": {
         "slug": "large-scale-event-ops",
         "title": "Operasional acara yang andal untuk lebih dari 1.000 peserta."
-      }
+      },
+      "imageFit": "cover",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "large-scale-event-ops": {
       "documentTitle": "Operasional Acara | dictuzz",
-      "metaDescription": "Bagaimana perencanaan panggung dan area belakang mendukung acara dengan lebih dari 1.000 peserta.",
+      "shareTitle": "Operasional Acara untuk 1.000+ Peserta | dictuzz",
+      "metaDescription": "Mengoordinasikan panggung dan area belakang untuk acara dengan 1.000+ peserta, termasuk ibadah kaum muda dengan lebih dari 500 jemaat.",
       "vol": "Vol. I / No. 3",
       "kicker": "Operasi Langsung · Ultimate Event Organizer",
       "title": "Operasional acara yang andal untuk lebih dari 1.000 peserta.",
       "deck": "Tiga tahun mengoordinasikan operasional panggung dan belakang panggung dalam acara berskala besar, termasuk memandu ibadah kaum muda yang dihadiri lebih dari 500 orang.",
       "bylineRole": "Koordinator Panggung & Pembawa Acara · Ultimate Event Organizer",
       "bylineMeta": "2022 – 2025 · Bandung, Indonesia",
-      "image": "/portfolio/assets/graphics/live-operations.svg",
-      "imageAlt": "Rencana panggung dengan sorot lampu dan garis cue yang mewakili transisi acara langsung.",
-      "caption": "Interpretasi visual tentang cue, tempo, dan serah-terima di belakang panggung.",
+      "image": "/portfolio/assets/photos/events.jpg",
+      "imageAlt": "Konfeti memenuhi udara di atas penonton sebuah acara langsung.",
+      "caption": "Momen dari acara langsung yang didukung tim operasional.",
       "lead": "Acara berskala besar membutuhkan transisi yang tepat, koordinasi yang jelas, dan operasional belakang panggung yang tertata. Gangguan kecil mudah terlihat, sehingga seluruh tim perlu mengikuti alur yang sama.",
       "process": {
         "kicker": "Alur acara",
@@ -451,20 +461,24 @@
       "next": {
         "slug": "vertical-rescue-ops",
         "title": "Kesiapan dibangun jauh sebelum tugas lapangan dimulai."
-      }
+      },
+      "imageFit": "cover",
+      "imageWidth": 800,
+      "imageHeight": 450
     },
     "vertical-rescue-ops": {
       "documentTitle": "Operasi Vertical Rescue | dictuzz",
-      "metaDescription": "Gambaran tentang kesiapan peralatan, pelatihan teknis, dan operasi lapangan di Vertical Rescue Indonesia.",
+      "shareTitle": "Kesiapan Teknis untuk Operasi Lapangan | dictuzz",
+      "metaDescription": "Mendukung kesiapan peralatan dan pelatihan penyelamatan teknis di Vertical Rescue Indonesia selama lebih dari empat tahun.",
       "vol": "Vol. I / No. 4",
       "kicker": "Pelatihan & Kesiapan · Vertical Rescue Indonesia",
       "title": "Kesiapan dibangun jauh sebelum tugas lapangan dimulai.",
       "deck": "Lebih dari empat tahun mendukung perawatan peralatan dan pelatihan teknis di Vertical Rescue Indonesia. Kesiapan bergantung pada pemeriksaan yang konsisten dan persiapan yang disiplin.",
       "bylineRole": "Asisten Instruktur · Vertical Rescue Indonesia",
       "bylineMeta": "Jan 2021 – Sekarang · Indonesia",
-      "image": "/portfolio/assets/graphics/readiness-discipline.svg",
-      "imageAlt": "Tanda inspeksi dan bentuk peralatan teknis yang mewakili kesiapan pelatihan.",
-      "caption": "Ilustrasi konseptual tentang pemeriksaan peralatan dan persiapan latihan.",
+      "image": "/assets/images/vertical-rescue.jpg",
+      "imageAlt": "Peserta latihan penyelamatan mempraktikkan teknik tali di tebing berbatu.",
+      "caption": "Latihan penyelamatan teknis di lapangan.",
       "lead": "Pekerjaan kesiapan sering berlangsung tanpa sorotan, tetapi menentukan apakah peralatan, personel, dan prosedur dapat diandalkan saat kondisi menjadi sulit.",
       "process": {
         "kicker": "Pekerjaan kesiapan",
@@ -534,7 +548,10 @@
         "slug": "large-scale-event-ops",
         "title": "Operasional acara yang andal untuk lebih dari 1.000 peserta."
       },
-      "next": null
+      "next": null,
+      "imageFit": "cover",
+      "imageWidth": 1216,
+      "imageHeight": 913
     }
   }
 }

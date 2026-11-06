@@ -3,8 +3,8 @@
   "visualCvUrl": "https://canva.link/benedictus-richard-ricardo-de",
   "strings": {
     "hero": {
-      "subtitle": "Operative Systeme aufbauen, die eigenständig funktionieren.",
-      "role": "Systemarchitekt & Automatisierungsspezialist",
+      "subtitle": "Route-to-Market-Planung, Reporting und operative Abläufe verbessern.",
+      "role": "Route-to-Market-Analyst",
       "typing": {
         "staticText": "",
         "dynamicTexts": [
@@ -419,6 +419,6 @@
     ]
   },
   "seo": {
-    "description": "Route-to-Market-Analyst mit Erfahrung in Reporting-Automatisierung, operativer Steuerung und Datenanalyse. Berufserfahrung und Kompetenzen von Benedictus Richard Ricardo."
+    "description": "Benedictus Richard Ricardo ist Route-to-Market-Analyst mit Erfahrung in Gebietsplanung, Reporting-Automatisierung, operativer Steuerung und Datenanalyse."
   }
 }

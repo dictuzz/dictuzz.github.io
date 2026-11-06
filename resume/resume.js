@@ -1,6 +1,6 @@
 import { applyGlobalFooter } from '../js/site-renderers.js';
 import { upgradeIcons } from '../js/icon-kit.js';
-import { loadResumePageContent, getInitialLanguage } from './resume-content-loader.js?v=v8';
+import { loadResumePageContent, getInitialLanguage } from './resume-content-loader.js?v=v10';
 import { initInteractions, initProfileTilt, initRevealObserver, initTheme, updateTyping } from './resume-interactions.js';
 import {
     applyTranslations,
@@ -12,7 +12,7 @@ import {
     renderList,
     renderSkills
 } from './resume-renderers.js?v=v5';
-import { updateResumeSeo } from './resume-seo.js?v=v8';
+import { updateResumeSeo } from './resume-seo.js?v=v11';
 import { SUPPORTED_LANGS } from './resume-state.js';
 
 function resumePath(lang) {
