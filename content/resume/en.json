@@ -78,11 +78,24 @@
         "instagram": "The story behind the work",
         "github": "Selected code and technical work"
       }
+    },
+    "certifications": {
+      "verify": "Verify credential"
+    },
+    "footer": {
+      "home": "Home",
+      "resume": "Resume",
+      "portfolio": "Portfolio",
+      "resources": "Resources",
+      "terms": "Terms",
+      "navLabel": "Global navigation",
+      "emailAria": "Email Benedictus",
+      "allRights": "All rights reserved."
     }
   },
   "sections": {
     "summary": {
-      "text": "Disciplined, systems-oriented Route-to-Market Analyst who leads a team of 3 across 3 entities in West Java. Known for turning inconsistent field processes into standardized, measurable frameworks, including a Call Frequency Management system across 32 depots and the removal of 12,000+ suspicious outlets through data-driven anomaly detection. Combines a data science foundation with hands-on field and stakeholder experience, so analysis becomes action that depots actually adopt. Guided by \"Quam plurimi et quam aptissimi\", aiming to continuously learn and drive lasting operational impact."
+      "text": "Systems-oriented Route-to-Market Analyst with experience leading a three-person team across three entities in West Java. I turn inconsistent field processes into standardized, measurable ways of working, including a Call Frequency Management framework across 32 depots and data-driven anomaly detection that identified and deactivated more than 12,000 suspicious outlets. I combine a data science foundation with hands-on field experience and stakeholder coordination so analysis leads to changes teams can apply in daily operations. Guided by “Quam plurimi et quam aptissimi,” I keep learning and focus on lasting, measurable impact."
     },
     "experience": [
       {
@@ -90,13 +103,13 @@
         "role": "Route-to-Market Analyst",
         "company": "Tirta Utama Abadi (Danone Distributor, West Java)",
         "details": [
-          "Detected anomalies in transaction patterns and geolocation data to deactivate 12,000+ potentially fraudulent outlets, cleaning the outlet base that all coverage and incentive decisions rely on.",
-          "Replaced inconsistent visit practices with one standardized, field-tailored Call Frequency Management framework across all 32 depots in West Java, driving double-digit profit growth at nearly every depot.",
-          "Lead a team of 3 across 3 entities, keeping salesman territories and sales fundamentals healthy and well maintained.",
-          "Rebuilt daily sprint dashboards from scratch, giving every depot live performance data with zero manual compilation.",
-          "Automated market-potential and distance-to-active-outlet analysis for new outlet openings, saving the team ~8.6 hours per month.",
-          "Analyze monthly fleet requirements per depot and channel by combining sales targets with the previous month's fleet data, ensuring delivery capacity matches expected demand.",
-          "Conduct market analysis, including trade economics, to guide coverage, outlet-opening, and channel decisions across depots."
+          "Identified anomalies in transaction patterns and geolocation data, then deactivated more than 12,000 potentially fraudulent outlets. This cleaned the outlet base used for coverage and incentive decisions.",
+          "Standardized field-ready visit planning across all 32 depots in West Java, supporting double-digit profit growth at nearly every depot.",
+          "Lead a three-person team across three entities, maintaining clear sales territories and consistent execution standards.",
+          "Rebuilt daily sprint dashboards so every depot can access live performance data without manual compilation.",
+          "Automated market-potential and distance-to-outlet analysis for new openings, saving the team about 8.6 hours each month.",
+          "Analyze monthly fleet needs by depot and channel, combining sales targets with the previous month’s fleet data to align delivery capacity with expected demand.",
+          "Conduct market analysis, including trade economics, to inform depot coverage, new outlet openings, and channel decisions."
         ]
       },
       {
@@ -108,17 +121,17 @@
           "Partnered with Finance, Sales, and Operations to design systems and standardize SOPs, replacing fragmented department-level practices with consistent cross-functional standards.",
           "Drove sales through direct customer engagement, consistently working toward and achieving monthly sales targets.",
           "Assessed customer credit applications using 7C and 5S principles, safeguarding receivables quality while keeping approval turnaround efficient.",
-          "Followed up daily on overdue customer accounts through structured negotiation and payment-commitment tracking to secure repayment."
+          "Followed up on overdue customer accounts through structured payment discussions and documented commitments to support timely repayment."
         ]
       },
       {
         "date": "NOV 2021 – NOV 2022",
-        "role": "President",
+        "role": "Student Council President",
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
           "Led a 34-member council across 10 divisions, introducing KPI-based performance tracking to establish clear accountability per division.",
-          "Designed school-wide programs subsequently adopted as permanent initiatives by the administration.",
-          "Led outreach campaigns across 12 feeder schools to increase student engagement and recruitment.",
+          "Designed school-wide programs that the school leadership later adopted as ongoing initiatives.",
+          "Led outreach campaigns at 12 partner schools to increase student engagement and recruitment.",
           "Established weekly inter-division coordination meetings, reducing miscommunication and missed deadlines."
         ]
       }
@@ -128,31 +141,31 @@
         "name": "Universitas Terbuka (Open University Indonesia)",
         "degree": "B.Sc. Data Science (Ongoing)",
         "date": "Started Aug 2025",
-        "focus": "Focus: Data Analysis, Statistics, Information Systems & Anomaly Detection"
+        "focus": "Focus: Data analysis, statistics, information systems, and anomaly detection"
       },
       {
         "name": "Saint Mary 2 Senior High School",
         "degree": "Science Program (IPA)",
         "date": "2020 – 2023",
-        "focus": "Elected President & VP of OSIS; School representative at UNDIP Biology Championship (2022); Active Scouting & outdoor leadership training"
+        "focus": "Elected president and vice president of OSIS; school representative at the UNDIP Biology Championship (2022); active Scout and outdoor leadership training"
       }
     ],
     "impact": [
       {
         "title": "Route-to-Market System Standardization",
-        "desc": "Overhauled Call Frequency Management across all 32 depots in West Java and deactivated 12,000+ fraudulent outlets via geolocation and transaction anomaly detection, generating double-digit profit growth across nearly every depot."
+        "desc": "Standardized visit-frequency management across all 32 depots in West Java and deactivated more than 12,000 suspicious outlets through transaction and geolocation anomaly detection. Nearly every depot recorded double-digit profit growth."
       },
       {
         "title": "Reporting Automation System",
-        "desc": "The weekly reporting process at Home Digital involved extensive manual data entry, reformatting, and cross-checking. Redesigned the entire workflow in Excel to run with minimal intervention, returning approximately 12 hours per week to the team."
+        "desc": "The weekly reporting process at Home Digital required extensive manual data entry, reformatting, and cross-checking. I redesigned the Excel workflow to run with minimal intervention, saving the team about 12 hours each week."
       },
       {
         "title": "KPI-Based Governance Leadership",
-        "desc": "Managed a 34-member student council across 10 divisions using KPI-based performance tracking and weekly coordination meetings. Programs developed during this period were adopted by the school administration, and outreach efforts extended to 12 feeder schools."
+        "desc": "Led a 34-member student council across 10 divisions using KPI-based performance tracking and weekly coordination meetings. The school leadership adopted several programs, and outreach activities reached 12 partner schools."
       },
       {
         "title": "Large-Scale Event Execution",
-        "desc": "Served as MC for the GEMA Bandung Youth Mass (500+ attendees), coordinating speakers, committees, and technical crew on a unified timeline. Previously managed backstage operations for events with 1,000+ attendees with strict cue precision."
+        "desc": "Hosted the GEMA Bandung 2025 Youth Mass for more than 500 attendees, coordinating speakers, organizers, and the technical crew around one run of show. Earlier, I supported backstage operations for events with more than 1,000 attendees, where precise cues were essential."
       }
     ],
     "certifications": [
@@ -216,9 +229,9 @@
         "role": "Head of Business & Partnership Division",
         "company": "Forum OSIS Jawa Barat",
         "details": [
-          "Headed the Business & Partnership Division of Forum OSIS Jawa Barat, responsible for external partnerships, sponsorship, and media outreach for forum programs.",
-          "Handled partnerships for flagship events, including the Public Discussion / Legislative Hearing and the FOJB Student Festival & Charity Concert, plus additional charity activities.",
-          "Coordinated sponsorship with by.U, Telkom University, and Dinas Pendidikan, and media partnerships with Halo KRW, Media Bandung, and others to widen event reach.",
+          "Led the Business & Partnerships Division of Forum OSIS Jawa Barat, responsible for external partnerships, sponsorships, and media relations for the forum’s programs.",
+          "Managed partnerships for flagship events, including a public discussion and legislative hearing, the FOJB Student Festival & Charity Concert, and other community initiatives.",
+          "Coordinated sponsorships with by.U, Telkom University, and Dinas Pendidikan, along with media partnerships with Halo KRW, Media Bandung, and others to expand event reach.",
           "Built a historical partnership database consolidating past committee collaborations, providing continuity for future committees instead of starting outreach from scratch."
         ]
       },
@@ -227,9 +240,9 @@
         "role": "Stage Crew",
         "company": "Ultimate Event Organizer",
         "details": [
-          "Supported backstage operations for events of 1,000+ attendees, assisting the stage and production team in keeping every session on the run sheet.",
-          "Assisted with stage and equipment setup and teardown, coordinating technical cues and hand-offs between segments.",
-          "Followed planned workflows during changeovers, helping keep downtime between sessions to a minimum."
+          "Supported backstage operations for events with more than 1,000 attendees, helping the stage and production teams keep each segment on schedule.",
+          "Helped set up and strike stages and equipment, coordinating technical cues and handoffs between segments.",
+          "Followed planned changeover procedures to keep downtime between sessions to a minimum."
         ]
       },
       {
@@ -246,44 +259,140 @@
   "collections": {
     "skills": {
       "strategic": [
-        { "name": "Systems Thinking", "level": "expert" },
-        { "name": "Route-to-Market Planning", "level": "expert" },
-        { "name": "Territory & Coverage Planning", "level": "expert" },
-        { "name": "Call Frequency Management", "level": "expert" },
-        { "name": "Workflow Design", "level": "expert" },
-        { "name": "Process Standardization", "level": "expert" },
-        { "name": "KPI Framework Design", "level": "proficient" },
-        { "name": "Change Management at Scale", "level": "expert" }
+        {
+          "name": "Systems Thinking",
+          "level": "expert"
+        },
+        {
+          "name": "Route-to-Market Planning",
+          "level": "expert"
+        },
+        {
+          "name": "Territory & Coverage Planning",
+          "level": "expert"
+        },
+        {
+          "name": "Call Frequency Management",
+          "level": "expert"
+        },
+        {
+          "name": "Workflow Design",
+          "level": "expert"
+        },
+        {
+          "name": "Process Standardization",
+          "level": "expert"
+        },
+        {
+          "name": "KPI Framework Design",
+          "level": "proficient"
+        },
+        {
+          "name": "Change Management at Scale",
+          "level": "expert"
+        }
       ],
       "operational": [
-        { "name": "SOP Development", "level": "expert" },
-        { "name": "Cross-Functional Coordination", "level": "expert" },
-        { "name": "Risk & Fraud Control", "level": "expert" },
-        { "name": "Fleet Planning", "level": "proficient" },
-        { "name": "Reporting Automation", "level": "expert" },
-        { "name": "Event Operations Management", "level": "proficient" },
-        { "name": "Incident Management", "level": "expert" }
+        {
+          "name": "SOP Development",
+          "level": "expert"
+        },
+        {
+          "name": "Cross-Functional Coordination",
+          "level": "expert"
+        },
+        {
+          "name": "Risk & Fraud Control",
+          "level": "expert"
+        },
+        {
+          "name": "Fleet Planning",
+          "level": "proficient"
+        },
+        {
+          "name": "Reporting Automation",
+          "level": "expert"
+        },
+        {
+          "name": "Event Operations Management",
+          "level": "proficient"
+        },
+        {
+          "name": "Incident Management",
+          "level": "expert"
+        }
       ],
       "analytical": [
-        { "name": "SQL", "level": "proficient" },
-        { "name": "Python", "level": "proficient" },
-        { "name": "Microsoft Excel / VBA", "level": "expert" },
-        { "name": "Anomaly Detection", "level": "expert" },
-        { "name": "Dashboards & Visualization", "level": "expert" },
-        { "name": "Power BI & Looker Studio", "level": "proficient" },
-        { "name": "Trade Economics", "level": "proficient" },
-        { "name": "DBeaver", "level": "proficient" },
-        { "name": "QGIS", "level": "proficient" },
-        { "name": "LLM & AI-Assisted Analytics", "level": "proficient" },
-        { "name": "Obsidian, Canva, Trello", "level": "proficient" }
+        {
+          "name": "SQL",
+          "level": "proficient"
+        },
+        {
+          "name": "Python",
+          "level": "proficient"
+        },
+        {
+          "name": "Microsoft Excel / VBA",
+          "level": "expert"
+        },
+        {
+          "name": "Anomaly Detection",
+          "level": "expert"
+        },
+        {
+          "name": "Dashboards & Visualization",
+          "level": "expert"
+        },
+        {
+          "name": "Power BI & Looker Studio",
+          "level": "proficient"
+        },
+        {
+          "name": "Trade Economics",
+          "level": "proficient"
+        },
+        {
+          "name": "DBeaver",
+          "level": "proficient"
+        },
+        {
+          "name": "QGIS",
+          "level": "proficient"
+        },
+        {
+          "name": "LLM & AI-Assisted Analytics",
+          "level": "proficient"
+        },
+        {
+          "name": "Obsidian, Canva, Trello",
+          "level": "proficient"
+        }
       ],
       "leadership": [
-        { "name": "Team Leadership (3 entities)", "level": "expert" },
-        { "name": "Cross-Functional Influence", "level": "expert" },
-        { "name": "Public Speaking & MC", "level": "expert" },
-        { "name": "Complex Problem-Solving", "level": "expert" },
-        { "name": "Training Delivery", "level": "proficient" },
-        { "name": "Strategic Partnerships", "level": "proficient" }
+        {
+          "name": "Team Leadership (3 entities)",
+          "level": "expert"
+        },
+        {
+          "name": "Cross-Functional Influence",
+          "level": "expert"
+        },
+        {
+          "name": "Public Speaking & MC",
+          "level": "expert"
+        },
+        {
+          "name": "Complex Problem-Solving",
+          "level": "expert"
+        },
+        {
+          "name": "Training Delivery",
+          "level": "proficient"
+        },
+        {
+          "name": "Strategic Partnerships",
+          "level": "proficient"
+        }
       ]
     },
     "languages": [
@@ -301,7 +410,7 @@
       },
       {
         "id": "de",
-        "label": "German (B1 Goethe-Zertifikat; B2 Course Participant)"
+        "label": "German (Goethe-Zertifikat B1; B2-level coursework)"
       },
       {
         "id": "jv",
@@ -310,6 +419,6 @@
     ]
   },
   "seo": {
-    "description": "Resume of Benedictus Richard Ricardo — Route-to-Market Analyst and Systems Architect behind dictuzz. Work experience, skills, and how to get in touch."
+    "description": "Route-to-Market Analyst with experience in reporting automation, operational governance, and data analysis. Explore Benedictus Richard Ricardo’s experience and skills."
   }
 }

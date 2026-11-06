@@ -1,6 +1,6 @@
 /* dictuzz: Shared Brand System */
 @import '../assets/css/tokens.css';
-@import '../assets/css/core.css';
+@import '../assets/css/core.css?v=v5';
 
 *,
 *::before,

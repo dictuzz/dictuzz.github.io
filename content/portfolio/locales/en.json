@@ -3,7 +3,7 @@
   "ui": {
     "skipLink": "Skip to main content",
     "brand": "dictuzz",
-    "brandSub": "The Operational Record",
+    "brandSub": "Systems & automation",
     "topbar": {
       "home": "Home",
       "resume": "Resume",
@@ -24,60 +24,88 @@
       "de": "German"
     },
     "byline": "By",
-    "magazineLabel": "A Systems & Automation Magazine",
+    "magazineLabel": "Design · Automation · Operations",
+    "workCta": "Read the lead case",
+    "contactCta": "Start a conversation",
+    "artifactKicker": "Case 01 / Reporting system",
+    "artifactLabel": "Hours saved",
+    "artifactPeriod": "every week",
+    "artifactAria": "Result: More than 12 hours saved each week",
     "previous": "Previous",
     "next": "Next",
-    "allFiles": "All case files",
+    "allFiles": "All case studies",
     "scope": "Scope",
     "tools": "Tools & Methods",
     "impact": "Impact",
-    "evidence": "On the record"
+    "evidence": "Evidence",
+    "artifactPlaceholderLabel": "Evidence placeholder",
+    "artifactPlaceholderTitle": "Project preview coming soon",
+    "artifactPlaceholderBody": "This space is reserved for an approved, anonymized project artifact.",
+    "featureCta": "Read the case study",
+    "contactStrapMid": "Open for work",
+    "contactStrapEnd": "Available for conversations",
+    "footer": {
+      "home": "Home",
+      "resume": "Resume",
+      "portfolio": "Portfolio",
+      "resources": "Resources",
+      "terms": "Terms",
+      "navLabel": "Global navigation",
+      "emailAria": "Email Benedictus",
+      "allRights": "All rights reserved."
+    },
+    "artifactTeams": [
+      "FINANCE",
+      "SALES",
+      "OPERATIONS"
+    ],
+    "systemRole": "Systems Architect & Automation Specialist"
   },
   "landing": {
-    "documentTitle": "Case Studies in Workflow Automation & Operational Governance | The Operational Record | dictuzz",
-    "metaDescription": "The Operational Record: editorial case studies in workflow automation, operational governance & live operations. Home Digital reporting automation (12+ hrs/week saved), student council KPI governance for 34-member org, 1,000+ attendee event ops.",
+    "documentTitle": "Portfolio | dictuzz",
+    "metaDescription": "Selected work in reporting automation, team governance, live-event operations, and technical readiness by Benedictus Richard Ricardo.",
     "masthead": {
-      "wordmark": "The Operational Record",
-      "subtitle": "A portfolio of operational systems work, kept on the public record by Benedictus Richard Ricardo.",
-      "strapLeft": "Vol. I — No. 1",
-      "strapCenter": "Bandung · Jakarta · Indonesia",
-      "strapRight": "Edited & set in Fraunces"
+      "wordmark": "Systems that give time back.",
+      "subtitle": "I design workflow automation, governance, and live-event systems that help teams focus on meaningful work.",
+      "strapLeft": "Field notes / 01",
+      "strapCenter": "Bandung · Indonesia",
+      "strapRight": "A systems practice"
     },
     "feature": {
-      "kicker": "Lead Story · Workflow Automation",
-      "headline": "The weekly report was eating 12 hours. We got them back.",
-      "deck": "Three departments at Home Digital shared one manual reporting cycle. The fix wasn't fancy software — just an Excel workbook with real logic, and SOPs the team could actually stick to.",
+      "kicker": "Case study / Workflow automation",
+      "headline": "A reporting system that saves the team 12+ hours each week.",
+      "deck": "A manual reporting cycle connected finance, sales, and operations. I rebuilt the workbook logic and documented a shared process, removing more than 12 hours of recurring manual work each week.",
       "byline": "By Benedictus Richard Ricardo",
-      "meta": "Jakarta · Jul 2024 – Sep 2025 · 8 min read",
+      "meta": "Bandung · Jul 2024 – Feb 2026 · 8 min read",
       "href": "/portfolio/cases/automation-mandate/",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Analytics dashboards showing operational reporting metrics, the kind of evidence rebuilt during the engagement.",
-      "caption": "Operational dashboards — the kind of evidence the cycle was rebuilt around. Photograph used as illustration."
+      "image": "/portfolio/assets/graphics/reporting-system.svg",
+      "imageAlt": "An abstract process map joining three workstreams into a shared reporting system.",
+      "caption": "A visual interpretation of the reporting workflow described in this case study."
     },
-    "indexLabel": "In this issue",
-    "indexNote": "Three more files on the record — leadership at school scale, the live programs, and the readiness work behind the field.",
+    "indexLabel": "Selected work",
+    "indexNote": "Four detailed case studies span reporting automation, organization-wide governance, live-event execution and technical readiness.",
     "secondary": [
       {
         "slug": "kpi-governance-record",
         "kicker": "Governance · Leadership",
-        "title": "A council of thirty-four learns to keep time.",
-        "deck": "How a student presidency adopted a KPI rhythm — and started running like an institution instead of a friendship group.",
-        "meta": "President · 10 divisions · 12 feeder schools",
+        "title": "A 34-member student council established clear accountability.",
+        "deck": "How a student council introduced KPIs and regular reviews to coordinate its programs and responsibilities more consistently.",
+        "meta": "Student Council President · 10 divisions · 12 partner schools",
         "href": "/portfolio/cases/kpi-governance-record/"
       },
       {
         "slug": "large-scale-event-ops",
         "kicker": "Live Operations",
-        "title": "When the room is watching, the only thing visible is what fails.",
-        "deck": "Three years of stage and backstage work for audiences of one thousand and more — and a Youth Mass for five hundred, MC-led.",
+        "title": "Reliable operations for events with 1,000+ attendees.",
+        "deck": "Three years of stage and backstage coordination for large events, including hosting a youth service for more than 500 attendees.",
         "meta": "Stage Coordinator & MC · 2022 – 2025",
         "href": "/portfolio/cases/large-scale-event-ops/"
       },
       {
         "slug": "vertical-rescue-ops",
         "kicker": "Training & Readiness",
-        "title": "The quieter part of high-risk work is the part nobody films.",
-        "deck": "Four-plus years of equipment care and training support at Vertical Rescue Indonesia — readiness as a discipline, not a posture.",
+        "title": "Readiness is built long before a field assignment.",
+        "deck": "More than four years supporting equipment readiness and technical rescue training at Vertical Rescue Indonesia.",
         "meta": "Assistant Instructor · Jan 2021 – Present",
         "href": "/portfolio/cases/vertical-rescue-ops/"
       },
@@ -115,12 +143,12 @@
       }
     ],
     "editor": {
-      "kicker": "About the editor",
-      "title": "Benedictus Richard Ricardo, on the record.",
-      "lede": "I work best when operations are messy and nobody's sure who's responsible for what. I come in, sort it out, and build something that holds.",
+      "kicker": "The person behind the systems",
+      "title": "Benedictus Richard Ricardo",
+      "lede": "I work where processes cross teams, handoffs lose clarity, or important work depends on one person’s memory. I make those workflows clear, documented, and repeatable.",
       "body": [
-        "A good system should feel obvious, not impressive. The point is that teams stop overthinking and just do the work.",
-        "I'm studying Data Science at Universitas Terbuka right now. It's shaping how I think about process problems — more data, fewer assumptions."
+        "A good system makes the next step clear, reduces avoidable repetition, and helps teams work reliably under pressure.",
+        "I am studying Data Science at Universitas Terbuka, where I am strengthening my approach to process design through data and evidence."
       ],
       "facts": [
         {
@@ -142,9 +170,9 @@
       ]
     },
     "contact": {
-      "kicker": "Letter to the editor",
-      "title": "Open to talking about systems, automation, and ops work.",
-      "body": "Best fit for teams or roles that need things to run cleaner, more reliably, or with less manual overhead. Based in GMT+7.",
+      "kicker": "Have a system to untangle?",
+      "title": "Let’s make the work run better.",
+      "body": "If your team spends too much time on manual work, unclear handoffs, or live-event coordination, let’s talk. I am based in GMT+7 and work across systems, automation, and operations.",
       "actions": [
         {
           "type": "primary",
@@ -171,42 +199,59 @@
   },
   "cases": {
     "automation-mandate": {
-      "documentTitle": "The Automation Mandate · The Operational Record",
-      "metaDescription": "Built reporting and SOP systems that removed 12+ hours of weekly manual work at Home Digital Indonesia.",
+      "documentTitle": "Reporting Automation | dictuzz",
+      "metaDescription": "How a shared reporting system cut more than 12 hours of manual work each week at Home Digital Indonesia.",
       "vol": "Vol. I / No. 1",
       "kicker": "Workflow Automation · Home Digital Indonesia",
-      "title": "The Automation Mandate",
-      "deck": "Took a person-dependent reporting cycle and turned it into something the team could run the same way every Monday — without thinking about it.",
+      "title": "A reporting system that saves the team 12+ hours each week.",
+      "deck": "I redesigned the reporting workflow and its supporting procedures, removing more than 12 hours of manual work each week. The team can now repeat the process reliably without depending on one person.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
-      "bylineMeta": "Jul 2024 – Sep 2025 · Jakarta, Indonesia",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Operational dashboards showing weekly reporting metrics — the evidence the rebuilt cycle measured against.",
-      "caption": "Operational dashboards used to illustrate the weekly reporting cycle. Photograph used as illustration.",
-      "lead": "Three departments were losing time to the same reporting routine every week. The fix was less about software and more about giving the process real rules.",
+      "bylineMeta": "Jul 2024 – Feb 2026 · Bandung, Indonesia",
+      "image": "/portfolio/assets/graphics/reporting-system.svg",
+      "imageAlt": "A conceptual process map joining three workstreams into a shared reporting system.",
+      "caption": "An original visual interpretation of the reporting workflow described in this case study.",
+      "lead": "Three functions were spending too much time each week on the same manual reporting cycle. The key improvement was a clear, shared process rather than additional software.",
+      "process": {
+        "kicker": "The process",
+        "title": "From manual handoffs to one weekly rhythm",
+        "description": "Three functions. One reporting structure. A routine the team could repeat.",
+        "beforeLabel": "Before · repeated manual steps",
+        "before": [
+          "Finance · Sales · Operations",
+          "Repeated spreadsheet reformatting",
+          "Manual handoffs"
+        ],
+        "afterLabel": "After · shared weekly routine",
+        "after": [
+          "Three functions",
+          "Excel logic + shared SOP",
+          "Repeatable weekly report"
+        ]
+      },
       "narrative": [
         {
           "heading": "Context",
-          "body": "Finance, sales, and ops were all touching the same data, reformatting the same spreadsheets, handing off the same half-finished files. It worked, technically — but it ate too much time and broke whenever someone forgot a step."
+          "body": "Finance, sales, and operations were collecting the same information, reformatting spreadsheets, and handing off incomplete files. The process worked, but it required significant time and depended too heavily on individual memory."
         },
         {
           "heading": "What was built",
-          "body": "I treated the workflow like a system, not just a spreadsheet. Rebuilt the workbook logic in Excel, wrote SOPs so the same steps happen every cycle, and mapped the whole reporting path end-to-end. The point was that anyone on the team could run it the same way every Monday without thinking."
+          "body": "I redesigned the Excel workbook logic and documented shared procedures for each step. I also mapped the reporting workflow end to end so the team could follow the same process each Monday with fewer errors and handoff delays."
         },
         {
           "heading": "Outcome",
-          "body": "About twelve hours of manual work came off the weekly rhythm. But the bigger win was that people stopped dreading Mondays. The cadence was cleaner, handoffs stopped breaking, and the process could survive someone being out sick."
+          "body": "The redesigned workflow removed about 12 hours of manual work each week. It also clarified responsibilities and allowed the team to maintain the process when someone was away."
         }
       ],
-      "pull": "Twelve hours of manual work, gone. Replaced with a routine anyone on the team can run.",
+      "pull": "More than 12 hours of manual work removed each week, replaced by a process the team can repeat.",
       "evidence": [
-        "Built automated reports in Excel that took roughly 12 hours of manual work out of the weekly cycle.",
-        "Wrote shared SOPs across finance, sales, and operations so the process stopped depending on one person's memory.",
-        "Moved the work from 'someone needs to remember this' to 'this just runs now'."
+        "Built Excel reporting automation that saves the team more than 12 hours of manual work each week.",
+        "Documented shared procedures for finance, sales, and operations to make the reporting cycle consistent.",
+        "Replaced person-dependent reminders with a documented weekly standard."
       ],
       "impact": [
         {
           "value": "12+",
-          "label": "Hours saved weekly",
+          "label": "Hours saved each week",
           "note": "Manual reporting effort removed from the recurring cycle."
         },
         {
@@ -223,51 +268,68 @@
       "scope": [
         "Reporting workflow design",
         "Excel automation",
-        "SOP standardization"
+        "Procedure standardization"
       ],
       "tools": [
         "Excel",
         "Operational reporting",
-        "SOP design"
+        "Standard operating procedures"
       ],
       "prev": null,
       "next": {
         "slug": "kpi-governance-record",
-        "title": "A council of thirty-four learns to keep time."
+        "title": "A 34-member student council established clear accountability."
       }
     },
     "kpi-governance-record": {
-      "documentTitle": "KPI-Based Governance · The Operational Record",
-      "metaDescription": "Led 34 members across 10 divisions through a KPI rhythm at SMA Santa Maria 2.",
+      "documentTitle": "KPI Governance | dictuzz",
+      "metaDescription": "How a 34-member student council used clear KPIs and regular reviews to coordinate 10 divisions.",
       "vol": "Vol. I / No. 2",
       "kicker": "Governance · Leadership · SMA Santa Maria 2",
-      "title": "A council of thirty-four learns to keep time.",
-      "deck": "How a student presidency adopted a KPI rhythm — and started running like an institution instead of a friendship group.",
-      "bylineRole": "President · SMA Santa Maria 2",
-      "bylineMeta": "Nov 2021 – Nov 2022 · Jakarta, Indonesia",
-      "image": "/portfolio/assets/photos/governance.jpg",
-      "imageAlt": "A speaker addresses a small audience in a workspace setting — used to illustrate institutional leadership and program design.",
-      "caption": "Leadership in a working setting — used as an illustration for institutional rhythm and program design.",
-      "lead": "A 34-member council across 10 divisions needed a better way to see what was working and what wasn't. KPIs and weekly check-ins gave us that.",
+      "title": "A 34-member student council established clear accountability.",
+      "deck": "How a student council introduced KPIs and regular reviews to coordinate its programs and responsibilities more consistently.",
+      "bylineRole": "Student Council President · SMA Santa Maria 2",
+      "bylineMeta": "Nov 2021 – Nov 2022 · Bandung, Indonesia",
+      "image": "/portfolio/assets/graphics/governance-rhythm.svg",
+      "imageAlt": "A 34-person council represented as ten connected divisions around a shared operating rhythm.",
+      "caption": "A conceptual visual of the governance rhythm described in this case study.",
+      "lead": "A 34-member student council across ten divisions needed clearer responsibilities and better visibility into program delivery. KPIs and weekly reviews created a shared operating rhythm.",
+      "process": {
+        "kicker": "Governance rhythm",
+        "title": "Make progress visible across ten divisions",
+        "description": "Clear expectations and weekly reviews gave the council a shared view of progress.",
+        "beforeLabel": "Before · updates without a shared view",
+        "before": [
+          "10 divisions",
+          "Updates in group chats",
+          "Progress hard to see"
+        ],
+        "afterLabel": "After · a visible operating rhythm",
+        "after": [
+          "Clear division expectations",
+          "Weekly KPI reviews",
+          "School programs and partner outreach"
+        ]
+      },
       "narrative": [
         {
           "heading": "Context",
-          "body": "Once a student org hits 10 divisions, you can't run it on group chats and good intentions anymore. We needed a way to actually see which divisions were delivering and which were stalling."
+          "body": "As a student organization grows across multiple divisions, informal communication alone is not enough. The council needed clearer visibility, consistent follow-through, and a way to review programs while they were underway."
         },
         {
           "heading": "What was built",
-          "body": "I introduced KPIs with weekly reviews, set clearer expectations per division, and built a stronger planning approach for school-wide programs. Nothing revolutionary — just structure where there wasn't any before."
+          "body": "I introduced measurable expectations, regular progress reviews, and clearer links between each division’s work and the council’s goals. Weekly KPI reviews gave the team a consistent basis for planning and follow-through."
         },
         {
           "heading": "Outcome",
-          "body": "We could finally see what was moving and what was stuck. Programs ran more steadily, including outreach that reached twelve feeder schools. The council started operating like an institution, not a friend group."
+          "body": "The council gained a clearer view of progress, blockers, and where support was needed. Programs became more consistent, and outreach activities reached twelve partner schools."
         }
       ],
-      "pull": "It is easier to lead a team when the team can see what it is doing.",
+      "pull": "Teams are easier to lead when everyone can see the work and its progress.",
       "evidence": [
-        "Ran a 34-person council across 10 divisions with KPIs and weekly check-ins.",
-        "Built institutional programs that the school itself adopted.",
-        "Led outreach campaigns that reached 12 feeder schools."
+        "Led a 34-member council across ten divisions using KPIs and weekly progress reviews.",
+        "Designed school-wide programs that the administration adopted as ongoing initiatives.",
+        "Coordinated outreach activities that reached twelve partner schools."
       ],
       "impact": [
         {
@@ -282,7 +344,7 @@
         },
         {
           "value": "12",
-          "label": "Feeder schools reached",
+          "label": "Partner schools reached",
           "note": "Scale of one major outward-facing campaign."
         }
       ],
@@ -298,45 +360,62 @@
       ],
       "prev": {
         "slug": "automation-mandate",
-        "title": "The Automation Mandate"
+        "title": "A reporting system that saves the team 12+ hours each week."
       },
       "next": {
         "slug": "large-scale-event-ops",
-        "title": "When the room is watching, the only thing visible is what fails."
+        "title": "Reliable operations for events with 1,000+ attendees."
       }
     },
     "large-scale-event-ops": {
-      "documentTitle": "Large-Scale Event Ops · The Operational Record",
-      "metaDescription": "Live execution stable across 1,000+ attendee environments; MC-led Youth Mass 2025 for 500+ participants.",
+      "documentTitle": "Event Operations | dictuzz",
+      "metaDescription": "How stage and backstage planning supported events with more than 1,000 attendees.",
       "vol": "Vol. I / No. 3",
       "kicker": "Live Operations · Ultimate Event Organizer",
-      "title": "When the room is watching, the only thing visible is what fails.",
-      "deck": "Three years of stage and backstage work for audiences of one thousand and more — and a Youth Mass for five hundred, MC-led.",
+      "title": "Reliable operations for events with 1,000+ attendees.",
+      "deck": "Three years coordinating stage and backstage operations for large events, including hosting a youth service attended by more than 500 people.",
       "bylineRole": "Stage Coordinator & MC · Ultimate Event Organizer",
-      "bylineMeta": "2022 – 2025 · Jakarta, Indonesia",
-      "image": "/portfolio/assets/photos/events.jpg",
-      "imageAlt": "Confetti falls over a crowd at a live event, illustrating the scale and timing pressure of large public programs.",
-      "caption": "Live programs depend on transitions that hold under pressure. Photograph used as illustration.",
-      "lead": "Live events with big audiences don't forgive sloppy transitions. My job was keeping the backstage tight enough that the audience never noticed.",
+      "bylineMeta": "2022 – 2025 · Bandung, Indonesia",
+      "image": "/portfolio/assets/graphics/live-operations.svg",
+      "imageAlt": "A stage plan with light beams and cue lines representing live transitions.",
+      "caption": "A visual interpretation of cueing, pacing and backstage handoffs.",
+      "lead": "Large events depend on precise transitions, clear coordination, and well-managed backstage operations. Small breakdowns are immediately visible, so every team needs a shared plan.",
+      "process": {
+        "kicker": "The show flow",
+        "title": "Give every transition a clear next move",
+        "description": "A shared running order helps crews, speakers, and performers move through a live program with clear handoffs.",
+        "beforeLabel": "Before · unclear transitions",
+        "before": [
+          "Show flow",
+          "Cues for crew, speakers, and performers",
+          "Pressure on every handoff"
+        ],
+        "afterLabel": "After · coordinated execution",
+        "after": [
+          "Documented transition sequence",
+          "Live team communication",
+          "Predictable stage flow"
+        ]
+      },
       "narrative": [
         {
           "heading": "Context",
-          "body": "When a transition is even a little unclear, the whole room notices. The challenge in big public events isn't creating wow moments — it's making sure the boring parts (cues, pacing, handoffs) don't turn into visible failures."
+          "body": "When a stage transition is unclear, the audience notices immediately. The challenge at a large public event is to keep timing, technical cues, and handoffs reliable under pressure."
         },
         {
           "heading": "What was built",
-          "body": "I sat right between planning and execution. My job was turning the show flow into something the tech crew, speakers, and performers could actually follow without hesitating. That meant tighter transition plans and constant communication across teams."
+          "body": "I translated the running order into clear steps for the technical crew, speakers, and performers. This included planning transitions in advance and coordinating teams throughout the event."
         },
         {
           "heading": "Outcome",
-          "body": "Transitions ran cleaner, stage flow was more predictable, and things held even when the pressure was high. Youth Mass 2025 was probably the best proof — 500+ people, live stage, and everything stayed on time."
+          "body": "The work improved transition clarity and helped the stage team maintain the schedule under pressure. At the 2025 youth service, I hosted more than 500 attendees while coordinating the live program."
         }
       ],
-      "pull": "When pacing holds, the event feels intentional. When it breaks, everyone notices.",
+      "pull": "Consistent timing makes a live event feel considered. Unclear transitions are immediately visible.",
       "evidence": [
-        "Ran backstage coordination for events with 1,000+ people.",
-        "MC'd Youth Mass 2025 for 500+ participants — kept pacing tight from start to finish.",
-        "Cut down transition friction by giving every crew a clear, documented sequence."
+        "Coordinated backstage operations for events attended by more than 1,000 people.",
+        "Hosted the 2025 youth service for more than 500 attendees and coordinated the program flow.",
+        "Reduced transition friction with a clearer running order and team handoffs."
       ],
       "impact": [
         {
@@ -346,7 +425,7 @@
         },
         {
           "value": "500+",
-          "label": "Led as MC",
+          "label": "Attendees hosted",
           "note": "Youth Mass 2025 as a proof point for live communication."
         },
         {
@@ -367,45 +446,62 @@
       ],
       "prev": {
         "slug": "kpi-governance-record",
-        "title": "A council of thirty-four learns to keep time."
+        "title": "A 34-member student council established clear accountability."
       },
       "next": {
         "slug": "vertical-rescue-ops",
-        "title": "The quieter part of high-risk work is the part nobody films."
+        "title": "Readiness is built long before a field assignment."
       }
     },
     "vertical-rescue-ops": {
-      "documentTitle": "Vertical Rescue Ops · The Operational Record",
-      "metaDescription": "Equipment readiness, technical training, and operational discipline over 4+ active years at Vertical Rescue Indonesia.",
+      "documentTitle": "Vertical Rescue Operations | dictuzz",
+      "metaDescription": "A look at equipment readiness, technical training, and field operations at Vertical Rescue Indonesia.",
       "vol": "Vol. I / No. 4",
       "kicker": "Training & Readiness · Vertical Rescue Indonesia",
-      "title": "The quieter part of high-risk work is the part nobody films.",
-      "deck": "Four-plus years of equipment care and training support at Vertical Rescue Indonesia — readiness as a discipline, not a posture.",
+      "title": "Readiness is built long before a field assignment.",
+      "deck": "More than four years supporting equipment care and technical training at Vertical Rescue Indonesia. Readiness depends on consistent checks and disciplined preparation.",
       "bylineRole": "Assistant Instructor · Vertical Rescue Indonesia",
       "bylineMeta": "Jan 2021 – Present · Indonesia",
-      "image": null,
-      "imageAlt": null,
-      "caption": null,
-      "lead": "Readiness work doesn't get filmed. But when things go wrong in the field, it's the only thing that matters.",
+      "image": "/portfolio/assets/graphics/readiness-discipline.svg",
+      "imageAlt": "Inspection marks and technical equipment shapes representing training readiness.",
+      "caption": "A conceptual illustration of equipment checks and training preparation.",
+      "lead": "Readiness work happens out of view, but it determines whether equipment, people, and procedures are dependable when conditions become difficult.",
+      "process": {
+        "kicker": "Readiness work",
+        "title": "Build confidence before field training",
+        "description": "Equipment care and training support establish dependable practices before technical exercises begin.",
+        "beforeLabel": "Readiness needs",
+        "before": [
+          "Equipment condition",
+          "Climbing practice",
+          "Belay support"
+        ],
+        "afterLabel": "Preparation in practice",
+        "after": [
+          "Inspection + maintenance",
+          "Training session support",
+          "Equipment ready to use"
+        ]
+      },
       "narrative": [
         {
           "heading": "Context",
-          "body": "In technical rescue, you can't improvise once things get serious. Equipment has to be checked, training has to be consistent, and everyone needs to know their role before anyone is actually in danger."
+          "body": "Technical rescue depends on disciplined preparation. Equipment checks, regular practice, and clear roles need to be in place before conditions become challenging."
         },
         {
           "heading": "What was built",
-          "body": "I took care of equipment, supported climbing sessions as lead climber and belayer, and helped keep the training standard high. Not glamorous work — just the kind that has to be right every time."
+          "body": "I maintain and inspect equipment, support technical climbing sessions as a lead climber and belayer, and help new trainees develop safe, repeatable practices."
         },
         {
           "heading": "Outcome",
-          "body": "Equipment stayed ready. Training sessions ran more smoothly. And the people coming into the program had a better foundation before they ever hit a real situation."
+          "body": "Consistent equipment checks and training support strengthen operational readiness and give new trainees a more reliable foundation before field exercises."
         }
       ],
-      "pull": "In technical environments, confidence comes from preparation — not improvisation.",
+      "pull": "In technical work, confidence comes from preparation and consistency.",
       "evidence": [
-        "Kept equipment inspection-ready through regular maintenance.",
-        "Supported climbing and belay sessions as part of the training team.",
-        "Helped build a culture where preparation isn't optional — it's the baseline."
+        "Maintained equipment readiness through regular inspections and routine care.",
+        "Supported technical climbing and belay exercises as part of the training team.",
+        "Reinforced a safety culture in which preparation is part of the standard."
       ],
       "impact": [
         {
@@ -415,13 +511,13 @@
         },
         {
           "value": "Routine",
-          "label": "Equipment discipline",
+          "label": "Equipment checks",
           "note": "Inspection and maintenance as part of the standard."
         },
         {
           "value": "Field",
           "label": "Training support",
-          "note": "Hands-on contribution in climbing and belay environments."
+          "note": "Hands-on support for climbing and belay training."
         }
       ],
       "scope": [
@@ -436,7 +532,7 @@
       ],
       "prev": {
         "slug": "large-scale-event-ops",
-        "title": "When the room is watching, the only thing visible is what fails."
+        "title": "Reliable operations for events with 1,000+ attendees."
       },
       "next": null
     }

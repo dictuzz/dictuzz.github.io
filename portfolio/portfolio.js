@@ -1,6 +1,6 @@
 import { applyGlobalFooter } from '../js/site-renderers.js';
 import { upgradeIcons } from '../js/icon-kit.js';
-import { loadSiteConfig } from '../js/site-content.js';
+import { loadSiteConfig } from '../js/site-content.js?v=v9';
 import { safeStorage } from '../js/ui-kit.js';
 
 const SUPPORTED_LANGS = ['en', 'id', 'de'];
@@ -19,83 +19,6 @@ const state = {
   caseSlug: bodyEl.dataset.case || null
 };
 
-/* ---------- authentication ---------- */
-const EXPECTED_HASH = 'c28595c067550031126e2dbe55cd86afdb7209fc25e2edf8f18a87e4fc9095cf';
-const isUnlocked = (() => {
-  try {
-    return sessionStorage.getItem('portfolio_unlocked') === 'true';
-  } catch {
-    return false;
-  }
-})();
-
-if (!isUnlocked) {
-  docEl.classList.add('is-locked');
-}
-
-async function hashPassword(password) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-window.generatePasswordHash = async function(password) {
-  return await hashPassword(password);
-};
-
-function renderLockScreen() {
-  if (isUnlocked) return;
-  const overlay = document.createElement('div');
-  overlay.id = 'lock-overlay';
-  overlay.innerHTML = `
-    <div class="lock-box">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-        <path d="M7 11V7a5 5 0 0110 0v4"></path>
-      </svg>
-      <h2>Authorized Personnel Only</h2>
-      <p>Please enter the passphrase to view the operational records.</p>
-      <form class="lock-form" id="lock-form">
-        <input type="password" id="lock-pass" class="lock-input" placeholder="Passphrase" required autofocus>
-        <button type="submit" class="lock-btn">Unlock Records</button>
-        <a href="https://wa.me/6285186888630" target="_blank" rel="noopener noreferrer" class="lock-btn request-access-btn" style="display: block; text-align: center; margin-top: 10px; background: transparent; border: 1px solid currentColor; text-decoration: none;">Request Access</a>
-        <div id="lock-error" class="lock-error" aria-live="assertive"></div>
-      </form>
-    </div>
-  `;
-  document.body.prepend(overlay);
-
-  const form = document.getElementById('lock-form');
-  const input = document.getElementById('lock-pass');
-  const error = document.getElementById('lock-error');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const val = input.value.trim();
-    if (!val) return;
-    
-    const hash = await hashPassword(val);
-    if (hash === EXPECTED_HASH) {
-      try {
-        sessionStorage.setItem('portfolio_unlocked', 'true');
-      } catch {}
-      overlay.classList.add('is-hidden');
-      setTimeout(() => {
-        docEl.classList.remove('is-locked');
-        overlay.remove();
-        initReveal();
-      }, 300);
-    } else {
-      error.textContent = 'Incorrect passphrase.';
-      input.value = '';
-      input.focus();
-    }
-  });
-}
-
-
 let revealObserver = null;
 
 function readStoredLang() {
@@ -105,7 +28,9 @@ function writeStoredLang(lang) {
   safeStorage.setItem(LANG_KEY, lang);
 }
 function getInitialLang() {
+  const routeLang = location.pathname.match(/^\/portfolio\/(id|de)(?:\/|$)/)?.[1];
   const url = new URLSearchParams(location.search).get('lang');
+  if (SUPPORTED_LANGS.includes(routeLang)) return routeLang;
   if (SUPPORTED_LANGS.includes(url)) return url;
   const saved = readStoredLang();
   if (SUPPORTED_LANGS.includes(saved)) return saved;
@@ -113,14 +38,74 @@ function getInitialLang() {
   if (SUPPORTED_LANGS.includes(nav)) return nav;
   return DEFAULT_LANG;
 }
+function landingPath(lang) {
+  return lang === DEFAULT_LANG ? '/portfolio/' : `/portfolio/${lang}/`;
+}
+function casePath(slug, lang) {
+  const prefix = lang === DEFAULT_LANG ? '' : `${lang}/`;
+  return `/portfolio/${prefix}cases/${slug}/`;
+}
+function currentPagePath(lang) {
+  return state.pageType === 'case' ? casePath(state.caseSlug, lang) : landingPath(lang);
+}
+function localizedPath(path, lang) {
+  const caseMatch = path.match(/^\/portfolio\/cases\/([^/?#]+)\/?$/);
+  if (caseMatch) return casePath(caseMatch[1], lang);
+  if (path === '/portfolio/') return landingPath(lang);
+  return path;
+}
 function pushLangUrl(lang) {
   const url = new URL(location.href);
-  url.searchParams.set('lang', lang);
+  url.pathname = currentPagePath(lang);
+  url.searchParams.delete('lang');
   window.history.replaceState({}, '', url);
 }
 
+function localizedPageUrl() {
+  return new URL(currentPagePath(state.lang), getSiteUrl()).href;
+}
+
+function setHeadMeta(selector, attribute, value) {
+  let element = document.querySelector(selector);
+  if (!element) {
+    element = document.createElement('meta');
+    if (selector.includes('[property=')) element.setAttribute('property', selector.match(/\[property="([^"]+)"\]/)?.[1] || '');
+    else element.setAttribute('name', selector.match(/\[name="([^"]+)"\]/)?.[1] || '');
+    document.head.append(element);
+  }
+  element.setAttribute(attribute, value);
+}
+
+function updatePageMetadata(title, description) {
+  const url = localizedPageUrl();
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => {
+    const lang = link.getAttribute('hreflang');
+    if (['en', 'id', 'de', 'x-default'].includes(lang)) {
+      link.setAttribute('href', new URL(currentPagePath(lang === 'x-default' ? DEFAULT_LANG : lang), getSiteUrl()).href);
+    }
+  });
+  setHeadMeta('meta[property="og:url"]', 'content', url);
+  setHeadMeta('meta[property="og:title"]', 'content', title);
+  setHeadMeta('meta[property="og:description"]', 'content', description);
+  setHeadMeta('meta[property="og:locale"]', 'content', ({ en: 'en_US', id: 'id_ID', de: 'de_DE' })[state.lang] || 'en_US');
+  const ogLocales = { en: 'en_US', id: 'id_ID', de: 'de_DE' };
+  document.querySelectorAll('meta[property="og:locale:alternate"]').forEach((meta) => meta.remove());
+  Object.entries(ogLocales).forEach(([lang, locale]) => {
+    if (lang === state.lang) return;
+    const meta = document.createElement('meta');
+    meta.setAttribute('property', 'og:locale:alternate');
+    meta.setAttribute('content', locale);
+    document.head.append(meta);
+  });
+  setHeadMeta('meta[name="twitter:url"]', 'content', url);
+  setHeadMeta('meta[name="twitter:title"]', 'content', title);
+  setHeadMeta('meta[name="twitter:description"]', 'content', description);
+  document.documentElement.lang = state.lang;
+}
+
 async function loadLocale(lang) {
-  const url = `/content/portfolio/locales/${lang}.json`;
+  const url = `/content/portfolio/locales/${lang}.json?v=v6`;
   const res = await fetch(url, { credentials: 'omit', cache: 'no-cache' });
   if (!res.ok) throw new Error(`Failed to load locale ${lang}: ${res.status}`);
   const text = await res.text();
@@ -192,8 +177,8 @@ function iconHtml(name) {
 
 function renderTopbar(data) {
   const ui = data.ui;
-  const homeRoot = `/?lang=${state.lang}`;
-  const resumeRoot = `/resume/?lang=${state.lang}`;
+  const homeRoot = '/';
+  const resumeRoot = state.lang === DEFAULT_LANG ? '/resume/' : `/resume/${state.lang}/`;
 
   setText('[data-i18n="brand"]', ui.brand);
   setText('[data-i18n="brandSub"]', ui.brandSub);
@@ -202,7 +187,7 @@ function renderTopbar(data) {
   if (navLinks) {
     const items = state.pageType === 'case'
       ? [
-          { href: '/portfolio/', label: ui.allFiles },
+          { href: landingPath(state.lang), label: ui.allFiles },
           { href: homeRoot, label: ui.topbar.home },
           { href: resumeRoot, label: ui.topbar.resume }
         ]
@@ -240,7 +225,7 @@ function renderLanding(data) {
 
   document.title = L.documentTitle;
   setAttr('meta[name="description"]', 'content', L.metaDescription);
-  document.documentElement.lang = state.lang;
+  updatePageMetadata(L.documentTitle, L.metaDescription);
 
     setText('[data-masthead-strap-left]', L.masthead.strapLeft);
   setText('[data-masthead-strap-center]', L.masthead.strapCenter);
@@ -248,6 +233,14 @@ function renderLanding(data) {
   setText('[data-masthead-wordmark]', L.masthead.wordmark);
   setText('[data-masthead-subtitle]', L.masthead.subtitle);
   setText('[data-masthead-rule]', data.ui.magazineLabel);
+  setText('[data-masthead-work-cta]', data.ui.workCta);
+  setText('[data-masthead-contact-cta]', data.ui.contactCta);
+  setAttr('[data-masthead-work-cta]', 'href', localizedPath(L.feature.href, state.lang));
+  setText('[data-artifact-kicker]', data.ui.artifactKicker);
+  setText('[data-artifact-label]', data.ui.artifactLabel);
+  setText('[data-artifact-period]', data.ui.artifactPeriod);
+  (data.ui.artifactTeams || []).forEach((label, index) => setText(`[data-artifact-team="${index}"]`, label));
+  setAttr('[data-masthead-artifact]', 'aria-label', data.ui.artifactAria);
 
     const f = L.feature;
   setText('[data-feature-kicker]', f.kicker);
@@ -255,10 +248,11 @@ function renderLanding(data) {
   setText('[data-feature-deck]', f.deck);
   setText('[data-feature-byline]', f.byline);
   setText('[data-feature-meta]', f.meta);
-  setAttr('[data-feature-link]', 'href', f.href + `?lang=${state.lang}`);
+  setAttr('[data-feature-link]', 'href', localizedPath(f.href, state.lang));
   setAttr('[data-feature-image]', 'src', f.image);
   setAttr('[data-feature-image]', 'alt', f.imageAlt || '');
   setText('[data-feature-caption]', f.caption);
+  setText('[data-feature-cta]', data.ui.featureCta);
 
     setText('[data-index-label]', L.indexLabel);
   setText('[data-index-note]', L.indexNote);
@@ -267,7 +261,7 @@ function renderLanding(data) {
   if (list && Array.isArray(L.secondary)) {
     list.innerHTML = L.secondary.map((item, i) => {
       const isExternal = /^https?:\/\//i.test(item.href);
-      const linkHref = isExternal ? item.href : `${item.href}?lang=${state.lang}`;
+      const linkHref = isExternal ? item.href : localizedPath(item.href, state.lang);
       const extAttrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
       const trackKind = isExternal ? 'tool' : 'case';
       return `
@@ -304,6 +298,8 @@ function renderLanding(data) {
   }
 
     setText('[data-contact-kicker]', L.contact.kicker);
+  setText('[data-contact-strap-mid]', data.ui.contactStrapMid);
+  setText('[data-contact-strap-end]', data.ui.contactStrapEnd);
   setText('[data-contact-title]', L.contact.title);
   setText('[data-contact-body]', L.contact.body);
 
@@ -324,7 +320,7 @@ function renderCase(data) {
 
   document.title = c.documentTitle;
   setAttr('meta[name="description"]', 'content', c.metaDescription);
-  document.documentElement.lang = state.lang;
+  updatePageMetadata(c.documentTitle, c.metaDescription);
 
   setText('[data-case-vol]', c.vol);
   setText('[data-case-kicker]', c.kicker);
@@ -332,6 +328,10 @@ function renderCase(data) {
   setText('[data-case-deck]', c.deck);
   setText('[data-case-byline-role]', c.bylineRole);
   setText('[data-case-byline-meta]', c.bylineMeta);
+  setText('[data-artifact-placeholder-label]', data.ui.artifactPlaceholderLabel);
+  setText('[data-artifact-placeholder-title]', data.ui.artifactPlaceholderTitle);
+  setText('[data-artifact-placeholder-body]', data.ui.artifactPlaceholderBody);
+  setAttr('[data-artifact-placeholder]', 'aria-label', data.ui.artifactPlaceholderTitle);
   setHtml('[data-byline-prefix]', `${escapeHtml(data.ui.byline)}&nbsp;`);
 
   const figure = document.querySelector('[data-case-figure]');
@@ -349,6 +349,32 @@ function renderCase(data) {
   }
 
   setText('[data-case-lead]', c.lead);
+
+  const process = document.querySelector('[data-process-flow]');
+  if (process && c.process) {
+    const renderSteps = (steps) => steps.map((step, i) => `
+      <li class="workflow-step">
+        <span class="workflow-step__index" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <span class="workflow-step__label">${escapeHtml(step)}</span>
+      </li>
+    `).join('<li class="workflow-arrow" aria-hidden="true">→</li>');
+    process.innerHTML = `
+      <div class="workflow-heading">
+        <p class="article__block-label">${escapeHtml(c.process.kicker)}</p>
+        <h2 id="workflow-title">${escapeHtml(c.process.title)}</h2>
+        <p>${escapeHtml(c.process.description)}</p>
+      </div>
+      <div class="workflow-lane workflow-lane--before">
+        <h3>${escapeHtml(c.process.beforeLabel)}</h3>
+        <ol class="workflow-steps">${renderSteps(c.process.before)}</ol>
+      </div>
+      <div class="workflow-lane workflow-lane--after">
+        <h3>${escapeHtml(c.process.afterLabel)}</h3>
+        <ol class="workflow-steps">${renderSteps(c.process.after)}</ol>
+      </div>
+    `;
+    process.setAttribute('aria-labelledby', 'workflow-title');
+  }
 
   const narrative = document.querySelector('[data-case-narrative]');
   if (narrative && Array.isArray(c.narrative)) {
@@ -390,17 +416,17 @@ function renderCase(data) {
   const prevWrap = document.querySelector('[data-case-prev]');
   if (prevWrap) {
     if (c.prev) {
-      prevWrap.innerHTML = `<a href="/portfolio/cases/${c.prev.slug}/?lang=${state.lang}"><span class="case-nav__direction">← ${escapeHtml(data.ui.previous)}</span><span class="case-nav__title">${escapeHtml(c.prev.title)}</span></a>`;
+      prevWrap.innerHTML = `<a href="${casePath(c.prev.slug, state.lang)}"><span class="case-nav__direction">← ${escapeHtml(data.ui.previous)}</span><span class="case-nav__title">${escapeHtml(c.prev.title)}</span></a>`;
     } else {
-      prevWrap.innerHTML = `<a href="/portfolio/?lang=${state.lang}"><span class="case-nav__direction">← ${escapeHtml(data.ui.allFiles)}</span></a>`;
+      prevWrap.innerHTML = `<a href="${landingPath(state.lang)}"><span class="case-nav__direction">← ${escapeHtml(data.ui.allFiles)}</span></a>`;
     }
   }
   const nextWrap = document.querySelector('[data-case-next]');
   if (nextWrap) {
     if (c.next) {
-      nextWrap.innerHTML = `<a href="/portfolio/cases/${c.next.slug}/?lang=${state.lang}"><span class="case-nav__direction">${escapeHtml(data.ui.next)} →</span><span class="case-nav__title">${escapeHtml(c.next.title)}</span></a>`;
+      nextWrap.innerHTML = `<a href="${casePath(c.next.slug, state.lang)}"><span class="case-nav__direction">${escapeHtml(data.ui.next)} →</span><span class="case-nav__title">${escapeHtml(c.next.title)}</span></a>`;
     } else {
-      nextWrap.innerHTML = `<a href="/portfolio/?lang=${state.lang}"><span class="case-nav__direction">${escapeHtml(data.ui.allFiles)} →</span></a>`;
+      nextWrap.innerHTML = `<a href="${landingPath(state.lang)}"><span class="case-nav__direction">${escapeHtml(data.ui.allFiles)} →</span></a>`;
     }
   }
 }
@@ -477,7 +503,7 @@ function injectJsonLd(data) {
       name: data.landing.documentTitle,
       description: data.landing.metaDescription,
       inLanguage: state.lang,
-      url: `${siteUrl}/portfolio/?lang=${state.lang}`,
+      url: localizedPageUrl(),
       mainEntity: {
         '@type': 'ItemList',
         numberOfItems: itemList.length,
@@ -504,7 +530,7 @@ function injectJsonLd(data) {
           name: state.siteConfig?.profile?.name || 'Benedictus Richard Ricardo',
           url: `${siteUrl}/`
         },
-        url: `${siteUrl}/portfolio/cases/${state.caseSlug}/?lang=${state.lang}`
+        url: localizedPageUrl()
       };
       if (c.image) {
         payload.image = absoluteUrl(c.image);
@@ -535,12 +561,41 @@ function render() {
   if (state.pageType === 'case') renderCase(state.data);
   else renderLanding(state.data);
   if (state.siteConfig) {
-    try { applyGlobalFooter(state.siteConfig); } catch (err) { console.error('footer error', err); }
+    try {
+      applyGlobalFooter(state.siteConfig);
+      translateFooter(state.data.ui);
+    } catch (err) { console.error('footer error', err); }
   }
   injectJsonLd(state.data);
   upgradeIcons(document);
   applyTheme(docEl.getAttribute('data-theme') || 'light');
   initReveal();
+}
+
+function translateFooter(ui) {
+  const footer = ui.footer;
+  if (!footer) return;
+  const localizedResume = state.lang === DEFAULT_LANG ? '/resume/' : `/resume/${state.lang}/`;
+  const localizedPortfolio = landingPath(state.lang);
+  const footerLinks = [
+    ['/', footer.home], [localizedResume, footer.resume], [localizedPortfolio, footer.portfolio],
+    ['/resources/', footer.resources], ['/terms/', footer.terms]
+  ];
+  footerLinks.forEach(([href, label]) => {
+    const canonicalHref = href === localizedResume ? '/resume/' : href === localizedPortfolio ? '/portfolio/' : href;
+    const selector = canonicalHref === '/terms/' ? '.global-footer__link[href$="/terms/"]' : `.global-footer__link[href="${canonicalHref}"]`;
+    const link = document.querySelector(selector);
+    if (link) {
+      link.setAttribute('href', href);
+      link.textContent = label;
+    }
+  });
+  document.querySelector('.global-footer__nav')?.setAttribute('aria-label', footer.navLabel);
+  setAttr('.global-footer__contact-link[href^="mailto:"]', 'aria-label', footer.emailAria);
+  const copy = document.querySelector('.global-footer__copy');
+  const rightsNode = [...(copy?.childNodes || [])].find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.includes('©'));
+  if (rightsNode) rightsNode.textContent = `\n            © ${new Date().getFullYear()} Benedictus Richard Ricardo. ${footer.allRights}\n            `;
+  setText('.global-footer__copy span', ui.systemRole);
 }
 
 async function init() {
@@ -573,7 +628,6 @@ async function init() {
     console.error('site config load failed', err);
   }
 
-  renderLockScreen();
   render();
   initProgress();
 }

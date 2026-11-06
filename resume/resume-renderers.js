@@ -95,13 +95,13 @@ export function renderImpact(items) {
     `);
 }
 
-export function renderCertifications(items) {
+export function renderCertifications(items, translations = {}) {
     renderSection('#certifications-list', items, (item) => `
         <div class="edu-card glass glass--hover card reveal">
             <h3>${escapeHtml(item.name)}</h3>
             ${item.issuer ? `<p class="edu-card__degree">${escapeHtml(item.issuer)}</p>` : ''}
             ${item.year ? `<p class="edu-card__date">${escapeHtml(item.year)}</p>` : ''}
-            ${item.url ? `<p class="edu-card__focus"><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Verify credential</a></p>` : ''}
+            ${item.url ? `<p class="edu-card__focus"><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(translations.certifications?.verify || 'Verify credential')}</a></p>` : ''}
         </div>
     `);
 }

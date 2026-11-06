@@ -1,7 +1,7 @@
 import { upgradeIcons } from '../js/icon-kit.js';
 import { bindThemeToggle, bindMobileNav, bindSearchShortcuts, initSharedFooter } from './resources-common.js';
 
-const INDEX_URL = '/content/resources/search-index.json';
+const INDEX_URL = '/content/resources/search-index.json?v=v2';
 const FUSE_OPTIONS = {
   keys: [
     { name: 't', weight: 3 },
@@ -31,8 +31,14 @@ const emptyText = $('#search-empty-text');
 const count = $('#result-count');
 const loading = $('#search-loading');
 const filter = $('#category-filter');
+const chips = $('#category-chips');
+const moreBtn = $('#search-more');
+const PAGE_SIZE = 60;
 
 let debounceTimer = null;
+let currentResults = [];
+let currentQuery = '';
+let visibleLimit = PAGE_SIZE;
 
 async function init() {
   bindMobileNav();
@@ -54,10 +60,15 @@ async function init() {
   upgradeIcons();
   await initSharedFooter('/resources/');
 
-  const q = new URLSearchParams(window.location.search).get('q');
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q') || '';
+  filter.value = params.get('category') || '';
+  syncCategoryChips();
   if (q) {
     input.value = q;
     doSearch(q);
+  } else if (filter.value) {
+    doSearch('');
   } else {
     showEmpty('Type a query to start searching');
   }
@@ -102,6 +113,11 @@ function populateFilter() {
     opt.textContent = `${cat.name} (${cat.count})`;
     filter.appendChild(opt);
   }
+  if (chips) {
+    const popular = sorted.slice(0, 8);
+    chips.innerHTML = `<button type="button" class="search-chip is-active" data-category="" aria-pressed="true">All resources</button>` +
+      popular.map(cat => `<button type="button" class="search-chip" data-category="${escapeAttr(cat.slug)}" aria-pressed="false">${escapeHtml(cat.name)}<span>${cat.count.toLocaleString()}</span></button>`).join('');
+  }
 }
 
 function bindEvents() {
@@ -131,7 +147,32 @@ function bindEvents() {
   });
 
   filter.addEventListener('change', () => {
+    syncCategoryChips();
     debounceSearch();
+  });
+
+  chips?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-category]');
+    if (!button) return;
+    filter.value = button.dataset.category;
+    syncCategoryChips();
+    doSearch(input.value);
+  });
+
+  moreBtn?.addEventListener('click', () => {
+    visibleLimit += PAGE_SIZE;
+    renderResults(currentResults, currentQuery);
+  });
+
+  document.querySelectorAll('[data-search-example]').forEach((button) => {
+    button.addEventListener('click', () => {
+      input.value = button.dataset.searchExample;
+      clearBtn.hidden = false;
+      filter.value = '';
+      syncCategoryChips();
+      doSearch(input.value);
+      input.focus();
+    });
   });
 
   document.addEventListener('keydown', (e) => {
@@ -155,17 +196,21 @@ function doSearch(query) {
   query = query.trim();
   const catFilter = filter.value;
 
-  if (!query) {
+  if (!query && !catFilter) {
     showEmpty('Type a query to start searching');
     updateCount(0);
     list.innerHTML = '';
+    moreBtn.hidden = true;
+    syncUrl();
     return;
   }
 
   const exact = query.match(/"([^"]+)"/);
   let results;
 
-  if (exact) {
+  if (!query) {
+    results = index.filter(item => item.s === catFilter).map(item => ({ item, score: 0 }));
+  } else if (exact) {
     const phrase = exact[1].toLowerCase();
     results = index.filter(item => {
       const text = [item.t, item.d, item.c, item.se, item.su].join(' ').toLowerCase();
@@ -191,11 +236,33 @@ function doSearch(query) {
     showEmpty(`No results found for "${query}"`);
     updateCount(0);
     list.innerHTML = '';
+    moreBtn.hidden = true;
+    syncUrl();
     return;
   }
 
+  currentResults = results;
+  currentQuery = query;
+  visibleLimit = PAGE_SIZE;
   updateCount(results.length);
+  syncUrl();
   renderResults(results, query);
+}
+
+function syncCategoryChips() {
+  chips?.querySelectorAll('[data-category]').forEach((button) => {
+    const active = button.dataset.category === filter.value;
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+}
+
+function syncUrl() {
+  const url = new URL(window.location.href);
+  const query = input.value.trim();
+  if (query) url.searchParams.set('q', query); else url.searchParams.delete('q');
+  if (filter.value) url.searchParams.set('category', filter.value); else url.searchParams.delete('category');
+  window.history.replaceState({}, '', url);
 }
 
 function renderResults(results, query) {
@@ -207,9 +274,22 @@ function renderResults(results, query) {
   }
 
   const sortedSlugs = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length);
+  const quotas = Object.fromEntries(sortedSlugs.map((slug) => [slug, 0]));
+  let rendered = 0;
+  while (rendered < visibleLimit) {
+    let addedThisRound = false;
+    for (const slug of sortedSlugs) {
+      if (rendered >= visibleLimit) break;
+      if (quotas[slug] < groups[slug].length) {
+        quotas[slug]++;
+        rendered++;
+        addedThisRound = true;
+      }
+    }
+    if (!addedThisRound) break;
+  }
 
   let html = '';
-
   for (const slug of sortedSlugs) {
     const group = groups[slug];
     const cat = categories[slug];
@@ -221,7 +301,7 @@ function renderResults(results, query) {
     html += `<span class="search-group__count">${group.length}</span>`;
     html += `</div>`;
 
-    for (const r of group) {
+    for (const r of group.slice(0, quotas[slug])) {
       html += renderCard(r.item, r.matches, query);
     }
 
@@ -229,6 +309,11 @@ function renderResults(results, query) {
   }
 
   list.innerHTML = html;
+  moreBtn.hidden = results.length <= visibleLimit;
+  if (!moreBtn.hidden) moreBtn.textContent = `Show ${Math.min(PAGE_SIZE, results.length - visibleLimit).toLocaleString()} more · ${(results.length - visibleLimit).toLocaleString()} remaining`;
+  count.textContent = results.length > rendered
+    ? `Showing ${rendered.toLocaleString()} of ${results.length.toLocaleString()} results`
+    : `${results.length.toLocaleString()} ${results.length === 1 ? 'result' : 'results'}`;
   upgradeIcons();
 }
 
@@ -243,8 +328,9 @@ function renderCard(item, matches, query) {
   const starIcon = item.r
     ? '<span class="search-result__starred" aria-label="Recommended"><i class="i-ph-star-duotone"></i></span>'
     : '';
+  const pageHref = item.p || `/resources/${item.s}.html`;
 
-  return `<a class="search-result" href="${escapeAttr(item.u)}" target="_blank" rel="noopener noreferrer">
+  return `<a class="search-result" href="${escapeAttr(pageHref)}">
     ${starIcon}
     <div class="search-result__body">
       <div class="search-result__title">${titleHtml}</div>
@@ -254,7 +340,7 @@ function renderCard(item, matches, query) {
         <span class="search-result__category">${escapeHtml(catName)}</span>
       </div>
     </div>
-    <span class="search-result__arrow" aria-hidden="true"><i class="i-ph-arrow-up-right-duotone"></i></span>
+    <span class="search-result__arrow"><span>Open page</span><i class="i-ph-arrow-right-duotone" aria-hidden="true"></i></span>
   </a>`;
 }
 

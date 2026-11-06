@@ -21,7 +21,6 @@ export function applyManagedPageMetadata(siteConfig, pageKey, overrides = {}) {
     setMetaAttribute('meta[name="description"]', 'content', description);
     setMetaAttribute('meta[name="author"]', 'content', siteConfig.profile.name);
     setMetaAttribute('meta[name="theme-color"]', 'content', siteConfig.site.themeColorLight);
-    setMetaAttribute('meta[name="keywords"]', 'content', siteConfig.seo.keywords[pageKey] || siteConfig.seo.keywords.home || '');
     setMetaAttribute('link[rel="canonical"]', 'href', absoluteUrl);
 
     setMetaAttribute('meta[property="og:type"]', 'content', pageSeo.ogType || 'website');
@@ -83,7 +82,7 @@ export function buildHomeStructuredData(siteConfig) {
             '@id': `${homeUrl}#profile`,
             url: homeUrl,
             name: `${siteConfig.profile.name} (${siteConfig.profile.handle})`,
-            description: `Homepage and professional directory for ${siteConfig.profile.name}, ${siteConfig.profile.title}.`,
+            description: `Portfolio, résumé, and curated resources by ${siteConfig.profile.name}.`,
             mainEntity: {
                 '@id': personId
             },

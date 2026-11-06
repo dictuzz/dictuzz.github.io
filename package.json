@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "npx -y serve . -l 8000 --no-clipboard",
+    "build:resume": "node scripts/prerender_resume.mjs",
+    "build:portfolio": "python scripts/prerender_portfolio.py",
     "validate:content": "node scripts/validate-content.mjs",
     "test": "node --test tests/*.test.js",
     "build:icons": "node scripts/build-icons.mjs",

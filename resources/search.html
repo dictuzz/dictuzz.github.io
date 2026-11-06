@@ -7,11 +7,11 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
     <link rel="shortcut icon" href="/favicon.ico?v=2">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
-    <meta name="apple-mobile-web-app-title" content="dictuzz Resources">
+    <meta name="apple-mobile-web-app-title" content="dictuzz">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Search 15,000+ Free Resources | dictuzz</title>
-    <meta name="description" content="Search 15,000+ curated free tools and guides across workflow automation, AI, privacy, streaming, gaming, educational content, and more.">
+    <title>Search 16,000+ Curated Resources | dictuzz</title>
+    <meta name="description" content="Search 16,000+ curated free tools and guides across workflow automation, AI, privacy, streaming, gaming, educational content, and more.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://dictuzz.me/resources/search.html">
     <meta name="theme-color" content="#f5efe4">
@@ -24,9 +24,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="/css/site.css?v=v4">
-    <link rel="stylesheet" href="/resources/resources.css?v=v4">
-    <link rel="stylesheet" href="/resources/search.css?v=v4">
+    <link rel="stylesheet" href="/css/site.css?v=v5">
+    <link rel="stylesheet" href="/resources/resources.css?v=v5">
+    <link rel="stylesheet" href="/resources/search.css?v=v9">
 </head>
 <body class="resources-page search-page">
     <a href="#search-input" class="skip-link">Skip to search</a>
@@ -66,7 +66,7 @@
             </button>
             <div style="padding: 1rem 0; overflow-y: auto;">
                 <a href="/resources/search.html" class="resources-mobile-nav__link"><i class="i-ph-magnifying-glass-duotone"></i> Search</a>
-                <a href="/resources/beginners-guide.html" class="resources-mobile-nav__link"><i class="i-ph-books-duotone"></i> Beginners Guide</a>
+                <a href="/resources/beginners-guide.html" class="resources-mobile-nav__link"><i class="i-ph-books-duotone"></i> Beginner’s Guide</a>
                 <h4 style="margin: 1.5rem 1.5rem 0.5rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted);">Wiki</h4>
                 <a href="/resources/privacy.html" class="resources-mobile-nav__link"><i class="i-ph-identification-badge-duotone"></i> Adblocking / Privacy</a>
                 <a href="/resources/ai.html" class="resources-mobile-nav__link"><i class="i-ph-robot-duotone"></i> Artificial Intelligence</a>
@@ -98,16 +98,18 @@
     <main class="search-shell" id="main-content">
         <section class="search-hero">
             <h1 class="search-hero__title">Search Resources</h1>
-            <p class="search-hero__subtitle">            15,000+ curated tools and guides across 23 categories</p>
+            <p class="search-hero__subtitle">16,000+ curated tools and guides across 23 categories</p>
             <div class="search-bar-wrapper">
                 <div class="search-bar glass">
                     <i class="i-ph-magnifying-glass-duotone search-bar__icon" aria-hidden="true"></i>
-                    <input type="search" id="search-input" class="search-bar__input" placeholder="Search 15,000+ resources..." autocomplete="off" spellcheck="false" autofocus>
+                    <input type="search" id="search-input" class="search-bar__input" placeholder="Search 16,000+ resources..." autocomplete="off" spellcheck="false" autofocus aria-controls="search-list" aria-describedby="search-help">
                     <button class="search-bar__clear" id="search-clear" type="button" aria-label="Clear search" hidden>
                         <i class="i-ph-x-duotone" aria-hidden="true"></i>
                     </button>
                     <kbd class="search-bar__kbd">Esc</kbd>
                 </div>
+                <p class="search-help" id="search-help">Search titles, descriptions, tags, and sections. Use quotes for an exact phrase. Press / or Ctrl/⌘+K to focus.</p>
+                <nav class="search-category-chips" id="category-chips" aria-label="Popular categories"></nav>
                 <div class="search-controls">
                     <div class="search-controls__filter">
                         <select id="category-filter" aria-label="Filter by category">
@@ -130,8 +132,15 @@
                     <i class="i-ph-magnifying-glass-duotone"></i>
                 </div>
                 <p class="search-results__empty-text" id="search-empty-text">Type a query to start searching</p>
+                <div class="search-suggestions" id="search-suggestions" aria-label="Try a search">
+                    <button type="button" data-search-example="AI chat">AI chat</button>
+                    <button type="button" data-search-example="privacy">Privacy</button>
+                    <button type="button" data-search-example="PDF tools">PDF tools</button>
+                    <button type="button" data-search-example="open source">Open source</button>
+                </div>
             </div>
             <div class="search-results__list" id="search-list"></div>
+            <button class="search-more" id="search-more" type="button" hidden>Show more results</button>
         </section>
     </main>
 
@@ -156,6 +165,6 @@
     </footer>
 
     <script src="/resources/vendor/fuse.min.js"></script>
-    <script type="module" src="/resources/search.js?v=v4"></script>
+    <script type="module" src="/resources/search.js?v=v8"></script>
 </body>
 </html>

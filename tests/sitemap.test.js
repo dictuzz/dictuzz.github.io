@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert';
 import fs from 'node:fs';
 
-test('sitemap contains all 34 site pages with valid URLs and lastmod tags', () => {
+test('sitemap contains all 45 indexable site pages with valid URLs and lastmod tags', () => {
   const sitemapPath = 'sitemap.xml';
   assert.ok(fs.existsSync(sitemapPath), 'sitemap.xml must exist');
 
@@ -10,11 +10,11 @@ test('sitemap contains all 34 site pages with valid URLs and lastmod tags', () =
 
   // Parse all <loc> entries
   const locMatches = [...content.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
-  assert.strictEqual(locMatches.length, 34, `Expected 34 URLs in sitemap.xml, found ${locMatches.length}`);
+  assert.strictEqual(locMatches.length, 45, `Expected 45 URLs in sitemap.xml, found ${locMatches.length}`);
 
   // Parse all <lastmod> entries
   const lastmodMatches = [...content.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(m => m[1]);
-  assert.strictEqual(lastmodMatches.length, 34, `Expected 34 <lastmod> entries in sitemap.xml, found ${lastmodMatches.length}`);
+  assert.strictEqual(lastmodMatches.length, 45, `Expected 45 <lastmod> entries in sitemap.xml, found ${lastmodMatches.length}`);
 
   // Date format check YYYY-MM-DD
   const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
@@ -28,11 +28,22 @@ test('sitemap contains all 34 site pages with valid URLs and lastmod tags', () =
     'https://dictuzz.me/resume/',
     'https://dictuzz.me/portfolio/',
     'https://dictuzz.me/resources/',
-    'https://dictuzz.me/resources/search.html',
     'https://dictuzz.me/portfolio/cases/automation-mandate/',
     'https://dictuzz.me/portfolio/cases/kpi-governance-record/',
     'https://dictuzz.me/portfolio/cases/large-scale-event-ops/',
-    'https://dictuzz.me/portfolio/cases/vertical-rescue-ops/'
+    'https://dictuzz.me/portfolio/cases/vertical-rescue-ops/',
+    'https://dictuzz.me/resume/id/',
+    'https://dictuzz.me/resume/de/',
+    'https://dictuzz.me/portfolio/id/',
+    'https://dictuzz.me/portfolio/de/',
+    'https://dictuzz.me/portfolio/id/cases/automation-mandate/',
+    'https://dictuzz.me/portfolio/de/cases/automation-mandate/',
+    'https://dictuzz.me/portfolio/id/cases/kpi-governance-record/',
+    'https://dictuzz.me/portfolio/de/cases/kpi-governance-record/',
+    'https://dictuzz.me/portfolio/id/cases/large-scale-event-ops/',
+    'https://dictuzz.me/portfolio/de/cases/large-scale-event-ops/',
+    'https://dictuzz.me/portfolio/id/cases/vertical-rescue-ops/',
+    'https://dictuzz.me/portfolio/de/cases/vertical-rescue-ops/'
   ];
 
   for (const req of required) {

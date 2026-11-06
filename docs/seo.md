@@ -1,115 +1,33 @@
-# SEO Implementation
+# SEO implementation
 
-Last updated: 2026-11-02
+Last updated: 2026-11-05
 
-## Architecture
+## Metadata
 
-This is a static HTML site with JavaScript modules that dynamically enhance page content at runtime. SEO metadata is **dual-implemented**:
+- Each indexable page has a clear title, a page-specific description, and a self-referencing canonical URL.
+- The homepage title is the site name: `dictuzz`. Internal titles use a short page label followed by the site name.
+- Descriptions summarize the page in natural language. Search engines can still generate snippets from page content.
+- The site does not use `meta keywords`; Google does not use that tag for indexing or ranking.
+- Open Graph and Twitter metadata are present on the homepage, primary pages, portfolio cases, and resource categories.
+- Category pages under `/resources/` each have their own description and canonical URL.
 
-1. **HTML source (primary)** — All `<title>`, `<meta>`, Open Graph, Twitter Card, and JSON-LD tags contain real values in the static HTML. This ensures crawlers that do not execute JavaScript (Facebook, Twitter/X, LinkedIn, most bots) see complete metadata.
+## Multilingual pages
 
-2. **JavaScript runtime (secondary)** — The `js/site-seo.js` and `resume/resume-seo.js` modules update meta tags dynamically from `content/site.json` and locale-specific content files. This enables language switching on the resume page without breaking the static defaults.
+The resume and portfolio use English, Indonesian, and German content. Each language has a crawlable static URL: `/resume/`, `/resume/id/`, `/resume/de/`, `/portfolio/`, `/portfolio/id/`, and `/portfolio/de/`. Portfolio case studies have matching language routes beneath `/portfolio/{id|de}/cases/`. Every localized page has a self-canonical and reciprocal `hreflang` links. Runtime language changes update the URL, document language, title, description, social metadata, and structured data. Legacy `?lang=` links remain readable and are normalized to the matching route.
 
-The portfolio landing page and the four case files are prerendered in English by `scripts/prerender_portfolio.py` before deploy. That script fills the `data-*` placeholders and the `application/ld+json` slot from `content/portfolio/locales/en.json`, so no-JS crawlers get the full issue and `portfolio.js` only replaces it when the visitor picks another language. CI runs `python3 scripts/prerender_portfolio.py --check` and fails when the checked-in HTML is stale.
+## Structured data
 
-## Meta Tags
+The homepage publishes `Person`, `WebSite`, and `ProfilePage` JSON-LD. The `WebSite.name` is `dictuzz`. The resume publishes profile data and the portfolio publishes collection or article data. Structured data helps search engines interpret page details; it does not guarantee a special search result.
 
-Every page has:
-- Unique, descriptive `<title>` (50–60 characters)
-- Unique `<meta name="description">` (95–160 characters, keyword-rich)
-- `<meta name="author">` with full name
-- `<meta name="keywords">` with page-specific keywords
-- `<meta name="robots">` with `index, follow` (except 404 page: `noindex, nofollow`)
-- `<link rel="canonical">` with absolute URL
-- `<meta name="google-site-verification">` placeholder (needs real code)
+## Sitemap and crawling
 
-### Hreflang Configuration
+- `/sitemap.xml` contains the 45 indexable canonical pages, including all localized resume and portfolio routes.
+- `/resources/search.html` remains `noindex, follow` and is excluded from the sitemap.
+- `/404.html`, scripts, tests, and dependencies are excluded from the sitemap.
+- `/robots.txt` points to the sitemap.
 
-The resume page (`/resume/`) serves multilingual content across three locales. It declares bidirectional alternate hreflang links:
-- `en`: `https://dictuzz.me/resume/?lang=en`
-- `id`: `https://dictuzz.me/resume/?lang=id`
-- `de`: `https://dictuzz.me/resume/?lang=de`
-- `x-default`: `https://dictuzz.me/resume/`
+## Measurement and remaining work
 
-## Open Graph & Twitter Cards
+Google Search Console ownership verification is not configured because the property-specific token is not available in the repository. Add the token from Search Console before verifying the domain or submitting the sitemap. No Lighthouse or field Core Web Vitals measurement is recorded; see `docs/performance.md` before making performance claims.
 
-| Page | og:type | og:image | twitter:card |
-|------|---------|----------|--------------|
-| `/` | website | `/og-image.png` | summary_large_image |
-| `/resume/` | profile | `/assets/images/resume-og-image.png` | summary_large_image |
-| `/terms/` | website | `/og-image.png` | summary |
-| `/portfolio/` | website | `/og-image.png` plus case-specific images | summary_large_image |
-
-All OG images include `og:image:width` (1200) and `og:image:height` (630). All pages include `og:locale` (en_US) and `og:site_name` (dictuzz).
-
-## Structured Data (JSON-LD)
-
-| Page | Schema Types | Delivery |
-|------|-------------|----------|
-| `/` | `Person`, `WebSite`, `ProfilePage` | Pre-populated in HTML, updated by JS |
-| `/resume/` | `BreadcrumbList` (static), `Person`, `ProfilePage` (JS) | Hybrid |
-| `/terms/` | `BreadcrumbList`, `WebPage` | Static HTML |
-| `/portfolio/` | `CollectionPage`, `ItemList` | Static HTML (prerendered), updated by JS |
-| `/portfolio/cases/<slug>/` | `Article` | Static HTML (prerendered), updated by JS |
-
-### Person Schema (Homepage)
-Includes: name, alternateName, jobTitle, description, url, image, email, nationality, address, sameAs (7 social profiles + WhatsApp), knowsAbout (6 skills).
-
-### Person Schema (Resume)
-Extended with: alumniOf, detailed knowsAbout from skills collections, section-level hasPart.
-
-## Sitemap
-
-- Located at `/sitemap.xml`, referenced from `/robots.txt`
-- Includes: `/`, `/resume/`, `/portfolio/`, all 4 `/portfolio/cases/<slug>/`, `/resources/`, `/resources/search.html`, all 24 `/resources/<topic>.html` pages, and `/terms/` (34 pages total)
-- Each entry has `<lastmod>`, `<changefreq>`, and `<priority>`
-- `<lastmod>` reflects verified commit history per file from git.
-- Excludes: `/404.html`, `/scripts/`, `/tests/`
-
-## robots.txt
-
-```
-User-agent: *
-Allow: /
-Disallow: /scripts/
-Disallow: /tests/
-Disallow: /node_modules/
-
-Sitemap: https://dictuzz.me/sitemap.xml
-```
-
-## Performance Optimizations (SEO Impact)
-
-- Hero images use `fetchpriority="high"` and `loading="eager"` for LCP
-- Google Fonts load non-blocking with same pattern
-- `dns-prefetch` added for all third-party domains
-- `preconnect` for font and CDN providers
-- All images have explicit `width`/`height` to prevent CLS
-
-## Accessibility (SEO Impact)
-
-- Skip-to-main-content link on all pages
-- ARIA labels on all interactive elements
-- Proper heading hierarchy (single H1 per page)
-- Static HTML defaults to `lang="en"`; runtime language switching updates localized resume and portfolio content.
-- Form controls and buttons have descriptive labels/aria-labels
-
-## External Link Policy
-
-All newly authored external links (`target="_blank"`) should include `rel="noopener noreferrer"`. The renderers that create links at runtime already do:
-
-- `js/site-renderers.js` (dynamic folder items and footer contacts)
-- `resume/resume-renderers.js` (dynamic resume content)
-- `portfolio/portfolio.js` (contact actions)
-
-This is **not** yet true for the hand-written resource pages under `resources/`: roughly 4,000 `target="_blank"` anchors there have no `rel` attribute (mostly `rel="nofollow"` variants or none). `noopener` is implicit for modern browsers, but the attribute is still expected. Treat this as an open cleanup item rather than an enforced invariant.
-
-## 404 Page
-
-- Marked with `<meta name="robots" content="noindex, nofollow">`
-- Not included in sitemap
-- Has descriptive title and meta description for user experience
-
-## Core Web Vitals Baseline
-
-No Lighthouse or field measurement is recorded in this repository, and CI does not run Lighthouse against the public pages yet. The previous "LCP ~228 ms / FCP ~228 ms" figures were not reproducible and have been removed. See `docs/performance.md` for the current checks and the open follow-up to record real metrics.
+SEO metadata is only a foundation. Keep portfolio descriptions aligned with real, verifiable work, replace approved evidence placeholders when artifacts are ready, and review Search Console impressions and queries after Google recrawls the pages.

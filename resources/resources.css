@@ -887,3 +887,18 @@ Polyfills
         display: none;
     }
 }
+
+
+/* Quick-jump navigation keeps the long guide index easy to scan. */
+.resource-jump {
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:4px auto 34px;
+  width:min(100% - 32px,var(--site-container,1200px));
+}
+.resource-jump__label { margin-right:6px;color:var(--site-text-muted);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase; }
+.resource-jump a { display:inline-flex;align-items:center;gap:12px;min-height:42px;padding:8px 13px;border:1px solid var(--site-border);border-radius:999px;color:var(--site-text);background:var(--site-bg-elevated);font-size:.82rem;font-weight:750;transition:transform 160ms ease,border-color 160ms ease,background-color 160ms ease; }
+.resource-jump a span { color:var(--site-text-muted);font-size:.7rem;font-weight:500; }
+.resource-jump a:hover { transform:translateY(-2px);border-color:var(--site-accent-gold);background:var(--site-surface); }
+.resource-jump a:focus-visible { outline:3px solid var(--site-accent-text);outline-offset:3px; }
+@media(max-width:600px) { .resource-jump { gap:8px;margin-bottom:26px; } .resource-jump__label { flex-basis:100%; } .resource-jump a { flex:1 1 auto;justify-content:center; } }
+
+.resources-section { scroll-margin-top: 96px; }

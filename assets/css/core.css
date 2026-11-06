@@ -3,6 +3,39 @@
    Shared Across All Pages
    ═══════════════════════════════════════════ */
 
+/* A quiet drafting grid shared by the site's pages. This fixed transparent
+   layer keeps the paper/ink surfaces underneath intact and never catches input. */
+body {
+    isolation: isolate;
+    --draft-grid-size: 48px;
+    --draft-grid-opacity: 0.055;
+}
+
+body::after {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    content: '';
+    pointer-events: none;
+    transition: opacity 120ms ease;
+    opacity: var(--draft-grid-opacity);
+    background-image:
+        linear-gradient(to right, color-mix(in srgb, var(--color-primary-600) 34%, transparent) 1px, transparent 1px),
+        linear-gradient(to bottom, color-mix(in srgb, var(--color-primary-600) 34%, transparent) 1px, transparent 1px);
+    background-size: var(--draft-grid-size) var(--draft-grid-size);
+}
+
+body:has(:focus-visible)::after {
+    opacity: 0;
+}
+
+[data-theme="dark"] body::after {
+    opacity: calc(var(--draft-grid-opacity) + 0.025);
+    background-image:
+        linear-gradient(to right, rgba(214, 165, 99, .32) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(214, 165, 99, .32) 1px, transparent 1px);
+}
+
 /* --- LAYOUT UTILITIES --- */
 .container {
     width: min(92%, var(--container, 1200px));
@@ -183,6 +216,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+    body::after {
+        transition: none;
+    }
 
     .reveal,
     .card--interactive,

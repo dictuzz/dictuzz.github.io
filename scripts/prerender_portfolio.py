@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-"""Prerender static English content into the portfolio HTML shells.
+"""Prerender English, Indonesian, and German portfolio pages.
 
-The portfolio renders entirely client-side from
-``content/portfolio/locales/en.json``.  That leaves crawlers, no-JS users and
-link previews with empty placeholders, so this script bakes the English issue
-(landing page + the four case files) into the HTML at build time.
+This writes the localized landing page and four case studies for each locale.
+The resulting static HTML gives crawlers, no-JS users, and link previews the
+full page content while ``portfolio.js`` keeps language switching interactive.
 
 Usage:
     python scripts/prerender_portfolio.py          # write the files
     python scripts/prerender_portfolio.py --check  # verify they are in sync
 
-The generated markup keeps the ``data-*`` hooks, so ``portfolio.js`` replaces
-it on load for the other languages without breaking anything.  ``--check``
-exits non-zero when the checked-in HTML differs from the prerender output.
+The generated markup keeps the ``data-*`` hooks, so ``portfolio.js`` can update
+the page after a language switch. ``--check`` exits non-zero when the checked-in
+HTML differs from the prerender output.
 """
 
 from __future__ import annotations
@@ -25,8 +24,9 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LOCALE_PATH = os.path.join(ROOT, "content", "portfolio", "locales", "en.json")
+LOCALE_DIR = os.path.join(ROOT, "content", "portfolio", "locales")
 SITE_URL = "https://dictuzz.me"
+LANGS = ("en", "id", "de")
 
 VOID_TAGS = {
     "area", "base", "br", "col", "embed", "hr", "img", "input",
@@ -89,6 +89,43 @@ def esc(value) -> str:
 
 def absolute_url(href: str) -> str:
     return href if re.match(r"^https?://", href) else SITE_URL + href
+
+
+def localized_path(href: str, lang: str) -> str:
+    if lang == "en" or not href.startswith("/portfolio/"):
+        return href
+    if href == "/portfolio/":
+        return f"/portfolio/{lang}/"
+    match = re.match(r"^/portfolio/cases/([^/]+)/?$", href)
+    if match:
+        return f"/portfolio/{lang}/cases/{match.group(1)}/"
+    return href
+
+
+def landing_path(lang: str) -> str:
+    return "/portfolio/" if lang == "en" else f"/portfolio/{lang}/"
+
+
+def case_path(slug: str, lang: str) -> str:
+    prefix = "" if lang == "en" else f"{lang}/"
+    return f"/portfolio/{prefix}cases/{slug}/"
+
+
+def page_path(page: str, lang: str, slug: str = "") -> str:
+    return landing_path(lang) if page == "landing" else case_path(slug, lang)
+
+
+def set_document_language(text: str, lang: str) -> str:
+    return re.sub(r'(<html\b[^>]*\blang=")[^\"]*', lambda match: match.group(1) + esc(lang), text, count=1, flags=re.IGNORECASE)
+
+
+def set_hreflangs(text: str, page: str, slug: str) -> str:
+    paths = {"en": page_path(page, "en", slug), "id": page_path(page, "id", slug),
+             "de": page_path(page, "de", slug), "x-default": page_path(page, "en", slug)}
+    for code, route in paths.items():
+        pattern = re.compile(r'(<link\b[^>]*\bhreflang="' + re.escape(code) + r'"[^>]*\bhref=")[^\"]*("[^>]*>)', re.IGNORECASE)
+        text = pattern.sub(lambda match: match.group(1) + esc(SITE_URL + route) + match.group(2), text, count=1)
+    return text
 
 
 # --------------------------------------------------------------------------- #
@@ -173,10 +210,65 @@ def add_attr(text: str, marker: str, attr: str, value: str = "") -> str:
     return text[:start] + new_open + text[open_end:]
 
 
+def set_head_meta(text: str, selector_attr: str, selector_value: str, content: str) -> str:
+    pattern = re.compile(
+        r'<meta\b(?=[^>]*\b' + re.escape(selector_attr) + r'="' + re.escape(selector_value)
+        + r'")(?=[^>]*\bcontent=")[^>]*>',
+        re.IGNORECASE,
+    )
+    match = pattern.search(text)
+    tag = match.group(0) if match else None
+    if tag and re.search(r'\bcontent="[^"]*"', tag, re.IGNORECASE):
+        updated = re.sub(r'\bcontent="[^"]*"', f'content="{esc(content)}"', tag, count=1, flags=re.IGNORECASE)
+        return text[:match.start()] + updated + text[match.end():]
+    if tag:
+        updated = tag[:-1] + f' content="{esc(content)}">'
+        return text[:match.start()] + updated + text[match.end():]
+    meta = f'<meta {selector_attr}="{esc(selector_value)}" content="{esc(content)}">'
+    return text.replace('</head>', f'  {meta}\n</head>', 1)
+
+
+def set_head_metadata(text: str, title: str, description: str, page_url: str) -> str:
+    text = re.sub(r'<title>[^<]*</title>', f'<title>{esc(title)}</title>', text, count=1, flags=re.IGNORECASE)
+    for attr, value, content in (
+        ('name', 'description', description),
+        ('property', 'og:title', title),
+        ('property', 'og:description', description),
+        ('property', 'og:url', page_url),
+        ('property', 'og:site_name', 'dictuzz'),
+        ('property', 'og:locale', 'en_US'),
+        ('name', 'twitter:card', 'summary_large_image'),
+        ('name', 'twitter:url', page_url),
+        ('name', 'twitter:title', title),
+        ('name', 'twitter:description', description),
+    ):
+        text = set_head_meta(text, attr, value, content)
+    image_match = re.search(r'<meta\b[^>]*\bproperty="og:image"[^>]*\bcontent="([^"]+)"', text, re.IGNORECASE)
+    if image_match:
+        text = set_head_meta(text, 'name', 'twitter:image', html.unescape(image_match.group(1)))
+    return text
+
+
+def set_canonical(text: str, page_url: str) -> str:
+    pattern = re.compile(r'(<link\b(?=[^>]*\brel="canonical")[^>]*\bhref=")[^"]*("[^>]*>)', re.IGNORECASE)
+    return pattern.sub(lambda match: match.group(1) + esc(page_url) + match.group(2), text, count=1)
+
+
+def set_og_locale_alternates(text: str, lang: str) -> str:
+    locales = {"en": "en_US", "id": "id_ID", "de": "de_DE"}
+    text = re.sub(r'<meta\b(?=[^>]*\bproperty="og:locale:alternate")[^>]*>\s*', "", text, flags=re.IGNORECASE)
+    alternates = "".join(
+        f'<meta property="og:locale:alternate" content="{locale}">\n  '
+        for code, locale in locales.items() if code != lang
+    )
+    pattern = re.compile(r'(<meta\b[^>]*\bproperty="og:locale"[^>]*>)', re.IGNORECASE)
+    return pattern.sub(lambda match: match.group(1) + "\n  " + alternates.rstrip(), text, count=1)
+
+
 def ensure_reveal_fallback(text: str) -> str:
     if "reveal-fallback" in text:
         return text
-    anchor = '<link rel="stylesheet" href="/portfolio/portfolio.css?v=v4">'
+    anchor = '<link rel="stylesheet" href="/portfolio/portfolio.css?v=v9">'
     if anchor not in text:
         raise ValueError("portfolio stylesheet link not found")
     newline = "\r\n" if "\r\n" in text else "\n"
@@ -192,26 +284,42 @@ def ensure_reveal_fallback(text: str) -> str:
 # Shared chrome
 # --------------------------------------------------------------------------- #
 
-def topbar_nav(page: str) -> str:
+def topbar_nav(page: str, lang: str, ui: dict) -> str:
+    labels = ui["topbar"]
     if page == "case":
         items = [
-            ("/portfolio/", "All case files"),
-            ("/", "Home"),
-            ("/resume/", "Resume"),
+            (landing_path(lang), ui["allFiles"]),
+            ("/", labels["home"]),
+            ("/resume/" if lang == "en" else f"/resume/{lang}/", labels["resume"]),
         ]
     else:
         items = [
-            ("/", "Home"),
-            ("/resume/", "Resume"),
-            ("#cases", "All Files"),
-            ("#contact", "Contact"),
+            ("/", labels["home"]),
+            ("/resume/" if lang == "en" else f"/resume/{lang}/", labels["resume"]),
+            ("#cases", labels["files"]),
+            ("#contact", labels["contact"]),
         ]
     return "".join(f'<a href="{href}">{esc(label)}</a>' for href, label in items)
 
 
-def render_topbar(text: str, page: str) -> str:
-    text = replace_content(text, "data-topbar-nav", topbar_nav(page))
-    text = replace_content(text, "data-lang-switcher", LANG_BUTTONS)
+def render_topbar(text: str, page: str, lang: str, ui: dict) -> str:
+    text = replace_content(text, "data-topbar-nav", topbar_nav(page, lang, ui))
+    lang_buttons = LANG_BUTTONS
+    for code in LANGS:
+        active_class = " is-active" if code == lang else ""
+        pressed = str(code == lang).lower()
+        lang_buttons = re.sub(
+            rf'class="lang-btn(?: is-active)?" data-lang="{code}" aria-pressed="(?:true|false)"',
+            f'class="lang-btn{active_class}" data-lang="{code}" aria-pressed="{pressed}"',
+            lang_buttons,
+        )
+        lang_buttons = re.sub(
+            rf'aria-label="[^"]*"(?=[^>]*data-lang="{code}")',
+            f'aria-label="{esc(ui["languageNames"][code])}"',
+            lang_buttons,
+            count=1,
+        )
+    text = replace_content(text, "data-lang-switcher", lang_buttons)
     text = replace_content(text, "data-theme-toggle", THEME_TOGGLE)
     return text
 
@@ -220,14 +328,15 @@ def render_topbar(text: str, page: str) -> str:
 # Landing page
 # --------------------------------------------------------------------------- #
 
-def dispatch_card(index: int, item: dict) -> str:
+def dispatch_card(index: int, item: dict, lang: str) -> str:
     is_external = bool(re.match(r"^https?:\/\/", item.get("href", "")))
+    href = localized_path(item["href"], lang)
     ext_attrs = ' target="_blank" rel="noopener noreferrer"' if is_external else ''
     track = 'tool' if is_external else 'case'
     return "\n".join([
         '<article class="dispatch reveal">',
         f'  <span class="dispatch__num">{index:02d}</span>',
-        f'  <a class="dispatch__inner" href="{esc(item["href"])}" data-track="{track}" '
+        f'  <a class="dispatch__inner" href="{esc(href)}" data-track="{track}" '
         f'data-slug="{esc(item["slug"])}"{ext_attrs}>',
         f'    <p class="dispatch__kicker">{esc(item["kicker"])}</p>',
         f'    <h3 class="dispatch__title">{esc(item["title"])}</h3>',
@@ -238,17 +347,17 @@ def dispatch_card(index: int, item: dict) -> str:
     ])
 
 
-def contact_action(action: dict) -> str:
+def contact_action(action: dict, lang: str) -> str:
     cls = "btn-cta btn-cta--primary" if action.get("type") == "primary" else "btn-cta btn-cta--ghost"
     ext = ' target="_blank" rel="noopener"' if action.get("external") else ""
     icon = ICONS.get(action.get("icon", ""), "")
     return (
-        f'<a class="{cls}" href="{esc(action["href"])}"{ext}>'
+        f'<a class="{cls}" href="{esc(localized_path(action["href"], lang))}"{ext}>'
         f'{icon}<span>{esc(action["label"])}</span></a>'
     )
 
 
-def render_landing(text: str, data: dict) -> str:
+def render_landing(text: str, data: dict, lang: str) -> str:
     landing = data["landing"]
     ui = data["ui"]
 
@@ -259,7 +368,15 @@ def render_landing(text: str, data: dict) -> str:
     text = replace_content(text, "data-masthead-wordmark", esc(landing["masthead"]["wordmark"]))
     text = replace_content(text, "data-masthead-subtitle", esc(landing["masthead"]["subtitle"]))
     text = replace_content(text, "data-masthead-rule", esc(ui["magazineLabel"]))
-    text = set_attr(text, "data-feature-link", "href", landing["feature"]["href"])
+    text = replace_content(text, "data-masthead-work-cta", esc(ui["workCta"]))
+    text = replace_content(text, "data-masthead-contact-cta", esc(ui["contactCta"]))
+    text = replace_content(text, "data-artifact-kicker", esc(ui["artifactKicker"]))
+    text = replace_content(text, "data-artifact-label", esc(ui["artifactLabel"]))
+    text = replace_content(text, "data-artifact-period", esc(ui["artifactPeriod"]))
+    text = set_attr(text, "data-masthead-artifact", "aria-label", ui["artifactAria"])
+    feature_href = localized_path(landing["feature"]["href"], lang)
+    text = set_attr(text, "data-feature-link", "href", feature_href)
+    text = set_attr(text, "data-masthead-work-cta", "href", feature_href)
 
     # Feature
     feature = landing["feature"]
@@ -276,7 +393,7 @@ def render_landing(text: str, data: dict) -> str:
     text = replace_content(text, "data-index-label", esc(landing["indexLabel"]))
     text = replace_content(text, "data-index-note", esc(landing["indexNote"]))
     secondary = "\n".join(
-        dispatch_card(i + 1, item) for i, item in enumerate(landing["secondary"])
+        dispatch_card(i + 1, item, lang) for i, item in enumerate(landing["secondary"])
     )
     text = replace_content(text, "data-secondary-list", secondary)
 
@@ -304,19 +421,19 @@ def render_landing(text: str, data: dict) -> str:
     text = replace_content(text, "data-contact-body", esc(contact["body"]))
     text = replace_content(
         text, "data-contact-actions",
-        "\n".join(contact_action(a) for a in contact["actions"]),
+        "\n".join(contact_action(a, lang) for a in contact["actions"]),
     )
 
     # JSON-LD (clean canonical URLs, no ?lang=)
     item_list = [
         {"@type": "ListItem", "position": 1,
-         "url": absolute_url(feature["href"]), "name": feature["headline"]},
+         "url": absolute_url(localized_path(feature["href"], lang)), "name": feature["headline"]},
     ]
     for i, item in enumerate(landing["secondary"]):
         item_list.append({
             "@type": "ListItem",
             "position": i + 2,
-            "url": absolute_url(item["href"]),
+            "url": absolute_url(localized_path(item["href"], lang)),
             "name": item["title"],
         })
     payload = {
@@ -324,8 +441,8 @@ def render_landing(text: str, data: dict) -> str:
         "@type": "CollectionPage",
         "name": landing["documentTitle"],
         "description": landing["metaDescription"],
-        "inLanguage": "en",
-        "url": SITE_URL + "/portfolio/",
+        "inLanguage": lang,
+        "url": SITE_URL + landing_path(lang),
         "mainEntity": {
             "@type": "ItemList",
             "numberOfItems": len(item_list),
@@ -343,7 +460,7 @@ def render_landing(text: str, data: dict) -> str:
 # Case pages
 # --------------------------------------------------------------------------- #
 
-def render_case(text: str, data: dict, slug: str) -> str:
+def render_case(text: str, data: dict, slug: str, lang: str) -> str:
     case = data["cases"][slug]
     ui = data["ui"]
 
@@ -365,6 +482,40 @@ def render_case(text: str, data: dict, slug: str) -> str:
         text = add_attr(text, "data-case-figure", "hidden")
 
     text = replace_content(text, "data-case-lead", esc(case["lead"]))
+
+    process = case.get("process")
+    if process:
+        def process_steps(steps: list[str]) -> str:
+            parts = []
+            for index, step in enumerate(steps, start=1):
+                if index > 1:
+                    parts.append('<li class="workflow-arrow" aria-hidden="true">\u2192</li>')
+                parts.append(
+                    '\n'.join([
+                        '<li class="workflow-step">',
+                        f'  <span class="workflow-step__index" aria-hidden="true">{index:02d}</span>',
+                        f'  <span class="workflow-step__label">{esc(step)}</span>',
+                        '</li>',
+                    ])
+                )
+            return "\n".join(parts)
+
+        workflow = "\n".join([
+            '<div class="workflow-heading">',
+            f'  <p class="article__block-label">{esc(process["kicker"])}</p>',
+            f'  <h2 id="workflow-title">{esc(process["title"])}</h2>',
+            f'  <p>{esc(process["description"])}</p>',
+            '</div>',
+            '<div class="workflow-lane workflow-lane--before">',
+            f'  <h3>{esc(process["beforeLabel"])}</h3>',
+            f'  <ol class="workflow-steps">\n{process_steps(process["before"])}\n  </ol>',
+            '</div>',
+            '<div class="workflow-lane workflow-lane--after">',
+            f'  <h3>{esc(process["afterLabel"])}</h3>',
+            f'  <ol class="workflow-steps">\n{process_steps(process["after"])}\n  </ol>',
+            '</div>',
+        ])
+        text = replace_content(text, "data-process-flow", workflow)
 
     narrative = "\n".join(
         '<section class="article__section reveal">\n'
@@ -408,13 +559,13 @@ def render_case(text: str, data: dict, slug: str) -> str:
     prev_case = case.get("prev")
     if prev_case:
         prev_html = (
-            f'<a href="/portfolio/cases/{esc(prev_case["slug"])}/">'
+            f'<a href="{case_path(esc(prev_case["slug"]), lang)}">'
             f'<span class="case-nav__direction">\u2190 {esc(ui["previous"])}</span>'
             f'<span class="case-nav__title">{esc(prev_case["title"])}</span></a>'
         )
     else:
         prev_html = (
-            f'<a href="/portfolio/"><span class="case-nav__direction">\u2190 '
+            f'<a href="{landing_path(lang)}"><span class="case-nav__direction">\u2190 '
             f'{esc(ui["allFiles"])}</span></a>'
         )
     text = replace_content(text, "data-case-prev", prev_html)
@@ -422,13 +573,13 @@ def render_case(text: str, data: dict, slug: str) -> str:
     next_case = case.get("next")
     if next_case:
         next_html = (
-            f'<a href="/portfolio/cases/{esc(next_case["slug"])}/">'
+            f'<a href="{case_path(esc(next_case["slug"]), lang)}">'
             f'<span class="case-nav__direction">{esc(ui["next"])} \u2192</span>'
             f'<span class="case-nav__title">{esc(next_case["title"])}</span></a>'
         )
     else:
         next_html = (
-            f'<a href="/portfolio/"><span class="case-nav__direction">'
+            f'<a href="{landing_path(lang)}"><span class="case-nav__direction">'
             f'{esc(ui["allFiles"])} \u2192</span></a>'
         )
     text = replace_content(text, "data-case-next", next_html)
@@ -438,7 +589,7 @@ def render_case(text: str, data: dict, slug: str) -> str:
         "@type": "Article",
         "headline": case["title"],
         "description": case["metaDescription"],
-        "inLanguage": "en",
+        "inLanguage": lang,
         "author": {
             "@type": "Person",
             "name": "Benedictus Richard Ricardo",
@@ -449,7 +600,7 @@ def render_case(text: str, data: dict, slug: str) -> str:
             "name": "Benedictus Richard Ricardo",
             "url": SITE_URL + "/",
         },
-        "url": f"{SITE_URL}/portfolio/cases/{slug}/",
+        "url": SITE_URL + case_path(slug, lang),
     }
     if case.get("image"):
         payload["image"] = SITE_URL + case["image"]
@@ -476,32 +627,49 @@ def normalize_eol(text: str, newline: str) -> str:
 
 
 def build() -> dict[str, str]:
-    with open(LOCALE_PATH, "r", encoding="utf-8") as handle:
-        data = json.load(handle)
-
     outputs: dict[str, str] = {}
+    for lang in LANGS:
+        with open(os.path.join(LOCALE_DIR, f"{lang}.json"), "r", encoding="utf-8") as handle:
+            data = json.load(handle)
 
-    landing_path = os.path.join(ROOT, "portfolio", "index.html")
-    raw = read_text(landing_path)
-    newline = "\r\n" if "\r\n" in raw else "\n"
-    text = normalize_eol(raw, newline)
-    text = ensure_reveal_fallback(text)
-    text = render_topbar(text, "landing")
-    text = render_landing(text, data)
-    outputs[landing_path] = normalize_eol(text, newline)
-
-    for slug in data["cases"]:
-        case_path = os.path.join(ROOT, "portfolio", "cases", slug, "index.html")
-        if not os.path.exists(case_path):
-            print(f"warning: missing case shell for {slug}", file=sys.stderr)
-            continue
-        raw = read_text(case_path)
+        source_landing = os.path.join(ROOT, "portfolio", "index.html")
+        raw = read_text(source_landing)
         newline = "\r\n" if "\r\n" in raw else "\n"
         text = normalize_eol(raw, newline)
         text = ensure_reveal_fallback(text)
-        text = render_topbar(text, "case")
-        text = render_case(text, data, slug)
-        outputs[case_path] = normalize_eol(text, newline)
+        text = render_topbar(text, "landing", lang, data["ui"])
+        text = render_landing(text, data, lang)
+        landing_route = landing_path(lang)
+        text = set_head_metadata(text, data["landing"]["documentTitle"], data["landing"]["metaDescription"], SITE_URL + landing_route)
+        text = set_canonical(text, SITE_URL + landing_route)
+        text = set_head_meta(text, "property", "og:locale", {"en": "en_US", "id": "id_ID", "de": "de_DE"}[lang])
+        text = set_og_locale_alternates(text, lang)
+        text = set_document_language(text, lang)
+        text = set_hreflangs(text, "landing", "")
+        output_path = source_landing if lang == "en" else os.path.join(ROOT, "portfolio", lang, "index.html")
+        outputs[output_path] = normalize_eol(text, newline)
+
+        for slug in data["cases"]:
+            source_case = os.path.join(ROOT, "portfolio", "cases", slug, "index.html")
+            if not os.path.exists(source_case):
+                print(f"warning: missing case shell for {slug}", file=sys.stderr)
+                continue
+            raw = read_text(source_case)
+            newline = "\r\n" if "\r\n" in raw else "\n"
+            text = normalize_eol(raw, newline)
+            text = ensure_reveal_fallback(text)
+            text = render_topbar(text, "case", lang, data["ui"])
+            text = render_case(text, data, slug, lang)
+            case = data["cases"][slug]
+            route = case_path(slug, lang)
+            text = set_head_metadata(text, case["documentTitle"], case["metaDescription"], SITE_URL + route)
+            text = set_canonical(text, SITE_URL + route)
+            text = set_head_meta(text, "property", "og:locale", {"en": "en_US", "id": "id_ID", "de": "de_DE"}[lang])
+            text = set_og_locale_alternates(text, lang)
+            text = set_document_language(text, lang)
+            text = set_hreflangs(text, "case", slug)
+            output_path = source_case if lang == "en" else os.path.join(ROOT, "portfolio", lang, "cases", slug, "index.html")
+            outputs[output_path] = normalize_eol(text, newline)
 
     return outputs
 
@@ -519,12 +687,13 @@ def main() -> int:
     stale = []
 
     for path, content in outputs.items():
-        current = read_text(path)
+        current = read_text(path) if os.path.exists(path) else None
         if current == content:
             continue
         if args.check:
             stale.append(os.path.relpath(path, ROOT))
             continue
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8", newline="") as handle:
             handle.write(content)
         print(f"prerendered {os.path.relpath(path, ROOT)}")

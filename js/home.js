@@ -3,12 +3,12 @@ import { upgradeIcons } from './icon-kit.js';
 import {
     loadHomeContent,
     loadSiteConfig
-} from './site-content.js';
+} from './site-content.js?v=v9';
 import {
     applyManagedPageMetadata,
     applyStructuredData,
     buildHomeStructuredData
-} from './site-seo.js';
+} from './site-seo.js?v=v2';
 import {
     applyGlobalFooter,
     renderDirectoryUnavailableMarkup,

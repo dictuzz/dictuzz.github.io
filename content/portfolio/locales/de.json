@@ -3,11 +3,11 @@
   "ui": {
     "skipLink": "Zum Hauptinhalt springen",
     "brand": "dictuzz",
-    "brandSub": "Das Operative Protokoll",
+    "brandSub": "Systeme & Automatisierung",
     "topbar": {
       "home": "Start",
       "resume": "Lebenslauf",
-      "files": "Alle Akten",
+      "files": "Alle Fallstudien",
       "contact": "Kontakt"
     },
     "themeToLight": "Zum hellen Modus wechseln",
@@ -24,80 +24,140 @@
       "de": "Deutsch"
     },
     "byline": "Von",
-    "magazineLabel": "Eine Zeitschrift für Systeme & Automatisierung",
+    "magazineLabel": "Design · Automatisierung · Betrieb",
+    "workCta": "Fallstudie lesen",
+    "contactCta": "Gespräch vereinbaren",
+    "artifactKicker": "Fall 01 / Berichtswesen-System",
+    "artifactLabel": "Stunden eingespart",
+    "artifactPeriod": "pro Woche",
+    "artifactAria": "Ergebnis: Jede Woche wurden mehr als 12 Stunden eingespart",
     "previous": "Zurück",
     "next": "Weiter",
-    "allFiles": "Alle Fallakten",
+    "allFiles": "Alle Fallstudien",
     "scope": "Umfang",
     "tools": "Werkzeuge & Methoden",
     "impact": "Wirkung",
-    "evidence": "Aktenkundig"
+    "evidence": "Nachweise",
+    "artifactPlaceholderLabel": "Platzhalter für Projektnachweise",
+    "artifactPlaceholderTitle": "Projektansicht folgt",
+    "artifactPlaceholderBody": "Hier folgt später ein freigegebener und anonymisierter Projektnachweis.",
+    "featureCta": "Fallstudie lesen",
+    "contactStrapMid": "Für Projekte offen",
+    "contactStrapEnd": "Ich freue mich auf den Austausch",
+    "footer": {
+      "home": "Startseite",
+      "resume": "Lebenslauf",
+      "portfolio": "Portfolio",
+      "resources": "Ressourcen",
+      "terms": "Rechtliches",
+      "navLabel": "Globale Navigation",
+      "emailAria": "E-Mail an Benedictus",
+      "allRights": "Alle Rechte vorbehalten."
+    },
+    "artifactTeams": [
+      "FINANZEN",
+      "VERTRIEB",
+      "BETRIEB"
+    ],
+    "systemRole": "Systemarchitekt & Automatisierungsspezialist"
   },
   "landing": {
-    "documentTitle": "Fallstudien zu Workflow-Automatisierung & Operativer Governance | Das Operative Protokoll | dictuzz",
-    "metaDescription": "Das Operative Protokoll: redaktionelle Fallstudien zu Workflow-Automatisierung, operativer Governance & Live-Operationen. Home Digital Reporting-Automatisierung (12+ Std./Woche gespart), KPI-Governance für 34-köpfige Organisation, Veranstaltungen mit 1.000+ Teilnehmern.",
+    "documentTitle": "Portfolio | dictuzz",
+    "metaDescription": "Ausgewählte Arbeiten zu Reporting-Automatisierung, Teamsteuerung, Veranstaltungsbetrieb und technischer Einsatzbereitschaft von Benedictus Richard Ricardo.",
     "masthead": {
-      "wordmark": "Das Operative Protokoll",
-      "subtitle": "Ein Portfolio operativer Systemarbeit, öffentlich protokolliert von Benedictus Richard Ricardo.",
-      "strapLeft": "Bd. I — Nr. 1",
-      "strapCenter": "Bandung · Jakarta · Indonesien",
-      "strapRight": "Redigiert in Fraunces"
+      "wordmark": "Systeme, die Zeit zurückgeben.",
+      "subtitle": "Ich entwickle automatisierte Arbeitsabläufe, klare Zuständigkeiten und verlässliche Veranstaltungsprozesse, damit Teams sich auf ihre Kernaufgaben konzentrieren können.",
+      "strapLeft": "Feldnotizen / 01",
+      "strapCenter": "Bandung · Indonesien",
+      "strapRight": "Systempraxis"
     },
     "feature": {
-      "kicker": "Leitartikel · Workflow-Automatisierung",
-      "headline": "Der Wochenbericht hat 12 Stunden gefressen. Wir haben sie zurückgeholt.",
-      "deck": "Drei Abteilungen bei Home Digital teilen sich einen manuellen Berichtszyklus. Die Lösung war keine ausgefallene Software — nur eine Excel-Mappe mit richtiger Logik und SOPs, an die sich das Team tatsächlich halten konnte.",
+      "kicker": "Fallstudie / Prozessautomatisierung",
+      "headline": "Ein Berichtssystem, das dem Team jede Woche mehr als 12 Stunden spart.",
+      "deck": "Der manuelle Berichtsprozess verband Finanzen, Vertrieb und Betrieb. Ich überarbeitete die Excel-Logik und dokumentierte einen gemeinsamen Ablauf. So sank der wiederkehrende manuelle Aufwand um mehr als zwölf Stunden pro Woche.",
       "byline": "Von Benedictus Richard Ricardo",
-      "meta": "Jakarta · Juli 2024 – Sep. 2025 · 8 Min. Lesezeit",
+      "meta": "Bandung · Juli 2024 – Feb. 2026 · 8 Min. Lesezeit",
       "href": "/portfolio/cases/automation-mandate/",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Analyse-Dashboards mit operativen Berichts-Kennzahlen, stellvertretend für die im Projekt neu aufgebauten Belege.",
-      "caption": "Operative Dashboards — die Form von Beleg, um die der Zyklus neu aufgebaut wurde. Foto als Illustration verwendet."
+      "image": "/portfolio/assets/graphics/reporting-system.svg",
+      "imageAlt": "Eine abstrakte Prozessgrafik, die drei Arbeitsstränge in einem gemeinsamen Berichtssystem vereint.",
+      "caption": "Eine visuelle Interpretation des in dieser Fallstudie beschriebenen Berichtswesen-Ablaufs."
     },
-    "indexLabel": "In dieser Ausgabe",
-    "indexNote": "Noch drei weitere Fälle im öffentlichen Protokoll — Führung im Schulalltag, Live-Veranstaltungen und die Bereitschaftsarbeit im Hintergrund.",
+    "indexLabel": "Ausgewählte Fallstudien",
+    "indexNote": "Vier Fallstudien zu automatisiertem Berichtswesen, Organisationssteuerung, Live-Veranstaltungen und technischer Einsatzbereitschaft.",
     "secondary": [
       {
         "slug": "kpi-governance-record",
-        "kicker": "Governance · Führung",
-        "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten.",
-        "deck": "Wie eine Schülervertretung einen KPI-Rhythmus einführte — und anfing, wie eine echte Organisation zu arbeiten statt wie eine Clique.",
-        "meta": "Präsident · 10 Abteilungen · 12 zuliefernde Schulen",
+        "kicker": "Organisationssteuerung · Führung",
+        "title": "Eine Schülervertretung mit 34 Mitgliedern arbeitet mit klarer Verantwortung.",
+        "deck": "Wie eine Schülervertretung KPIs und regelmäßige Auswertungen einführte, um Programme und Zuständigkeiten verlässlicher zu koordinieren.",
+        "meta": "Vorsitzender der Schülervertretung · 10 Abteilungen · 12 Partnerschulen",
         "href": "/portfolio/cases/kpi-governance-record/"
       },
       {
         "slug": "large-scale-event-ops",
         "kicker": "Live-Operationen",
-        "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert.",
-        "deck": "Drei Jahre Arbeit auf und hinter der Bühne für über tausend Zuschauer — und eine Jugendmesse für 500 Leute, die ich selbst moderiert habe.",
-        "meta": "Stage Coordinator & Moderation · 2022 – 2025",
+        "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden.",
+        "deck": "Drei Jahre Bühnen- und Backstage-Koordination bei Großveranstaltungen, darunter die Moderation eines Jugendgottesdienstes mit mehr als 500 Teilnehmenden.",
+        "meta": "Bühnenkoordination & Moderation · 2022 – 2025",
         "href": "/portfolio/cases/large-scale-event-ops/"
       },
       {
         "slug": "vertical-rescue-ops",
         "kicker": "Ausbildung & Bereitschaft",
-        "title": "Der ruhigere Teil riskanter Arbeit ist der Teil, den niemand filmt.",
-        "deck": "Mehr als vier Jahre Pflege der Ausrüstung und Unterstützung beim Training bei Vertical Rescue Indonesia — Einsatzbereitschaft als Gewohnheit, nicht als Show.",
+        "title": "Einsatzbereitschaft entsteht lange vor einem Rettungseinsatz.",
+        "deck": "Mehr als vier Jahre Unterstützung bei Ausrüstungspflege und technischem Training bei Vertical Rescue Indonesia.",
         "meta": "Assistierender Ausbilder · Jan. 2021 – heute",
         "href": "/portfolio/cases/vertical-rescue-ops/"
+      },
+      {
+        "slug": "tua-spatial-analyzer",
+        "kicker": "Analytik & Routenplanung",
+        "title": "Spatial Analyzer",
+        "deck": "Ein räumliches Analysetool zur Bewertung und Optimierung der Routeneffizienz bei Tirta Utama Abadi.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/TUASpatial"
+      },
+      {
+        "slug": "tua-route-validator",
+        "kicker": "Betrieb",
+        "title": "Route Validator",
+        "deck": "Ein operatives Tool zur Prüfung der Routeneinhaltung und Lieferleistung bei Tirta Utama Abadi.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/49cpunb"
+      },
+      {
+        "slug": "tua-online-meeting-rtm",
+        "kicker": "Management",
+        "title": "Online Meeting RTM",
+        "deck": "Ein zentrales Dashboard zur Verwaltung und Nachverfolgung von Onlinebesprechungen bei Tirta Utama Abadi.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/RTMTUA"
+      },
+      {
+        "slug": "sample-report",
+        "kicker": "Analytik",
+        "title": "Sample Report",
+        "deck": "Ein beispielhafter Datenbericht, erstellt mit Google Data Studio.",
+        "meta": "Google Data Studio",
+        "href": "https://datastudio.google.com/s/mT9LfU0JTPc"
       }
     ],
     "editor": {
-      "kicker": "Über mich",
-      "title": "Benedictus Richard Ricardo, fürs Protokoll.",
-      "lede": "Ich arbeite am besten, wenn der Betrieb unübersichtlich ist und niemand genau weiß, wer wofür zuständig ist. Ich komme rein, sortiere das und baue etwas, das hält.",
+      "kicker": "Die Person hinter den Systemen",
+      "title": "Benedictus Richard Ricardo",
+      "lede": "Ich verbessere die Übergänge: wenn Prozesse zwischen Teams wechseln, Zuständigkeiten unklar sind oder Arbeit zu sehr vom Gedächtnis einzelner Personen abhängt. Ich gestalte Abläufe so, dass sie klar dokumentiert und zuverlässig wiederholbar sind.",
       "body": [
-        "Ein gutes System soll sich offensichtlich anfühlen, nicht beeindruckend. Es geht darum, dass Teams aufhören zu grübeln und einfach ihre Arbeit machen können.",
-        "Gerade studiere ich Data Science an der Universitas Terbuka. Das verändert, wie ich an Abläufe herangehe — mehr Daten und Fakten, weniger Bauchgefühl."
+        "Ein gutes System macht den nächsten Schritt klar, reduziert unnötige Wiederholungen und hilft Teams, auch unter Druck verlässlich zu arbeiten.",
+        "Derzeit studiere ich Data Science an der Universitas Terbuka und vertiefe dabei meinen datenbasierten Ansatz für Prozessgestaltung und Umsetzung."
       ],
       "facts": [
         {
-          "label": "Sitz",
+          "label": "Standort",
           "value": "Bandung, Indonesien · UTC+7"
         },
         {
           "label": "Studium",
-          "value": "Datenwissenschaft, Universitas Terbuka"
+          "value": "Data Science, Universitas Terbuka"
         },
         {
           "label": "Sprachen",
@@ -105,14 +165,14 @@
         },
         {
           "label": "Stil",
-          "value": "Strukturiert, ruhig, belegbasiert"
+          "value": "Strukturiert, ruhig, datenbasiert"
         }
       ]
     },
     "contact": {
-      "kicker": "Kontakt",
-      "title": "Offen für Gespräche über Systeme, Automatisierung und Betriebsabläufe.",
-      "body": "Passt am besten für Teams oder Rollen, die sauberere Abläufe, weniger Handarbeit oder eine solidere Betriebsstruktur brauchen. Erreichbar in GMT+7.",
+      "kicker": "Ein Ablauf, der klarer werden soll?",
+      "title": "Lassen Sie uns Abläufe verbessern.",
+      "body": "Wenn Ihr Team zu viel Zeit für manuelle Aufgaben, unklare Übergaben oder die Koordination von Veranstaltungen aufwendet, sprechen Sie mich gern an. Ich arbeite von UTC+7 aus an Prozessgestaltung, Automatisierung und operativen Abläufen.",
       "actions": [
         {
           "type": "primary",
@@ -122,7 +182,7 @@
         },
         {
           "type": "ghost",
-          "label": "Termin vereinbaren",
+          "label": "Gespräch vereinbaren",
           "href": "https://calendar.app.google/39u2qGH6ybaFenhdA",
           "icon": "calendar",
           "external": true
@@ -139,103 +199,137 @@
   },
   "cases": {
     "automation-mandate": {
-      "documentTitle": "Das Automatisierungsmandat · Das Operative Protokoll",
-      "metaDescription": "Bei Home Digital Indonesia wurden Reporting- und SOP-Systeme aufgebaut, die mehr als 12 Stunden manueller Wochenarbeit eliminierten.",
+      "documentTitle": "Reporting-Automatisierung | dictuzz",
+      "metaDescription": "Wie ein gemeinsames Berichtssystem den manuellen Aufwand bei Home Digital Indonesia um mehr als zwölf Stunden pro Woche senkte.",
       "vol": "Bd. I / Nr. 1",
-      "kicker": "Workflow-Automatisierung · Home Digital Indonesia",
-      "title": "Das Automatisierungsmandat",
-      "deck": "Wir haben einen personengebundenen Berichtszyklus so umgebaut, dass das Team ihn jeden Montag genau gleich durchlaufen kann — ohne groß nachzudenken.",
+      "kicker": "Prozessautomatisierung · Home Digital Indonesia",
+      "title": "Ein Berichtssystem, das dem Team jede Woche mehr als 12 Stunden spart.",
+      "deck": "Ich strukturierte den Berichtsprozess und die zugehörigen Arbeitsanweisungen neu. Dadurch sank der manuelle Aufwand um mehr als zwölf Stunden pro Woche. Das Team kann den Ablauf nun zuverlässig und unabhängig von einzelnen Personen wiederholen.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
-      "bylineMeta": "Juli 2024 – Sep. 2025 · Jakarta, Indonesien",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Operative Dashboards mit wöchentlichen Berichts-Kennzahlen — die Belegquelle, an der der neu gebaute Zyklus gemessen wurde.",
-      "caption": "Operative Dashboards als Illustration des wöchentlichen Berichtszyklus. Foto als Illustration verwendet.",
-      "lead": "Drei Abteilungen haben jede Woche zu viel Zeit mit derselben Berichtsroutine verloren. Die Lösung war weniger Software, sondern feste Regeln für den Ablauf.",
+      "bylineMeta": "Juli 2024 – Feb. 2026 · Bandung, Indonesien",
+      "image": "/portfolio/assets/graphics/reporting-system.svg",
+      "imageAlt": "Eine Prozessgrafik, die drei Arbeitsbereiche in einem gemeinsamen Berichtssystem verbindet.",
+      "caption": "Visuelle Darstellung des in dieser Fallstudie beschriebenen Berichtsprozesses.",
+      "lead": "Drei Bereiche verloren jede Woche viel Zeit mit demselben manuellen Berichtsprozess. Entscheidend waren klare Abläufe und Zuständigkeiten, nicht zusätzliche Software.",
+      "process": {
+        "kicker": "Der Prozess",
+        "title": "Von manuellen Übergaben zu einem Wochenrhythmus",
+        "description": "Drei Bereiche. Eine gemeinsame Berichtsstruktur. Ein Ablauf, den das Team jede Woche wiederholen kann.",
+        "beforeLabel": "Vorher · wiederholte manuelle Schritte",
+        "before": [
+          "Finanzen · Vertrieb · Betrieb",
+          "Tabellen wiederholt neu formatieren",
+          "Manuelle Übergaben"
+        ],
+        "afterLabel": "Danach · gemeinsamer Wochenablauf",
+        "after": [
+          "Drei Bereiche",
+          "Excel-Logik und gemeinsame Arbeitsanweisungen",
+          "Wiederholbarer Wochenbericht"
+        ]
+      },
       "narrative": [
         {
           "heading": "Kontext",
-          "body": "Finanzen, Vertrieb und Operations haben mit denselben Daten hantiert, ständig Tabellen neu formatiert und halbgare Dateien hin- und hergeschickt. Es hat zwar irgendwie funktioniert, aber es ging extrem viel Zeit verloren. Und sobald jemand einen Schritt vergessen hat, lag alles lahm."
+          "body": "Finanzen, Vertrieb und Betrieb sammelten dieselben Informationen, formatierten Tabellen neu und übergaben unvollständige Dateien. Der Ablauf funktionierte, kostete jedoch viel Zeit und hing zu stark von der Erinnerung einzelner Personen ab."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Ich habe den gesamten Ablauf wie ein richtiges System behandelt, nicht nur wie eine Tabellenkalkulation. Die Logik der Excel-Mappe habe ich komplett neu aufgesetzt und SOPs geschrieben, damit in jedem Durchlauf dieselben Schritte passieren. Am Ende war es so gebaut, dass jeder im Team den Bericht montags fehlerfrei erstellen kann, ohne groß nachzugrübeln."
+          "body": "Ich überarbeitete die Logik der Excel-Arbeitsmappe und dokumentierte die einzelnen Arbeitsschritte. Zusätzlich erfasste ich den gesamten Berichtsweg, damit das Team den Prozess jeden Montag einheitlich und mit weniger Fehlern durchführen kann."
         },
         {
           "heading": "Ergebnis",
-          "body": "Wir haben rund 12 Stunden Handarbeit aus der Woche gestrichen. Aber der wichtigste Erfolg war, dass niemand mehr Angst vor dem Montag hatte. Die Übergaben klappen jetzt reibungslos, der Takt ist sauber und der Prozess bricht nicht gleich zusammen, wenn mal jemand krank ist."
+          "body": "Der neue Ablauf spart rund zwölf Stunden manuelle Arbeit pro Woche. Zuständigkeiten sind klarer, und der Prozess lässt sich auch dann fortführen, wenn jemand aus dem Team abwesend ist."
         }
       ],
-      "pull": "Zwölf Stunden manuelle Arbeit pro Woche gespart. Ersetzt durch eine Routine, die jeder im Team beherrscht.",
+      "pull": "Mehr als zwölf Stunden manuelle Arbeit pro Woche eingespart – durch einen Ablauf, den das Team gemeinsam wiederholen kann.",
       "evidence": [
-        "Automatisierte Berichte in Excel gebaut, die dem Team gut 12 Stunden Copy-Paste-Arbeit pro Woche ersparen.",
-        "Gemeinsame SOPs für Finanzen, Vertrieb und Operations geschrieben, damit der Ablauf nicht mehr an der Erinnerung einer einzelnen Person hängt.",
-        "Die Arbeit von 'jemand muss dran denken' zu einem festen, wöchentlichen Standard umgestellt."
+        "Excel-Berichte automatisiert und dem Team mehr als zwölf Stunden manuelle Arbeit pro Woche erspart.",
+        "Gemeinsame Arbeitsanweisungen für Finanzen, Vertrieb und Betrieb dokumentiert.",
+        "Personenabhängige Erinnerungen durch einen dokumentierten Wochenstandard ersetzt."
       ],
       "impact": [
         {
           "value": "12+",
-          "label": "Stunden pro Woche gespart",
+          "label": "Stunden pro Woche eingespart",
           "note": "Manueller Berichtsaufwand aus dem regulären Zyklus entfernt."
         },
         {
           "value": "3",
           "label": "Funktionen abgestimmt",
-          "note": "Finanzen, Vertrieb und Operations auf einer Struktur."
+          "note": "Finanzen, Vertrieb und Betrieb arbeiten mit einer gemeinsamen Struktur."
         },
         {
           "value": "1",
           "label": "Gemeinsame Routine",
-          "note": "Automatisierung und SOPs zu einem wiederholbaren Wochenfluss verbunden."
+          "note": "Automatisierung und Arbeitsanweisungen zu einem wiederholbaren Wochenprozess verbunden."
         }
       ],
       "scope": [
-        "Design des Berichtsworkflows",
+        "Gestaltung des Berichtsprozesses",
         "Excel-Automatisierung",
-        "SOP-Standardisierung"
+        "Standardisierung der Arbeitsanweisungen"
       ],
       "tools": [
         "Excel",
-        "Operatives Reporting",
-        "SOP-Design"
+        "Operatives Berichtswesen",
+        "Arbeitsanweisungen"
       ],
       "prev": null,
       "next": {
         "slug": "kpi-governance-record",
-        "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten."
+        "title": "Eine Schülervertretung mit 34 Mitgliedern arbeitet mit klarer Verantwortung."
       }
     },
     "kpi-governance-record": {
-      "documentTitle": "KPI-basierte Governance · Das Operative Protokoll",
-      "metaDescription": "Führung von 34 Mitgliedern in 10 Abteilungen über einen KPI-Rhythmus an der SMA Santa Maria 2.",
+      "documentTitle": "KPI-Steuerung | dictuzz",
+      "metaDescription": "Wie eine Schülervertretung mit 34 Mitgliedern mithilfe klarer KPIs zehn Abteilungen koordinierte.",
       "vol": "Bd. I / Nr. 2",
-      "kicker": "Governance · Führung · SMA Santa Maria 2",
-      "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten.",
-      "deck": "Wie eine Schülervertretung einen KPI-Rhythmus einführte — und anfing, wie eine echte Organisation zu arbeiten statt wie eine Clique.",
-      "bylineRole": "Präsident · SMA Santa Maria 2",
-      "bylineMeta": "Nov. 2021 – Nov. 2022 · Jakarta, Indonesien",
-      "image": "/portfolio/assets/photos/governance.jpg",
-      "imageAlt": "Ein Sprecher wendet sich an eine kleine Gruppe in einer Arbeitsumgebung — als Illustration für institutionelle Führung und Programmgestaltung.",
-      "caption": "Führung in einer Arbeitsumgebung — als Illustration für institutionellen Rhythmus und Programmgestaltung.",
-      "lead": "Ein Rat mit 34 Leuten in 10 Abteilungen brauchte einen Weg, um zu sehen, was läuft und was stockt. KPIs und wöchentliche Check-ins haben uns genau das gegeben.",
+      "kicker": "Organisationssteuerung · Führung · SMA Santa Maria 2",
+      "title": "Eine Schülervertretung mit 34 Mitgliedern arbeitet mit klarer Verantwortung.",
+      "deck": "Wie eine Schülervertretung KPIs und regelmäßige Auswertungen einführte, um Programme und Zuständigkeiten verlässlicher zu koordinieren.",
+      "bylineRole": "Vorsitzender der Schülervertretung · SMA Santa Maria 2",
+      "bylineMeta": "Nov. 2021 – Nov. 2022 · Bandung, Indonesien",
+      "image": "/portfolio/assets/graphics/governance-rhythm.svg",
+      "imageAlt": "Eine Schülervertretung mit 34 Mitgliedern, dargestellt als zehn vernetzte Abteilungen mit einem gemeinsamen Arbeitsrhythmus.",
+      "caption": "Konzeptionelle Darstellung des in dieser Fallstudie beschriebenen Organisationsmodells.",
+      "lead": "Die Schülervertretung mit 34 Mitgliedern in zehn Abteilungen benötigte klare Zuständigkeiten und einen verlässlichen Überblick über den Projektfortschritt. KPIs und wöchentliche Auswertungen schufen dafür eine gemeinsame Grundlage.",
+      "process": {
+        "kicker": "Arbeitsrhythmus der Organisation",
+        "title": "Fortschritt in zehn Abteilungen sichtbar machen",
+        "description": "Klare Erwartungen und wöchentliche Auswertungen gaben der Schülervertretung einen gemeinsamen Überblick über den Fortschritt.",
+        "beforeLabel": "Vorher · kein gemeinsamer Überblick",
+        "before": [
+          "10 Abteilungen",
+          "Updates in Gruppenchats",
+          "Fortschritt schwer erkennbar"
+        ],
+        "afterLabel": "Danach · ein nachvollziehbarer Arbeitsrhythmus",
+        "after": [
+          "Klare Erwartungen je Abteilung",
+          "Wöchentliche KPI-Auswertung",
+          "Schulprogramme und Partneransprache"
+        ]
+      },
       "narrative": [
         {
           "heading": "Kontext",
-          "body": "Ab einer bestimmten Größe funktioniert eine Organisation nicht mehr nur über Chatgruppen und guten Willen. Wir brauchten einen klaren Blick darauf, welche Abteilungen wirklich liefern und wo die Arbeit liegen bleibt."
+          "body": "Mit zehn Abteilungen reichten Gruppenchats und informelle Absprachen nicht mehr aus. Die Schülervertretung brauchte einen klareren Überblick, verlässliche Nachverfolgung und eine Möglichkeit, laufende Programme regelmäßig auszuwerten."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Ich habe KPIs mit wöchentlichen Reviews eingeführt, die Aufgaben der Abteilungen deutlicher formuliert und die Planung für Schulveranstaltungen auf feste Beine gestellt. Keine Raketenwissenschaft — einfach nur Struktur, wo vorher Chaos war."
+          "body": "Ich führte messbare Erwartungen, regelmäßige Fortschrittsprüfungen und eine klarere Verbindung zwischen der Arbeit der Abteilungen und den Zielen der Schülervertretung ein. Wöchentliche KPI-Auswertungen schufen eine einheitliche Grundlage für Planung und Nachverfolgung."
         },
         {
           "heading": "Ergebnis",
-          "body": "Wir konnten endlich sehen, woran es hakt. Die Projekte liefen viel stabiler, darunter auch eine Kampagne für zwölf Zubringerschulen. Der Rat hat angefangen, wie eine professionelle Organisation zu arbeiten, nicht wie eine lockere Clique."
+          "body": "Der Fortschritt und offene Hindernisse wurden besser sichtbar. Programme ließen sich verlässlicher umsetzen; Informationskampagnen erreichten zwölf Partnerschulen."
         }
       ],
-      "pull": "Es ist viel einfacher ein Team zu führen, wenn jeder selbst sehen kann, was er leistet.",
+      "pull": "Führung wird einfacher, wenn alle den Fortschritt und die anstehenden Aufgaben sehen können.",
       "evidence": [
-        "Einen 34-köpfigen Rat über 10 Abteilungen hinweg mit KPIs und wöchentlichen Syncs geleitet.",
-        "Schulprojekte entworfen, die von der Schulleitung dauerhaft übernommen wurden.",
-        "Outreach-Kampagnen gesteuert, die 12 Zubringerschulen erreicht haben."
+        "Eine Schülervertretung mit 34 Mitgliedern in zehn Abteilungen anhand von KPIs und wöchentlichen Auswertungen geleitet.",
+        "Schulweite Programme entwickelt, die die Schulleitung als dauerhafte Initiativen übernahm.",
+        "Informationskampagnen koordiniert, die zwölf Partnerschulen erreichten."
       ],
       "impact": [
         {
@@ -246,75 +340,92 @@
         {
           "value": "10",
           "label": "Abteilungen koordiniert",
-          "note": "Governance über den gesamten Rat hinweg."
+          "note": "Organisationssteuerung über den gesamten Rat hinweg."
         },
         {
           "value": "12",
-          "label": "Zuliefernde Schulen erreicht",
-          "note": "Reichweite einer wesentlichen Outreach-Kampagne."
+          "label": "Partnerschulen erreicht",
+          "note": "Reichweite einer zentralen Informationskampagne."
         }
       ],
       "scope": [
         "Design des Führungssystems",
-        "KPI-Governance",
+        "KPI-Organisationssteuerung",
         "Programmplanung"
       ],
       "tools": [
-        "Governance-Frameworks",
+        "Organisationsmodelle",
         "Teamführung",
-        "Strategischer Outreach"
+        "Strategische Kommunikation"
       ],
       "prev": {
         "slug": "automation-mandate",
-        "title": "Das Automatisierungsmandat"
+        "title": "Ein Berichtssystem, das dem Team jede Woche mehr als 12 Stunden spart."
       },
       "next": {
         "slug": "large-scale-event-ops",
-        "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert."
+        "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden."
       }
     },
     "large-scale-event-ops": {
-      "documentTitle": "Großveranstaltungs-Operationen · Das Operative Protokoll",
-      "metaDescription": "Stabile Live-Ausführung in Umgebungen mit 1.000+ Teilnehmenden; Jugendmesse 2025 als Moderator vor 500+ Teilnehmenden.",
+      "documentTitle": "Veranstaltungsbetrieb | dictuzz",
+      "metaDescription": "Wie Bühnen- und Backstage-Planung Veranstaltungen mit mehr als 1.000 Teilnehmenden unterstützte.",
       "vol": "Bd. I / Nr. 3",
-      "kicker": "Live-Operationen · Ultimate Event Organizer",
-      "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert.",
-      "deck": "Drei Jahre Arbeit auf und hinter der Bühne für über tausend Zuschauer — und eine Jugendmesse für 500 Leute, die ich selbst moderiert habe.",
-      "bylineRole": "Stage Coordinator & Moderation · Ultimate Event Organizer",
-      "bylineMeta": "2022 – 2025 · Jakarta, Indonesien",
-      "image": "/portfolio/assets/photos/events.jpg",
-      "imageAlt": "Konfetti fällt über ein Publikum in einer Live-Veranstaltung und illustriert die Größenordnung und den Zeitdruck großer Programme.",
-      "caption": "Live-Programme hängen von Übergängen ab, die unter Druck halten. Foto als Illustration verwendet.",
-      "lead": "Live-Events mit großem Publikum verzeihen keine holprigen Übergänge. Mein Job war es, hinter der Bühne alles so straff zu organisieren, dass die Zuschauer nichts bemerkten.",
+      "kicker": "Veranstaltungsbetrieb · Ultimate Event Organizer",
+      "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden.",
+      "deck": "Drei Jahre Bühnen- und Backstage-Koordination bei Großveranstaltungen, darunter die Moderation eines Jugendgottesdienstes mit mehr als 500 Teilnehmenden.",
+      "bylineRole": "Bühnenkoordination und Moderation · Ultimate Event Organizer",
+      "bylineMeta": "2022 – 2025 · Bandung, Indonesien",
+      "image": "/portfolio/assets/graphics/live-operations.svg",
+      "imageAlt": "Ein Bühnenplan mit Lichtkegeln und markierten Übergängen im Live-Programm.",
+      "caption": "Visuelle Darstellung von Regieanweisungen, Timing und Übergaben hinter der Bühne.",
+      "lead": "Großveranstaltungen erfordern präzise Übergänge, klare Absprachen und verlässliche Abläufe hinter der Bühne. Kleine Störungen fallen sofort auf; deshalb braucht jedes Team einen gemeinsamen Plan.",
+      "process": {
+        "kicker": "Ablaufplan",
+        "title": "Für jeden Übergang den nächsten Schritt festlegen",
+        "description": "Ein gemeinsamer Ablaufplan hilft Technik, Rednern und Mitwirkenden, das Programm mit klaren Übergaben umzusetzen.",
+        "beforeLabel": "Vorher · unklare Übergänge",
+        "before": [
+          "Ablaufplan",
+          "Regieanweisungen für Team, Redner und Mitwirkende",
+          "Druck bei jeder Übergabe"
+        ],
+        "afterLabel": "Danach · koordinierte Umsetzung",
+        "after": [
+          "Dokumentierte Übergänge",
+          "Abgestimmte Kommunikation im Team",
+          "Planbarer Bühnenablauf"
+        ]
+      },
       "narrative": [
         {
           "heading": "Kontext",
-          "body": "Wenn bei einem Übergang auf der Bühne auch nur eine Kleinigkeit schiefgeht, merkt es das Publikum sofort. Die Kunst bei großen Events sind nicht die Knalleffekte — sondern sicherzustellen, dass die langweiligen Dinge wie Timing und Technikübergaben reibungslos klappen."
+          "body": "Wenn ein Bühnenübergang unklar ist, bemerkt das Publikum es sofort. Bei einer Großveranstaltung kommt es darauf an, Timing, technische Einsätze und Übergaben auch unter Druck zuverlässig zu koordinieren."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Ich stand genau an der Schnittstelle zwischen Planung und Ausführung. Meine Aufgabe war es, den Ablaufplan so für Licht-, Ton- und Security-Teams zu übersetzen, dass jeder Handgriff saß. Das bedeutete enge Absprachen und ständige Kommunikation."
+          "body": "Ich übertrug den Ablaufplan in klare Schritte für Technikteam, Redner und Mitwirkende. Dazu gehörten die frühzeitige Planung der Übergänge und die laufende Abstimmung aller Teams."
         },
         {
           "heading": "Ergebnis",
-          "body": "Die Übergänge liefen flüssiger, der Bühnenablauf war planbar und das Timing stimmte auch unter Stress. Der beste Beweis war die Jugendmesse 2025: 500 Leute im Saal, Live-Bühne und alles lief auf die Minute genau ab."
+          "body": "Die klarere Koordination verbesserte die Übergänge und half dem Bühnenteam, den Zeitplan auch unter Druck einzuhalten. Beim Jugendgottesdienst 2025 moderierte ich vor mehr als 500 Teilnehmenden und koordinierte den Ablauf."
         }
       ],
-      "pull": "Wenn das Timing stimmt, wirkt das Event perfekt geplant. Wenn es hakt, fällt es jedem auf.",
+      "pull": "Ein stimmiger Zeitplan lässt eine Veranstaltung durchdacht wirken. Unklare Übergänge fallen sofort auf.",
       "evidence": [
-        "Die Backstage-Koordination für Veranstaltungen mit über 1.000 Gästen geleitet.",
-        "Die Jugendmesse 2025 mit 500 Teilnehmenden moderiert und das Tempo von Anfang bis Ende hochgehalten.",
-        "Übergangsreibung reduziert, indem jedes Team einen klaren Ablaufplan bekommen hat."
+        "Abläufe hinter der Bühne bei Veranstaltungen mit mehr als 1.000 Gästen koordiniert.",
+        "Den Jugendgottesdienst 2025 vor mehr als 500 Teilnehmenden moderiert und den Programmablauf koordiniert.",
+        "Übergaben durch einen klar dokumentierten Ablaufplan verbessert."
       ],
       "impact": [
         {
           "value": "1.000+",
-          "label": "Publikumsgröße",
+          "label": "Teilnehmende",
           "note": "Live-Umgebungen mit sichtbarem Ausführungsdruck."
         },
         {
           "value": "500+",
-          "label": "Als Moderator geführt",
+          "label": "Teilnehmende moderiert",
           "note": "Jugendmesse 2025 als Beleg für Live-Kommunikation."
         },
         {
@@ -325,55 +436,72 @@
       ],
       "scope": [
         "Backstage-Koordination",
-        "Bühnenfluss-Management",
+        "Bühnenkoordination",
         "Live-Kommunikation"
       ],
       "tools": [
-        "Run-of-Show-Planung",
-        "Bühnenoperationen",
+        "Ablaufplanung",
+        "Bühnenbetrieb",
         "Moderation"
       ],
       "prev": {
         "slug": "kpi-governance-record",
-        "title": "Ein Rat aus vierunddreißig lernt, den Takt zu halten."
+        "title": "Eine Schülervertretung mit 34 Mitgliedern arbeitet mit klarer Verantwortung."
       },
       "next": {
         "slug": "vertical-rescue-ops",
-        "title": "Der ruhigere Teil riskanter Arbeit ist der Teil, den niemand filmt."
+        "title": "Einsatzbereitschaft entsteht lange vor einem Rettungseinsatz."
       }
     },
     "vertical-rescue-ops": {
-      "documentTitle": "Vertical-Rescue-Operationen · Das Operative Protokoll",
-      "metaDescription": "Materialbereitschaft, technisches Training und operative Disziplin über mehr als vier aktive Jahre bei Vertical Rescue Indonesia.",
+      "documentTitle": "Vertical-Rescue-Einsätze | dictuzz",
+      "metaDescription": "Ein Einblick in Ausrüstungsbereitschaft, technisches Training und Außeneinsätze bei Vertical Rescue Indonesia.",
       "vol": "Bd. I / Nr. 4",
-      "kicker": "Ausbildung & Bereitschaft · Vertical Rescue Indonesia",
-      "title": "Der ruhigere Teil riskanter Arbeit ist der Teil, den niemand filmt.",
-      "deck": "Mehr als vier Jahre Pflege der Ausrüstung und Unterstützung beim Training bei Vertical Rescue Indonesia — Einsatzbereitschaft als Gewohnheit, nicht als Show.",
-      "bylineRole": "Assistierender Ausbilder · Vertical Rescue Indonesia",
+      "kicker": "Ausbildung und Einsatzbereitschaft · Vertical Rescue Indonesia",
+      "title": "Einsatzbereitschaft entsteht lange vor einem Rettungseinsatz.",
+      "deck": "Seit mehr als vier Jahren unterstütze ich bei Vertical Rescue Indonesia die Ausrüstungspflege und das technische Training. Einsatzbereitschaft beruht auf konsequenter Vorbereitung und klaren Standards.",
+      "bylineRole": "Assistenztrainer · Vertical Rescue Indonesia",
       "bylineMeta": "Jan. 2021 – heute · Indonesien",
-      "image": null,
-      "imageAlt": null,
-      "caption": null,
-      "lead": "Niemand filmt die Vorbereitung. Aber wenn im Feld etwas schiefgeht, ist sie das Einzige, was zählt.",
+      "image": "/portfolio/assets/graphics/readiness-discipline.svg",
+      "imageAlt": "Prüfmarkierungen und technische Ausrüstung stehen für sorgfältige Trainingsvorbereitung.",
+      "caption": "Konzeptionelle Darstellung von Ausrüstungskontrollen und Trainingsvorbereitung.",
+      "lead": "Vorbereitung bleibt meist unbeachtet. Sie entscheidet jedoch darüber, ob Ausrüstung, Team und Abläufe zuverlässig funktionieren, wenn es darauf ankommt.",
+      "process": {
+        "kicker": "Einsatzbereitschaft",
+        "title": "Vor dem Praxistraining Vertrauen schaffen",
+        "description": "Ausrüstungspflege und Trainingsunterstützung schaffen verlässliche Standards, bevor technische Übungen beginnen.",
+        "beforeLabel": "Voraussetzungen",
+        "before": [
+          "Zustand der Ausrüstung",
+          "Klettertraining",
+          "Unterstützung beim Sichern"
+        ],
+        "afterLabel": "Vorbereitung in der Praxis",
+        "after": [
+          "Kontrolle und Wartung",
+          "Unterstützung im Training",
+          "Geprüfte und einsatzbereite Ausrüstung"
+        ]
+      },
       "narrative": [
         {
           "heading": "Kontext",
-          "body": "Bei technischen Rettungseinsätzen kann man nicht improvisieren, wenn es ernst wird. Die Ausrüstung muss geprüft sein, das Training muss sitzen und jeder muss seine Rolle kennen, bevor Gefahr droht."
+          "body": "Technische Rettung erfordert sorgfältige Vorbereitung. Ausrüstung muss geprüft, Trainingsabläufe müssen eingeübt und Zuständigkeiten geklärt sein, bevor die Bedingungen schwierig werden."
         },
         {
           "heading": "Was gebaut wurde",
-          "body": "Ich habe mich um das Equipment gekümmert, Klettereinheiten als Vorstiegskletterer und Sicherer abgesichert und geholfen, den Trainingsstandard hochzuhalten. Keine glamouröse Arbeit, aber sie muss jedes Mal stimmen."
+          "body": "Ich pflege und kontrolliere die Ausrüstung, unterstütze technische Kletterübungen als Vorstiegskletterer und Sicherungspartner und vermittle neuen Teilnehmenden sichere, wiederholbare Arbeitsweisen."
         },
         {
           "heading": "Ergebnis",
-          "body": "Die Ausrüstung war immer einsatzbereit. Die Trainings liefen flüssiger ab und neue Teilnehmende hatten eine solidere Basis, bevor sie überhaupt in eine echte Notsituation kamen."
+          "body": "Regelmäßige Kontrollen und verlässliche Trainingsunterstützung stärken die Einsatzbereitschaft und geben neuen Teilnehmenden eine solide Grundlage für praktische Übungen."
         }
       ],
-      "pull": "In technischen Bereichen kommt Sicherheit durch Vorbereitung, nicht durch Improvisation.",
+      "pull": "Bei technischer Arbeit entsteht Sicherheit durch Vorbereitung und konsequente Standards.",
       "evidence": [
-        "Die Ausrüstung durch regelmäßige Wartung und Kontrollen einsatzbereit gehalten.",
-        "Kletter- und Sicherungsübungen als Teil des Trainer-Teams abgesichert.",
-        "Mitgeholfen, eine Kultur zu prägen, in der Vorbereitung keine Option ist, sondern der Standard."
+        "Die Einsatzbereitschaft der Ausrüstung durch regelmäßige Kontrollen und Wartung sichergestellt.",
+        "Technische Kletter- und Sicherungsübungen im Trainerteam unterstützt.",
+        "Eine Sicherheitskultur gestärkt, in der Vorbereitung zum Standard gehört."
       ],
       "impact": [
         {
@@ -383,13 +511,13 @@
         },
         {
           "value": "Routine",
-          "label": "Materialdisziplin",
+          "label": "Regelmäßige Ausrüstungskontrollen",
           "note": "Inspektion und Wartung als Teil des Standards."
         },
         {
-          "value": "Feld",
+          "value": "Praxis",
           "label": "Trainingsunterstützung",
-          "note": "Praktischer Beitrag in Klettersituationen und beim Sichern."
+          "note": "Praktische Unterstützung bei Kletter- und Sicherungsübungen."
         }
       ],
       "scope": [
@@ -398,13 +526,13 @@
         "Sicherheitsdisziplin"
       ],
       "tools": [
-        "Inspektionsroutinen",
+        "Kontrollroutinen",
         "Technisches Klettern",
-        "Sicherungsunterstützung"
+        "Sicherungstechnik"
       ],
       "prev": {
         "slug": "large-scale-event-ops",
-        "title": "Wenn der Saal zuschaut, ist nur sichtbar, was scheitert."
+        "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden."
       },
       "next": null
     }

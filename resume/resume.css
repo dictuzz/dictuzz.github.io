@@ -86,7 +86,7 @@ body {
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 34%),
         linear-gradient(180deg, #f7f2e8 0%, #efe6d8 100%);
     line-height: 1.65;
-    overflow-x: hidden;
+    overflow-x: clip;
     min-height: 100vh;
     transition: background-color 220ms ease, color 220ms ease;
 }
@@ -664,10 +664,10 @@ h3 {
     }
 
     .lang-btn {
-        width: 26px;
-        height: 26px;
-        min-width: 26px;
-        min-height: 26px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
     }
 
     .lang-flag {

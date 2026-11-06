@@ -4,12 +4,12 @@
   "strings": {
     "hero": {
       "subtitle": "Membangun sistem operasional yang berjalan mandiri.",
-      "role": "Systems Architect & Automation Specialist",
+      "role": "Arsitek Sistem & Spesialis Otomasi",
       "typing": {
         "staticText": "",
         "dynamicTexts": [
           "Menstandarisasi alur kerja route-to-market",
-          "Mengeliminasi transaksi fraud berskala besar",
+          "Mengeliminasi transaksi kecurangan berskala besar",
           "Menghubungkan operasional lintas fungsi",
           "Mengotomasi pipeline data dan pelaporan",
           "Mengoordinasikan acara berskala besar"
@@ -78,25 +78,38 @@
         "instagram": "Cerita di balik pekerjaan",
         "github": "Kode pilihan dan pekerjaan teknis"
       }
+    },
+    "certifications": {
+      "verify": "Verifikasi sertifikat"
+    },
+    "footer": {
+      "home": "Beranda",
+      "resume": "Resume",
+      "portfolio": "Portofolio",
+      "resources": "Sumber Daya",
+      "terms": "Ketentuan",
+      "navLabel": "Navigasi global",
+      "emailAria": "Email Benedictus",
+      "allRights": "Hak cipta dilindungi."
     }
   },
   "sections": {
     "summary": {
-      "text": "Route-to-Market Analyst yang disiplin dan berorientasi sistem, memimpin tim beranggotakan 3 orang di 3 entitas di Jawa Barat. Dikenal mampu mengubah proses lapangan yang tidak konsisten menjadi kerangka kerja yang terstandarisasi dan terukur, termasuk sistem Call Frequency Management di 32 depo dan penghapusan 12.000+ outlet mencurigakan melalui deteksi anomali berbasis data. Saya memadukan fondasi data science dengan pengalaman lapangan dan pengelolaan pemangku kepentingan, sehingga analisis berubah menjadi tindakan yang benar-benar diadopsi oleh depo. Berpegang pada \"Quam plurimi et quam aptissimi\", saya terus belajar dan ingin memberikan dampak nyata yang bertahan lama."
+      "text": "Analis Route-to-Market yang berorientasi pada sistem dan berpengalaman memimpin tim beranggotakan tiga orang di tiga entitas di Jawa Barat. Saya mengubah proses lapangan yang tidak konsisten menjadi cara kerja yang terstandarisasi dan terukur, termasuk kerangka pengelolaan frekuensi kunjungan di 32 depo serta analisis anomali berbasis data yang membantu menonaktifkan lebih dari 12.000 titik penjualan mencurigakan. Saya memadukan dasar keilmuan sains data dengan pengalaman lapangan dan koordinasi pemangku kepentingan agar hasil analisis dapat diterapkan dalam operasional sehari-hari. Berpegang pada “Quam plurimi et quam aptissimi”, saya terus belajar dan berfokus pada dampak yang terukur serta berkelanjutan."
     },
     "experience": [
       {
         "date": "APR 2026 – SEKARANG",
-        "role": "Route to Market Analyst",
+        "role": "Analis Route-to-Market",
         "company": "Tirta Utama Abadi (Distributor Danone, Jawa Barat)",
         "details": [
-          "Mendeteksi anomali pada pola transaksi dan data geolokasi untuk menonaktifkan 12.000+ outlet yang berpotensi fraud, membersihkan basis outlet yang menjadi dasar seluruh keputusan cakupan dan insentif.",
-          "Mengganti praktik kunjungan yang tidak konsisten dengan satu kerangka kerja terstandarisasi yang disesuaikan dengan kondisi lapangan di seluruh 32 depo di Jawa Barat, mendorong pertumbuhan profit dua digit di hampir setiap depo.",
-          "Memimpin tim beranggotakan 3 orang di 3 entitas, menjaga wilayah salesman dan fundamental penjualan tetap sehat dan terawat.",
-          "Membangun ulang dashboard sprint harian dari nol, memberikan data kinerja langsung kepada setiap depo tanpa kompilasi manual.",
-          "Mengotomasi analisis potensi pasar dan jarak ke outlet aktif untuk pembukaan outlet baru, menghemat waktu tim sekitar 8,6 jam per bulan.",
-          "Menganalisis kebutuhan armada bulanan per depo dan channel dengan menggabungkan target penjualan dan data armada bulan sebelumnya, sehingga kapasitas pengiriman sesuai dengan permintaan yang diharapkan di setiap depo.",
-          "Melakukan analisis pasar, termasuk trade economics, untuk mendukung keputusan cakupan, pembukaan outlet, dan channel di seluruh depo."
+          "Mengidentifikasi anomali pada pola transaksi dan data geolokasi, lalu menonaktifkan lebih dari 12.000 titik penjualan yang terindikasi terkait kecurangan. Pembersihan ini memperkuat basis data untuk keputusan cakupan wilayah dan insentif.",
+          "Menstandardisasi perencanaan frekuensi kunjungan yang sesuai dengan kondisi lapangan di seluruh 32 depo di Jawa Barat, turut mendorong pertumbuhan laba dua digit di hampir setiap depo.",
+          "Memimpin tim beranggotakan tiga orang yang mendukung tiga entitas, sekaligus menjaga pemetaan wilayah penjualan dan konsistensi pelaksanaan di lapangan.",
+          "Membangun ulang dashboard sprint harian agar setiap depo dapat mengakses data kinerja terkini tanpa kompilasi manual.",
+          "Mengotomasi analisis potensi pasar dan jarak ke titik penjualan aktif untuk pembukaan lokasi baru, sehingga menghemat sekitar 8,6 jam kerja tim per bulan.",
+          "Menganalisis kebutuhan armada bulanan berdasarkan depo dan kanal dengan menggabungkan target penjualan serta data armada bulan sebelumnya, agar kapasitas pengiriman sesuai dengan perkiraan permintaan.",
+          "Menganalisis kondisi pasar, termasuk ekonomi perdagangan, sebagai dasar keputusan cakupan wilayah, pembukaan titik penjualan, dan pemilihan kanal di setiap depo."
         ]
       },
       {
@@ -105,20 +118,20 @@
         "company": "Home Digital Indonesia",
         "details": [
           "Mengotomasi alur pelaporan manual di Excel, menghemat waktu tim sekitar 12 jam per minggu.",
-          "Bermitra dengan divisi Finance, Sales, dan Operations untuk merancang sistem dan menstandarisasi SOP, menggantikan praktik yang terfragmentasi dengan standar lintas fungsi yang konsisten.",
+          "Berkolaborasi dengan tim Keuangan, Penjualan, dan Operasional untuk merancang sistem serta menstandardisasi SOP, menggantikan praktik yang terpisah-pisah dengan standar lintas fungsi yang konsisten.",
           "Mendorong penjualan melalui interaksi langsung dengan pelanggan untuk mencapai target penjualan bulanan.",
-          "Menilai pengajuan kredit pelanggan dengan prinsip 7C dan 5S, menjaga kualitas piutang sekaligus menjaga efisiensi waktu persetujuan.",
+          "Menilai pengajuan kredit pelanggan berdasarkan prinsip 7C dan 5S, menjaga kualitas piutang sekaligus mempercepat proses persetujuan.",
           "Menindaklanjuti piutang pelanggan yang jatuh tempo setiap hari melalui negosiasi terstruktur dan pelacakan komitmen pembayaran untuk memastikan pelunasan."
         ]
       },
       {
         "date": "NOV 2021 – NOV 2022",
-        "role": "Presiden",
+        "role": "Ketua OSIS",
         "company": "OSIS SMA Santa Maria 2, Bandung",
         "details": [
-          "Memimpin organisasi beranggotakan 34 orang di 10 divisi, menerapkan pelacakan performa berbasis KPI untuk membangun akuntabilitas tiap divisi.",
-          "Merancang program sekolah yang kemudian diadopsi secara permanen oleh pihak administrasi.",
-          "Menjalankan kampanye penjangkauan ke 12 sekolah feeder untuk meningkatkan partisipasi siswa.",
+          "Memimpin organisasi beranggotakan 34 orang di 10 divisi dan menerapkan pemantauan kinerja berbasis KPI untuk memperjelas akuntabilitas setiap divisi.",
+          "Merancang program sekolah yang kemudian dilanjutkan sebagai inisiatif tetap oleh pihak sekolah.",
+          "Mengelola kampanye sosialisasi di 12 sekolah jejaring untuk meningkatkan partisipasi dan penerimaan siswa.",
           "Membentuk pertemuan koordinasi mingguan antar divisi untuk mengurangi miskomunikasi dan memastikan tindak lanjut."
         ]
       }
@@ -126,33 +139,33 @@
     "education": [
       {
         "name": "Universitas Terbuka (Open University Indonesia)",
-        "degree": "S1 Data Science (Berjalan)",
-        "date": "Dimulai Agustus 2025",
-        "focus": "Fokus: Analisis Data, Statistika, Sistem Informasi & Deteksi Anomali"
+        "degree": "S1 Sains Data (sedang ditempuh)",
+        "date": "Mulai Agustus 2025",
+        "focus": "Fokus studi: analisis data, statistika, sistem informasi, dan deteksi anomali"
       },
       {
         "name": "SMA Santa Maria 2 Bandung",
         "degree": "Program IPA",
         "date": "2020 – 2023",
-        "focus": "Terpilih sebagai Ketua & Wakil Ketua OSIS; Perwakilan sekolah pada UNDIP Biology Championship (2022); Anggota Pramuka aktif & pelatihan luar ruang"
+        "focus": "Terpilih sebagai Ketua dan Wakil Ketua OSIS; mewakili sekolah pada UNDIP Biology Championship (2022); aktif dalam kegiatan Pramuka dan pelatihan kepemimpinan di alam terbuka"
       }
     ],
     "impact": [
       {
         "title": "Standarisasi Sistem Route-to-Market",
-        "desc": "Memperbarui sistem Call Frequency Management di seluruh 32 depo di Jawa Barat dan menonaktifkan 12.000+ outlet fraud melalui deteksi anomali geolokasi dan transaksi, menghasilkan pertumbuhan profit dua digit di hampir setiap depo."
+        "desc": "Menstandardisasi pengelolaan frekuensi kunjungan di 32 depo di Jawa Barat dan menonaktifkan lebih dari 12.000 titik penjualan bermasalah melalui analisis anomali transaksi dan geolokasi. Perubahan ini turut mendorong pertumbuhan laba dua digit di hampir setiap depo."
       },
       {
         "title": "Sistem Otomatisasi Pelaporan",
-        "desc": "Proses pelaporan mingguan di Home Digital melibatkan entri data manual, pemformatan ulang, dan pengecekan silang yang memakan waktu. Seluruh alur kerja dirancang ulang di Excel agar berjalan dengan intervensi minimal, menghemat sekitar 12 jam per minggu bagi tim."
+        "desc": "Pelaporan mingguan di Home Digital sebelumnya memerlukan entri data, pemformatan ulang, dan pemeriksaan silang secara manual. Saya merancang ulang alurnya di Excel agar dapat berjalan dengan sedikit intervensi, sehingga tim menghemat sekitar 12 jam kerja per minggu."
       },
       {
         "title": "Kepemimpinan Tata Kelola Berbasis KPI",
-        "desc": "Mengelola organisasi siswa beranggotakan 34 orang di 10 divisi menggunakan pelacakan performa berbasis KPI dan pertemuan koordinasi mingguan. Program yang dikembangkan diadopsi oleh pihak sekolah, dan upaya penjangkauan menjangkau 12 sekolah feeder."
+        "desc": "Memimpin organisasi siswa beranggotakan 34 orang di 10 divisi dengan pemantauan kinerja berbasis KPI dan rapat koordinasi mingguan. Pihak sekolah mengadopsi sejumlah program, sementara kampanye sosialisasi menjangkau 12 sekolah jejaring."
       },
       {
         "title": "Eksekusi Acara Skala Besar",
-        "desc": "Bertugas sebagai MC dalam Misa Angkatan Muda GEMA Bandung (500+ peserta), mengoordinasikan pembicara, panitia, dan tim teknis dalam satu alur. Sebelumnya mengelola operasional backstage untuk acara dengan 1.000+ peserta di mana ketepatan waktu sangat krusial."
+        "desc": "Bertugas sebagai MC dalam Misa Angkatan Muda GEMA Bandung untuk lebih dari 500 peserta, serta mengoordinasikan pembicara, panitia, dan tim teknis dalam satu susunan acara. Sebelumnya, mengelola operasional belakang panggung untuk acara dengan lebih dari 1.000 peserta dan menjaga ketepatan setiap isyarat teknis."
       }
     ],
     "certifications": [
@@ -189,7 +202,7 @@
         "role": "Master of Ceremony (Relawan)",
         "company": "GEMA (Gereja Mahasiswa) Bandung",
         "details": [
-          "Bertugas sebagai Master of Ceremony pada acara besar GEMA Bandung \"Misa Angkatan Muda 2025\", mengatur alur panggung dan interaksi audiens untuk 500+ mahasiswa Katolik di Bandung, berkoordinasi dengan panitia, pembicara, dan tim teknis demi pelaksanaan rundown yang presisi dan transisi acara yang mulus."
+          "Memandu acara “Misa Angkatan Muda 2025” GEMA Bandung untuk lebih dari 500 mahasiswa Katolik. Saya mengatur alur panggung dan interaksi peserta serta berkoordinasi dengan panitia, pembicara, dan tim teknis agar acara berjalan sesuai susunan acara."
         ]
       },
       {
@@ -197,8 +210,8 @@
         "role": "Asisten Instruktur",
         "company": "Vertical Rescue Indonesia",
         "details": [
-          "Menjaga kesiapan peralatan penyelamatan melalui perawatan rutin dan inspeksi keselamatan yang ketat pada tali, harness, dan carabiner.",
-          "Bertugas sebagai lead climber dan belayer dalam sesi pelatihan serta membimbing peserta baru dalam keterampilan teknis penyelamatan."
+          "Menjaga kesiapan peralatan penyelamatan melalui perawatan rutin dan pemeriksaan keselamatan tali, harness, dan karabiner.",
+          "Mendukung latihan penyelamatan teknis sebagai lead climber dan belayer, serta membimbing peserta baru dalam teknik lapangan dan keselamatan."
         ]
       },
       {
@@ -207,7 +220,7 @@
         "company": "Orang Muda Katolik (OMK) Ujung Berung",
         "details": [
           "Menyusun kalender program tahunan dengan mengoordinasikan target lintas tim dan jadwal relawan.",
-          "Mengorganisasi dua acara berskala besar: malam kebersamaan (~100 peserta) dan ibadah kaum muda (~400 peserta).",
+          "Menyelenggarakan dua acara berskala besar: malam kebersamaan untuk sekitar 100 peserta dan ibadah kaum muda untuk sekitar 400 peserta.",
           "Bertugas sebagai Master of Ceremony pada sebagian besar acara organisasi."
         ]
       },
@@ -216,10 +229,10 @@
         "role": "Kepala Divisi Bisnis & Kemitraan",
         "company": "Forum OSIS Jawa Barat",
         "details": [
-          "Memimpin Divisi Bisnis & Kemitraan Forum OSIS Jawa Barat, forum OSIS tingkat Jawa Barat, bertanggung jawab atas kemitraan eksternal, sponsorship, dan media outreach untuk program forum.",
-          "Menangani kemitraan untuk acara-acara unggulan, termasuk Diskusi Publik / Audiensi Legislatif (Mar 2021) dan FOJB Festival Pelajar & Konser Amal (Apr 2021), serta kegiatan amal lainnya.",
-          "Mengoordinasikan sponsorship dengan by.U, Telkom University, dan Dinas Pendidikan, serta kemitraan media dengan Halo KRW, Media Bandung, dan lainnya untuk memperluas jangkauan acara.",
-          "Membangun database historis kemitraan yang menghimpun kolaborasi kepanitiaan sebelumnya, sehingga setiap kepanitiaan baru dapat melihat mitra terdahulu tanpa memulai penjajakan dari nol."
+          "Memimpin Divisi Bisnis & Kemitraan Forum OSIS Jawa Barat, dengan tanggung jawab atas kemitraan eksternal, kerja sama sponsor, dan hubungan media untuk program forum.",
+          "Mengelola kemitraan untuk acara utama, termasuk Diskusi Publik dan Audiensi Legislatif, FOJB Festival Pelajar & Konser Amal, serta kegiatan sosial lainnya.",
+          "Mengoordinasikan dukungan sponsor dari by.U, Telkom University, dan Dinas Pendidikan serta kemitraan media dengan Halo KRW, Media Bandung, dan lainnya untuk memperluas jangkauan acara.",
+          "Membangun basis data kemitraan yang merangkum kolaborasi kepanitiaan sebelumnya, sehingga panitia berikutnya dapat melanjutkan hubungan yang sudah terjalin."
         ]
       },
       {
@@ -227,9 +240,9 @@
         "role": "Kru Panggung",
         "company": "Ultimate Event Organizer",
         "details": [
-          "Mendukung operasional backstage pada acara dengan 1.000+ peserta, membantu tim panggung dan produksi menjaga setiap sesi tetap sesuai rundown.",
-          "Membantu penataan dan pembongkaran panggung serta peralatan, dan membantu mengoordinasikan cue teknis dan serah terima antar segmen.",
-          "Mengikuti alur kerja yang telah direncanakan saat pergantian segmen, membantu menjaga jeda antar sesi tetap seminimal mungkin."
+          "Mendukung operasional belakang panggung untuk acara dengan lebih dari 1.000 peserta dan membantu tim panggung serta produksi menjaga setiap sesi sesuai jadwal.",
+          "Membantu pemasangan dan pembongkaran panggung serta peralatan, sekaligus mengoordinasikan isyarat teknis dan serah terima antarsegmen.",
+          "Mengikuti prosedur pergantian segmen yang telah direncanakan untuk meminimalkan jeda antarsesi."
         ]
       },
       {
@@ -246,44 +259,140 @@
   "collections": {
     "skills": {
       "strategic": [
-        { "name": "Systems Thinking", "level": "expert" },
-        { "name": "Route-to-Market Planning", "level": "expert" },
-        { "name": "Territory & Coverage Planning", "level": "expert" },
-        { "name": "Call Frequency Management", "level": "expert" },
-        { "name": "Workflow Design", "level": "expert" },
-        { "name": "Process Standardization", "level": "expert" },
-        { "name": "KPI Framework Design", "level": "proficient" },
-        { "name": "Change Management at Scale", "level": "expert" }
+        {
+          "name": "Pemikiran Sistem",
+          "level": "expert"
+        },
+        {
+          "name": "Perencanaan Route-to-Market",
+          "level": "expert"
+        },
+        {
+          "name": "Perencanaan Wilayah & Cakupan",
+          "level": "expert"
+        },
+        {
+          "name": "Manajemen Frekuensi Kunjungan",
+          "level": "expert"
+        },
+        {
+          "name": "Perancangan Alur Kerja",
+          "level": "expert"
+        },
+        {
+          "name": "Standardisasi Proses",
+          "level": "expert"
+        },
+        {
+          "name": "Perancangan Kerangka KPI",
+          "level": "proficient"
+        },
+        {
+          "name": "Manajemen Perubahan Skala Besar",
+          "level": "expert"
+        }
       ],
       "operational": [
-        { "name": "SOP Development", "level": "expert" },
-        { "name": "Cross-Functional Coordination", "level": "expert" },
-        { "name": "Risk & Fraud Control", "level": "expert" },
-        { "name": "Fleet Planning", "level": "proficient" },
-        { "name": "Reporting Automation", "level": "expert" },
-        { "name": "Event Operations Management", "level": "proficient" },
-        { "name": "Incident Management", "level": "expert" }
+        {
+          "name": "Penyusunan SOP",
+          "level": "expert"
+        },
+        {
+          "name": "Koordinasi Lintas Fungsi",
+          "level": "expert"
+        },
+        {
+          "name": "Pengendalian Risiko & Fraud",
+          "level": "expert"
+        },
+        {
+          "name": "Perencanaan Armada",
+          "level": "proficient"
+        },
+        {
+          "name": "Otomasi Pelaporan",
+          "level": "expert"
+        },
+        {
+          "name": "Manajemen Operasional Acara",
+          "level": "proficient"
+        },
+        {
+          "name": "Manajemen Insiden",
+          "level": "expert"
+        }
       ],
       "analytical": [
-        { "name": "SQL", "level": "proficient" },
-        { "name": "Python", "level": "proficient" },
-        { "name": "Microsoft Excel / VBA", "level": "expert" },
-        { "name": "Anomaly Detection", "level": "expert" },
-        { "name": "Dashboards & Visualization", "level": "expert" },
-        { "name": "Power BI & Looker Studio", "level": "proficient" },
-        { "name": "Trade Economics", "level": "proficient" },
-        { "name": "DBeaver", "level": "proficient" },
-        { "name": "QGIS", "level": "proficient" },
-        { "name": "LLM & AI-Assisted Analytics", "level": "proficient" },
-        { "name": "Obsidian, Canva, Trello", "level": "proficient" }
+        {
+          "name": "SQL",
+          "level": "proficient"
+        },
+        {
+          "name": "Python",
+          "level": "proficient"
+        },
+        {
+          "name": "Microsoft Excel / VBA",
+          "level": "expert"
+        },
+        {
+          "name": "Deteksi Anomali",
+          "level": "expert"
+        },
+        {
+          "name": "Dasbor & Visualisasi",
+          "level": "expert"
+        },
+        {
+          "name": "Power BI & Looker Studio",
+          "level": "proficient"
+        },
+        {
+          "name": "Analisis Ekonomi Perdagangan",
+          "level": "proficient"
+        },
+        {
+          "name": "DBeaver",
+          "level": "proficient"
+        },
+        {
+          "name": "QGIS",
+          "level": "proficient"
+        },
+        {
+          "name": "Analitik Berbantuan LLM & AI",
+          "level": "proficient"
+        },
+        {
+          "name": "Obsidian, Canva, Trello",
+          "level": "proficient"
+        }
       ],
       "leadership": [
-        { "name": "Team Leadership (3 entities)", "level": "expert" },
-        { "name": "Cross-Functional Influence", "level": "expert" },
-        { "name": "Public Speaking & MC", "level": "expert" },
-        { "name": "Complex Problem-Solving", "level": "expert" },
-        { "name": "Training Delivery", "level": "proficient" },
-        { "name": "Strategic Partnerships", "level": "proficient" }
+        {
+          "name": "Kepemimpinan Tim (3 entitas)",
+          "level": "expert"
+        },
+        {
+          "name": "Kolaborasi Lintas Fungsi",
+          "level": "expert"
+        },
+        {
+          "name": "Berbicara di Depan Umum & Pembawa Acara",
+          "level": "expert"
+        },
+        {
+          "name": "Pemecahan Masalah Kompleks",
+          "level": "expert"
+        },
+        {
+          "name": "Pelaksanaan Pelatihan",
+          "level": "proficient"
+        },
+        {
+          "name": "Kemitraan Strategis",
+          "level": "proficient"
+        }
       ]
     },
     "languages": [
@@ -301,7 +410,7 @@
       },
       {
         "id": "de",
-        "label": "Bahasa Jerman (B1 Goethe-Zertifikat; Peserta Kursus B2)"
+        "label": "Bahasa Jerman (Goethe-Zertifikat B1; mengikuti kursus B2)"
       },
       {
         "id": "jv",
@@ -310,6 +419,6 @@
     ]
   },
   "seo": {
-    "description": "Resume Benedictus Richard Ricardo — Route-to-Market Analyst dan Systems Architect di balik dictuzz. Pengalaman kerja, keahlian, dan cara menghubungi."
+    "description": "Analis Route-to-Market dengan pengalaman dalam otomasi pelaporan, tata kelola operasional, dan analisis data. Lihat pengalaman serta keahlian Benedictus Richard Ricardo."
   }
 }

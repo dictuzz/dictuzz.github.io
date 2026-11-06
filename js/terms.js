@@ -1,5 +1,5 @@
-import { loadSiteConfig } from './site-content.js';
-import { applyManagedPageMetadata } from './site-seo.js';
+import { loadSiteConfig } from './site-content.js?v=v9';
+import { applyManagedPageMetadata } from './site-seo.js?v=v2';
 import { applyGlobalFooter } from './site-renderers.js';
 
 async function initTermsPage() {

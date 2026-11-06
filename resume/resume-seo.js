@@ -1,13 +1,13 @@
-import { toAbsoluteUrl } from '../js/site-content.js';
+import { toAbsoluteUrl } from '../js/site-content.js?v=v8';
 
 function normalizeEntries(data) {
     return Array.isArray(data) ? data : [];
 }
 
-function getSectionSnapshot(siteUrl) {
+function getSectionSnapshot(pageUrl) {
     return Array.from(document.querySelectorAll('main > section[id]')).map((section, index) => ({
         '@type': 'WebPageElement',
-        '@id': `${toAbsoluteUrl(siteUrl, '/resume/')}#${section.id}`,
+        '@id': `${pageUrl}#${section.id}`,
         name: section.querySelector('.section__title')?.textContent?.trim() || section.id,
         description: section.querySelector('.section__lede')?.textContent?.trim() || undefined,
         position: index + 1
@@ -16,11 +16,20 @@ function getSectionSnapshot(siteUrl) {
 
 export function updateResumeSeo(siteConfig, content, lang) {
     const pageSeo = siteConfig.seo.pages.resume;
-    const title = `${siteConfig.profile.name} — ${siteConfig.profile.title}`;
+    const titles = { en: 'Resume | dictuzz', id: 'Resume | dictuzz', de: 'Lebenslauf | dictuzz' };
+    const title = titles[lang] || titles.en;
     const description = content.seo?.description || pageSeo.description;
-    const resumeUrl = toAbsoluteUrl(siteConfig.site.siteUrl, '/resume/');
+    const resumePath = lang === 'en' ? '/resume/' : `/resume/${lang}/`;
+    const resumeUrl = toAbsoluteUrl(siteConfig.site.siteUrl, resumePath);
+    const currentUrl = resumeUrl;
     const personId = `${siteConfig.site.siteUrl}/#person`;
-    const sections = getSectionSnapshot(siteConfig.site.siteUrl);
+    const sections = getSectionSnapshot(currentUrl);
+    const languageUrls = {
+        en: toAbsoluteUrl(siteConfig.site.siteUrl, '/resume/'),
+        id: toAbsoluteUrl(siteConfig.site.siteUrl, '/resume/id/'),
+        de: toAbsoluteUrl(siteConfig.site.siteUrl, '/resume/de/'),
+        'x-default': toAbsoluteUrl(siteConfig.site.siteUrl, '/resume/')
+    };
 
 
 
@@ -30,9 +39,12 @@ export function updateResumeSeo(siteConfig, content, lang) {
 
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', resumeUrl);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', currentUrl);
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => {
+        const language = link.getAttribute('hreflang');
+        if (language && languageUrls[language]) link.setAttribute('href', languageUrls[language]);
+    });
     document.querySelector('meta[property="og:type"]')?.setAttribute('content', pageSeo.ogType);
-    const currentUrl = lang === 'en' ? resumeUrl : `${resumeUrl}?lang=${lang}`;
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', currentUrl);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
@@ -40,6 +52,7 @@ export function updateResumeSeo(siteConfig, content, lang) {
     document.querySelector('meta[property="og:image:alt"]')?.setAttribute('content', siteConfig.profile.image.alt);
     document.querySelector('meta[property="og:site_name"]')?.setAttribute('content', siteConfig.site.name);
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title);
+    document.querySelector('meta[name="twitter:url"]')?.setAttribute('content', currentUrl);
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', description);
     document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', toAbsoluteUrl(siteConfig.site.siteUrl, siteConfig.profile.image.resumeOg));
     document.querySelector('meta[name="twitter:image:alt"]')?.setAttribute('content', siteConfig.profile.image.alt);
@@ -79,9 +92,9 @@ export function updateResumeSeo(siteConfig, content, lang) {
         {
             '@context': 'https://schema.org',
             '@type': 'ProfilePage',
-            '@id': `${resumeUrl}#profile`,
-            url: resumeUrl,
-            name: `${siteConfig.profile.name} Resume (${lang.toUpperCase()})`,
+            '@id': `${currentUrl}#profile`,
+            url: currentUrl,
+            name: title,
             inLanguage: lang,
             description,
             mainEntity: { '@id': personId },

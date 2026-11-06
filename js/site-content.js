@@ -126,7 +126,7 @@ export function clearContentCache() {
 }
 
 export async function loadSiteConfig() {
-    return validateSharedSiteConfig(await fetchContentJson('/content/site.json'));
+    return validateSharedSiteConfig(await fetchContentJson('/content/site.json?v=v2'));
 }
 
 export async function loadHomeContent() {
@@ -134,7 +134,7 @@ export async function loadHomeContent() {
 }
 
 export async function loadResumeContent(locale) {
-    return validateResumeContent(await fetchContentJson(`/content/resume/${locale}.json`));
+    return validateResumeContent(await fetchContentJson(`/content/resume/${locale}.json?v=v8`));
 }
 
 export function normalizeResumeTranslations(content) {
@@ -151,7 +151,8 @@ export function normalizeResumeTranslations(content) {
                 return accumulator;
             }, {})
         },
+        certifications: content.strings.certifications,
+        footer: content.strings.footer,
         connect: content.strings.connect
     };
 }
-

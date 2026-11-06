@@ -37,14 +37,14 @@
   const COLOR = {
     bg:        '#0f1520',
     grid:      'rgba(255,255,255,0.02)',
-    snakeHead: '#6ee7b7',
-    snakeBody: '#34d399',
+    snakeHead: '#d6a563',
+    snakeBody: '#a67d3e',
     snakeTail: '#059669',
-    food:      '#fbbf24',
+    food:      '#c4974f',
     foodGlow:  'rgba(251,191,36,0.18)',
-    obstacle:  '#f87171',
+    obstacle:  '#e26767',
     obstacleBg:'rgba(248,113,113,0.08)',
-    text404:   '#f87171',
+    text404:   '#e26767',
     wallFlash: '#ef4444',
   };
 

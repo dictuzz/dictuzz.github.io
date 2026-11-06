@@ -53,6 +53,9 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Check resume prerender
+        run: node scripts/prerender_resume.mjs --check
+
       - name: Validate Shared Content
         run: npm run validate:content
 

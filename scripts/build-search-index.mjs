@@ -22,17 +22,22 @@ for (const file of files) {
 
   let currentSection = '';
   let currentSubsection = '';
+  let currentSectionId = '';
+  let currentSubsectionId = '';
 
-  const re = /<(h2|h3)[^>]*>([\s\S]*?)<\/\1>|<li(?:\s+class="([^"]*)")?>([\s\S]*?)<\/li>/gi;
+  const re = /<(h2|h3)\b([^>]*)>([\s\S]*?)<\/\1>|<li(?:\s+class="([^"]*)")?>([\s\S]*?)<\/li>/gi;
   let m;
   while ((m = re.exec(content)) !== null) {
     if (m[1] === 'h2') {
-      currentSection = stripTags(m[2]).replace(/<!---->/g, '').trim();
+      currentSection = stripTags(m[3]).replace(/<!---->/g, '').trim();
+      currentSectionId = getHeadingId(m[2]);
       currentSubsection = '';
+      currentSubsectionId = '';
     } else if (m[1] === 'h3') {
-      currentSubsection = stripTags(m[2]).trim();
-    } else if (m[4] !== undefined) {
-      const item = parseLi(m[4], m[3] || '', category, slug, currentSection, currentSubsection);
+      currentSubsection = stripTags(m[3]).trim();
+      currentSubsectionId = getHeadingId(m[2]);
+    } else if (m[5] !== undefined) {
+      const item = parseLi(m[5], m[4] || '', category, slug, currentSection, currentSubsection, currentSectionId, currentSubsectionId);
       if (item) entries.push(item);
     }
   }
@@ -53,7 +58,7 @@ function extractVpDoc(html) {
   return html.slice(bodyStart, lastDiv);
 }
 
-function parseLi(html, liClass, category, slug, section, subsection) {
+function parseLi(html, liClass, category, slug, section, subsection, sectionId, subsectionId) {
   const starred = liClass.includes('starred');
   const strongMatch = html.match(/<strong>([\s\S]*?)<\/strong>/);
 
@@ -99,6 +104,7 @@ function parseLi(html, liClass, category, slug, section, subsection) {
   return {
     t: title,
     u: url,
+    p: `/resources/${slug}.html${subsectionId || sectionId ? `#${subsectionId || sectionId}` : ''}`,
     d: desc || '',
     c: category,
     s: slug,
@@ -106,6 +112,10 @@ function parseLi(html, liClass, category, slug, section, subsection) {
     su: subsection || '',
     r: starred ? 1 : 0
   };
+}
+
+function getHeadingId(attributes) {
+  return attributes.match(/\bid="([^"]+)"/i)?.[1] || '';
 }
 
 function decodeEntities(str) {

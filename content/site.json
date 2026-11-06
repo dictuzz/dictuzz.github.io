@@ -9,7 +9,7 @@
     "name": "Benedictus Richard Ricardo",
     "handle": "dictuzz",
     "title": "Systems Architect & Automation Specialist",
-    "longDescription": "Based in Bandung, Indonesia. Specializing in reporting automation, process standardization, and operational coordination. Currently a Route to Market Analyst at Tirta Utama Abadi and pursuing a Data Science degree at Universitas Terbuka.",
+    "longDescription": "Based in Bandung, Indonesia, Benedictus works in route-to-market analysis and builds practical systems for reporting, process improvement, and operations. He is also studying Data Science at Universitas Terbuka.",
     "motto": "Quam Plurimi et Quam Aptissimi.",
     "image": {
       "portrait": "/assets/images/Aku.webp",
@@ -113,42 +113,36 @@
     ]
   },
   "seo": {
-    "keywords": {
-      "home": "Systems Architect, Automation Specialist, workflow automation, operational governance, reporting automation, process improvement, route-to-market analysis, operations specialist, Bandung Indonesia",
-      "resume": "Systems Architect resume, Route to Market Analyst, Automation Specialist, workflow automation, operational leadership, KPI governance, reporting automation, Operations Specialist, Tirta Utama Abadi, Bandung Indonesia",
-      "portfolio": "workflow automation case study, operational governance, live event operations, systems architecture portfolio, Home Digital Indonesia",
-      "resources": "free software tools, digital resources, privacy tools, system utilities, open source guides, internet tools"
-    },
     "twitterCreator": "@dictuzz",
     "pages": {
       "home": {
         "path": "/",
-        "title": "Systems Architect & Automation Specialist — 12+ hrs/week of Manual Work Eliminated | dictuzz",
-        "description": "I've cut 12+ hrs/week of manual reporting, run governance for 34 team members, and kept 1,000-person events on track from backstage. Based in Bandung, GMT+7.",
+        "title": "dictuzz",
+        "description": "Portfolio, résumé, and curated resources by Benedictus Richard Ricardo, based in Bandung, Indonesia.",
         "ogType": "website"
       },
       "resume": {
         "path": "/resume/",
-        "title": "Systems Architect Resume | Workflow Automation, Operational Governance, 1K+ Event Scale | dictuzz",
-        "description": "Benedictus Richard Ricardo's resume — the work, the tools, and how to get in touch. 12+ hrs/week saved via reporting automation, 34-member org governance, 1,000+ event ops.",
+        "title": "Resume | dictuzz",
+        "description": "Route-to-Market Analyst with experience in reporting automation, operational governance, and data analysis. Explore Benedictus Richard Ricardo’s experience and skills.",
         "ogType": "profile"
       },
       "terms": {
         "path": "/terms/",
-        "title": "Terms & Conditions | dictuzz — Systems Architect & Automation Specialist",
-        "description": "Terms and Conditions for the website of Benedictus Richard Ricardo, Systems Architect & Automation Specialist.",
+        "title": "Terms | dictuzz",
+        "description": "Terms of use for the dictuzz website.",
         "ogType": "website"
       },
       "portfolio": {
         "path": "/portfolio/",
-        "title": "The Operational Record: Case Studies in Workflow Automation & Operational Governance | dictuzz",
-        "description": "Case studies from real operational work — how a reporting cycle got 12 hours back, how a 34-member council learned to keep score, and what backstage looks like at 1,000-person events.",
+        "title": "Portfolio | dictuzz",
+        "description": "Selected work in reporting automation, team governance, live-event operations, and technical readiness by Benedictus Richard Ricardo.",
         "ogType": "website"
       },
       "resources": {
         "path": "/resources/",
-        "title": "Free Tools, Software Guides & Digital Resources | dictuzz",
-        "description": "Curated directory of free software, privacy guides, system utilities, media archives, and digital resources.",
+        "title": "Resources | dictuzz",
+        "description": "A curated collection of tools, guides, and useful sites for software, privacy, learning, media, and more.",
         "ogType": "website"
       }
     }
