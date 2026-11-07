@@ -16,6 +16,7 @@ function setupEnvironment() {
   document.body.innerHTML = `
     <button id="theme-toggle"></button>
     <i id="theme-icon"></i>
+    <div id="site-brand"></div>
     <div class="bio-nameplate"></div>
     <div class="bio-title"></div>
     <div class="bio-text"></div>
@@ -125,8 +126,9 @@ test('initFolders renders centralized content on success', async (t) => {
   await import('../js/home.js?cachebust=' + Date.now());
   await new Promise(r => setImmediate(r));
 
-  assert.match(document.querySelector('.bio-nameplate').textContent, /Benedictus Richard Ricardo/);
-  assert.match(document.querySelector('.bio-title').textContent, /dictuzz/);
+  assert.match(document.querySelector('#site-brand').textContent, /dictuzz/);
+  assert.match(document.querySelector('.bio-title').textContent, /Benedictus Richard Ricardo/);
+  assert.match(document.querySelector('.bio-text').textContent, /Portfolio/);
   assert.match(document.querySelector('.accordion').textContent, /Portfolio/);
   assert.match(document.querySelector('.global-footer').textContent, /contact@dictuzz.me/);
 });

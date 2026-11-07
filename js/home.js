@@ -3,7 +3,7 @@ import { upgradeIcons } from './icon-kit.js';
 import {
     loadHomeContent,
     loadSiteConfig
-} from './site-content.js?v=v11';
+} from './site-content.js';
 import {
     applyManagedPageMetadata,
     applyStructuredData,
@@ -138,8 +138,8 @@ async function initFolders() {
     try {
         siteConfig = await loadSiteConfig();
         applyHomepageIdentity(siteConfig, null);
-    } catch (err) {
-        console.error('Failed to load site config:', err);
+    } catch {
+        // The directory remains usable when its shared identity data is unavailable.
     }
 
     try {
