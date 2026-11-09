@@ -406,13 +406,33 @@ def render_landing(text: str, data: dict, lang: str) -> str:
     text = replace_content(text, "data-feature-deck", esc(feature["deck"]))
     text = replace_content(text, "data-feature-byline", esc(feature["byline"]))
     text = replace_content(text, "data-feature-meta", esc(feature["meta"]))
-    text = set_attr(text, "data-feature-image", "src", feature["image"])
-    text = set_attr(text, "data-feature-image", "alt", feature.get("imageAlt", ""))
-    text = set_attr(text, "data-feature-image", "data-image-fit", feature.get("imageFit", "cover"))
-    if feature.get("imageWidth") and feature.get("imageHeight"):
-        text = set_attr(text, "data-feature-image", "width", str(feature["imageWidth"]))
-        text = set_attr(text, "data-feature-image", "height", str(feature["imageHeight"]))
-    text = replace_content(text, "data-feature-caption", esc(feature["caption"]))
+    if "data-feature-brief-tag" in text and "briefTag" in feature:
+        text = replace_content(text, "data-feature-brief-tag", esc(feature["briefTag"]))
+        text = replace_content(text, "data-feature-brief-badge", esc(feature["briefBadge"]))
+        num_html = esc(feature["briefMetric"]).replace("+", "<span>+</span>")
+        text = replace_content(text, "data-feature-brief-num", num_html)
+        text = replace_content(text, "data-feature-brief-metric-label", esc(feature["briefMetricLabel"]))
+        text = replace_content(text, "data-feature-brief-metric-note", esc(feature["briefMetricNote"]))
+
+        points_html = "\n".join(
+            f'          <div class="feature__brief-row">\n'
+            f'            <span class="feature__brief-index">{esc(pt["num"])}</span>\n'
+            f'            <div>\n'
+            f'              <strong>{esc(pt["title"])}</strong>\n'
+            f'              <p>{esc(pt["desc"])}</p>\n'
+            f'            </div>\n'
+            f'          </div>'
+            for pt in feature.get("briefPoints", [])
+        )
+        text = replace_content(text, "data-feature-brief-points", points_html)
+    elif "data-feature-image" in text and "image" in feature:
+        text = set_attr(text, "data-feature-image", "src", feature["image"])
+        text = set_attr(text, "data-feature-image", "alt", feature.get("imageAlt", ""))
+        text = set_attr(text, "data-feature-image", "data-image-fit", feature.get("imageFit", "cover"))
+        if feature.get("imageWidth") and feature.get("imageHeight"):
+            text = set_attr(text, "data-feature-image", "width", str(feature["imageWidth"]))
+            text = set_attr(text, "data-feature-image", "height", str(feature["imageHeight"]))
+        text = replace_content(text, "data-feature-caption", esc(feature["caption"]))
 
     # Issue index
     text = replace_content(text, "data-index-label", esc(landing["indexLabel"]))
@@ -497,21 +517,22 @@ def render_case(text: str, data: dict, slug: str, lang: str) -> str:
     text = replace_content(text, "data-case-byline-role", esc(case["bylineRole"]))
     text = replace_content(text, "data-case-byline-meta", esc(case["bylineMeta"]))
 
-    if case.get("image"):
-        image_attrs = [
-            f'src="{esc(case["image"])}"',
-            f'alt="{esc(case.get("imageAlt", ""))}"',
-            f'data-image-fit="{esc(case.get("imageFit", "cover"))}"',
-        ]
-        if case.get("imageWidth") and case.get("imageHeight"):
-            image_attrs.extend((f'width="{int(case["imageWidth"])}"', f'height="{int(case["imageHeight"])}"'))
-        figure = (
-            f'<img {" ".join(image_attrs)}>\n'
-            f'<figcaption>{esc(case.get("caption", ""))}</figcaption>'
-        )
-        text = replace_content(text, "data-case-figure", figure)
-    else:
-        text = add_attr(text, "data-case-figure", "hidden")
+    if "data-case-figure" in text:
+        if case.get("image"):
+            image_attrs = [
+                f'src="{esc(case["image"])}"',
+                f'alt="{esc(case.get("imageAlt", ""))}"',
+                f'data-image-fit="{esc(case.get("imageFit", "cover"))}"',
+            ]
+            if case.get("imageWidth") and case.get("imageHeight"):
+                image_attrs.extend((f'width="{int(case["imageWidth"])}"', f'height="{int(case["imageHeight"])}"'))
+            figure = (
+                f'<img {" ".join(image_attrs)}>\n'
+                f'<figcaption>{esc(case.get("caption", ""))}</figcaption>'
+            )
+            text = replace_content(text, "data-case-figure", figure)
+        else:
+            text = add_attr(text, "data-case-figure", "hidden")
 
     text = replace_content(text, "data-case-lead", esc(case["lead"]))
 

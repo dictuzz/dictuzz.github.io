@@ -331,15 +331,36 @@ function renderLanding(data) {
   setText('[data-feature-byline]', f.byline);
   setText('[data-feature-meta]', f.meta);
   setAttr('[data-feature-link]', 'href', localizedPath(f.href, state.lang));
-  setAttr('[data-feature-image]', 'src', f.image);
-  setAttr('[data-feature-image]', 'alt', f.imageAlt || '');
-  setAttr('[data-feature-image]', 'data-image-fit', f.imageFit || 'cover');
-  if (f.imageWidth && f.imageHeight) {
-    setAttr('[data-feature-image]', 'width', String(f.imageWidth));
-    setAttr('[data-feature-image]', 'height', String(f.imageHeight));
-  }
-  setText('[data-feature-caption]', f.caption);
   setText('[data-feature-cta]', data.ui.featureCta);
+
+  if (f.briefTag) {
+    setText('[data-feature-brief-tag]', f.briefTag);
+    setText('[data-feature-brief-badge]', f.briefBadge);
+    setHtml('[data-feature-brief-num]', escapeHtml(f.briefMetric).replace('+', '<span>+</span>'));
+    setText('[data-feature-brief-metric-label]', f.briefMetricLabel);
+    setText('[data-feature-brief-metric-note]', f.briefMetricNote);
+    const pointsEl = document.querySelector('[data-feature-brief-points]');
+    if (pointsEl && Array.isArray(f.briefPoints)) {
+      pointsEl.innerHTML = f.briefPoints.map(pt => `
+        <div class="feature__brief-row">
+          <span class="feature__brief-index">${escapeHtml(pt.num)}</span>
+          <div>
+            <strong>${escapeHtml(pt.title)}</strong>
+            <p>${escapeHtml(pt.desc)}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+  } else if (f.image) {
+    setAttr('[data-feature-image]', 'src', f.image);
+    setAttr('[data-feature-image]', 'alt', f.imageAlt || '');
+    setAttr('[data-feature-image]', 'data-image-fit', f.imageFit || 'cover');
+    if (f.imageWidth && f.imageHeight) {
+      setAttr('[data-feature-image]', 'width', String(f.imageWidth));
+      setAttr('[data-feature-image]', 'height', String(f.imageHeight));
+    }
+    setText('[data-feature-caption]', f.caption);
+  }
 
     setText('[data-index-label]', L.indexLabel);
   setText('[data-index-note]', L.indexNote);

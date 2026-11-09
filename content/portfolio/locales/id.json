@@ -76,12 +76,28 @@
       "byline": "Oleh Benedictus Richard Ricardo",
       "meta": "Bandung · Jul 2024 – Feb 2026 · 8 menit baca",
       "href": "/portfolio/cases/automation-mandate/",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Dasbor analitik menampilkan grafik performa mingguan dan metrik utama.",
-      "caption": "Tampilan dasbor untuk meninjau metrik performa mingguan.",
-      "imageFit": "contain",
-      "imageWidth": 800,
-      "imageHeight": 450
+      "briefTag": "Catatan Terpilih · Kasus 01",
+      "briefBadge": "Aktif di Produksi",
+      "briefMetric": "12+",
+      "briefMetricLabel": "Jam dihemat per minggu",
+      "briefMetricNote": "Beban pelaporan manual dipangkas dari siklus rutin",
+      "briefPoints": [
+        {
+          "num": "01",
+          "title": "Tiga Fungsi Diselaraskan",
+          "desc": "Keuangan, penjualan, dan operasi bersatu dalam satu struktur mingguan."
+        },
+        {
+          "num": "02",
+          "title": "Arsitektur Lembar Kerja",
+          "desc": "Logika agregasi otomatis menggantikan serah terima manual yang berulang."
+        },
+        {
+          "num": "03",
+          "title": "Rutinitas Bersama",
+          "desc": "Prosedur operasional standar menciptakan ritme tim yang dapat diandalkan."
+        }
+      ]
     },
     "indexLabel": "Karya pilihan",
     "indexNote": "Empat studi kasus mendalam: otomasi pelaporan, tata kelola organisasi, pelaksanaan acara langsung, dan kesiapan teknis.",
@@ -209,9 +225,6 @@
       "deck": "Saya merancang ulang sistem pelaporan dan SOP untuk mengurangi lebih dari 12 jam kerja manual setiap minggu. Proses yang sebelumnya bergantung pada satu orang kini dapat dijalankan bersama secara konsisten.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
       "bylineMeta": "Jul 2024 – Feb 2026 · Bandung, Indonesia",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Dasbor menampilkan grafik performa dan metrik pelaporan utama.",
-      "caption": "Tampilan dasbor dari alur kerja pelaporan.",
       "lead": "Tiga fungsi menghabiskan terlalu banyak waktu setiap minggu untuk menyusun laporan yang sama secara manual. Perbaikannya bukan sekadar mengganti perangkat lunak, tetapi menetapkan alur kerja dan aturan yang dapat diikuti bersama.",
       "process": {
         "kicker": "Proses",
@@ -281,10 +294,7 @@
       "next": {
         "slug": "kpi-governance-record",
         "title": "Kepengurusan 34 anggota membangun ritme kerja yang akuntabel."
-      },
-      "imageFit": "contain",
-      "imageWidth": 800,
-      "imageHeight": 450
+      }
     },
     "kpi-governance-record": {
       "documentTitle": "Tata Kelola KPI | dictuzz",
@@ -296,9 +306,6 @@
       "deck": "Bagaimana kepengurusan OSIS menerapkan KPI dan tinjauan kinerja berkala untuk mengelola organisasi dengan lebih terarah dan konsisten.",
       "bylineRole": "Ketua OSIS · SMA Santa Maria 2",
       "bylineMeta": "Nov 2021 – Nov 2022 · Bandung, Indonesia",
-      "image": "/portfolio/assets/photos/governance.jpg",
-      "imageAlt": "Tim berkumpul di meja konferensi untuk sesi kerja bersama.",
-      "caption": "Sesi kerja bersama tim tata kelola.",
       "lead": "Dewan beranggotakan 34 orang di 10 divisi membutuhkan ritme yang lebih kuat, akuntabilitas, dan struktur program. Pendekatan tata kelola berbasis KPI membantu menyelaraskan kepemimpinan dan pelaksanaan program.",
       "process": {
         "kicker": "Ritme tata kelola",
@@ -371,10 +378,7 @@
       "next": {
         "slug": "large-scale-event-ops",
         "title": "Operasional acara yang andal untuk lebih dari 1.000 peserta."
-      },
-      "imageFit": "cover",
-      "imageWidth": 800,
-      "imageHeight": 450
+      }
     },
     "large-scale-event-ops": {
       "documentTitle": "Operasional Acara | dictuzz",
@@ -386,9 +390,6 @@
       "deck": "Tiga tahun mengoordinasikan operasional panggung dan belakang panggung dalam acara berskala besar, termasuk memandu ibadah kaum muda yang dihadiri lebih dari 500 orang.",
       "bylineRole": "Koordinator Panggung & Pembawa Acara · Ultimate Event Organizer",
       "bylineMeta": "2022 – 2025 · Bandung, Indonesia",
-      "image": "/portfolio/assets/photos/events.jpg",
-      "imageAlt": "Konfeti memenuhi udara di atas penonton sebuah acara langsung.",
-      "caption": "Momen dari acara langsung yang didukung tim operasional.",
       "lead": "Acara berskala besar membutuhkan transisi yang tepat, koordinasi yang jelas, dan operasional belakang panggung yang tertata. Gangguan kecil mudah terlihat, sehingga seluruh tim perlu mengikuti alur yang sama.",
       "process": {
         "kicker": "Alur acara",
@@ -461,10 +462,7 @@
       "next": {
         "slug": "vertical-rescue-ops",
         "title": "Kesiapan dibangun jauh sebelum tugas lapangan dimulai."
-      },
-      "imageFit": "cover",
-      "imageWidth": 800,
-      "imageHeight": 450
+      }
     },
     "vertical-rescue-ops": {
       "documentTitle": "Operasi Vertical Rescue | dictuzz",
@@ -476,9 +474,6 @@
       "deck": "Lebih dari empat tahun mendukung perawatan peralatan dan pelatihan teknis di Vertical Rescue Indonesia. Kesiapan bergantung pada pemeriksaan yang konsisten dan persiapan yang disiplin.",
       "bylineRole": "Asisten Instruktur · Vertical Rescue Indonesia",
       "bylineMeta": "Jan 2021 – Sekarang · Indonesia",
-      "image": "/assets/images/vertical-rescue.jpg",
-      "imageAlt": "Peserta latihan penyelamatan mempraktikkan teknik tali di tebing berbatu.",
-      "caption": "Latihan penyelamatan teknis di lapangan.",
       "lead": "Pekerjaan kesiapan sering berlangsung tanpa sorotan, tetapi menentukan apakah peralatan, personel, dan prosedur dapat diandalkan saat kondisi menjadi sulit.",
       "process": {
         "kicker": "Pekerjaan kesiapan",
@@ -548,10 +543,7 @@
         "slug": "large-scale-event-ops",
         "title": "Operasional acara yang andal untuk lebih dari 1.000 peserta."
       },
-      "next": null,
-      "imageFit": "cover",
-      "imageWidth": 1216,
-      "imageHeight": 913
+      "next": null
     }
   }
 }

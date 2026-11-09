@@ -76,12 +76,28 @@
       "byline": "Von Benedictus Richard Ricardo",
       "meta": "Bandung · Juli 2024 – Feb. 2026 · 8 Min. Lesezeit",
       "href": "/portfolio/cases/automation-mandate/",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Ein Analytics-Dashboard mit Wochenverläufen und wichtigen Kennzahlen.",
-      "caption": "Dashboard-Ansicht zur Prüfung der wöchentlichen Leistungskennzahlen.",
-      "imageFit": "contain",
-      "imageWidth": 800,
-      "imageHeight": 450
+      "briefTag": "Ausgewählte Akte · Fall 01",
+      "briefBadge": "Aktiv in Produktion",
+      "briefMetric": "12+",
+      "briefMetricLabel": "Stunden pro Woche eingespart",
+      "briefMetricNote": "Manueller Berichtsaufwand aus dem regulären Zyklus entfernt",
+      "briefPoints": [
+        {
+          "num": "01",
+          "title": "Drei Funktionen abgestimmt",
+          "desc": "Finanzen, Vertrieb und Betrieb arbeiten mit einer gemeinsamen Struktur."
+        },
+        {
+          "num": "02",
+          "title": "Arbeitsmappen-Architektur",
+          "desc": "Automatisierte Aggregationslogik ersetzt wiederholte manuelle Übergaben."
+        },
+        {
+          "num": "03",
+          "title": "Gemeinsame Routine",
+          "desc": "Standardarbeitsanweisungen schaffen einen verlässlichen Wochenrhythmus."
+        }
+      ]
     },
     "indexLabel": "Ausgewählte Fallstudien",
     "indexNote": "Vier Fallstudien zu automatisiertem Berichtswesen, Organisationssteuerung, Live-Veranstaltungen und technischer Einsatzbereitschaft.",
@@ -209,9 +225,6 @@
       "deck": "Ich strukturierte den Berichtsprozess und die zugehörigen Arbeitsanweisungen neu. Dadurch sank der manuelle Aufwand um mehr als zwölf Stunden pro Woche. Das Team kann den Ablauf nun zuverlässig und unabhängig von einzelnen Personen wiederholen.",
       "bylineRole": "Management Trainee · Home Digital Indonesia",
       "bylineMeta": "Juli 2024 – Feb. 2026 · Bandung, Indonesien",
-      "image": "/portfolio/assets/photos/automation.jpg",
-      "imageAlt": "Ein Dashboard mit Leistungsdiagrammen und wichtigen Kennzahlen für Berichte.",
-      "caption": "Eine Dashboard-Ansicht aus einem Berichtsablauf.",
       "lead": "Drei Bereiche verloren jede Woche viel Zeit mit demselben manuellen Berichtsprozess. Entscheidend waren klare Abläufe und Zuständigkeiten, nicht zusätzliche Software.",
       "process": {
         "kicker": "Der Prozess",
@@ -281,10 +294,7 @@
       "next": {
         "slug": "kpi-governance-record",
         "title": "Eine Schülervertretung mit 34 Mitgliedern arbeitet mit klarer Verantwortung."
-      },
-      "imageFit": "contain",
-      "imageWidth": 800,
-      "imageHeight": 450
+      }
     },
     "kpi-governance-record": {
       "documentTitle": "KPI-Steuerung | dictuzz",
@@ -296,9 +306,6 @@
       "deck": "Wie eine Schülervertretung KPIs und regelmäßige Auswertungen einführte, um Programme und Zuständigkeiten verlässlicher zu koordinieren.",
       "bylineRole": "Vorsitzender der Schülervertretung · SMA Santa Maria 2",
       "bylineMeta": "Nov. 2021 – Nov. 2022 · Bandung, Indonesien",
-      "image": "/portfolio/assets/photos/governance.jpg",
-      "imageAlt": "Ein Team trifft sich zu einer Arbeitssitzung an einem Konferenztisch.",
-      "caption": "Eine Arbeitssitzung mit dem Governance-Team.",
       "lead": "Die Schülervertretung mit 34 Mitgliedern in zehn Abteilungen benötigte klare Zuständigkeiten und einen verlässlichen Überblick über den Projektfortschritt. KPIs und wöchentliche Auswertungen schufen dafür eine gemeinsame Grundlage.",
       "process": {
         "kicker": "Arbeitsrhythmus der Organisation",
@@ -371,10 +378,7 @@
       "next": {
         "slug": "large-scale-event-ops",
         "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden."
-      },
-      "imageFit": "cover",
-      "imageWidth": 800,
-      "imageHeight": 450
+      }
     },
     "large-scale-event-ops": {
       "documentTitle": "Veranstaltungsbetrieb | dictuzz",
@@ -386,9 +390,6 @@
       "deck": "Drei Jahre Bühnen- und Backstage-Koordination bei Großveranstaltungen, darunter die Moderation eines Jugendgottesdienstes mit mehr als 500 Teilnehmenden.",
       "bylineRole": "Bühnenkoordination und Moderation · Ultimate Event Organizer",
       "bylineMeta": "2022 – 2025 · Bandung, Indonesien",
-      "image": "/portfolio/assets/photos/events.jpg",
-      "imageAlt": "Konfetti schwebt über dem Publikum einer Live-Veranstaltung.",
-      "caption": "Ein Moment einer Veranstaltung, die das Betriebsteam unterstützt hat.",
       "lead": "Großveranstaltungen erfordern präzise Übergänge, klare Absprachen und verlässliche Abläufe hinter der Bühne. Kleine Störungen fallen sofort auf; deshalb braucht jedes Team einen gemeinsamen Plan.",
       "process": {
         "kicker": "Ablaufplan",
@@ -461,10 +462,7 @@
       "next": {
         "slug": "vertical-rescue-ops",
         "title": "Einsatzbereitschaft entsteht lange vor einem Rettungseinsatz."
-      },
-      "imageFit": "cover",
-      "imageWidth": 800,
-      "imageHeight": 450
+      }
     },
     "vertical-rescue-ops": {
       "documentTitle": "Vertical-Rescue-Einsätze | dictuzz",
@@ -476,9 +474,6 @@
       "deck": "Seit mehr als vier Jahren unterstütze ich bei Vertical Rescue Indonesia die Ausrüstungspflege und das technische Training. Einsatzbereitschaft beruht auf konsequenter Vorbereitung und klaren Standards.",
       "bylineRole": "Assistenztrainer · Vertical Rescue Indonesia",
       "bylineMeta": "Jan. 2021 – heute · Indonesien",
-      "image": "/assets/images/vertical-rescue.jpg",
-      "imageAlt": "Rettungskräfte üben Seiltechniken an einer Felswand.",
-      "caption": "Technisches Rettungstraining im Gelände.",
       "lead": "Vorbereitung bleibt meist unbeachtet. Sie entscheidet jedoch darüber, ob Ausrüstung, Team und Abläufe zuverlässig funktionieren, wenn es darauf ankommt.",
       "process": {
         "kicker": "Einsatzbereitschaft",
@@ -548,10 +543,7 @@
         "slug": "large-scale-event-ops",
         "title": "Verlässliche Abläufe für Veranstaltungen mit mehr als 1.000 Teilnehmenden."
       },
-      "next": null,
-      "imageFit": "cover",
-      "imageWidth": 1216,
-      "imageHeight": 913
+      "next": null
     }
   }
 }
