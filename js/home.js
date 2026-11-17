@@ -1,0 +1,171 @@
+import { ThemeManager, updateThemeColor } from './ui-kit.js';
+import { upgradeIcons } from './icon-kit.js';
+import {
+    loadHomeContent,
+    loadSiteConfig
+} from './site-content.js';
+import {
+    applyManagedPageMetadata,
+    applyStructuredData,
+    buildHomeStructuredData
+} from './site-seo.js?v=v3';
+import {
+    applyGlobalFooter,
+    renderDirectoryUnavailableMarkup,
+    renderFoldersMarkup
+} from './site-renderers.js';
+
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+const themeManager = new ThemeManager({
+    toggleElement: themeToggle,
+    iconElement: themeIcon,
+    defaultTheme: 'light',
+    storageKey: 'dictuzz-theme'
+});
+
+updateThemeColor(themeManager.getMode(), themeMeta);
+window.addEventListener('theme-changed', (event) => {
+    updateThemeColor(event.detail?.theme || 'light', themeMeta);
+});
+
+const dateEl = document.getElementById('local-date');
+const timeEl = document.getElementById('local-time');
+function getLocalTimeZone() {
+    try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Bangkok';
+    } catch {
+        return 'Asia/Bangkok';
+    }
+}
+
+function updateLocalTime() {
+    if (!dateEl || !timeEl) return;
+
+    const timeZone = getLocalTimeZone();
+    const now = new Date();
+
+    dateEl.textContent = new Intl.DateTimeFormat(undefined, {
+        timeZone,
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+    }).format(now);
+
+    timeEl.textContent = new Intl.DateTimeFormat(undefined, {
+        timeZone,
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    }).format(now);
+}
+
+function closeFolder(folder) {
+    const trigger = folder.querySelector('.folder__trigger');
+    const panel = folder.querySelector('.folder__panel');
+    if (!trigger || !panel) return;
+
+    folder.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    panel.hidden = true;
+    panel.setAttribute('inert', '');
+}
+
+function openFolder(folder) {
+    const trigger = folder.querySelector('.folder__trigger');
+    const panel = folder.querySelector('.folder__panel');
+    if (!trigger || !panel) return;
+
+    folder.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    panel.hidden = false;
+    panel.removeAttribute('inert');
+}
+
+function bindFolderAccordion() {
+    const folders = [...document.querySelectorAll('[data-folder]')];
+    folders.forEach((folder) => {
+        const trigger = folder.querySelector('.folder__trigger');
+        if (!trigger) return;
+
+        if (trigger.getAttribute('aria-expanded') === 'true') {
+            folder.classList.add('is-open');
+        } else {
+            closeFolder(folder);
+        }
+
+        trigger.addEventListener('click', () => {
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            if (isExpanded) {
+                closeFolder(folder);
+                return;
+            }
+
+            openFolder(folder);
+        });
+    });
+}
+
+function applyHomepageIdentity(siteConfig, homeContent) {
+    const brand = document.getElementById('site-brand');
+    const title = document.querySelector('.bio-title');
+    const subtitle = document.querySelector('.bio-text');
+    const statusLabel = document.querySelector('.bio-status span:last-child');
+    const avatar = document.querySelector('.bio-avatar img');
+
+    if (brand) brand.textContent = siteConfig?.site?.name || 'dictuzz';
+    if (title) title.textContent = siteConfig?.profile?.name || 'Benedictus Richard Ricardo';
+    if (subtitle) subtitle.textContent = 'Portfolio · Resume · Resources';
+    if (statusLabel && homeContent?.hero?.status) statusLabel.textContent = homeContent.hero.status;
+    if (avatar && siteConfig?.profile?.name) avatar.setAttribute('alt', siteConfig.profile.name);
+
+    if (siteConfig) {
+        applyManagedPageMetadata(siteConfig, 'home');
+        applyStructuredData('home-structured-data', buildHomeStructuredData(siteConfig));
+        applyGlobalFooter(siteConfig);
+    }
+}
+
+async function initFolders() {
+    const accordionContainer = document.querySelector('.accordion');
+    if (!accordionContainer) return;
+    const hasPreRenderedFolders = Boolean(accordionContainer.querySelector('[data-folder]'));
+    if (hasPreRenderedFolders) bindFolderAccordion();
+
+    let siteConfig = null;
+    let homeContent = null;
+
+    try {
+        siteConfig = await loadSiteConfig();
+        applyHomepageIdentity(siteConfig, null);
+    } catch {
+    }
+
+    try {
+        homeContent = await loadHomeContent();
+        if (siteConfig) applyHomepageIdentity(siteConfig, homeContent);
+        if (!hasPreRenderedFolders) {
+            accordionContainer.innerHTML = renderFoldersMarkup(homeContent.folders);
+            bindFolderAccordion();
+        }
+        upgradeIcons(document);
+    } catch {
+        if (!hasPreRenderedFolders) {
+            accordionContainer.innerHTML = renderDirectoryUnavailableMarkup();
+            bindFolderAccordion();
+        }
+        upgradeIcons(document);
+    }
+}
+
+const LOCAL_TIME_INTERVAL_MS = 60_000;
+
+
+
+upgradeIcons(document);
+initFolders();
+updateLocalTime();
+window.setInterval(updateLocalTime, LOCAL_TIME_INTERVAL_MS);
+

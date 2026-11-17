@@ -1,0 +1,151 @@
+{
+  "site": {
+    "name": "dictuzz",
+    "domain": "dictuzz.me",
+    "siteUrl": "https://dictuzz.me",
+    "themeColorLight": "#f5efe4"
+  },
+  "profile": {
+    "name": "Benedictus Richard Ricardo",
+    "handle": "dictuzz",
+    "title": "Route-to-Market Analyst",
+    "longDescription": "Based in Bandung, Indonesia, Benedictus Richard Ricardo works in route-to-market analysis and improves reporting and operational processes with practical automation. His projects span cross-functional workflows, governance, and live operations.",
+    "motto": "Quam Plurimi et Quam Aptissimi.",
+    "image": {
+      "portrait": "/assets/images/Aku.webp",
+      "og": "/og-image.png",
+      "resumeOg": "/og-image.png",
+      "alt": "Illustrated profile card for Benedictus Richard Ricardo, with dictuzz branding and the tagline Automate, Create, Solve."
+    },
+    "location": {
+      "city": "Bandung",
+      "countryCode": "ID",
+      "countryName": "Indonesia",
+      "timeZone": "Asia/Jakarta"
+    },
+    "alumniOf": {
+      "name": "Universitas Terbuka",
+      "url": "https://www.ut.ac.id/"
+    },
+    "knowsAbout": [
+      "Route-to-market planning",
+      "Workflow automation",
+      "Operational governance",
+      "Process design",
+      "Reporting automation",
+      "Live operations"
+    ]
+  },
+  "contact": {
+    "email": "contact@dictuzz.me",
+    "whatsappLabel": "WhatsApp",
+    "whatsappUrl": "https://wa.me/6285186888630",
+    "calendarUrl": "https://calendar.app.google/39u2qGH6ybaFenhdA"
+  },
+  "socials": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/dictuzz",
+      "icon": "i-ph-linkedin-logo-duotone"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/dictuzz",
+      "icon": "i-ph-github-logo-duotone"
+    },
+    {
+      "id": "kaggle",
+      "label": "Kaggle",
+      "url": "https://www.kaggle.com/dictuzz",
+      "icon": "i-ph-student-duotone"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com/dictuzz",
+      "icon": "i-ph-instagram-logo-duotone"
+    },
+    {
+      "id": "threads",
+      "label": "Threads",
+      "url": "https://www.threads.net/@dictuzz",
+      "icon": "i-ph-at-duotone"
+    },
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": "https://www.facebook.com/share/1BBT96Ypdf/",
+      "icon": "i-ph-facebook-logo-duotone"
+    },
+    {
+      "id": "steam",
+      "label": "Steam",
+      "url": "https://steamcommunity.com/profiles/76561199806080510",
+      "icon": "i-ph-game-controller-duotone"
+    },
+    {
+      "id": "discord",
+      "label": "Discord",
+      "url": "https://discord.gg/DVCySSUM",
+      "icon": "i-ph-discord-logo-duotone"
+    }
+  ],
+  "navigation": {
+    "footer": [
+      {
+        "label": "Links",
+        "href": "/"
+      },
+      {
+        "label": "Resume",
+        "href": "/resume/"
+      },
+      {
+        "label": "Portfolio",
+        "href": "/portfolio/"
+      },
+      {
+        "label": "Resources",
+        "href": "/resources/"
+      }
+    ]
+  },
+  "seo": {
+    "twitterCreator": "@dictuzz",
+    "pages": {
+      "home": {
+        "path": "/",
+        "title": "dictuzz",
+        "shareTitle": "dictuzz | Benedictus Richard Ricardo",
+        "description": "Benedictus Richard Ricardo is a Route-to-Market Analyst focused on reporting automation, operational governance, and process design. Explore selected work and experience.",
+        "ogType": "website"
+      },
+      "resume": {
+        "path": "/resume/",
+        "title": "Resume | dictuzz",
+        "description": "Benedictus Richard Ricardo is a Route-to-Market Analyst with experience in territory planning, reporting automation, operational governance, and data analysis.",
+        "ogType": "profile"
+      },
+      "terms": {
+        "path": "/terms/",
+      "title": "Site Terms | dictuzz",
+      "description": "Terms governing use of dictuzz.me and its linked resources.",
+        "ogType": "website"
+      },
+      "portfolio": {
+        "path": "/portfolio/",
+        "title": "Portfolio | dictuzz",
+        "description": "Selected work in reporting automation, team governance, live-event operations, and technical readiness by Benedictus Richard Ricardo.",
+        "ogType": "website"
+      },
+      "resources": {
+        "path": "/resources/",
+        "title": "Resources | dictuzz",
+        "description": "A curated collection of tools, guides, and useful sites for software, privacy, learning, media, and more.",
+        "ogType": "website"
+      }
+    }
+  }
+}

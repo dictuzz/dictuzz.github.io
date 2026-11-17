@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "status": "Available"
+  },
+  "folders": [
+    {
+      "id": "links",
+      "title": "Links",
+      "summary": "Portfolio, resume, and other work.",
+      "icon": "i-ph-folder-open-duotone",
+      "defaultOpen": true,
+      "items": [
+        {
+          "label": "Portfolio",
+          "icon": "i-ph-squares-four-duotone",
+          "href": "/portfolio/",
+          "external": false
+        },
+        {
+          "label": "Resume",
+          "icon": "i-ph-file-text-duotone",
+          "href": "/resume/",
+          "external": false
+        },
+        {
+          "label": "GitHub Projects",
+          "icon": "i-ph-github-logo-duotone",
+          "href": "https://github.com/dictuzz",
+          "external": true
+        },
+        {
+          "label": "Resources",
+          "icon": "i-ph-link-duotone",
+          "href": "/resources/",
+          "external": false
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact Me",
+      "summary": "Email, WhatsApp, or book a call.",
+      "icon": "i-ph-paper-plane-tilt-duotone",
+      "defaultOpen": false,
+      "items": [
+        {
+          "label": "Email",
+          "icon": "i-ph-envelope-duotone",
+          "href": "mailto:contact@dictuzz.me",
+          "external": false
+        },
+        {
+          "label": "Book a Call",
+          "icon": "i-ph-calendar-check-duotone",
+          "href": "https://calendar.app.google/39u2qGH6ybaFenhdA",
+          "external": true
+        },
+        {
+          "label": "WhatsApp",
+          "icon": "i-ph-whatsapp-logo-duotone",
+          "href": "https://wa.me/6285186888630",
+          "external": true
+        }
+      ]
+    },
+    {
+      "id": "socials",
+      "title": "Socials",
+      "summary": "Where else you can find me.",
+      "icon": "i-ph-share-network-duotone",
+      "defaultOpen": false,
+      "items": [
+        {
+          "label": "LinkedIn",
+          "icon": "i-ph-linkedin-logo-duotone",
+          "href": "https://linkedin.com/in/dictuzz",
+          "external": true
+        },
+        {
+          "label": "Instagram",
+          "icon": "i-ph-instagram-logo-duotone",
+          "href": "https://instagram.com/dictuzz",
+          "external": true
+        },
+        {
+          "label": "Facebook",
+          "icon": "i-ph-facebook-logo-duotone",
+          "href": "https://www.facebook.com/share/1BBT96Ypdf/",
+          "external": true
+        },
+        {
+          "label": "Threads",
+          "icon": "i-ph-at-duotone",
+          "href": "https://www.threads.net/@dictuzz",
+          "external": true
+        },
+        {
+          "label": "GitHub",
+          "icon": "i-ph-github-logo-duotone",
+          "href": "https://github.com/dictuzz",
+          "external": true
+        },
+        {
+          "label": "Kaggle",
+          "icon": "i-ph-student-duotone",
+          "href": "https://www.kaggle.com/dictuzz",
+          "external": true
+        },
+        {
+          "label": "Steam",
+          "icon": "i-ph-game-controller-duotone",
+          "href": "https://steamcommunity.com/profiles/76561199806080510",
+          "external": true
+        },
+        {
+          "label": "Discord",
+          "icon": "i-ph-discord-logo-duotone",
+          "href": "https://discord.gg/DVCySSUM",
+          "external": true
+        }
+      ]
+    }
+  ]
+}

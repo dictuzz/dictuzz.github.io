@@ -1,0 +1,165 @@
+name: Validate Site
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/**'
+      - 'docs/**'
+      - 'js/**'
+      - 'css/**'
+      - 'assets/**'
+      - 'resume/**'
+      - 'portfolio/**'
+      - 'resources/**'
+      - 'index.html'
+      - '404.html'
+      - 'CNAME'
+      - '.nojekyll'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'site.webmanifest'
+      - 'sw.js'
+      - 'llms.txt'
+      - 'apple-touch-icon.png'
+      - 'favicon*'
+      - 'og-image.png'
+      - 'web-app-manifest-*.png'
+      - 'lighthouserc.json'
+      - 'terms/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/deploy.yml'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check portfolio prerender
+        run: python3 scripts/prerender_portfolio.py --check
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Check homepage prerender
+        run: node scripts/prerender_home.mjs --check
+
+      - name: Check resume prerender
+        run: node scripts/prerender_resume.mjs --check
+
+      - name: Validate Shared Content
+        run: npm run validate:content
+
+      - name: Run Root Tests
+        run: npm test
+
+  accessibility:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Start Server
+        run: npm run serve:ci &
+        env:
+          PORT: 8000
+
+      - name: Wait for Server
+        run: sleep 5 && curl -f http://localhost:8000
+
+      - name: Prepare results directory
+        run: mkdir -p results
+
+      - name: Run axe-core (WCAG 2.1 AA)
+        run: npm run test:a11y
+
+      - name: Run Lighthouse Accessibility & Category Budgets
+        run: npm run test:a11y:ci
+
+      - name: Upload axe report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: axe-a11y-report
+          path: results/axe-report.json
+
+      - name: Upload Lighthouse report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-a11y-report
+          path: results/lighthouse-a11y.json
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [validate, accessibility]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare site artifact
+        run: |
+          mkdir _site
+          rsync -a --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '_site' \
+            --exclude 'node_modules' \
+            --exclude 'tests' \
+            --exclude 'results' \
+            ./ _site/
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

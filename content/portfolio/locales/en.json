@@ -1,0 +1,549 @@
+{
+  "_locale": "en",
+  "ui": {
+    "skipLink": "Skip to main content",
+    "brand": "dictuzz",
+    "brandSub": "Route-to-market · Reporting · Operations",
+    "topbar": {
+      "home": "Home",
+      "resume": "Resume",
+      "files": "All Files",
+      "contact": "Contact"
+    },
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "languageLabel": "Language",
+    "languages": {
+      "en": "EN",
+      "id": "ID",
+      "de": "DE"
+    },
+    "languageNames": {
+      "en": "English",
+      "id": "Indonesian",
+      "de": "German"
+    },
+    "byline": "By",
+    "magazineLabel": "Design · Automation · Operations",
+    "workCta": "Read the lead case",
+    "contactCta": "Start a conversation",
+    "artifactKicker": "Case 01 / Reporting system",
+    "artifactLabel": "Hours saved",
+    "artifactPeriod": "every week",
+    "artifactAria": "Result: More than 12 hours saved each week",
+    "previous": "Previous",
+    "next": "Next",
+    "allFiles": "All case studies",
+    "scope": "Scope",
+    "tools": "Tools & Methods",
+    "impact": "Impact",
+    "evidence": "Evidence",
+    "featureCta": "Read the case study",
+    "contactStrapMid": "Open for work",
+    "contactStrapEnd": "Available for conversations",
+    "footer": {
+      "home": "Home",
+      "resume": "Resume",
+      "portfolio": "Portfolio",
+      "resources": "Resources",
+      "terms": "Terms",
+      "navLabel": "Global navigation",
+      "emailAria": "Email Benedictus",
+      "allRights": "All rights reserved."
+    },
+    "artifactTeams": [
+      "FINANCE",
+      "SALES",
+      "OPERATIONS"
+    ],
+    "systemRole": "Route-to-Market Analyst"
+  },
+  "landing": {
+    "documentTitle": "Portfolio | dictuzz",
+    "shareTitle": "Selected Work in Reporting & Operations | dictuzz",
+    "metaDescription": "Selected case studies by Benedictus Richard Ricardo in reporting automation, operational governance, event delivery, and technical readiness.",
+    "masthead": {
+      "wordmark": "Systems that give time back.",
+      "subtitle": "I design workflow automation, governance, and live-event systems that help teams focus on meaningful work.",
+      "strapLeft": "Field notes / 01",
+      "strapCenter": "Bandung · Indonesia",
+      "strapRight": "A systems practice"
+    },
+    "feature": {
+      "kicker": "Case study / Workflow automation",
+      "headline": "A reporting system that saves the team 12+ hours each week.",
+      "deck": "A manual reporting cycle connected finance, sales, and operations. I rebuilt the workbook logic and documented a shared process, removing more than 12 hours of recurring manual work each week.",
+      "byline": "By Benedictus Richard Ricardo",
+      "meta": "Bandung · Jul 2024 – Feb 2026 · 8 min read",
+      "href": "/portfolio/cases/automation-mandate/",
+      "briefTag": "Featured Record · Case 01",
+      "briefBadge": "Active in Production",
+      "briefMetric": "12+",
+      "briefMetricLabel": "Hours saved every week",
+      "briefMetricNote": "Manual reporting workload removed from recurring cycle",
+      "briefPoints": [
+        {
+          "num": "01",
+          "title": "Three Functions Aligned",
+          "desc": "Finance, sales, and operations united on one weekly structure."
+        },
+        {
+          "num": "02",
+          "title": "Workbook Architecture",
+          "desc": "Automated aggregation logic replacing repetitive manual handoffs."
+        },
+        {
+          "num": "03",
+          "title": "Shared Routine",
+          "desc": "Standard operating procedures creating a dependable team cadence."
+        }
+      ]
+    },
+    "indexLabel": "Selected work",
+    "indexNote": "Four detailed case studies span reporting automation, organization-wide governance, live-event execution and technical readiness.",
+    "secondary": [
+      {
+        "slug": "kpi-governance-record",
+        "kicker": "Governance · Leadership",
+        "title": "A 34-member student council established clear accountability.",
+        "deck": "How a student council introduced KPIs and regular reviews to coordinate its programs and responsibilities more consistently.",
+        "meta": "Student Council President · 10 divisions · 12 partner schools",
+        "href": "/portfolio/cases/kpi-governance-record/"
+      },
+      {
+        "slug": "large-scale-event-ops",
+        "kicker": "Live Operations",
+        "title": "Reliable operations for events with 1,000+ attendees.",
+        "deck": "Three years of stage and backstage coordination for large events, including hosting a youth service for more than 500 attendees.",
+        "meta": "Stage Coordinator & MC · 2022 – 2025",
+        "href": "/portfolio/cases/large-scale-event-ops/"
+      },
+      {
+        "slug": "vertical-rescue-ops",
+        "kicker": "Training & Readiness",
+        "title": "Readiness is built long before a field assignment.",
+        "deck": "More than four years supporting equipment readiness and technical rescue training at Vertical Rescue Indonesia.",
+        "meta": "Assistant Instructor · Jan 2021 – Present",
+        "href": "/portfolio/cases/vertical-rescue-ops/"
+      },
+      {
+        "slug": "tua-spatial-analyzer",
+        "kicker": "Analytics & Routing",
+        "title": "Spatial Analyzer",
+        "deck": "A spatial analysis tool built for Tirta Utama Abadi to evaluate and optimize route efficiency.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/TUASpatial"
+      },
+      {
+        "slug": "tua-route-validator",
+        "kicker": "Operations",
+        "title": "Route Validator",
+        "deck": "An operational tool developed for validating route compliance and delivery performance at Tirta Utama Abadi.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/49cpunb"
+      },
+      {
+        "slug": "tua-online-meeting-rtm",
+        "kicker": "Management",
+        "title": "Online Meeting RTM",
+        "deck": "A centralized management and tracking dashboard for Tirta Utama Abadi online meetings.",
+        "meta": "Tirta Utama Abadi",
+        "href": "https://bit.ly/RTMTUA"
+      },
+      {
+        "slug": "sample-report",
+        "kicker": "Analytics",
+        "title": "Sample Report",
+        "deck": "A sample data report built on Google Data Studio.",
+        "meta": "Data Studio",
+        "href": "https://datastudio.google.com/s/mT9LfU0JTPc"
+      }
+    ],
+    "editor": {
+      "kicker": "The person behind the systems",
+      "title": "Benedictus Richard Ricardo",
+      "lede": "I work where processes cross teams, handoffs lose clarity, or important work depends on one person’s memory. I make those workflows clear, documented, and repeatable.",
+      "body": [
+        "A good system makes the next step clear, reduces avoidable repetition, and helps teams work reliably under pressure.",
+        "I am studying Data Science at Universitas Terbuka, where I am strengthening my approach to process design through data and evidence."
+      ],
+      "facts": [
+        {
+          "label": "Base",
+          "value": "Bandung, Indonesia · UTC+7"
+        },
+        {
+          "label": "Studying",
+          "value": "Data Science, Universitas Terbuka"
+        },
+        {
+          "label": "Languages",
+          "value": "English · Indonesian · German"
+        },
+        {
+          "label": "Style",
+          "value": "Structured, calm, evidence-led"
+        }
+      ]
+    },
+    "contact": {
+      "kicker": "Have a system to untangle?",
+      "title": "Let’s make the work run better.",
+      "body": "If your team spends too much time on manual work, unclear handoffs, or live-event coordination, let’s talk. I am based in GMT+7 and work across systems, automation, and operations.",
+      "actions": [
+        {
+          "type": "primary",
+          "label": "contact@dictuzz.me",
+          "href": "mailto:contact@dictuzz.me",
+          "icon": "envelope"
+        },
+        {
+          "type": "ghost",
+          "label": "Schedule a meeting",
+          "href": "https://calendar.app.google/39u2qGH6ybaFenhdA",
+          "icon": "calendar",
+          "external": true
+        },
+        {
+          "type": "ghost",
+          "label": "LinkedIn",
+          "href": "https://linkedin.com/in/dictuzz",
+          "icon": "linkedin",
+          "external": true
+        }
+      ]
+    }
+  },
+  "cases": {
+    "automation-mandate": {
+      "documentTitle": "Reporting Automation | dictuzz",
+      "shareTitle": "12+ Hours Saved Each Week | dictuzz",
+      "metaDescription": "Built a shared Excel reporting workflow for finance, sales, and operations at Home Digital Indonesia, reducing recurring manual work by more than 12 hours each week.",
+      "vol": "Vol. I / No. 1",
+      "kicker": "Workflow Automation · Home Digital Indonesia",
+      "title": "A reporting system that saves the team 12+ hours each week.",
+      "deck": "I redesigned the reporting workflow and its supporting procedures, removing more than 12 hours of manual work each week. The team can now repeat the process reliably without depending on one person.",
+      "bylineRole": "Management Trainee · Home Digital Indonesia",
+      "bylineMeta": "Jul 2024 – Feb 2026 · Bandung, Indonesia",
+      "lead": "Three functions were spending too much time each week on the same manual reporting cycle. The key improvement was a clear, shared process rather than additional software.",
+      "process": {
+        "kicker": "The process",
+        "title": "From manual handoffs to one weekly rhythm",
+        "description": "Three functions. One reporting structure. A routine the team could repeat.",
+        "beforeLabel": "Before · repeated manual steps",
+        "before": [
+          "Finance · Sales · Operations",
+          "Repeated spreadsheet reformatting",
+          "Manual handoffs"
+        ],
+        "afterLabel": "After · shared weekly routine",
+        "after": [
+          "Three functions",
+          "Excel logic + shared SOP",
+          "Repeatable weekly report"
+        ]
+      },
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "Finance, sales, and operations were collecting the same information, reformatting spreadsheets, and handing off incomplete files. The process worked, but it required significant time and depended too heavily on individual memory."
+        },
+        {
+          "heading": "What was built",
+          "body": "I redesigned the Excel workbook logic and documented shared procedures for each step. I also mapped the reporting workflow end to end so the team could follow the same process each Monday with fewer errors and handoff delays."
+        },
+        {
+          "heading": "Outcome",
+          "body": "The redesigned workflow removed about 12 hours of manual work each week. It also clarified responsibilities and allowed the team to maintain the process when someone was away."
+        }
+      ],
+      "pull": "More than 12 hours of manual work removed each week, replaced by a process the team can repeat.",
+      "evidence": [
+        "Built Excel reporting automation that saves the team more than 12 hours of manual work each week.",
+        "Documented shared procedures for finance, sales, and operations to make the reporting cycle consistent.",
+        "Replaced person-dependent reminders with a documented weekly standard."
+      ],
+      "impact": [
+        {
+          "value": "12+",
+          "label": "Hours saved each week",
+          "note": "Manual reporting effort removed from the recurring cycle."
+        },
+        {
+          "value": "3",
+          "label": "Functions aligned",
+          "note": "Finance, sales, and operations on one structure."
+        },
+        {
+          "value": "1",
+          "label": "Shared routine",
+          "note": "Automation and SOPs combined into a repeatable weekly flow."
+        }
+      ],
+      "scope": [
+        "Reporting workflow design",
+        "Excel automation",
+        "Procedure standardization"
+      ],
+      "tools": [
+        "Excel",
+        "Operational reporting",
+        "Standard operating procedures"
+      ],
+      "prev": null,
+      "next": {
+        "slug": "kpi-governance-record",
+        "title": "A 34-member student council established clear accountability."
+      }
+    },
+    "kpi-governance-record": {
+      "documentTitle": "KPI Governance | dictuzz",
+      "shareTitle": "Clear Accountability Across 10 Divisions | dictuzz",
+      "metaDescription": "Introduced KPIs and regular reviews for a 34-member student council, clarifying accountability across 10 divisions and 12 partner schools.",
+      "vol": "Vol. I / No. 2",
+      "kicker": "Governance · Leadership · SMA Santa Maria 2",
+      "title": "A 34-member student council established clear accountability.",
+      "deck": "How a student council introduced KPIs and regular reviews to coordinate its programs and responsibilities more consistently.",
+      "bylineRole": "Student Council President · SMA Santa Maria 2",
+      "bylineMeta": "Nov 2021 – Nov 2022 · Bandung, Indonesia",
+      "lead": "A 34-member student council across ten divisions needed clearer responsibilities and better visibility into program delivery. KPIs and weekly reviews created a shared operating rhythm.",
+      "process": {
+        "kicker": "Governance rhythm",
+        "title": "Make progress visible across ten divisions",
+        "description": "Clear expectations and weekly reviews gave the council a shared view of progress.",
+        "beforeLabel": "Before · updates without a shared view",
+        "before": [
+          "10 divisions",
+          "Updates in group chats",
+          "Progress hard to see"
+        ],
+        "afterLabel": "After · a visible operating rhythm",
+        "after": [
+          "Clear division expectations",
+          "Weekly KPI reviews",
+          "School programs and partner outreach"
+        ]
+      },
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "As a student organization grows across multiple divisions, informal communication alone is not enough. The council needed clearer visibility, consistent follow-through, and a way to review programs while they were underway."
+        },
+        {
+          "heading": "What was built",
+          "body": "I introduced measurable expectations, regular progress reviews, and clearer links between each division’s work and the council’s goals. Weekly KPI reviews gave the team a consistent basis for planning and follow-through."
+        },
+        {
+          "heading": "Outcome",
+          "body": "The council gained a clearer view of progress, blockers, and where support was needed. Programs became more consistent, and outreach activities reached twelve partner schools."
+        }
+      ],
+      "pull": "Teams are easier to lead when everyone can see the work and its progress.",
+      "evidence": [
+        "Led a 34-member council across ten divisions using KPIs and weekly progress reviews.",
+        "Designed school-wide programs that the administration adopted as ongoing initiatives.",
+        "Coordinated outreach activities that reached twelve partner schools."
+      ],
+      "impact": [
+        {
+          "value": "34",
+          "label": "Members led",
+          "note": "Leadership scope across the full organization."
+        },
+        {
+          "value": "10",
+          "label": "Divisions coordinated",
+          "note": "Governance applied across the council."
+        },
+        {
+          "value": "12",
+          "label": "Partner schools reached",
+          "note": "Scale of one major outward-facing campaign."
+        }
+      ],
+      "scope": [
+        "Leadership system design",
+        "KPI governance",
+        "Program planning"
+      ],
+      "tools": [
+        "Governance frameworks",
+        "Team management",
+        "Strategic outreach"
+      ],
+      "prev": {
+        "slug": "automation-mandate",
+        "title": "A reporting system that saves the team 12+ hours each week."
+      },
+      "next": {
+        "slug": "large-scale-event-ops",
+        "title": "Reliable operations for events with 1,000+ attendees."
+      }
+    },
+    "large-scale-event-ops": {
+      "documentTitle": "Event Operations | dictuzz",
+      "shareTitle": "Event Operations for 1,000+ Attendees | dictuzz",
+      "metaDescription": "Coordinated stage and backstage operations for events with more than 1,000 attendees, including a youth service hosted for 500+ participants.",
+      "vol": "Vol. I / No. 3",
+      "kicker": "Live Operations · Ultimate Event Organizer",
+      "title": "Reliable operations for events with 1,000+ attendees.",
+      "deck": "Three years coordinating stage and backstage operations for large events, including hosting a youth service attended by more than 500 people.",
+      "bylineRole": "Stage Coordinator & MC · Ultimate Event Organizer",
+      "bylineMeta": "2022 – 2025 · Bandung, Indonesia",
+      "lead": "Large events depend on precise transitions, clear coordination, and well-managed backstage operations. Small breakdowns are immediately visible, so every team needs a shared plan.",
+      "process": {
+        "kicker": "The show flow",
+        "title": "Give every transition a clear next move",
+        "description": "A shared running order helps crews, speakers, and performers move through a live program with clear handoffs.",
+        "beforeLabel": "Before · unclear transitions",
+        "before": [
+          "Show flow",
+          "Cues for crew, speakers, and performers",
+          "Pressure on every handoff"
+        ],
+        "afterLabel": "After · coordinated execution",
+        "after": [
+          "Documented transition sequence",
+          "Live team communication",
+          "Predictable stage flow"
+        ]
+      },
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "When a stage transition is unclear, the audience notices immediately. The challenge at a large public event is to keep timing, technical cues, and handoffs reliable under pressure."
+        },
+        {
+          "heading": "What was built",
+          "body": "I translated the running order into clear steps for the technical crew, speakers, and performers. This included planning transitions in advance and coordinating teams throughout the event."
+        },
+        {
+          "heading": "Outcome",
+          "body": "The work improved transition clarity and helped the stage team maintain the schedule under pressure. At the 2025 youth service, I hosted more than 500 attendees while coordinating the live program."
+        }
+      ],
+      "pull": "Consistent timing makes a live event feel considered. Unclear transitions are immediately visible.",
+      "evidence": [
+        "Coordinated backstage operations for events attended by more than 1,000 people.",
+        "Hosted the 2025 youth service for more than 500 attendees and coordinated the program flow.",
+        "Reduced transition friction with a clearer running order and team handoffs."
+      ],
+      "impact": [
+        {
+          "value": "1,000+",
+          "label": "Audience scale",
+          "note": "Large live-event environments with visible execution pressure."
+        },
+        {
+          "value": "500+",
+          "label": "Attendees hosted",
+          "note": "Youth Mass 2025 as a proof point for live communication."
+        },
+        {
+          "value": "2022–25",
+          "label": "Active period",
+          "note": "Sustained involvement across multiple environments."
+        }
+      ],
+      "scope": [
+        "Backstage coordination",
+        "Stage flow management",
+        "Live communication"
+      ],
+      "tools": [
+        "Run-of-show planning",
+        "Stage operations",
+        "MC facilitation"
+      ],
+      "prev": {
+        "slug": "kpi-governance-record",
+        "title": "A 34-member student council established clear accountability."
+      },
+      "next": {
+        "slug": "vertical-rescue-ops",
+        "title": "Readiness is built long before a field assignment."
+      }
+    },
+    "vertical-rescue-ops": {
+      "documentTitle": "Vertical Rescue Operations | dictuzz",
+      "shareTitle": "Technical Readiness for Field Operations | dictuzz",
+      "metaDescription": "Supported equipment readiness and technical rescue training at Vertical Rescue Indonesia for more than four years.",
+      "vol": "Vol. I / No. 4",
+      "kicker": "Training & Readiness · Vertical Rescue Indonesia",
+      "title": "Readiness is built long before a field assignment.",
+      "deck": "More than four years supporting equipment care and technical training at Vertical Rescue Indonesia. Readiness depends on consistent checks and disciplined preparation.",
+      "bylineRole": "Assistant Instructor · Vertical Rescue Indonesia",
+      "bylineMeta": "Jan 2021 – Present · Indonesia",
+      "lead": "Readiness work happens out of view, but it determines whether equipment, people, and procedures are dependable when conditions become difficult.",
+      "process": {
+        "kicker": "Readiness work",
+        "title": "Build confidence before field training",
+        "description": "Equipment care and training support establish dependable practices before technical exercises begin.",
+        "beforeLabel": "Readiness needs",
+        "before": [
+          "Equipment condition",
+          "Climbing practice",
+          "Belay support"
+        ],
+        "afterLabel": "Preparation in practice",
+        "after": [
+          "Inspection + maintenance",
+          "Training session support",
+          "Equipment ready to use"
+        ]
+      },
+      "narrative": [
+        {
+          "heading": "Context",
+          "body": "Technical rescue depends on disciplined preparation. Equipment checks, regular practice, and clear roles need to be in place before conditions become challenging."
+        },
+        {
+          "heading": "What was built",
+          "body": "I maintain and inspect equipment, support technical climbing sessions as a lead climber and belayer, and help new trainees develop safe, repeatable practices."
+        },
+        {
+          "heading": "Outcome",
+          "body": "Consistent equipment checks and training support strengthen operational readiness and give new trainees a more reliable foundation before field exercises."
+        }
+      ],
+      "pull": "In technical work, confidence comes from preparation and consistency.",
+      "evidence": [
+        "Maintained equipment readiness through regular inspections and routine care.",
+        "Supported technical climbing and belay exercises as part of the training team.",
+        "Reinforced a safety culture in which preparation is part of the standard."
+      ],
+      "impact": [
+        {
+          "value": "4+",
+          "label": "Years active",
+          "note": "Sustained involvement in readiness and training work."
+        },
+        {
+          "value": "Routine",
+          "label": "Equipment checks",
+          "note": "Inspection and maintenance as part of the standard."
+        },
+        {
+          "value": "Field",
+          "label": "Training support",
+          "note": "Hands-on support for climbing and belay training."
+        }
+      ],
+      "scope": [
+        "Equipment readiness",
+        "Training support",
+        "Safety discipline"
+      ],
+      "tools": [
+        "Inspection routines",
+        "Technical climbing",
+        "Belay support"
+      ],
+      "prev": {
+        "slug": "large-scale-event-ops",
+        "title": "Reliable operations for events with 1,000+ attendees."
+      },
+      "next": null
+    }
+  }
+}

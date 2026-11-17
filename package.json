@@ -1,0 +1,42 @@
+{
+  "name": "dictuzz.github.io",
+  "version": "2.1.0",
+  "private": true,
+  "description": "Personal portfolio & resume — dictuzz.me",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "npx -y serve . -l 8000 --no-clipboard",
+    "build:home": "node scripts/prerender_home.mjs",
+    "build:resume": "node scripts/prerender_resume.mjs",
+    "build:portfolio": "python scripts/prerender_portfolio.py",
+    "validate:content": "node scripts/validate-content.mjs",
+    "test": "node --test tests/*.test.js",
+    "build:icons": "node scripts/build-icons.mjs",
+    "build:search-index": "node scripts/build-search-index.mjs",
+    "test:a11y": "node scripts/run-a11y.mjs",
+    "test:a11y:ci": "lhci autorun",
+    "serve:ci": "npx serve . -l 8000",
+    "update:fmhy": "node scripts/update-fmhy.mjs && npm run build:search-index"
+  },
+  "author": "Benedictus Richard Ricardo",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@axe-core/cli": "^4.14.0",
+    "@iconify-json/carbon": "^1.2.22",
+    "@iconify-json/fluent": "^1.2.48",
+    "@iconify-json/twemoji": "^1.2.5",
+    "chromedriver": "^157.0.2",
+    "happy-dom": "^21.0.4"
+  },
+  "dependencies": {
+    "@iconify-json/gravity-ui": "^1.2.12",
+    "@iconify-json/ph": "^1.2.2"
+  },
+  "allowScripts": {
+    "chromedriver@152.0.3": true,
+    "chromedriver@157.0.2": true
+  }
+}

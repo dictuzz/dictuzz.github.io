@@ -1,0 +1,424 @@
+{
+  "locale": "id",
+  "visualCvUrl": "https://canva.link/benedictus-richard-ricardo-id",
+  "strings": {
+    "hero": {
+      "subtitle": "Meningkatkan perencanaan route-to-market, pelaporan, dan proses operasional.",
+      "role": "Analis Route-to-Market",
+      "typing": {
+        "staticText": "",
+        "dynamicTexts": [
+          "Menstandarisasi alur kerja route-to-market",
+          "Mengeliminasi transaksi kecurangan berskala besar",
+          "Menghubungkan operasional lintas fungsi",
+          "Mengotomasi pipeline data dan pelaporan",
+          "Mengoordinasikan acara berskala besar"
+        ]
+      },
+      "status": "Terbuka untuk peluang",
+      "cta1": "Hubungi Saya",
+      "cta2": "Jelajahi",
+      "stat1Label": "Jam/Minggu Dihemat",
+      "stat2Label": "Depo Terstandarisasi",
+      "stat3Label": "Skala Acara",
+      "atsCv": "Unduh Resume ATS"
+    },
+    "nav": {
+      "home": "Beranda",
+      "about": "Tentang",
+      "experience": "Pengalaman",
+      "education": "Pendidikan",
+      "impact": "Dampak",
+      "skills": "Keahlian",
+      "awards": "Pencapaian",
+      "volunteering": "Sukarelawan",
+      "contact": "Kontak"
+    },
+    "section": {
+      "summary": "RINGKASAN PROFESIONAL",
+      "experience": "PENGALAMAN KERJA",
+      "education": "PENDIDIKAN",
+      "impact": "DAMPAK OPERASIONAL TERPILIH",
+      "certifications": "SERTIFIKASI & PELATIHAN",
+      "skills": "KEAHLIAN & ALAT UTAMA",
+      "awards": "PENGHARGAAN & PENGAKUAN",
+      "volunteering": "SUKARELAWAN & KOMUNITAS",
+      "contact": "KONTAK & KETERSEDIAAN"
+    },
+    "sectionLede": {
+      "summary": "Latar belakang, pendekatan, dan fokus profesional.",
+      "experience": "Pengalaman kerja dan kontribusi utama.",
+      "education": "Latar belakang akademis dan bidang studi.",
+      "certifications": "Sertifikat profesional dan kualifikasi bahasa.",
+      "impact": "Hasil kerja yang terukur dan dampak operasional.",
+      "skills": "Kompetensi inti dan keahlian teknis.",
+      "awards": "Penghargaan dan pencapaian kompetitif.",
+      "volunteering": "Pelayanan, kepemimpinan, dan keterlibatan komunitas.",
+      "contact": "Ketersediaan dan jalur komunikasi."
+    },
+    "skills": {
+      "strategic": "Strategis & Sistem",
+      "operational": "Eksekusi Operasional",
+      "analytical": "Analitik & Alat",
+      "leadership": "Kepemimpinan & Komunikasi",
+      "languages": "Bahasa"
+    },
+    "connect": {
+      "title": "Mari Bangun Sesuatu yang Bermakna",
+      "schedule": "Jadwalkan Panggilan",
+      "whatsapp": "Kirim Pesan",
+      "email": "Hubungi Saya",
+      "visualCv": "Lihat Resume Visual →",
+      "cv": "Unduh Resume ATS",
+      "desc": {
+        "schedule": "Panggilan 15 menit • Tanpa kewajiban",
+        "whatsapp": "Komunikasi cepat dan praktis",
+        "email": "Untuk kemitraan, proposal, dan peluang",
+        "linkedin": "Profil profesional dan jaringan",
+        "instagram": "Cerita di balik pekerjaan",
+        "github": "Kode pilihan dan pekerjaan teknis"
+      }
+    },
+    "certifications": {
+      "verify": "Verifikasi sertifikat"
+    },
+    "footer": {
+      "home": "Beranda",
+      "resume": "Resume",
+      "portfolio": "Portofolio",
+      "resources": "Sumber Daya",
+      "terms": "Ketentuan",
+      "navLabel": "Navigasi global",
+      "emailAria": "Email contact@dictuzz.me",
+      "allRights": "Hak cipta dilindungi."
+    }
+  },
+  "sections": {
+    "summary": {
+      "text": "Analis Route-to-Market yang berorientasi pada sistem dan berpengalaman memimpin tim beranggotakan tiga orang di tiga entitas di Jawa Barat. Saya mengubah proses lapangan yang tidak konsisten menjadi cara kerja yang terstandarisasi dan terukur, termasuk kerangka pengelolaan frekuensi kunjungan di 32 depo serta analisis anomali berbasis data yang membantu menonaktifkan lebih dari 12.000 titik penjualan mencurigakan. Saya memadukan dasar keilmuan sains data dengan pengalaman lapangan dan koordinasi pemangku kepentingan agar hasil analisis dapat diterapkan dalam operasional sehari-hari. Berpegang pada “Quam plurimi et quam aptissimi”, saya terus belajar dan berfokus pada dampak yang terukur serta berkelanjutan."
+    },
+    "experience": [
+      {
+        "date": "APR 2026 – SEKARANG",
+        "role": "Analis Route-to-Market",
+        "company": "Tirta Utama Abadi (Distributor Danone, Jawa Barat)",
+        "details": [
+          "Mengidentifikasi anomali pada pola transaksi dan data geolokasi, lalu menonaktifkan lebih dari 12.000 titik penjualan yang terindikasi terkait kecurangan. Pembersihan ini memperkuat basis data untuk keputusan cakupan wilayah dan insentif.",
+          "Menstandardisasi perencanaan frekuensi kunjungan yang sesuai dengan kondisi lapangan di seluruh 32 depo di Jawa Barat, turut mendorong pertumbuhan laba dua digit di hampir setiap depo.",
+          "Memimpin tim beranggotakan tiga orang yang mendukung tiga entitas, sekaligus menjaga pemetaan wilayah penjualan dan konsistensi pelaksanaan di lapangan.",
+          "Membangun ulang dashboard sprint harian agar setiap depo dapat mengakses data kinerja terkini tanpa kompilasi manual.",
+          "Mengotomasi analisis potensi pasar dan jarak ke titik penjualan aktif untuk pembukaan lokasi baru, sehingga menghemat sekitar 8,6 jam kerja tim per bulan.",
+          "Menganalisis kebutuhan armada bulanan berdasarkan depo dan kanal dengan menggabungkan target penjualan serta data armada bulan sebelumnya, agar kapasitas pengiriman sesuai dengan perkiraan permintaan.",
+          "Menganalisis kondisi pasar, termasuk ekonomi perdagangan, sebagai dasar keputusan cakupan wilayah, pembukaan titik penjualan, dan pemilihan kanal di setiap depo."
+        ]
+      },
+      {
+        "date": "JUL 2024 – FEB 2026",
+        "role": "Management Trainee",
+        "company": "Home Digital Indonesia",
+        "details": [
+          "Mengotomasi alur pelaporan manual di Excel, menghemat waktu tim sekitar 12 jam per minggu.",
+          "Berkolaborasi dengan tim Keuangan, Penjualan, dan Operasional untuk merancang sistem serta menstandardisasi SOP, menggantikan praktik yang terpisah-pisah dengan standar lintas fungsi yang konsisten.",
+          "Mendorong penjualan melalui interaksi langsung dengan pelanggan untuk mencapai target penjualan bulanan.",
+          "Menilai pengajuan kredit pelanggan berdasarkan prinsip 7C dan 5S, menjaga kualitas piutang sekaligus mempercepat proses persetujuan.",
+          "Menindaklanjuti piutang pelanggan yang jatuh tempo setiap hari melalui negosiasi terstruktur dan pelacakan komitmen pembayaran untuk memastikan pelunasan."
+        ]
+      },
+      {
+        "date": "NOV 2021 – NOV 2022",
+        "role": "Ketua OSIS",
+        "company": "OSIS SMA Santa Maria 2, Bandung",
+        "details": [
+          "Memimpin organisasi beranggotakan 34 orang di 10 divisi dan menerapkan pemantauan kinerja berbasis KPI untuk memperjelas akuntabilitas setiap divisi.",
+          "Merancang program sekolah yang kemudian dilanjutkan sebagai inisiatif tetap oleh pihak sekolah.",
+          "Mengelola kampanye sosialisasi di 12 sekolah jejaring untuk meningkatkan partisipasi dan penerimaan siswa.",
+          "Membentuk pertemuan koordinasi mingguan antar divisi untuk mengurangi miskomunikasi dan memastikan tindak lanjut."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "name": "Universitas Terbuka (Open University Indonesia)",
+        "degree": "S1 Sains Data (sedang ditempuh)",
+        "date": "Mulai Agustus 2025",
+        "focus": "Fokus studi: analisis data, statistika, sistem informasi, dan deteksi anomali"
+      },
+      {
+        "name": "SMA Santa Maria 2 Bandung",
+        "degree": "Program IPA",
+        "date": "2020 – 2023",
+        "focus": "Terpilih sebagai Ketua dan Wakil Ketua OSIS; mewakili sekolah pada UNDIP Biology Championship (2022); aktif dalam kegiatan Pramuka dan pelatihan kepemimpinan di alam terbuka"
+      }
+    ],
+    "impact": [
+      {
+        "title": "Standarisasi Sistem Route-to-Market",
+        "desc": "Menstandardisasi pengelolaan frekuensi kunjungan di 32 depo di Jawa Barat dan menonaktifkan lebih dari 12.000 titik penjualan bermasalah melalui analisis anomali transaksi dan geolokasi. Perubahan ini turut mendorong pertumbuhan laba dua digit di hampir setiap depo."
+      },
+      {
+        "title": "Sistem Otomatisasi Pelaporan",
+        "desc": "Pelaporan mingguan di Home Digital sebelumnya memerlukan entri data, pemformatan ulang, dan pemeriksaan silang secara manual. Saya merancang ulang alurnya di Excel agar dapat berjalan dengan sedikit intervensi, sehingga tim menghemat sekitar 12 jam kerja per minggu."
+      },
+      {
+        "title": "Kepemimpinan Tata Kelola Berbasis KPI",
+        "desc": "Memimpin organisasi siswa beranggotakan 34 orang di 10 divisi dengan pemantauan kinerja berbasis KPI dan rapat koordinasi mingguan. Pihak sekolah mengadopsi sejumlah program, sementara kampanye sosialisasi menjangkau 12 sekolah jejaring."
+      },
+      {
+        "title": "Eksekusi Acara Skala Besar",
+        "desc": "Bertugas sebagai MC dalam Misa Angkatan Muda GEMA Bandung untuk lebih dari 500 peserta, serta mengoordinasikan pembicara, panitia, dan tim teknis dalam satu susunan acara. Sebelumnya, mengelola operasional belakang panggung untuk acara dengan lebih dari 1.000 peserta dan menjaga ketepatan setiap isyarat teknis."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Goethe-Zertifikat B1",
+        "issuer": "Goethe-Institut",
+        "year": "2023"
+      },
+      {
+        "name": "Instruktur Vertical Rescue",
+        "issuer": "Vertical Rescue Indonesia",
+        "year": "2021"
+      },
+      {
+        "name": "Personal Financial Fundamentals",
+        "issuer": "MySkill",
+        "year": "2024"
+      },
+      {
+        "name": "Kuliah Umum: Kelas Penulisan Jurnalistik",
+        "issuer": "Universitas Katolik Parahyangan",
+        "year": "2023"
+      }
+    ],
+    "awards": [
+      "Juara 1 – Kompetisi Instagram Reels, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
+      "Perwakilan Sekolah – UNDIP Biology Championship (2022)",
+      "Juara 1 – Kompetisi Film Pendek, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
+      "Runner-Up, Water Rocket Competition (2017) oleh PLANET SAINS"
+    ],
+    "volunteering": [
+      {
+        "date": "JUL 2025 – SEKARANG",
+        "role": "Master of Ceremony (Relawan)",
+        "company": "GEMA (Gereja Mahasiswa) Bandung",
+        "details": [
+          "Memandu acara “Misa Angkatan Muda 2025” GEMA Bandung untuk lebih dari 500 mahasiswa Katolik. Saya mengatur alur panggung dan interaksi peserta serta berkoordinasi dengan panitia, pembicara, dan tim teknis agar acara berjalan sesuai susunan acara."
+        ]
+      },
+      {
+        "date": "JAN 2021 – SEKARANG",
+        "role": "Asisten Instruktur",
+        "company": "Vertical Rescue Indonesia",
+        "details": [
+          "Menjaga kesiapan peralatan penyelamatan melalui perawatan rutin dan pemeriksaan keselamatan tali, harness, dan karabiner.",
+          "Mendukung latihan penyelamatan teknis sebagai lead climber dan belayer, serta membimbing peserta baru dalam teknik lapangan dan keselamatan."
+        ]
+      },
+      {
+        "date": "AGU 2023 – AGU 2024",
+        "role": "Wakil Ketua",
+        "company": "Orang Muda Katolik (OMK) Ujung Berung",
+        "details": [
+          "Menyusun kalender program tahunan dengan mengoordinasikan target lintas tim dan jadwal relawan.",
+          "Menyelenggarakan dua acara berskala besar: malam kebersamaan untuk sekitar 100 peserta dan ibadah kaum muda untuk sekitar 400 peserta.",
+          "Bertugas sebagai Master of Ceremony pada sebagian besar acara organisasi."
+        ]
+      },
+      {
+        "date": "2021 – 2022",
+        "role": "Kepala Divisi Bisnis & Kemitraan",
+        "company": "Forum OSIS Jawa Barat",
+        "details": [
+          "Memimpin Divisi Bisnis & Kemitraan Forum OSIS Jawa Barat, dengan tanggung jawab atas kemitraan eksternal, kerja sama sponsor, dan hubungan media untuk program forum.",
+          "Mengelola kemitraan untuk acara utama, termasuk Diskusi Publik dan Audiensi Legislatif, FOJB Festival Pelajar & Konser Amal, serta kegiatan sosial lainnya.",
+          "Mengoordinasikan dukungan sponsor dari by.U, Telkom University, dan Dinas Pendidikan serta kemitraan media dengan Halo KRW, Media Bandung, dan lainnya untuk memperluas jangkauan acara.",
+          "Membangun basis data kemitraan yang merangkum kolaborasi kepanitiaan sebelumnya, sehingga panitia berikutnya dapat melanjutkan hubungan yang sudah terjalin."
+        ]
+      },
+      {
+        "date": "JUN 2022 – AGU 2022",
+        "role": "Kru Panggung",
+        "company": "Ultimate Event Organizer",
+        "details": [
+          "Mendukung operasional belakang panggung untuk acara dengan lebih dari 1.000 peserta dan membantu tim panggung serta produksi menjaga setiap sesi sesuai jadwal.",
+          "Membantu pemasangan dan pembongkaran panggung serta peralatan, sekaligus mengoordinasikan isyarat teknis dan serah terima antarsegmen.",
+          "Mengikuti prosedur pergantian segmen yang telah direncanakan untuk meminimalkan jeda antarsesi."
+        ]
+      },
+      {
+        "date": "MAR 2020 – MAR 2022",
+        "role": "Wakil Ketua Misdinar",
+        "company": "Misdinar Gereja Zipur",
+        "details": [
+          "Mengelola jadwal misdinar, memastikan ketersediaan personel yang memadai untuk setiap Misa dan rotasi yang adil.",
+          "Mengadakan acara apresiasi dan perayaan untuk memperkuat kebersamaan tim."
+        ]
+      }
+    ]
+  },
+  "collections": {
+    "skills": {
+      "strategic": [
+        {
+          "name": "Pemikiran Sistem",
+          "level": "expert"
+        },
+        {
+          "name": "Perencanaan Route-to-Market",
+          "level": "expert"
+        },
+        {
+          "name": "Perencanaan Wilayah & Cakupan",
+          "level": "expert"
+        },
+        {
+          "name": "Manajemen Frekuensi Kunjungan",
+          "level": "expert"
+        },
+        {
+          "name": "Perancangan Alur Kerja",
+          "level": "expert"
+        },
+        {
+          "name": "Standardisasi Proses",
+          "level": "expert"
+        },
+        {
+          "name": "Perancangan Kerangka KPI",
+          "level": "proficient"
+        },
+        {
+          "name": "Manajemen Perubahan Skala Besar",
+          "level": "expert"
+        }
+      ],
+      "operational": [
+        {
+          "name": "Penyusunan SOP",
+          "level": "expert"
+        },
+        {
+          "name": "Koordinasi Lintas Fungsi",
+          "level": "expert"
+        },
+        {
+          "name": "Pengendalian Risiko & Fraud",
+          "level": "expert"
+        },
+        {
+          "name": "Perencanaan Armada",
+          "level": "proficient"
+        },
+        {
+          "name": "Otomasi Pelaporan",
+          "level": "expert"
+        },
+        {
+          "name": "Manajemen Operasional Acara",
+          "level": "proficient"
+        },
+        {
+          "name": "Manajemen Insiden",
+          "level": "expert"
+        }
+      ],
+      "analytical": [
+        {
+          "name": "SQL",
+          "level": "proficient"
+        },
+        {
+          "name": "Python",
+          "level": "proficient"
+        },
+        {
+          "name": "Microsoft Excel / VBA",
+          "level": "expert"
+        },
+        {
+          "name": "Deteksi Anomali",
+          "level": "expert"
+        },
+        {
+          "name": "Dasbor & Visualisasi",
+          "level": "expert"
+        },
+        {
+          "name": "Power BI & Looker Studio",
+          "level": "proficient"
+        },
+        {
+          "name": "Analisis Ekonomi Perdagangan",
+          "level": "proficient"
+        },
+        {
+          "name": "DBeaver",
+          "level": "proficient"
+        },
+        {
+          "name": "QGIS",
+          "level": "proficient"
+        },
+        {
+          "name": "Analitik Berbantuan LLM & AI",
+          "level": "proficient"
+        },
+        {
+          "name": "Obsidian, Canva, Trello",
+          "level": "proficient"
+        }
+      ],
+      "leadership": [
+        {
+          "name": "Kepemimpinan Tim (3 entitas)",
+          "level": "expert"
+        },
+        {
+          "name": "Kolaborasi Lintas Fungsi",
+          "level": "expert"
+        },
+        {
+          "name": "Berbicara di Depan Umum & Pembawa Acara",
+          "level": "expert"
+        },
+        {
+          "name": "Pemecahan Masalah Kompleks",
+          "level": "expert"
+        },
+        {
+          "name": "Pelaksanaan Pelatihan",
+          "level": "proficient"
+        },
+        {
+          "name": "Kemitraan Strategis",
+          "level": "proficient"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "id",
+        "label": "Bahasa Indonesia (Penutur asli)"
+      },
+      {
+        "id": "su",
+        "label": "Bahasa Sunda (Bahasa Ibu)"
+      },
+      {
+        "id": "en",
+        "label": "Bahasa Inggris (Menengah, B1)"
+      },
+      {
+        "id": "de",
+        "label": "Bahasa Jerman (Goethe-Zertifikat B1; mengikuti kursus B2)"
+      },
+      {
+        "id": "jv",
+        "label": "Bahasa Jawa (Menengah)"
+      }
+    ]
+  },
+  "seo": {
+    "description": "Benedictus Richard Ricardo adalah Analis Route-to-Market dengan pengalaman dalam perencanaan wilayah, otomasi pelaporan, tata kelola operasional, dan analisis data."
+  }
+}

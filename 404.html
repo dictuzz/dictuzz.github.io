@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — You Broke It. Play Snake. | dictuzz</title>
+    <meta name="description" content="This page doesn't exist, but this snake game does. Dodge the 404 obstacles and collect points while you figure out where you actually wanted to go.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png?v=4" sizes="96x96">
+    <link rel="shortcut icon" href="/favicon.ico?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+    <meta name="apple-mobile-web-app-title" content="dictuzz">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/404.css?v=v5">
+</head>
+<body>
+    
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+    <main class="game-shell" id="game-shell">
+        
+        <header class="top-bar">
+            <a href="/" class="top-bar__home" aria-label="Return home">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Go Home</span>
+            </a>
+            <div class="top-bar__stats">
+                <div class="stat-chip">
+                    <span class="stat-chip__label">Score</span>
+                    <span class="stat-chip__value" id="score-display">0</span>
+                </div>
+                <div class="stat-chip stat-chip--best">
+                    <span class="stat-chip__label">Best</span>
+                    <span class="stat-chip__value" id="best-display">0</span>
+                </div>
+            </div>
+        </header>
+
+        
+        <div class="overlay" id="start-overlay">
+            <div class="overlay__content">
+                <div class="glitch-404" aria-hidden="true">
+                    <span class="glitch-404__text" data-text="404">404</span>
+                </div>
+                <h1 class="overlay__title">Page Not Found</h1>
+                <p class="overlay__subtitle">
+                    But hey, since you're stuck here…<br>
+                    <strong>play some snake.</strong> The 404s are obstacles now. They deserve it.
+                </p>
+                <button class="btn-play" id="btn-start" type="button">
+                    <span class="btn-play__icon">▶</span>
+                    <span>Start Game</span>
+                </button>
+                <p class="overlay__hint">
+                    <kbd>Arrow keys</kbd> / <kbd>WASD</kbd> or swipe on mobile
+                </p>
+                <a href="/" class="skip-game" id="skip-game">Skip game → go home</a>
+            </div>
+        </div>
+
+        
+        <div class="overlay overlay--gameover hidden" id="gameover-overlay">
+            <div class="overlay__content">
+                <p class="overlay__emoji" id="gameover-emoji">💀</p>
+                <h2 class="overlay__title overlay__title--gameover" id="gameover-title">Wasted.</h2>
+                <p class="overlay__quip" id="gameover-quip">You hit a 404. The irony writes itself.</p>
+                <div class="overlay__score-summary">
+                    <div class="score-block">
+                        <span class="score-block__label">Score</span>
+                        <span class="score-block__value" id="final-score">0</span>
+                    </div>
+                    <div class="score-block score-block--best">
+                        <span class="score-block__label">Best</span>
+                        <span class="score-block__value" id="final-best">0</span>
+                    </div>
+                </div>
+                <button class="btn-play" id="btn-restart" type="button">
+                    <span class="btn-play__icon">↻</span>
+                    <span>Try Again</span>
+                </button>
+                <a href="/" class="link-home">or just go home, quitter</a>
+            </div>
+        </div>
+
+        
+        <canvas id="game-canvas" role="img" aria-label="Snake game — dodge the 404 obstacles"></canvas>
+
+        
+        <div class="dpad" id="dpad" role="toolbar" aria-label="Direction controls">
+            <button class="dpad__btn dpad__btn--up" data-dir="up" type="button" aria-label="Move up">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <button class="dpad__btn dpad__btn--left" data-dir="left" type="button" aria-label="Move left">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="dpad__btn dpad__btn--down" data-dir="down" type="button" aria-label="Move down">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <button class="dpad__btn dpad__btn--right" data-dir="right" type="button" aria-label="Move right">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+    </main>
+
+    <script src="/js/404.js?v=v5"></script>
+</body>
+</html>

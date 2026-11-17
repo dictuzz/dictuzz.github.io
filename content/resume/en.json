@@ -1,0 +1,424 @@
+{
+  "locale": "en",
+  "visualCvUrl": "https://canva.link/benedictus-richard-ricardo-en",
+  "strings": {
+    "hero": {
+      "subtitle": "Improving route-to-market planning, reporting, and operational processes.",
+      "role": "Route-to-Market Analyst",
+      "typing": {
+        "staticText": "",
+        "dynamicTexts": [
+          "Standardizing route-to-market workflows",
+          "Eliminating fraudulent transactions at scale",
+          "Bridging cross-functional operations",
+          "Automating data pipelines and reporting",
+          "Coordinating large-scale events"
+        ]
+      },
+      "status": "Available for opportunities",
+      "cta1": "Let's Talk",
+      "cta2": "Explore",
+      "stat1Label": "Hrs/Wk Saved",
+      "stat2Label": "Depots Standardized",
+      "stat3Label": "Audience Scale",
+      "atsCv": "Download ATS Resume"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "experience": "Experience",
+      "education": "Education",
+      "impact": "Impact",
+      "skills": "Skills",
+      "awards": "Awards",
+      "volunteering": "Volunteering",
+      "contact": "Contact"
+    },
+    "section": {
+      "summary": "PROFESSIONAL SUMMARY",
+      "experience": "WORK EXPERIENCE",
+      "education": "EDUCATION",
+      "impact": "SELECTED OPERATIONAL IMPACT",
+      "certifications": "CERTIFICATIONS & TRAINING",
+      "skills": "CORE SKILLS & TOOLS",
+      "awards": "AWARDS & RECOGNITION",
+      "volunteering": "VOLUNTEERING & COMMUNITY",
+      "contact": "CONTACT & AVAILABILITY"
+    },
+    "sectionLede": {
+      "summary": "Background, approach, and professional focus.",
+      "experience": "Professional roles and key contributions.",
+      "education": "Academic background and areas of study.",
+      "certifications": "Professional certificates and language qualifications.",
+      "impact": "Measurable results and operational outcomes.",
+      "skills": "Core competencies and technical proficiencies.",
+      "awards": "Recognitions and competitive achievements.",
+      "volunteering": "Service, leadership, and community involvement.",
+      "contact": "Availability and preferred channels."
+    },
+    "skills": {
+      "strategic": "Strategic & Systems",
+      "operational": "Operational Execution",
+      "analytical": "Analytical & Tools",
+      "leadership": "Leadership & Communication",
+      "languages": "Languages"
+    },
+    "connect": {
+      "title": "Let's Build Something Meaningful",
+      "schedule": "Book a Call",
+      "whatsapp": "Message Me",
+      "email": "Let's Talk",
+      "visualCv": "View Visual Resume →",
+      "cv": "Download ATS Resume",
+      "desc": {
+        "schedule": "15-min call • No obligation",
+        "whatsapp": "Fast and practical communication",
+        "email": "For partnerships, proposals, and opportunities",
+        "linkedin": "Professional profile and network",
+        "instagram": "The story behind the work",
+        "github": "Selected code and technical work"
+      }
+    },
+    "certifications": {
+      "verify": "Verify credential"
+    },
+    "footer": {
+      "home": "Home",
+      "resume": "Resume",
+      "portfolio": "Portfolio",
+      "resources": "Resources",
+      "terms": "Terms",
+      "navLabel": "Global navigation",
+      "emailAria": "Email contact@dictuzz.me",
+      "allRights": "All rights reserved."
+    }
+  },
+  "sections": {
+    "summary": {
+      "text": "Systems-oriented Route-to-Market Analyst with experience leading a three-person team across three entities in West Java. I turn inconsistent field processes into standardized, measurable ways of working, including a Call Frequency Management framework across 32 depots and data-driven anomaly detection that identified and deactivated more than 12,000 suspicious outlets. I combine a data science foundation with hands-on field experience and stakeholder coordination so analysis leads to changes teams can apply in daily operations. Guided by “Quam plurimi et quam aptissimi,” I keep learning and focus on lasting, measurable impact."
+    },
+    "experience": [
+      {
+        "date": "APR 2026 – PRESENT",
+        "role": "Route-to-Market Analyst",
+        "company": "Tirta Utama Abadi (Danone Distributor, West Java)",
+        "details": [
+          "Identified anomalies in transaction patterns and geolocation data, then deactivated more than 12,000 potentially fraudulent outlets. This cleaned the outlet base used for coverage and incentive decisions.",
+          "Standardized field-ready visit planning across all 32 depots in West Java, supporting double-digit profit growth at nearly every depot.",
+          "Lead a three-person team across three entities, maintaining clear sales territories and consistent execution standards.",
+          "Rebuilt daily sprint dashboards so every depot can access live performance data without manual compilation.",
+          "Automated market-potential and distance-to-outlet analysis for new openings, saving the team about 8.6 hours each month.",
+          "Analyze monthly fleet needs by depot and channel, combining sales targets with the previous month’s fleet data to align delivery capacity with expected demand.",
+          "Conduct market analysis, including trade economics, to inform depot coverage, new outlet openings, and channel decisions."
+        ]
+      },
+      {
+        "date": "JUL 2024 – FEB 2026",
+        "role": "Management Trainee",
+        "company": "Home Digital Indonesia",
+        "details": [
+          "Automated manual reporting workflows in Excel, eliminating approximately 12 hours of manual data entry per week.",
+          "Partnered with Finance, Sales, and Operations to design systems and standardize SOPs, replacing fragmented department-level practices with consistent cross-functional standards.",
+          "Drove sales through direct customer engagement, consistently working toward and achieving monthly sales targets.",
+          "Assessed customer credit applications using 7C and 5S principles, safeguarding receivables quality while keeping approval turnaround efficient.",
+          "Followed up on overdue customer accounts through structured payment discussions and documented commitments to support timely repayment."
+        ]
+      },
+      {
+        "date": "NOV 2021 – NOV 2022",
+        "role": "Student Council President",
+        "company": "OSIS SMA Santa Maria 2, Bandung",
+        "details": [
+          "Led a 34-member council across 10 divisions, introducing KPI-based performance tracking to establish clear accountability per division.",
+          "Designed school-wide programs that the school leadership later adopted as ongoing initiatives.",
+          "Led outreach campaigns at 12 partner schools to increase student engagement and recruitment.",
+          "Established weekly inter-division coordination meetings, reducing miscommunication and missed deadlines."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "name": "Universitas Terbuka (Open University Indonesia)",
+        "degree": "B.Sc. Data Science (Ongoing)",
+        "date": "Started Aug 2025",
+        "focus": "Focus: Data analysis, statistics, information systems, and anomaly detection"
+      },
+      {
+        "name": "Saint Mary 2 Senior High School",
+        "degree": "Science Program (IPA)",
+        "date": "2020 – 2023",
+        "focus": "Elected president and vice president of OSIS; school representative at the UNDIP Biology Championship (2022); active Scout and outdoor leadership training"
+      }
+    ],
+    "impact": [
+      {
+        "title": "Route-to-Market System Standardization",
+        "desc": "Standardized visit-frequency management across all 32 depots in West Java and deactivated more than 12,000 suspicious outlets through transaction and geolocation anomaly detection. Nearly every depot recorded double-digit profit growth."
+      },
+      {
+        "title": "Reporting Automation System",
+        "desc": "The weekly reporting process at Home Digital required extensive manual data entry, reformatting, and cross-checking. I redesigned the Excel workflow to run with minimal intervention, saving the team about 12 hours each week."
+      },
+      {
+        "title": "KPI-Based Governance Leadership",
+        "desc": "Led a 34-member student council across 10 divisions using KPI-based performance tracking and weekly coordination meetings. The school leadership adopted several programs, and outreach activities reached 12 partner schools."
+      },
+      {
+        "title": "Large-Scale Event Execution",
+        "desc": "Hosted the GEMA Bandung 2025 Youth Mass for more than 500 attendees, coordinating speakers, organizers, and the technical crew around one run of show. Earlier, I supported backstage operations for events with more than 1,000 attendees, where precise cues were essential."
+      }
+    ],
+    "certifications": [
+      {
+        "name": "Goethe-Zertifikat B1",
+        "issuer": "Goethe-Institut",
+        "year": "2023"
+      },
+      {
+        "name": "Vertical Rescue Instructor",
+        "issuer": "Vertical Rescue Indonesia",
+        "year": "2021"
+      },
+      {
+        "name": "Personal Financial Fundamentals",
+        "issuer": "MySkill",
+        "year": "2024"
+      },
+      {
+        "name": "Public Lecture: Journalistic Writing Class",
+        "issuer": "Parahyangan Catholic University",
+        "year": "2023"
+      }
+    ],
+    "awards": [
+      "1st Place – Instagram Reels Competition, Goethe-Institut Bandung (2023) – \"Ein Tag in meinem Leben\"",
+      "School Representative – UNDIP Biology Championship (2022)",
+      "1st Place – Short Film Competition, Komisi Komsos Keuskupan Bandung (2019) – \"Dilema\"",
+      "Runner-Up, Water Rocket Competition (2017) by PLANET SAINS"
+    ],
+    "volunteering": [
+      {
+        "date": "JUL 2025 – PRESENT",
+        "role": "Master of Ceremony (Volunteer)",
+        "company": "GEMA (Gereja Mahasiswa) Bandung",
+        "details": [
+          "Acted as Master of Ceremony for large-scale GEMA Bandung event \"Misa Angkatan Muda 2025\", managing stage flow and audience engagement for 500+ Catholic students across Bandung while coordinating with committee members, speakers, and technical teams to ensure precise run sheet execution."
+        ]
+      },
+      {
+        "date": "JAN 2021 – PRESENT",
+        "role": "Assistant Instructor",
+        "company": "Vertical Rescue Indonesia",
+        "details": [
+          "Maintain rescue equipment readiness through routine maintenance and strict safety inspections of ropes, harnesses, and hardware.",
+          "Serve as lead climber and belayer in technical rescue training exercises and coach new trainees in technical outdoor and safety skills."
+        ]
+      },
+      {
+        "date": "AUG 2023 – AUG 2024",
+        "role": "Vice Chief",
+        "company": "Ujung Berung Catholic Youth Organisation",
+        "details": [
+          "Planned the annual program calendar, coordinating cross-team deliverables and volunteer schedules.",
+          "Organized two large-scale events: a night gathering (~100 participants) and a youth worship service (~400 participants).",
+          "Served as Master of Ceremony for the organization's major community gatherings."
+        ]
+      },
+      {
+        "date": "2021 – 2022",
+        "role": "Head of Business & Partnership Division",
+        "company": "Forum OSIS Jawa Barat",
+        "details": [
+          "Led the Business & Partnerships Division of Forum OSIS Jawa Barat, responsible for external partnerships, sponsorships, and media relations for the forum’s programs.",
+          "Managed partnerships for flagship events, including a public discussion and legislative hearing, the FOJB Student Festival & Charity Concert, and other community initiatives.",
+          "Coordinated sponsorships with by.U, Telkom University, and Dinas Pendidikan, along with media partnerships with Halo KRW, Media Bandung, and others to expand event reach.",
+          "Built a historical partnership database consolidating past committee collaborations, providing continuity for future committees instead of starting outreach from scratch."
+        ]
+      },
+      {
+        "date": "JUN 2022 – AUG 2022",
+        "role": "Stage Crew",
+        "company": "Ultimate Event Organizer",
+        "details": [
+          "Supported backstage operations for events with more than 1,000 attendees, helping the stage and production teams keep each segment on schedule.",
+          "Helped set up and strike stages and equipment, coordinating technical cues and handoffs between segments.",
+          "Followed planned changeover procedures to keep downtime between sessions to a minimum."
+        ]
+      },
+      {
+        "date": "MAR 2020 – MAR 2022",
+        "role": "Vice Chief Acolyte",
+        "company": "Zipur Church Acolyte",
+        "details": [
+          "Managed Altar Server scheduling, ensuring adequate coverage for every Mass and equitable rotation.",
+          "Organized appreciation events and celebrations to strengthen team cohesion."
+        ]
+      }
+    ]
+  },
+  "collections": {
+    "skills": {
+      "strategic": [
+        {
+          "name": "Systems Thinking",
+          "level": "expert"
+        },
+        {
+          "name": "Route-to-Market Planning",
+          "level": "expert"
+        },
+        {
+          "name": "Territory & Coverage Planning",
+          "level": "expert"
+        },
+        {
+          "name": "Call Frequency Management",
+          "level": "expert"
+        },
+        {
+          "name": "Workflow Design",
+          "level": "expert"
+        },
+        {
+          "name": "Process Standardization",
+          "level": "expert"
+        },
+        {
+          "name": "KPI Framework Design",
+          "level": "proficient"
+        },
+        {
+          "name": "Change Management at Scale",
+          "level": "expert"
+        }
+      ],
+      "operational": [
+        {
+          "name": "SOP Development",
+          "level": "expert"
+        },
+        {
+          "name": "Cross-Functional Coordination",
+          "level": "expert"
+        },
+        {
+          "name": "Risk & Fraud Control",
+          "level": "expert"
+        },
+        {
+          "name": "Fleet Planning",
+          "level": "proficient"
+        },
+        {
+          "name": "Reporting Automation",
+          "level": "expert"
+        },
+        {
+          "name": "Event Operations Management",
+          "level": "proficient"
+        },
+        {
+          "name": "Incident Management",
+          "level": "expert"
+        }
+      ],
+      "analytical": [
+        {
+          "name": "SQL",
+          "level": "proficient"
+        },
+        {
+          "name": "Python",
+          "level": "proficient"
+        },
+        {
+          "name": "Microsoft Excel / VBA",
+          "level": "expert"
+        },
+        {
+          "name": "Anomaly Detection",
+          "level": "expert"
+        },
+        {
+          "name": "Dashboards & Visualization",
+          "level": "expert"
+        },
+        {
+          "name": "Power BI & Looker Studio",
+          "level": "proficient"
+        },
+        {
+          "name": "Trade Economics",
+          "level": "proficient"
+        },
+        {
+          "name": "DBeaver",
+          "level": "proficient"
+        },
+        {
+          "name": "QGIS",
+          "level": "proficient"
+        },
+        {
+          "name": "LLM & AI-Assisted Analytics",
+          "level": "proficient"
+        },
+        {
+          "name": "Obsidian, Canva, Trello",
+          "level": "proficient"
+        }
+      ],
+      "leadership": [
+        {
+          "name": "Team Leadership (3 entities)",
+          "level": "expert"
+        },
+        {
+          "name": "Cross-Functional Influence",
+          "level": "expert"
+        },
+        {
+          "name": "Public Speaking & MC",
+          "level": "expert"
+        },
+        {
+          "name": "Complex Problem-Solving",
+          "level": "expert"
+        },
+        {
+          "name": "Training Delivery",
+          "level": "proficient"
+        },
+        {
+          "name": "Strategic Partnerships",
+          "level": "proficient"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "id",
+        "label": "Indonesian (Native)"
+      },
+      {
+        "id": "su",
+        "label": "Sundanese (Native)"
+      },
+      {
+        "id": "en",
+        "label": "English (Intermediate, B1)"
+      },
+      {
+        "id": "de",
+        "label": "German (Goethe-Zertifikat B1; B2-level coursework)"
+      },
+      {
+        "id": "jv",
+        "label": "Javanese (Intermediate)"
+      }
+    ]
+  },
+  "seo": {
+    "description": "Benedictus Richard Ricardo is a Route-to-Market Analyst with experience in territory planning, reporting automation, operational governance, and data analysis."
+  }
+}
